@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="error_accum4">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAIAAAAAAAAAAAAEAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_error_metrics.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="format_entry">
+    <Position X="10.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACCAAAAAAAAAAAAABgAQAAAAA=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_image_load_store.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ktx_header">
+    <Position X="12" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAQIAoACAAAAAAAAAABAAACAAEAAACAAwAAAIAAABA=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_image_load_store.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="dds_pixelformat">
+    <Position X="13.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAIAAACAFIAAAAABAAAAAAAAAAAQ=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_image_load_store.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="dds_header">
+    <Position X="10.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAISAAAAAABgQIQIAAIAAAAAAAAAAAAAAQIAAAAAQ=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_image_load_store.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="dds_header_dx10">
+    <Position X="12" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgABAAAQAAAAAAIAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_image_load_store.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="__unnamed_struct_0435_1">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEgAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_image_load_store.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="__unnamed_struct_0435_2">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEgAAAAAAAAQAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_image_load_store.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="astc_header">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABwAAAACAAABAAAAAAAAAEBA=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_image_load_store.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="launch_desc">
+    <Position X="13.75" Y="9.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAABAAAAAAAAAAACAQAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_platform_dependents.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="mode_entry">
+    <Position X="15.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAABAAA=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_toplevel.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="compression_workload">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAABAAAAAAAAAAAEAAAAAEAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_toplevel.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="decompression_workload">
+    <Position X="15.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAABAAAAAAAAAAAEAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_toplevel.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="pthread_t" Collapsed="true">
+    <Position X="21" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_platform_dependents.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="pthread_attr_t" Collapsed="true">
+    <Position X="19.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_platform_dependents.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="astcenc_operation" Collapsed="true">
+    <Position X="17.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_toplevel.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="scanline_transfer">
+    <Position X="19.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAASKAAAhAiESAQIhAAAAQAARgACRwATAAABABFgE=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_image_load_store.cpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="astcenc_preprocess">
+    <Position X="17.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAACAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\inhyu\OneDrive\바탕 화면\랩실 내용\astc-encoder-main\Source\astcenccli_toplevel.cpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>
