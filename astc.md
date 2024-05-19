@@ -66,3 +66,12 @@
 - **ASTC 헤더**: 압축된 데이터의 ASTC 블록 크기와 크기를 계산하기 위한 정보를 제공합니다.
 - **OpenGL ES**: 텍스처 준비, 로드 및 구성 단계에 따라 ASTC 데이터를 사용합니다.
 - **Vulkan**: ASTC는 Vulkan의 코어 기능으로, 지원 여부를 확인한 후 ASTC 데이터를 업로드합니다.
+
+
+[astc 인코더 사용법](https://developer.arm.com/documentation/102162/0430/About-Arm-ASTC-Encoder?lang=en)
+<https://developer.arm.com/documentation/102162/0430/About-Arm-ASTC-Encoder?lang=en>
+
+[astc 인코더 설명](https://developer.arm.com/Tools%20and%20Software/ASTC%20Encoder)
+<https://developer.arm.com/Tools%20and%20Software/ASTC%20Encoder>
+
+실행화면
