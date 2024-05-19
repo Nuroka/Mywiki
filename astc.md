@@ -75,3 +75,4 @@
 <https://developer.arm.com/Tools%20and%20Software/ASTC%20Encoder>
 
 실행화면
+![캡처화면](https://github.com/Nuroka/Mywiki/blob/main/%EC%84%A0%ED%98%95%20LDR%20%EC%83%89%EC%83%81%20%ED%94%84%EB%A1%9C%ED%95%84%20%EC%82%AC%EC%9A%A9%EC%8B%9C%20%ED%92%88%EC%A7%88%20%EC%B8%A1%EC%A0%95.PNG)
