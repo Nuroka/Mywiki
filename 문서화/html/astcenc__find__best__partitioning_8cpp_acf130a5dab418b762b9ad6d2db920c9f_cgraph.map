@@ -1,0 +1,9 @@
+<map id="kmeans_update" name="kmeans_update">
+<area shape="rect" id="Node000001" title="Compute new cluster centers based on their center of gravity." alt="" coords="5,31,120,56"/>
+<area shape="rect" id="Node000002" href="$structimage__block.html#af99de7d75e1e380b31d70d131509caa9" title="Get an RGBA texel value from the data." alt="" coords="168,5,299,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,32,154,27,155,32,121,37"/>
+<area shape="rect" id="Node000003" href="$structvfloat4.html#a04b5f338012dab6be0b2bd7910fcbcae" title="Factory that returns a vector of zeros." alt="" coords="188,55,279,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="121,49,175,56,174,62,120,54"/>
+<area shape="rect" id="Node000004" href="$structvfloat4.html#a9df51cb30b68d6d51ca607e64aa1ebf0" title="Construct from zero&#45;initialized value." alt="" coords="347,55,449,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="279,65,333,65,333,70,279,70"/>
+</map>

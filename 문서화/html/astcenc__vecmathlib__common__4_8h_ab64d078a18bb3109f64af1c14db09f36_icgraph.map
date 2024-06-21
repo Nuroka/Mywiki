@@ -1,0 +1,5 @@
+<map id="haccumulate" name="haccumulate">
+<area shape="rect" id="Node000001" title="Accumulate lane&#45;wise sums for a vector." alt="" coords="149,5,245,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__common__4_8h.html#a40fd3cc64fcafe4807ef1c7205a0c198" title="Accumulate lane&#45;wise sums for a masked vector." alt="" coords="5,5,101,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,21,102,21,102,15,136,15"/>
+</map>

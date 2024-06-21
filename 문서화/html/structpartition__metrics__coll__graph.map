@@ -1,0 +1,5 @@
+<map id="partition_metrics" name="partition_metrics">
+<area shape="rect" id="Node000001" title="Computed metrics about a partition in a block." alt="" coords="5,108,124,133"/>
+<area shape="rect" id="Node000002" href="$structvfloat4.html" title="4x32&#45;bit vectors, implemented using Armv8&#45;A NEON." alt="" coords="35,5,94,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,45,67,108,62,108,62,45"/>
+</map>

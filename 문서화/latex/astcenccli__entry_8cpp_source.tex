@@ -1,0 +1,225 @@
+\doxysection{astcenccli\+\_\+entry.\+cpp}
+\hypertarget{astcenccli__entry_8cpp_source}{}\label{astcenccli__entry_8cpp_source}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_entry.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_entry.cpp}}
+\mbox{\hyperlink{astcenccli__entry_8cpp}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00001}00001\ \textcolor{comment}{//\ SPDX-\/License-\/Identifier:\ Apache-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00003}00003\ \textcolor{comment}{//\ Copyright\ 2020-\/2024\ Arm\ Limited}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00004}00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00005}00005\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});\ you\ may\ not}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00006}00006\ \textcolor{comment}{//\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00007}00007\ \textcolor{comment}{//\ of\ the\ License\ at:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00008}00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00009}00009\ \textcolor{comment}{//\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00010}00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00011}00011\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00012}00012\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00013}00013\ \textcolor{comment}{//\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.\ See\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00014}00014\ \textcolor{comment}{//\ License\ for\ the\ specific\ language\ governing\ permissions\ and\ limitations}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00015}00015\ \textcolor{comment}{//\ under\ the\ License.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00016}00016\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00026}00026\ \textcolor{preprocessor}{\#include\ <cstdio>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00036}00036\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{astcenccli__entry_8cpp_a073d18880f24fd648661b01d2e20340e}{astcenc\_main}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{int}\ argc,}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{char}\ **argv);}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00040}00040\ \textcolor{preprocessor}{\#if\ (ASTCENC\_SSE\ >\ 20)\ \ \ \ ||\ (ASTCENC\_AVX\ >\ 0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00041}00041\ \textcolor{preprocessor}{\ \ \ \ (ASTCENC\_POPCNT\ >\ 0)\ ||\ (ASTCENC\_F16C\ >\ 0)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00043}00043\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ g\_init\ \{\ \textcolor{keyword}{false}\ \};}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00046}00046\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ g\_cpu\_has\_sse41\ \{\ \textcolor{keyword}{false}\ \};}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00049}00049\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ g\_cpu\_has\_avx2\ \{\ \textcolor{keyword}{false}\ \};}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00052}00052\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ g\_cpu\_has\_popcnt\ \{\ \textcolor{keyword}{false}\ \};}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00055}00055\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ g\_cpu\_has\_f16c\ \{\ \textcolor{keyword}{false}\ \};}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00057}00057\ \textcolor{comment}{/*\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00058}00058\ \textcolor{comment}{\ \ \ Platform\ code\ for\ Visual\ Studio}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00059}00059\ \textcolor{comment}{============================================================================\ */}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00060}00060\ \textcolor{preprocessor}{\#if\ !defined(\_\_clang\_\_)\ \&\&\ defined(\_MSC\_VER)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00061}00061\ \textcolor{preprocessor}{\#define\ WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00062}00062\ \textcolor{preprocessor}{\#include\ <windows.h>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00063}00063\ \textcolor{preprocessor}{\#include\ <intrin.h>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00068}00068\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ detect\_cpu\_isa()}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00069}00069\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{int}\ data[4];}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00072}00072\ \ \ \ \ \_\_cpuid(data,\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_id\ =\ data[0];}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{if}\ (num\_id\ >=\ 1)}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00076}00076\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \_\_cpuidex(data,\ 1,\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SSE41\ =\ Bank\ 1,\ ECX,\ bit\ 19}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ g\_cpu\_has\_sse41\ =\ data[2]\ \&\ (1\ <<\ 19)\ ?\ \textcolor{keyword}{true}\ :\ false;}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ POPCNT\ =\ Bank\ 1,\ ECX,\ bit\ 23}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ g\_cpu\_has\_popcnt\ =\ data[2]\ \&\ (1\ <<\ 23)\ ?\ \textcolor{keyword}{true}\ :\ false;}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ F16C\ =\ Bank\ 1,\ ECX,\ bit\ 29}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ g\_cpu\_has\_f16c\ =\ data[2]\ \&\ (1\ <<\ 29)\ ?\ \textcolor{keyword}{true}\ :\ false;}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{if}\ (num\_id\ >=\ 7)}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00087}00087\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \_\_cpuidex(data,\ 7,\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ AVX2\ =\ Bank\ 7,\ EBX,\ bit\ 5}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ g\_cpu\_has\_avx2\ =\ data[1]\ \&\ (1\ <<\ 5)\ ?\ \textcolor{keyword}{true}\ :\ false;}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{comment}{//\ Ensure\ state\ bits\ are\ updated\ before\ init\ flag\ is\ updated}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00094}00094\ \ \ \ \ MemoryBarrier();}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00095}00095\ \ \ \ \ g\_init\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00096}00096\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00098}00098\ \textcolor{comment}{/*\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00099}00099\ \textcolor{comment}{\ \ \ Platform\ code\ for\ GCC\ and\ Clang}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00100}00100\ \textcolor{comment}{============================================================================\ */}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00101}00101\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00102}00102\ \textcolor{preprocessor}{\#include\ <cpuid.h>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00107}00107\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ detect\_cpu\_isa()}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00108}00108\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ data[4];}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_get\_cpuid\_count(1,\ 0,\ \&data[0],\ \&data[1],\ \&data[2],\ \&data[3]))}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00112}00112\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SSE41\ =\ Bank\ 1,\ ECX,\ bit\ 19}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ g\_cpu\_has\_sse41\ =\ data[2]\ \&\ (1\ <<\ 19)\ ?\ \textcolor{keyword}{true}\ :\ false;}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ POPCNT\ =\ Bank\ 1,\ ECX,\ bit\ 23}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ g\_cpu\_has\_popcnt\ =\ data[2]\ \&\ (1\ <<\ 23)\ ?\ \textcolor{keyword}{true}\ :\ false;}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ F16C\ =\ Bank\ 1,\ ECX,\ bit\ 29}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ g\_cpu\_has\_f16c\ =\ data[2]\ \&\ (1\ <<\ 29)\ ?\ \textcolor{keyword}{true}\ :\ false;}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00119}00119\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00121}00121\ \ \ \ \ g\_cpu\_has\_avx2\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_get\_cpuid\_count(7,\ 0,\ \&data[0],\ \&data[1],\ \&data[2],\ \&data[3]))}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00123}00123\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ AVX2\ =\ Bank\ 7,\ EBX,\ bit\ 5}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ g\_cpu\_has\_avx2\ =\ data[1]\ \&\ (1\ <<\ 5)\ ?\ \textcolor{keyword}{true}\ :\ false;}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{comment}{//\ Ensure\ state\ bits\ are\ updated\ before\ init\ flag\ is\ updated}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00129}00129\ \ \ \ \ \_\_sync\_synchronize();}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00130}00130\ \ \ \ \ g\_init\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00131}00131\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00132}00132\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00134}00134\ \textcolor{preprocessor}{\#if\ ASTCENC\_POPCNT\ >\ 0}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00140}00140\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ cpu\_supports\_popcnt()}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00141}00141\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00142}00142\ \ \ \ \ \textcolor{keywordflow}{if}\ (!g\_init)}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00143}00143\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ detect\_cpu\_isa();}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00145}00145\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00147}00147\ \ \ \ \ \textcolor{keywordflow}{return}\ g\_cpu\_has\_popcnt;}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00148}00148\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00149}00149\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00151}00151\ \textcolor{preprocessor}{\#if\ ASTCENC\_F16C\ >\ 0}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00157}00157\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ cpu\_supports\_f16c()}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00158}00158\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00159}00159\ \ \ \ \ \textcolor{keywordflow}{if}\ (!g\_init)}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00160}00160\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ detect\_cpu\_isa();}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00162}00162\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00164}00164\ \ \ \ \ \textcolor{keywordflow}{return}\ g\_cpu\_has\_f16c;}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00165}00165\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00166}00166\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00168}00168\ \textcolor{preprocessor}{\#if\ ASTCENC\_SSE\ >=\ 41}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00174}00174\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ cpu\_supports\_sse41()}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00175}00175\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00176}00176\ \ \ \ \ \textcolor{keywordflow}{if}\ (!g\_init)}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00177}00177\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ detect\_cpu\_isa();}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00179}00179\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00181}00181\ \ \ \ \ \textcolor{keywordflow}{return}\ g\_cpu\_has\_sse41;}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00182}00182\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00183}00183\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00185}00185\ \textcolor{preprocessor}{\#if\ ASTCENC\_AVX\ >=\ 2}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00191}00191\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ cpu\_supports\_avx2()}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00192}00192\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00193}00193\ \ \ \ \ \textcolor{keywordflow}{if}\ (!g\_init)}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00194}00194\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ detect\_cpu\_isa();}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00196}00196\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00198}00198\ \ \ \ \ \textcolor{keywordflow}{return}\ g\_cpu\_has\_avx2;}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00199}00199\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00200}00200\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00205}00205\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenccli__internal_8h_a699ebbd5f0143120e8ccaa26ae386b56}{print\_error}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00206}00206\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ format}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00207}00207\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00208}00208\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%s"{}},\ format);}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00209}00209\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00220}00220\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{astcenccli__entry_8cpp_a3423e89c151a2658a30a62d4e470086a}{validate\_cpu\_isa}}()}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00221}00221\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00222}00222\ \textcolor{preprocessor}{\ \ \ \ \#if\ ASTCENC\_AVX\ >=\ 2}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!cpu\_supports\_avx2())}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenccli__internal_8h_a699ebbd5f0143120e8ccaa26ae386b56}{print\_error}}(\textcolor{stringliteral}{"{}ERROR:\ Host\ does\ not\ support\ AVX2\ ISA\ extension\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00228}00228\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00230}00230\ \textcolor{preprocessor}{\ \ \ \ \#if\ ASTCENC\_F16C\ >=\ 1}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!cpu\_supports\_f16c())}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenccli__internal_8h_a699ebbd5f0143120e8ccaa26ae386b56}{print\_error}}(\textcolor{stringliteral}{"{}ERROR:\ Host\ does\ not\ support\ F16C\ ISA\ extension\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00236}00236\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00238}00238\ \textcolor{preprocessor}{\ \ \ \ \#if\ ASTCENC\_SSE\ >=\ 41}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!cpu\_supports\_sse41())}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenccli__internal_8h_a699ebbd5f0143120e8ccaa26ae386b56}{print\_error}}(\textcolor{stringliteral}{"{}ERROR:\ Host\ does\ not\ support\ SSE4.1\ ISA\ extension\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00244}00244\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00245}00245\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00246}00246\ \textcolor{preprocessor}{\ \ \ \ \#if\ ASTCENC\_POPCNT\ >=\ 1}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!cpu\_supports\_popcnt())}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenccli__internal_8h_a699ebbd5f0143120e8ccaa26ae386b56}{print\_error}}(\textcolor{stringliteral}{"{}ERROR:\ Host\ does\ not\ support\ POPCNT\ ISA\ extension\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00252}00252\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00254}00254\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00255}00255\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00256}00256\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00257}00257\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00259}00259\ \textcolor{comment}{//\ Fallback\ for\ cases\ with\ no\ dynamic\ ISA\ availability}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00260}\mbox{\hyperlink{astcenccli__entry_8cpp_a3423e89c151a2658a30a62d4e470086a}{00260}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{astcenccli__entry_8cpp_a3423e89c151a2658a30a62d4e470086a}{validate\_cpu\_isa}}()}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00261}00261\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00262}00262\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00263}00263\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00265}00265\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00266}00266\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00267}\mbox{\hyperlink{astcenccli__entry_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{00267}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{astcenccli__entry_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00268}00268\ \ \ \ \ \textcolor{keywordtype}{int}\ argc,}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00269}00269\ \ \ \ \ \textcolor{keywordtype}{char}\ **argv}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00270}00270\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00271}00271\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{astcenccli__entry_8cpp_a3423e89c151a2658a30a62d4e470086a}{validate\_cpu\_isa}}())}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00272}00272\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00274}00274\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00276}00276\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenccli__entry_8cpp_a073d18880f24fd648661b01d2e20340e}{astcenc\_main}}(argc,\ argv);}
+\DoxyCodeLine{\Hypertarget{astcenccli__entry_8cpp_source_l00277}00277\ \}}
+
+\end{DoxyCode}

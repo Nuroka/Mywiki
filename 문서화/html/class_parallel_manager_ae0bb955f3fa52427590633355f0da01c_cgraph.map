@@ -1,0 +1,5 @@
+<map id="ParallelManager::get_task_assignment" name="ParallelManager::get_task_assignment">
+<area shape="rect" id="Node000001" title="Request a task assignment." alt="" coords="5,5,147,45"/>
+<area shape="rect" id="Node000002" href="$namespaceastc.html#af78c0d31374aa9923633a3a2abf8d738" title="Return the minimum of two values." alt="" coords="195,13,271,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,23,181,23,181,28,147,28"/>
+</map>

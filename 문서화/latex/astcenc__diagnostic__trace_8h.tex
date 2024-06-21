@@ -1,0 +1,72 @@
+\doxysection{C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/astcenc\+\_\+diagnostic\+\_\+trace.h 파일 참조}
+\hypertarget{astcenc__diagnostic__trace_8h}{}\label{astcenc__diagnostic__trace_8h}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_diagnostic\_trace.h@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_diagnostic\_trace.h}}
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__diagnostic__trace_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{astcenc__diagnostic__trace_8h_ae040957570ced46496efbca3b734cffa}{TRACE\+\_\+\+NODE}}(name, ...)
+\begin{DoxyCompactList}\small\item\em This module provides a set of diagnostic tracing utilities. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\+\_\+add\+\_\+data}}(...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{매크로 문서화}
+\Hypertarget{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}\index{astcenc\_diagnostic\_trace.h@{astcenc\_diagnostic\_trace.h}!trace\_add\_data@{trace\_add\_data}}
+\index{trace\_add\_data@{trace\_add\_data}!astcenc\_diagnostic\_trace.h@{astcenc\_diagnostic\_trace.h}}
+\doxysubsubsection{\texorpdfstring{trace\_add\_data}{trace\_add\_data}}
+{\footnotesize\ttfamily \label{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268} 
+\#define trace\+\_\+add\+\_\+data(\begin{DoxyParamCaption}\item[{}]{}...{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{astcenc__diagnostic__trace_8h_source}{astcenc\+\_\+diagnostic\+\_\+trace.\+h}} 파일의 \mbox{\hyperlink{astcenc__diagnostic__trace_8h_source_l00215}{215}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenc__diagnostic__trace_8h_ae040957570ced46496efbca3b734cffa}\index{astcenc\_diagnostic\_trace.h@{astcenc\_diagnostic\_trace.h}!TRACE\_NODE@{TRACE\_NODE}}
+\index{TRACE\_NODE@{TRACE\_NODE}!astcenc\_diagnostic\_trace.h@{astcenc\_diagnostic\_trace.h}}
+\doxysubsubsection{\texorpdfstring{TRACE\_NODE}{TRACE\_NODE}}
+{\footnotesize\ttfamily \label{astcenc__diagnostic__trace_8h_ae040957570ced46496efbca3b734cffa} 
+\#define TRACE\+\_\+\+NODE(\begin{DoxyParamCaption}\item[{}]{name}{, }\item[{}]{}...{}\end{DoxyParamCaption})}
+
+
+
+This module provides a set of diagnostic tracing utilities. 
+
+\hypertarget{astcenc__diagnostic__trace_8h_autotoc_md6}{}\doxysubsection{\texorpdfstring{Overview}{Overview}}\label{astcenc__diagnostic__trace_8h_autotoc_md6}
+The built-\/in diagnostic trace tool generates a hierarchical JSON tree structure. The tree hierarchy contains three levels\+:
+
+
+\begin{DoxyItemize}
+\item block
+\begin{DoxyItemize}
+\item pass
+\begin{DoxyItemize}
+\item candidate
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+One block node exists for each compressed block in the image. One pass node exists for each major pass (N partition, M planes, O components) applied to a block. One candidate node exists for each encoding candidate trialed for a pass.
+
+Each node contains both the hierarchy but also a number of attributes which explain the behavior. For example, the block node contains the block coordinates in the image, the pass explains the pass configuration, and the candidate will explain the candidate encoding such as weight decimation, refinement error, etc.
+
+Trace Nodes are designed as scope-\/managed C++ objects with stack-\/like push/pop behavior. Constructing a trace node on the stack will automatically add it to the current node as a child, and then make it the current node. Destroying the current node will pop the stack and set the parent to the current node. This provides a robust mechanism for ensuring reliable nesting in the tree structure.
+
+A set of utility macros are provided to add attribute annotations to the current trace node.\hypertarget{astcenc__diagnostic__trace_8h_autotoc_md7}{}\doxysubsection{\texorpdfstring{Usage}{Usage}}\label{astcenc__diagnostic__trace_8h_autotoc_md7}
+Create Trace Nodes on the stack using the {\ttfamily \doxylink{astcenc__diagnostic__trace_8h_ae040957570ced46496efbca3b734cffa}{TRACE\+\_\+\+NODE()}} macro. This will compile-\/out completely in builds with diagnostics disabled.
+
+Add annotations to the current trace node using the {\ttfamily \doxylink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\+\_\+add\+\_\+data()}} macro. This will similarly compile out completely in builds with diagnostics disabled.
+
+If you need to add additional code to support diagnostics-\/only behavior wrap it in preprocessor guards\+: \begin{DoxyVerb}#if defined(ASTCENC_DIAGNOSTICS)
+#endif
+\end{DoxyVerb}
+ 
+
+\mbox{\hyperlink{astcenc__diagnostic__trace_8h_source}{astcenc\+\_\+diagnostic\+\_\+trace.\+h}} 파일의 \mbox{\hyperlink{astcenc__diagnostic__trace_8h_source_l00213}{213}} 번째 라인에서 정의되었습니다.
+

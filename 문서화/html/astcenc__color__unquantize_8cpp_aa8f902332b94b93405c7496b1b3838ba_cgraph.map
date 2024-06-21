@@ -1,0 +1,16 @@
+<map id="rgba_unpack" name="rgba_unpack">
+<area shape="rect" id="Node000001" title="Unpack an LDR RGBA color that uses direct encoding." alt="" coords="5,31,101,56"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__common__4_8h.html#a48e833d0cfdf950b6bc3431fce00507e" title="Return the horizontal sum of RGB vector lanes as a scalar." alt="" coords="164,5,253,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,33,150,25,151,30,102,38"/>
+<area shape="rect" id="Node000004" href="$astcenc__color__unquantize_8cpp.html#a604a48c74e6d1c8476146b0955331344" title="Functions for color unquantization." alt="" coords="149,55,268,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="102,48,136,53,135,59,101,53"/>
+<area shape="rect" id="Node000003" href="$structvint4.html#a01e3f7debf73dc6c757fa36d585c9d17" title="Get the scalar from a single lane." alt="" coords="316,5,396,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="253,15,302,15,302,21,253,21"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="246,52,303,33,305,38,248,57"/>
+<area shape="rect" id="Node000005" href="$astcenc__vecmathlib__avx2__8_8h.html#aff39374b256d568d084ba4fd2fed7819" title="Arithmetic shift right." alt="" coords="336,55,376,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="268,65,322,65,322,70,268,70"/>
+<area shape="rect" id="Node000006" href="$astcenc__vecmathlib__avx2__8_8h.html#ad922a3ed6098767968916265154b6f82" title="Return a 8&#45;bit mask code indicating mask status." alt="" coords="329,104,383,129"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="248,78,316,101,314,106,246,83"/>
+<area shape="rect" id="Node000007" href="$astcenc__vecmathlib__avx2__8_8h.html#a844ab5b69b84569f033be33bf5fb9fbc" title="Return lanes from b if cond is set, else a." alt="" coords="327,153,385,179"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="230,78,317,138,325,144,322,148,315,143,227,82"/>
+</map>

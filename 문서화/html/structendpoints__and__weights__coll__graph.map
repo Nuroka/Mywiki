@@ -1,0 +1,7 @@
+<map id="endpoints_and_weights" name="endpoints_and_weights">
+<area shape="rect" id="Node000001" title="Data structure storing the color endpoints and weights." alt="" coords="5,196,163,221"/>
+<area shape="rect" id="Node000002" href="$structendpoints.html" title="Data structure storing the color endpoints for a block." alt="" coords="45,108,123,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,147,87,195,81,195,81,147"/>
+<area shape="rect" id="Node000003" href="$structvfloat4.html" title="4x32&#45;bit vectors, implemented using Armv8&#45;A NEON." alt="" coords="55,5,113,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,45,87,108,81,108,81,45"/>
+</map>

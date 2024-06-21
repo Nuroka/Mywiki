@@ -1,0 +1,9 @@
+<map id="load_cimage" name="load_cimage">
+<area shape="rect" id="Node000001" title="Load a compressed .astc image." alt="" coords="5,55,100,80"/>
+<area shape="rect" id="Node000002" href="$namespaceastc.html#a83a55552d03399cdff6cf2fed8312c9f" title="Return the maximum of two values." alt="" coords="159,5,239,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,52,147,33,148,38,92,57"/>
+<area shape="rect" id="Node000003" href="$astcenccli__internal_8h.html#a699ebbd5f0143120e8ccaa26ae386b56" title="Print a string to stderr." alt="" coords="159,55,239,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="100,65,145,65,145,70,100,70"/>
+<area shape="rect" id="Node000004" href="$astcenccli__image__load__store_8cpp.html#ab40e61c869dc467310a636beab705eb9" title=" " alt="" coords="148,104,251,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="92,78,148,97,147,102,90,83"/>
+</map>

@@ -1,0 +1,257 @@
+\doxysection{C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/astcenccli\+\_\+platform\+\_\+dependents.cpp 파일 참조}
+\hypertarget{astcenccli__platform__dependents_8cpp}{}\label{astcenccli__platform__dependents_8cpp}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_platform\_dependents.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_platform\_dependents.cpp}}
+{\ttfamily \#include "{}astcenccli\+\_\+internal.\+h"{}}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+astcenccli\+\_\+platform\+\_\+dependents.\+cpp에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenccli__platform__dependents_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlaunch__desc}{launch\+\_\+desc}}
+\begin{DoxyCompactList}\small\item\em Worker thread helper payload for launch\+\_\+threads. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_a17e6f066d58e29a143787fe2f78d19d6}{get\+\_\+cpu\+\_\+count}} ()
+\begin{DoxyCompactList}\small\item\em Platform-\/specific function implementations. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_af7ab092ab10d65db3b9051a12420fa52}{get\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Get the current time. \end{DoxyCompactList}\item 
+static void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_ab71f663aee63a901f990d117faf0290d}{launch\+\_\+threads\+\_\+helper}} (void \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Helper function to translate thread entry points. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_aaa9dcd56cd7089c481e7ef8355ae5c2f}{launch\+\_\+threads}} (const char \texorpdfstring{$\ast$}{*}operation, int thread\+\_\+count, void(\texorpdfstring{$\ast$}{*}func)(int, int, void \texorpdfstring{$\ast$}{*}), void \texorpdfstring{$\ast$}{*}payload)
+\begin{DoxyCompactList}\small\item\em Launch N worker threads and wait for them to complete. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\Hypertarget{astcenccli__platform__dependents_8cpp_a17e6f066d58e29a143787fe2f78d19d6}\index{astcenccli\_platform\_dependents.cpp@{astcenccli\_platform\_dependents.cpp}!get\_cpu\_count@{get\_cpu\_count}}
+\index{get\_cpu\_count@{get\_cpu\_count}!astcenccli\_platform\_dependents.cpp@{astcenccli\_platform\_dependents.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_cpu\_count()}{get\_cpu\_count()}}
+{\footnotesize\ttfamily \label{astcenccli__platform__dependents_8cpp_a17e6f066d58e29a143787fe2f78d19d6} 
+int get\+\_\+cpu\+\_\+count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Platform-\/specific function implementations. 
+
+Get the number of CPU cores.
+
+This module contains functions with strongly OS-\/dependent implementations\+:
+
+
+\begin{DoxyItemize}
+\item CPU count queries
+\item Threading
+\item Time
+\end{DoxyItemize}
+
+In addition to the basic thread abstraction (which is native pthreads on all platforms, except Windows where it is an emulation of pthreads), a utility function to create N threads and wait for them to complete a batch task has also been provided. 
+
+\mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source}{astcenccli\+\_\+platform\+\_\+dependents.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source_l00155}{155}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00156\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(sysconf(\_SC\_NPROCESSORS\_ONLN));}
+\DoxyCodeLine{00158\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenccli__platform__dependents_8cpp_a17e6f066d58e29a143787fe2f78d19d6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenccli__platform__dependents_8cpp_af7ab092ab10d65db3b9051a12420fa52}\index{astcenccli\_platform\_dependents.cpp@{astcenccli\_platform\_dependents.cpp}!get\_time@{get\_time}}
+\index{get\_time@{get\_time}!astcenccli\_platform\_dependents.cpp@{astcenccli\_platform\_dependents.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_time()}{get\_time()}}
+{\footnotesize\ttfamily \label{astcenccli__platform__dependents_8cpp_af7ab092ab10d65db3b9051a12420fa52} 
+double get\+\_\+time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the current time. 
+
+\begin{DoxyReturn}{반환값}
+The current time in seconds since arbitrary epoch. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source}{astcenccli\+\_\+platform\+\_\+dependents.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source_l00161}{161}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00162\ \{}
+\DoxyCodeLine{00163\ \ \ \ \ timeval\ tv;}
+\DoxyCodeLine{00164\ \ \ \ \ gettimeofday(\&tv,\ 0);}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(tv.tv\_sec)\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(tv.tv\_usec)\ *\ 1.0e-\/6;}
+\DoxyCodeLine{00166\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{astcenccli__platform__dependents_8cpp_af7ab092ab10d65db3b9051a12420fa52_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenccli__platform__dependents_8cpp_aaa9dcd56cd7089c481e7ef8355ae5c2f}\index{astcenccli\_platform\_dependents.cpp@{astcenccli\_platform\_dependents.cpp}!launch\_threads@{launch\_threads}}
+\index{launch\_threads@{launch\_threads}!astcenccli\_platform\_dependents.cpp@{astcenccli\_platform\_dependents.cpp}}
+\doxysubsubsection{\texorpdfstring{launch\_threads()}{launch\_threads()}}
+{\footnotesize\ttfamily \label{astcenccli__platform__dependents_8cpp_aaa9dcd56cd7089c481e7ef8355ae5c2f} 
+void launch\+\_\+threads (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{operation}{, }\item[{int}]{thread\+\_\+count}{, }\item[{void(\texorpdfstring{$\ast$}{*}}]{func~}{)(int, int, void \texorpdfstring{$\ast$}{*}), }\item[{void \texorpdfstring{$\ast$}{*}}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Launch N worker threads and wait for them to complete. 
+
+All threads run the same thread function, and have the same thread payload, but are given a unique thread ID (0 .. N-\/1) as a parameter to the run function to allow thread-\/specific behavior.
+
+
+\begin{DoxyParams}{매개변수}
+{\em operation} & The name of the operation for this async task. \\
+\hline
+{\em thread\+\_\+count} & The number of threads to spawn. \\
+\hline
+{\em func} & The function to execute. Must have the signature\+: void (int thread\+\_\+count, int thread\+\_\+id, void\texorpdfstring{$\ast$}{*} payload) \\
+\hline
+{\em payload} & Pointer to an opaque thread payload object. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source}{astcenccli\+\_\+platform\+\_\+dependents.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source_l00204}{204}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00209\ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{comment}{//\ Directly\ execute\ single\ threaded\ workloads\ on\ this\ thread}}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordflow}{if}\ (thread\_count\ <=\ 1)}
+\DoxyCodeLine{00212\ \ \ \ \ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ func(1,\ 0,\ payload);}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00215\ \ \ \ \ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{comment}{//\ Otherwise\ spawn\ worker\ threads}}
+\DoxyCodeLine{00218\ \ \ \ \ \mbox{\hyperlink{structlaunch__desc}{launch\_desc}}\ *thread\_descs\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structlaunch__desc}{launch\_desc}}[thread\_count];\ \ \ \ }
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordtype}{int}\ actual\_thread\_count\ \{\ 0\ \};}
+\DoxyCodeLine{00220\ \ \ \ \ }
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ thread\_count;\ i++)}
+\DoxyCodeLine{00222\ \ \ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ thread\_descs[actual\_thread\_count].\mbox{\hyperlink{structlaunch__desc_ae5fb121d0d0e69a2d001d44e2afffec1}{thread\_count}}\ =\ thread\_count;}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ thread\_descs[actual\_thread\_count].\mbox{\hyperlink{structlaunch__desc_a18fa1b8ed8d5761f64f2a5cd13ebcf97}{thread\_id}}\ =\ actual\_thread\_count;}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ thread\_descs[actual\_thread\_count].\mbox{\hyperlink{structlaunch__desc_af301f9649123b837ecb5e6106392e7c9}{payload}}\ =\ payload;}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ thread\_descs[actual\_thread\_count].\mbox{\hyperlink{structlaunch__desc_a3290fa651bf1def33151f086e69c5291}{func}}\ =\ func;}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Handle\ pthread\_create\ failing\ by\ simply\ using\ fewer\ threads}}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ error\ =\ pthread\_create(}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \&(thread\_descs[actual\_thread\_count].thread\_handle),}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_ab71f663aee63a901f990d117faf0290d}{launch\_threads\_helper}},}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(thread\_descs\ +\ actual\_thread\_count));\ \ \ \ \ \ \ }
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Track\ how\ many\ threads\ we\ actually\ created}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!error)}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Windows\ needs\ explicit\ thread\ assignment\ to\ handle\ large\ core\ count\ systems}}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#if\ defined(\_WIN32)\ \&\&\ !defined(\_\_CYGWIN\_\_)}}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_group\_affinity(}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thread\_descs[actual\_thread\_count].thread\_handle,}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actual\_thread\_count);}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ actual\_thread\_count++;}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00247\ \ \ \ \ \}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{comment}{//\ If\ we\ did\ not\ create\ thread\_count\ threads\ then\ emit\ a\ warning}}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordflow}{if}\ (actual\_thread\_count\ !=\ thread\_count)}
+\DoxyCodeLine{00251\ \ \ \ \ \{\ \ \ \ \ \ \ }
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ log\_count\ =\ actual\_thread\_count\ ==\ 0\ ?\ 1\ :\ actual\_thread\_count;}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ log\_s\ =\ log\_count\ ==\ 1\ ?\ \textcolor{stringliteral}{"{}"{}}\ :\ \textcolor{stringliteral}{"{}s"{}};}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}WARNING:\ \%s\ using\ \%d\ thread\%s\ due\ to\ thread\ creation\ error\(\backslash\)n\(\backslash\)n"{}},}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ operation,\ log\_count,\ log\_s);}
+\DoxyCodeLine{00256\ \ \ \ \ \}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{comment}{//\ If\ we\ managed\ to\ spawn\ any\ threads\ wait\ for\ them\ to\ complete}}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordflow}{if}\ (actual\_thread\_count\ !=\ 0)}
+\DoxyCodeLine{00260\ \ \ \ \ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ actual\_thread\_count;\ i++)}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ pthread\_join(thread\_descs[i].thread\_handle,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00265\ \ \ \ \ \}}
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{comment}{//\ Else\ fall\ back\ to\ using\ this\ thread}}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00268\ \ \ \ \ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ func(1,\ 0,\ payload);}
+\DoxyCodeLine{00270\ \ \ \ \ \}}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keyword}{delete}[]\ thread\_descs;}
+\DoxyCodeLine{00273\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{astcenccli__platform__dependents_8cpp_aaa9dcd56cd7089c481e7ef8355ae5c2f_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenccli__platform__dependents_8cpp_aaa9dcd56cd7089c481e7ef8355ae5c2f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenccli__platform__dependents_8cpp_ab71f663aee63a901f990d117faf0290d}\index{astcenccli\_platform\_dependents.cpp@{astcenccli\_platform\_dependents.cpp}!launch\_threads\_helper@{launch\_threads\_helper}}
+\index{launch\_threads\_helper@{launch\_threads\_helper}!astcenccli\_platform\_dependents.cpp@{astcenccli\_platform\_dependents.cpp}}
+\doxysubsubsection{\texorpdfstring{launch\_threads\_helper()}{launch\_threads\_helper()}}
+{\footnotesize\ttfamily \label{astcenccli__platform__dependents_8cpp_ab71f663aee63a901f990d117faf0290d} 
+static void \texorpdfstring{$\ast$}{*} launch\+\_\+threads\+\_\+helper (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Helper function to translate thread entry points. 
+
+Convert a (void\texorpdfstring{$\ast$}{*}) thread entry to an (int, void\texorpdfstring{$\ast$}{*}) thread entry, where the integer contains the thread ID in the thread pool.
+
+
+\begin{DoxyParams}{매개변수}
+{\em p} & The thread launch helper payload. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source}{astcenccli\+\_\+platform\+\_\+dependents.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source_l00195}{195}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00197\ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \mbox{\hyperlink{structlaunch__desc}{launch\_desc}}*\ ltd\ =\ \textcolor{keyword}{reinterpret\_cast<}\mbox{\hyperlink{structlaunch__desc}{launch\_desc}}*\textcolor{keyword}{>}(p);}
+\DoxyCodeLine{00199\ \ \ \ \ ltd-\/>\mbox{\hyperlink{structlaunch__desc_a3290fa651bf1def33151f086e69c5291}{func}}(ltd-\/>\mbox{\hyperlink{structlaunch__desc_ae5fb121d0d0e69a2d001d44e2afffec1}{thread\_count}},\ ltd-\/>\mbox{\hyperlink{structlaunch__desc_a18fa1b8ed8d5761f64f2a5cd13ebcf97}{thread\_id}},\ ltd-\/>\mbox{\hyperlink{structlaunch__desc_af301f9649123b837ecb5e6106392e7c9}{payload}});}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00201\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenccli__platform__dependents_8cpp_ab71f663aee63a901f990d117faf0290d_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,13 @@
+digraph "load_dds_uncompressed_image"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="load_dds_uncompressed\l_image",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Load an uncompressed DDS image using the local custom loader."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="alloc_image",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__image_8cpp.html#a860f8be85c860429c0df12b581015b68",tooltip="Functions for creating in-memory ASTC image structures."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="copy_scanline",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__image__load__store_8cpp.html#a46a5fd770b78f8512d65273a03d0b6dc",tooltip="Copy a scanline from a source file and expand to a canonical format."];
+}

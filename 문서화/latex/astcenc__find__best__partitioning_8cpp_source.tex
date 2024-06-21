@@ -1,0 +1,672 @@
+\doxysection{astcenc\+\_\+find\+\_\+best\+\_\+partitioning.\+cpp}
+\hypertarget{astcenc__find__best__partitioning_8cpp_source}{}\label{astcenc__find__best__partitioning_8cpp_source}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_find\_best\_partitioning.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_find\_best\_partitioning.cpp}}
+\mbox{\hyperlink{astcenc__find__best__partitioning_8cpp}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00001}00001\ \textcolor{comment}{//\ SPDX-\/License-\/Identifier:\ Apache-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00003}00003\ \textcolor{comment}{//\ Copyright\ 2011-\/2023\ Arm\ Limited}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00004}00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00005}00005\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});\ you\ may\ not}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00006}00006\ \textcolor{comment}{//\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00007}00007\ \textcolor{comment}{//\ of\ the\ License\ at:}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00008}00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00009}00009\ \textcolor{comment}{//\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00010}00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00011}00011\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00012}00012\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00013}00013\ \textcolor{comment}{//\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.\ See\ the}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00014}00014\ \textcolor{comment}{//\ License\ for\ the\ specific\ language\ governing\ permissions\ and\ limitations}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00015}00015\ \textcolor{comment}{//\ under\ the\ License.}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00016}00016\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00018}00018\ \textcolor{preprocessor}{\#if\ !defined(ASTCENC\_DECOMPRESS\_ONLY)}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00049}00049\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00050}00050\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{astcenc__internal_8h}{astcenc\_internal.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00060}\mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_acfcac2ef43cb03621ea25d3f6673c19e}{00060}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_acfcac2ef43cb03621ea25d3f6673c19e}{kmeans\_init}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structimage__block}{image\_block}}\&\ blk,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\_count,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ cluster\_centers[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}]}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00065}00065\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00066}00066\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(texel\_count\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00067}00067\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partition\_count\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ clusters\_selected\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{float}\ distances[\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\_MAX\_TEXELS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{comment}{//\ Pick\ a\ random\ sample\ as\ first\ cluster\ center;\ 145897\ from\ random.org}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ sample\ =\ 145897\ \%\ texel\_count;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00074}00074\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ center\_color\ =\ blk.\mbox{\hyperlink{structimage__block_af99de7d75e1e380b31d70d131509caa9}{texel}}(sample);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00075}00075\ \ \ \ \ cluster\_centers[clusters\_selected]\ =\ center\_color;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00076}00076\ \ \ \ \ clusters\_selected++;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ distance\ to\ the\ first\ cluster\ center}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordtype}{float}\ distance\_sum\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00081}00081\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\ =\ blk.\mbox{\hyperlink{structimage__block_af99de7d75e1e380b31d70d131509caa9}{texel}}(i);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ diff\ =\ color\ -\/\ center\_color;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distance\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a53a7d8285fd42b50cf3600a004db34ac}{dot\_s}}(diff\ *\ diff,\ blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}});}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ distance\_sum\ +=\ distance;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ distances[i]\ =\ distance;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{comment}{//\ More\ numbers\ from\ random.org\ for\ weighted-\/random\ center\ selection}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ cluster\_cutoffs[9]\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ 0.626220f,\ 0.932770f,\ 0.275454f,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ 0.318558f,\ 0.240113f,\ 0.009190f,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ 0.347661f,\ 0.731960f,\ 0.156391f}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00094}00094\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ cutoff\ =\ (clusters\_selected\ -\/\ 1)\ +\ 3\ *\ (partition\_count\ -\/\ 2);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{comment}{//\ Pick\ the\ remaining\ samples\ as\ needed}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00100}00100\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pick\ the\ next\ center\ in\ a\ weighted-\/random\ fashion.}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ summa\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distance\_cutoff\ =\ distance\_sum\ *\ cluster\_cutoffs[cutoff++];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (sample\ =\ 0;\ sample\ <\ texel\_count;\ sample++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ summa\ +=\ distances[sample];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (summa\ >=\ distance\_cutoff)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Clamp\ to\ a\ valid\ range\ and\ store\ the\ selected\ cluster\ center}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ sample\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(sample,\ texel\_count\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ center\_color\ =\ blk.\mbox{\hyperlink{structimage__block_af99de7d75e1e380b31d70d131509caa9}{texel}}(sample);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ cluster\_centers[clusters\_selected++]\ =\ center\_color;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clusters\_selected\ >=\ partition\_count)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ distance\ to\ the\ new\ cluster\ center,\ keep\ the\ min\ dist}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ distance\_sum\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\ =\ blk.\mbox{\hyperlink{structimage__block_af99de7d75e1e380b31d70d131509caa9}{texel}}(i);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ diff\ =\ color\ -\/\ center\_color;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distance\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a53a7d8285fd42b50cf3600a004db34ac}{dot\_s}}(diff\ *\ diff,\ blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}});}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ distance\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(distance,\ distances[i]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ distance\_sum\ +=\ distance;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ distances[i]\ =\ distance;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00135}00135\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00146}\mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a48c3e037a653156f4c4d4643f267ba3f}{00146}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a48c3e037a653156f4c4d4643f267ba3f}{kmeans\_assign}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00147}00147\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structimage__block}{image\_block}}\&\ blk,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00148}00148\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\_count,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00149}00149\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00150}00150\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ cluster\_centers[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}],}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00151}00151\ \ \ \ \ uint8\_t\ partition\_of\_texel[\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\_MAX\_TEXELS}}]}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00152}00152\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00153}00153\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(texel\_count\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00154}00154\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partition\_count\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00156}00156\ \ \ \ \ uint8\_t\ partition\_texel\_count[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}]\ \{\ 0\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00158}00158\ \ \ \ \ \textcolor{comment}{//\ Find\ the\ best\ partition\ for\ every\ texel}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00159}00159\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00160}00160\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ best\_distance\ =\ std::numeric\_limits<float>::max();}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ best\_partition\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\ =\ blk.\mbox{\hyperlink{structimage__block_af99de7d75e1e380b31d70d131509caa9}{texel}}(i);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ partition\_count;\ j++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ diff\ =\ color\ -\/\ cluster\_centers[j];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distance\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a53a7d8285fd42b50cf3600a004db34ac}{dot\_s}}(diff\ *\ diff,\ blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}});}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (distance\ <\ best\_distance)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_distance\ =\ distance;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_partition\ =\ j;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ partition\_of\_texel[i]\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(best\_partition);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ partition\_texel\_count[best\_partition]++;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00178}00178\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00180}00180\ \ \ \ \ \textcolor{comment}{//\ It\ is\ possible\ to\ get\ a\ situation\ where\ a\ partition\ ends\ up\ without\ any\ texels.\ In\ this\ case,}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00181}00181\ \ \ \ \ \textcolor{comment}{//\ assign\ texel\ N\ to\ partition\ N.\ This\ is\ silly,\ but\ ensures\ that\ every\ partition\ retains\ at}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00182}00182\ \ \ \ \ \textcolor{comment}{//\ least\ one\ texel.\ Reassigning\ a\ texel\ in\ this\ manner\ may\ cause\ another\ partition\ to\ go\ empty,}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00183}00183\ \ \ \ \ \textcolor{comment}{//\ so\ if\ we\ actually\ did\ a\ reassignment,\ run\ the\ whole\ loop\ over\ again.}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00184}00184\ \ \ \ \ \textcolor{keywordtype}{bool}\ problem\_case;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00185}00185\ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00186}00186\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ problem\_case\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (partition\_texel\_count[i]\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ partition\_texel\_count[partition\_of\_texel[i]]-\/-\/;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ partition\_texel\_count[i]++;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ partition\_of\_texel[i]\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(i);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ problem\_case\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00198}00198\ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (problem\_case);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00199}00199\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00210}\mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_acf130a5dab418b762b9ad6d2db920c9f}{00210}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_acf130a5dab418b762b9ad6d2db920c9f}{kmeans\_update}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00211}00211\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structimage__block}{image\_block}}\&\ blk,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00212}00212\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\_count,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00213}00213\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00214}00214\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ cluster\_centers[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}],}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00215}00215\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ partition\_of\_texel[\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\_MAX\_TEXELS}}]}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00216}00216\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00217}00217\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(texel\_count\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00218}00218\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partition\_count\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00220}00220\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\_sum[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}]\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}(),}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}(),}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}(),}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}()}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00225}00225\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00227}00227\ \ \ \ \ uint8\_t\ partition\_texel\_count[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}]\ \{\ 0\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00229}00229\ \ \ \ \ \textcolor{comment}{//\ Find\ the\ center-\/of-\/gravity\ in\ each\ cluster}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00230}00230\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00231}00231\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ uint8\_t\ partition\ =\ partition\_of\_texel[i];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ color\_sum[partition]\ +=\ blk.\mbox{\hyperlink{structimage__block_af99de7d75e1e380b31d70d131509caa9}{texel}}(i);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ partition\_texel\_count[partition]++;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00235}00235\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00237}00237\ \ \ \ \ \textcolor{comment}{//\ Set\ the\ center\ of\ gravity\ to\ be\ the\ new\ cluster\ center}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00238}00238\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00239}00239\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ scale\ =\ 1.0f\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(partition\_texel\_count[i]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ cluster\_centers[i]\ =\ color\_sum[i]\ *\ scale;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00242}00242\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00243}00243\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00253}\mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a6c9cd07ba65d36a11ebdd0363f3a3550}{00253}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ uint8\_t\ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a6c9cd07ba65d36a11ebdd0363f3a3550}{partition\_mismatch2}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00254}00254\ \ \ \ \ \textcolor{keyword}{const}\ uint64\_t\ a[2],}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00255}00255\ \ \ \ \ \textcolor{keyword}{const}\ uint64\_t\ b[2]}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00256}00256\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00257}00257\ \ \ \ \ \textcolor{keywordtype}{int}\ v1\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[0]\ \string^\ b[0])\ +\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[1]\ \string^\ b[1]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00258}00258\ \ \ \ \ \textcolor{keywordtype}{int}\ v2\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[0]\ \string^\ b[1])\ +\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[1]\ \string^\ b[0]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00260}00260\ \ \ \ \ \textcolor{comment}{//\ Divide\ by\ 2\ because\ XOR\ always\ counts\ errors\ twice,\ once\ when\ missing}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00261}00261\ \ \ \ \ \textcolor{comment}{//\ in\ the\ expected\ position,\ and\ again\ when\ present\ in\ the\ wrong\ partition}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00262}00262\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(\mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(v1,\ v2)\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00263}00263\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00273}\mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a9acad2d527657aaa0da1c424db437e37}{00273}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ uint8\_t\ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a9acad2d527657aaa0da1c424db437e37}{partition\_mismatch3}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00274}00274\ \ \ \ \ \textcolor{keyword}{const}\ uint64\_t\ a[3],}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00275}00275\ \ \ \ \ \textcolor{keyword}{const}\ uint64\_t\ b[3]}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00276}00276\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00277}00277\ \ \ \ \ \textcolor{keywordtype}{int}\ p00\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[0]\ \string^\ b[0]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00278}00278\ \ \ \ \ \textcolor{keywordtype}{int}\ p01\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[0]\ \string^\ b[1]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00279}00279\ \ \ \ \ \textcolor{keywordtype}{int}\ p02\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[0]\ \string^\ b[2]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00281}00281\ \ \ \ \ \textcolor{keywordtype}{int}\ p10\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[1]\ \string^\ b[0]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00282}00282\ \ \ \ \ \textcolor{keywordtype}{int}\ p11\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[1]\ \string^\ b[1]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00283}00283\ \ \ \ \ \textcolor{keywordtype}{int}\ p12\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[1]\ \string^\ b[2]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00285}00285\ \ \ \ \ \textcolor{keywordtype}{int}\ p20\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[2]\ \string^\ b[0]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00286}00286\ \ \ \ \ \textcolor{keywordtype}{int}\ p21\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[2]\ \string^\ b[1]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00287}00287\ \ \ \ \ \textcolor{keywordtype}{int}\ p22\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[2]\ \string^\ b[2]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00288}00288\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00289}00289\ \ \ \ \ \textcolor{keywordtype}{int}\ s0\ =\ p11\ +\ p22;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00290}00290\ \ \ \ \ \textcolor{keywordtype}{int}\ s1\ =\ p12\ +\ p21;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00291}00291\ \ \ \ \ \textcolor{keywordtype}{int}\ v0\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(s0,\ s1)\ +\ p00;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00292}00292\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00293}00293\ \ \ \ \ \textcolor{keywordtype}{int}\ s2\ =\ p10\ +\ p22;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00294}00294\ \ \ \ \ \textcolor{keywordtype}{int}\ s3\ =\ p12\ +\ p20;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00295}00295\ \ \ \ \ \textcolor{keywordtype}{int}\ v1\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(s2,\ s3)\ +\ p01;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00296}00296\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00297}00297\ \ \ \ \ \textcolor{keywordtype}{int}\ s4\ =\ p10\ +\ p21;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00298}00298\ \ \ \ \ \textcolor{keywordtype}{int}\ s5\ =\ p11\ +\ p20;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00299}00299\ \ \ \ \ \textcolor{keywordtype}{int}\ v2\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(s4,\ s5)\ +\ p02;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00300}00300\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00301}00301\ \ \ \ \ \textcolor{comment}{//\ Divide\ by\ 2\ because\ XOR\ always\ counts\ errors\ twice,\ once\ when\ missing}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00302}00302\ \ \ \ \ \textcolor{comment}{//\ in\ the\ expected\ position,\ and\ again\ when\ present\ in\ the\ wrong\ partition}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00303}00303\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(\mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(v0,\ v1,\ v2)\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00304}00304\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00314}\mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a3febec3fce459c429e5c4445c852d3bb}{00314}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ uint8\_t\ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a3febec3fce459c429e5c4445c852d3bb}{partition\_mismatch4}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00315}00315\ \ \ \ \ \textcolor{keyword}{const}\ uint64\_t\ a[4],}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00316}00316\ \ \ \ \ \textcolor{keyword}{const}\ uint64\_t\ b[4]}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00317}00317\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00318}00318\ \ \ \ \ \textcolor{keywordtype}{int}\ p00\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[0]\ \string^\ b[0]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00319}00319\ \ \ \ \ \textcolor{keywordtype}{int}\ p01\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[0]\ \string^\ b[1]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00320}00320\ \ \ \ \ \textcolor{keywordtype}{int}\ p02\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[0]\ \string^\ b[2]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00321}00321\ \ \ \ \ \textcolor{keywordtype}{int}\ p03\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[0]\ \string^\ b[3]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00322}00322\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00323}00323\ \ \ \ \ \textcolor{keywordtype}{int}\ p10\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[1]\ \string^\ b[0]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00324}00324\ \ \ \ \ \textcolor{keywordtype}{int}\ p11\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[1]\ \string^\ b[1]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00325}00325\ \ \ \ \ \textcolor{keywordtype}{int}\ p12\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[1]\ \string^\ b[2]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00326}00326\ \ \ \ \ \textcolor{keywordtype}{int}\ p13\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[1]\ \string^\ b[3]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00327}00327\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00328}00328\ \ \ \ \ \textcolor{keywordtype}{int}\ p20\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[2]\ \string^\ b[0]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00329}00329\ \ \ \ \ \textcolor{keywordtype}{int}\ p21\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[2]\ \string^\ b[1]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00330}00330\ \ \ \ \ \textcolor{keywordtype}{int}\ p22\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[2]\ \string^\ b[2]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00331}00331\ \ \ \ \ \textcolor{keywordtype}{int}\ p23\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[2]\ \string^\ b[3]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00332}00332\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00333}00333\ \ \ \ \ \textcolor{keywordtype}{int}\ p30\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[3]\ \string^\ b[0]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00334}00334\ \ \ \ \ \textcolor{keywordtype}{int}\ p31\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[3]\ \string^\ b[1]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00335}00335\ \ \ \ \ \textcolor{keywordtype}{int}\ p32\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[3]\ \string^\ b[2]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00336}00336\ \ \ \ \ \textcolor{keywordtype}{int}\ p33\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a652a0112f173bddee3a84a27eb679fda}{popcount}}(a[3]\ \string^\ b[3]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00337}00337\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00338}00338\ \ \ \ \ \textcolor{keywordtype}{int}\ mx23\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(p22\ +\ p33,\ p23\ +\ p32);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00339}00339\ \ \ \ \ \textcolor{keywordtype}{int}\ mx13\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(p21\ +\ p33,\ p23\ +\ p31);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00340}00340\ \ \ \ \ \textcolor{keywordtype}{int}\ mx12\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(p21\ +\ p32,\ p22\ +\ p31);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00341}00341\ \ \ \ \ \textcolor{keywordtype}{int}\ mx03\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(p20\ +\ p33,\ p23\ +\ p30);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00342}00342\ \ \ \ \ \textcolor{keywordtype}{int}\ mx02\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(p20\ +\ p32,\ p22\ +\ p30);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00343}00343\ \ \ \ \ \textcolor{keywordtype}{int}\ mx01\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(p21\ +\ p30,\ p20\ +\ p31);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00344}00344\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00345}00345\ \ \ \ \ \textcolor{keywordtype}{int}\ v0\ =\ p00\ +\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(p11\ +\ mx23,\ p12\ +\ mx13,\ p13\ +\ mx12);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00346}00346\ \ \ \ \ \textcolor{keywordtype}{int}\ v1\ =\ p01\ +\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(p10\ +\ mx23,\ p12\ +\ mx03,\ p13\ +\ mx02);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00347}00347\ \ \ \ \ \textcolor{keywordtype}{int}\ v2\ =\ p02\ +\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(p11\ +\ mx03,\ p10\ +\ mx13,\ p13\ +\ mx01);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00348}00348\ \ \ \ \ \textcolor{keywordtype}{int}\ v3\ =\ p03\ +\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(p11\ +\ mx02,\ p12\ +\ mx01,\ p10\ +\ mx12);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00350}00350\ \ \ \ \ \textcolor{comment}{//\ Divide\ by\ 2\ because\ XOR\ always\ counts\ errors\ twice,\ once\ when\ missing}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00351}00351\ \ \ \ \ \textcolor{comment}{//\ in\ the\ expected\ position,\ and\ again\ when\ present\ in\ the\ wrong\ partition}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00352}00352\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(\mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(v0,\ v1,\ v2,\ v3)\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00353}00353\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00354}00354\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00355}\mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a046ffcca4b17ecd136a86a06bde0b674}{00355}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a046ffcca4b17ecd136a86a06bde0b674}{mismatch\_dispatch}}\ =\ \textcolor{keywordtype}{unsigned}\ int\ (*)(\textcolor{keyword}{const}\ uint64\_t*,\ \textcolor{keyword}{const}\ uint64\_t*);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00356}00356\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00365}\mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a4567304c86889e62a6cf2b5a391d6260}{00365}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a4567304c86889e62a6cf2b5a391d6260}{count\_partition\_mismatch\_bits}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00366}00366\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__size__descriptor}{block\_size\_descriptor}}\&\ bsd,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00367}00367\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00368}00368\ \ \ \ \ \textcolor{keyword}{const}\ uint64\_t\ bitmaps[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}],}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00369}00369\ \ \ \ \ uint8\_t\ mismatch\_counts[\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\_MAX\_PARTITIONINGS}}]}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00370}00370\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00371}00371\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ active\_count\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_aecc5b82b77caa9b3bf69294d06f84e19}{partitioning\_count\_selected}}[partition\_count\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00372}00372\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(active\_count\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00373}00373\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00374}00374\ \ \ \ \ \textcolor{keywordflow}{if}\ (partition\_count\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00375}00375\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ active\_count;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ mismatch\_counts[i]\ =\ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a6c9cd07ba65d36a11ebdd0363f3a3550}{partition\_mismatch2}}(bitmaps,\ bsd.\mbox{\hyperlink{structblock__size__descriptor_afb199f7b25412c63ee070afc4f22d647}{coverage\_bitmaps\_2}}[i]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ assert(mismatch\_counts[i]\ <\ \mbox{\hyperlink{astcenc__internal_8h_a24bfd76e0fe1130b9741b58cc3e2b675}{BLOCK\_MAX\_KMEANS\_TEXELS}});}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ assert(mismatch\_counts[i]\ <\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}});}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00382}00382\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00383}00383\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (partition\_count\ ==\ 3)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00384}00384\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ active\_count;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ mismatch\_counts[i]\ =\ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a9acad2d527657aaa0da1c424db437e37}{partition\_mismatch3}}(bitmaps,\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a2de235b96a8763b4d757954e66f084a3}{coverage\_bitmaps\_3}}[i]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ assert(mismatch\_counts[i]\ <\ \mbox{\hyperlink{astcenc__internal_8h_a24bfd76e0fe1130b9741b58cc3e2b675}{BLOCK\_MAX\_KMEANS\_TEXELS}});}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ assert(mismatch\_counts[i]\ <\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}});}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00391}00391\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00392}00392\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00393}00393\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ active\_count;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ mismatch\_counts[i]\ =\ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a3febec3fce459c429e5c4445c852d3bb}{partition\_mismatch4}}(bitmaps,\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a2efb4a6e89af7eb8f833c5a7c5c65ac2}{coverage\_bitmaps\_4}}[i]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ assert(mismatch\_counts[i]\ <\ \mbox{\hyperlink{astcenc__internal_8h_a24bfd76e0fe1130b9741b58cc3e2b675}{BLOCK\_MAX\_KMEANS\_TEXELS}});}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ assert(mismatch\_counts[i]\ <\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}});}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00400}00400\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00401}00401\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00402}00402\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00412}\mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_ad1670adef9a30320320aeb3fa51bb7dc}{00412}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_ad1670adef9a30320320aeb3fa51bb7dc}{get\_partition\_ordering\_by\_mismatch\_bits}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00413}00413\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\_count,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00414}00414\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partitioning\_count,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00415}00415\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ mismatch\_count[\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\_MAX\_PARTITIONINGS}}],}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00416}00416\ \ \ \ \ uint16\_t\ partition\_ordering[\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\_MAX\_PARTITIONINGS}}]}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00417}00417\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00418}00418\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partitioning\_count\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00419}00419\ \ \ \ \ uint16\_t\ mscount[\mbox{\hyperlink{astcenc__internal_8h_a24bfd76e0fe1130b9741b58cc3e2b675}{BLOCK\_MAX\_KMEANS\_TEXELS}}]\ \{\ 0\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00420}00420\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00421}00421\ \ \ \ \ \textcolor{comment}{//\ Create\ the\ histogram\ of\ mismatch\ counts}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00422}00422\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partitioning\_count;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00423}00423\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00424}00424\ \ \ \ \ \ \ \ \ mscount[mismatch\_count[i]]++;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00425}00425\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00426}00426\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00427}00427\ \ \ \ \ \textcolor{comment}{//\ Create\ a\ running\ sum\ from\ the\ histogram\ array}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00428}00428\ \ \ \ \ \textcolor{comment}{//\ Cells\ store\ previous\ values\ only;\ i.e.\ exclude\ self\ after\ sum}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00429}00429\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ sum\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00430}00430\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00431}00431\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00432}00432\ \ \ \ \ \ \ \ \ uint16\_t\ cnt\ =\ mscount[i];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00433}00433\ \ \ \ \ \ \ \ \ mscount[i]\ =\ sum;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00434}00434\ \ \ \ \ \ \ \ \ sum\ +=\ cnt;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00435}00435\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00436}00436\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00437}00437\ \ \ \ \ \textcolor{comment}{//\ Use\ the\ running\ sum\ as\ the\ index,\ incrementing\ after\ read\ to\ allow}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00438}00438\ \ \ \ \ \textcolor{comment}{//\ sequential\ entries\ with\ the\ same\ count}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00439}00439\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partitioning\_count;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00440}00440\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00441}00441\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ idx\ =\ mscount[mismatch\_count[i]]++;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00442}00442\ \ \ \ \ \ \ \ \ partition\_ordering[idx]\ =\ \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(i);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00443}00443\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00444}00444\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00445}00445\ \ \ \ \ \textcolor{keywordflow}{return}\ partitioning\_count;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00446}00446\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00447}00447\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00458}\mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a89e88da4b6a389046d10b859ba68a118}{00458}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a89e88da4b6a389046d10b859ba68a118}{compute\_kmeans\_partition\_ordering}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00459}00459\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__size__descriptor}{block\_size\_descriptor}}\&\ bsd,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00460}00460\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structimage__block}{image\_block}}\&\ blk,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00461}00461\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00462}00462\ \ \ \ \ uint16\_t\ partition\_ordering[\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\_MAX\_PARTITIONINGS}}]}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00463}00463\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00464}00464\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ cluster\_centers[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00465}00465\ \ \ \ \ uint8\_t\ texel\_partitions[\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\_MAX\_TEXELS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00466}00466\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00467}00467\ \ \ \ \ \textcolor{comment}{//\ Use\ three\ passes\ of\ k-\/means\ clustering\ to\ partition\ the\ block\ data}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00468}00468\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00469}00469\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00470}00470\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00471}00471\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_acfcac2ef43cb03621ea25d3f6673c19e}{kmeans\_init}}(blk,\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}},\ partition\_count,\ cluster\_centers);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00473}00473\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00474}00474\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00475}00475\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00476}00476\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_acf130a5dab418b762b9ad6d2db920c9f}{kmeans\_update}}(blk,\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}},\ partition\_count,\ cluster\_centers,\ texel\_partitions);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00477}00477\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00478}00478\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00479}00479\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a48c3e037a653156f4c4d4643f267ba3f}{kmeans\_assign}}(blk,\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}},\ partition\_count,\ cluster\_centers,\ texel\_partitions);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00480}00480\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00481}00481\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00482}00482\ \ \ \ \ \textcolor{comment}{//\ Construct\ the\ block\ bitmaps\ of\ texel\ assignments\ to\ each\ partition}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00483}00483\ \ \ \ \ uint64\_t\ bitmaps[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}]\ \{\ 0\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00484}00484\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texels\_to\_process\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}},\ \mbox{\hyperlink{astcenc__internal_8h_a24bfd76e0fe1130b9741b58cc3e2b675}{BLOCK\_MAX\_KMEANS\_TEXELS}});}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00485}00485\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(texels\_to\_process\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00486}00486\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texels\_to\_process;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00487}00487\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00488}00488\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ idx\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a8bc9e1751fe1a81b9ee33c0925fb8f4f}{kmeans\_texels}}[i];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00489}00489\ \ \ \ \ \ \ \ \ bitmaps[texel\_partitions[idx]]\ |=\ 1ULL\ <<\ i;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00490}00490\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00491}00491\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00492}00492\ \ \ \ \ \textcolor{comment}{//\ Count\ the\ mismatch\ between\ the\ block\ and\ the\ format's\ partition\ tables}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00493}00493\ \ \ \ \ uint8\_t\ mismatch\_counts[\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\_MAX\_PARTITIONINGS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00494}00494\ \ \ \ \ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a4567304c86889e62a6cf2b5a391d6260}{count\_partition\_mismatch\_bits}}(bsd,\ partition\_count,\ bitmaps,\ mismatch\_counts);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00495}00495\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00496}00496\ \ \ \ \ \textcolor{comment}{//\ Sort\ the\ partitions\ based\ on\ the\ number\ of\ mismatched\ bits}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00497}00497\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_ad1670adef9a30320320aeb3fa51bb7dc}{get\_partition\_ordering\_by\_mismatch\_bits}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00498}00498\ \ \ \ \ \ \ \ \ texels\_to\_process,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00499}00499\ \ \ \ \ \ \ \ \ bsd.\mbox{\hyperlink{structblock__size__descriptor_aecc5b82b77caa9b3bf69294d06f84e19}{partitioning\_count\_selected}}[partition\_count\ -\/\ 1],}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00500}00500\ \ \ \ \ \ \ \ \ mismatch\_counts,\ partition\_ordering);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00501}00501\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00502}00502\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00512}\mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a8d4cb4068f0c27419e45878261806cac}{00512}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a8d4cb4068f0c27419e45878261806cac}{insert\_result}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00513}00513\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_values,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00514}00514\ \ \ \ \ \textcolor{keywordtype}{float}\ this\_error,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00515}00515\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ this\_partition,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00516}00516\ \ \ \ \ \textcolor{keywordtype}{float}*\ best\_errors,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00517}00517\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}*\ best\_partitions)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00518}00518\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00519}00519\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(max\_values\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00520}00520\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00521}00521\ \ \ \ \ \textcolor{comment}{//\ Don't\ bother\ searching\ if\ the\ current\ worst\ error\ beats\ the\ new\ error}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00522}00522\ \ \ \ \ \textcolor{keywordflow}{if}\ (this\_error\ >=\ best\_errors[max\_values\ -\/\ 1])}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00523}00523\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00524}00524\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00525}00525\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00526}00526\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00527}00527\ \ \ \ \ \textcolor{comment}{//\ Else\ insert\ into\ the\ list\ in\ error-\/order}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00528}00528\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ max\_values;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00529}00529\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00530}00530\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Existing\ result\ is\ better\ -\/\ move\ on\ ...}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00531}00531\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this\_error\ >\ best\_errors[i])}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00532}00532\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00533}00533\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00534}00534\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00535}00535\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00536}00536\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ existing\ results\ down\ one}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00537}00537\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ max\_values\ -\/\ 1;\ j\ >\ i;\ j-\/-\/)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00538}00538\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00539}00539\ \ \ \ \ \ \ \ \ \ \ \ \ best\_errors[j]\ =\ best\_errors[j\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00540}00540\ \ \ \ \ \ \ \ \ \ \ \ \ best\_partitions[j]\ =\ best\_partitions[j\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00541}00541\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00542}00542\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00543}00543\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Insert\ new\ result}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00544}00544\ \ \ \ \ \ \ \ \ best\_errors[i]\ =\ this\_error;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00545}00545\ \ \ \ \ \ \ \ \ best\_partitions[i]\ =\ this\_partition;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00546}00546\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00547}00547\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00548}00548\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00549}00549\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00550}00550\ \textcolor{comment}{/*\ See\ header\ for\ documentation.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00551}\mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a7577b3047a3f9f0fe44fd579f5450630}{00551}}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a7577b3047a3f9f0fe44fd579f5450630}{find\_best\_partition\_candidates}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00552}00552\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__size__descriptor}{block\_size\_descriptor}}\&\ bsd,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00553}00553\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structimage__block}{image\_block}}\&\ blk,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00554}00554\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00555}00555\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_search\_limit,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00556}00556\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ best\_partitions[\mbox{\hyperlink{astcenc__internal_8h_a5ac3c00190d37f2011afffd4fe1f95b2}{TUNE\_MAX\_PARTITIONING\_CANDIDATES}}],}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00557}00557\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ requested\_candidates}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00558}00558\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00559}00559\ \ \ \ \ \textcolor{comment}{//\ Constant\ used\ to\ estimate\ quantization\ error\ for\ a\ given\ partitioning;\ the\ optimal\ value\ for}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00560}00560\ \ \ \ \ \textcolor{comment}{//\ this\ depends\ on\ bitrate.\ These\ values\ have\ been\ determined\ empirically.}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00561}00561\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texels\_per\_block\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00562}00562\ \ \ \ \ \textcolor{keywordtype}{float}\ weight\_imprecision\_estim\ =\ 0.055f;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00563}00563\ \ \ \ \ \textcolor{keywordflow}{if}\ (texels\_per\_block\ <=\ 20)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00564}00564\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00565}00565\ \ \ \ \ \ \ \ \ weight\_imprecision\_estim\ =\ 0.03f;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00566}00566\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00567}00567\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (texels\_per\_block\ <=\ 31)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00568}00568\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00569}00569\ \ \ \ \ \ \ \ \ weight\_imprecision\_estim\ =\ 0.04f;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00570}00570\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00571}00571\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (texels\_per\_block\ <=\ 41)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00572}00572\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00573}00573\ \ \ \ \ \ \ \ \ weight\_imprecision\_estim\ =\ 0.05f;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00574}00574\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00575}00575\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00576}00576\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partition\_count\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00577}00577\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partition\_search\_limit\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00578}00578\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00579}00579\ \ \ \ \ weight\_imprecision\_estim\ =\ weight\_imprecision\_estim\ *\ weight\_imprecision\_estim;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00580}00580\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00581}00581\ \ \ \ \ uint16\_t\ partition\_sequence[\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\_MAX\_PARTITIONINGS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00582}00582\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ sequence\_len\ =\ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a89e88da4b6a389046d10b859ba68a118}{compute\_kmeans\_partition\_ordering}}(bsd,\ blk,\ partition\_count,\ partition\_sequence);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00583}00583\ \ \ \ \ partition\_search\_limit\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(partition\_search\_limit,\ sequence\_len);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00584}00584\ \ \ \ \ requested\_candidates\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(partition\_search\_limit,\ requested\_candidates);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00585}00585\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00586}00586\ \ \ \ \ \textcolor{keywordtype}{bool}\ uses\_alpha\ =\ !blk.\mbox{\hyperlink{structimage__block_ae3c0735355d378591db6cb7a011e381a}{is\_constant\_channel}}(3);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00587}00587\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00588}00588\ \ \ \ \ \textcolor{comment}{//\ Partitioning\ errors\ assuming\ uncorrelated-\/chrominance\ endpoints}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00589}00589\ \ \ \ \ \textcolor{keywordtype}{float}\ uncor\_best\_errors[\mbox{\hyperlink{astcenc__internal_8h_a5ac3c00190d37f2011afffd4fe1f95b2}{TUNE\_MAX\_PARTITIONING\_CANDIDATES}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00590}00590\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uncor\_best\_partitions[\mbox{\hyperlink{astcenc__internal_8h_a5ac3c00190d37f2011afffd4fe1f95b2}{TUNE\_MAX\_PARTITIONING\_CANDIDATES}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00591}00591\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00592}00592\ \ \ \ \ \textcolor{comment}{//\ Partitioning\ errors\ assuming\ same-\/chrominance\ endpoints}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00593}00593\ \ \ \ \ \textcolor{keywordtype}{float}\ samec\_best\_errors[\mbox{\hyperlink{astcenc__internal_8h_a5ac3c00190d37f2011afffd4fe1f95b2}{TUNE\_MAX\_PARTITIONING\_CANDIDATES}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00594}00594\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ samec\_best\_partitions[\mbox{\hyperlink{astcenc__internal_8h_a5ac3c00190d37f2011afffd4fe1f95b2}{TUNE\_MAX\_PARTITIONING\_CANDIDATES}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00595}00595\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00596}00596\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ requested\_candidates;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00597}00597\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00598}00598\ \ \ \ \ \ \ \ \ uncor\_best\_errors[i]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00599}00599\ \ \ \ \ \ \ \ \ samec\_best\_errors[i]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00600}00600\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00601}00601\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00602}00602\ \ \ \ \ \textcolor{keywordflow}{if}\ (uses\_alpha)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00603}00603\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00604}00604\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_search\_limit;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00605}00605\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00606}00606\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\ =\ partition\_sequence[i];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00607}00607\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pi\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a551741bf3178a4b4617b2389c27345ec}{get\_raw\_partition\_info}}(partition\_count,\ partition);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00608}00608\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00609}00609\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ weighting\ to\ give\ to\ each\ component\ in\ each\ partition}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00610}00610\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structpartition__metrics}{partition\_metrics}}\ pms[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00611}00611\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00612}00612\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_a00407861c2f0e767b64b1cb1bb7a27b6}{compute\_avgs\_and\_dirs\_4\_comp}}(pi,\ blk,\ pms);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00613}00613\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00614}00614\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structline4}{line4}}\ uncor\_lines[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00615}00615\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structline4}{line4}}\ samec\_lines[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00616}00616\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00617}00617\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structprocessed__line4}{processed\_line4}}\ uncor\_plines[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00618}00618\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structprocessed__line4}{processed\_line4}}\ samec\_plines[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00619}00619\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00620}00620\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ line\_lengths[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00621}00621\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00622}00622\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ partition\_count;\ j++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00623}00623\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00624}00624\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structpartition__metrics}{partition\_metrics}}\&\ pm\ =\ pms[j];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00625}00625\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00626}00626\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uncor\_lines[j].\mbox{\hyperlink{structline4_a35162a2f9eccdf19bd1bc79a9030df30}{a}}\ =\ pm.\mbox{\hyperlink{structpartition__metrics_a81851ed35dd9dc3ce09a74b8167f5846}{avg}};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00627}00627\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uncor\_lines[j].\mbox{\hyperlink{structline4_a6cdd2a7bcf113eb9bd2085f9a07b9084}{b}}\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3b0e8ae23a514219217b72164a7909a4}{normalize\_safe}}(pm.\mbox{\hyperlink{structpartition__metrics_a5a05f959255774e848e83001f9b7bd37}{dir}},\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a5177e2c50f2c01a5610b2844ee3a071d}{unit4}}());}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00628}00628\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00629}00629\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uncor\_plines[j].\mbox{\hyperlink{structprocessed__line4_a15d23ed62e7f387dde80641c087fa578}{amod}}\ =\ uncor\_lines[j].\mbox{\hyperlink{structline4_a35162a2f9eccdf19bd1bc79a9030df30}{a}}\ -\/\ uncor\_lines[j].\mbox{\hyperlink{structline4_a6cdd2a7bcf113eb9bd2085f9a07b9084}{b}}\ *\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a6d7561f8f0ebee752b0e217101d9d5f3}{dot}}(uncor\_lines[j].a,\ uncor\_lines[j].b);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00630}00630\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uncor\_plines[j].\mbox{\hyperlink{structprocessed__line4_a0e2bff0306a32a7f07e0f127ff13febc}{bs}}\ =\ uncor\_lines[j].\mbox{\hyperlink{structline4_a6cdd2a7bcf113eb9bd2085f9a07b9084}{b}};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00631}00631\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00632}00632\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ samec\_lines[j].\mbox{\hyperlink{structline4_a35162a2f9eccdf19bd1bc79a9030df30}{a}}\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00633}00633\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ samec\_lines[j].\mbox{\hyperlink{structline4_a6cdd2a7bcf113eb9bd2085f9a07b9084}{b}}\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3b0e8ae23a514219217b72164a7909a4}{normalize\_safe}}(pm.\mbox{\hyperlink{structpartition__metrics_a81851ed35dd9dc3ce09a74b8167f5846}{avg}},\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a5177e2c50f2c01a5610b2844ee3a071d}{unit4}}());}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00634}00634\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00635}00635\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ samec\_plines[j].\mbox{\hyperlink{structprocessed__line4_a15d23ed62e7f387dde80641c087fa578}{amod}}\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00636}00636\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ samec\_plines[j].\mbox{\hyperlink{structprocessed__line4_a0e2bff0306a32a7f07e0f127ff13febc}{bs}}\ =\ samec\_lines[j].\mbox{\hyperlink{structline4_a6cdd2a7bcf113eb9bd2085f9a07b9084}{b}};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00637}00637\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00638}00638\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00639}00639\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ uncor\_error\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00640}00640\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ samec\_error\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00641}00641\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00642}00642\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_a2dec702033b002eaf4090eb47ce4ad21}{compute\_error\_squared\_rgba}}(pi,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00643}00643\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ blk,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00644}00644\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uncor\_plines,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00645}00645\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ samec\_plines,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00646}00646\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ line\_lengths,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00647}00647\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uncor\_error,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00648}00648\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ samec\_error);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00649}00649\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00650}00650\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ an\ estimate\ of\ error\ introduced\ by\ weight\ quantization\ imprecision.}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00651}00651\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ error\ is\ computed\ as\ follows,\ for\ each\ partition}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00652}00652\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ 1:\ compute\ the\ principal-\/axis\ vector\ (full\ length)\ in\ error-\/space}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00653}00653\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ 2:\ convert\ the\ principal-\/axis\ vector\ to\ regular\ RGB-\/space}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00654}00654\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ 3:\ scale\ the\ vector\ by\ a\ constant\ that\ estimates\ average\ quantization\ error}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00655}00655\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ 4:\ for\ each\ texel,\ square\ the\ vector,\ then\ do\ a\ dot-\/product\ with\ the\ texel's}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00656}00656\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ error\ weight;\ sum\ up\ the\ results\ across\ all\ texels.}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00657}00657\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ 4(optimized):\ square\ the\ vector\ once,\ then\ do\ a\ dot-\/product\ with\ the\ average}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00658}00658\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ texel\ error,\ then\ multiply\ by\ the\ number\ of\ texels.}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00659}00659\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00660}00660\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ partition\_count;\ j++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00661}00661\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00662}00662\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tpp\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.partition\_texel\_count[j]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00663}00663\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ error\_weights(tpp\ *\ weight\_imprecision\_estim);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00664}00664\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00665}00665\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ uncor\_vector\ =\ uncor\_lines[j].\mbox{\hyperlink{structline4_a6cdd2a7bcf113eb9bd2085f9a07b9084}{b}}\ *\ line\_lengths[j];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00666}00666\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ samec\_vector\ =\ samec\_lines[j].\mbox{\hyperlink{structline4_a6cdd2a7bcf113eb9bd2085f9a07b9084}{b}}\ *\ line\_lengths[j];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00667}00667\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00668}00668\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uncor\_error\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a53a7d8285fd42b50cf3600a004db34ac}{dot\_s}}(uncor\_vector\ *\ uncor\_vector,\ error\_weights);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00669}00669\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ samec\_error\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a53a7d8285fd42b50cf3600a004db34ac}{dot\_s}}(samec\_vector\ *\ samec\_vector,\ error\_weights);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00670}00670\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00671}00671\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00672}00672\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a8d4cb4068f0c27419e45878261806cac}{insert\_result}}(requested\_candidates,\ uncor\_error,\ partition,\ uncor\_best\_errors,\ uncor\_best\_partitions);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00673}00673\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a8d4cb4068f0c27419e45878261806cac}{insert\_result}}(requested\_candidates,\ samec\_error,\ partition,\ samec\_best\_errors,\ samec\_best\_partitions);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00674}00674\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00675}00675\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00676}00676\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00677}00677\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00678}00678\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_search\_limit;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00679}00679\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00680}00680\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\ =\ partition\_sequence[i];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00681}00681\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pi\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a551741bf3178a4b4617b2389c27345ec}{get\_raw\_partition\_info}}(partition\_count,\ partition);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00682}00682\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00683}00683\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ weighting\ to\ give\ to\ each\ component\ in\ each\ partition}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00684}00684\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structpartition__metrics}{partition\_metrics}}\ pms[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00685}00685\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_a73936e5cf41b74f2b8d9b137a9d64253}{compute\_avgs\_and\_dirs\_3\_comp\_rgb}}(pi,\ blk,\ pms);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00686}00686\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00687}00687\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structpartition__lines3}{partition\_lines3}}\ plines[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00688}00688\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00689}00689\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ partition\_count;\ j++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00690}00690\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00691}00691\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structpartition__metrics}{partition\_metrics}}\&\ pm\ =\ pms[j];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00692}00692\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structpartition__lines3}{partition\_lines3}}\&\ pl\ =\ plines[j];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00693}00693\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00694}00694\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pl.\mbox{\hyperlink{structpartition__lines3_aec409761ea4c0f5da2661f3e9b6858cc}{uncor\_line}}.\mbox{\hyperlink{structline3_a9f31b902a534755efedc7f07672353c3}{a}}\ =\ pm.\mbox{\hyperlink{structpartition__metrics_a81851ed35dd9dc3ce09a74b8167f5846}{avg}};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00695}00695\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pl.\mbox{\hyperlink{structpartition__lines3_aec409761ea4c0f5da2661f3e9b6858cc}{uncor\_line}}.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}}\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3b0e8ae23a514219217b72164a7909a4}{normalize\_safe}}(pm.\mbox{\hyperlink{structpartition__metrics_a5a05f959255774e848e83001f9b7bd37}{dir}},\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3cf3e0218d808e69f31668dbc458dc08}{unit3}}());}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00696}00696\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00697}00697\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pl.\mbox{\hyperlink{structpartition__lines3_aa068c809940350df0486a8e4f4b108ad}{samec\_line}}.\mbox{\hyperlink{structline3_a9f31b902a534755efedc7f07672353c3}{a}}\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00698}00698\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pl.\mbox{\hyperlink{structpartition__lines3_aa068c809940350df0486a8e4f4b108ad}{samec\_line}}.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}}\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3b0e8ae23a514219217b72164a7909a4}{normalize\_safe}}(pm.\mbox{\hyperlink{structpartition__metrics_a81851ed35dd9dc3ce09a74b8167f5846}{avg}},\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3cf3e0218d808e69f31668dbc458dc08}{unit3}}());}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00699}00699\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00700}00700\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pl.\mbox{\hyperlink{structpartition__lines3_a859723c79cd27cb1428b2e87d00f21fe}{uncor\_pline}}.\mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{amod}}\ =\ pl.\mbox{\hyperlink{structpartition__lines3_aec409761ea4c0f5da2661f3e9b6858cc}{uncor\_line}}.\mbox{\hyperlink{structline3_a9f31b902a534755efedc7f07672353c3}{a}}\ -\/\ pl.\mbox{\hyperlink{structpartition__lines3_aec409761ea4c0f5da2661f3e9b6858cc}{uncor\_line}}.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}}\ *\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_ae36c7167bc89ff2bf984c1a912526dcb}{dot3}}(pl.\mbox{\hyperlink{structpartition__lines3_aec409761ea4c0f5da2661f3e9b6858cc}{uncor\_line}}.\mbox{\hyperlink{structline3_a9f31b902a534755efedc7f07672353c3}{a}},\ pl.\mbox{\hyperlink{structpartition__lines3_aec409761ea4c0f5da2661f3e9b6858cc}{uncor\_line}}.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}});}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00701}00701\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pl.\mbox{\hyperlink{structpartition__lines3_a859723c79cd27cb1428b2e87d00f21fe}{uncor\_pline}}.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}\ \ \ =\ pl.\mbox{\hyperlink{structpartition__lines3_aec409761ea4c0f5da2661f3e9b6858cc}{uncor\_line}}.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00702}00702\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00703}00703\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pl.\mbox{\hyperlink{structpartition__lines3_a3d911509177415a3401db5040aea3fae}{samec\_pline}}.\mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{amod}}\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00704}00704\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pl.\mbox{\hyperlink{structpartition__lines3_a3d911509177415a3401db5040aea3fae}{samec\_pline}}.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}\ \ \ =\ pl.\mbox{\hyperlink{structpartition__lines3_aa068c809940350df0486a8e4f4b108ad}{samec\_line}}.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00705}00705\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00706}00706\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00707}00707\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ uncor\_error\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00708}00708\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ samec\_error\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00709}00709\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00710}00710\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_ac4a96475fb0074ef3fd0f08ea66de75e}{compute\_error\_squared\_rgb}}(pi,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00711}00711\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ blk,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00712}00712\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ plines,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00713}00713\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uncor\_error,}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00714}00714\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ samec\_error);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00715}00715\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00716}00716\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ an\ estimate\ of\ error\ introduced\ by\ weight\ quantization\ imprecision.}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00717}00717\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ error\ is\ computed\ as\ follows,\ for\ each\ partition}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00718}00718\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ 1:\ compute\ the\ principal-\/axis\ vector\ (full\ length)\ in\ error-\/space}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00719}00719\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ 2:\ convert\ the\ principal-\/axis\ vector\ to\ regular\ RGB-\/space}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00720}00720\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ 3:\ scale\ the\ vector\ by\ a\ constant\ that\ estimates\ average\ quantization\ error}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00721}00721\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ 4:\ for\ each\ texel,\ square\ the\ vector,\ then\ do\ a\ dot-\/product\ with\ the\ texel's}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00722}00722\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ error\ weight;\ sum\ up\ the\ results\ across\ all\ texels.}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00723}00723\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ 4(optimized):\ square\ the\ vector\ once,\ then\ do\ a\ dot-\/product\ with\ the\ average}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00724}00724\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ texel\ error,\ then\ multiply\ by\ the\ number\ of\ texels.}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00725}00725\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00726}00726\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ partition\_count;\ j++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00727}00727\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00728}00728\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structpartition__lines3}{partition\_lines3}}\&\ pl\ =\ plines[j];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00729}00729\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00730}00730\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tpp\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.partition\_texel\_count[j]);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00731}00731\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ error\_weights(tpp\ *\ weight\_imprecision\_estim);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00732}00732\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00733}00733\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ uncor\_vector\ =\ pl.\mbox{\hyperlink{structpartition__lines3_aec409761ea4c0f5da2661f3e9b6858cc}{uncor\_line}}.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}}\ *\ pl.\mbox{\hyperlink{structpartition__lines3_aab1e76d822bfde8b007da4dd65714ff2}{line\_length}};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00734}00734\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ samec\_vector\ =\ pl.\mbox{\hyperlink{structpartition__lines3_aa068c809940350df0486a8e4f4b108ad}{samec\_line}}.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}}\ *\ pl.\mbox{\hyperlink{structpartition__lines3_aab1e76d822bfde8b007da4dd65714ff2}{line\_length}};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00735}00735\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00736}00736\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uncor\_error\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a377cafdb98d3ee38a2999ed00504f477}{dot3\_s}}(uncor\_vector\ *\ uncor\_vector,\ error\_weights);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00737}00737\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ samec\_error\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a377cafdb98d3ee38a2999ed00504f477}{dot3\_s}}(samec\_vector\ *\ samec\_vector,\ error\_weights);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00738}00738\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00739}00739\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00740}00740\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a8d4cb4068f0c27419e45878261806cac}{insert\_result}}(requested\_candidates,\ uncor\_error,\ partition,\ uncor\_best\_errors,\ uncor\_best\_partitions);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00741}00741\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a8d4cb4068f0c27419e45878261806cac}{insert\_result}}(requested\_candidates,\ samec\_error,\ partition,\ samec\_best\_errors,\ samec\_best\_partitions);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00742}00742\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00743}00743\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00744}00744\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00745}00745\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ interleave[2\ *\ \mbox{\hyperlink{astcenc__internal_8h_a5ac3c00190d37f2011afffd4fe1f95b2}{TUNE\_MAX\_PARTITIONING\_CANDIDATES}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00746}00746\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ requested\_candidates;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00747}00747\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00748}00748\ \ \ \ \ \ \ \ \ interleave[2\ *\ i]\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a551741bf3178a4b4617b2389c27345ec}{get\_raw\_partition\_info}}(partition\_count,\ uncor\_best\_partitions[i]).\mbox{\hyperlink{structpartition__info_ada3e4c7f4d0078a7ae43b1951d856e38}{partition\_index}};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00749}00749\ \ \ \ \ \ \ \ \ interleave[2\ *\ i\ +\ 1]\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a551741bf3178a4b4617b2389c27345ec}{get\_raw\_partition\_info}}(partition\_count,\ samec\_best\_partitions[i]).\mbox{\hyperlink{structpartition__info_ada3e4c7f4d0078a7ae43b1951d856e38}{partition\_index}};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00750}00750\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00751}00751\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00752}00752\ \ \ \ \ uint64\_t\ bitmasks[1024/64]\ \{\ 0\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00753}00753\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ emitted\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00754}00754\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00755}00755\ \ \ \ \ \textcolor{comment}{//\ Deduplicate\ the\ first\ "{}requested"{}\ entries}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00756}00756\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ requested\_candidates\ *\ 2;\ \ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00757}00757\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00758}00758\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\ =\ interleave[i];}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00759}00759\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00760}00760\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ word\ =\ partition\ /\ 64;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00761}00761\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ bit\ =\ partition\ \%\ 64;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00762}00762\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00763}00763\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ written\ =\ bitmasks[word]\ \&\ (1ull\ <<\ bit);}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00764}00764\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00765}00765\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!written)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00766}00766\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00767}00767\ \ \ \ \ \ \ \ \ \ \ \ \ best\_partitions[emitted]\ =\ partition;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00768}00768\ \ \ \ \ \ \ \ \ \ \ \ \ bitmasks[word]\ |=\ 1ull\ <<\ bit;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00769}00769\ \ \ \ \ \ \ \ \ \ \ \ \ emitted++;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00770}00770\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00771}00771\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (emitted\ ==\ requested\_candidates)}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00772}00772\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00773}00773\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00774}00774\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00775}00775\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00776}00776\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00777}00777\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00778}00778\ \ \ \ \ \textcolor{keywordflow}{return}\ emitted;}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00779}00779\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00780}00780\ }
+\DoxyCodeLine{\Hypertarget{astcenc__find__best__partitioning_8cpp_source_l00781}00781\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

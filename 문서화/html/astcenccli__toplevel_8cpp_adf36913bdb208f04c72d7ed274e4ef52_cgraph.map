@@ -1,0 +1,5 @@
+<map id="image_get_pixel" name="image_get_pixel">
+<area shape="rect" id="Node000001" title="Get the value of a single pixel in an image." alt="" coords="5,5,121,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__neon__4_8h.html#afd7aa2069bdf377067c3abaca1256432" title="Return a float value for a float16 vector." alt="" coords="169,5,279,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,15,155,15,155,21,122,21"/>
+</map>

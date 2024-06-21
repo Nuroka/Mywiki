@@ -1,0 +1,5 @@
+<map id="astc::rand" name="astc::rand">
+<area shape="rect" id="Node000001" title="Return the next random number from the generator." alt="" coords="5,5,85,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__mathlib_8cpp.html#ada00fa3b97cd1f54329bc637fcba9ec6" title="64&#45;bit rotate left." alt="" coords="133,5,173,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,15,120,15,120,21,86,21"/>
+</map>

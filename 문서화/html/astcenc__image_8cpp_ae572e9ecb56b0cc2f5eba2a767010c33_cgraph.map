@@ -1,0 +1,5 @@
+<map id="swz_texel" name="swz_texel">
+<area shape="rect" id="Node000001" title="Swizzle a texel into a new arrangement." alt="" coords="5,5,85,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#ad4c0a7bde35d6fe9c54531e1e0652f4a" title="Store a vector to a 16B aligned memory address." alt="" coords="133,5,192,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,15,120,15,120,21,85,21"/>
+</map>

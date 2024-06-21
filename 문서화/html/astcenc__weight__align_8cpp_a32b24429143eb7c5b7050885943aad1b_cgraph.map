@@ -1,0 +1,24 @@
+<map id="compute_lowest_and_highest_weight" name="compute_lowest_and_highest_weight">
+<area shape="rect" id="Node000001" title="For a given step size compute the lowest and highest weight." alt="" coords="5,195,149,235"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#afdaab5e0b4a39a5dd28fb5b40642e57d" title="Return a integer value for a float vector, using truncation." alt="" coords="208,5,293,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,194,127,121,158,78,196,40,201,36,205,40,199,44,162,81,132,123,90,196"/>
+<area shape="rect" id="Node000003" href="$structvfloat4.html#a13edfd5bac159c8a65e10a3bd9355b4d" title="Factory that returns a vector containing the lane IDs." alt="" coords="197,55,304,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="92,193,136,143,164,115,196,89,203,85,206,89,199,93,168,119,140,146,96,197"/>
+<area shape="rect" id="Node000005" href="$astcenc__vecmathlib__avx2__8_8h.html#ad922a3ed6098767968916265154b6f82" title="Return a 8&#45;bit mask code indicating mask status." alt="" coords="223,104,278,129"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="107,193,196,138,210,131,212,136,199,143,110,197"/>
+<area shape="rect" id="Node000006" href="$astcenc__vecmathlib__avx2__8_8h.html#aa162915c044e97cc1f6d630338761fd3" title="Return the max vector of two vectors." alt="" coords="227,153,274,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="147,193,213,174,215,179,149,198"/>
+<area shape="rect" id="Node000007" href="$astcenc__vecmathlib__avx2__8_8h.html#a165b3db4e7ced1551e1880a01a01150b" title="Return the min vector of two vectors." alt="" coords="229,203,272,228"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="150,213,215,213,215,218,150,218"/>
+<area shape="rect" id="Node000008" href="$astcenc__vecmathlib__avx2__8_8h.html#a0cc9d8a88b3c39b3ea66e52d515ac661" title="Return a float rounded to the nearest integer value." alt="" coords="223,252,278,277"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="149,233,211,251,209,256,147,238"/>
+<area shape="rect" id="Node000009" href="$astcenc__vecmathlib__avx2__8_8h.html#a844ab5b69b84569f033be33bf5fb9fbc" title="Return lanes from b if cond is set, else a." alt="" coords="222,301,279,327"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="111,233,199,286,211,293,208,297,196,291,108,238"/>
+<area shape="rect" id="Node000010" href="$astcenc__vecmathlib__avx2__8_8h.html#ad4c0a7bde35d6fe9c54531e1e0652f4a" title="Store a vector to a 16B aligned memory address." alt="" coords="221,351,280,376"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="97,234,140,283,199,336,211,343,208,348,196,340,136,287,93,237"/>
+<area shape="rect" id="Node000011" href="$structvfloat4.html#a04b5f338012dab6be0b2bd7910fcbcae" title="Factory that returns a vector of zeros." alt="" coords="205,400,296,425"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="91,235,132,307,163,348,199,385,206,391,203,395,196,389,159,352,128,310,86,237"/>
+<area shape="rect" id="Node000004" href="$structvfloat4.html#a9df51cb30b68d6d51ca607e64aa1ebf0" title="Construct from zero&#45;initialized value." alt="" coords="352,228,455,253"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="288,78,306,89,335,119,359,153,393,214,389,217,355,156,331,123,302,93,285,82"/>
+<area shape="poly" id="edge11_Node000011_Node000004" title=" " alt="" coords="284,398,302,385,330,356,354,324,388,264,393,267,359,327,334,360,306,389,286,402"/>
+</map>

@@ -1,0 +1,417 @@
+\doxysection{C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/astcenccli\+\_\+image\+\_\+external.cpp 파일 참조}
+\hypertarget{astcenccli__image__external_8cpp}{}\label{astcenccli__image__external_8cpp}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_image\_external.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_image\_external.cpp}}
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}astcenccli\+\_\+internal.\+h"{}}\newline
+{\ttfamily \#include "{}wuffs-\/v0.\+3.\+c"{}}\newline
+{\ttfamily \#include "{}Third\+Party/stb\+\_\+image.\+h"{}}\newline
+{\ttfamily \#include "{}Third\+Party/stb\+\_\+image\+\_\+write.\+h"{}}\newline
+{\ttfamily \#include "{}Third\+Party/tinyexr.\+h"{}}\newline
+astcenccli\+\_\+image\+\_\+external.\+cpp에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenccli__image__external_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}{STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}}
+\begin{DoxyCompactList}\small\item\em Functions for building the implementation of stb\+\_\+image and tinyexr. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_aefe397a94e8feddc652f92ef40ce9597}{STB\+\_\+\+IMAGE\+\_\+\+WRITE\+\_\+\+IMPLEMENTATION}}
+\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_aeb08d34d1eaadcd2e6a05da5ff930c5e}{STBI\+\_\+\+NO\+\_\+\+GIF}}
+\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_a5e76f68e1c2f6762f36287090e83e1ef}{STBI\+\_\+\+NO\+\_\+\+PIC}}
+\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_afaa171549c75c368baa419a1024d72a2}{STBI\+\_\+\+NO\+\_\+\+PNM}}
+\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_a17856f964cfbba0fac175cdd4b4ba383}{STBI\+\_\+\+NO\+\_\+\+PNG}}
+\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_af59a8a253ea647864c910ebd7ea7ed65}{STBI\+\_\+\+NO\+\_\+\+PSD}}
+\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_a64d249aa3458d57a008b0713db24e604}{TINYEXR\+\_\+\+IMPLEMENTATION}}
+\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_acf8a8a9a685417efacde0d4d8a1f8333}{WUFFS\+\_\+\+IMPLEMENTATION}}
+\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_ad37fc127832de2d42a55f7c7a797f269}{WUFFS\+\_\+\+CONFIG\+\_\+\+\_\+\+MODULES}}
+\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_a6478c1400404231b605e8f692e1d80a1}{WUFFS\+\_\+\+CONFIG\+\_\+\+\_\+\+MODULE\+\_\+\+\_\+\+ADLER32}}
+\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_ab42451676675b256bbb0110cf9ab881a}{WUFFS\+\_\+\+CONFIG\+\_\+\+\_\+\+MODULE\+\_\+\+\_\+\+BASE}}
+\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_acd7dff66ed86424e2828b40174568a79}{WUFFS\+\_\+\+CONFIG\+\_\+\+\_\+\+MODULE\+\_\+\+\_\+\+CRC32}}
+\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_a8ba6e5629db1ed9854b2dc0fdc92f8fc}{WUFFS\+\_\+\+CONFIG\+\_\+\+\_\+\+MODULE\+\_\+\+\_\+\+DEFLATE}}
+\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_aec64cbe7ac19355c8cfb54f5f4c12737}{WUFFS\+\_\+\+CONFIG\+\_\+\+\_\+\+MODULE\+\_\+\+\_\+\+PNG}}
+\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_a8c6812f97203584c9162ca95c03a472c}{WUFFS\+\_\+\+CONFIG\+\_\+\+\_\+\+MODULE\+\_\+\+\_\+\+ZLIB}}
+\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_abcf0d8bc32a73fd449d918aac2ed3882}{STBI\+\_\+\+ASSERT}}(x)~\mbox{\hyperlink{astcenccli__image__external_8cpp_a6f32cae7789a8da7c1dd5fa66a5a1e8a}{astcenc\+\_\+runtime\+\_\+assert}}(x)
+\item 
+\#define \mbox{\hyperlink{astcenccli__image__external_8cpp_a51f1f2b6ad6f1cf01f75b18a61f8207e}{TEXR\+\_\+\+ASSERT}}(x)~\mbox{\hyperlink{astcenccli__image__external_8cpp_a6f32cae7789a8da7c1dd5fa66a5a1e8a}{astcenc\+\_\+runtime\+\_\+assert}}(x)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{astcenccli__image__external_8cpp_a6f32cae7789a8da7c1dd5fa66a5a1e8a}{astcenc\+\_\+runtime\+\_\+assert}} (bool condition)
+\begin{DoxyCompactList}\small\item\em Trap image load failures and convert into a runtime error. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{astcenccli__image__external_8cpp_a9920dcae3265967744c9b31e9ac8a999}{load\+\_\+png\+\_\+with\+\_\+wuffs}} (const char \texorpdfstring{$\ast$}{*}filename, bool y\+\_\+flip, bool \&is\+\_\+hdr, unsigned int \&component\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Load an image using Wuffs to provide the loader. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{매크로 문서화}
+\Hypertarget{astcenccli__image__external_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}}
+\index{STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_IMAGE\_IMPLEMENTATION}{STB\_IMAGE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78} 
+\#define STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}
+
+
+
+Functions for building the implementation of stb\+\_\+image and tinyexr. 
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00030}{30}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__image__external_8cpp_aefe397a94e8feddc652f92ef40ce9597}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!STB\_IMAGE\_WRITE\_IMPLEMENTATION@{STB\_IMAGE\_WRITE\_IMPLEMENTATION}}
+\index{STB\_IMAGE\_WRITE\_IMPLEMENTATION@{STB\_IMAGE\_WRITE\_IMPLEMENTATION}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_IMAGE\_WRITE\_IMPLEMENTATION}{STB\_IMAGE\_WRITE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_aefe397a94e8feddc652f92ef40ce9597} 
+\#define STB\+\_\+\+IMAGE\+\_\+\+WRITE\+\_\+\+IMPLEMENTATION}
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00031}{31}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__image__external_8cpp_abcf0d8bc32a73fd449d918aac2ed3882}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!STBI\_ASSERT@{STBI\_ASSERT}}
+\index{STBI\_ASSERT@{STBI\_ASSERT}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{STBI\_ASSERT}{STBI\_ASSERT}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_abcf0d8bc32a73fd449d918aac2ed3882} 
+\#define STBI\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{x}{}\end{DoxyParamCaption})~\mbox{\hyperlink{astcenccli__image__external_8cpp_a6f32cae7789a8da7c1dd5fa66a5a1e8a}{astcenc\+\_\+runtime\+\_\+assert}}(x)}
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00054}{54}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__image__external_8cpp_aeb08d34d1eaadcd2e6a05da5ff930c5e}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!STBI\_NO\_GIF@{STBI\_NO\_GIF}}
+\index{STBI\_NO\_GIF@{STBI\_NO\_GIF}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{STBI\_NO\_GIF}{STBI\_NO\_GIF}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_aeb08d34d1eaadcd2e6a05da5ff930c5e} 
+\#define STBI\+\_\+\+NO\+\_\+\+GIF}
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00032}{32}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__image__external_8cpp_a5e76f68e1c2f6762f36287090e83e1ef}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!STBI\_NO\_PIC@{STBI\_NO\_PIC}}
+\index{STBI\_NO\_PIC@{STBI\_NO\_PIC}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{STBI\_NO\_PIC}{STBI\_NO\_PIC}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_a5e76f68e1c2f6762f36287090e83e1ef} 
+\#define STBI\+\_\+\+NO\+\_\+\+PIC}
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00033}{33}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__image__external_8cpp_a17856f964cfbba0fac175cdd4b4ba383}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!STBI\_NO\_PNG@{STBI\_NO\_PNG}}
+\index{STBI\_NO\_PNG@{STBI\_NO\_PNG}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{STBI\_NO\_PNG}{STBI\_NO\_PNG}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_a17856f964cfbba0fac175cdd4b4ba383} 
+\#define STBI\+\_\+\+NO\+\_\+\+PNG}
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00035}{35}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__image__external_8cpp_afaa171549c75c368baa419a1024d72a2}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!STBI\_NO\_PNM@{STBI\_NO\_PNM}}
+\index{STBI\_NO\_PNM@{STBI\_NO\_PNM}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{STBI\_NO\_PNM}{STBI\_NO\_PNM}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_afaa171549c75c368baa419a1024d72a2} 
+\#define STBI\+\_\+\+NO\+\_\+\+PNM}
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00034}{34}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__image__external_8cpp_af59a8a253ea647864c910ebd7ea7ed65}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!STBI\_NO\_PSD@{STBI\_NO\_PSD}}
+\index{STBI\_NO\_PSD@{STBI\_NO\_PSD}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{STBI\_NO\_PSD}{STBI\_NO\_PSD}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_af59a8a253ea647864c910ebd7ea7ed65} 
+\#define STBI\+\_\+\+NO\+\_\+\+PSD}
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00036}{36}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__image__external_8cpp_a51f1f2b6ad6f1cf01f75b18a61f8207e}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!TEXR\_ASSERT@{TEXR\_ASSERT}}
+\index{TEXR\_ASSERT@{TEXR\_ASSERT}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{TEXR\_ASSERT}{TEXR\_ASSERT}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_a51f1f2b6ad6f1cf01f75b18a61f8207e} 
+\#define TEXR\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{x}{}\end{DoxyParamCaption})~\mbox{\hyperlink{astcenccli__image__external_8cpp_a6f32cae7789a8da7c1dd5fa66a5a1e8a}{astcenc\+\_\+runtime\+\_\+assert}}(x)}
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00055}{55}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__image__external_8cpp_a64d249aa3458d57a008b0713db24e604}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!TINYEXR\_IMPLEMENTATION@{TINYEXR\_IMPLEMENTATION}}
+\index{TINYEXR\_IMPLEMENTATION@{TINYEXR\_IMPLEMENTATION}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{TINYEXR\_IMPLEMENTATION}{TINYEXR\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_a64d249aa3458d57a008b0713db24e604} 
+\#define TINYEXR\+\_\+\+IMPLEMENTATION}
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00039}{39}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__image__external_8cpp_a6478c1400404231b605e8f692e1d80a1}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!WUFFS\_CONFIG\_\_MODULE\_\_ADLER32@{WUFFS\_CONFIG\_\_MODULE\_\_ADLER32}}
+\index{WUFFS\_CONFIG\_\_MODULE\_\_ADLER32@{WUFFS\_CONFIG\_\_MODULE\_\_ADLER32}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{WUFFS\_CONFIG\_\_MODULE\_\_ADLER32}{WUFFS\_CONFIG\_\_MODULE\_\_ADLER32}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_a6478c1400404231b605e8f692e1d80a1} 
+\#define WUFFS\+\_\+\+CONFIG\+\_\+\+\_\+\+MODULE\+\_\+\+\_\+\+ADLER32}
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00044}{44}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__image__external_8cpp_ab42451676675b256bbb0110cf9ab881a}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!WUFFS\_CONFIG\_\_MODULE\_\_BASE@{WUFFS\_CONFIG\_\_MODULE\_\_BASE}}
+\index{WUFFS\_CONFIG\_\_MODULE\_\_BASE@{WUFFS\_CONFIG\_\_MODULE\_\_BASE}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{WUFFS\_CONFIG\_\_MODULE\_\_BASE}{WUFFS\_CONFIG\_\_MODULE\_\_BASE}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_ab42451676675b256bbb0110cf9ab881a} 
+\#define WUFFS\+\_\+\+CONFIG\+\_\+\+\_\+\+MODULE\+\_\+\+\_\+\+BASE}
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00045}{45}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__image__external_8cpp_acd7dff66ed86424e2828b40174568a79}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!WUFFS\_CONFIG\_\_MODULE\_\_CRC32@{WUFFS\_CONFIG\_\_MODULE\_\_CRC32}}
+\index{WUFFS\_CONFIG\_\_MODULE\_\_CRC32@{WUFFS\_CONFIG\_\_MODULE\_\_CRC32}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{WUFFS\_CONFIG\_\_MODULE\_\_CRC32}{WUFFS\_CONFIG\_\_MODULE\_\_CRC32}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_acd7dff66ed86424e2828b40174568a79} 
+\#define WUFFS\+\_\+\+CONFIG\+\_\+\+\_\+\+MODULE\+\_\+\+\_\+\+CRC32}
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00046}{46}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__image__external_8cpp_a8ba6e5629db1ed9854b2dc0fdc92f8fc}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!WUFFS\_CONFIG\_\_MODULE\_\_DEFLATE@{WUFFS\_CONFIG\_\_MODULE\_\_DEFLATE}}
+\index{WUFFS\_CONFIG\_\_MODULE\_\_DEFLATE@{WUFFS\_CONFIG\_\_MODULE\_\_DEFLATE}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{WUFFS\_CONFIG\_\_MODULE\_\_DEFLATE}{WUFFS\_CONFIG\_\_MODULE\_\_DEFLATE}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_a8ba6e5629db1ed9854b2dc0fdc92f8fc} 
+\#define WUFFS\+\_\+\+CONFIG\+\_\+\+\_\+\+MODULE\+\_\+\+\_\+\+DEFLATE}
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00047}{47}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__image__external_8cpp_aec64cbe7ac19355c8cfb54f5f4c12737}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!WUFFS\_CONFIG\_\_MODULE\_\_PNG@{WUFFS\_CONFIG\_\_MODULE\_\_PNG}}
+\index{WUFFS\_CONFIG\_\_MODULE\_\_PNG@{WUFFS\_CONFIG\_\_MODULE\_\_PNG}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{WUFFS\_CONFIG\_\_MODULE\_\_PNG}{WUFFS\_CONFIG\_\_MODULE\_\_PNG}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_aec64cbe7ac19355c8cfb54f5f4c12737} 
+\#define WUFFS\+\_\+\+CONFIG\+\_\+\+\_\+\+MODULE\+\_\+\+\_\+\+PNG}
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00048}{48}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__image__external_8cpp_a8c6812f97203584c9162ca95c03a472c}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!WUFFS\_CONFIG\_\_MODULE\_\_ZLIB@{WUFFS\_CONFIG\_\_MODULE\_\_ZLIB}}
+\index{WUFFS\_CONFIG\_\_MODULE\_\_ZLIB@{WUFFS\_CONFIG\_\_MODULE\_\_ZLIB}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{WUFFS\_CONFIG\_\_MODULE\_\_ZLIB}{WUFFS\_CONFIG\_\_MODULE\_\_ZLIB}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_a8c6812f97203584c9162ca95c03a472c} 
+\#define WUFFS\+\_\+\+CONFIG\+\_\+\+\_\+\+MODULE\+\_\+\+\_\+\+ZLIB}
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00049}{49}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__image__external_8cpp_ad37fc127832de2d42a55f7c7a797f269}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!WUFFS\_CONFIG\_\_MODULES@{WUFFS\_CONFIG\_\_MODULES}}
+\index{WUFFS\_CONFIG\_\_MODULES@{WUFFS\_CONFIG\_\_MODULES}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{WUFFS\_CONFIG\_\_MODULES}{WUFFS\_CONFIG\_\_MODULES}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_ad37fc127832de2d42a55f7c7a797f269} 
+\#define WUFFS\+\_\+\+CONFIG\+\_\+\+\_\+\+MODULES}
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00043}{43}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__image__external_8cpp_acf8a8a9a685417efacde0d4d8a1f8333}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!WUFFS\_IMPLEMENTATION@{WUFFS\_IMPLEMENTATION}}
+\index{WUFFS\_IMPLEMENTATION@{WUFFS\_IMPLEMENTATION}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{WUFFS\_IMPLEMENTATION}{WUFFS\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_acf8a8a9a685417efacde0d4d8a1f8333} 
+\#define WUFFS\+\_\+\+IMPLEMENTATION}
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00042}{42}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{함수 문서화}
+\Hypertarget{astcenccli__image__external_8cpp_a6f32cae7789a8da7c1dd5fa66a5a1e8a}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!astcenc\_runtime\_assert@{astcenc\_runtime\_assert}}
+\index{astcenc\_runtime\_assert@{astcenc\_runtime\_assert}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{astcenc\_runtime\_assert()}{astcenc\_runtime\_assert()}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_a6f32cae7789a8da7c1dd5fa66a5a1e8a} 
+static void astcenc\+\_\+runtime\+\_\+assert (\begin{DoxyParamCaption}\item[{bool}]{condition}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Trap image load failures and convert into a runtime error. 
+
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00060}{60}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{if}\ (!condition)}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenccli__internal_8h_a699ebbd5f0143120e8ccaa26ae386b56}{print\_error}}(\textcolor{stringliteral}{"{}ERROR:\ Corrupt\ input\ image\(\backslash\)n"{}});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ exit(1);}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{astcenccli__image__external_8cpp_a6f32cae7789a8da7c1dd5fa66a5a1e8a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenccli__image__external_8cpp_a9920dcae3265967744c9b31e9ac8a999}\index{astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}!load\_png\_with\_wuffs@{load\_png\_with\_wuffs}}
+\index{load\_png\_with\_wuffs@{load\_png\_with\_wuffs}!astcenccli\_image\_external.cpp@{astcenccli\_image\_external.cpp}}
+\doxysubsubsection{\texorpdfstring{load\_png\_with\_wuffs()}{load\_png\_with\_wuffs()}}
+{\footnotesize\ttfamily \label{astcenccli__image__external_8cpp_a9920dcae3265967744c9b31e9ac8a999} 
+\mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*} load\+\_\+png\+\_\+with\+\_\+wuffs (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{bool}]{y\+\_\+flip}{, }\item[{bool \&}]{is\+\_\+hdr}{, }\item[{unsigned int \&}]{component\+\_\+count}{}\end{DoxyParamCaption})}
+
+
+
+Load an image using Wuffs to provide the loader. 
+
+Load uncompressed PNG image.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em filename} & The name of the file to load. \\
+\hline
+ & {\em y\+\_\+flip} & Should the image be vertically flipped? \\
+\hline
+\mbox{\texttt{ out}}  & {\em is\+\_\+hdr} & Is this an HDR image load? \\
+\hline
+\mbox{\texttt{ out}}  & {\em component\+\_\+count} & The number of components in the data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The loaded image data in a canonical 4 channel format, or {\ttfamily nullptr} on error. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenccli__image__external_8cpp_source}{astcenccli\+\_\+image\+\_\+external.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image__external_8cpp_source_l00083}{83}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ is\_hdr\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00090\ \ \ \ \ component\_count\ =\ 4;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ std::ifstream\ file(filename,\ std::ios::binary\ |\ std::ios::ate);}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)}
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenccli__internal_8h_a699ebbd5f0143120e8ccaa26ae386b56}{print\_error}}(\textcolor{stringliteral}{"{}ERROR:\ Failed\ to\ load\ image\ \%s\ (can't\ fopen)\(\backslash\)n"{}},\ filename);}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ std::streamsize\ size\ =\ file.tellg();}
+\DoxyCodeLine{00100\ \ \ \ \ file.seekg(0,\ std::ios::beg);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ std::vector<uint8\_t>\ buffer(size);}
+\DoxyCodeLine{00103\ \ \ \ \ file.read((\textcolor{keywordtype}{char}*)buffer.data(),\ size);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{wuffs-v0_83_8c_aca1b5132af7875ae6352d8791d6beddf}{wuffs\_png\_\_decoder}}\ *dec\ =\ \mbox{\hyperlink{wuffs-v0_83_8c_a5d2bcf3dfcd583a62738e059b0d27d80}{wuffs\_png\_\_decoder\_\_alloc}}();}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{if}\ (!dec)}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{structwuffs__base____image__config____struct}{wuffs\_base\_\_image\_config}}\ ic;}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{structwuffs__base____io__buffer____struct}{wuffs\_base\_\_io\_buffer}}\ src\ =\ \mbox{\hyperlink{wuffs-v0_83_8c_a00677163623339195a082d5c359983d7}{wuffs\_base\_\_ptr\_u8\_\_reader}}(buffer.data(),\ size,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{structwuffs__base____status____struct}{wuffs\_base\_\_status}}\ status\ =\ \mbox{\hyperlink{wuffs-v0_83_8c_ad48f0296dc931ce5dcea8a0c30e642c0}{wuffs\_png\_\_decoder\_\_decode\_image\_config}}(dec,\ \&ic,\ \&src);}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{if}\ (status.\mbox{\hyperlink{structwuffs__base____status____struct_a41d0e1b59d019e94b7f3c030d53db6e7}{repr}})}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ uint32\_t\ dim\_x\ =\ \mbox{\hyperlink{wuffs-v0_83_8c_a5f2035e154cd391ccf4d43a5f759f25f}{wuffs\_base\_\_pixel\_config\_\_width}}(\&ic.\mbox{\hyperlink{structwuffs__base____image__config____struct_aa5f3a74ab32427acb8f935e04dd6b2ab}{pixcfg}});}
+\DoxyCodeLine{00120\ \ \ \ \ uint32\_t\ dim\_y\ =\ \mbox{\hyperlink{wuffs-v0_83_8c_adefd33c267daa0d55e11eb5f6d363625}{wuffs\_base\_\_pixel\_config\_\_height}}(\&ic.\mbox{\hyperlink{structwuffs__base____image__config____struct_aa5f3a74ab32427acb8f935e04dd6b2ab}{pixcfg}});}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ num\_pixels\ =\ dim\_x\ *\ dim\_y;}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{if}\ (num\_pixels\ >\ (SIZE\_MAX\ /\ 4))}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{comment}{//\ Override\ the\ image's\ native\ pixel\ format\ to\ be\ RGBA\_NONPREMUL}}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{wuffs-v0_83_8c_a0a7abef0beaadad92348c82277311994}{wuffs\_base\_\_pixel\_config\_\_set}}(}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \&ic.\mbox{\hyperlink{structwuffs__base____image__config____struct_aa5f3a74ab32427acb8f935e04dd6b2ab}{pixcfg}},}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{wuffs-v0_83_8c_a0efba23849688a4bf2cfef718ee492e0}{WUFFS\_BASE\_\_PIXEL\_FORMAT\_\_RGBA\_NONPREMUL}},}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{wuffs-v0_83_8c_aa9cb97fbf916a4c85bfe263a57fe3b87}{WUFFS\_BASE\_\_PIXEL\_SUBSAMPLING\_\_NONE}},}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ dim\_x,\ dim\_y);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{comment}{//\ Configure\ the\ work\ buffer}}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ workbuf\_len\ =\ \mbox{\hyperlink{wuffs-v0_83_8c_af83f3e29886ee92948f6e9c792ea018e}{wuffs\_png\_\_decoder\_\_workbuf\_len}}(dec).\mbox{\hyperlink{structwuffs__base____range__ii__u64____struct_aa643f515f792f8962152af0d6054fb51}{max\_incl}};}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{if}\ (workbuf\_len\ >\ SIZE\_MAX)}
+\DoxyCodeLine{00137\ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ wuffs\_base\_\_slice\_u8\ workbuf\_slice\ =\ wuffs\_base\_\_make\_slice\_u8((uint8\_t*)malloc(workbuf\_len),\ workbuf\_len);}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordflow}{if}\ (!workbuf\_slice.ptr)}
+\DoxyCodeLine{00143\ \ \ \ \ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ wuffs\_base\_\_slice\_u8\ pixbuf\_slice\ =\ wuffs\_base\_\_make\_slice\_u8((uint8\_t*)malloc(num\_pixels\ *\ 4),\ num\_pixels\ *\ 4);}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordflow}{if}\ (!pixbuf\_slice.ptr)}
+\DoxyCodeLine{00149\ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{structwuffs__base____pixel__buffer____struct}{wuffs\_base\_\_pixel\_buffer}}\ pb;}
+\DoxyCodeLine{00154\ \ \ \ \ status\ =\ \mbox{\hyperlink{wuffs-v0_83_8c_a6dbfe45a4cad9cea69bdcf64aec9fb8d}{wuffs\_base\_\_pixel\_buffer\_\_set\_from\_slice}}(\&pb,\ \&ic.\mbox{\hyperlink{structwuffs__base____image__config____struct_aa5f3a74ab32427acb8f935e04dd6b2ab}{pixcfg}},\ pixbuf\_slice);}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{if}\ (status.\mbox{\hyperlink{structwuffs__base____status____struct_a41d0e1b59d019e94b7f3c030d53db6e7}{repr}})}
+\DoxyCodeLine{00156\ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{comment}{//\ Decode\ the\ pixels}}
+\DoxyCodeLine{00161\ \ \ \ \ status\ =\ \mbox{\hyperlink{wuffs-v0_83_8c_af57d8e43628d94b43f9443fb8303fdeb}{wuffs\_png\_\_decoder\_\_decode\_frame}}(dec,\ \&pb,\ \&src,\ \mbox{\hyperlink{wuffs-v0_83_8c_afbc54096d64714b332c602a7a5710fdc}{WUFFS\_BASE\_\_PIXEL\_BLEND\_\_SRC}},\ workbuf\_slice,\ NULL);}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordflow}{if}\ (status.\mbox{\hyperlink{structwuffs__base____status____struct_a41d0e1b59d019e94b7f3c030d53db6e7}{repr}})}
+\DoxyCodeLine{00163\ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00165\ \ \ \ \ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{structastcenc__image}{astcenc\_image}}*\ img\ =\ \mbox{\hyperlink{astcenccli__image_8cpp_a9ecc1dac86584f7e086e9962fb6c0509}{astc\_img\_from\_unorm8x4\_array}}(pixbuf\_slice.ptr,\ dim\_x,\ dim\_y,\ y\_flip);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ free(pixbuf\_slice.ptr);}
+\DoxyCodeLine{00170\ \ \ \ \ free(workbuf\_slice.ptr);}
+\DoxyCodeLine{00171\ \ \ \ \ free(dec);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordflow}{return}\ img;}
+\DoxyCodeLine{00174\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenccli__image__external_8cpp_a9920dcae3265967744c9b31e9ac8a999_cgraph}
+\end{center}
+\end{figure}

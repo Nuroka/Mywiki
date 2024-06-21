@@ -1,0 +1,12 @@
+<map id="get_format" name="get_format">
+<area shape="rect" id="Node000001" title=" " alt="" coords="457,45,540,70"/>
+<area shape="rect" id="Node000002" href="$astcenccli__image__load__store_8cpp.html#a10761592472e9cc4d632946459d00bee" title="Load a KTX compressed image using the local custom loader." alt="" coords="257,5,407,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="443,50,406,42,407,37,444,44"/>
+<area shape="rect" id="Node000005" href="$astcenccli__image__load__store_8cpp.html#a3e674d4952496a98a942815392b1a3a5" title="Store a KTX compressed image using a local store routine." alt="" coords="255,69,409,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="444,70,410,77,409,72,443,65"/>
+<area shape="rect" id="Node000003" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,45,207,70"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="244,44,207,51,206,45,243,39"/>
+<area shape="rect" id="Node000004" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,45,56,70"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="90,60,57,60,57,55,90,55"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="241,75,206,69,207,64,242,70"/>
+</map>

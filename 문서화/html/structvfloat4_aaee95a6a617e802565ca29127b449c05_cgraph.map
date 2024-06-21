@@ -1,0 +1,5 @@
+<map id="vfloat4::swz" name="vfloat4::swz">
+<area shape="rect" id="Node000001" title="Return a swizzled float 3." alt="" coords="5,5,95,31"/>
+<area shape="rect" id="Node000002" href="$structvfloat4.html#a2168231efa1e514fd41b3603e57be297" title="Set the scalar value of a single lane." alt="" coords="143,5,257,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,15,129,15,129,21,95,21"/>
+</map>

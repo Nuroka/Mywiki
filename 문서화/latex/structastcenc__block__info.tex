@@ -1,0 +1,383 @@
+\doxysection{astcenc\+\_\+block\+\_\+info 구조체 참조}
+\hypertarget{structastcenc__block__info}{}\label{structastcenc__block__info}\index{astcenc\_block\_info@{astcenc\_block\_info}}
+
+
+A block encoding metadata query result.  
+
+
+
+
+{\ttfamily \#include $<$astcenc.\+h$>$}
+
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}{astcenc\+\_\+profile}} \mbox{\hyperlink{structastcenc__block__info_ac114a0b6da361e3bacf2d10f603da012}{profile}}
+\begin{DoxyCompactList}\small\item\em The block encoding color profile. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__block__info_acaf94924e3b045106fdc09e5b56e3b22}{block\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em The number of texels in the X dimension. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__block__info_a37deab7b53e3108e9ee41770cd4e9cd2}{block\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em The number of texels in the Y dimension. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__block__info_a011c623bf0fcf552aabe5e9baa2e8e81}{block\+\_\+z}}
+\begin{DoxyCompactList}\small\item\em The number of texel in the Z dimension. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__block__info_af286f5059188b512c97b1bc565add0c3}{texel\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em The number of texels in the block. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structastcenc__block__info_ae3092bdbe4c12a539bb446847621d9a4}{is\+\_\+error\+\_\+block}}
+\begin{DoxyCompactList}\small\item\em True if this block is an error block. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structastcenc__block__info_af49f46e1eb0dd622b20faa9bbac291cc}{is\+\_\+constant\+\_\+block}}
+\begin{DoxyCompactList}\small\item\em True if this block is a constant color block. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structastcenc__block__info_a63a31ae79677591001714c1af72f1d92}{is\+\_\+hdr\+\_\+block}}
+\begin{DoxyCompactList}\small\item\em True if this block is an HDR block. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structastcenc__block__info_a9b8ab4d8cc6b6ba7372f71fef06dfd50}{is\+\_\+dual\+\_\+plane\+\_\+block}}
+\begin{DoxyCompactList}\small\item\em True if this block uses two weight planes. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__block__info_a299c7fdbeb1159df28f49aed1f856598}{partition\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em The number of partitions if not constant color. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__block__info_a01c2ca7c5f5d298177722dbb74b41501}{partition\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em The partition index if 2 -\/ 4 partitions used. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__block__info_a21d8cd1b003665a88e494efce089424e}{dual\+\_\+plane\+\_\+component}}
+\begin{DoxyCompactList}\small\item\em The component index of the second plane if dual plane. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__block__info_a2b46ba510161fcb2d9fffb951817635d}{color\+\_\+endpoint\+\_\+modes}} \mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em The color endpoint encoding mode for each partition. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__block__info_a7c0b03db68cbc0393e65edd9bd38df18}{color\+\_\+level\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em The number of color endpoint quantization levels. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__block__info_a0a82009e2c7ff591d8fcebe2f1c7c017}{weight\+\_\+level\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em The number of weight quantization levels. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__block__info_ae3161ecab31af252946f51b1cfda381d}{weight\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em The number of weights in the X dimension. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__block__info_a575d5c79f0bdd63f515c4e2a2376ddd3}{weight\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em The number of weights in the Y dimension. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__block__info_a87f45d11b423a56bfe85cbb978f8d1f1}{weight\+\_\+z}}
+\begin{DoxyCompactList}\small\item\em The number of weights in the Z dimension. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structastcenc__block__info_acf16c8776bb5795bdc4e31ca80a3f933}{color\+\_\+endpoints}} \mbox{[}4\mbox{]}\mbox{[}2\mbox{]}\mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em The unpacked color endpoints for each partition. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structastcenc__block__info_aa1a4523fbf26b0efac442e538c228c5a}{weight\+\_\+values\+\_\+plane1}} \mbox{[}216\mbox{]}
+\begin{DoxyCompactList}\small\item\em The per-\/texel interpolation weights for the block. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structastcenc__block__info_a09f9a8cd3124ba43153bbcd433e11cf1}{weight\+\_\+values\+\_\+plane2}} \mbox{[}216\mbox{]}
+\begin{DoxyCompactList}\small\item\em The per-\/texel interpolation weights for the block. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structastcenc__block__info_aba56a138d8ba06a8aaa4dedeaa9263b3}{partition\+\_\+assignment}} \mbox{[}216\mbox{]}
+\begin{DoxyCompactList}\small\item\em The per-\/texel partition assignments for the block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+A block encoding metadata query result. 
+
+If the block is an error block or a constant color block or an error block all fields other than the profile, block dimensions, and error/constant indicator will be zero. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00625}{625}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structastcenc__block__info_acaf94924e3b045106fdc09e5b56e3b22}\index{astcenc\_block\_info@{astcenc\_block\_info}!block\_x@{block\_x}}
+\index{block\_x@{block\_x}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{block\_x}{block\_x}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_acaf94924e3b045106fdc09e5b56e3b22} 
+unsigned int astcenc\+\_\+block\+\_\+info\+::block\+\_\+x}
+
+
+
+The number of texels in the X dimension. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00631}{631}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_a37deab7b53e3108e9ee41770cd4e9cd2}\index{astcenc\_block\_info@{astcenc\_block\_info}!block\_y@{block\_y}}
+\index{block\_y@{block\_y}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{block\_y}{block\_y}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_a37deab7b53e3108e9ee41770cd4e9cd2} 
+unsigned int astcenc\+\_\+block\+\_\+info\+::block\+\_\+y}
+
+
+
+The number of texels in the Y dimension. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00634}{634}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_a011c623bf0fcf552aabe5e9baa2e8e81}\index{astcenc\_block\_info@{astcenc\_block\_info}!block\_z@{block\_z}}
+\index{block\_z@{block\_z}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{block\_z}{block\_z}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_a011c623bf0fcf552aabe5e9baa2e8e81} 
+unsigned int astcenc\+\_\+block\+\_\+info\+::block\+\_\+z}
+
+
+
+The number of texel in the Z dimension. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00637}{637}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_a2b46ba510161fcb2d9fffb951817635d}\index{astcenc\_block\_info@{astcenc\_block\_info}!color\_endpoint\_modes@{color\_endpoint\_modes}}
+\index{color\_endpoint\_modes@{color\_endpoint\_modes}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{color\_endpoint\_modes}{color\_endpoint\_modes}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_a2b46ba510161fcb2d9fffb951817635d} 
+unsigned int astcenc\+\_\+block\+\_\+info\+::color\+\_\+endpoint\+\_\+modes\mbox{[}4\mbox{]}}
+
+
+
+The color endpoint encoding mode for each partition. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00664}{664}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_acf16c8776bb5795bdc4e31ca80a3f933}\index{astcenc\_block\_info@{astcenc\_block\_info}!color\_endpoints@{color\_endpoints}}
+\index{color\_endpoints@{color\_endpoints}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{color\_endpoints}{color\_endpoints}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_acf16c8776bb5795bdc4e31ca80a3f933} 
+float astcenc\+\_\+block\+\_\+info\+::color\+\_\+endpoints\mbox{[}4\mbox{]}\mbox{[}2\mbox{]}\mbox{[}4\mbox{]}}
+
+
+
+The unpacked color endpoints for each partition. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00682}{682}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_a7c0b03db68cbc0393e65edd9bd38df18}\index{astcenc\_block\_info@{astcenc\_block\_info}!color\_level\_count@{color\_level\_count}}
+\index{color\_level\_count@{color\_level\_count}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{color\_level\_count}{color\_level\_count}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_a7c0b03db68cbc0393e65edd9bd38df18} 
+unsigned int astcenc\+\_\+block\+\_\+info\+::color\+\_\+level\+\_\+count}
+
+
+
+The number of color endpoint quantization levels. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00667}{667}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_a21d8cd1b003665a88e494efce089424e}\index{astcenc\_block\_info@{astcenc\_block\_info}!dual\_plane\_component@{dual\_plane\_component}}
+\index{dual\_plane\_component@{dual\_plane\_component}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{dual\_plane\_component}{dual\_plane\_component}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_a21d8cd1b003665a88e494efce089424e} 
+unsigned int astcenc\+\_\+block\+\_\+info\+::dual\+\_\+plane\+\_\+component}
+
+
+
+The component index of the second plane if dual plane. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00661}{661}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_af49f46e1eb0dd622b20faa9bbac291cc}\index{astcenc\_block\_info@{astcenc\_block\_info}!is\_constant\_block@{is\_constant\_block}}
+\index{is\_constant\_block@{is\_constant\_block}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{is\_constant\_block}{is\_constant\_block}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_af49f46e1eb0dd622b20faa9bbac291cc} 
+bool astcenc\+\_\+block\+\_\+info\+::is\+\_\+constant\+\_\+block}
+
+
+
+True if this block is a constant color block. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00646}{646}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_a9b8ab4d8cc6b6ba7372f71fef06dfd50}\index{astcenc\_block\_info@{astcenc\_block\_info}!is\_dual\_plane\_block@{is\_dual\_plane\_block}}
+\index{is\_dual\_plane\_block@{is\_dual\_plane\_block}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{is\_dual\_plane\_block}{is\_dual\_plane\_block}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_a9b8ab4d8cc6b6ba7372f71fef06dfd50} 
+bool astcenc\+\_\+block\+\_\+info\+::is\+\_\+dual\+\_\+plane\+\_\+block}
+
+
+
+True if this block uses two weight planes. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00652}{652}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_ae3092bdbe4c12a539bb446847621d9a4}\index{astcenc\_block\_info@{astcenc\_block\_info}!is\_error\_block@{is\_error\_block}}
+\index{is\_error\_block@{is\_error\_block}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{is\_error\_block}{is\_error\_block}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_ae3092bdbe4c12a539bb446847621d9a4} 
+bool astcenc\+\_\+block\+\_\+info\+::is\+\_\+error\+\_\+block}
+
+
+
+True if this block is an error block. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00643}{643}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_a63a31ae79677591001714c1af72f1d92}\index{astcenc\_block\_info@{astcenc\_block\_info}!is\_hdr\_block@{is\_hdr\_block}}
+\index{is\_hdr\_block@{is\_hdr\_block}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{is\_hdr\_block}{is\_hdr\_block}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_a63a31ae79677591001714c1af72f1d92} 
+bool astcenc\+\_\+block\+\_\+info\+::is\+\_\+hdr\+\_\+block}
+
+
+
+True if this block is an HDR block. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00649}{649}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_aba56a138d8ba06a8aaa4dedeaa9263b3}\index{astcenc\_block\_info@{astcenc\_block\_info}!partition\_assignment@{partition\_assignment}}
+\index{partition\_assignment@{partition\_assignment}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{partition\_assignment}{partition\_assignment}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_aba56a138d8ba06a8aaa4dedeaa9263b3} 
+uint8\+\_\+t astcenc\+\_\+block\+\_\+info\+::partition\+\_\+assignment\mbox{[}216\mbox{]}}
+
+
+
+The per-\/texel partition assignments for the block. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00691}{691}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_a299c7fdbeb1159df28f49aed1f856598}\index{astcenc\_block\_info@{astcenc\_block\_info}!partition\_count@{partition\_count}}
+\index{partition\_count@{partition\_count}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{partition\_count}{partition\_count}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_a299c7fdbeb1159df28f49aed1f856598} 
+unsigned int astcenc\+\_\+block\+\_\+info\+::partition\+\_\+count}
+
+
+
+The number of partitions if not constant color. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00655}{655}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_a01c2ca7c5f5d298177722dbb74b41501}\index{astcenc\_block\_info@{astcenc\_block\_info}!partition\_index@{partition\_index}}
+\index{partition\_index@{partition\_index}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{partition\_index}{partition\_index}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_a01c2ca7c5f5d298177722dbb74b41501} 
+unsigned int astcenc\+\_\+block\+\_\+info\+::partition\+\_\+index}
+
+
+
+The partition index if 2 -\/ 4 partitions used. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00658}{658}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_ac114a0b6da361e3bacf2d10f603da012}\index{astcenc\_block\_info@{astcenc\_block\_info}!profile@{profile}}
+\index{profile@{profile}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{profile}{profile}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_ac114a0b6da361e3bacf2d10f603da012} 
+\mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}{astcenc\+\_\+profile}} astcenc\+\_\+block\+\_\+info\+::profile}
+
+
+
+The block encoding color profile. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00628}{628}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_af286f5059188b512c97b1bc565add0c3}\index{astcenc\_block\_info@{astcenc\_block\_info}!texel\_count@{texel\_count}}
+\index{texel\_count@{texel\_count}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{texel\_count}{texel\_count}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_af286f5059188b512c97b1bc565add0c3} 
+unsigned int astcenc\+\_\+block\+\_\+info\+::texel\+\_\+count}
+
+
+
+The number of texels in the block. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00640}{640}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_a0a82009e2c7ff591d8fcebe2f1c7c017}\index{astcenc\_block\_info@{astcenc\_block\_info}!weight\_level\_count@{weight\_level\_count}}
+\index{weight\_level\_count@{weight\_level\_count}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{weight\_level\_count}{weight\_level\_count}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_a0a82009e2c7ff591d8fcebe2f1c7c017} 
+unsigned int astcenc\+\_\+block\+\_\+info\+::weight\+\_\+level\+\_\+count}
+
+
+
+The number of weight quantization levels. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00670}{670}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_aa1a4523fbf26b0efac442e538c228c5a}\index{astcenc\_block\_info@{astcenc\_block\_info}!weight\_values\_plane1@{weight\_values\_plane1}}
+\index{weight\_values\_plane1@{weight\_values\_plane1}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{weight\_values\_plane1}{weight\_values\_plane1}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_aa1a4523fbf26b0efac442e538c228c5a} 
+float astcenc\+\_\+block\+\_\+info\+::weight\+\_\+values\+\_\+plane1\mbox{[}216\mbox{]}}
+
+
+
+The per-\/texel interpolation weights for the block. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00685}{685}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_a09f9a8cd3124ba43153bbcd433e11cf1}\index{astcenc\_block\_info@{astcenc\_block\_info}!weight\_values\_plane2@{weight\_values\_plane2}}
+\index{weight\_values\_plane2@{weight\_values\_plane2}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{weight\_values\_plane2}{weight\_values\_plane2}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_a09f9a8cd3124ba43153bbcd433e11cf1} 
+float astcenc\+\_\+block\+\_\+info\+::weight\+\_\+values\+\_\+plane2\mbox{[}216\mbox{]}}
+
+
+
+The per-\/texel interpolation weights for the block. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00688}{688}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_ae3161ecab31af252946f51b1cfda381d}\index{astcenc\_block\_info@{astcenc\_block\_info}!weight\_x@{weight\_x}}
+\index{weight\_x@{weight\_x}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{weight\_x}{weight\_x}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_ae3161ecab31af252946f51b1cfda381d} 
+unsigned int astcenc\+\_\+block\+\_\+info\+::weight\+\_\+x}
+
+
+
+The number of weights in the X dimension. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00673}{673}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_a575d5c79f0bdd63f515c4e2a2376ddd3}\index{astcenc\_block\_info@{astcenc\_block\_info}!weight\_y@{weight\_y}}
+\index{weight\_y@{weight\_y}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{weight\_y}{weight\_y}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_a575d5c79f0bdd63f515c4e2a2376ddd3} 
+unsigned int astcenc\+\_\+block\+\_\+info\+::weight\+\_\+y}
+
+
+
+The number of weights in the Y dimension. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00676}{676}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__block__info_a87f45d11b423a56bfe85cbb978f8d1f1}\index{astcenc\_block\_info@{astcenc\_block\_info}!weight\_z@{weight\_z}}
+\index{weight\_z@{weight\_z}!astcenc\_block\_info@{astcenc\_block\_info}}
+\doxysubsubsection{\texorpdfstring{weight\_z}{weight\_z}}
+{\footnotesize\ttfamily \label{structastcenc__block__info_a87f45d11b423a56bfe85cbb978f8d1f1} 
+unsigned int astcenc\+\_\+block\+\_\+info\+::weight\+\_\+z}
+
+
+
+The number of weights in the Z dimension. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00679}{679}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc_8h}{astcenc.\+h}}\end{DoxyCompactItemize}

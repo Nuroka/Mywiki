@@ -1,0 +1,5 @@
+<map id="write_bits" name="write_bits">
+<area shape="rect" id="Node000001" title="Write up to 8 bits at an arbitrary bit offset." alt="" coords="5,5,83,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#ad922a3ed6098767968916265154b6f82" title="Return a 8&#45;bit mask code indicating mask status." alt="" coords="131,5,185,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,15,117,15,117,21,83,21"/>
+</map>

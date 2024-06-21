@@ -1,0 +1,7 @@
+<map id="init_decimation_info_2d" name="init_decimation_info_2d">
+<area shape="rect" id="Node000001" title="Create a 2D decimation entry for a block&#45;size and weight&#45;decimation pair." alt="" coords="5,31,163,56"/>
+<area shape="rect" id="Node000002" href="$namespaceastc.html#a83a55552d03399cdff6cf2fed8312c9f" title="Return the maximum of two values." alt="" coords="272,5,352,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,32,258,21,259,27,163,37"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib_8h.html#ae36622d837079b4899b971731c2dda37" title="Round a count up to the largest multiple of the SIMD width." alt="" coords="211,55,413,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,49,197,53,197,58,163,54"/>
+</map>

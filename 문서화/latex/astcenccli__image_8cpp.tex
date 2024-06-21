@@ -1,0 +1,619 @@
+\doxysection{C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/astcenccli\+\_\+image.cpp 파일 참조}
+\hypertarget{astcenccli__image_8cpp}{}\label{astcenccli__image_8cpp}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_image.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_image.cpp}}
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include "{}astcenccli\+\_\+internal.\+h"{}}\newline
+astcenccli\+\_\+image.\+cpp에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenccli__image_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{astcenccli__image_8cpp_a860f8be85c860429c0df12b581015b68}{alloc\+\_\+image}} (unsigned int bitness, unsigned int dim\+\_\+x, unsigned int dim\+\_\+y, unsigned int dim\+\_\+z)
+\begin{DoxyCompactList}\small\item\em Functions for creating in-\/memory ASTC image structures. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenccli__image_8cpp_aeb0cd9b24656f2c4dac144e89217057c}{free\+\_\+image}} (\mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*}img)
+\begin{DoxyCompactList}\small\item\em Free an image. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{astcenccli__image_8cpp_add1dea8ff2bad1b823a131776f37ee83}{determine\+\_\+image\+\_\+components}} (const \mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*}img)
+\begin{DoxyCompactList}\small\item\em Determine the number of active components in an image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{astcenccli__image_8cpp_a6ee147f7602455b96f9ec14ae0d31dca}{astc\+\_\+img\+\_\+from\+\_\+floatx4\+\_\+array}} (const float \texorpdfstring{$\ast$}{*}data, unsigned int dim\+\_\+x, unsigned int dim\+\_\+y, bool y\+\_\+flip)
+\begin{DoxyCompactList}\small\item\em Create an image from a 2D float data array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{astcenccli__image_8cpp_a9ecc1dac86584f7e086e9962fb6c0509}{astc\+\_\+img\+\_\+from\+\_\+unorm8x4\+\_\+array}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, unsigned int dim\+\_\+x, unsigned int dim\+\_\+y, bool y\+\_\+flip)
+\begin{DoxyCompactList}\small\item\em Create an image from a 2D byte data array. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{astcenccli__image_8cpp_ad7c980fed3ad50dec28ebfa941f4a7b7}{floatx4\+\_\+array\+\_\+from\+\_\+astc\+\_\+img}} (const \mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*}img, bool y\+\_\+flip, unsigned int z\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Create a flattened RGBA FLOAT32 data array for a single slice from an image structure. \end{DoxyCompactList}\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{astcenccli__image_8cpp_a9706acc840e996830702a831d846559c}{unorm8x4\+\_\+array\+\_\+from\+\_\+astc\+\_\+img}} (const \mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*}img, bool y\+\_\+flip)
+\begin{DoxyCompactList}\small\item\em Create a flattened RGBA UNORM8 data array from an image structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\Hypertarget{astcenccli__image_8cpp_a860f8be85c860429c0df12b581015b68}\index{astcenccli\_image.cpp@{astcenccli\_image.cpp}!alloc\_image@{alloc\_image}}
+\index{alloc\_image@{alloc\_image}!astcenccli\_image.cpp@{astcenccli\_image.cpp}}
+\doxysubsubsection{\texorpdfstring{alloc\_image()}{alloc\_image()}}
+{\footnotesize\ttfamily \label{astcenccli__image_8cpp_a860f8be85c860429c0df12b581015b68} 
+\mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*} alloc\+\_\+image (\begin{DoxyParamCaption}\item[{unsigned int}]{bitness}{, }\item[{unsigned int}]{dim\+\_\+x}{, }\item[{unsigned int}]{dim\+\_\+y}{, }\item[{unsigned int}]{dim\+\_\+z}{}\end{DoxyParamCaption})}
+
+
+
+Functions for creating in-\/memory ASTC image structures. 
+
+Allocate a new image in a canonical format. 
+
+\mbox{\hyperlink{astcenccli__image_8cpp_source}{astcenccli\+\_\+image.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image_8cpp_source_l00028}{28}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{structastcenc__image}{astcenc\_image}}\ *img\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structastcenc__image}{astcenc\_image}};}
+\DoxyCodeLine{00035\ \ \ \ \ img-\/>\mbox{\hyperlink{structastcenc__image_a8bb8eebb59215778176674951c6da70a}{dim\_x}}\ =\ dim\_x;}
+\DoxyCodeLine{00036\ \ \ \ \ img-\/>\mbox{\hyperlink{structastcenc__image_a3a62fbbc3a16a390eca3b03b6e489750}{dim\_y}}\ =\ dim\_y;}
+\DoxyCodeLine{00037\ \ \ \ \ img-\/>\mbox{\hyperlink{structastcenc__image_a9c71edbb23f1cca0de775c508b6219ee}{dim\_z}}\ =\ dim\_z;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}**\ data\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{void}*[dim\_z];}
+\DoxyCodeLine{00040\ \ \ \ \ img-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}\ =\ data;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (bitness\ ==\ 8)}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ img-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ =\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aa91ac7b6329d0a39c879dff7a1bcdf759}{ASTCENC\_TYPE\_U8}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ z\ =\ 0;\ z\ <\ dim\_z;\ z++)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ data[z]\ =\ \textcolor{keyword}{new}\ uint8\_t[dim\_x\ *\ dim\_y\ *\ 4];}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (bitness\ ==\ 16)}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ img-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ =\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aad39e16b7f2e55ed676ce400619f0759d}{ASTCENC\_TYPE\_F16}};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ z\ =\ 0;\ z\ <\ dim\_z;\ z++)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ data[z]\ =\ \textcolor{keyword}{new}\ uint16\_t[dim\_x\ *\ dim\_y\ *\ 4];}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ if\ (bitness\ ==\ 32)}}
+\DoxyCodeLine{00059\ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ assert(bitness\ ==\ 32);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ img-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ =\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aaf996e38de0e0ac57175c09da275c6062}{ASTCENC\_TYPE\_F32}};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ z\ =\ 0;\ z\ <\ dim\_z;\ z++)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ data[z]\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{float}[dim\_x\ *\ dim\_y\ *\ 4];}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{return}\ img;}
+\DoxyCodeLine{00069\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenccli__image_8cpp_a860f8be85c860429c0df12b581015b68_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenccli__image_8cpp_a6ee147f7602455b96f9ec14ae0d31dca}\index{astcenccli\_image.cpp@{astcenccli\_image.cpp}!astc\_img\_from\_floatx4\_array@{astc\_img\_from\_floatx4\_array}}
+\index{astc\_img\_from\_floatx4\_array@{astc\_img\_from\_floatx4\_array}!astcenccli\_image.cpp@{astcenccli\_image.cpp}}
+\doxysubsubsection{\texorpdfstring{astc\_img\_from\_floatx4\_array()}{astc\_img\_from\_floatx4\_array()}}
+{\footnotesize\ttfamily \label{astcenccli__image_8cpp_a6ee147f7602455b96f9ec14ae0d31dca} 
+\mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*} astc\+\_\+img\+\_\+from\+\_\+floatx4\+\_\+array (\begin{DoxyParamCaption}\item[{const float \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{unsigned int}]{dim\+\_\+x}{, }\item[{unsigned int}]{dim\+\_\+y}{, }\item[{bool}]{y\+\_\+flip}{}\end{DoxyParamCaption})}
+
+
+
+Create an image from a 2D float data array. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em data} & The raw input data. \\
+\hline
+{\em dim\+\_\+x} & The width of the image, in texels. \\
+\hline
+{\em dim\+\_\+y} & The height of the image, in texels. \\
+\hline
+{\em y\+\_\+flip} & Should this image be vertically flipped?\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The populated image. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenccli__image_8cpp_source}{astcenccli\+\_\+image.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image_8cpp_source_l00171}{171}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00176\ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{structastcenc__image}{astcenc\_image}}*\ img\ =\ \mbox{\hyperlink{astcenccli__image_8cpp_a860f8be85c860429c0df12b581015b68}{alloc\_image}}(16,\ dim\_x,\ dim\_y,\ 1);}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ dim\_y;\ y++)}
+\DoxyCodeLine{00180\ \ \ \ \ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ uint16\_t*\ data16\ =\ \textcolor{keyword}{static\_cast<}uint16\_t*\textcolor{keyword}{>}(img-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[0]);}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y\_src\ =\ y\_flip\ ?\ (dim\_y\ -\/\ y\ -\/\ 1)\ :\ y;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ src\ =\ data\ +\ 4\ *\ dim\_x\ *\ y\_src;}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ dim\_x;\ x++)}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ colorf16\ =\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ae8701a3f44d7b99016d54c3d6ee27581}{float\_to\_float16}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}(}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ src[4\ *\ x\ \ \ \ ],}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ src[4\ *\ x\ +\ 1],}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ src[4\ *\ x\ +\ 2],}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ src[4\ *\ x\ +\ 3]}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ ));}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ \ \ \ )]\ =\ \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(colorf16.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<0>());}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ +\ 1)]\ =\ \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(colorf16.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<1>());}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ +\ 2)]\ =\ \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(colorf16.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<2>());}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ +\ 3)]\ =\ \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(colorf16.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<3>());}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordflow}{return}\ img;}
+\DoxyCodeLine{00202\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{astcenccli__image_8cpp_a6ee147f7602455b96f9ec14ae0d31dca_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenccli__image_8cpp_a6ee147f7602455b96f9ec14ae0d31dca_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenccli__image_8cpp_a9ecc1dac86584f7e086e9962fb6c0509}\index{astcenccli\_image.cpp@{astcenccli\_image.cpp}!astc\_img\_from\_unorm8x4\_array@{astc\_img\_from\_unorm8x4\_array}}
+\index{astc\_img\_from\_unorm8x4\_array@{astc\_img\_from\_unorm8x4\_array}!astcenccli\_image.cpp@{astcenccli\_image.cpp}}
+\doxysubsubsection{\texorpdfstring{astc\_img\_from\_unorm8x4\_array()}{astc\_img\_from\_unorm8x4\_array()}}
+{\footnotesize\ttfamily \label{astcenccli__image_8cpp_a9ecc1dac86584f7e086e9962fb6c0509} 
+\mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*} astc\+\_\+img\+\_\+from\+\_\+unorm8x4\+\_\+array (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{unsigned int}]{dim\+\_\+x}{, }\item[{unsigned int}]{dim\+\_\+y}{, }\item[{bool}]{y\+\_\+flip}{}\end{DoxyParamCaption})}
+
+
+
+Create an image from a 2D byte data array. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em data} & The raw input data. \\
+\hline
+{\em dim\+\_\+x} & The width of the image, in texels. \\
+\hline
+{\em dim\+\_\+y} & The height of the image, in texels. \\
+\hline
+{\em y\+\_\+flip} & Should this image be vertically flipped?\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The populated image. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenccli__image_8cpp_source}{astcenccli\+\_\+image.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image_8cpp_source_l00205}{205}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00210\ \ \ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{structastcenc__image}{astcenc\_image}}*\ img\ =\ \mbox{\hyperlink{astcenccli__image_8cpp_a860f8be85c860429c0df12b581015b68}{alloc\_image}}(8,\ dim\_x,\ dim\_y,\ 1);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ dim\_y;\ y++)}
+\DoxyCodeLine{00214\ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ uint8\_t*\ data8\ =\ \textcolor{keyword}{static\_cast<}uint8\_t*\textcolor{keyword}{>}(img-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[0]);}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y\_src\ =\ y\_flip\ ?\ (dim\_y\ -\/\ y\ -\/\ 1)\ :\ y;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ src\ =\ data\ +\ 4\ *\ dim\_x\ *\ y\_src;}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ dim\_x;\ x++)}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ data8[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ \ \ \ )]\ =\ src[4\ *\ x\ \ \ \ ];}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ data8[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ +\ 1)]\ =\ src[4\ *\ x\ +\ 1];}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ data8[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ +\ 2)]\ =\ src[4\ *\ x\ +\ 2];}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ data8[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ +\ 3)]\ =\ src[4\ *\ x\ +\ 3];}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ \ \ \ \ \}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordflow}{return}\ img;}
+\DoxyCodeLine{00229\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{astcenccli__image_8cpp_a9ecc1dac86584f7e086e9962fb6c0509_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenccli__image_8cpp_a9ecc1dac86584f7e086e9962fb6c0509_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenccli__image_8cpp_add1dea8ff2bad1b823a131776f37ee83}\index{astcenccli\_image.cpp@{astcenccli\_image.cpp}!determine\_image\_components@{determine\_image\_components}}
+\index{determine\_image\_components@{determine\_image\_components}!astcenccli\_image.cpp@{astcenccli\_image.cpp}}
+\doxysubsubsection{\texorpdfstring{determine\_image\_components()}{determine\_image\_components()}}
+{\footnotesize\ttfamily \label{astcenccli__image_8cpp_add1dea8ff2bad1b823a131776f37ee83} 
+int determine\+\_\+image\+\_\+components (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*}}]{img}{}\end{DoxyParamCaption})}
+
+
+
+Determine the number of active components in an image. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em img} & The image to analyze.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The number of active components in the image. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenccli__image_8cpp_source}{astcenccli\+\_\+image.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image_8cpp_source_l00089}{89}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ dim\_x\ =\ img-\/>\mbox{\hyperlink{structastcenc__image_a8bb8eebb59215778176674951c6da70a}{dim\_x}};}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ dim\_y\ =\ img-\/>\mbox{\hyperlink{structastcenc__image_a3a62fbbc3a16a390eca3b03b6e489750}{dim\_y}};}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ dim\_z\ =\ img-\/>\mbox{\hyperlink{structastcenc__image_a9c71edbb23f1cca0de775c508b6219ee}{dim\_z}};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//\ Scan\ through\ the\ image\ data\ to\ determine\ how\ many\ color\ components\ the\ image\ has}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_luma\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{bool}\ has\_alpha\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{if}\ (img-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ ==\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aa91ac7b6329d0a39c879dff7a1bcdf759}{ASTCENC\_TYPE\_U8}})}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ z\ =\ 0;\ z\ <\ dim\_z;\ z++)}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t*\ data8\ =\ \textcolor{keyword}{static\_cast<}uint8\_t*\textcolor{keyword}{>}(img-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[z]);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ dim\_y;\ y++)}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ dim\_x;\ x++)}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ r\ =\ data8[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ \ \ \ )];}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ g\ =\ data8[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ +\ 1)];}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ b\ =\ data8[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ +\ 2)];}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ a\ =\ data8[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ +\ 3)];}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ is\_luma\ =\ is\_luma\ \&\&\ (r\ ==\ g)\ \&\&\ (r\ ==\ b);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ has\_alpha\ =\ has\_alpha\ ||\ (a\ !=\ 0xFF);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (img-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ ==\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aad39e16b7f2e55ed676ce400619f0759d}{ASTCENC\_TYPE\_F16}})}
+\DoxyCodeLine{00121\ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ z\ =\ 0;\ z\ <\ dim\_z;\ z++)}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t*\ data16\ =\ \textcolor{keyword}{static\_cast<}uint16\_t*\textcolor{keyword}{>}(img-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[z]);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ dim\_y;\ y++)}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ dim\_x;\ x++)}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ r\ =\ data16[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ \ \ \ )];}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ g\ =\ data16[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ +\ 1)];}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ b\ =\ data16[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ +\ 2)];}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ a\ =\ data16[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ +\ 3)];}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ is\_luma\ =\ is\_luma\ \&\&\ (r\ ==\ g)\ \&\&\ (r\ ==\ b);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ has\_alpha\ =\ has\_alpha\ ||\ ((a\ \string^\ 0xC3FF)\ !=\ 0xFFFF);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ a\ \string^\ 0xC3FF\ returns\ FFFF\ if\ and\ only\ if\ the\ input\ is\ 1.0}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ if\ (img-\/>data\_type\ ==\ ASTCENC\_TYPE\_F32)}}
+\DoxyCodeLine{00143\ \ \ \ \ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ assert(img-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ ==\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aaf996e38de0e0ac57175c09da275c6062}{ASTCENC\_TYPE\_F32}});}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ z\ =\ 0;\ z\ <\ dim\_z;\ z++)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}*\ data32\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}*\textcolor{keyword}{>}(img-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[z]);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ dim\_y;\ y++)}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ dim\_x;\ x++)}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ data32[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ \ \ \ )];}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ g\ =\ data32[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ +\ 1)];}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ b\ =\ data32[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ +\ 2)];}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ a\ =\ data32[(4\ *\ dim\_x\ *\ y)\ +\ (4\ *\ x\ +\ 3)];}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ is\_luma\ =\ is\_luma\ \&\&\ (r\ ==\ g)\ \&\&\ (r\ ==\ b);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ has\_alpha\ =\ has\_alpha\ ||\ (a\ !=\ 1.0f);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{int}\ image\_components\ =\ 1\ +\ (is\_luma\ ==\ 0\ ?\ 2\ :\ 0)\ +\ (has\_alpha\ ?\ 1\ :\ 0);}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{return}\ image\_components;}
+\DoxyCodeLine{00168\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenccli__image_8cpp_add1dea8ff2bad1b823a131776f37ee83_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenccli__image_8cpp_ad7c980fed3ad50dec28ebfa941f4a7b7}\index{astcenccli\_image.cpp@{astcenccli\_image.cpp}!floatx4\_array\_from\_astc\_img@{floatx4\_array\_from\_astc\_img}}
+\index{floatx4\_array\_from\_astc\_img@{floatx4\_array\_from\_astc\_img}!astcenccli\_image.cpp@{astcenccli\_image.cpp}}
+\doxysubsubsection{\texorpdfstring{floatx4\_array\_from\_astc\_img()}{floatx4\_array\_from\_astc\_img()}}
+{\footnotesize\ttfamily \label{astcenccli__image_8cpp_ad7c980fed3ad50dec28ebfa941f4a7b7} 
+float \texorpdfstring{$\ast$}{*} floatx4\+\_\+array\+\_\+from\+\_\+astc\+\_\+img (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*}}]{img}{, }\item[{bool}]{y\+\_\+flip}{, }\item[{unsigned int}]{z\+\_\+index}{}\end{DoxyParamCaption})}
+
+
+
+Create a flattened RGBA FLOAT32 data array for a single slice from an image structure. 
+
+The returned data array is allocated with {\ttfamily new}\mbox{[}\mbox{]} and must be freed with a {\ttfamily delete}\mbox{[}\mbox{]} call.
+
+
+\begin{DoxyParams}{매개변수}
+{\em img} & The input image. \\
+\hline
+{\em y\+\_\+flip} & Should the data in the array be Y flipped? \\
+\hline
+{\em z\+\_\+index} & The slice index to convert.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The data array. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenccli__image_8cpp_source}{astcenccli\+\_\+image.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image_8cpp_source_l00234}{234}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00238\ \ \ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ dim\_x\ =\ img-\/>\mbox{\hyperlink{structastcenc__image_a8bb8eebb59215778176674951c6da70a}{dim\_x}};}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ dim\_y\ =\ img-\/>\mbox{\hyperlink{structastcenc__image_a3a62fbbc3a16a390eca3b03b6e489750}{dim\_y}};}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordtype}{float}\ *buf\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{float}[4\ *\ dim\_x\ *\ dim\_y];}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ assert(z\_index\ <\ img-\/>dim\_z);}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordflow}{if}\ (img-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ ==\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aa91ac7b6329d0a39c879dff7a1bcdf759}{ASTCENC\_TYPE\_U8}})}
+\DoxyCodeLine{00246\ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ uint8\_t*\ data8\ =\ \textcolor{keyword}{static\_cast<}uint8\_t*\textcolor{keyword}{>}(img-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[z\_index]);}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ dim\_y;\ y++)}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ymod\ =\ y\_flip\ ?\ dim\_y\ -\/\ y\ -\/\ 1\ :\ y;}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}*\ dst\ =\ buf\ +\ y\ *\ dim\_x\ *\ 4;}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ dim\_x;\ x++)}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dst[4\ *\ x\ \ \ \ ]\ =\ data8[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ \ \ \ )]\ *\ (1.0f\ /\ 255.0f);}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dst[4\ *\ x\ +\ 1]\ =\ data8[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 1)]\ *\ (1.0f\ /\ 255.0f);}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dst[4\ *\ x\ +\ 2]\ =\ data8[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 2)]\ *\ (1.0f\ /\ 255.0f);}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dst[4\ *\ x\ +\ 3]\ =\ data8[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 3)]\ *\ (1.0f\ /\ 255.0f);}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00261\ \ \ \ \ \}}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (img-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ ==\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aad39e16b7f2e55ed676ce400619f0759d}{ASTCENC\_TYPE\_F16}})}
+\DoxyCodeLine{00263\ \ \ \ \ \{}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ uint16\_t*\ data16\ =\ \textcolor{keyword}{static\_cast<}uint16\_t*\textcolor{keyword}{>}(img-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[z\_index]);}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ dim\_y;\ y++)}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ymod\ =\ y\_flip\ ?\ dim\_y\ -\/\ y\ -\/\ 1\ :\ y;}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ *dst\ =\ buf\ +\ y\ *\ dim\_x\ *\ 4;}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ dim\_x;\ x++)}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ colori(}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ \ \ \ )],}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 1)],}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 2)],}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 3)]}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\ =\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_afd7aa2069bdf377067c3abaca1256432}{float16\_to\_float}}(colori);}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a61add2970baac5cf6b04177472ae1ed1}{store}}(color,\ dst\ +\ 4\ *\ x);}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00283\ \ \ \ \ \}}
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ if\ (img-\/>data\_type\ ==\ ASTCENC\_TYPE\_F32)}}
+\DoxyCodeLine{00285\ \ \ \ \ \{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ assert(img-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ ==\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aaf996e38de0e0ac57175c09da275c6062}{ASTCENC\_TYPE\_F32}});}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}*\ data32\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}*\textcolor{keyword}{>}(img-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[z\_index]);}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ dim\_y;\ y++)}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ymod\ =\ y\_flip\ ?\ dim\_y\ -\/\ y\ -\/\ 1\ :\ y;}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ *dst\ =\ buf\ +\ y\ *\ dim\_x\ *\ 4;}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ dim\_x;\ x++)}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dst[4\ *\ x\ \ \ \ ]\ =\ data32[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ \ \ \ )];}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dst[4\ *\ x\ +\ 1]\ =\ data32[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 1)];}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dst[4\ *\ x\ +\ 2]\ =\ data32[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 2)];}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dst[4\ *\ x\ +\ 3]\ =\ data32[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 3)];}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00301\ \ \ \ \ \}}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keywordflow}{return}\ buf;}
+\DoxyCodeLine{00304\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{astcenccli__image_8cpp_ad7c980fed3ad50dec28ebfa941f4a7b7_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{astcenccli__image_8cpp_ad7c980fed3ad50dec28ebfa941f4a7b7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenccli__image_8cpp_aeb0cd9b24656f2c4dac144e89217057c}\index{astcenccli\_image.cpp@{astcenccli\_image.cpp}!free\_image@{free\_image}}
+\index{free\_image@{free\_image}!astcenccli\_image.cpp@{astcenccli\_image.cpp}}
+\doxysubsubsection{\texorpdfstring{free\_image()}{free\_image()}}
+{\footnotesize\ttfamily \label{astcenccli__image_8cpp_aeb0cd9b24656f2c4dac144e89217057c} 
+void free\+\_\+image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*}}]{img}{}\end{DoxyParamCaption})}
+
+
+
+Free an image. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em img} & The image to free. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenccli__image_8cpp_source}{astcenccli\+\_\+image.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image_8cpp_source_l00072}{72}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (img\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ z\ =\ 0;\ z\ <\ img-\/>\mbox{\hyperlink{structastcenc__image_a9c71edbb23f1cca0de775c508b6219ee}{dim\_z}};\ z++)}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(img-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[z]);}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{delete}[]\ img-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{delete}\ img;}
+\DoxyCodeLine{00086\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenccli__image_8cpp_aeb0cd9b24656f2c4dac144e89217057c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenccli__image_8cpp_a9706acc840e996830702a831d846559c}\index{astcenccli\_image.cpp@{astcenccli\_image.cpp}!unorm8x4\_array\_from\_astc\_img@{unorm8x4\_array\_from\_astc\_img}}
+\index{unorm8x4\_array\_from\_astc\_img@{unorm8x4\_array\_from\_astc\_img}!astcenccli\_image.cpp@{astcenccli\_image.cpp}}
+\doxysubsubsection{\texorpdfstring{unorm8x4\_array\_from\_astc\_img()}{unorm8x4\_array\_from\_astc\_img()}}
+{\footnotesize\ttfamily \label{astcenccli__image_8cpp_a9706acc840e996830702a831d846559c} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} unorm8x4\+\_\+array\+\_\+from\+\_\+astc\+\_\+img (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*}}]{img}{, }\item[{bool}]{y\+\_\+flip}{}\end{DoxyParamCaption})}
+
+
+
+Create a flattened RGBA UNORM8 data array from an image structure. 
+
+The returned data array is allocated with {\ttfamily new}\mbox{[}\mbox{]} and must be freed with a {\ttfamily delete}\mbox{[}\mbox{]} call.
+
+
+\begin{DoxyParams}{매개변수}
+{\em img} & The input image. \\
+\hline
+{\em y\+\_\+flip} & Should the data in the array be Y flipped?\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The data array. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenccli__image_8cpp_source}{astcenccli\+\_\+image.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__image_8cpp_source_l00307}{307}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00310\ \ \ \{}
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ dim\_x\ =\ img-\/>\mbox{\hyperlink{structastcenc__image_a8bb8eebb59215778176674951c6da70a}{dim\_x}};}
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ dim\_y\ =\ img-\/>\mbox{\hyperlink{structastcenc__image_a3a62fbbc3a16a390eca3b03b6e489750}{dim\_y}};}
+\DoxyCodeLine{00313\ \ \ \ \ uint8\_t*\ buf\ =\ \textcolor{keyword}{new}\ uint8\_t[4\ *\ dim\_x\ *\ dim\_y];}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keywordflow}{if}\ (img-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ ==\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aa91ac7b6329d0a39c879dff7a1bcdf759}{ASTCENC\_TYPE\_U8}})}
+\DoxyCodeLine{00316\ \ \ \ \ \{}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ uint8\_t*\ data8\ =\ \textcolor{keyword}{static\_cast<}uint8\_t*\textcolor{keyword}{>}(img-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[0]);}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ dim\_y;\ y++)}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ymod\ =\ y\_flip\ ?\ dim\_y\ -\/\ y\ -\/\ 1\ :\ y;}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t*\ dst\ =\ buf\ +\ y\ *\ dim\_x\ *\ 4;}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ dim\_x;\ x++)}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dst[4\ *\ x\ \ \ \ ]\ =\ data8[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ \ \ \ )];}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dst[4\ *\ x\ +\ 1]\ =\ data8[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 1)];}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dst[4\ *\ x\ +\ 2]\ =\ data8[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 2)];}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dst[4\ *\ x\ +\ 3]\ =\ data8[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 3)];}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00331\ \ \ \ \ \}}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (img-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ ==\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aad39e16b7f2e55ed676ce400619f0759d}{ASTCENC\_TYPE\_F16}})}
+\DoxyCodeLine{00333\ \ \ \ \ \{}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ uint16\_t*\ data16\ =\ \textcolor{keyword}{static\_cast<}uint16\_t*\textcolor{keyword}{>}(img-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[0]);}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ dim\_y;\ y++)}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ymod\ =\ y\_flip\ ?\ dim\_y\ -\/\ y\ -\/\ 1\ :\ y;}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t*\ dst\ =\ buf\ +\ y\ *\ dim\_x\ *\ 4;}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ dim\_x;\ x++)}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ colori(}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ \ \ \ )],}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 1)],}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 2)],}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 3)]}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\ =\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_afd7aa2069bdf377067c3abaca1256432}{float16\_to\_float}}(colori);}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ae91c0bb0ebd82ed2a7fa7aa915f6e76e}{clamp}}(0.0f,\ 1.0f,\ color)\ *\ 255.0f;}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colori\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a598d6ea3ba27a788b12341a5263c7881}{float\_to\_int\_rtn}}(color);}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a98f7a50685f56b5c84d1c760fa037d6d}{pack\_low\_bytes}}(colori);}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ac55f9ffdc41bee5d274cb6433809fefc}{store\_nbytes}}(colori,\ dst\ +\ 4\ *\ x);}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00357\ \ \ \ \ \}}
+\DoxyCodeLine{00358\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ if\ (img-\/>data\_type\ ==\ ASTCENC\_TYPE\_F32)}}
+\DoxyCodeLine{00359\ \ \ \ \ \{}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ assert(img-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ ==\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aaf996e38de0e0ac57175c09da275c6062}{ASTCENC\_TYPE\_F32}});}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}*\ data32\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}*\textcolor{keyword}{>}(img-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[0]);}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ dim\_y;\ y++)}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ymod\ =\ y\_flip\ ?\ dim\_y\ -\/\ y\ -\/\ 1\ :\ y;}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t*\ dst\ =\ buf\ +\ y\ *\ dim\_x\ *\ 4;}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ dim\_x;\ x++)}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dst[4\ *\ x\ \ \ \ ]\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(\mbox{\hyperlink{namespaceastc_a455f4a304ea7dcdd8fd0de030cbdbfb4}{astc::flt2int\_rtn}}(\mbox{\hyperlink{namespaceastc_ac60307af42a98d70a956170894e29e9e}{astc::clamp1f}}(data32[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ \ \ \ )])\ *\ 255.0f));}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dst[4\ *\ x\ +\ 1]\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(\mbox{\hyperlink{namespaceastc_a455f4a304ea7dcdd8fd0de030cbdbfb4}{astc::flt2int\_rtn}}(\mbox{\hyperlink{namespaceastc_ac60307af42a98d70a956170894e29e9e}{astc::clamp1f}}(data32[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 1)])\ *\ 255.0f));}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dst[4\ *\ x\ +\ 2]\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(\mbox{\hyperlink{namespaceastc_a455f4a304ea7dcdd8fd0de030cbdbfb4}{astc::flt2int\_rtn}}(\mbox{\hyperlink{namespaceastc_ac60307af42a98d70a956170894e29e9e}{astc::clamp1f}}(data32[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 2)])\ *\ 255.0f));}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dst[4\ *\ x\ +\ 3]\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(\mbox{\hyperlink{namespaceastc_a455f4a304ea7dcdd8fd0de030cbdbfb4}{astc::flt2int\_rtn}}(\mbox{\hyperlink{namespaceastc_ac60307af42a98d70a956170894e29e9e}{astc::clamp1f}}(data32[(4\ *\ dim\_x\ *\ ymod)\ +\ (4\ *\ x\ +\ 3)])\ *\ 255.0f));}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00375\ \ \ \ \ \}}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \ \ \ \ \textcolor{keywordflow}{return}\ buf;}
+\DoxyCodeLine{00378\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenccli__image_8cpp_a9706acc840e996830702a831d846559c_cgraph}
+\end{center}
+\end{figure}

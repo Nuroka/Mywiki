@@ -1,0 +1,7 @@
+<map id="hmax_s" name="hmax_s">
+<area shape="rect" id="Node000001" title="Return the horizontal maximum of a vector." alt="" coords="5,31,73,56"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#a516a2f0d872381b8c7c047845a90c9a3" title="Return the horizontal maximum of a vector." alt="" coords="134,5,189,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,34,120,24,121,29,74,39"/>
+<area shape="rect" id="Node000003" href="$structvint8.html#a2e1f0c785f4899e1b7912f2580b9f77c" title="Get the scalar from a single lane." alt="" coords="121,55,201,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="74,47,108,54,107,59,73,53"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="astcenc_compress_reset" name="astcenc_compress_reset">
+<area shape="rect" id="Node000001" title="Reset the codec state for a new compression." alt="" coords="5,5,173,31"/>
+<area shape="rect" id="Node000002" href="$class_parallel_manager.html#a9dfbf8571d608ce0d4196ac32184eea5" title="Reset the tracker for a new processing batch." alt="" coords="221,5,373,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,15,207,15,207,21,174,21"/>
+</map>

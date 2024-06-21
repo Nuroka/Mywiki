@@ -1,0 +1,30 @@
+<map id="construct_block_size_descriptor_2d" name="construct_block_size_descriptor_2d">
+<area shape="rect" id="Node000001" title="Allocate block modes and decimation tables for a single 2D block size." alt="" coords="5,146,151,186"/>
+<area shape="rect" id="Node000002" href="$astcenc__block__sizes_8cpp.html#a20c3e73541fd2727c8b79cc8c19919b2" title="Assign the texels to use for kmeans clustering." alt="" coords="203,55,357,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,144,148,116,198,89,215,82,217,87,200,94,150,120,108,148"/>
+<area shape="rect" id="Node000006" href="$astcenc__block__sizes_8cpp.html#aa894007bf90b5ec41a26d1c391ace949" title="Allocate a single 2D decimation table entry." alt="" coords="205,153,355,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="151,163,191,163,191,169,151,169"/>
+<area shape="rect" id="Node000011" href="$astcenc__block__sizes_8cpp.html#a6a5e2e9b931f3399e9722f7de90f537c" title="Functions to generate block size descriptor and decimation tables." alt="" coords="199,104,361,129"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="150,146,214,130,215,135,151,151"/>
+<area shape="rect" id="Node000012" href="$astcenc__percentile__tables_8cpp.html#af98304be147ac93a80eaf13cbe448605" title="Get the percentile table for 2D block modes." alt="" coords="201,203,359,228"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="151,181,215,197,214,202,150,186"/>
+<area shape="rect" id="Node000014" href="$structdecimation__mode.html#a84c78b671414b48738ddb97937c66ddf" title="Set a 2 plane weight quant as active." alt="" coords="205,253,355,293"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="110,184,200,238,213,245,211,250,197,243,107,189"/>
+<area shape="rect" id="Node000003" href="$namespaceastc.html#acd6244a33d585dcaa70ceb08313115ff" title="Return the next random number from the generator." alt="" coords="459,5,539,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="337,52,445,27,446,33,338,57"/>
+<area shape="rect" id="Node000005" href="$namespaceastc.html#a3a0b157316c84b208b4195916b2593e1" title="Initialize the seed structure for a random number generator." alt="" coords="447,55,551,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="358,65,433,65,433,70,358,70"/>
+<area shape="rect" id="Node000004" href="$astcenc__mathlib_8cpp.html#ada00fa3b97cd1f54329bc637fcba9ec6" title="64&#45;bit rotate left." alt="" coords="719,5,759,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="540,15,705,15,705,21,540,21"/>
+<area shape="rect" id="Node000007" href="$astcenc__integer__sequence_8cpp.html#af46c9322b401332698e9cb93c968fe19" title="Return the number of bits needed to encode an ISE sequence." alt="" coords="409,104,589,129"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="337,151,428,130,429,135,338,156"/>
+<area shape="rect" id="Node000008" href="$astcenc__block__sizes_8cpp.html#ad8405c6d5685c364a91ff3ae3c5c4057" title="Create a 2D decimation entry for a block&#45;size and weight&#45;decimation pair." alt="" coords="421,153,578,179"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="356,163,407,163,407,169,356,169"/>
+<area shape="rect" id="Node000009" href="$namespaceastc.html#a83a55552d03399cdff6cf2fed8312c9f" title="Return the maximum of two values." alt="" coords="699,128,779,153"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="578,155,685,144,685,149,578,160"/>
+<area shape="rect" id="Node000010" href="$astcenc__vecmathlib_8h.html#ae36622d837079b4899b971731c2dda37" title="Round a count up to the largest multiple of the SIMD width." alt="" coords="637,177,840,203"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="578,171,624,176,623,181,578,177"/>
+<area shape="poly" id="edge11_Node000011_Node000007" title=" " alt="" coords="361,114,396,114,396,119,361,119"/>
+<area shape="rect" id="Node000013" href="$astcenc__percentile__tables_8cpp.html#ad46153321aa8b7efe0d78a7f6e8a88e9" title="Fetch the packed percentile table for the given 2D block size." alt="" coords="437,203,561,228"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="360,213,423,213,423,218,360,218"/>
+</map>

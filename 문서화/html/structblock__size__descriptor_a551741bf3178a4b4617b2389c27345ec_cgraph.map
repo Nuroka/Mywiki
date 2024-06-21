@@ -1,0 +1,5 @@
+<map id="block_size_descriptor::get_raw_partition_info" name="block_size_descriptor::get_raw_partition_info">
+<area shape="rect" id="Node000001" title="Get the partition info structure for a given partition count and seed." alt="" coords="5,5,160,45"/>
+<area shape="rect" id="Node000002" href="$structblock__size__descriptor.html#a6d0c429d925ab011c22ab28b5807c368" title="Get the partition info table for a given partition count." alt="" coords="208,5,356,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,23,194,23,194,28,160,28"/>
+</map>

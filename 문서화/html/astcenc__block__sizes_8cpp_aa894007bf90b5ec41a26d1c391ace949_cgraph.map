@@ -1,0 +1,11 @@
+<map id="construct_dt_entry_2d" name="construct_dt_entry_2d">
+<area shape="rect" id="Node000001" title="Allocate a single 2D decimation table entry." alt="" coords="5,31,156,56"/>
+<area shape="rect" id="Node000002" href="$astcenc__integer__sequence_8cpp.html#af46c9322b401332698e9cb93c968fe19" title="Return the number of bits needed to encode an ISE sequence." alt="" coords="204,5,384,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,32,190,28,191,33,157,37"/>
+<area shape="rect" id="Node000003" href="$astcenc__block__sizes_8cpp.html#ad8405c6d5685c364a91ff3ae3c5c4057" title="Create a 2D decimation entry for a block&#45;size and weight&#45;decimation pair." alt="" coords="215,55,373,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="157,49,202,54,201,60,156,54"/>
+<area shape="rect" id="Node000004" href="$namespaceastc.html#a83a55552d03399cdff6cf2fed8312c9f" title="Return the maximum of two values." alt="" coords="493,29,573,55"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="373,56,479,45,480,50,373,62"/>
+<area shape="rect" id="Node000005" href="$astcenc__vecmathlib_8h.html#ae36622d837079b4899b971731c2dda37" title="Round a count up to the largest multiple of the SIMD width." alt="" coords="432,79,635,104"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="373,73,419,77,418,82,373,78"/>
+</map>

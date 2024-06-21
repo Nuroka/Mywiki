@@ -1,0 +1,233 @@
+\doxysection{astcenccli\+\_\+platform\+\_\+dependents.\+cpp}
+\hypertarget{astcenccli__platform__dependents_8cpp_source}{}\label{astcenccli__platform__dependents_8cpp_source}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_platform\_dependents.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_platform\_dependents.cpp}}
+\mbox{\hyperlink{astcenccli__platform__dependents_8cpp}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00001}00001\ \textcolor{comment}{//\ SPDX-\/License-\/Identifier:\ Apache-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00003}00003\ \textcolor{comment}{//\ Copyright\ 2011-\/2023\ Arm\ Limited}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00004}00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00005}00005\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});\ you\ may\ not}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00006}00006\ \textcolor{comment}{//\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00007}00007\ \textcolor{comment}{//\ of\ the\ License\ at:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00008}00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00009}00009\ \textcolor{comment}{//\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00010}00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00011}00011\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00012}00012\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00013}00013\ \textcolor{comment}{//\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.\ See\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00014}00014\ \textcolor{comment}{//\ License\ for\ the\ specific\ language\ governing\ permissions\ and\ limitations}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00015}00015\ \textcolor{comment}{//\ under\ the\ License.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00016}00016\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{astcenccli__internal_8h}{astcenccli\_internal.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00035}00035\ \textcolor{comment}{/*\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00036}00036\ \textcolor{comment}{\ \ \ Platform\ code\ for\ Windows\ using\ the\ Win32\ APIs.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00037}00037\ \textcolor{comment}{============================================================================\ */}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00038}00038\ \textcolor{preprocessor}{\#if\ defined(\_WIN32)\ \&\&\ !defined(\_\_CYGWIN\_\_)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00040}00040\ \textcolor{preprocessor}{\#define\ WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00041}00041\ \textcolor{preprocessor}{\#include\ <windows.h>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00044}00044\ \textcolor{keyword}{typedef}\ HANDLE\ pthread\_t;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00047}00047\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ pthread\_attr\_t;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00052}00052\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ pthread\_create(}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00053}00053\ \ \ \ \ pthread\_t*\ thread,}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{const}\ pthread\_attr\_t*\ attribs,}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{void}*\ (*threadfunc)(\textcolor{keywordtype}{void}*),}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}*\ thread\_arg}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00057}00057\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}(attribs);}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00059}00059\ \ \ \ \ LPTHREAD\_START\_ROUTINE\ func\ =\ \textcolor{keyword}{reinterpret\_cast<}LPTHREAD\_START\_ROUTINE\textcolor{keyword}{>}(threadfunc);}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00060}00060\ \ \ \ \ *thread\ =\ CreateThread(\textcolor{keyword}{nullptr},\ 0,\ func,\ thread\_arg,\ 0,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00061}00061\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ Ensure\ we\ return\ 0\ on\ success,\ non-\/zero\ on\ error}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{if}\ (*thread\ ==\ NULL)}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00064}00064\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00069}00069\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00078}00078\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ set\_group\_affinity(}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00079}00079\ \ \ \ \ pthread\_t\ thread,}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{int}\ thread\_index}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00081}00081\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{comment}{//\ Skip\ thread\ assignment\ for\ hardware\ with\ a\ single\ CPU\ group}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{int}\ group\_count\ =\ GetActiveProcessorGroupCount();}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (group\_count\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00085}00085\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{comment}{//\ Ensure\ we\ have\ a\ valid\ assign\ if\ user\ creates\ more\ threads\ than\ cores}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordtype}{int}\ assign\_index\ =\ thread\_index\ \%\ \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_a17e6f066d58e29a143787fe2f78d19d6}{get\_cpu\_count}}();}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordtype}{int}\ assign\_group\ \{\ 0\ \};}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordtype}{int}\ assign\_group\_cpu\_count\ \{\ 0\ \};}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{comment}{//\ Determine\ which\ core\ group\ and\ core\ in\ the\ group\ to\ use\ for\ this\ thread}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordtype}{int}\ group\_cpu\_count\_sum\ \{\ 0\ \};}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ group\ =\ 0;\ group\ <\ group\_count;\ group++)}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00097}00097\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ group\_cpu\_count\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(GetMaximumProcessorCount(group));}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ group\_cpu\_count\_sum\ +=\ group\_cpu\_count;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (assign\_index\ <\ group\_cpu\_count\_sum)}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ assign\_group\ =\ group;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ assign\_group\_cpu\_count\ =\ group\_cpu\_count;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{comment}{//\ Set\ the\ affinity\ to\ the\ assigned\ group,\ and\ all\ supported\ cores}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00110}00110\ \ \ \ \ GROUP\_AFFINITY\ affinity\ \{\};}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00111}00111\ \ \ \ \ affinity.Mask\ =\ (1\ <<\ assign\_group\_cpu\_count)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00112}00112\ \ \ \ \ affinity.Group\ =\ assign\_group;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00113}00113\ \ \ \ \ SetThreadGroupAffinity(thread,\ \&affinity,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00114}00114\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00119}00119\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ pthread\_join(}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00120}00120\ \ \ \ \ pthread\_t\ thread,}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{keywordtype}{void}**\ value}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00122}00122\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00123}00123\ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}(value);}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00124}00124\ \ \ \ \ WaitForSingleObject(thread,\ INFINITE);}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00126}00126\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00128}00128\ \textcolor{comment}{/*\ See\ header\ for\ documentation\ */}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00129}00129\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_a17e6f066d58e29a143787fe2f78d19d6}{get\_cpu\_count}}()}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00130}00130\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00131}00131\ \ \ \ \ DWORD\ cpu\_count\ =\ GetActiveProcessorCount(ALL\_PROCESSOR\_GROUPS);}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(cpu\_count);}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00133}00133\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00135}00135\ \textcolor{comment}{/*\ See\ header\ for\ documentation\ */}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00136}00136\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_af7ab092ab10d65db3b9051a12420fa52}{get\_time}}()}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00137}00137\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00138}00138\ \ \ \ \ FILETIME\ tv;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00139}00139\ \ \ \ \ GetSystemTimePreciseAsFileTime(\&tv);}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ ticks\ =\ tv.dwHighDateTime;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00141}00141\ \ \ \ \ ticks\ =\ (ticks\ <<\ 32)\ |\ tv.dwLowDateTime;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00142}00142\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(ticks)\ /\ 1.0e7;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00143}00143\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00145}00145\ \textcolor{comment}{/*\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00146}00146\ \textcolor{comment}{\ \ \ Platform\ code\ for\ an\ platform\ using\ POSIX\ APIs.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00147}00147\ \textcolor{comment}{============================================================================\ */}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00148}00148\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00150}00150\ \textcolor{preprocessor}{\#include\ <pthread.h>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00151}00151\ \textcolor{preprocessor}{\#include\ <sys/time.h>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00152}00152\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00154}00154\ \textcolor{comment}{/*\ See\ header\ for\ documentation\ */}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00155}\mbox{\hyperlink{astcenccli__internal_8h_a17e6f066d58e29a143787fe2f78d19d6}{00155}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_a17e6f066d58e29a143787fe2f78d19d6}{get\_cpu\_count}}()}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00156}00156\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00157}00157\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(sysconf(\_SC\_NPROCESSORS\_ONLN));}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00158}00158\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00160}00160\ \textcolor{comment}{/*\ See\ header\ for\ documentation\ */}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00161}\mbox{\hyperlink{astcenccli__internal_8h_af7ab092ab10d65db3b9051a12420fa52}{00161}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_af7ab092ab10d65db3b9051a12420fa52}{get\_time}}()}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00162}00162\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00163}00163\ \ \ \ \ timeval\ tv;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00164}00164\ \ \ \ \ gettimeofday(\&tv,\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00165}00165\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(tv.tv\_sec)\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(tv.tv\_usec)\ *\ 1.0e-\/6;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00166}00166\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00168}00168\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00173}\mbox{\hyperlink{structlaunch__desc}{00173}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlaunch__desc}{launch\_desc}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00174}00174\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00176}\mbox{\hyperlink{structlaunch__desc_a5c6e008ac1ee73608f73d0c82eb1412a}{00176}}\ \ \ \ \ pthread\_t\ \mbox{\hyperlink{structlaunch__desc_a5c6e008ac1ee73608f73d0c82eb1412a}{thread\_handle}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00178}\mbox{\hyperlink{structlaunch__desc_ae5fb121d0d0e69a2d001d44e2afffec1}{00178}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structlaunch__desc_ae5fb121d0d0e69a2d001d44e2afffec1}{thread\_count}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00180}\mbox{\hyperlink{structlaunch__desc_a18fa1b8ed8d5761f64f2a5cd13ebcf97}{00180}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structlaunch__desc_a18fa1b8ed8d5761f64f2a5cd13ebcf97}{thread\_id}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00182}\mbox{\hyperlink{structlaunch__desc_a3290fa651bf1def33151f086e69c5291}{00182}}\ \ \ \ \ void\ (*\mbox{\hyperlink{structlaunch__desc_a3290fa651bf1def33151f086e69c5291}{func}})(int,\ int,\ \textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00184}\mbox{\hyperlink{structlaunch__desc_af301f9649123b837ecb5e6106392e7c9}{00184}}\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{structlaunch__desc_af301f9649123b837ecb5e6106392e7c9}{payload}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00185}00185\ \};}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00195}\mbox{\hyperlink{astcenccli__platform__dependents_8cpp_ab71f663aee63a901f990d117faf0290d}{00195}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_ab71f663aee63a901f990d117faf0290d}{launch\_threads\_helper}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00196}00196\ \ \ \ \ \textcolor{keywordtype}{void}\ *p}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00197}00197\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00198}00198\ \ \ \ \ \mbox{\hyperlink{structlaunch__desc}{launch\_desc}}*\ ltd\ =\ \textcolor{keyword}{reinterpret\_cast<}\mbox{\hyperlink{structlaunch__desc}{launch\_desc}}*\textcolor{keyword}{>}(p);}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00199}00199\ \ \ \ \ ltd-\/>\mbox{\hyperlink{structlaunch__desc_a3290fa651bf1def33151f086e69c5291}{func}}(ltd-\/>\mbox{\hyperlink{structlaunch__desc_ae5fb121d0d0e69a2d001d44e2afffec1}{thread\_count}},\ ltd-\/>\mbox{\hyperlink{structlaunch__desc_a18fa1b8ed8d5761f64f2a5cd13ebcf97}{thread\_id}},\ ltd-\/>\mbox{\hyperlink{structlaunch__desc_af301f9649123b837ecb5e6106392e7c9}{payload}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00200}00200\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00201}00201\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00203}00203\ \textcolor{comment}{/*\ See\ header\ for\ documentation\ */}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00204}\mbox{\hyperlink{astcenccli__internal_8h_aaa9dcd56cd7089c481e7ef8355ae5c2f}{00204}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_aaa9dcd56cd7089c481e7ef8355ae5c2f}{launch\_threads}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00205}00205\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ operation,}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00206}00206\ \ \ \ \ \textcolor{keywordtype}{int}\ thread\_count,}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00207}00207\ \ \ \ \ \textcolor{keywordtype}{void}\ (*func)(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*),}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00208}00208\ \ \ \ \ \textcolor{keywordtype}{void}\ *payload}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00209}00209\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00210}00210\ \ \ \ \ \textcolor{comment}{//\ Directly\ execute\ single\ threaded\ workloads\ on\ this\ thread}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00211}00211\ \ \ \ \ \textcolor{keywordflow}{if}\ (thread\_count\ <=\ 1)}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00212}00212\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ func(1,\ 0,\ payload);}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00215}00215\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00217}00217\ \ \ \ \ \textcolor{comment}{//\ Otherwise\ spawn\ worker\ threads}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00218}00218\ \ \ \ \ \mbox{\hyperlink{structlaunch__desc}{launch\_desc}}\ *thread\_descs\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structlaunch__desc}{launch\_desc}}[thread\_count];\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00219}00219\ \ \ \ \ \textcolor{keywordtype}{int}\ actual\_thread\_count\ \{\ 0\ \};}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00220}00220\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00221}00221\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ thread\_count;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00222}00222\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ thread\_descs[actual\_thread\_count].\mbox{\hyperlink{structlaunch__desc_ae5fb121d0d0e69a2d001d44e2afffec1}{thread\_count}}\ =\ thread\_count;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ thread\_descs[actual\_thread\_count].\mbox{\hyperlink{structlaunch__desc_a18fa1b8ed8d5761f64f2a5cd13ebcf97}{thread\_id}}\ =\ actual\_thread\_count;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ thread\_descs[actual\_thread\_count].\mbox{\hyperlink{structlaunch__desc_af301f9649123b837ecb5e6106392e7c9}{payload}}\ =\ payload;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ thread\_descs[actual\_thread\_count].\mbox{\hyperlink{structlaunch__desc_a3290fa651bf1def33151f086e69c5291}{func}}\ =\ func;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Handle\ pthread\_create\ failing\ by\ simply\ using\ fewer\ threads}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ error\ =\ pthread\_create(}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \&(thread\_descs[actual\_thread\_count].thread\_handle),}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_ab71f663aee63a901f990d117faf0290d}{launch\_threads\_helper}},}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(thread\_descs\ +\ actual\_thread\_count));\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Track\ how\ many\ threads\ we\ actually\ created}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!error)}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Windows\ needs\ explicit\ thread\ assignment\ to\ handle\ large\ core\ count\ systems}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00239}00239\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#if\ defined(\_WIN32)\ \&\&\ !defined(\_\_CYGWIN\_\_)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set\_group\_affinity(}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thread\_descs[actual\_thread\_count].thread\_handle,}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actual\_thread\_count);}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00243}00243\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ actual\_thread\_count++;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00247}00247\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00249}00249\ \ \ \ \ \textcolor{comment}{//\ If\ we\ did\ not\ create\ thread\_count\ threads\ then\ emit\ a\ warning}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00250}00250\ \ \ \ \ \textcolor{keywordflow}{if}\ (actual\_thread\_count\ !=\ thread\_count)}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00251}00251\ \ \ \ \ \{\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ log\_count\ =\ actual\_thread\_count\ ==\ 0\ ?\ 1\ :\ actual\_thread\_count;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ log\_s\ =\ log\_count\ ==\ 1\ ?\ \textcolor{stringliteral}{"{}"{}}\ :\ \textcolor{stringliteral}{"{}s"{}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}WARNING:\ \%s\ using\ \%d\ thread\%s\ due\ to\ thread\ creation\ error\(\backslash\)n\(\backslash\)n"{}},}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ operation,\ log\_count,\ log\_s);}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00256}00256\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00258}00258\ \ \ \ \ \textcolor{comment}{//\ If\ we\ managed\ to\ spawn\ any\ threads\ wait\ for\ them\ to\ complete}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00259}00259\ \ \ \ \ \textcolor{keywordflow}{if}\ (actual\_thread\_count\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00260}00260\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ actual\_thread\_count;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ pthread\_join(thread\_descs[i].thread\_handle,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00265}00265\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00266}00266\ \ \ \ \ \textcolor{comment}{//\ Else\ fall\ back\ to\ using\ this\ thread}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00267}00267\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00268}00268\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ func(1,\ 0,\ payload);}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00270}00270\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00271}00271\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00272}00272\ \ \ \ \ \textcolor{keyword}{delete}[]\ thread\_descs;}
+\DoxyCodeLine{\Hypertarget{astcenccli__platform__dependents_8cpp_source_l00273}00273\ \}}
+
+\end{DoxyCode}

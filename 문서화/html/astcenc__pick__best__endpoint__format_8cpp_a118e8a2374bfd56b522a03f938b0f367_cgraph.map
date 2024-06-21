@@ -1,0 +1,25 @@
+<map id="compute_error_squared_rgb_single_partition" name="compute_error_squared_rgb_single_partition">
+<area shape="rect" id="Node000001" title="Functions for finding best endpoint format." alt="" coords="5,235,164,275"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#aae2f99eb48f3cde0f4739b894e8ca29f" title="Load a vector of gathered results from an array;" alt="" coords="265,5,326,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,234,105,194,130,142,165,88,187,63,210,41,230,30,251,22,252,27,232,35,214,45,190,67,170,91,135,144,110,196,95,236"/>
+<area shape="rect" id="Node000003" href="$structimage__block.html#ab5d7af0f7b40343941660350ac186fab" title="Get the default alpha value for endpoints that don&#39;t store it." alt="" coords="212,55,379,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="96,233,142,171,174,136,210,105,218,100,221,104,214,109,178,140,146,174,101,236"/>
+<area shape="rect" id="Node000004" href="$astcenc__vecmathlib__avx2__8_8h.html#aaa291a197219a09a2e1103aec6945b3c" title="Accumulate lane&#45;wise sums for a vector, folded 4&#45;wide." alt="" coords="247,144,343,169"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="114,233,159,205,211,178,234,170,235,175,213,183,161,210,117,237"/>
+<area shape="rect" id="Node000005" href="$astcenc__vecmathlib__avx2__8_8h.html#aacd26478e4fe1f97a5d47e8adaacc898" title="Return the horizontal sum of a vector." alt="" coords="263,217,327,243"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="164,243,249,233,250,238,164,248"/>
+<area shape="rect" id="Node000006" href="$structvfloat4.html#a04462a7815432c6bc3ce1b5e5d11e4fc" title="Get the scalar value of a single lane." alt="" coords="250,267,341,292"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="164,262,237,270,236,275,164,267"/>
+<area shape="rect" id="Node000007" href="$structvint4.html#a21e3d111e37da1aaaeb5ba21a831c863" title="Factory that returns a vector containing the lane IDs." alt="" coords="247,316,344,341"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="138,273,213,301,238,309,237,314,211,306,136,278"/>
+<area shape="rect" id="Node000009" href="$astcenc__vecmathlib__avx2__8_8h.html#ad922a3ed6098767968916265154b6f82" title="Return a 8&#45;bit mask code indicating mask status." alt="" coords="268,365,323,391"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="109,273,155,312,213,350,256,366,254,371,211,355,152,317,105,278"/>
+<area shape="rect" id="Node000010" href="$structvfloat4.html#a04b5f338012dab6be0b2bd7910fcbcae" title="Factory that returns a vector of zeros." alt="" coords="250,415,341,440"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="100,274,145,337,177,372,213,401,238,413,236,418,211,406,173,375,140,340,95,277"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="265,145,259,136,262,126,275,120,295,117,320,121,331,130,327,134,318,126,295,123,276,125,266,129,264,135,270,142"/>
+<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="265,219,259,209,262,199,275,193,295,191,320,194,331,203,327,207,318,199,295,196,276,198,266,203,264,208,270,216"/>
+<area shape="rect" id="Node000008" href="$structvint4.html#a3315184e8bb4f0cf1ca8dcff1f57cdae" title="Construct from zero&#45;initialized value." alt="" coords="437,316,519,341"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="344,326,423,326,423,331,344,331"/>
+<area shape="rect" id="Node000011" href="$structvfloat4.html#a9df51cb30b68d6d51ca607e64aa1ebf0" title="Construct from zero&#45;initialized value." alt="" coords="427,415,529,440"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="341,425,412,425,412,430,341,430"/>
+</map>

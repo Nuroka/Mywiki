@@ -1,0 +1,7 @@
+<map id="floatx4_array_from_astc_img" name="floatx4_array_from_astc_img">
+<area shape="rect" id="Node000001" title="Create a flattened RGBA FLOAT32 data array for a single slice from an image structure." alt="" coords="227,35,355,75"/>
+<area shape="rect" id="Node000002" href="$astcenccli__image__load__store_8cpp.html#afa7f794cf62563189b0165de6e177284" title="Save an EXR image using TinyExr to provide the store routine." alt="" coords="18,5,166,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,46,166,39,167,34,213,41"/>
+<area shape="rect" id="Node000003" href="$astcenccli__image__load__store_8cpp.html#a1903244a03c0d5d49f56aac519509cde" title="Save a HDR image using STBImageWrite to provide the store routine." alt="" coords="5,70,179,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,68,179,73,178,68,212,63"/>
+</map>

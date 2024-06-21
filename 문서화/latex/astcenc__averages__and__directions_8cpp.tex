@@ -1,0 +1,1262 @@
+\doxysection{C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/astcenc\+\_\+averages\+\_\+and\+\_\+directions.cpp 파일 참조}
+\hypertarget{astcenc__averages__and__directions_8cpp}{}\label{astcenc__averages__and__directions_8cpp}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_averages\_and\_directions.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_averages\_and\_directions.cpp}}
+{\ttfamily \#include "{}astcenc\+\_\+internal.\+h"{}}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+astcenc\+\_\+averages\+\_\+and\+\_\+directions.\+cpp에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__averages__and__directions_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_ac5429bc77cf39a7dba332af8fb14e093}{compute\+\_\+partition\+\_\+averages\+\_\+rgb}} (const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&pi, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk, \mbox{\hyperlink{structvfloat4}{vfloat4}} averages\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Functions for finding dominant direction of a set of colors. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_a83cf48552a7e8225358c7c43df24fd96}{compute\+\_\+partition\+\_\+averages\+\_\+rgba}} (const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&pi, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk, \mbox{\hyperlink{structvfloat4}{vfloat4}} averages\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Compute the average RGBA color of each partition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_a00407861c2f0e767b64b1cb1bb7a27b6}{compute\+\_\+avgs\+\_\+and\+\_\+dirs\+\_\+4\+\_\+comp}} (const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&pi, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk, \mbox{\hyperlink{structpartition__metrics}{partition\+\_\+metrics}} pm\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Compute averages and dominant directions for each partition in a 4 component texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_a33f923c5a839af4f1d369a391183c384}{compute\+\_\+avgs\+\_\+and\+\_\+dirs\+\_\+3\+\_\+comp}} (const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&pi, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk, unsigned int omitted\+\_\+component, \mbox{\hyperlink{structpartition__metrics}{partition\+\_\+metrics}} pm\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Compute averages and dominant directions for each partition in a 3 component texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_a73936e5cf41b74f2b8d9b137a9d64253}{compute\+\_\+avgs\+\_\+and\+\_\+dirs\+\_\+3\+\_\+comp\+\_\+rgb}} (const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&pi, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk, \mbox{\hyperlink{structpartition__metrics}{partition\+\_\+metrics}} pm\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Compute averages and dominant directions for each partition in a 3 component texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_a63e55f3f2ec6932357b8387f3dd82f7a}{compute\+\_\+avgs\+\_\+and\+\_\+dirs\+\_\+2\+\_\+comp}} (const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&pt, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk, unsigned int component1, unsigned int component2, \mbox{\hyperlink{structpartition__metrics}{partition\+\_\+metrics}} pm\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Compute averages and dominant directions for each partition in a 2 component texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_a2dec702033b002eaf4090eb47ce4ad21}{compute\+\_\+error\+\_\+squared\+\_\+rgba}} (const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&pi, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk, const \mbox{\hyperlink{structprocessed__line4}{processed\+\_\+line4}} uncor\+\_\+plines\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]}, const \mbox{\hyperlink{structprocessed__line4}{processed\+\_\+line4}} samec\+\_\+plines\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]}, float line\+\_\+lengths\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]}, float \&uncor\+\_\+error, float \&samec\+\_\+error)
+\begin{DoxyCompactList}\small\item\em Compute the RGBA error for uncorrelated and same chroma projections. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_ac4a96475fb0074ef3fd0f08ea66de75e}{compute\+\_\+error\+\_\+squared\+\_\+rgb}} (const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&pi, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk, \mbox{\hyperlink{structpartition__lines3}{partition\+\_\+lines3}} plines\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]}, float \&uncor\+\_\+error, float \&samec\+\_\+error)
+\begin{DoxyCompactList}\small\item\em Compute the RGB error for uncorrelated and same chroma projections. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\Hypertarget{astcenc__averages__and__directions_8cpp_a63e55f3f2ec6932357b8387f3dd82f7a}\index{astcenc\_averages\_and\_directions.cpp@{astcenc\_averages\_and\_directions.cpp}!compute\_avgs\_and\_dirs\_2\_comp@{compute\_avgs\_and\_dirs\_2\_comp}}
+\index{compute\_avgs\_and\_dirs\_2\_comp@{compute\_avgs\_and\_dirs\_2\_comp}!astcenc\_averages\_and\_directions.cpp@{astcenc\_averages\_and\_directions.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_avgs\_and\_dirs\_2\_comp()}{compute\_avgs\_and\_dirs\_2\_comp()}}
+{\footnotesize\ttfamily \label{astcenc__averages__and__directions_8cpp_a63e55f3f2ec6932357b8387f3dd82f7a} 
+void compute\+\_\+avgs\+\_\+and\+\_\+dirs\+\_\+2\+\_\+comp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&}]{pi}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{, }\item[{unsigned int}]{component1}{, }\item[{unsigned int}]{component2}{, }\item[{\mbox{\hyperlink{structpartition__metrics}{partition\+\_\+metrics}}}]{pm}{\mbox{[}\+BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Compute averages and dominant directions for each partition in a 2 component texture. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em pi} & The partition info for the current trial. \\
+\hline
+ & {\em blk} & The image block color data to be compressed. \\
+\hline
+ & {\em component1} & The first component included in the analysis. \\
+\hline
+ & {\em component2} & The second component included in the analysis. \\
+\hline
+\mbox{\texttt{ out}}  & {\em pm} & The output partition metrics.
+\begin{DoxyItemize}
+\item Only pi.\+partition\+\_\+count array entries actually get initialized.
+\item Direction vectors {\ttfamily pm.\+dir} are not normalized. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__averages__and__directions_8cpp_source}{astcenc\+\_\+averages\+\_\+and\+\_\+directions.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_source_l00631}{631}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00637\ \ \ \{}
+\DoxyCodeLine{00638\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ average;}
+\DoxyCodeLine{00639\ }
+\DoxyCodeLine{00640\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ data\_vr\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00641\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ data\_vg\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00642\ }
+\DoxyCodeLine{00643\ \ \ \ \ \textcolor{keywordflow}{if}\ (component1\ ==\ 0\ \&\&\ component2\ ==\ 1)}
+\DoxyCodeLine{00644\ \ \ \ \ \{}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ average\ =\ blk.\mbox{\hyperlink{structimage__block_ac6bd4890338be887b61f857e37d23459}{data\_mean}}.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 1>();}
+\DoxyCodeLine{00646\ }
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ data\_vr\ =\ blk.\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}};}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ data\_vg\ =\ blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}};}
+\DoxyCodeLine{00649\ \ \ \ \ \}}
+\DoxyCodeLine{00650\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (component1\ ==\ 0\ \&\&\ component2\ ==\ 2)}
+\DoxyCodeLine{00651\ \ \ \ \ \{}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ average\ =\ blk.\mbox{\hyperlink{structimage__block_ac6bd4890338be887b61f857e37d23459}{data\_mean}}.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 2>();}
+\DoxyCodeLine{00653\ }
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ data\_vr\ =\ blk.\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}};}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ data\_vg\ =\ blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}};}
+\DoxyCodeLine{00656\ \ \ \ \ \}}
+\DoxyCodeLine{00657\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ (component1\ ==\ 1\ \&\&\ component2\ ==\ 2)}}
+\DoxyCodeLine{00658\ \ \ \ \ \{}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ assert(component1\ ==\ 1\ \&\&\ component2\ ==\ 2);}
+\DoxyCodeLine{00660\ }
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \ \ average\ =\ blk.\mbox{\hyperlink{structimage__block_ac6bd4890338be887b61f857e37d23459}{data\_mean}}.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<1,\ 2>();}
+\DoxyCodeLine{00662\ }
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \ \ data\_vr\ =\ blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}};}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ data\_vg\ =\ blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}};}
+\DoxyCodeLine{00665\ \ \ \ \ \}}
+\DoxyCodeLine{00666\ }
+\DoxyCodeLine{00667\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count\ =\ pt.\mbox{\hyperlink{structpartition__info_a1ffb0fdd4d560f536d6118f032fba4f3}{partition\_count}};}
+\DoxyCodeLine{00668\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partition\_count\ >\ 0);}
+\DoxyCodeLine{00669\ }
+\DoxyCodeLine{00670\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\ =\ 0;\ partition\ <\ partition\_count;\ partition++)}
+\DoxyCodeLine{00671\ \ \ \ \ \{}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *texel\_indexes\ =\ pt.\mbox{\hyperlink{structpartition__info_af0987713fff05a82c3230d9400c6e1e7}{texels\_of\_partition}}[partition];}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\_count\ =\ pt.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[partition];}
+\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(texel\_count\ >\ 0);}
+\DoxyCodeLine{00675\ }
+\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Only\ compute\ a\ partition\ mean\ if\ more\ than\ one\ partition}}
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (partition\_count\ >\ 1)}
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \ \ \ \ average\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i++)}
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iwt\ =\ texel\_indexes[i];}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ average\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a4750532a1dbacf2063927a027725afde}{vfloat2}}(data\_vr[iwt],\ data\_vg[iwt]);}
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00685\ }
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ \ \ \ \ average\ =\ average\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(texel\_count);}
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00688\ }
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ pm[partition].\mbox{\hyperlink{structpartition__metrics_a81851ed35dd9dc3ce09a74b8167f5846}{avg}}\ =\ average;}
+\DoxyCodeLine{00690\ }
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ sum\_xp\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ sum\_yp\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00693\ }
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i++)}
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iwt\ =\ texel\_indexes[i];}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ texel\_datum\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a4750532a1dbacf2063927a027725afde}{vfloat2}}(data\_vr[iwt],\ data\_vg[iwt]);}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \ \ \ \ texel\_datum\ =\ texel\_datum\ -\/\ average;}
+\DoxyCodeLine{00699\ }
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ zero\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00701\ }
+\DoxyCodeLine{00702\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ tdm0\ =\ texel\_datum.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,0,0,0>()\ >\ zero;}
+\DoxyCodeLine{00703\ \ \ \ \ \ \ \ \ \ \ \ \ sum\_xp\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(zero,\ texel\_datum,\ tdm0);}
+\DoxyCodeLine{00704\ }
+\DoxyCodeLine{00705\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ tdm1\ =\ texel\_datum.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<1,1,1,1>()\ >\ zero;}
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \ \ \ \ sum\_yp\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(zero,\ texel\_datum,\ tdm1);}
+\DoxyCodeLine{00707\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00709\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ prod\_xp\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a6d7561f8f0ebee752b0e217101d9d5f3}{dot}}(sum\_xp,\ sum\_xp);}
+\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ prod\_yp\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a6d7561f8f0ebee752b0e217101d9d5f3}{dot}}(sum\_yp,\ sum\_yp);}
+\DoxyCodeLine{00711\ }
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ best\_vector\ =\ sum\_xp;}
+\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ best\_sum\ =\ prod\_xp;}
+\DoxyCodeLine{00714\ }
+\DoxyCodeLine{00715\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ prod\_yp\ >\ best\_sum;}
+\DoxyCodeLine{00716\ \ \ \ \ \ \ \ \ best\_vector\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_vector,\ sum\_yp,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00717\ }
+\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ pm[partition].\mbox{\hyperlink{structpartition__metrics_a5a05f959255774e848e83001f9b7bd37}{dir}}\ =\ best\_vector;}
+\DoxyCodeLine{00719\ \ \ \ \ \}}
+\DoxyCodeLine{00720\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__averages__and__directions_8cpp_a63e55f3f2ec6932357b8387f3dd82f7a_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__averages__and__directions_8cpp_a63e55f3f2ec6932357b8387f3dd82f7a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__averages__and__directions_8cpp_a33f923c5a839af4f1d369a391183c384}\index{astcenc\_averages\_and\_directions.cpp@{astcenc\_averages\_and\_directions.cpp}!compute\_avgs\_and\_dirs\_3\_comp@{compute\_avgs\_and\_dirs\_3\_comp}}
+\index{compute\_avgs\_and\_dirs\_3\_comp@{compute\_avgs\_and\_dirs\_3\_comp}!astcenc\_averages\_and\_directions.cpp@{astcenc\_averages\_and\_directions.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_avgs\_and\_dirs\_3\_comp()}{compute\_avgs\_and\_dirs\_3\_comp()}}
+{\footnotesize\ttfamily \label{astcenc__averages__and__directions_8cpp_a33f923c5a839af4f1d369a391183c384} 
+void compute\+\_\+avgs\+\_\+and\+\_\+dirs\+\_\+3\+\_\+comp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&}]{pi}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{, }\item[{unsigned int}]{omitted\+\_\+component}{, }\item[{\mbox{\hyperlink{structpartition__metrics}{partition\+\_\+metrics}}}]{pm}{\mbox{[}\+BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Compute averages and dominant directions for each partition in a 3 component texture. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em pi} & The partition info for the current trial. \\
+\hline
+ & {\em blk} & The image block color data to be compressed. \\
+\hline
+ & {\em omitted\+\_\+component} & The component excluded from the analysis. \\
+\hline
+\mbox{\texttt{ out}}  & {\em pm} & The output partition metrics.
+\begin{DoxyItemize}
+\item Only pi.\+partition\+\_\+count array entries actually get initialized.
+\item Direction vectors {\ttfamily pm.\+dir} are not normalized. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__averages__and__directions_8cpp_source}{astcenc\+\_\+averages\+\_\+and\+\_\+directions.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_source_l00459}{459}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00464\ \ \ \{}
+\DoxyCodeLine{00465\ \ \ \ \ \textcolor{comment}{//\ Pre-\/compute\ partition\_averages}}
+\DoxyCodeLine{00466\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ partition\_averages[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00467\ \ \ \ \ \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_a83cf48552a7e8225358c7c43df24fd96}{compute\_partition\_averages\_rgba}}(pi,\ blk,\ partition\_averages);}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00469\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ data\_vr\ =\ blk.\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}};}
+\DoxyCodeLine{00470\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ data\_vg\ =\ blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}};}
+\DoxyCodeLine{00471\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ data\_vb\ =\ blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}};}
+\DoxyCodeLine{00472\ }
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{comment}{//\ TODO:\ Data-\/driven\ permute\ would\ be\ useful\ to\ avoid\ this\ ...}}
+\DoxyCodeLine{00474\ \ \ \ \ \textcolor{keywordflow}{if}\ (omitted\_component\ ==\ 0)}
+\DoxyCodeLine{00475\ \ \ \ \ \{}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ partition\_averages[0]\ =\ partition\_averages[0].\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<1,\ 2,\ 3>();}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ partition\_averages[1]\ =\ partition\_averages[1].\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<1,\ 2,\ 3>();}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ partition\_averages[2]\ =\ partition\_averages[2].\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<1,\ 2,\ 3>();}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ partition\_averages[3]\ =\ partition\_averages[3].\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<1,\ 2,\ 3>();}
+\DoxyCodeLine{00480\ }
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ data\_vr\ =\ blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}};}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ data\_vg\ =\ blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}};}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ data\_vb\ =\ blk.\mbox{\hyperlink{structimage__block_a602c8c88dc1ceef33e833f6d6cbc09ea}{data\_a}};}
+\DoxyCodeLine{00484\ \ \ \ \ \}}
+\DoxyCodeLine{00485\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (omitted\_component\ ==\ 1)}
+\DoxyCodeLine{00486\ \ \ \ \ \{}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ partition\_averages[0]\ =\ partition\_averages[0].\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 2,\ 3>();}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ partition\_averages[1]\ =\ partition\_averages[1].\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 2,\ 3>();}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ partition\_averages[2]\ =\ partition\_averages[2].\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 2,\ 3>();}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ partition\_averages[3]\ =\ partition\_averages[3].\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 2,\ 3>();}
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ data\_vg\ =\ blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}};}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ data\_vb\ =\ blk.\mbox{\hyperlink{structimage__block_a602c8c88dc1ceef33e833f6d6cbc09ea}{data\_a}};}
+\DoxyCodeLine{00494\ \ \ \ \ \}}
+\DoxyCodeLine{00495\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (omitted\_component\ ==\ 2)}
+\DoxyCodeLine{00496\ \ \ \ \ \{}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ partition\_averages[0]\ =\ partition\_averages[0].\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 1,\ 3>();}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ partition\_averages[1]\ =\ partition\_averages[1].\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 1,\ 3>();}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ partition\_averages[2]\ =\ partition\_averages[2].\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 1,\ 3>();}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ partition\_averages[3]\ =\ partition\_averages[3].\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 1,\ 3>();}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ data\_vb\ =\ blk.\mbox{\hyperlink{structimage__block_a602c8c88dc1ceef33e833f6d6cbc09ea}{data\_a}};}
+\DoxyCodeLine{00503\ \ \ \ \ \}}
+\DoxyCodeLine{00504\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00505\ \ \ \ \ \{}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ partition\_averages[0]\ =\ partition\_averages[0].\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 1,\ 2>();}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ partition\_averages[1]\ =\ partition\_averages[1].\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 1,\ 2>();}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ partition\_averages[2]\ =\ partition\_averages[2].\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 1,\ 2>();}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ partition\_averages[3]\ =\ partition\_averages[3].\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 1,\ 2>();}
+\DoxyCodeLine{00510\ \ \ \ \ \}}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00512\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count\ =\ pi.\mbox{\hyperlink{structpartition__info_a1ffb0fdd4d560f536d6118f032fba4f3}{partition\_count}};}
+\DoxyCodeLine{00513\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partition\_count\ >\ 0);}
+\DoxyCodeLine{00514\ }
+\DoxyCodeLine{00515\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\ =\ 0;\ partition\ <\ partition\_count;\ partition++)}
+\DoxyCodeLine{00516\ \ \ \ \ \{}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *texel\_indexes\ =\ pi.\mbox{\hyperlink{structpartition__info_af0987713fff05a82c3230d9400c6e1e7}{texels\_of\_partition}}[partition];}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\_count\ =\ pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[partition];}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(texel\_count\ >\ 0);}
+\DoxyCodeLine{00520\ }
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ average\ =\ partition\_averages[partition];}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ pm[partition].\mbox{\hyperlink{structpartition__metrics_a81851ed35dd9dc3ce09a74b8167f5846}{avg}}\ =\ average;}
+\DoxyCodeLine{00523\ }
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ sum\_xp\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ sum\_yp\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ sum\_zp\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00527\ }
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i++)}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iwt\ =\ texel\_indexes[i];}
+\DoxyCodeLine{00531\ }
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ texel\_datum\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1a2e12d78738b0b4b550f57b2dc05f07}{vfloat3}}(data\_vr[iwt],}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data\_vg[iwt],}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data\_vb[iwt]);}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ texel\_datum\ =\ texel\_datum\ -\/\ average;}
+\DoxyCodeLine{00536\ }
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ zero\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00538\ }
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ tdm0\ =\ texel\_datum.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,0,0,0>()\ >\ zero;}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ sum\_xp\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(zero,\ texel\_datum,\ tdm0);}
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ tdm1\ =\ texel\_datum.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<1,1,1,1>()\ >\ zero;}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ sum\_yp\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(zero,\ texel\_datum,\ tdm1);}
+\DoxyCodeLine{00544\ }
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ tdm2\ =\ texel\_datum.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<2,2,2,2>()\ >\ zero;}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ sum\_zp\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(zero,\ texel\_datum,\ tdm2);}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ prod\_xp\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a6d7561f8f0ebee752b0e217101d9d5f3}{dot}}(sum\_xp,\ sum\_xp);}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ prod\_yp\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a6d7561f8f0ebee752b0e217101d9d5f3}{dot}}(sum\_yp,\ sum\_yp);}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ prod\_zp\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a6d7561f8f0ebee752b0e217101d9d5f3}{dot}}(sum\_zp,\ sum\_zp);}
+\DoxyCodeLine{00552\ }
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ best\_vector\ =\ sum\_xp;}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ best\_sum\ =\ prod\_xp;}
+\DoxyCodeLine{00555\ }
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ prod\_yp\ >\ best\_sum;}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ best\_vector\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_vector,\ sum\_yp,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ best\_sum\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_sum,\ prod\_yp,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00559\ }
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ prod\_zp\ >\ best\_sum;}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ best\_vector\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_vector,\ sum\_zp,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00562\ }
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ pm[partition].\mbox{\hyperlink{structpartition__metrics_a5a05f959255774e848e83001f9b7bd37}{dir}}\ =\ best\_vector;}
+\DoxyCodeLine{00564\ \ \ \ \ \}}
+\DoxyCodeLine{00565\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__averages__and__directions_8cpp_a33f923c5a839af4f1d369a391183c384_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__averages__and__directions_8cpp_a33f923c5a839af4f1d369a391183c384_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__averages__and__directions_8cpp_a73936e5cf41b74f2b8d9b137a9d64253}\index{astcenc\_averages\_and\_directions.cpp@{astcenc\_averages\_and\_directions.cpp}!compute\_avgs\_and\_dirs\_3\_comp\_rgb@{compute\_avgs\_and\_dirs\_3\_comp\_rgb}}
+\index{compute\_avgs\_and\_dirs\_3\_comp\_rgb@{compute\_avgs\_and\_dirs\_3\_comp\_rgb}!astcenc\_averages\_and\_directions.cpp@{astcenc\_averages\_and\_directions.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_avgs\_and\_dirs\_3\_comp\_rgb()}{compute\_avgs\_and\_dirs\_3\_comp\_rgb()}}
+{\footnotesize\ttfamily \label{astcenc__averages__and__directions_8cpp_a73936e5cf41b74f2b8d9b137a9d64253} 
+void compute\+\_\+avgs\+\_\+and\+\_\+dirs\+\_\+3\+\_\+comp\+\_\+rgb (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&}]{pi}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{, }\item[{\mbox{\hyperlink{structpartition__metrics}{partition\+\_\+metrics}}}]{pm}{\mbox{[}\+BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Compute averages and dominant directions for each partition in a 3 component texture. 
+
+This is a specialization of {\ttfamily compute\+\_\+avgs\+\_\+and\+\_\+dirs\+\_\+3\+\_\+comp} where the omitted component is always alpha, a common case during partition search.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em pi} & The partition info for the current trial. \\
+\hline
+ & {\em blk} & The image block color data to be compressed. \\
+\hline
+\mbox{\texttt{ out}}  & {\em pm} & The output partition metrics.
+\begin{DoxyItemize}
+\item Only pi.\+partition\+\_\+count array entries actually get initialized.
+\item Direction vectors {\ttfamily pm.\+dir} are not normalized. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__averages__and__directions_8cpp_source}{astcenc\+\_\+averages\+\_\+and\+\_\+directions.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_source_l00568}{568}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00572\ \ \ \{}
+\DoxyCodeLine{00573\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count\ =\ pi.\mbox{\hyperlink{structpartition__info_a1ffb0fdd4d560f536d6118f032fba4f3}{partition\_count}};}
+\DoxyCodeLine{00574\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partition\_count\ >\ 0);}
+\DoxyCodeLine{00575\ }
+\DoxyCodeLine{00576\ \ \ \ \ \textcolor{comment}{//\ Pre-\/compute\ partition\_averages}}
+\DoxyCodeLine{00577\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ partition\_averages[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00578\ \ \ \ \ \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_ac5429bc77cf39a7dba332af8fb14e093}{compute\_partition\_averages\_rgb}}(pi,\ blk,\ partition\_averages);}
+\DoxyCodeLine{00579\ }
+\DoxyCodeLine{00580\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\ =\ 0;\ partition\ <\ partition\_count;\ partition++)}
+\DoxyCodeLine{00581\ \ \ \ \ \{}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *texel\_indexes\ =\ pi.\mbox{\hyperlink{structpartition__info_af0987713fff05a82c3230d9400c6e1e7}{texels\_of\_partition}}[partition];}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\_count\ =\ pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[partition];}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(texel\_count\ >\ 0);}
+\DoxyCodeLine{00585\ }
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ average\ =\ partition\_averages[partition];}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ pm[partition].\mbox{\hyperlink{structpartition__metrics_a81851ed35dd9dc3ce09a74b8167f5846}{avg}}\ =\ average;}
+\DoxyCodeLine{00588\ }
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ sum\_xp\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ sum\_yp\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ sum\_zp\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00592\ }
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i++)}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iwt\ =\ texel\_indexes[i];}
+\DoxyCodeLine{00596\ }
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ texel\_datum\ =\ blk.\mbox{\hyperlink{structimage__block_a682b1ada02acb8369d6f6f30378b260e}{texel3}}(iwt);}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \ \ \ \ texel\_datum\ =\ texel\_datum\ -\/\ average;}
+\DoxyCodeLine{00599\ }
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ zero\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00601\ }
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ tdm0\ =\ texel\_datum.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,0,0,0>()\ >\ zero;}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \ \ \ \ sum\_xp\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(zero,\ texel\_datum,\ tdm0);}
+\DoxyCodeLine{00604\ }
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ tdm1\ =\ texel\_datum.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<1,1,1,1>()\ >\ zero;}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \ \ \ \ sum\_yp\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(zero,\ texel\_datum,\ tdm1);}
+\DoxyCodeLine{00607\ }
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ tdm2\ =\ texel\_datum.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<2,2,2,2>()\ >\ zero;}
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ \ \ \ \ sum\_zp\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(zero,\ texel\_datum,\ tdm2);}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00611\ }
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ prod\_xp\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a6d7561f8f0ebee752b0e217101d9d5f3}{dot}}(sum\_xp,\ sum\_xp);}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ prod\_yp\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a6d7561f8f0ebee752b0e217101d9d5f3}{dot}}(sum\_yp,\ sum\_yp);}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ prod\_zp\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a6d7561f8f0ebee752b0e217101d9d5f3}{dot}}(sum\_zp,\ sum\_zp);}
+\DoxyCodeLine{00615\ }
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ best\_vector\ =\ sum\_xp;}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ best\_sum\ =\ prod\_xp;}
+\DoxyCodeLine{00618\ }
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ prod\_yp\ >\ best\_sum;}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ best\_vector\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_vector,\ sum\_yp,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ best\_sum\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_sum,\ prod\_yp,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00622\ }
+\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ prod\_zp\ >\ best\_sum;}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ best\_vector\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_vector,\ sum\_zp,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00625\ }
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ pm[partition].\mbox{\hyperlink{structpartition__metrics_a5a05f959255774e848e83001f9b7bd37}{dir}}\ =\ best\_vector;}
+\DoxyCodeLine{00627\ \ \ \ \ \}}
+\DoxyCodeLine{00628\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__averages__and__directions_8cpp_a73936e5cf41b74f2b8d9b137a9d64253_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__averages__and__directions_8cpp_a73936e5cf41b74f2b8d9b137a9d64253_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__averages__and__directions_8cpp_a00407861c2f0e767b64b1cb1bb7a27b6}\index{astcenc\_averages\_and\_directions.cpp@{astcenc\_averages\_and\_directions.cpp}!compute\_avgs\_and\_dirs\_4\_comp@{compute\_avgs\_and\_dirs\_4\_comp}}
+\index{compute\_avgs\_and\_dirs\_4\_comp@{compute\_avgs\_and\_dirs\_4\_comp}!astcenc\_averages\_and\_directions.cpp@{astcenc\_averages\_and\_directions.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_avgs\_and\_dirs\_4\_comp()}{compute\_avgs\_and\_dirs\_4\_comp()}}
+{\footnotesize\ttfamily \label{astcenc__averages__and__directions_8cpp_a00407861c2f0e767b64b1cb1bb7a27b6} 
+void compute\+\_\+avgs\+\_\+and\+\_\+dirs\+\_\+4\+\_\+comp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&}]{pi}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{, }\item[{\mbox{\hyperlink{structpartition__metrics}{partition\+\_\+metrics}}}]{pm}{\mbox{[}\+BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Compute averages and dominant directions for each partition in a 4 component texture. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em pi} & The partition info for the current trial. \\
+\hline
+ & {\em blk} & The image block color data to be compressed. \\
+\hline
+\mbox{\texttt{ out}}  & {\em pm} & The output partition metrics.
+\begin{DoxyItemize}
+\item Only pi.\+partition\+\_\+count array entries actually get initialized.
+\item Direction vectors {\ttfamily pm.\+dir} are not normalized. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__averages__and__directions_8cpp_source}{astcenc\+\_\+averages\+\_\+and\+\_\+directions.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_source_l00388}{388}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00392\ \ \ \{}
+\DoxyCodeLine{00393\ \ \ \ \ \textcolor{keywordtype}{int}\ partition\_count\ =\ pi.\mbox{\hyperlink{structpartition__info_a1ffb0fdd4d560f536d6118f032fba4f3}{partition\_count}};}
+\DoxyCodeLine{00394\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partition\_count\ >\ 0);}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ \ \ \ \ \textcolor{comment}{//\ Pre-\/compute\ partition\_averages}}
+\DoxyCodeLine{00397\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ partition\_averages[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00398\ \ \ \ \ \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_a83cf48552a7e8225358c7c43df24fd96}{compute\_partition\_averages\_rgba}}(pi,\ blk,\ partition\_averages);}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00400\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ partition\ =\ 0;\ partition\ <\ partition\_count;\ partition++)}
+\DoxyCodeLine{00401\ \ \ \ \ \{}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *texel\_indexes\ =\ pi.\mbox{\hyperlink{structpartition__info_af0987713fff05a82c3230d9400c6e1e7}{texels\_of\_partition}}[partition];}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\_count\ =\ pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[partition];}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(texel\_count\ >\ 0);}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ average\ =\ partition\_averages[partition];}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ pm[partition].\mbox{\hyperlink{structpartition__metrics_a81851ed35dd9dc3ce09a74b8167f5846}{avg}}\ =\ average;}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ sum\_xp\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ sum\_yp\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ sum\_zp\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ sum\_wp\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i++)}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iwt\ =\ texel\_indexes[i];}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ texel\_datum\ =\ blk.\mbox{\hyperlink{structimage__block_af99de7d75e1e380b31d70d131509caa9}{texel}}(iwt);}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ texel\_datum\ =\ texel\_datum\ -\/\ average;}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ zero\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ tdm0\ =\ texel\_datum.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,0,0,0>()\ >\ zero;}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ sum\_xp\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(zero,\ texel\_datum,\ tdm0);}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ tdm1\ =\ texel\_datum.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<1,1,1,1>()\ >\ zero;}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ sum\_yp\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(zero,\ texel\_datum,\ tdm1);}
+\DoxyCodeLine{00427\ }
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ tdm2\ =\ texel\_datum.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<2,2,2,2>()\ >\ zero;}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ sum\_zp\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(zero,\ texel\_datum,\ tdm2);}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ tdm3\ =\ texel\_datum.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<3,3,3,3>()\ >\ zero;}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ sum\_wp\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(zero,\ texel\_datum,\ tdm3);}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ prod\_xp\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a6d7561f8f0ebee752b0e217101d9d5f3}{dot}}(sum\_xp,\ sum\_xp);}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ prod\_yp\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a6d7561f8f0ebee752b0e217101d9d5f3}{dot}}(sum\_yp,\ sum\_yp);}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ prod\_zp\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a6d7561f8f0ebee752b0e217101d9d5f3}{dot}}(sum\_zp,\ sum\_zp);}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ prod\_wp\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a6d7561f8f0ebee752b0e217101d9d5f3}{dot}}(sum\_wp,\ sum\_wp);}
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ best\_vector\ =\ sum\_xp;}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ best\_sum\ =\ prod\_xp;}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ prod\_yp\ >\ best\_sum;}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ best\_vector\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_vector,\ sum\_yp,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ best\_sum\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_sum,\ prod\_yp,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ prod\_zp\ >\ best\_sum;}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ best\_vector\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_vector,\ sum\_zp,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ best\_sum\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_sum,\ prod\_zp,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ prod\_wp\ >\ best\_sum;}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ best\_vector\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_vector,\ sum\_wp,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ pm[partition].\mbox{\hyperlink{structpartition__metrics_a5a05f959255774e848e83001f9b7bd37}{dir}}\ =\ best\_vector;}
+\DoxyCodeLine{00455\ \ \ \ \ \}}
+\DoxyCodeLine{00456\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__averages__and__directions_8cpp_a00407861c2f0e767b64b1cb1bb7a27b6_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__averages__and__directions_8cpp_a00407861c2f0e767b64b1cb1bb7a27b6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__averages__and__directions_8cpp_ac4a96475fb0074ef3fd0f08ea66de75e}\index{astcenc\_averages\_and\_directions.cpp@{astcenc\_averages\_and\_directions.cpp}!compute\_error\_squared\_rgb@{compute\_error\_squared\_rgb}}
+\index{compute\_error\_squared\_rgb@{compute\_error\_squared\_rgb}!astcenc\_averages\_and\_directions.cpp@{astcenc\_averages\_and\_directions.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_error\_squared\_rgb()}{compute\_error\_squared\_rgb()}}
+{\footnotesize\ttfamily \label{astcenc__averages__and__directions_8cpp_ac4a96475fb0074ef3fd0f08ea66de75e} 
+void compute\+\_\+error\+\_\+squared\+\_\+rgb (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&}]{pi}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{, }\item[{\mbox{\hyperlink{structpartition__lines3}{partition\+\_\+lines3}}}]{plines}{\mbox{[}\+BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS\mbox{]}, }\item[{float \&}]{uncor\+\_\+error}{, }\item[{float \&}]{samec\+\_\+error}{}\end{DoxyParamCaption})}
+
+
+
+Compute the RGB error for uncorrelated and same chroma projections. 
+
+The output of compute averages and dirs is post processed to define two lines, both of which go through the mean-\/color-\/value. One line has a direction defined by the dominant direction; this is used to assess the error from using an uncorrelated color representation. The other line goes through (0,0,0) and is used to assess the error from using an RGBS color representation.
+
+This function computes the squared error when using these two representations.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em pi} & The partition info for the current trial. \\
+\hline
+ & {\em blk} & The image block color data to be compressed. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em plines} & Processed line inputs, and line length outputs. \\
+\hline
+\mbox{\texttt{ out}}  & {\em uncor\+\_\+error} & The cumulative error for using the uncorrelated line. \\
+\hline
+\mbox{\texttt{ out}}  & {\em samec\+\_\+error} & The cumulative error for using the same chroma line. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__averages__and__directions_8cpp_source}{astcenc\+\_\+averages\+\_\+and\+\_\+directions.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_source_l00843}{843}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00849\ \ \ \{}
+\DoxyCodeLine{00850\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count\ =\ pi.\mbox{\hyperlink{structpartition__info_a1ffb0fdd4d560f536d6118f032fba4f3}{partition\_count}};}
+\DoxyCodeLine{00851\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partition\_count\ >\ 0);}
+\DoxyCodeLine{00852\ }
+\DoxyCodeLine{00853\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloatacc}}\ uncor\_errorsumv\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloatacc::zero}}();}
+\DoxyCodeLine{00854\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloatacc}}\ samec\_errorsumv\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloatacc::zero}}();}
+\DoxyCodeLine{00855\ }
+\DoxyCodeLine{00856\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\ =\ 0;\ partition\ <\ partition\_count;\ partition++)}
+\DoxyCodeLine{00857\ \ \ \ \ \{}
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structpartition__lines3}{partition\_lines3}}\&\ pl\ =\ plines[partition];}
+\DoxyCodeLine{00859\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *texel\_indexes\ =\ pi.\mbox{\hyperlink{structpartition__info_af0987713fff05a82c3230d9400c6e1e7}{texels\_of\_partition}}[partition];}
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\_count\ =\ pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[partition];}
+\DoxyCodeLine{00861\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(texel\_count\ >\ 0);}
+\DoxyCodeLine{00862\ }
+\DoxyCodeLine{00863\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structprocessed__line3}{processed\_line3}}\ l\_uncor\ =\ pl.\mbox{\hyperlink{structpartition__lines3_a859723c79cd27cb1428b2e87d00f21fe}{uncor\_pline}};}
+\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structprocessed__line3}{processed\_line3}}\ l\_samec\ =\ pl.\mbox{\hyperlink{structpartition__lines3_a3d911509177415a3401db5040aea3fae}{samec\_pline}};}
+\DoxyCodeLine{00865\ }
+\DoxyCodeLine{00866\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vectorize\ some\ useful\ scalar\ inputs}}
+\DoxyCodeLine{00867\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_uncor\_bs0(l\_uncor.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>());}
+\DoxyCodeLine{00868\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_uncor\_bs1(l\_uncor.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{00869\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_uncor\_bs2(l\_uncor.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>());}
+\DoxyCodeLine{00870\ }
+\DoxyCodeLine{00871\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_uncor\_amod0(l\_uncor.\mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{amod}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>());}
+\DoxyCodeLine{00872\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_uncor\_amod1(l\_uncor.\mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{amod}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{00873\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_uncor\_amod2(l\_uncor.\mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{amod}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>());}
+\DoxyCodeLine{00874\ }
+\DoxyCodeLine{00875\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_samec\_bs0(l\_samec.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>());}
+\DoxyCodeLine{00876\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_samec\_bs1(l\_samec.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{00877\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_samec\_bs2(l\_samec.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>());}
+\DoxyCodeLine{00878\ }
+\DoxyCodeLine{00879\ \ \ \ \ \ \ \ \ assert(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad93dff3341cbbeed568d4bd6dc4ef87c}{all}}(l\_samec.\mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{amod}}\ ==\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(0.0f)));}
+\DoxyCodeLine{00880\ }
+\DoxyCodeLine{00881\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_loparamv(1e10f);}
+\DoxyCodeLine{00882\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_hiparamv(-\/1e10f);}
+\DoxyCodeLine{00883\ }
+\DoxyCodeLine{00884\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ ew\_r(blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>());}
+\DoxyCodeLine{00885\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ ew\_g(blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{00886\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ ew\_b(blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>());}
+\DoxyCodeLine{00887\ }
+\DoxyCodeLine{00888\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ implementation\ over-\/shoots,\ but\ this\ is\ safe\ as\ we\ initialize\ the\ weights\ array}}
+\DoxyCodeLine{00889\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ to\ extend\ the\ last\ value.\ This\ means\ min/max\ are\ not\ impacted,\ but\ we\ need\ to\ mask}}
+\DoxyCodeLine{00890\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ out\ the\ dummy\ values\ when\ we\ compute\ the\ line\ weighting.}}
+\DoxyCodeLine{00891\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ lane\_ids\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint::lane\_id}}();}
+\DoxyCodeLine{00892\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{00893\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ lane\_ids\ <\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(texel\_count);}
+\DoxyCodeLine{00895\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ texel\_idxs(texel\_indexes\ +\ i);}
+\DoxyCodeLine{00896\ }
+\DoxyCodeLine{00897\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_r\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aae2f99eb48f3cde0f4739b894e8ca29f}{gatherf}}(blk.\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}},\ texel\_idxs);}
+\DoxyCodeLine{00898\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_g\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aae2f99eb48f3cde0f4739b894e8ca29f}{gatherf}}(blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}},\ texel\_idxs);}
+\DoxyCodeLine{00899\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_b\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aae2f99eb48f3cde0f4739b894e8ca29f}{gatherf}}(blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}},\ texel\_idxs);}
+\DoxyCodeLine{00900\ }
+\DoxyCodeLine{00901\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_param\ =\ (data\_r\ *\ l\_uncor\_bs0)}
+\DoxyCodeLine{00902\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (data\_g\ *\ l\_uncor\_bs1)}
+\DoxyCodeLine{00903\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (data\_b\ *\ l\_uncor\_bs2);}
+\DoxyCodeLine{00904\ }
+\DoxyCodeLine{00905\ \ \ \ \ \ \ \ \ \ \ \ \ uncor\_loparamv\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(uncor\_param,\ uncor\_loparamv);}
+\DoxyCodeLine{00906\ \ \ \ \ \ \ \ \ \ \ \ \ uncor\_hiparamv\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}{max}}(uncor\_param,\ uncor\_hiparamv);}
+\DoxyCodeLine{00907\ }
+\DoxyCodeLine{00908\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_dist0\ =\ (l\_uncor\_amod0\ -\/\ data\_r)}
+\DoxyCodeLine{00909\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (uncor\_param\ *\ l\_uncor\_bs0);}
+\DoxyCodeLine{00910\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_dist1\ =\ (l\_uncor\_amod1\ -\/\ data\_g)}
+\DoxyCodeLine{00911\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (uncor\_param\ *\ l\_uncor\_bs1);}
+\DoxyCodeLine{00912\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_dist2\ =\ (l\_uncor\_amod2\ -\/\ data\_b)}
+\DoxyCodeLine{00913\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (uncor\_param\ *\ l\_uncor\_bs2);}
+\DoxyCodeLine{00914\ }
+\DoxyCodeLine{00915\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_err\ =\ (ew\_r\ *\ uncor\_dist0\ *\ uncor\_dist0)}
+\DoxyCodeLine{00916\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (ew\_g\ *\ uncor\_dist1\ *\ uncor\_dist1)}
+\DoxyCodeLine{00917\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (ew\_b\ *\ uncor\_dist2\ *\ uncor\_dist2);}
+\DoxyCodeLine{00918\ }
+\DoxyCodeLine{00919\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(uncor\_errorsumv,\ uncor\_err,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00920\ }
+\DoxyCodeLine{00921\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Process\ samechroma\ data}}
+\DoxyCodeLine{00922\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ samec\_param\ =\ (data\_r\ *\ l\_samec\_bs0)}
+\DoxyCodeLine{00923\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (data\_g\ *\ l\_samec\_bs1)}
+\DoxyCodeLine{00924\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (data\_b\ *\ l\_samec\_bs2);}
+\DoxyCodeLine{00925\ }
+\DoxyCodeLine{00926\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ samec\_dist0\ =\ samec\_param\ *\ l\_samec\_bs0\ -\/\ data\_r;}
+\DoxyCodeLine{00927\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ samec\_dist1\ =\ samec\_param\ *\ l\_samec\_bs1\ -\/\ data\_g;}
+\DoxyCodeLine{00928\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ samec\_dist2\ =\ samec\_param\ *\ l\_samec\_bs2\ -\/\ data\_b;}
+\DoxyCodeLine{00929\ }
+\DoxyCodeLine{00930\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ samec\_err\ =\ (ew\_r\ *\ samec\_dist0\ *\ samec\_dist0)}
+\DoxyCodeLine{00931\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (ew\_g\ *\ samec\_dist1\ *\ samec\_dist1)}
+\DoxyCodeLine{00932\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (ew\_b\ *\ samec\_dist2\ *\ samec\_dist2);}
+\DoxyCodeLine{00933\ }
+\DoxyCodeLine{00934\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(samec\_errorsumv,\ samec\_err,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00935\ }
+\DoxyCodeLine{00936\ \ \ \ \ \ \ \ \ \ \ \ \ lane\_ids\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}});}
+\DoxyCodeLine{00937\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00938\ }
+\DoxyCodeLine{00939\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Turn\ very\ small\ numbers\ and\ NaNs\ into\ a\ small\ number}}
+\DoxyCodeLine{00940\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ uncor\_linelen\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a5d1b09f64af83d5171e4b9580f62ac71}{hmax\_s}}(uncor\_hiparamv)\ -\/\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a5618d81f875c0158284ccc9923d83dab}{hmin\_s}}(uncor\_loparamv);}
+\DoxyCodeLine{00941\ \ \ \ \ \ \ \ \ pl.\mbox{\hyperlink{structpartition__lines3_aab1e76d822bfde8b007da4dd65714ff2}{line\_length}}\ =\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}(uncor\_linelen,\ 1e-\/7f);}
+\DoxyCodeLine{00942\ \ \ \ \ \}}
+\DoxyCodeLine{00943\ }
+\DoxyCodeLine{00944\ \ \ \ \ uncor\_error\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(uncor\_errorsumv);}
+\DoxyCodeLine{00945\ \ \ \ \ samec\_error\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(samec\_errorsumv);}
+\DoxyCodeLine{00946\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__averages__and__directions_8cpp_ac4a96475fb0074ef3fd0f08ea66de75e_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__averages__and__directions_8cpp_ac4a96475fb0074ef3fd0f08ea66de75e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__averages__and__directions_8cpp_a2dec702033b002eaf4090eb47ce4ad21}\index{astcenc\_averages\_and\_directions.cpp@{astcenc\_averages\_and\_directions.cpp}!compute\_error\_squared\_rgba@{compute\_error\_squared\_rgba}}
+\index{compute\_error\_squared\_rgba@{compute\_error\_squared\_rgba}!astcenc\_averages\_and\_directions.cpp@{astcenc\_averages\_and\_directions.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_error\_squared\_rgba()}{compute\_error\_squared\_rgba()}}
+{\footnotesize\ttfamily \label{astcenc__averages__and__directions_8cpp_a2dec702033b002eaf4090eb47ce4ad21} 
+void compute\+\_\+error\+\_\+squared\+\_\+rgba (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&}]{pi}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{, }\item[{const \mbox{\hyperlink{structprocessed__line4}{processed\+\_\+line4}}}]{uncor\+\_\+plines}{\mbox{[}\+BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS\mbox{]}, }\item[{const \mbox{\hyperlink{structprocessed__line4}{processed\+\_\+line4}}}]{samec\+\_\+plines}{\mbox{[}\+BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS\mbox{]}, }\item[{float}]{line\+\_\+lengths}{\mbox{[}\+BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS\mbox{]}, }\item[{float \&}]{uncor\+\_\+error}{, }\item[{float \&}]{samec\+\_\+error}{}\end{DoxyParamCaption})}
+
+
+
+Compute the RGBA error for uncorrelated and same chroma projections. 
+
+The output of compute averages and dirs is post processed to define two lines, both of which go through the mean-\/color-\/value. One line has a direction defined by the dominant direction; this is used to assess the error from using an uncorrelated color representation. The other line goes through (0,0,0,1) and is used to assess the error from using an RGBS color representation.
+
+This function computes the squared error when using these two representations.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em pi} & The partition info for the current trial. \\
+\hline
+ & {\em blk} & The image block color data to be compressed. \\
+\hline
+ & {\em uncor\+\_\+plines} & Processed uncorrelated partition lines for each partition. \\
+\hline
+ & {\em samec\+\_\+plines} & Processed same chroma partition lines for each partition. \\
+\hline
+\mbox{\texttt{ out}}  & {\em line\+\_\+lengths} & The length of each components deviation from the line. \\
+\hline
+\mbox{\texttt{ out}}  & {\em uncor\+\_\+error} & The cumulative error for using the uncorrelated line. \\
+\hline
+\mbox{\texttt{ out}}  & {\em samec\+\_\+error} & The cumulative error for using the same chroma line. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__averages__and__directions_8cpp_source}{astcenc\+\_\+averages\+\_\+and\+\_\+directions.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_source_l00723}{723}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00731\ \ \ \{}
+\DoxyCodeLine{00732\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count\ =\ pi.\mbox{\hyperlink{structpartition__info_a1ffb0fdd4d560f536d6118f032fba4f3}{partition\_count}};}
+\DoxyCodeLine{00733\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partition\_count\ >\ 0);}
+\DoxyCodeLine{00734\ }
+\DoxyCodeLine{00735\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloatacc}}\ uncor\_errorsumv\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloatacc::zero}}();}
+\DoxyCodeLine{00736\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloatacc}}\ samec\_errorsumv\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloatacc::zero}}();}
+\DoxyCodeLine{00737\ }
+\DoxyCodeLine{00738\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\ =\ 0;\ partition\ <\ partition\_count;\ partition++)}
+\DoxyCodeLine{00739\ \ \ \ \ \{}
+\DoxyCodeLine{00740\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *texel\_indexes\ =\ pi.\mbox{\hyperlink{structpartition__info_af0987713fff05a82c3230d9400c6e1e7}{texels\_of\_partition}}[partition];}
+\DoxyCodeLine{00741\ }
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structprocessed__line4}{processed\_line4}}\ l\_uncor\ =\ uncor\_plines[partition];}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structprocessed__line4}{processed\_line4}}\ l\_samec\ =\ samec\_plines[partition];}
+\DoxyCodeLine{00744\ }
+\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\_count\ =\ pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[partition];}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(texel\_count\ >\ 0);}
+\DoxyCodeLine{00747\ }
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vectorize\ some\ useful\ scalar\ inputs}}
+\DoxyCodeLine{00749\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_uncor\_bs0(l\_uncor.\mbox{\hyperlink{structprocessed__line4_a0e2bff0306a32a7f07e0f127ff13febc}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>());}
+\DoxyCodeLine{00750\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_uncor\_bs1(l\_uncor.\mbox{\hyperlink{structprocessed__line4_a0e2bff0306a32a7f07e0f127ff13febc}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{00751\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_uncor\_bs2(l\_uncor.\mbox{\hyperlink{structprocessed__line4_a0e2bff0306a32a7f07e0f127ff13febc}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>());}
+\DoxyCodeLine{00752\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_uncor\_bs3(l\_uncor.\mbox{\hyperlink{structprocessed__line4_a0e2bff0306a32a7f07e0f127ff13febc}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>());}
+\DoxyCodeLine{00753\ }
+\DoxyCodeLine{00754\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_uncor\_amod0(l\_uncor.\mbox{\hyperlink{structprocessed__line4_a15d23ed62e7f387dde80641c087fa578}{amod}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>());}
+\DoxyCodeLine{00755\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_uncor\_amod1(l\_uncor.\mbox{\hyperlink{structprocessed__line4_a15d23ed62e7f387dde80641c087fa578}{amod}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{00756\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_uncor\_amod2(l\_uncor.\mbox{\hyperlink{structprocessed__line4_a15d23ed62e7f387dde80641c087fa578}{amod}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>());}
+\DoxyCodeLine{00757\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_uncor\_amod3(l\_uncor.\mbox{\hyperlink{structprocessed__line4_a15d23ed62e7f387dde80641c087fa578}{amod}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>());}
+\DoxyCodeLine{00758\ }
+\DoxyCodeLine{00759\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_samec\_bs0(l\_samec.\mbox{\hyperlink{structprocessed__line4_a0e2bff0306a32a7f07e0f127ff13febc}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>());}
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_samec\_bs1(l\_samec.\mbox{\hyperlink{structprocessed__line4_a0e2bff0306a32a7f07e0f127ff13febc}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_samec\_bs2(l\_samec.\mbox{\hyperlink{structprocessed__line4_a0e2bff0306a32a7f07e0f127ff13febc}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>());}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_samec\_bs3(l\_samec.\mbox{\hyperlink{structprocessed__line4_a0e2bff0306a32a7f07e0f127ff13febc}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>());}
+\DoxyCodeLine{00763\ }
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ assert(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad93dff3341cbbeed568d4bd6dc4ef87c}{all}}(l\_samec.\mbox{\hyperlink{structprocessed__line4_a15d23ed62e7f387dde80641c087fa578}{amod}}\ ==\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(0.0f)));}
+\DoxyCodeLine{00765\ }
+\DoxyCodeLine{00766\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_loparamv(1e10f);}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_hiparamv(-\/1e10f);}
+\DoxyCodeLine{00768\ }
+\DoxyCodeLine{00769\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ ew\_r(blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>());}
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ ew\_g(blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{00771\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ ew\_b(blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>());}
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ ew\_a(blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>());}
+\DoxyCodeLine{00773\ }
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ implementation\ over-\/shoots,\ but\ this\ is\ safe\ as\ we\ initialize\ the\ texel\_indexes}}
+\DoxyCodeLine{00775\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ array\ to\ extend\ the\ last\ value.\ This\ means\ min/max\ are\ not\ impacted,\ but\ we\ need\ to\ mask}}
+\DoxyCodeLine{00776\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ out\ the\ dummy\ values\ when\ we\ compute\ the\ line\ weighting.}}
+\DoxyCodeLine{00777\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ lane\_ids\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint::lane\_id}}();}
+\DoxyCodeLine{00778\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{00779\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00780\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ lane\_ids\ <\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(texel\_count);}
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ texel\_idxs(texel\_indexes\ +\ i);}
+\DoxyCodeLine{00782\ }
+\DoxyCodeLine{00783\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_r\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aae2f99eb48f3cde0f4739b894e8ca29f}{gatherf}}(blk.\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}},\ texel\_idxs);}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_g\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aae2f99eb48f3cde0f4739b894e8ca29f}{gatherf}}(blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}},\ texel\_idxs);}
+\DoxyCodeLine{00785\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_b\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aae2f99eb48f3cde0f4739b894e8ca29f}{gatherf}}(blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}},\ texel\_idxs);}
+\DoxyCodeLine{00786\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_a\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aae2f99eb48f3cde0f4739b894e8ca29f}{gatherf}}(blk.\mbox{\hyperlink{structimage__block_a602c8c88dc1ceef33e833f6d6cbc09ea}{data\_a}},\ texel\_idxs);}
+\DoxyCodeLine{00787\ }
+\DoxyCodeLine{00788\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_param\ =\ (data\_r\ *\ l\_uncor\_bs0)}
+\DoxyCodeLine{00789\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (data\_g\ *\ l\_uncor\_bs1)}
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (data\_b\ *\ l\_uncor\_bs2)}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (data\_a\ *\ l\_uncor\_bs3);}
+\DoxyCodeLine{00792\ }
+\DoxyCodeLine{00793\ \ \ \ \ \ \ \ \ \ \ \ \ uncor\_loparamv\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(uncor\_param,\ uncor\_loparamv);}
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ \ \ \ \ uncor\_hiparamv\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}{max}}(uncor\_param,\ uncor\_hiparamv);}
+\DoxyCodeLine{00795\ }
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_dist0\ =\ (l\_uncor\_amod0\ -\/\ data\_r)}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (uncor\_param\ *\ l\_uncor\_bs0);}
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_dist1\ =\ (l\_uncor\_amod1\ -\/\ data\_g)}
+\DoxyCodeLine{00799\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (uncor\_param\ *\ l\_uncor\_bs1);}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_dist2\ =\ (l\_uncor\_amod2\ -\/\ data\_b)}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (uncor\_param\ *\ l\_uncor\_bs2);}
+\DoxyCodeLine{00802\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_dist3\ =\ (l\_uncor\_amod3\ -\/\ data\_a)}
+\DoxyCodeLine{00803\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (uncor\_param\ *\ l\_uncor\_bs3);}
+\DoxyCodeLine{00804\ }
+\DoxyCodeLine{00805\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_err\ =\ (ew\_r\ *\ uncor\_dist0\ *\ uncor\_dist0)}
+\DoxyCodeLine{00806\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (ew\_g\ *\ uncor\_dist1\ *\ uncor\_dist1)}
+\DoxyCodeLine{00807\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (ew\_b\ *\ uncor\_dist2\ *\ uncor\_dist2)}
+\DoxyCodeLine{00808\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (ew\_a\ *\ uncor\_dist3\ *\ uncor\_dist3);}
+\DoxyCodeLine{00809\ }
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(uncor\_errorsumv,\ uncor\_err,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00811\ }
+\DoxyCodeLine{00812\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Process\ samechroma\ data}}
+\DoxyCodeLine{00813\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ samec\_param\ =\ (data\_r\ *\ l\_samec\_bs0)}
+\DoxyCodeLine{00814\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (data\_g\ *\ l\_samec\_bs1)}
+\DoxyCodeLine{00815\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (data\_b\ *\ l\_samec\_bs2)}
+\DoxyCodeLine{00816\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (data\_a\ *\ l\_samec\_bs3);}
+\DoxyCodeLine{00817\ }
+\DoxyCodeLine{00818\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ samec\_dist0\ =\ samec\_param\ *\ l\_samec\_bs0\ -\/\ data\_r;}
+\DoxyCodeLine{00819\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ samec\_dist1\ =\ samec\_param\ *\ l\_samec\_bs1\ -\/\ data\_g;}
+\DoxyCodeLine{00820\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ samec\_dist2\ =\ samec\_param\ *\ l\_samec\_bs2\ -\/\ data\_b;}
+\DoxyCodeLine{00821\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ samec\_dist3\ =\ samec\_param\ *\ l\_samec\_bs3\ -\/\ data\_a;}
+\DoxyCodeLine{00822\ }
+\DoxyCodeLine{00823\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ samec\_err\ =\ (ew\_r\ *\ samec\_dist0\ *\ samec\_dist0)}
+\DoxyCodeLine{00824\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (ew\_g\ *\ samec\_dist1\ *\ samec\_dist1)}
+\DoxyCodeLine{00825\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (ew\_b\ *\ samec\_dist2\ *\ samec\_dist2)}
+\DoxyCodeLine{00826\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (ew\_a\ *\ samec\_dist3\ *\ samec\_dist3);}
+\DoxyCodeLine{00827\ }
+\DoxyCodeLine{00828\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(samec\_errorsumv,\ samec\_err,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00829\ }
+\DoxyCodeLine{00830\ \ \ \ \ \ \ \ \ \ \ \ \ lane\_ids\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}});}
+\DoxyCodeLine{00831\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00832\ }
+\DoxyCodeLine{00833\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Turn\ very\ small\ numbers\ and\ NaNs\ into\ a\ small\ number}}
+\DoxyCodeLine{00834\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ uncor\_linelen\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a5d1b09f64af83d5171e4b9580f62ac71}{hmax\_s}}(uncor\_hiparamv)\ -\/\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a5618d81f875c0158284ccc9923d83dab}{hmin\_s}}(uncor\_loparamv);}
+\DoxyCodeLine{00835\ \ \ \ \ \ \ \ \ line\_lengths[partition]\ =\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}(uncor\_linelen,\ 1e-\/7f);}
+\DoxyCodeLine{00836\ \ \ \ \ \}}
+\DoxyCodeLine{00837\ }
+\DoxyCodeLine{00838\ \ \ \ \ uncor\_error\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(uncor\_errorsumv);}
+\DoxyCodeLine{00839\ \ \ \ \ samec\_error\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(samec\_errorsumv);}
+\DoxyCodeLine{00840\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__averages__and__directions_8cpp_a2dec702033b002eaf4090eb47ce4ad21_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__averages__and__directions_8cpp_a2dec702033b002eaf4090eb47ce4ad21_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__averages__and__directions_8cpp_ac5429bc77cf39a7dba332af8fb14e093}\index{astcenc\_averages\_and\_directions.cpp@{astcenc\_averages\_and\_directions.cpp}!compute\_partition\_averages\_rgb@{compute\_partition\_averages\_rgb}}
+\index{compute\_partition\_averages\_rgb@{compute\_partition\_averages\_rgb}!astcenc\_averages\_and\_directions.cpp@{astcenc\_averages\_and\_directions.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_partition\_averages\_rgb()}{compute\_partition\_averages\_rgb()}}
+{\footnotesize\ttfamily \label{astcenc__averages__and__directions_8cpp_ac5429bc77cf39a7dba332af8fb14e093} 
+static void compute\+\_\+partition\+\_\+averages\+\_\+rgb (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&}]{pi}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{, }\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{averages}{\mbox{[}\+BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Functions for finding dominant direction of a set of colors. 
+
+Compute the average RGB color of each partition.
+
+The algorithm here uses a vectorized sequential scan and per-\/partition color accumulators, using \doxylink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select()} to mask texel lanes in other partitions.
+
+We only accumulate sums for N-\/1 partitions during the scan; the value for the last partition can be computed given that we know the block-\/wide average already.
+
+Because of this we could reduce the loop iteration count so it "{}just"{} spans the max texel index needed for the N-\/1 partitions, which could need fewer iterations than the full block texel count. However, this makes the loop count erratic and causes more branch mispredictions so is a net loss.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em pi} & The partitioning to use. \\
+\hline
+ & {\em blk} & The block data to process. \\
+\hline
+\mbox{\texttt{ out}}  & {\em averages} & The output averages. Unused partition indices will not be initialized, and lane$<$3$>$ will be zero. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__averages__and__directions_8cpp_source}{astcenc\+\_\+averages\+\_\+and\+\_\+directions.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_source_l00047}{47}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count\ =\ pi.\mbox{\hyperlink{structpartition__info_a1ffb0fdd4d560f536d6118f032fba4f3}{partition\_count}};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\_count\ =\ blk.\mbox{\hyperlink{structimage__block_a05174b1db0b9131ad61fc49f3aa74676}{texel\_count}};}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(texel\_count\ >\ 0);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ For\ 1\ partition\ just\ use\ the\ precomputed\ mean}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (partition\_count\ ==\ 1)}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ averages[0]\ =\ blk.\mbox{\hyperlink{structimage__block_ac6bd4890338be887b61f857e37d23459}{data\_mean}}.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 1,\ 2>();}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ For\ 2\ partitions\ scan\ results\ for\ partition\ 0,\ compute\ partition\ 1}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (partition\_count\ ==\ 2)}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloatacc}}\ pp\_avg\_rgb[3]\ \{\};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ lane\_id\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint::lane\_id}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ texel\_partition(pi.\mbox{\hyperlink{structpartition__info_ad9cde9216bbe8865a4660a6c955a6793}{partition\_of\_texel}}\ +\ i);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ lane\_mask\ =\ lane\_id\ <\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(texel\_count);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ lane\_id\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}});}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ p0\_mask\ =\ lane\_mask\ \&\ (texel\_partition\ ==\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(0));}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_r\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}}\ +\ i);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[0],\ data\_r,\ p0\_mask);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_g\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}}\ +\ i);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[1],\ data\_g,\ p0\_mask);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_b\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}}\ +\ i);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[2],\ data\_b,\ p0\_mask);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ block\_total\ =\ blk.\mbox{\hyperlink{structimage__block_ac6bd4890338be887b61f857e37d23459}{data\_mean}}.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 1,\ 2>()\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(blk.\mbox{\hyperlink{structimage__block_a05174b1db0b9131ad61fc49f3aa74676}{texel\_count}});}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p0\_total\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1a2e12d78738b0b4b550f57b2dc05f07}{vfloat3}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[0]),}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[1]),}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[2]));}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p1\_total\ =\ block\_total\ -\/\ p0\_total;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ averages[0]\ =\ p0\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[0]);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ averages[1]\ =\ p1\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[1]);}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{comment}{//\ For\ 3\ partitions\ scan\ results\ for\ partition\ 0/1,\ compute\ partition\ 2}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (partition\_count\ ==\ 3)}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloatacc}}\ pp\_avg\_rgb[2][3]\ \{\};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ lane\_id\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint::lane\_id}}();}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ texel\_partition(pi.\mbox{\hyperlink{structpartition__info_ad9cde9216bbe8865a4660a6c955a6793}{partition\_of\_texel}}\ +\ i);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ lane\_mask\ =\ lane\_id\ <\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(texel\_count);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ lane\_id\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}});}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ p0\_mask\ =\ lane\_mask\ \&\ (texel\_partition\ ==\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(0));}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ p1\_mask\ =\ lane\_mask\ \&\ (texel\_partition\ ==\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(1));}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_r\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}}\ +\ i);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[0][0],\ data\_r,\ p0\_mask);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[1][0],\ data\_r,\ p1\_mask);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_g\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}}\ +\ i);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[0][1],\ data\_g,\ p0\_mask);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[1][1],\ data\_g,\ p1\_mask);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_b\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}}\ +\ i);}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[0][2],\ data\_b,\ p0\_mask);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[1][2],\ data\_b,\ p1\_mask);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ block\_total\ =\ blk.\mbox{\hyperlink{structimage__block_ac6bd4890338be887b61f857e37d23459}{data\_mean}}.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 1,\ 2>()\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(blk.\mbox{\hyperlink{structimage__block_a05174b1db0b9131ad61fc49f3aa74676}{texel\_count}});}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p0\_total\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1a2e12d78738b0b4b550f57b2dc05f07}{vfloat3}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[0][0]),}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[0][1]),}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[0][2]));}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p1\_total\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1a2e12d78738b0b4b550f57b2dc05f07}{vfloat3}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[1][0]),}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[1][1]),}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[1][2]));}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p2\_total\ =\ block\_total\ -\/\ p0\_total\ -\/\ p1\_total;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ averages[0]\ =\ p0\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[0]);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ averages[1]\ =\ p1\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[1]);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ averages[2]\ =\ p2\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[2]);}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00143\ \ \ \ \ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ 4\ partitions\ scan\ results\ for\ partition\ 0/1/2,\ compute\ partition\ 3}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloatacc}}\ pp\_avg\_rgb[3][3]\ \{\};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ lane\_id\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint::lane\_id}}();}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ texel\_partition(pi.\mbox{\hyperlink{structpartition__info_ad9cde9216bbe8865a4660a6c955a6793}{partition\_of\_texel}}\ +\ i);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ lane\_mask\ =\ lane\_id\ <\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(texel\_count);}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ lane\_id\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}});}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ p0\_mask\ =\ lane\_mask\ \&\ (texel\_partition\ ==\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(0));}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ p1\_mask\ =\ lane\_mask\ \&\ (texel\_partition\ ==\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(1));}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ p2\_mask\ =\ lane\_mask\ \&\ (texel\_partition\ ==\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(2));}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_r\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}}\ +\ i);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[0][0],\ data\_r,\ p0\_mask);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[1][0],\ data\_r,\ p1\_mask);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[2][0],\ data\_r,\ p2\_mask);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_g\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}}\ +\ i);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[0][1],\ data\_g,\ p0\_mask);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[1][1],\ data\_g,\ p1\_mask);}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[2][1],\ data\_g,\ p2\_mask);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_b\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}}\ +\ i);}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[0][2],\ data\_b,\ p0\_mask);}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[1][2],\ data\_b,\ p1\_mask);}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgb[2][2],\ data\_b,\ p2\_mask);}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ block\_total\ =\ blk.\mbox{\hyperlink{structimage__block_ac6bd4890338be887b61f857e37d23459}{data\_mean}}.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 1,\ 2>()\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(blk.\mbox{\hyperlink{structimage__block_a05174b1db0b9131ad61fc49f3aa74676}{texel\_count}});}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p0\_total\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1a2e12d78738b0b4b550f57b2dc05f07}{vfloat3}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[0][0]),}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[0][1]),}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[0][2]));}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p1\_total\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1a2e12d78738b0b4b550f57b2dc05f07}{vfloat3}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[1][0]),}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[1][1]),}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[1][2]));}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p2\_total\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1a2e12d78738b0b4b550f57b2dc05f07}{vfloat3}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[2][0]),}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[2][1]),}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgb[2][2]));}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p3\_total\ =\ block\_total\ -\/\ p0\_total\ -\/\ p1\_total-\/\ p2\_total;}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ averages[0]\ =\ p0\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[0]);}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ averages[1]\ =\ p1\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[1]);}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ averages[2]\ =\ p2\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[2]);}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ averages[3]\ =\ p3\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[3]);}
+\DoxyCodeLine{00195\ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__averages__and__directions_8cpp_ac5429bc77cf39a7dba332af8fb14e093_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__averages__and__directions_8cpp_ac5429bc77cf39a7dba332af8fb14e093_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__averages__and__directions_8cpp_a83cf48552a7e8225358c7c43df24fd96}\index{astcenc\_averages\_and\_directions.cpp@{astcenc\_averages\_and\_directions.cpp}!compute\_partition\_averages\_rgba@{compute\_partition\_averages\_rgba}}
+\index{compute\_partition\_averages\_rgba@{compute\_partition\_averages\_rgba}!astcenc\_averages\_and\_directions.cpp@{astcenc\_averages\_and\_directions.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_partition\_averages\_rgba()}{compute\_partition\_averages\_rgba()}}
+{\footnotesize\ttfamily \label{astcenc__averages__and__directions_8cpp_a83cf48552a7e8225358c7c43df24fd96} 
+static void compute\+\_\+partition\+\_\+averages\+\_\+rgba (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&}]{pi}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{, }\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{averages}{\mbox{[}\+BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compute the average RGBA color of each partition. 
+
+The algorithm here uses a vectorized sequential scan and per-\/partition color accumulators, using \doxylink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select()} to mask texel lanes in other partitions.
+
+We only accumulate sums for N-\/1 partitions during the scan; the value for the last partition can be computed given that we know the block-\/wide average already.
+
+Because of this we could reduce the loop iteration count so it "{}just"{} spans the max texel index needed for the N-\/1 partitions, which could need fewer iterations than the full block texel count. However, this makes the loop count erratic and causes more branch mispredictions so is a net loss.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em pi} & The partitioning to use. \\
+\hline
+ & {\em blk} & The block data to process. \\
+\hline
+\mbox{\texttt{ out}}  & {\em averages} & The output averages. Unused partition indices will not be initialized. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__averages__and__directions_8cpp_source}{astcenc\+\_\+averages\+\_\+and\+\_\+directions.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_source_l00218}{218}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00222\ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count\ =\ pi.\mbox{\hyperlink{structpartition__info_a1ffb0fdd4d560f536d6118f032fba4f3}{partition\_count}};}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\_count\ =\ blk.\mbox{\hyperlink{structimage__block_a05174b1db0b9131ad61fc49f3aa74676}{texel\_count}};}
+\DoxyCodeLine{00225\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(texel\_count\ >\ 0);}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{comment}{//\ For\ 1\ partition\ just\ use\ the\ precomputed\ mean}}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordflow}{if}\ (partition\_count\ ==\ 1)}
+\DoxyCodeLine{00229\ \ \ \ \ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ averages[0]\ =\ blk.\mbox{\hyperlink{structimage__block_ac6bd4890338be887b61f857e37d23459}{data\_mean}};}
+\DoxyCodeLine{00231\ \ \ \ \ \}}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{comment}{//\ For\ 2\ partitions\ scan\ results\ for\ partition\ 0,\ compute\ partition\ 1}}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (partition\_count\ ==\ 2)}
+\DoxyCodeLine{00234\ \ \ \ \ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ pp\_avg\_rgba[4]\ \{\};}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ lane\_id\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint::lane\_id}}();}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ texel\_partition(pi.\mbox{\hyperlink{structpartition__info_ad9cde9216bbe8865a4660a6c955a6793}{partition\_of\_texel}}\ +\ i);}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ lane\_mask\ =\ lane\_id\ <\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(texel\_count);}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ lane\_id\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}});}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ p0\_mask\ =\ lane\_mask\ \&\ (texel\_partition\ ==\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(0));}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_r\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}}\ +\ i);}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[0],\ data\_r,\ p0\_mask);}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_g\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}}\ +\ i);}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[1],\ data\_g,\ p0\_mask);}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_b\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}}\ +\ i);}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[2],\ data\_b,\ p0\_mask);}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_a\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_a602c8c88dc1ceef33e833f6d6cbc09ea}{data\_a}}\ +\ i);}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[3],\ data\_a,\ p0\_mask);}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ block\_total\ =\ blk.\mbox{\hyperlink{structimage__block_ac6bd4890338be887b61f857e37d23459}{data\_mean}}\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(blk.\mbox{\hyperlink{structimage__block_a05174b1db0b9131ad61fc49f3aa74676}{texel\_count}});}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p0\_total\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[0]),}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[1]),}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[2]),}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[3]));}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p1\_total\ =\ block\_total\ -\/\ p0\_total;}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ averages[0]\ =\ p0\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[0]);}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ averages[1]\ =\ p1\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[1]);}
+\DoxyCodeLine{00271\ \ \ \ \ \}}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{comment}{//\ For\ 3\ partitions\ scan\ results\ for\ partition\ 0/1,\ compute\ partition\ 2}}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (partition\_count\ ==\ 3)}
+\DoxyCodeLine{00274\ \ \ \ \ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ pp\_avg\_rgba[2][4]\ \{\};}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ lane\_id\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint::lane\_id}}();}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ texel\_partition(pi.\mbox{\hyperlink{structpartition__info_ad9cde9216bbe8865a4660a6c955a6793}{partition\_of\_texel}}\ +\ i);}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ lane\_mask\ =\ lane\_id\ <\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(texel\_count);}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ lane\_id\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}});}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ p0\_mask\ =\ lane\_mask\ \&\ (texel\_partition\ ==\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(0));}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ p1\_mask\ =\ lane\_mask\ \&\ (texel\_partition\ ==\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(1));}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_r\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}}\ +\ i);}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[0][0],\ data\_r,\ p0\_mask);}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[1][0],\ data\_r,\ p1\_mask);}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_g\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}}\ +\ i);}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[0][1],\ data\_g,\ p0\_mask);}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[1][1],\ data\_g,\ p1\_mask);}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_b\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}}\ +\ i);}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[0][2],\ data\_b,\ p0\_mask);}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[1][2],\ data\_b,\ p1\_mask);}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_a\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_a602c8c88dc1ceef33e833f6d6cbc09ea}{data\_a}}\ +\ i);}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[0][3],\ data\_a,\ p0\_mask);}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[1][3],\ data\_a,\ p1\_mask);}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ block\_total\ =\ blk.\mbox{\hyperlink{structimage__block_ac6bd4890338be887b61f857e37d23459}{data\_mean}}\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(blk.\mbox{\hyperlink{structimage__block_a05174b1db0b9131ad61fc49f3aa74676}{texel\_count}});}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p0\_total\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[0][0]),}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[0][1]),}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[0][2]),}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[0][3]));}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p1\_total\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[1][0]),}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[1][1]),}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[1][2]),}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[1][3]));}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p2\_total\ =\ block\_total\ -\/\ p0\_total\ -\/\ p1\_total;}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ averages[0]\ =\ p0\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[0]);}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ averages[1]\ =\ p1\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[1]);}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ averages[2]\ =\ p2\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[2]);}
+\DoxyCodeLine{00322\ \ \ \ \ \}}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00324\ \ \ \ \ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ 4\ partitions\ scan\ results\ for\ partition\ 0/1/2,\ compute\ partition\ 3}}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ pp\_avg\_rgba[3][4]\ \{\};}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ lane\_id\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint::lane\_id}}();}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ texel\_partition(pi.\mbox{\hyperlink{structpartition__info_ad9cde9216bbe8865a4660a6c955a6793}{partition\_of\_texel}}\ +\ i);}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ lane\_mask\ =\ lane\_id\ <\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(texel\_count);}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ lane\_id\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}});}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ p0\_mask\ =\ lane\_mask\ \&\ (texel\_partition\ ==\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(0));}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ p1\_mask\ =\ lane\_mask\ \&\ (texel\_partition\ ==\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(1));}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ p2\_mask\ =\ lane\_mask\ \&\ (texel\_partition\ ==\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(2));}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_r\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}}\ +\ i);}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[0][0],\ data\_r,\ p0\_mask);}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[1][0],\ data\_r,\ p1\_mask);}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[2][0],\ data\_r,\ p2\_mask);}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_g\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}}\ +\ i);}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[0][1],\ data\_g,\ p0\_mask);}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[1][1],\ data\_g,\ p1\_mask);}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[2][1],\ data\_g,\ p2\_mask);}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_b\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}}\ +\ i);}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[0][2],\ data\_b,\ p0\_mask);}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[1][2],\ data\_b,\ p1\_mask);}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[2][2],\ data\_b,\ p2\_mask);}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_a\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_a602c8c88dc1ceef33e833f6d6cbc09ea}{data\_a}}\ +\ i);}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[0][3],\ data\_a,\ p0\_mask);}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[1][3],\ data\_a,\ p1\_mask);}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(pp\_avg\_rgba[2][3],\ data\_a,\ p2\_mask);}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ block\_total\ =\ blk.\mbox{\hyperlink{structimage__block_ac6bd4890338be887b61f857e37d23459}{data\_mean}}\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(blk.\mbox{\hyperlink{structimage__block_a05174b1db0b9131ad61fc49f3aa74676}{texel\_count}});}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p0\_total\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[0][0]),}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[0][1]),}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[0][2]),}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[0][3]));}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p1\_total\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[1][0]),}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[1][1]),}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[1][2]),}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[1][3]));}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p2\_total\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[2][0]),}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[2][1]),}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[2][2]),}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(pp\_avg\_rgba[2][3]));}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ p3\_total\ =\ block\_total\ -\/\ p0\_total\ -\/\ p1\_total-\/\ p2\_total;}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ averages[0]\ =\ p0\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[0]);}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ averages[1]\ =\ p1\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[1]);}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ averages[2]\ =\ p2\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[2]);}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ averages[3]\ =\ p3\_total\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[3]);}
+\DoxyCodeLine{00384\ \ \ \ \ \}}
+\DoxyCodeLine{00385\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__averages__and__directions_8cpp_a83cf48552a7e8225358c7c43df24fd96_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__averages__and__directions_8cpp_a83cf48552a7e8225358c7c43df24fd96_icgraph}
+\end{center}
+\end{figure}

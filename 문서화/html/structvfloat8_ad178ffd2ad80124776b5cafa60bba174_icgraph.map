@@ -1,0 +1,7 @@
+<map id="vfloat8::zero" name="vfloat8::zero">
+<area shape="rect" id="Node000001" title="Factory that returns a vector of zeros." alt="" coords="149,31,240,56"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#ab468787d1c874f7e604b73b083de661f" title="Accumulate masked lane&#45;wise sums for a vector, folded 4&#45;wide." alt="" coords="5,5,101,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,35,101,29,102,24,136,30"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#aff255c60741626dbc4c36b9aa78f89cd" title="Accumulate masked lane&#45;wise sums for a vector." alt="" coords="5,55,101,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="136,56,102,62,101,57,135,51"/>
+</map>

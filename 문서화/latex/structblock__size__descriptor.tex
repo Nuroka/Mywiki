@@ -1,0 +1,695 @@
+\doxysection{block\+\_\+size\+\_\+descriptor 구조체 참조}
+\hypertarget{structblock__size__descriptor}{}\label{structblock__size__descriptor}\index{block\_size\_descriptor@{block\_size\_descriptor}}
+
+
+Data tables for a single block size.  
+
+
+
+
+{\ttfamily \#include $<$astcenc\+\_\+internal.\+h$>$}
+
+
+
+block\+\_\+size\+\_\+descriptor에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structblock__size__descriptor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{structblock__mode}{block\+\_\+mode}} \& \mbox{\hyperlink{structblock__size__descriptor_a13608eb55e48c96b6243f4830278ebf3}{get\+\_\+block\+\_\+mode}} (unsigned int \mbox{\hyperlink{structblock__mode}{block\+\_\+mode}}) const
+\begin{DoxyCompactList}\small\item\em Get the block mode structure for index {\ttfamily \doxylink{structblock__mode}{block\+\_\+mode}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structdecimation__mode}{decimation\+\_\+mode}} \& \mbox{\hyperlink{structblock__size__descriptor_aef601af82748a14a8826e94f5e1b4184}{get\+\_\+decimation\+\_\+mode}} (unsigned int \mbox{\hyperlink{structdecimation__mode}{decimation\+\_\+mode}}) const
+\begin{DoxyCompactList}\small\item\em Get the decimation mode structure for index {\ttfamily \doxylink{structdecimation__mode}{decimation\+\_\+mode}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structdecimation__info}{decimation\+\_\+info}} \& \mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\+\_\+decimation\+\_\+info}} (unsigned int \mbox{\hyperlink{structdecimation__mode}{decimation\+\_\+mode}}) const
+\begin{DoxyCompactList}\small\item\em Get the decimation info structure for index {\ttfamily \doxylink{structdecimation__mode}{decimation\+\_\+mode}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structblock__size__descriptor_a6d0c429d925ab011c22ab28b5807c368}{get\+\_\+partition\+\_\+table}} (unsigned int partition\+\_\+count) const
+\begin{DoxyCompactList}\small\item\em Get the partition info table for a given partition count. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \& \mbox{\hyperlink{structblock__size__descriptor_aa9dfc7b23c8b5e6c71e956e2e39fff74}{get\+\_\+partition\+\_\+info}} (unsigned int partition\+\_\+count, unsigned int index) const
+\begin{DoxyCompactList}\small\item\em Get the partition info structure for a given partition count and seed. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \& \mbox{\hyperlink{structblock__size__descriptor_a551741bf3178a4b4617b2389c27345ec}{get\+\_\+raw\+\_\+partition\+\_\+info}} (unsigned int partition\+\_\+count, unsigned int packed\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em Get the partition info structure for a given partition count and seed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structblock__size__descriptor_aa00a247a5ba4c0501174c3ff6ecb9145}{xdim}}
+\begin{DoxyCompactList}\small\item\em The block X dimension, in texels. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structblock__size__descriptor_a44583f2512e5ae120df42bfc4270fa03}{ydim}}
+\begin{DoxyCompactList}\small\item\em The block Y dimension, in texels. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structblock__size__descriptor_afc7428efe69cba2425ae335d9d266714}{zdim}}
+\begin{DoxyCompactList}\small\item\em The block Z dimension, in texels. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em The block total texel count. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structblock__size__descriptor_ab9f7c875237ad395d3795506d934dba1}{decimation\+\_\+mode\+\_\+count\+\_\+always}}
+\begin{DoxyCompactList}\small\item\em The number of stored decimation modes which are "{}always"{} modes. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structblock__size__descriptor_a5344a8e95df2fe4fe2b396b669993140}{decimation\+\_\+mode\+\_\+count\+\_\+selected}}
+\begin{DoxyCompactList}\small\item\em The number of stored decimation modes for selected encodings. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structblock__size__descriptor_a16bc48defd8d3085accc3da158b12f40}{decimation\+\_\+mode\+\_\+count\+\_\+all}}
+\begin{DoxyCompactList}\small\item\em The number of stored decimation modes for any encoding. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structblock__size__descriptor_ae2f4cd561ea1618e1c44f9afbead038f}{block\+\_\+mode\+\_\+count\+\_\+1plane\+\_\+always}}
+\begin{DoxyCompactList}\small\item\em The number of stored block modes which are "{}always"{} modes. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structblock__size__descriptor_a2f96c6e4d1e35b4bac8778c474c69bb1}{block\+\_\+mode\+\_\+count\+\_\+1plane\+\_\+selected}}
+\begin{DoxyCompactList}\small\item\em The number of stored block modes for active 1 plane encodings. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structblock__size__descriptor_a796557a9c78ee86175f67ed504731ac5}{block\+\_\+mode\+\_\+count\+\_\+1plane\+\_\+2plane\+\_\+selected}}
+\begin{DoxyCompactList}\small\item\em The number of stored block modes for active 1 and 2 plane encodings. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structblock__size__descriptor_a2f7e6f96bb4dddb56f41aeeea8abda2f}{block\+\_\+mode\+\_\+count\+\_\+all}}
+\begin{DoxyCompactList}\small\item\em The number of stored block modes for any encoding. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structblock__size__descriptor_aecc5b82b77caa9b3bf69294d06f84e19}{partitioning\+\_\+count\+\_\+selected}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The number of selected partitionings for 1/2/3/4 partitionings. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structblock__size__descriptor_aff40c19af89f6790db9247963dcf05eb}{partitioning\+\_\+count\+\_\+all}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The number of partitionings for 1/2/3/4 partitionings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdecimation__mode}{decimation\+\_\+mode}} \mbox{\hyperlink{structblock__size__descriptor_acfb1b28b22c740a1c8262587f5a6364f}{decimation\+\_\+modes}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a803b1633e5a45c902bc513ef4c333327}{WEIGHTS\+\_\+\+MAX\+\_\+\+DECIMATION\+\_\+\+MODES}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The active decimation modes, stored in low indices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} \mbox{\hyperlink{structdecimation__info}{decimation\+\_\+info}} \mbox{\hyperlink{structblock__size__descriptor_a273c234d668c2b48f96ff9f7b3869bf6}{decimation\+\_\+tables}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a803b1633e5a45c902bc513ef4c333327}{WEIGHTS\+\_\+\+MAX\+\_\+\+DECIMATION\+\_\+\+MODES}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The active decimation tables, stored in low indices. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{structblock__size__descriptor_ad2a7804c5aa2d87b691f9899d85c5bc6}{block\+\_\+mode\+\_\+packed\+\_\+index}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ac446d816e6883587f7cd6fd115d9a40c}{WEIGHTS\+\_\+\+MAX\+\_\+\+BLOCK\+\_\+\+MODES}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The packed block mode array index, or {\ttfamily BLOCK\+\_\+\+BAD\+\_\+\+BLOCK\+\_\+\+MODE} if not active. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structblock__mode}{block\+\_\+mode}} \mbox{\hyperlink{structblock__size__descriptor_a82d0bf7e49df4683f0823b4951fb77f8}{block\+\_\+modes}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ac446d816e6883587f7cd6fd115d9a40c}{WEIGHTS\+\_\+\+MAX\+\_\+\+BLOCK\+\_\+\+MODES}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The active block modes, stored in low indices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \mbox{\hyperlink{structblock__size__descriptor_a12f6652af04c44bf46b255cd5367104c}{partitionings}} \mbox{[}(3 \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONINGS}})+1\mbox{]}
+\begin{DoxyCompactList}\small\item\em The active partition tables, stored in low indices per-\/count. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{structblock__size__descriptor_a27d19c3a69a9e0844b9bf35331656d24}{partitioning\+\_\+packed\+\_\+index}} \mbox{[}3\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONINGS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The packed partition table array index, or {\ttfamily BLOCK\+\_\+\+BAD\+\_\+\+PARTITIONING} if not active. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structblock__size__descriptor_a8bc9e1751fe1a81b9ee33c0925fb8f4f}{kmeans\+\_\+texels}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a24bfd76e0fe1130b9741b58cc3e2b675}{BLOCK\+\_\+\+MAX\+\_\+\+KMEANS\+\_\+\+TEXELS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The active texels for k-\/means partition selection. \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{structblock__size__descriptor_afb199f7b25412c63ee070afc4f22d647}{coverage\+\_\+bitmaps\+\_\+2}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONINGS}}\mbox{]}\mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em The canonical 2-\/partition coverage pattern used during block partition search. \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{structblock__size__descriptor_a2de235b96a8763b4d757954e66f084a3}{coverage\+\_\+bitmaps\+\_\+3}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONINGS}}\mbox{]}\mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em The canonical 3-\/partition coverage pattern used during block partition search. \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{structblock__size__descriptor_a2efb4a6e89af7eb8f833c5a7c5c65ac2}{coverage\+\_\+bitmaps\+\_\+4}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONINGS}}\mbox{]}\mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em The canonical 4-\/partition coverage pattern used during block partition search. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+Data tables for a single block size. 
+
+The decimation tables store the information to apply weight grid dimension reductions. We only store the decimation modes that are actually needed by the current context; many of the possible modes will be unused (too many weights for the current block size or disabled by heuristics). The actual number of weights stored is {\ttfamily decimation\+\_\+mode\+\_\+count}, and the {\ttfamily decimation\+\_\+modes} and {\ttfamily decimation\+\_\+tables} arrays store the active modes contiguously at the start of the array. These entries are not stored in any particular order.
+
+The block mode tables store the unpacked block mode settings. Block modes are stored in the compressed block as an 11 bit field, but for any given block size and set of compressor heuristics, only a subset of the block modes will be used. The actual number of block modes stored is indicated in {\ttfamily block\+\_\+mode\+\_\+count}, and the {\ttfamily block\+\_\+modes} array store the active modes contiguously at the start of the array. These entries are stored in incrementing "{}packed"{} value order, which doesn\textquotesingle{}t mean much once unpacked. To allow decompressors to reference the packed data efficiently the {\ttfamily block\+\_\+mode\+\_\+packed\+\_\+index} array stores the mapping between physical ID and the actual remapped array index. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00530}{530}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{structblock__size__descriptor_a13608eb55e48c96b6243f4830278ebf3}\index{block\_size\_descriptor@{block\_size\_descriptor}!get\_block\_mode@{get\_block\_mode}}
+\index{get\_block\_mode@{get\_block\_mode}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{get\_block\_mode()}{get\_block\_mode()}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a13608eb55e48c96b6243f4830278ebf3} 
+const \mbox{\hyperlink{structblock__mode}{block\+\_\+mode}} \& block\+\_\+size\+\_\+descriptor\+::get\+\_\+block\+\_\+mode (\begin{DoxyParamCaption}\item[{unsigned int}]{block\+\_\+mode}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the block mode structure for index {\ttfamily \doxylink{structblock__mode}{block\+\_\+mode}}. 
+
+This function can only return block modes that are enabled by the current compressor config. Decompression from an arbitrary source should not use this without first checking that the packed block mode index is not {\ttfamily BLOCK\+\_\+\+BAD\+\_\+\+BLOCK\+\_\+\+MODE}.
+
+
+\begin{DoxyParams}{매개변수}
+{\em \doxylink{structblock__mode}{block\+\_\+mode}} & The packed block mode index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The block mode structure. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00636}{636}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00637\ \ \ \ \ \{}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ packed\_index\ =\ this-\/>\mbox{\hyperlink{structblock__size__descriptor_ad2a7804c5aa2d87b691f9899d85c5bc6}{block\_mode\_packed\_index}}[\mbox{\hyperlink{structblock__mode}{block\_mode}}];}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ assert(packed\_index\ !=\ \mbox{\hyperlink{astcenc__internal_8h_a9909bfb0b9a42a121838a9a145a8612f}{BLOCK\_BAD\_BLOCK\_MODE}}\ \&\&\ packed\_index\ <\ this-\/>\mbox{\hyperlink{structblock__size__descriptor_a2f7e6f96bb4dddb56f41aeeea8abda2f}{block\_mode\_count\_all}});}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{structblock__size__descriptor_a82d0bf7e49df4683f0823b4951fb77f8}{block\_modes}}[packed\_index];}
+\DoxyCodeLine{00641\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structblock__size__descriptor_a13608eb55e48c96b6243f4830278ebf3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}\index{block\_size\_descriptor@{block\_size\_descriptor}!get\_decimation\_info@{get\_decimation\_info}}
+\index{get\_decimation\_info@{get\_decimation\_info}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{get\_decimation\_info()}{get\_decimation\_info()}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d} 
+const \mbox{\hyperlink{structdecimation__info}{decimation\+\_\+info}} \& block\+\_\+size\+\_\+descriptor\+::get\+\_\+decimation\+\_\+info (\begin{DoxyParamCaption}\item[{unsigned int}]{decimation\+\_\+mode}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the decimation info structure for index {\ttfamily \doxylink{structdecimation__mode}{decimation\+\_\+mode}}. 
+
+This function can only return decimation modes that are enabled by the current compressor config. The mode array is stored packed, but this is only ever indexed by the packed index stored in the {\ttfamily \doxylink{structblock__mode}{block\+\_\+mode}} and never exists in an unpacked form.
+
+
+\begin{DoxyParams}{매개변수}
+{\em \doxylink{structdecimation__mode}{decimation\+\_\+mode}} & The packed decimation mode index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The decimation info structure. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00670}{670}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00671\ \ \ \ \ \{}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{structblock__size__descriptor_a273c234d668c2b48f96ff9f7b3869bf6}{decimation\_tables}}[\mbox{\hyperlink{structdecimation__mode}{decimation\_mode}}];}
+\DoxyCodeLine{00673\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structblock__size__descriptor_aef601af82748a14a8826e94f5e1b4184}\index{block\_size\_descriptor@{block\_size\_descriptor}!get\_decimation\_mode@{get\_decimation\_mode}}
+\index{get\_decimation\_mode@{get\_decimation\_mode}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{get\_decimation\_mode()}{get\_decimation\_mode()}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_aef601af82748a14a8826e94f5e1b4184} 
+const \mbox{\hyperlink{structdecimation__mode}{decimation\+\_\+mode}} \& block\+\_\+size\+\_\+descriptor\+::get\+\_\+decimation\+\_\+mode (\begin{DoxyParamCaption}\item[{unsigned int}]{decimation\+\_\+mode}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the decimation mode structure for index {\ttfamily \doxylink{structdecimation__mode}{decimation\+\_\+mode}}. 
+
+This function can only return decimation modes that are enabled by the current compressor config. The mode array is stored packed, but this is only ever indexed by the packed index stored in the {\ttfamily \doxylink{structblock__mode}{block\+\_\+mode}} and never exists in an unpacked form.
+
+
+\begin{DoxyParams}{매개변수}
+{\em \doxylink{structdecimation__mode}{decimation\+\_\+mode}} & The packed decimation mode index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The decimation mode structure. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00654}{654}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00655\ \ \ \ \ \{}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{structblock__size__descriptor_acfb1b28b22c740a1c8262587f5a6364f}{decimation\_modes}}[\mbox{\hyperlink{structdecimation__mode}{decimation\_mode}}];}
+\DoxyCodeLine{00657\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structblock__size__descriptor_aef601af82748a14a8826e94f5e1b4184_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structblock__size__descriptor_aa9dfc7b23c8b5e6c71e956e2e39fff74}\index{block\_size\_descriptor@{block\_size\_descriptor}!get\_partition\_info@{get\_partition\_info}}
+\index{get\_partition\_info@{get\_partition\_info}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{get\_partition\_info()}{get\_partition\_info()}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_aa9dfc7b23c8b5e6c71e956e2e39fff74} 
+const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \& block\+\_\+size\+\_\+descriptor\+::get\+\_\+partition\+\_\+info (\begin{DoxyParamCaption}\item[{unsigned int}]{partition\+\_\+count}{, }\item[{unsigned int}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the partition info structure for a given partition count and seed. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em partition\+\_\+count} & The number of partitions we want the info for. \\
+\hline
+{\em index} & The partition seed (between 0 and 1023).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The partition info structure. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00700}{700}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00701\ \ \ \ \ \{}
+\DoxyCodeLine{00702\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ packed\_index\ =\ 0;}
+\DoxyCodeLine{00703\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (partition\_count\ >=\ 2)}
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00705\ \ \ \ \ \ \ \ \ \ \ \ \ packed\_index\ =\ this-\/>\mbox{\hyperlink{structblock__size__descriptor_a27d19c3a69a9e0844b9bf35331656d24}{partitioning\_packed\_index}}[partition\_count\ -\/\ 2][index];}
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00707\ }
+\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ assert(packed\_index\ !=\ \mbox{\hyperlink{astcenc__internal_8h_a534153977d7541c1f632798bb08d87a1}{BLOCK\_BAD\_PARTITIONING}}\ \&\&\ packed\_index\ <\ this-\/>\mbox{\hyperlink{structblock__size__descriptor_aff40c19af89f6790db9247963dcf05eb}{partitioning\_count\_all}}[partition\_count\ -\/\ 1]);}
+\DoxyCodeLine{00709\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ result\ =\ \mbox{\hyperlink{structblock__size__descriptor_a6d0c429d925ab011c22ab28b5807c368}{get\_partition\_table}}(partition\_count)[packed\_index];}
+\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ assert(index\ ==\ result.partition\_index);}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00712\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{structblock__size__descriptor_aa9dfc7b23c8b5e6c71e956e2e39fff74_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structblock__size__descriptor_aa9dfc7b23c8b5e6c71e956e2e39fff74_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structblock__size__descriptor_a6d0c429d925ab011c22ab28b5807c368}\index{block\_size\_descriptor@{block\_size\_descriptor}!get\_partition\_table@{get\_partition\_table}}
+\index{get\_partition\_table@{get\_partition\_table}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{get\_partition\_table()}{get\_partition\_table()}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a6d0c429d925ab011c22ab28b5807c368} 
+const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \texorpdfstring{$\ast$}{*} block\+\_\+size\+\_\+descriptor\+::get\+\_\+partition\+\_\+table (\begin{DoxyParamCaption}\item[{unsigned int}]{partition\+\_\+count}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the partition info table for a given partition count. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em partition\+\_\+count} & The number of partitions we want the table for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The pointer to the table of 1024 entries (for 2/3/4 parts) or 1 entry (for 1 part). 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00682}{682}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00683\ \ \ \ \ \{}
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (partition\_count\ ==\ 1)}
+\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ \ \ \ \ partition\_count\ =\ 5;}
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ index\ =\ (partition\_count\ -\/\ 2)\ *\ \mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\_MAX\_PARTITIONINGS}};}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{structblock__size__descriptor_a12f6652af04c44bf46b255cd5367104c}{partitionings}}\ +\ index;}
+\DoxyCodeLine{00690\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structblock__size__descriptor_a6d0c429d925ab011c22ab28b5807c368_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structblock__size__descriptor_a551741bf3178a4b4617b2389c27345ec}\index{block\_size\_descriptor@{block\_size\_descriptor}!get\_raw\_partition\_info@{get\_raw\_partition\_info}}
+\index{get\_raw\_partition\_info@{get\_raw\_partition\_info}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{get\_raw\_partition\_info()}{get\_raw\_partition\_info()}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a551741bf3178a4b4617b2389c27345ec} 
+const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \& block\+\_\+size\+\_\+descriptor\+::get\+\_\+raw\+\_\+partition\+\_\+info (\begin{DoxyParamCaption}\item[{unsigned int}]{partition\+\_\+count}{, }\item[{unsigned int}]{packed\+\_\+index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the partition info structure for a given partition count and seed. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em partition\+\_\+count} & The number of partitions we want the info for. \\
+\hline
+{\em packed\+\_\+index} & The raw array offset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The partition info structure. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00722}{722}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00723\ \ \ \ \ \{}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ assert(packed\_index\ !=\ \mbox{\hyperlink{astcenc__internal_8h_a534153977d7541c1f632798bb08d87a1}{BLOCK\_BAD\_PARTITIONING}}\ \&\&\ packed\_index\ <\ this-\/>\mbox{\hyperlink{structblock__size__descriptor_aff40c19af89f6790db9247963dcf05eb}{partitioning\_count\_all}}[partition\_count\ -\/\ 1]);}
+\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ result\ =\ \mbox{\hyperlink{structblock__size__descriptor_a6d0c429d925ab011c22ab28b5807c368}{get\_partition\_table}}(partition\_count)[packed\_index];}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00727\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{structblock__size__descriptor_a551741bf3178a4b4617b2389c27345ec_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structblock__size__descriptor_a551741bf3178a4b4617b2389c27345ec_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structblock__size__descriptor_a796557a9c78ee86175f67ed504731ac5}\index{block\_size\_descriptor@{block\_size\_descriptor}!block\_mode\_count\_1plane\_2plane\_selected@{block\_mode\_count\_1plane\_2plane\_selected}}
+\index{block\_mode\_count\_1plane\_2plane\_selected@{block\_mode\_count\_1plane\_2plane\_selected}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{block\_mode\_count\_1plane\_2plane\_selected}{block\_mode\_count\_1plane\_2plane\_selected}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a796557a9c78ee86175f67ed504731ac5} 
+unsigned int block\+\_\+size\+\_\+descriptor\+::block\+\_\+mode\+\_\+count\+\_\+1plane\+\_\+2plane\+\_\+selected}
+
+
+
+The number of stored block modes for active 1 and 2 plane encodings. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00568}{568}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_ae2f4cd561ea1618e1c44f9afbead038f}\index{block\_size\_descriptor@{block\_size\_descriptor}!block\_mode\_count\_1plane\_always@{block\_mode\_count\_1plane\_always}}
+\index{block\_mode\_count\_1plane\_always@{block\_mode\_count\_1plane\_always}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{block\_mode\_count\_1plane\_always}{block\_mode\_count\_1plane\_always}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_ae2f4cd561ea1618e1c44f9afbead038f} 
+unsigned int block\+\_\+size\+\_\+descriptor\+::block\+\_\+mode\+\_\+count\+\_\+1plane\+\_\+always}
+
+
+
+The number of stored block modes which are "{}always"{} modes. 
+
+Always modes are stored at the start of the block\+\_\+modes list. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00562}{562}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_a2f96c6e4d1e35b4bac8778c474c69bb1}\index{block\_size\_descriptor@{block\_size\_descriptor}!block\_mode\_count\_1plane\_selected@{block\_mode\_count\_1plane\_selected}}
+\index{block\_mode\_count\_1plane\_selected@{block\_mode\_count\_1plane\_selected}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{block\_mode\_count\_1plane\_selected}{block\_mode\_count\_1plane\_selected}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a2f96c6e4d1e35b4bac8778c474c69bb1} 
+unsigned int block\+\_\+size\+\_\+descriptor\+::block\+\_\+mode\+\_\+count\+\_\+1plane\+\_\+selected}
+
+
+
+The number of stored block modes for active 1 plane encodings. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00565}{565}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_a2f7e6f96bb4dddb56f41aeeea8abda2f}\index{block\_size\_descriptor@{block\_size\_descriptor}!block\_mode\_count\_all@{block\_mode\_count\_all}}
+\index{block\_mode\_count\_all@{block\_mode\_count\_all}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{block\_mode\_count\_all}{block\_mode\_count\_all}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a2f7e6f96bb4dddb56f41aeeea8abda2f} 
+unsigned int block\+\_\+size\+\_\+descriptor\+::block\+\_\+mode\+\_\+count\+\_\+all}
+
+
+
+The number of stored block modes for any encoding. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00571}{571}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_ad2a7804c5aa2d87b691f9899d85c5bc6}\index{block\_size\_descriptor@{block\_size\_descriptor}!block\_mode\_packed\_index@{block\_mode\_packed\_index}}
+\index{block\_mode\_packed\_index@{block\_mode\_packed\_index}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{block\_mode\_packed\_index}{block\_mode\_packed\_index}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_ad2a7804c5aa2d87b691f9899d85c5bc6} 
+uint16\+\_\+t block\+\_\+size\+\_\+descriptor\+::block\+\_\+mode\+\_\+packed\+\_\+index\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ac446d816e6883587f7cd6fd115d9a40c}{WEIGHTS\+\_\+\+MAX\+\_\+\+BLOCK\+\_\+\+MODES}}\mbox{]}}
+
+
+
+The packed block mode array index, or {\ttfamily BLOCK\+\_\+\+BAD\+\_\+\+BLOCK\+\_\+\+MODE} if not active. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00586}{586}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_a82d0bf7e49df4683f0823b4951fb77f8}\index{block\_size\_descriptor@{block\_size\_descriptor}!block\_modes@{block\_modes}}
+\index{block\_modes@{block\_modes}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{block\_modes}{block\_modes}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a82d0bf7e49df4683f0823b4951fb77f8} 
+\mbox{\hyperlink{structblock__mode}{block\+\_\+mode}} block\+\_\+size\+\_\+descriptor\+::block\+\_\+modes\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ac446d816e6883587f7cd6fd115d9a40c}{WEIGHTS\+\_\+\+MAX\+\_\+\+BLOCK\+\_\+\+MODES}}\mbox{]}}
+
+
+
+The active block modes, stored in low indices. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00589}{589}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_afb199f7b25412c63ee070afc4f22d647}\index{block\_size\_descriptor@{block\_size\_descriptor}!coverage\_bitmaps\_2@{coverage\_bitmaps\_2}}
+\index{coverage\_bitmaps\_2@{coverage\_bitmaps\_2}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{coverage\_bitmaps\_2}{coverage\_bitmaps\_2}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_afb199f7b25412c63ee070afc4f22d647} 
+uint64\+\_\+t block\+\_\+size\+\_\+descriptor\+::coverage\+\_\+bitmaps\+\_\+2\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONINGS}}\mbox{]}\mbox{[}2\mbox{]}}
+
+
+
+The canonical 2-\/partition coverage pattern used during block partition search. 
+
+Indexed by remapped index, not physical index. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00609}{609}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_a2de235b96a8763b4d757954e66f084a3}\index{block\_size\_descriptor@{block\_size\_descriptor}!coverage\_bitmaps\_3@{coverage\_bitmaps\_3}}
+\index{coverage\_bitmaps\_3@{coverage\_bitmaps\_3}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{coverage\_bitmaps\_3}{coverage\_bitmaps\_3}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a2de235b96a8763b4d757954e66f084a3} 
+uint64\+\_\+t block\+\_\+size\+\_\+descriptor\+::coverage\+\_\+bitmaps\+\_\+3\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONINGS}}\mbox{]}\mbox{[}3\mbox{]}}
+
+
+
+The canonical 3-\/partition coverage pattern used during block partition search. 
+
+Indexed by remapped index, not physical index. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00616}{616}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_a2efb4a6e89af7eb8f833c5a7c5c65ac2}\index{block\_size\_descriptor@{block\_size\_descriptor}!coverage\_bitmaps\_4@{coverage\_bitmaps\_4}}
+\index{coverage\_bitmaps\_4@{coverage\_bitmaps\_4}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{coverage\_bitmaps\_4}{coverage\_bitmaps\_4}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a2efb4a6e89af7eb8f833c5a7c5c65ac2} 
+uint64\+\_\+t block\+\_\+size\+\_\+descriptor\+::coverage\+\_\+bitmaps\+\_\+4\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONINGS}}\mbox{]}\mbox{[}4\mbox{]}}
+
+
+
+The canonical 4-\/partition coverage pattern used during block partition search. 
+
+Indexed by remapped index, not physical index. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00623}{623}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_a16bc48defd8d3085accc3da158b12f40}\index{block\_size\_descriptor@{block\_size\_descriptor}!decimation\_mode\_count\_all@{decimation\_mode\_count\_all}}
+\index{decimation\_mode\_count\_all@{decimation\_mode\_count\_all}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{decimation\_mode\_count\_all}{decimation\_mode\_count\_all}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a16bc48defd8d3085accc3da158b12f40} 
+unsigned int block\+\_\+size\+\_\+descriptor\+::decimation\+\_\+mode\+\_\+count\+\_\+all}
+
+
+
+The number of stored decimation modes for any encoding. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00555}{555}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_ab9f7c875237ad395d3795506d934dba1}\index{block\_size\_descriptor@{block\_size\_descriptor}!decimation\_mode\_count\_always@{decimation\_mode\_count\_always}}
+\index{decimation\_mode\_count\_always@{decimation\_mode\_count\_always}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{decimation\_mode\_count\_always}{decimation\_mode\_count\_always}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_ab9f7c875237ad395d3795506d934dba1} 
+unsigned int block\+\_\+size\+\_\+descriptor\+::decimation\+\_\+mode\+\_\+count\+\_\+always}
+
+
+
+The number of stored decimation modes which are "{}always"{} modes. 
+
+Always modes are stored at the start of the decimation\+\_\+modes list. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00549}{549}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_a5344a8e95df2fe4fe2b396b669993140}\index{block\_size\_descriptor@{block\_size\_descriptor}!decimation\_mode\_count\_selected@{decimation\_mode\_count\_selected}}
+\index{decimation\_mode\_count\_selected@{decimation\_mode\_count\_selected}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{decimation\_mode\_count\_selected}{decimation\_mode\_count\_selected}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a5344a8e95df2fe4fe2b396b669993140} 
+unsigned int block\+\_\+size\+\_\+descriptor\+::decimation\+\_\+mode\+\_\+count\+\_\+selected}
+
+
+
+The number of stored decimation modes for selected encodings. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00552}{552}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_acfb1b28b22c740a1c8262587f5a6364f}\index{block\_size\_descriptor@{block\_size\_descriptor}!decimation\_modes@{decimation\_modes}}
+\index{decimation\_modes@{decimation\_modes}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{decimation\_modes}{decimation\_modes}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_acfb1b28b22c740a1c8262587f5a6364f} 
+\mbox{\hyperlink{structdecimation__mode}{decimation\+\_\+mode}} block\+\_\+size\+\_\+descriptor\+::decimation\+\_\+modes\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a803b1633e5a45c902bc513ef4c333327}{WEIGHTS\+\_\+\+MAX\+\_\+\+DECIMATION\+\_\+\+MODES}}\mbox{]}}
+
+
+
+The active decimation modes, stored in low indices. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00580}{580}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_a273c234d668c2b48f96ff9f7b3869bf6}\index{block\_size\_descriptor@{block\_size\_descriptor}!decimation\_tables@{decimation\_tables}}
+\index{decimation\_tables@{decimation\_tables}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{decimation\_tables}{decimation\_tables}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a273c234d668c2b48f96ff9f7b3869bf6} 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} \mbox{\hyperlink{structdecimation__info}{decimation\+\_\+info}} block\+\_\+size\+\_\+descriptor\+::decimation\+\_\+tables\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a803b1633e5a45c902bc513ef4c333327}{WEIGHTS\+\_\+\+MAX\+\_\+\+DECIMATION\+\_\+\+MODES}}\mbox{]}}
+
+
+
+The active decimation tables, stored in low indices. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00583}{583}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_a8bc9e1751fe1a81b9ee33c0925fb8f4f}\index{block\_size\_descriptor@{block\_size\_descriptor}!kmeans\_texels@{kmeans\_texels}}
+\index{kmeans\_texels@{kmeans\_texels}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{kmeans\_texels}{kmeans\_texels}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a8bc9e1751fe1a81b9ee33c0925fb8f4f} 
+uint8\+\_\+t block\+\_\+size\+\_\+descriptor\+::kmeans\+\_\+texels\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a24bfd76e0fe1130b9741b58cc3e2b675}{BLOCK\+\_\+\+MAX\+\_\+\+KMEANS\+\_\+\+TEXELS}}\mbox{]}}
+
+
+
+The active texels for k-\/means partition selection. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00602}{602}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_aff40c19af89f6790db9247963dcf05eb}\index{block\_size\_descriptor@{block\_size\_descriptor}!partitioning\_count\_all@{partitioning\_count\_all}}
+\index{partitioning\_count\_all@{partitioning\_count\_all}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{partitioning\_count\_all}{partitioning\_count\_all}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_aff40c19af89f6790db9247963dcf05eb} 
+unsigned int block\+\_\+size\+\_\+descriptor\+::partitioning\+\_\+count\+\_\+all\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]}}
+
+
+
+The number of partitionings for 1/2/3/4 partitionings. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00577}{577}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_aecc5b82b77caa9b3bf69294d06f84e19}\index{block\_size\_descriptor@{block\_size\_descriptor}!partitioning\_count\_selected@{partitioning\_count\_selected}}
+\index{partitioning\_count\_selected@{partitioning\_count\_selected}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{partitioning\_count\_selected}{partitioning\_count\_selected}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_aecc5b82b77caa9b3bf69294d06f84e19} 
+unsigned int block\+\_\+size\+\_\+descriptor\+::partitioning\+\_\+count\+\_\+selected\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]}}
+
+
+
+The number of selected partitionings for 1/2/3/4 partitionings. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00574}{574}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_a27d19c3a69a9e0844b9bf35331656d24}\index{block\_size\_descriptor@{block\_size\_descriptor}!partitioning\_packed\_index@{partitioning\_packed\_index}}
+\index{partitioning\_packed\_index@{partitioning\_packed\_index}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{partitioning\_packed\_index}{partitioning\_packed\_index}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a27d19c3a69a9e0844b9bf35331656d24} 
+uint16\+\_\+t block\+\_\+size\+\_\+descriptor\+::partitioning\+\_\+packed\+\_\+index\mbox{[}3\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONINGS}}\mbox{]}}
+
+
+
+The packed partition table array index, or {\ttfamily BLOCK\+\_\+\+BAD\+\_\+\+PARTITIONING} if not active. 
+
+Indexed by partition\+\_\+count -\/ 2, containing 2, 3 and 4 partitions. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00599}{599}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_a12f6652af04c44bf46b255cd5367104c}\index{block\_size\_descriptor@{block\_size\_descriptor}!partitionings@{partitionings}}
+\index{partitionings@{partitionings}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{partitionings}{partitionings}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a12f6652af04c44bf46b255cd5367104c} 
+\mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} block\+\_\+size\+\_\+descriptor\+::partitionings\mbox{[}(3 \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONINGS}})+1\mbox{]}}
+
+
+
+The active partition tables, stored in low indices per-\/count. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00592}{592}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}\index{block\_size\_descriptor@{block\_size\_descriptor}!texel\_count@{texel\_count}}
+\index{texel\_count@{texel\_count}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{texel\_count}{texel\_count}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4} 
+uint8\+\_\+t block\+\_\+size\+\_\+descriptor\+::texel\+\_\+count}
+
+
+
+The block total texel count. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00542}{542}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_aa00a247a5ba4c0501174c3ff6ecb9145}\index{block\_size\_descriptor@{block\_size\_descriptor}!xdim@{xdim}}
+\index{xdim@{xdim}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{xdim}{xdim}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_aa00a247a5ba4c0501174c3ff6ecb9145} 
+uint8\+\_\+t block\+\_\+size\+\_\+descriptor\+::xdim}
+
+
+
+The block X dimension, in texels. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00533}{533}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_a44583f2512e5ae120df42bfc4270fa03}\index{block\_size\_descriptor@{block\_size\_descriptor}!ydim@{ydim}}
+\index{ydim@{ydim}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{ydim}{ydim}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_a44583f2512e5ae120df42bfc4270fa03} 
+uint8\+\_\+t block\+\_\+size\+\_\+descriptor\+::ydim}
+
+
+
+The block Y dimension, in texels. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00536}{536}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__size__descriptor_afc7428efe69cba2425ae335d9d266714}\index{block\_size\_descriptor@{block\_size\_descriptor}!zdim@{zdim}}
+\index{zdim@{zdim}!block\_size\_descriptor@{block\_size\_descriptor}}
+\doxysubsubsection{\texorpdfstring{zdim}{zdim}}
+{\footnotesize\ttfamily \label{structblock__size__descriptor_afc7428efe69cba2425ae335d9d266714} 
+uint8\+\_\+t block\+\_\+size\+\_\+descriptor\+::zdim}
+
+
+
+The block Z dimension, in texels. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00539}{539}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__internal_8h}{astcenc\+\_\+internal.\+h}}\end{DoxyCompactItemize}

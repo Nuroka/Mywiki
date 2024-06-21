@@ -1,0 +1,18 @@
+<map id="image_preprocess_premultiply" name="image_preprocess_premultiply">
+<area shape="rect" id="Node000001" title="Create a copy of input with premultiplied color data." alt="" coords="5,131,204,156"/>
+<area shape="rect" id="Node000002" href="$astcenccli__toplevel_8cpp.html#adf36913bdb208f04c72d7ed274e4ef52" title="Get the value of a single pixel in an image." alt="" coords="252,5,368,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,128,176,87,251,40,261,34,264,39,253,44,180,91,124,133"/>
+<area shape="rect" id="Node000004" href="$astcenccli__toplevel_8cpp.html#a24ace81209de87263b6b1a4e8c87a282" title="Set the value of a single pixel in an image." alt="" coords="252,55,368,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="139,128,261,82,263,87,141,133"/>
+<area shape="rect" id="Node000005" href="$structvfloat4.html#a04462a7815432c6bc3ce1b5e5d11e4fc" title="Get the scalar value of a single lane." alt="" coords="425,80,516,105"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="197,128,411,98,412,103,198,133"/>
+<area shape="rect" id="Node000006" href="$astcenccli__toplevel_8cpp.html#a031c882f3e87d1e9bfaca5cd3d767e28" title="sRGB gamma&#45;encode a linear value." alt="" coords="259,156,361,181"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="205,153,245,158,245,163,204,158"/>
+<area shape="rect" id="Node000007" href="$structvfloat4.html#a2168231efa1e514fd41b3603e57be297" title="Set the scalar value of a single lane." alt="" coords="253,205,367,231"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="142,154,262,198,260,203,140,159"/>
+<area shape="rect" id="Node000008" href="$astcenccli__toplevel_8cpp.html#a171145cde4ebd098e31acd78c577502f" title="Linearize an sRGB value." alt="" coords="259,255,361,280"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="124,154,181,194,253,240,267,247,264,251,251,244,178,199,121,158"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__neon__4_8h.html#afd7aa2069bdf377067c3abaca1256432" title="Return a float value for a float16 vector." alt="" coords="416,5,525,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="368,15,402,15,402,21,368,21"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="369,74,412,81,412,86,368,79"/>
+</map>

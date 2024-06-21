@@ -1,0 +1,41 @@
+<map id="compute_color_error_for_every_integer_count_and_quant_level" name="compute_color_error_for_every_integer_count_and_quant_level">
+<area shape="rect" id="Node000001" title="For a given partition compute the error for every endpoint integer count and quant level." alt="" coords="5,216,171,271"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#aeac50750508168aeab5115733d3ee63c" title="Return the absolute value of the float vector." alt="" coords="242,5,285,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,215,144,131,178,84,217,40,228,31,231,36,220,44,182,87,149,134,104,217"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__common__4_8h.html#a377cafdb98d3ee38a2999ed00504f477" title="Return the dot product for the bottom 3 lanes, returning scalar." alt="" coords="233,55,294,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="109,214,157,158,217,97,230,86,233,90,220,101,161,162,113,218"/>
+<area shape="rect" id="Node000004" href="$astcenc__vecmathlib__common__4_8h.html#a48e833d0cfdf950b6bc3431fce00507e" title="Return the horizontal sum of RGB vector lanes as a scalar." alt="" coords="369,55,458,80"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="118,214,164,177,217,141,288,107,356,82,358,87,290,112,220,146,167,181,122,218"/>
+<area shape="rect" id="Node000006" href="$astcenc__vecmathlib__avx2__8_8h.html#a5d1b09f64af83d5171e4b9580f62ac71" title="Return the horizontal maximum of a vector." alt="" coords="229,156,297,181"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="152,214,219,184,221,189,154,218"/>
+<area shape="rect" id="Node000009" href="$astcenc__vecmathlib__common__4_8h.html#ac8652a0d90b3378db8fa8a8d2c4a434c" title="Return the horizontal min of RGB vector lanes as a scalar." alt="" coords="219,205,308,231"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="171,229,205,224,206,229,172,234"/>
+<area shape="rect" id="Node000012" href="$structvfloat4.html#a04462a7815432c6bc3ce1b5e5d11e4fc" title="Get the scalar value of a single lane." alt="" coords="368,304,459,329"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="171,259,355,301,354,306,170,264"/>
+<area shape="rect" id="Node000014" href="$namespaceastc.html#a83a55552d03399cdff6cf2fed8312c9f" title="Return the maximum of two values." alt="" coords="223,307,303,332"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="153,268,221,299,219,303,151,273"/>
+<area shape="rect" id="Node000015" href="$astcenc__vecmathlib__avx2__8_8h.html#aa162915c044e97cc1f6d630338761fd3" title="Return the max vector of two vectors." alt="" coords="240,356,287,381"/>
+<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="123,269,220,342,230,348,227,353,217,347,120,273"/>
+<area shape="rect" id="Node000016" href="$astcenc__vecmathlib__avx2__8_8h.html#a165b3db4e7ced1551e1880a01a01150b" title="Return the min vector of two vectors." alt="" coords="242,405,285,431"/>
+<area shape="poly" id="edge18_Node000001_Node000016" title=" " alt="" coords="110,269,157,329,188,362,220,392,231,400,228,404,217,396,184,366,153,333,106,273"/>
+<area shape="rect" id="Node000017" href="$structvfloat4.html#a0a3e390831722cc8e54f29155699f3a5" title="Return a swizzled float 2." alt="" coords="219,455,308,480"/>
+<area shape="poly" id="edge19_Node000001_Node000017" title=" " alt="" coords="104,270,149,352,182,399,221,441,224,445,221,449,217,445,178,402,145,355,99,272"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="294,65,355,65,355,70,294,70"/>
+<area shape="rect" id="Node000005" href="$structvint4.html#a01e3f7debf73dc6c757fa36d585c9d17" title="Get the scalar from a single lane." alt="" coords="519,55,599,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="458,65,505,65,505,70,458,70"/>
+<area shape="rect" id="Node000007" href="$astcenc__vecmathlib__avx2__8_8h.html#a516a2f0d872381b8c7c047845a90c9a3" title="Return the horizontal maximum of a vector." alt="" coords="386,104,441,129"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="296,155,372,128,374,133,298,160"/>
+<area shape="rect" id="Node000008" href="$structvint8.html#a2e1f0c785f4899e1b7912f2580b9f77c" title="Get the scalar from a single lane." alt="" coords="519,155,599,180"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="298,166,505,165,505,170,298,171"/>
+<area shape="rect" id="Node000010" href="$astcenc__vecmathlib__common__4_8h.html#ac4a641bfa34d9f961fddf927fbb939da" title="Return the horizontal minimum of a vector." alt="" coords="381,205,445,231"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="308,215,367,215,367,221,308,221"/>
+<area shape="poly" id="edge13_Node000009_Node000012" title=" " alt="" coords="284,229,310,248,333,270,358,290,366,296,364,300,354,295,330,274,306,252,281,233"/>
+<area shape="rect" id="Node000013" href="$structvfloat4.html#a2168231efa1e514fd41b3603e57be297" title="Set the scalar value of a single lane." alt="" coords="356,255,471,280"/>
+<area shape="poly" id="edge14_Node000009_Node000013" title=" " alt="" coords="303,228,362,248,360,253,302,233"/>
+<area shape="poly" id="edge12_Node000010_Node000008" title=" " alt="" coords="445,204,508,182,510,187,447,210"/>
+<area shape="rect" id="Node000011" href="$astcenc__vecmathlib__avx2__8_8h.html#ae7ff255b24f24f8d2a31e6849f4b1250" title="Return the horizontal minimum of a vector." alt="" coords="533,205,584,231"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="446,215,520,215,520,221,446,221"/>
+<area shape="poly" id="edge20_Node000017_Node000012" title=" " alt="" coords="290,452,306,441,357,389,394,339,399,342,361,393,310,445,293,457"/>
+<area shape="rect" id="Node000018" href="$structvfloat4.html#a9df51cb30b68d6d51ca607e64aa1ebf0" title="Construct from zero&#45;initialized value." alt="" coords="362,455,465,480"/>
+<area shape="poly" id="edge21_Node000017_Node000018" title=" " alt="" coords="308,465,348,465,348,470,308,470"/>
+</map>

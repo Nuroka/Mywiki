@@ -1,0 +1,17 @@
+digraph "generate_one_partition_info_entry"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="generate_one_partition\l_info_entry",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Generate a single partition info structure."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="astc::min",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceastc.html#af78c0d31374aa9923633a3a2abf8d738",tooltip="Return the minimum of two values."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="round_up_to_simd_multiple_vla",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__vecmathlib_8h.html#ae36622d837079b4899b971731c2dda37",tooltip="Round a count up to the largest multiple of the SIMD width."];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="select_partition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__partition__tables_8cpp.html#a57b1b10c9fc1e915dcf985ea37a8cbf6",tooltip="Select texel assignment for a single coordinate."];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="hash52",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__partition__tables_8cpp.html#a28958825dfb33d5371f54dae6d247f8a",tooltip="Hash function used for procedural partition assignment."];
+}

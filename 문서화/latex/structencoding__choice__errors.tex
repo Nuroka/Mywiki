@@ -1,0 +1,125 @@
+\doxysection{encoding\+\_\+choice\+\_\+errors 구조체 참조}
+\hypertarget{structencoding__choice__errors}{}\label{structencoding__choice__errors}\index{encoding\_choice\_errors@{encoding\_choice\_errors}}
+
+
+Utility storing estimated errors from choosing particular endpoint encodings.  
+
+
+
+
+{\ttfamily \#include $<$astcenc\+\_\+internal.\+h$>$}
+
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{structencoding__choice__errors_a7833d66ba6360569a3cbad8a9d4c743f}{rgb\+\_\+scale\+\_\+error}}
+\begin{DoxyCompactList}\small\item\em Error of using LDR RGB-\/scale instead of complete endpoints. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structencoding__choice__errors_a5db32b77467b23beb70562840f173a54}{rgb\+\_\+luma\+\_\+error}}
+\begin{DoxyCompactList}\small\item\em Error of using HDR RGB-\/scale instead of complete endpoints. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structencoding__choice__errors_ad6cf09c5032d45a8e61b750969ff4c27}{luminance\+\_\+error}}
+\begin{DoxyCompactList}\small\item\em Error of using luminance instead of RGB. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structencoding__choice__errors_a9f732b537213a9c5caddca5af4d0c15c}{alpha\+\_\+drop\+\_\+error}}
+\begin{DoxyCompactList}\small\item\em Error of discarding alpha and using a constant 1.\+0 alpha. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structencoding__choice__errors_a4ed3d3a0fa3f83ac3a48067030ac49fd}{can\+\_\+offset\+\_\+encode}}
+\begin{DoxyCompactList}\small\item\em Can we use delta offset encoding? \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structencoding__choice__errors_a296ff4def93117aadb093f02532b5244}{can\+\_\+blue\+\_\+contract}}
+\begin{DoxyCompactList}\small\item\em Can we use blue contraction encoding? \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+Utility storing estimated errors from choosing particular endpoint encodings. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00917}{917}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structencoding__choice__errors_a9f732b537213a9c5caddca5af4d0c15c}\index{encoding\_choice\_errors@{encoding\_choice\_errors}!alpha\_drop\_error@{alpha\_drop\_error}}
+\index{alpha\_drop\_error@{alpha\_drop\_error}!encoding\_choice\_errors@{encoding\_choice\_errors}}
+\doxysubsubsection{\texorpdfstring{alpha\_drop\_error}{alpha\_drop\_error}}
+{\footnotesize\ttfamily \label{structencoding__choice__errors_a9f732b537213a9c5caddca5af4d0c15c} 
+float encoding\+\_\+choice\+\_\+errors\+::alpha\+\_\+drop\+\_\+error}
+
+
+
+Error of discarding alpha and using a constant 1.\+0 alpha. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00929}{929}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structencoding__choice__errors_a296ff4def93117aadb093f02532b5244}\index{encoding\_choice\_errors@{encoding\_choice\_errors}!can\_blue\_contract@{can\_blue\_contract}}
+\index{can\_blue\_contract@{can\_blue\_contract}!encoding\_choice\_errors@{encoding\_choice\_errors}}
+\doxysubsubsection{\texorpdfstring{can\_blue\_contract}{can\_blue\_contract}}
+{\footnotesize\ttfamily \label{structencoding__choice__errors_a296ff4def93117aadb093f02532b5244} 
+bool encoding\+\_\+choice\+\_\+errors\+::can\+\_\+blue\+\_\+contract}
+
+
+
+Can we use blue contraction encoding? 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00935}{935}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structencoding__choice__errors_a4ed3d3a0fa3f83ac3a48067030ac49fd}\index{encoding\_choice\_errors@{encoding\_choice\_errors}!can\_offset\_encode@{can\_offset\_encode}}
+\index{can\_offset\_encode@{can\_offset\_encode}!encoding\_choice\_errors@{encoding\_choice\_errors}}
+\doxysubsubsection{\texorpdfstring{can\_offset\_encode}{can\_offset\_encode}}
+{\footnotesize\ttfamily \label{structencoding__choice__errors_a4ed3d3a0fa3f83ac3a48067030ac49fd} 
+bool encoding\+\_\+choice\+\_\+errors\+::can\+\_\+offset\+\_\+encode}
+
+
+
+Can we use delta offset encoding? 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00932}{932}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structencoding__choice__errors_ad6cf09c5032d45a8e61b750969ff4c27}\index{encoding\_choice\_errors@{encoding\_choice\_errors}!luminance\_error@{luminance\_error}}
+\index{luminance\_error@{luminance\_error}!encoding\_choice\_errors@{encoding\_choice\_errors}}
+\doxysubsubsection{\texorpdfstring{luminance\_error}{luminance\_error}}
+{\footnotesize\ttfamily \label{structencoding__choice__errors_ad6cf09c5032d45a8e61b750969ff4c27} 
+float encoding\+\_\+choice\+\_\+errors\+::luminance\+\_\+error}
+
+
+
+Error of using luminance instead of RGB. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00926}{926}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structencoding__choice__errors_a5db32b77467b23beb70562840f173a54}\index{encoding\_choice\_errors@{encoding\_choice\_errors}!rgb\_luma\_error@{rgb\_luma\_error}}
+\index{rgb\_luma\_error@{rgb\_luma\_error}!encoding\_choice\_errors@{encoding\_choice\_errors}}
+\doxysubsubsection{\texorpdfstring{rgb\_luma\_error}{rgb\_luma\_error}}
+{\footnotesize\ttfamily \label{structencoding__choice__errors_a5db32b77467b23beb70562840f173a54} 
+float encoding\+\_\+choice\+\_\+errors\+::rgb\+\_\+luma\+\_\+error}
+
+
+
+Error of using HDR RGB-\/scale instead of complete endpoints. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00923}{923}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structencoding__choice__errors_a7833d66ba6360569a3cbad8a9d4c743f}\index{encoding\_choice\_errors@{encoding\_choice\_errors}!rgb\_scale\_error@{rgb\_scale\_error}}
+\index{rgb\_scale\_error@{rgb\_scale\_error}!encoding\_choice\_errors@{encoding\_choice\_errors}}
+\doxysubsubsection{\texorpdfstring{rgb\_scale\_error}{rgb\_scale\_error}}
+{\footnotesize\ttfamily \label{structencoding__choice__errors_a7833d66ba6360569a3cbad8a9d4c743f} 
+float encoding\+\_\+choice\+\_\+errors\+::rgb\+\_\+scale\+\_\+error}
+
+
+
+Error of using LDR RGB-\/scale instead of complete endpoints. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00920}{920}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__internal_8h}{astcenc\+\_\+internal.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,19 @@
+<map id="astcenc_config_init" name="astcenc_config_init">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,104,139,129"/>
+<area shape="rect" id="Node000002" href="$namespaceastc.html#a83a55552d03399cdff6cf2fed8312c9f" title="Return the maximum of two values." alt="" coords="214,5,294,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,102,131,72,185,40,200,33,203,38,188,44,134,76,91,106"/>
+<area shape="rect" id="Node000003" href="$namespaceastc.html#af78c0d31374aa9923633a3a2abf8d738" title="Return the minimum of two values." alt="" coords="216,55,292,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="119,101,202,79,203,84,120,107"/>
+<area shape="rect" id="Node000004" href="$astcenc__entry_8cpp.html#acdcee8daab341db81c6cbe79f566ada0" title="Validate block size." alt="" coords="187,104,321,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="139,114,173,114,173,119,139,119"/>
+<area shape="rect" id="Node000007" href="$astcenc__entry_8cpp.html#a6005193560626fcd9fd6d910d4233876" title="Validate CPU floating point meets assumptions made in the codec." alt="" coords="192,153,316,179"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="120,127,194,147,192,152,119,132"/>
+<area shape="rect" id="Node000008" href="$astcenc__entry_8cpp.html#a12c6fc921e035b653e128a1fed66a9ea" title="Validate flags." alt="" coords="205,203,303,228"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="92,127,135,157,188,188,204,195,202,200,185,192,132,161,89,132"/>
+<area shape="rect" id="Node000005" href="$astcenc__percentile__tables_8cpp.html#a39abc45fae63fefae08ef3f2218d2439" title="Query if a 2D block size is legal." alt="" coords="369,80,525,105"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="321,106,355,101,356,107,322,111"/>
+<area shape="rect" id="Node000006" href="$astcenc__percentile__tables_8cpp.html#a54f17744601dc1a75f0f75be7a95c514" title="Query if a 3D block size is legal." alt="" coords="369,129,525,155"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="322,123,356,127,355,133,321,128"/>
+<area shape="rect" id="Node000009" href="$astcenc__vecmathlib__common__4_8h.html#a652a0112f173bddee3a84a27eb679fda" title="Population bit count." alt="" coords="410,203,485,228"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="303,213,397,213,397,218,303,218"/>
+</map>

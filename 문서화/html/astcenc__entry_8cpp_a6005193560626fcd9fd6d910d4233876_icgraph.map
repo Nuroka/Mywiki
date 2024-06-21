@@ -1,0 +1,14 @@
+<map id="validate_cpu_float" name="validate_cpu_float">
+<area shape="rect" id="Node000001" title="Validate CPU floating point meets assumptions made in the codec." alt="" coords="636,31,760,56"/>
+<area shape="rect" id="Node000002" href="$astcenc__entry_8cpp.html#a061172f7c266a9f5a3270e0b76a65433" title=" " alt="" coords="455,5,588,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="622,35,588,30,589,25,623,30"/>
+<area shape="rect" id="Node000006" href="$astcenc__entry_8cpp.html#a823234313a697f5b4cdbd2cd6caaef4a" title="Allocate a new codec context based on a config." alt="" coords="255,56,407,81"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="622,51,407,66,407,61,622,46"/>
+<area shape="rect" id="Node000003" href="$astcenccli__toplevel_8cpp.html#aaf7c065e8caf5efb3235ae521742312a" title="Initialize the astcenc_config" alt="" coords="264,7,397,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="441,21,397,22,397,16,441,16"/>
+<area shape="rect" id="Node000004" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,32,207,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="251,34,207,40,206,35,250,28"/>
+<area shape="rect" id="Node000005" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,32,56,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="90,47,57,47,57,42,90,42"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="241,59,207,54,207,49,242,54"/>
+</map>

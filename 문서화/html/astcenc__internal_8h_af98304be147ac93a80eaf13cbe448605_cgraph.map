@@ -1,0 +1,5 @@
+<map id="get_2d_percentile_table" name="get_2d_percentile_table">
+<area shape="rect" id="Node000001" title="Get the percentile table for 2D block modes." alt="" coords="5,5,164,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__percentile__tables_8cpp.html#ad46153321aa8b7efe0d78a7f6e8a88e9" title="Fetch the packed percentile table for the given 2D block size." alt="" coords="212,5,336,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,15,198,15,198,21,164,21"/>
+</map>

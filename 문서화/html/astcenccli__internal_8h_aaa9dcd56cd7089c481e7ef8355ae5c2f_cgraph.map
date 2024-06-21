@@ -1,0 +1,5 @@
+<map id="launch_threads" name="launch_threads">
+<area shape="rect" id="Node000001" title="Launch N worker threads and wait for them to complete." alt="" coords="5,5,116,31"/>
+<area shape="rect" id="Node000002" href="$astcenccli__platform__dependents_8cpp.html#ab71f663aee63a901f990d117faf0290d" title="Helper function to translate thread entry points." alt="" coords="164,5,316,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,15,150,15,150,21,116,21"/>
+</map>

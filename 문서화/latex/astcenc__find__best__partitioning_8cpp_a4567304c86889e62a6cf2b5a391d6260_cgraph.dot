@@ -1,0 +1,23 @@
+digraph "count_partition_mismatch_bits"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="count_partition_mismatch_bits",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Count the partition table mismatches vs the data clustering."];
+  Node1 -> Node2 [id="edge10_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="partition_mismatch2",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__find__best__partitioning_8cpp.html#a6c9cd07ba65d36a11ebdd0363f3a3550",tooltip="Compute bit-mismatch for partitioning in 2-partition mode."];
+  Node2 -> Node3 [id="edge11_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="astc::min",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceastc.html#af78c0d31374aa9923633a3a2abf8d738",tooltip="Return the minimum of two values."];
+  Node2 -> Node4 [id="edge12_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="popcount",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__vecmathlib__common__4_8h.html#a652a0112f173bddee3a84a27eb679fda",tooltip="Population bit count."];
+  Node1 -> Node5 [id="edge13_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="partition_mismatch3",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__find__best__partitioning_8cpp.html#a9acad2d527657aaa0da1c424db437e37",tooltip="Compute bit-mismatch for partitioning in 3-partition mode."];
+  Node5 -> Node3 [id="edge14_Node000005_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node5 -> Node4 [id="edge15_Node000005_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node6 [id="edge16_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="partition_mismatch4",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__find__best__partitioning_8cpp.html#a3febec3fce459c429e5c4445c852d3bb",tooltip="Compute bit-mismatch for partitioning in 4-partition mode."];
+  Node6 -> Node3 [id="edge17_Node000006_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node6 -> Node4 [id="edge18_Node000006_Node000004",color="steelblue1",style="solid",tooltip=" "];
+}

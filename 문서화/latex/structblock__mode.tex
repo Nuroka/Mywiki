@@ -1,0 +1,149 @@
+\doxysection{block\+\_\+mode 구조체 참조}
+\hypertarget{structblock__mode}{}\label{structblock__mode}\index{block\_mode@{block\_mode}}
+
+
+Metadata for single block mode for a specific block size.  
+
+
+
+
+{\ttfamily \#include $<$astcenc\+\_\+internal.\+h$>$}
+
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}} \mbox{\hyperlink{structblock__mode_a760578093fb16da4932bc26d2d5c1837}{get\+\_\+weight\+\_\+quant\+\_\+mode}} () const
+\begin{DoxyCompactList}\small\item\em Get the weight quantization used by this block mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structblock__mode_a045cae1a970db63e55e66df097c84863}{mode\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em The block mode index in the ASTC encoded form. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structblock__mode_aaf9846117d40406d5e84508f429cf949}{decimation\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em The decimation mode index in the compressor reindexed list. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structblock__mode_a57910e5bd3d21447cdea6c7789723a86}{quant\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em The weight quantization used by this block mode. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structblock__mode_a22f24a51f0c67cad40998833545e675e}{weight\+\_\+bits}}
+\begin{DoxyCompactList}\small\item\em The weight quantization used by this block mode. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structblock__mode_a78b282103d0a8bee2b07c0da075a3dc4}{is\+\_\+dual\+\_\+plane}}\+: 1
+\begin{DoxyCompactList}\small\item\em Is a dual weight plane used by this block mode? \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+Metadata for single block mode for a specific block size. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00415}{415}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{structblock__mode_a760578093fb16da4932bc26d2d5c1837}\index{block\_mode@{block\_mode}!get\_weight\_quant\_mode@{get\_weight\_quant\_mode}}
+\index{get\_weight\_quant\_mode@{get\_weight\_quant\_mode}!block\_mode@{block\_mode}}
+\doxysubsubsection{\texorpdfstring{get\_weight\_quant\_mode()}{get\_weight\_quant\_mode()}}
+{\footnotesize\ttfamily \label{structblock__mode_a760578093fb16da4932bc26d2d5c1837} 
+\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}} block\+\_\+mode\+::get\+\_\+weight\+\_\+quant\+\_\+mode (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the weight quantization used by this block mode. 
+
+\begin{DoxyReturn}{반환값}
+The quantization level. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00437}{437}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00438\ \ \ \ \ \{}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\textcolor{keyword}{>}(this-\/>\mbox{\hyperlink{structblock__mode_a57910e5bd3d21447cdea6c7789723a86}{quant\_mode}});}
+\DoxyCodeLine{00440\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structblock__mode_a760578093fb16da4932bc26d2d5c1837_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structblock__mode_aaf9846117d40406d5e84508f429cf949}\index{block\_mode@{block\_mode}!decimation\_mode@{decimation\_mode}}
+\index{decimation\_mode@{decimation\_mode}!block\_mode@{block\_mode}}
+\doxysubsubsection{\texorpdfstring{decimation\_mode}{decimation\_mode}}
+{\footnotesize\ttfamily \label{structblock__mode_aaf9846117d40406d5e84508f429cf949} 
+uint8\+\_\+t block\+\_\+mode\+::decimation\+\_\+mode}
+
+
+
+The decimation mode index in the compressor reindexed list. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00421}{421}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__mode_a78b282103d0a8bee2b07c0da075a3dc4}\index{block\_mode@{block\_mode}!is\_dual\_plane@{is\_dual\_plane}}
+\index{is\_dual\_plane@{is\_dual\_plane}!block\_mode@{block\_mode}}
+\doxysubsubsection{\texorpdfstring{is\_dual\_plane}{is\_dual\_plane}}
+{\footnotesize\ttfamily \label{structblock__mode_a78b282103d0a8bee2b07c0da075a3dc4} 
+uint8\+\_\+t block\+\_\+mode\+::is\+\_\+dual\+\_\+plane}
+
+
+
+Is a dual weight plane used by this block mode? 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00430}{430}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__mode_a045cae1a970db63e55e66df097c84863}\index{block\_mode@{block\_mode}!mode\_index@{mode\_index}}
+\index{mode\_index@{mode\_index}!block\_mode@{block\_mode}}
+\doxysubsubsection{\texorpdfstring{mode\_index}{mode\_index}}
+{\footnotesize\ttfamily \label{structblock__mode_a045cae1a970db63e55e66df097c84863} 
+uint16\+\_\+t block\+\_\+mode\+::mode\+\_\+index}
+
+
+
+The block mode index in the ASTC encoded form. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00418}{418}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__mode_a57910e5bd3d21447cdea6c7789723a86}\index{block\_mode@{block\_mode}!quant\_mode@{quant\_mode}}
+\index{quant\_mode@{quant\_mode}!block\_mode@{block\_mode}}
+\doxysubsubsection{\texorpdfstring{quant\_mode}{quant\_mode}}
+{\footnotesize\ttfamily \label{structblock__mode_a57910e5bd3d21447cdea6c7789723a86} 
+uint8\+\_\+t block\+\_\+mode\+::quant\+\_\+mode}
+
+
+
+The weight quantization used by this block mode. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00424}{424}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structblock__mode_a22f24a51f0c67cad40998833545e675e}\index{block\_mode@{block\_mode}!weight\_bits@{weight\_bits}}
+\index{weight\_bits@{weight\_bits}!block\_mode@{block\_mode}}
+\doxysubsubsection{\texorpdfstring{weight\_bits}{weight\_bits}}
+{\footnotesize\ttfamily \label{structblock__mode_a22f24a51f0c67cad40998833545e675e} 
+uint8\+\_\+t block\+\_\+mode\+::weight\+\_\+bits}
+
+
+
+The weight quantization used by this block mode. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00427}{427}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__internal_8h}{astcenc\+\_\+internal.\+h}}\end{DoxyCompactItemize}

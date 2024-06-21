@@ -1,0 +1,128 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,912,56,937"/>
+<area shape="rect" id="Node000002" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="111,887,214,912"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="56,917,97,909,98,915,57,923"/>
+<area shape="rect" id="Node000343" href="$astcenccli__entry_8cpp.html#a3423e89c151a2658a30a62d4e470086a" title=" " alt="" coords="104,936,221,961"/>
+<area shape="poly" id="edge76_Node000001_Node000343" title=" " alt="" coords="57,927,91,933,90,938,56,932"/>
+<area shape="rect" id="Node000003" href="$astcenccli__image_8cpp.html#a860f8be85c860429c0df12b581015b68" title="Functions for creating in&#45;memory ASTC image structures." alt="" coords="558,56,649,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="162,886,171,719,191,448,206,308,223,185,243,91,255,60,267,41,302,19,340,7,381,3,423,5,463,13,502,24,565,48,563,53,500,29,462,18,422,11,381,8,341,12,304,24,271,45,260,63,249,93,228,186,211,309,197,448,176,719,167,886"/>
+<area shape="rect" id="Node000004" href="$astcenc__entry_8cpp.html#ad762aa055eed75156c99309158a40e90" title="Compress an image." alt="" coords="516,829,691,855"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="214,895,330,887,468,871,543,856,544,861,468,877,331,893,214,900"/>
+<area shape="rect" id="Node000005" href="$astcenc__entry_8cpp.html#a72c515300f4a4cf56c7bb41247960d72" title="Reset the codec state for a new compression." alt="" coords="739,577,907,603"/>
+<area shape="poly" id="edge17_Node000002_Node000005" title=" " alt="" coords="164,886,173,847,193,794,223,739,244,714,268,693,323,661,374,644,422,639,469,640,569,648,626,646,690,635,779,605,781,610,691,641,627,652,569,654,469,646,422,644,375,649,325,666,271,698,247,718,228,742,197,796,179,849,169,887"/>
+<area shape="rect" id="Node000062" href="$namespaceastc.html#af78c0d31374aa9923633a3a2abf8d738" title="Return the minimum of two values." alt="" coords="993,879,1069,904"/>
+<area shape="poly" id="edge62_Node000002_Node000062" title=" " alt="" coords="214,897,307,902,428,916,562,944,628,964,692,989,707,999,716,1010,725,1020,740,1028,786,1042,824,1048,861,1044,905,1028,941,1005,972,975,996,943,1014,915,1019,917,1001,946,976,978,945,1009,908,1032,862,1049,823,1054,784,1047,738,1032,722,1024,712,1013,703,1003,689,994,626,969,560,949,427,922,306,908,214,903"/>
+<area shape="rect" id="Node000242" href="$astcenc__entry_8cpp.html#a823234313a697f5b4cdbd2cd6caaef4a" title="Allocate a new codec context based on a config." alt="" coords="293,1088,445,1113"/>
+<area shape="poly" id="edge18_Node000002_Node000242" title=" " alt="" coords="208,910,223,922,237,942,244,962,247,1001,249,1038,257,1056,271,1073,282,1082,279,1086,267,1077,252,1058,244,1039,241,1001,239,963,233,944,219,925,205,914"/>
+<area shape="rect" id="Node000276" href="$astcenc__entry_8cpp.html#ad96b7a67e593053db2afa42ead0aaa03" title=" " alt="" coords="295,1039,442,1064"/>
+<area shape="poly" id="edge24_Node000002_Node000276" title=" " alt="" coords="207,910,223,921,241,947,247,971,254,995,271,1017,292,1031,289,1036,268,1021,249,997,242,973,236,949,219,925,204,914"/>
+<area shape="rect" id="Node000277" href="$astcenc__entry_8cpp.html#a062987fc41b9df7d34d8eb668f29eb21" title="Decompress an image." alt="" coords="530,707,677,747"/>
+<area shape="poly" id="edge26_Node000002_Node000277" title=" " alt="" coords="174,884,213,846,239,825,268,808,516,746,517,751,270,813,242,830,216,850,177,888"/>
+<area shape="rect" id="Node000278" href="$astcenc__entry_8cpp.html#a8bb4009be59101fe3004e39f9bd97d27" title="Reset the codec state for a new decompression." alt="" coords="749,513,896,553"/>
+<area shape="poly" id="edge30_Node000002_Node000278" title=" " alt="" coords="163,886,170,840,187,776,201,741,219,707,241,675,268,648,295,636,344,623,476,599,690,565,736,554,737,559,691,570,477,604,345,629,297,641,271,652,245,678,223,709,206,743,192,777,175,842,168,887"/>
+<area shape="rect" id="Node000295" href="$astcenc__entry_8cpp.html#ab3696295a3d17376e7c26b936841cd20" title="Get a printable string for specific status code." alt="" coords="521,531,686,556"/>
+<area shape="poly" id="edge31_Node000002_Node000295" title=" " alt="" coords="162,886,166,833,180,755,194,712,212,670,236,632,268,599,285,588,309,579,369,564,439,553,507,546,507,552,439,559,370,569,310,584,287,593,271,603,241,635,217,673,199,714,186,756,171,834,167,887"/>
+<area shape="rect" id="Node000296" href="$astcenccli__toplevel__help_8cpp.html#a3cf209b603114ef9a2c2c9e28697bbe7" title="Print the tool copyright and version header to stdout." alt="" coords="530,1260,677,1285"/>
+<area shape="poly" id="edge32_Node000002_Node000296" title=" " alt="" coords="209,910,223,922,240,948,248,975,248,1001,246,1026,244,1051,246,1075,254,1099,271,1123,294,1141,317,1150,341,1153,365,1153,415,1153,442,1160,470,1175,486,1192,495,1211,502,1229,518,1245,529,1252,526,1257,514,1249,498,1231,490,1213,482,1195,466,1179,440,1165,414,1158,365,1158,340,1159,316,1156,292,1146,267,1127,249,1101,240,1076,239,1051,241,1025,243,1000,242,976,235,951,219,925,206,914"/>
+<area shape="rect" id="Node000297" href="$astcenccli__toplevel__help_8cpp.html#a7377ad0be8285dd96c932d2744fc4641" title="Print the tool copyright, version, and long&#45;form help to stdout." alt="" coords="291,1189,446,1215"/>
+<area shape="poly" id="edge33_Node000002_Node000297" title=" " alt="" coords="210,910,223,922,243,954,251,986,251,1018,247,1048,243,1078,243,1108,251,1138,271,1168,286,1181,283,1185,267,1172,246,1140,238,1109,238,1078,241,1047,245,1017,246,987,238,956,219,925,206,914"/>
+<area shape="rect" id="Node000298" href="$astcenccli__toplevel__help_8cpp.html#af5bf7c6ac05f0f401cfde7d73ed2b852" title="Print the tool copyright, version, and short&#45;form help to stdout." alt="" coords="289,1239,449,1264"/>
+<area shape="poly" id="edge35_Node000002_Node000298" title=" " alt="" coords="210,910,223,922,246,962,254,1001,252,1040,245,1078,239,1114,238,1151,247,1187,271,1224,279,1231,275,1235,267,1228,242,1190,232,1152,233,1114,240,1077,247,1039,249,1002,241,964,219,925,206,914"/>
+<area shape="rect" id="Node000299" href="$astcenccli__toplevel_8cpp.html#a57bafe66bbd689a53aad2d190fe7a3fa" title="Runner callback function for a compression worker thread." alt="" coords="291,822,446,862"/>
+<area shape="poly" id="edge37_Node000002_Node000299" title=" " alt="" coords="208,884,283,863,284,868,210,889"/>
+<area shape="rect" id="Node000300" href="$astcenccli__error__metrics_8cpp.html#a478be461420681d7c83aa89569ea92c4" title="Compute error metrics comparing two images." alt="" coords="745,1093,900,1119"/>
+<area shape="poly" id="edge39_Node000002_Node000300" title=" " alt="" coords="201,910,223,921,237,934,247,946,256,957,271,966,330,989,384,998,433,998,480,994,528,990,578,990,632,1000,692,1024,708,1035,717,1047,726,1060,740,1072,767,1086,765,1091,737,1076,722,1063,713,1050,704,1039,689,1028,630,1005,577,996,528,995,481,999,433,1003,383,1003,329,994,268,971,252,961,243,949,234,937,220,926,199,915"/>
+<area shape="rect" id="Node000305" href="$astcenccli__toplevel_8cpp.html#a02c55a799cc33b39f9d733b1a7e91281" title="Runner callback function for a decompression worker thread." alt="" coords="285,707,453,747"/>
+<area shape="poly" id="edge41_Node000002_Node000305" title=" " alt="" coords="169,885,206,828,235,794,268,764,288,751,291,756,271,768,238,798,210,831,173,888"/>
+<area shape="rect" id="Node000306" href="$astcenccli__toplevel_8cpp.html#affe76bf8f1701e275934901541d19089" title="Edit the astcenc_config" alt="" coords="300,308,437,333"/>
+<area shape="poly" id="edge43_Node000002_Node000306" title=" " alt="" coords="162,886,169,781,187,618,200,532,218,453,240,387,253,362,267,343,286,330,289,334,271,347,258,365,245,389,223,454,206,533,192,618,174,782,167,887"/>
+<area shape="rect" id="Node000308" href="$astcenccli__internal_8h.html#a699ebbd5f0143120e8ccaa26ae386b56" title="Print a string to stderr." alt="" coords="563,357,643,383"/>
+<area shape="poly" id="edge70_Node000002_Node000308" title=" " alt="" coords="161,886,165,771,179,590,192,496,211,409,235,339,250,313,268,293,305,272,346,263,389,265,433,275,475,291,513,310,575,347,572,352,511,315,472,296,431,281,388,271,346,268,307,277,271,297,255,316,240,341,216,411,197,497,184,591,170,772,167,887"/>
+<area shape="rect" id="Node000309" href="$astcenccli__toplevel_8cpp.html#a799eec117691caf296bb26711f44c60f" title="Test if a string ends with a given suffix." alt="" coords="329,1288,409,1313"/>
+<area shape="poly" id="edge45_Node000002_Node000309" title=" " alt="" coords="210,910,223,922,239,945,249,969,257,1014,254,1059,245,1103,236,1146,234,1188,244,1231,255,1252,271,1273,291,1288,316,1296,314,1301,289,1293,267,1277,250,1255,239,1232,228,1188,231,1145,239,1102,248,1058,252,1015,244,970,234,948,219,925,207,914"/>
+<area shape="rect" id="Node000310" href="$astcenccli__image_8cpp.html#aeb0cd9b24656f2c4dac144e89217057c" title="Free an image." alt="" coords="561,105,646,131"/>
+<area shape="poly" id="edge46_Node000002_Node000310" title=" " alt="" coords="161,886,165,758,179,554,192,445,211,345,235,262,250,230,267,205,282,196,307,187,381,165,547,127,548,132,382,170,309,192,284,201,271,209,255,233,240,264,216,346,197,446,184,554,170,759,167,886"/>
+<area shape="rect" id="Node000311" href="$astcenccli__image__load__store_8cpp.html#a36fb7c666f502f49e4d18cf130a7958d" title="Check if the output file type requires a specific bitness." alt="" coords="299,1338,438,1378"/>
+<area shape="poly" id="edge47_Node000002_Node000311" title=" " alt="" coords="211,910,223,922,241,949,252,975,259,1001,261,1027,257,1077,246,1126,236,1175,232,1223,235,1248,242,1272,254,1297,271,1323,288,1338,285,1342,267,1326,249,1300,237,1274,230,1249,227,1223,230,1174,241,1125,252,1076,256,1027,254,1002,247,977,236,951,219,925,207,914"/>
+<area shape="rect" id="Node000312" href="$astcenccli__platform__dependents_8cpp.html#af7ab092ab10d65db3b9051a12420fa52" title="Get the current time." alt="" coords="333,1403,405,1428"/>
+<area shape="poly" id="edge48_Node000002_Node000312" title=" " alt="" coords="211,910,223,922,243,953,256,984,263,1015,265,1045,258,1103,244,1161,230,1217,225,1274,228,1302,236,1331,250,1359,271,1388,293,1404,319,1412,318,1417,291,1409,267,1392,245,1362,231,1332,222,1303,219,1274,225,1217,238,1160,253,1102,259,1045,258,1015,251,986,238,956,219,925,207,914"/>
+<area shape="rect" id="Node000313" href="$astcenccli__toplevel_8cpp.html#aeadb22c3ae0c54b3d9777e8e0779729c" title="Create a copy of input with forced unit&#45;length normal vectors." alt="" coords="273,1452,464,1477"/>
+<area shape="poly" id="edge49_Node000002_Node000313" title=" " alt="" coords="211,910,223,922,235,942,243,968,250,1031,249,1104,246,1183,242,1262,243,1335,251,1395,260,1419,271,1438,276,1442,272,1446,267,1441,255,1421,246,1396,237,1335,237,1262,240,1183,244,1104,244,1031,237,969,230,945,219,925,207,914"/>
+<area shape="rect" id="Node000316" href="$astcenccli__toplevel_8cpp.html#ae4200e4d2196e8fc39ae933c758c8d79" title="Create a copy of input with premultiplied color data." alt="" coords="269,1501,468,1527"/>
+<area shape="poly" id="edge50_Node000002_Node000316" title=" " alt="" coords="211,910,223,922,236,944,244,972,251,1041,250,1122,245,1208,241,1294,241,1374,250,1440,259,1466,271,1487,276,1491,272,1495,267,1490,254,1469,244,1442,235,1374,235,1294,240,1208,245,1122,246,1041,239,974,231,946,219,925,207,914"/>
+<area shape="rect" id="Node000319" href="$astcenccli__toplevel_8cpp.html#aaf7c065e8caf5efb3235ae521742312a" title="Initialize the astcenc_config" alt="" coords="302,505,435,531"/>
+<area shape="poly" id="edge51_Node000002_Node000319" title=" " alt="" coords="161,886,164,826,178,736,191,686,209,636,235,590,267,548,287,533,291,538,271,552,239,593,214,639,196,688,183,737,169,827,167,887"/>
+<area shape="rect" id="Node000322" href="$astcenccli__platform__dependents_8cpp.html#aaa9dcd56cd7089c481e7ef8355ae5c2f" title="Launch N worker threads and wait for them to complete." alt="" coords="313,1551,424,1576"/>
+<area shape="poly" id="edge54_Node000002_Node000322" title=" " alt="" coords="211,910,223,922,237,946,245,977,253,1051,251,1139,245,1233,239,1327,239,1413,248,1485,258,1514,271,1536,285,1548,301,1555,299,1560,282,1552,267,1540,253,1516,243,1487,233,1413,234,1327,240,1233,246,1139,248,1052,240,978,232,948,219,925,207,914"/>
+<area shape="rect" id="Node000324" href="$astcenccli__image__load__store_8cpp.html#a6ef0eed7ff787726c2e16ab96196ed8b" title="Load a compressed .astc image." alt="" coords="321,357,416,383"/>
+<area shape="poly" id="edge55_Node000002_Node000324" title=" " alt="" coords="162,886,171,790,190,641,204,563,221,491,242,432,267,392,286,379,307,371,309,376,288,384,271,396,247,435,226,493,209,564,195,642,176,790,168,887"/>
+<area shape="rect" id="Node000326" href="$astcenccli__image__load__store_8cpp.html#a10761592472e9cc4d632946459d00bee" title="Load a KTX compressed image using the local custom loader." alt="" coords="294,1601,443,1641"/>
+<area shape="poly" id="edge57_Node000002_Node000326" title=" " alt="" coords="211,910,223,922,238,948,247,981,255,1061,253,1156,246,1257,240,1358,238,1451,247,1530,257,1561,271,1586,284,1598,280,1601,267,1589,252,1563,242,1531,233,1451,235,1357,241,1256,248,1155,250,1061,242,982,233,950,219,925,207,914"/>
+<area shape="rect" id="Node000330" href="$astcenccli__toplevel_8cpp.html#a3dd5258961a3c289c1e448b7807cf1fa" title="Load a non&#45;astc image file from memory." alt="" coords="307,105,430,131"/>
+<area shape="poly" id="edge58_Node000002_Node000330" title=" " alt="" coords="161,886,164,750,177,528,190,411,209,302,234,211,250,175,267,148,293,129,296,133,271,152,254,178,239,213,214,303,195,411,182,529,169,750,167,886"/>
+<area shape="rect" id="Node000333" href="$astcenccli__toplevel_8cpp.html#aedf9353399b1d889e93faaefb272e410" title="Parse the command line." alt="" coords="275,407,462,432"/>
+<area shape="poly" id="edge63_Node000002_Node000333" title=" " alt="" coords="163,886,172,798,193,664,207,594,224,530,244,477,267,442,271,438,275,442,271,445,249,480,229,532,212,596,198,665,178,799,168,887"/>
+<area shape="rect" id="Node000334" href="$astcenccli__toplevel_8cpp.html#af7e1714f9fd2ea869dc60aa6cc67398c" title="Print the config settings in a human readable form." alt="" coords="298,1665,439,1691"/>
+<area shape="poly" id="edge65_Node000002_Node000334" title=" " alt="" coords="211,910,223,922,239,951,249,987,255,1029,257,1075,253,1179,245,1291,236,1402,234,1505,237,1550,244,1590,255,1624,271,1651,287,1664,284,1668,267,1654,250,1626,239,1592,232,1551,229,1505,231,1402,239,1291,248,1179,251,1076,249,1029,244,988,234,953,219,925,207,914"/>
+<area shape="rect" id="Node000335" href="$astcenccli__toplevel_8cpp.html#a65c87ee1ff0ed0736cffa06692853479" title="Print a set of diagnostic images showing aspects of the encoding." alt="" coords="287,56,450,81"/>
+<area shape="poly" id="edge66_Node000002_Node000335" title=" " alt="" coords="161,886,161,740,172,501,184,373,203,255,216,203,230,158,248,120,267,91,274,85,277,89,271,94,252,122,235,159,221,205,209,256,190,374,177,501,167,740,166,886"/>
+<area shape="rect" id="Node000339" href="$astcenccli__image__load__store_8cpp.html#aad38fd842cc30c7c2d49594cc9c20e65" title="Save an uncompressed image." alt="" coords="550,181,657,207"/>
+<area shape="poly" id="edge75_Node000002_Node000339" title=" " alt="" coords="162,887,166,768,181,579,194,479,212,387,236,312,251,282,267,260,296,236,328,217,363,203,400,194,472,185,536,185,536,190,472,190,401,199,365,209,331,222,299,240,271,264,256,285,241,314,218,388,199,480,186,579,171,768,167,887"/>
+<area shape="rect" id="Node000340" href="$astcenccli__toplevel_8cpp.html#a54bae4167b7197c4da5ecac977489513" title="Callback emitting a progress bar" alt="" coords="309,1715,428,1740"/>
+<area shape="poly" id="edge71_Node000002_Node000340" title=" " alt="" coords="211,910,223,922,240,953,250,991,256,1036,258,1086,254,1197,244,1316,235,1434,232,1544,235,1592,242,1635,254,1672,271,1700,283,1711,297,1718,295,1723,280,1715,267,1704,249,1674,237,1637,230,1593,227,1544,229,1434,239,1315,249,1196,253,1086,251,1036,245,992,235,955,219,925,207,914"/>
+<area shape="rect" id="Node000341" href="$astcenccli__image__load__store_8cpp.html#a9ba4a67ed1a59e71c22282996d48390b" title="Store a compressed .astc image." alt="" coords="319,456,419,481"/>
+<area shape="poly" id="edge72_Node000002_Node000341" title=" " alt="" coords="163,886,174,806,196,687,227,569,246,522,267,491,285,479,304,471,306,476,287,483,271,495,251,525,232,571,201,688,180,807,168,887"/>
+<area shape="rect" id="Node000342" href="$astcenccli__image__load__store_8cpp.html#a3e674d4952496a98a942815392b1a3a5" title="Store a KTX compressed image using a local store routine." alt="" coords="291,1765,446,1805"/>
+<area shape="poly" id="edge74_Node000002_Node000342" title=" " alt="" coords="211,910,223,922,241,955,252,996,258,1043,261,1096,256,1214,246,1340,235,1466,232,1583,235,1635,242,1681,254,1720,271,1751,281,1761,278,1765,267,1754,249,1722,237,1682,230,1635,227,1583,230,1466,240,1339,251,1213,255,1096,253,1044,247,997,236,957,219,925,207,914"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="619,827,653,797,689,758,704,733,712,712,721,690,737,664,764,635,791,610,795,614,767,638,741,668,726,692,717,714,708,735,693,761,657,801,623,831"/>
+<area shape="rect" id="Node000007" href="$astcenc__entry_8cpp.html#acbecfd32ce013d567cac16a877c20f42" title="Compress an image, after any preflight has completed." alt="" coords="762,780,883,805"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="660,827,752,806,753,811,661,832"/>
+<area shape="rect" id="Node000220" href="$class_parallel_manager.html#af5c7b0a9139c6f1709ead3f135f0a861" title="Trigger the pipeline stage init step." alt="" coords="961,729,1101,755"/>
+<area shape="poly" id="edge11_Node000004_Node000220" title=" " alt="" coords="620,827,671,795,704,778,738,765,791,752,846,744,947,737,947,743,846,749,792,757,739,770,706,783,674,799,623,832"/>
+<area shape="rect" id="Node000234" href="$astcenc__entry_8cpp.html#abb4b489d57171cfb1ebe0be7d24ef1d9" title="Compute regional averages in an image." alt="" coords="757,829,888,855"/>
+<area shape="poly" id="edge9_Node000004_Node000234" title=" " alt="" coords="691,839,743,839,743,845,691,845"/>
+<area shape="rect" id="Node000237" href="$astcenc__compute__variance_8cpp.html#a3f9cb247b3a6133147c430dfd81b3d96" title="Setup computation of regional averages in an image." alt="" coords="745,879,900,904"/>
+<area shape="poly" id="edge12_Node000004_Node000237" title=" " alt="" coords="661,852,753,873,752,878,660,857"/>
+<area shape="rect" id="Node000238" href="$class_parallel_manager.html#aa4855579e8b5efa4190e1f30db498300" title="Trigger the pipeline stage term step." alt="" coords="748,928,897,953"/>
+<area shape="poly" id="edge14_Node000004_Node000238" title=" " alt="" coords="626,853,677,882,740,913,762,921,760,926,738,918,674,887,624,857"/>
+<area shape="rect" id="Node000239" href="$astcenc__entry_8cpp.html#a6cf3c861fc7e2dcc766b5a18bc84c2de" title="Validate overall compression swizzle." alt="" coords="749,978,896,1018"/>
+<area shape="poly" id="edge15_Node000004_Node000239" title=" " alt="" coords="618,853,668,905,702,935,740,962,752,970,750,974,737,967,699,939,664,909,614,857"/>
+<area shape="rect" id="Node000241" href="$class_parallel_manager.html#afdfb2d5fce334f335edb01c8106e784c" title="Wait for stage processing to complete." alt="" coords="749,679,896,704"/>
+<area shape="poly" id="edge16_Node000004_Node000241" title=" " alt="" coords="616,827,677,770,737,721,766,707,769,711,740,726,681,774,620,831"/>
+<area shape="rect" id="Node000006" href="$class_parallel_manager.html#a9dfbf8571d608ce0d4196ac32184eea5" title="Reset the tracker for a new processing batch." alt="" coords="955,549,1107,575"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="907,576,940,572,941,577,907,581"/>
+<area shape="poly" id="edge7_Node000007_Node000220" title=" " alt="" coords="875,777,964,755,965,761,876,783"/>
+<area shape="poly" id="edge8_Node000007_Node000062" title=" " alt="" coords="877,803,908,814,958,841,1002,868,999,873,956,845,906,819,875,808"/>
+<area shape="poly" id="edge10_Node000234_Node000062" title=" " alt="" coords="878,852,980,877,978,882,876,857"/>
+<area shape="poly" id="edge13_Node000237_Node000062" title=" " alt="" coords="900,889,979,889,979,894,900,894"/>
+<area shape="rect" id="Node000243" href="$astcenc__internal_8h.html#a2f1a3a41e28280d05df6b8d212d9c5c2" title="Free an aligned memory buffer." alt="" coords="558,1039,649,1064"/>
+<area shape="poly" id="edge19_Node000242_Node000243" title=" " alt="" coords="429,1085,544,1061,545,1066,430,1091"/>
+<area shape="rect" id="Node000244" href="$astcenc__internal_8h.html#a319cc507e110bedc1da79eeb325cb64c" title="Allocate an aligned memory buffer." alt="" coords="549,1088,657,1113"/>
+<area shape="poly" id="edge20_Node000242_Node000244" title=" " alt="" coords="445,1098,536,1098,536,1103,445,1103"/>
+<area shape="rect" id="Node000245" href="$astcenc__block__sizes_8cpp.html#a5c46863585cc583c3deb49323dfb73d8" title="Populate the block size descriptor for the target block size." alt="" coords="517,1137,689,1163"/>
+<area shape="poly" id="edge21_Node000242_Node000245" title=" " alt="" coords="430,1111,529,1132,528,1137,429,1116"/>
+<area shape="rect" id="Node000267" href="$namespaceastc.html#aaf1aa9ba997d9b4d505974e9f80d27c6" title=" " alt="" coords="564,1211,643,1236"/>
+<area shape="poly" id="edge22_Node000242_Node000267" title=" " alt="" coords="423,1111,469,1130,494,1150,518,1172,566,1202,564,1206,514,1176,491,1154,467,1135,421,1116"/>
+<area shape="poly" id="edge23_Node000267_Node000267" title=" " alt="" coords="568,1212,560,1202,564,1192,579,1186,603,1184,634,1188,646,1197,643,1201,632,1193,603,1189,580,1191,568,1196,565,1202,572,1209"/>
+<area shape="poly" id="edge25_Node000276_Node000243" title=" " alt="" coords="442,1049,544,1049,544,1054,442,1054"/>
+<area shape="poly" id="edge29_Node000277_Node000220" title=" " alt="" coords="649,705,689,686,713,673,738,663,785,654,823,650,861,652,907,663,935,674,962,688,1006,719,1003,723,959,693,933,679,906,669,860,658,823,655,786,659,739,669,715,678,692,691,651,710"/>
+<area shape="poly" id="edge27_Node000277_Node000278" title=" " alt="" coords="624,705,689,636,702,616,710,598,720,581,737,563,744,558,747,562,740,567,724,584,715,600,706,618,693,640,628,709"/>
+<area shape="poly" id="edge28_Node000278_Node000006" title=" " alt="" coords="897,540,941,547,941,552,896,546"/>
+<area shape="poly" id="edge34_Node000297_Node000296" title=" " alt="" coords="430,1212,469,1224,517,1245,542,1253,541,1258,515,1250,467,1229,429,1217"/>
+<area shape="poly" id="edge36_Node000298_Node000296" title=" " alt="" coords="449,1256,517,1262,516,1267,449,1261"/>
+<area shape="poly" id="edge38_Node000299_Node000004" title=" " alt="" coords="447,839,502,839,502,845,447,845"/>
+<area shape="poly" id="edge40_Node000300_Node000062" title=" " alt="" coords="870,1091,905,1072,943,1035,974,992,1016,916,1021,918,978,995,947,1038,908,1076,873,1096"/>
+<area shape="poly" id="edge42_Node000305_Node000277" title=" " alt="" coords="453,725,516,725,516,730,453,730"/>
+<area shape="poly" id="edge44_Node000306_Node000308" title=" " alt="" coords="430,331,551,356,550,362,429,336"/>
+<area shape="poly" id="edge52_Node000319_Node000295" title=" " alt="" coords="436,523,507,530,506,536,436,528"/>
+<area shape="poly" id="edge53_Node000319_Node000308" title=" " alt="" coords="434,503,467,490,501,468,532,442,581,392,585,395,536,446,504,472,469,495,436,508"/>
+<area shape="poly" id="edge56_Node000324_Node000308" title=" " alt="" coords="416,367,550,367,550,373,416,373"/>
+<area shape="poly" id="edge59_Node000330_Node000003" title=" " alt="" coords="429,103,544,78,545,84,430,108"/>
+<area shape="poly" id="edge61_Node000330_Node000308" title=" " alt="" coords="384,129,583,345,579,349,380,133"/>
+<area shape="poly" id="edge60_Node000330_Node000310" title=" " alt="" coords="430,115,547,115,547,121,430,121"/>
+<area shape="poly" id="edge64_Node000333_Node000308" title=" " alt="" coords="429,404,550,378,551,384,430,409"/>
+<area shape="poly" id="edge67_Node000335_Node000003" title=" " alt="" coords="450,66,544,66,544,71,450,71"/>
+<area shape="poly" id="edge68_Node000335_Node000310" title=" " alt="" coords="430,79,547,104,546,109,429,84"/>
+<area shape="poly" id="edge69_Node000335_Node000339" title=" " alt="" coords="444,79,469,90,485,102,495,114,504,127,518,140,567,172,564,177,514,144,500,130,491,118,481,106,467,95,441,84"/>
+<area shape="poly" id="edge73_Node000341_Node000308" title=" " alt="" coords="418,456,467,441,522,415,569,388,572,392,525,420,469,446,420,461"/>
+</map>

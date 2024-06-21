@@ -1,0 +1,163 @@
+\doxysection{astcenccli\+\_\+image\+\_\+external.\+cpp}
+\hypertarget{astcenccli__image__external_8cpp_source}{}\label{astcenccli__image__external_8cpp_source}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_image\_external.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_image\_external.cpp}}
+\mbox{\hyperlink{astcenccli__image__external_8cpp}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00001}00001\ \textcolor{comment}{//\ SPDX-\/License-\/Identifier:\ Apache-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00003}00003\ \textcolor{comment}{//\ Copyright\ 2011-\/2023\ Arm\ Limited}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00004}00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00005}00005\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});\ you\ may\ not}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00006}00006\ \textcolor{comment}{//\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00007}00007\ \textcolor{comment}{//\ of\ the\ License\ at:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00008}00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00009}00009\ \textcolor{comment}{//\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00010}00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00011}00011\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00012}00012\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00013}00013\ \textcolor{comment}{//\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.\ See\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00014}00014\ \textcolor{comment}{//\ License\ for\ the\ specific\ language\ governing\ permissions\ and\ limitations}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00015}00015\ \textcolor{comment}{//\ under\ the\ License.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00016}00016\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <cstdio>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{astcenccli__internal_8h}{astcenccli\_internal.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00029}00029\ \textcolor{comment}{//\ Configure\ the\ STB\ image\ write\ library\ build.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00030}\mbox{\hyperlink{astcenccli__image__external_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}{00030}}\ \textcolor{preprocessor}{\#define\ STB\_IMAGE\_IMPLEMENTATION}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00031}\mbox{\hyperlink{astcenccli__image__external_8cpp_aefe397a94e8feddc652f92ef40ce9597}{00031}}\ \textcolor{preprocessor}{\#define\ STB\_IMAGE\_WRITE\_IMPLEMENTATION}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00032}\mbox{\hyperlink{astcenccli__image__external_8cpp_aeb08d34d1eaadcd2e6a05da5ff930c5e}{00032}}\ \textcolor{preprocessor}{\#define\ STBI\_NO\_GIF}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00033}\mbox{\hyperlink{astcenccli__image__external_8cpp_a5e76f68e1c2f6762f36287090e83e1ef}{00033}}\ \textcolor{preprocessor}{\#define\ STBI\_NO\_PIC}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00034}\mbox{\hyperlink{astcenccli__image__external_8cpp_afaa171549c75c368baa419a1024d72a2}{00034}}\ \textcolor{preprocessor}{\#define\ STBI\_NO\_PNM}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00035}\mbox{\hyperlink{astcenccli__image__external_8cpp_a17856f964cfbba0fac175cdd4b4ba383}{00035}}\ \textcolor{preprocessor}{\#define\ STBI\_NO\_PNG}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00036}\mbox{\hyperlink{astcenccli__image__external_8cpp_af59a8a253ea647864c910ebd7ea7ed65}{00036}}\ \textcolor{preprocessor}{\#define\ STBI\_NO\_PSD}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00038}00038\ \textcolor{comment}{//\ Configure\ the\ TinyEXR\ library\ build.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00039}\mbox{\hyperlink{astcenccli__image__external_8cpp_a64d249aa3458d57a008b0713db24e604}{00039}}\ \textcolor{preprocessor}{\#define\ TINYEXR\_IMPLEMENTATION}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00041}00041\ \textcolor{comment}{//\ Configure\ the\ Wuffs\ library\ build.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00042}\mbox{\hyperlink{astcenccli__image__external_8cpp_acf8a8a9a685417efacde0d4d8a1f8333}{00042}}\ \textcolor{preprocessor}{\#define\ WUFFS\_IMPLEMENTATION}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00043}\mbox{\hyperlink{astcenccli__image__external_8cpp_ad37fc127832de2d42a55f7c7a797f269}{00043}}\ \textcolor{preprocessor}{\#define\ WUFFS\_CONFIG\_\_MODULES}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00044}\mbox{\hyperlink{astcenccli__image__external_8cpp_a6478c1400404231b605e8f692e1d80a1}{00044}}\ \textcolor{preprocessor}{\#define\ WUFFS\_CONFIG\_\_MODULE\_\_ADLER32}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00045}\mbox{\hyperlink{astcenccli__image__external_8cpp_ab42451676675b256bbb0110cf9ab881a}{00045}}\ \textcolor{preprocessor}{\#define\ WUFFS\_CONFIG\_\_MODULE\_\_BASE}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00046}\mbox{\hyperlink{astcenccli__image__external_8cpp_acd7dff66ed86424e2828b40174568a79}{00046}}\ \textcolor{preprocessor}{\#define\ WUFFS\_CONFIG\_\_MODULE\_\_CRC32}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00047}\mbox{\hyperlink{astcenccli__image__external_8cpp_a8ba6e5629db1ed9854b2dc0fdc92f8fc}{00047}}\ \textcolor{preprocessor}{\#define\ WUFFS\_CONFIG\_\_MODULE\_\_DEFLATE}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00048}\mbox{\hyperlink{astcenccli__image__external_8cpp_aec64cbe7ac19355c8cfb54f5f4c12737}{00048}}\ \textcolor{preprocessor}{\#define\ WUFFS\_CONFIG\_\_MODULE\_\_PNG}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00049}\mbox{\hyperlink{astcenccli__image__external_8cpp_a8c6812f97203584c9162ca95c03a472c}{00049}}\ \textcolor{preprocessor}{\#define\ WUFFS\_CONFIG\_\_MODULE\_\_ZLIB}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00050}00050\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{wuffs-v0_83_8c}{wuffs-\/v0.3.c}}"{}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00052}00052\ \textcolor{comment}{//\ For\ both\ libraries\ force\ asserts\ (which\ can\ be\ triggered\ by\ corrupt\ input}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00053}00053\ \textcolor{comment}{//\ images)\ to\ be\ handled\ at\ runtime\ in\ release\ builds\ to\ avoid\ security\ issues.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00054}\mbox{\hyperlink{astcenccli__image__external_8cpp_abcf0d8bc32a73fd449d918aac2ed3882}{00054}}\ \textcolor{preprocessor}{\#define\ STBI\_ASSERT(x)\ astcenc\_runtime\_assert(x)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00055}\mbox{\hyperlink{astcenccli__image__external_8cpp_a51f1f2b6ad6f1cf01f75b18a61f8207e}{00055}}\ \textcolor{preprocessor}{\#define\ TEXR\_ASSERT(x)\ astcenc\_runtime\_assert(x)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00060}\mbox{\hyperlink{astcenccli__image__external_8cpp_a6f32cae7789a8da7c1dd5fa66a5a1e8a}{00060}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenccli__image__external_8cpp_a6f32cae7789a8da7c1dd5fa66a5a1e8a}{astcenc\_runtime\_assert}}(\textcolor{keywordtype}{bool}\ condition)}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00061}00061\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{if}\ (!condition)}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00063}00063\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenccli__internal_8h_a699ebbd5f0143120e8ccaa26ae386b56}{print\_error}}(\textcolor{stringliteral}{"{}ERROR:\ Corrupt\ input\ image\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ exit(1);}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00067}00067\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00069}00069\ \textcolor{preprocessor}{\#include\ "{}ThirdParty/stb\_image.h"{}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00070}00070\ \textcolor{preprocessor}{\#include\ "{}ThirdParty/stb\_image\_write.h"{}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00071}00071\ \textcolor{preprocessor}{\#include\ "{}ThirdParty/tinyexr.h"{}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00083}\mbox{\hyperlink{astcenccli__image__external_8cpp_a9920dcae3265967744c9b31e9ac8a999}{00083}}\ \mbox{\hyperlink{structastcenc__image}{astcenc\_image}}*\ \mbox{\hyperlink{astcenccli__image__load__store_8cpp_ab9461ff96d07d9c2004c9599d2742150}{load\_png\_with\_wuffs}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordtype}{bool}\ y\_flip,}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordtype}{bool}\&\ is\_hdr,}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ component\_count}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00088}00088\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00089}00089\ \ \ \ \ is\_hdr\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00090}00090\ \ \ \ \ component\_count\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00092}00092\ \ \ \ \ std::ifstream\ file(filename,\ std::ios::binary\ |\ std::ios::ate);}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00094}00094\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenccli__internal_8h_a699ebbd5f0143120e8ccaa26ae386b56}{print\_error}}(\textcolor{stringliteral}{"{}ERROR:\ Failed\ to\ load\ image\ \%s\ (can't\ fopen)\(\backslash\)n"{}},\ filename);}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00099}00099\ \ \ \ \ std::streamsize\ size\ =\ file.tellg();}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00100}00100\ \ \ \ \ file.seekg(0,\ std::ios::beg);}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00102}00102\ \ \ \ \ std::vector<uint8\_t>\ buffer(size);}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00103}00103\ \ \ \ \ file.read((\textcolor{keywordtype}{char}*)buffer.data(),\ size);}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00105}00105\ \ \ \ \ \mbox{\hyperlink{wuffs-v0_83_8c_aca1b5132af7875ae6352d8791d6beddf}{wuffs\_png\_\_decoder}}\ *dec\ =\ \mbox{\hyperlink{wuffs-v0_83_8c_a5d2bcf3dfcd583a62738e059b0d27d80}{wuffs\_png\_\_decoder\_\_alloc}}();}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{if}\ (!dec)}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00107}00107\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00111}00111\ \ \ \ \ \mbox{\hyperlink{structwuffs__base____image__config____struct}{wuffs\_base\_\_image\_config}}\ ic;}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00112}00112\ \ \ \ \ \mbox{\hyperlink{structwuffs__base____io__buffer____struct}{wuffs\_base\_\_io\_buffer}}\ src\ =\ \mbox{\hyperlink{wuffs-v0_83_8c_a00677163623339195a082d5c359983d7}{wuffs\_base\_\_ptr\_u8\_\_reader}}(buffer.data(),\ size,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00113}00113\ \ \ \ \ \mbox{\hyperlink{structwuffs__base____status____struct}{wuffs\_base\_\_status}}\ status\ =\ \mbox{\hyperlink{wuffs-v0_83_8c_ad48f0296dc931ce5dcea8a0c30e642c0}{wuffs\_png\_\_decoder\_\_decode\_image\_config}}(dec,\ \&ic,\ \&src);}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{if}\ (status.\mbox{\hyperlink{structwuffs__base____status____struct_a41d0e1b59d019e94b7f3c030d53db6e7}{repr}})}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00115}00115\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00119}00119\ \ \ \ \ uint32\_t\ dim\_x\ =\ \mbox{\hyperlink{wuffs-v0_83_8c_a5f2035e154cd391ccf4d43a5f759f25f}{wuffs\_base\_\_pixel\_config\_\_width}}(\&ic.\mbox{\hyperlink{structwuffs__base____image__config____struct_aa5f3a74ab32427acb8f935e04dd6b2ab}{pixcfg}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00120}00120\ \ \ \ \ uint32\_t\ dim\_y\ =\ \mbox{\hyperlink{wuffs-v0_83_8c_adefd33c267daa0d55e11eb5f6d363625}{wuffs\_base\_\_pixel\_config\_\_height}}(\&ic.\mbox{\hyperlink{structwuffs__base____image__config____struct_aa5f3a74ab32427acb8f935e04dd6b2ab}{pixcfg}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ num\_pixels\ =\ dim\_x\ *\ dim\_y;}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{if}\ (num\_pixels\ >\ (SIZE\_MAX\ /\ 4))}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00123}00123\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00125}00125\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{comment}{//\ Override\ the\ image's\ native\ pixel\ format\ to\ be\ RGBA\_NONPREMUL}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00128}00128\ \ \ \ \ \mbox{\hyperlink{wuffs-v0_83_8c_a0a7abef0beaadad92348c82277311994}{wuffs\_base\_\_pixel\_config\_\_set}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \&ic.\mbox{\hyperlink{structwuffs__base____image__config____struct_aa5f3a74ab32427acb8f935e04dd6b2ab}{pixcfg}},}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{wuffs-v0_83_8c_a0efba23849688a4bf2cfef718ee492e0}{WUFFS\_BASE\_\_PIXEL\_FORMAT\_\_RGBA\_NONPREMUL}},}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{wuffs-v0_83_8c_aa9cb97fbf916a4c85bfe263a57fe3b87}{WUFFS\_BASE\_\_PIXEL\_SUBSAMPLING\_\_NONE}},}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ dim\_x,\ dim\_y);}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00134}00134\ \ \ \ \ \textcolor{comment}{//\ Configure\ the\ work\ buffer}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00135}00135\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ workbuf\_len\ =\ \mbox{\hyperlink{wuffs-v0_83_8c_af83f3e29886ee92948f6e9c792ea018e}{wuffs\_png\_\_decoder\_\_workbuf\_len}}(dec).\mbox{\hyperlink{structwuffs__base____range__ii__u64____struct_aa643f515f792f8962152af0d6054fb51}{max\_incl}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00136}00136\ \ \ \ \ \textcolor{keywordflow}{if}\ (workbuf\_len\ >\ SIZE\_MAX)}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00137}00137\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00139}00139\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00141}00141\ \ \ \ \ wuffs\_base\_\_slice\_u8\ workbuf\_slice\ =\ wuffs\_base\_\_make\_slice\_u8((uint8\_t*)malloc(workbuf\_len),\ workbuf\_len);}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00142}00142\ \ \ \ \ \textcolor{keywordflow}{if}\ (!workbuf\_slice.ptr)}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00143}00143\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00145}00145\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00147}00147\ \ \ \ \ wuffs\_base\_\_slice\_u8\ pixbuf\_slice\ =\ wuffs\_base\_\_make\_slice\_u8((uint8\_t*)malloc(num\_pixels\ *\ 4),\ num\_pixels\ *\ 4);}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00148}00148\ \ \ \ \ \textcolor{keywordflow}{if}\ (!pixbuf\_slice.ptr)}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00149}00149\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00151}00151\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00153}00153\ \ \ \ \ \mbox{\hyperlink{structwuffs__base____pixel__buffer____struct}{wuffs\_base\_\_pixel\_buffer}}\ pb;}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00154}00154\ \ \ \ \ status\ =\ \mbox{\hyperlink{wuffs-v0_83_8c_a6dbfe45a4cad9cea69bdcf64aec9fb8d}{wuffs\_base\_\_pixel\_buffer\_\_set\_from\_slice}}(\&pb,\ \&ic.\mbox{\hyperlink{structwuffs__base____image__config____struct_aa5f3a74ab32427acb8f935e04dd6b2ab}{pixcfg}},\ pixbuf\_slice);}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{if}\ (status.\mbox{\hyperlink{structwuffs__base____status____struct_a41d0e1b59d019e94b7f3c030d53db6e7}{repr}})}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00156}00156\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00158}00158\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00160}00160\ \ \ \ \ \textcolor{comment}{//\ Decode\ the\ pixels}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00161}00161\ \ \ \ \ status\ =\ \mbox{\hyperlink{wuffs-v0_83_8c_af57d8e43628d94b43f9443fb8303fdeb}{wuffs\_png\_\_decoder\_\_decode\_frame}}(dec,\ \&pb,\ \&src,\ \mbox{\hyperlink{wuffs-v0_83_8c_afbc54096d64714b332c602a7a5710fdc}{WUFFS\_BASE\_\_PIXEL\_BLEND\_\_SRC}},\ workbuf\_slice,\ NULL);}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00162}00162\ \ \ \ \ \textcolor{keywordflow}{if}\ (status.\mbox{\hyperlink{structwuffs__base____status____struct_a41d0e1b59d019e94b7f3c030d53db6e7}{repr}})}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00163}00163\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00165}00165\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00167}00167\ \ \ \ \ \mbox{\hyperlink{structastcenc__image}{astcenc\_image}}*\ img\ =\ \mbox{\hyperlink{astcenccli__image_8cpp_a9ecc1dac86584f7e086e9962fb6c0509}{astc\_img\_from\_unorm8x4\_array}}(pixbuf\_slice.ptr,\ dim\_x,\ dim\_y,\ y\_flip);}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00169}00169\ \ \ \ \ free(pixbuf\_slice.ptr);}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00170}00170\ \ \ \ \ free(workbuf\_slice.ptr);}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00171}00171\ \ \ \ \ free(dec);}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00173}00173\ \ \ \ \ \textcolor{keywordflow}{return}\ img;}
+\DoxyCodeLine{\Hypertarget{astcenccli__image__external_8cpp_source_l00174}00174\ \}}
+
+\end{DoxyCode}

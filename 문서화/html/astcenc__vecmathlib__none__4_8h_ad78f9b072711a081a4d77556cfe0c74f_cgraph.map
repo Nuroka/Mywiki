@@ -1,0 +1,5 @@
+<map id="vtable_8bt_32bi" name="vtable_8bt_32bi">
+<area shape="rect" id="Node000001" title="Perform an 8&#45;bit 64&#45;entry table lookup, with 32&#45;bit indexes." alt="" coords="5,5,116,31"/>
+<area shape="rect" id="Node000002" href="$structvint4.html#a01e3f7debf73dc6c757fa36d585c9d17" title="Get the scalar from a single lane." alt="" coords="164,5,244,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,15,150,15,150,21,116,21"/>
+</map>

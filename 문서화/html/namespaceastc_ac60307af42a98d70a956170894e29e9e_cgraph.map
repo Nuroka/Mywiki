@@ -1,0 +1,5 @@
+<map id="astc::clamp1f" name="astc::clamp1f">
+<area shape="rect" id="Node000001" title="Clamp a float value between 0.0f and 1.0f." alt="" coords="5,5,105,31"/>
+<area shape="rect" id="Node000002" href="$namespaceastc.html#a8f8b2ad23b04a389f6785bc80b61349b" title="Clamp a value value between mn and mx." alt="" coords="153,5,244,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,15,140,15,140,21,105,21"/>
+</map>

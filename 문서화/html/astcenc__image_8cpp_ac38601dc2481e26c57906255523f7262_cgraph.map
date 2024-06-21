@@ -1,0 +1,79 @@
+<map id="load_image_block" name="load_image_block">
+<area shape="rect" id="Node000001" title="Load a single image block from the input image." alt="" coords="5,612,132,637"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#ad93dff3341cbbeed568d4bd6dc4ef87c" title="True if all lanes are enabled, false otherwise." alt="" coords="232,19,271,44"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,612,81,511,103,354,136,193,156,128,178,81,196,60,218,44,221,49,200,64,182,83,161,129,141,194,109,355,86,512,74,612"/>
+<area shape="rect" id="Node000004" href="$astcenc__vecmathlib__avx2__8_8h.html#a1fcb81537a701f246e75fa622c2dd8ee" title="True if any lanes are enabled, false otherwise." alt="" coords="230,95,273,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="69,612,81,521,104,381,137,240,156,183,178,143,195,127,216,116,218,120,199,131,182,146,161,185,142,242,109,382,86,521,74,612"/>
+<area shape="rect" id="Node000005" href="$astcenc__image_8cpp.html#ab1928a8877d97e7fca94c20dff6d3326" title="Encode a texel that includes at least some HDR LNS texels." alt="" coords="190,359,313,384"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="71,611,82,572,103,516,135,456,155,427,178,401,196,388,200,392,182,405,159,430,140,459,108,518,87,573,76,613"/>
+<area shape="rect" id="Node000012" href="$astcenc__vecmathlib__avx2__8_8h.html#a844ab5b69b84569f033be33bf5fb9fbc" title="Return lanes from b if cond is set, else a." alt="" coords="545,284,602,309"/>
+<area shape="poly" id="edge35_Node000001_Node000012" title=" " alt="" coords="68,611,75,561,92,488,106,448,124,410,148,374,178,344,220,317,266,298,315,285,365,279,458,278,531,286,531,292,458,284,365,284,316,291,268,303,223,321,182,348,153,378,129,412,111,450,97,489,80,562,73,612"/>
+<area shape="rect" id="Node000013" href="$structvfloat4.html#a04b5f338012dab6be0b2bd7910fcbcae" title="Factory that returns a vector of zeros." alt="" coords="528,511,619,536"/>
+<area shape="poly" id="edge43_Node000001_Node000013" title=" " alt="" coords="90,610,131,589,179,570,269,549,361,535,514,522,514,528,361,540,270,554,181,575,133,594,93,614"/>
+<area shape="rect" id="Node000015" href="$structvint4.html#a9dfa1c40a3c4dbc0858567dc629a80b8" title="Factory that returns a vector of zeros." alt="" coords="533,460,614,485"/>
+<area shape="poly" id="edge44_Node000001_Node000015" title=" " alt="" coords="81,609,122,573,149,554,179,538,269,507,362,487,449,476,519,471,519,477,449,482,363,493,271,512,181,543,152,559,125,578,85,613"/>
+<area shape="rect" id="Node000017" href="$astcenc__image_8cpp.html#a94c9a0ba5f46a781280e3d102b1c9179" title="Encode a texel that is entirely LDR linear." alt="" coords="180,661,323,687"/>
+<area shape="poly" id="edge18_Node000001_Node000017" title=" " alt="" coords="117,635,191,655,189,660,116,640"/>
+<area shape="rect" id="Node000018" href="$astcenc__vecmathlib__neon__4_8h.html#afd7aa2069bdf377067c3abaca1256432" title="Return a float value for a float16 vector." alt="" coords="371,737,480,763"/>
+<area shape="poly" id="edge19_Node000001_Node000018" title=" " alt="" coords="87,635,128,666,181,696,225,712,272,724,357,740,356,745,270,729,224,717,179,700,125,670,83,639"/>
+<area shape="rect" id="Node000019" href="$astcenc__vecmathlib__avx2__8_8h.html#afdaab5e0b4a39a5dd28fb5b40642e57d" title="Return a integer value for a float vector, using truncation." alt="" coords="209,812,294,837"/>
+<area shape="poly" id="edge20_Node000001_Node000019" title=" " alt="" coords="77,637,91,669,113,712,143,758,182,797,197,807,194,812,178,801,139,761,108,715,86,671,72,639"/>
+<area shape="rect" id="Node000020" href="$structvfloat4.html#a04462a7815432c6bc3ce1b5e5d11e4fc" title="Get the scalar value of a single lane." alt="" coords="380,561,471,587"/>
+<area shape="poly" id="edge21_Node000001_Node000020" title=" " alt="" coords="119,609,180,597,278,584,366,575,367,581,279,589,180,602,120,614"/>
+<area shape="rect" id="Node000021" href="$astcenc__vecmathlib_8h.html#aa1ab2044e5354115ee71324e30fba1ed" title="Convert 16&#45;bit LNS to float16." alt="" coords="207,157,295,183"/>
+<area shape="poly" id="edge22_Node000001_Node000021" title=" " alt="" coords="67,612,68,542,81,434,94,373,114,312,142,253,178,200,193,187,197,191,182,204,146,256,119,314,100,375,86,435,74,543,72,612"/>
+<area shape="rect" id="Node000023" href="$astcenc__vecmathlib__avx2__8_8h.html#a165b3db4e7ced1551e1880a01a01150b" title="Return the min vector of two vectors." alt="" coords="404,208,447,233"/>
+<area shape="poly" id="edge34_Node000001_Node000023" title=" " alt="" coords="67,612,67,547,71,500,79,448,92,394,112,341,140,292,178,251,203,234,230,222,288,209,344,208,391,212,390,217,344,213,289,215,232,227,205,238,182,255,145,295,117,343,97,396,84,449,76,501,72,547,72,612"/>
+<area shape="rect" id="Node000024" href="$astcenc__image_8cpp.html#ad2ea4a92f4b88093986f54423a11d6a5" title="Load a 16&#45;bit fp16 texel from a data array." alt="" coords="199,763,304,788"/>
+<area shape="poly" id="edge27_Node000001_Node000024" title=" " alt="" coords="81,636,122,686,150,715,182,741,204,755,201,759,178,746,147,719,118,689,77,639"/>
+<area shape="rect" id="Node000025" href="$astcenc__image_8cpp.html#a8d442e093c3f3dc33123fa3ecbe6dece" title="Load a 32&#45;bit float texel from a data array." alt="" coords="199,861,304,887"/>
+<area shape="poly" id="edge29_Node000001_Node000025" title=" " alt="" coords="75,637,86,677,107,733,138,794,158,822,182,847,190,853,187,857,178,851,154,825,133,797,102,735,81,678,70,638"/>
+<area shape="rect" id="Node000026" href="$astcenc__image_8cpp.html#a3308fe6e3772f49620b4b20258e7a28c" title="Load a 8&#45;bit UNORM texel from a data array." alt="" coords="374,360,477,385"/>
+<area shape="poly" id="edge30_Node000001_Node000026" title=" " alt="" coords="72,611,86,579,108,536,139,491,178,452,210,434,257,417,360,386,361,391,258,422,213,439,182,456,143,495,113,539,91,581,77,613"/>
+<area shape="rect" id="Node000027" href="$astcenc__vecmathlib__avx2__8_8h.html#aa162915c044e97cc1f6d630338761fd3" title="Return the max vector of two vectors." alt="" coords="228,911,275,936"/>
+<area shape="poly" id="edge32_Node000001_Node000027" title=" " alt="" coords="74,637,82,685,101,755,115,792,133,830,155,865,182,896,198,907,216,914,214,919,195,912,178,900,151,868,128,832,110,794,96,756,77,686,69,638"/>
+<area shape="rect" id="Node000028" href="$namespaceastc.html#af78c0d31374aa9923633a3a2abf8d738" title="Return the minimum of two values." alt="" coords="213,960,289,985"/>
+<area shape="poly" id="edge33_Node000001_Node000028" title=" " alt="" coords="73,638,79,693,95,775,109,821,128,866,152,908,182,945,202,959,199,963,178,949,147,911,123,868,104,823,90,777,74,694,68,638"/>
+<area shape="rect" id="Node000029" href="$structvfloat4.html#a0a3e390831722cc8e54f29155699f3a5" title="Return a swizzled float 2." alt="" coords="207,612,296,637"/>
+<area shape="poly" id="edge36_Node000001_Node000029" title=" " alt="" coords="132,622,193,622,193,627,132,627"/>
+<area shape="rect" id="Node000030" href="$astcenc__image_8cpp.html#ae572e9ecb56b0cc2f5eba2a767010c33" title="Swizzle a texel into a new arrangement." alt="" coords="211,1009,291,1035"/>
+<area shape="poly" id="edge39_Node000001_Node000030" title=" " alt="" coords="73,637,75,700,89,796,103,848,122,901,148,951,182,995,200,1008,197,1012,178,999,144,954,117,903,98,850,84,797,70,701,67,638"/>
+<area shape="rect" id="Node000032" href="$astcenc__image_8cpp.html#a358236c706b6ba8cf35879bfdf56ab67" title="Dummy no&#45;op swizzle function." alt="" coords="196,1059,307,1084"/>
+<area shape="poly" id="edge41_Node000001_Node000032" title=" " alt="" coords="72,638,72,708,84,816,97,876,117,937,145,994,182,1044,187,1049,183,1053,178,1048,140,996,112,939,92,878,79,817,67,708,67,638"/>
+<area shape="rect" id="Node000033" href="$structimage__block.html#af99de7d75e1e380b31d70d131509caa9" title="Get an RGBA texel value from the data." alt="" coords="186,1108,317,1133"/>
+<area shape="poly" id="edge42_Node000001_Node000033" title=" " alt="" coords="74,637,85,728,107,865,122,937,140,1003,160,1057,182,1094,187,1098,183,1102,178,1097,155,1059,135,1004,117,938,102,866,80,729,69,638"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#ad922a3ed6098767968916265154b6f82" title="Return a 8&#45;bit mask code indicating mask status." alt="" coords="398,5,453,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="271,27,384,18,384,24,271,33"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="272,94,386,35,388,40,274,99"/>
+<area shape="rect" id="Node000006" href="$astcenc__vecmathlib_8h.html#a31e34e7d35ae75fd745c6d9117d7eabb" title="Convert float to 16&#45;bit LNS." alt="" coords="381,409,469,435"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="297,382,368,403,367,408,295,387"/>
+<area shape="poly" id="edge17_Node000005_Node000012" title=" " alt="" coords="307,356,531,304,532,309,308,361"/>
+<area shape="rect" id="Node000007" href="$astcenc__vecmathlib_8h.html#ad68d7d1254a8a61d504c089db0418fe3" title="Extract mantissa and exponent of a float value." alt="" coords="548,409,599,435"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="469,419,534,419,534,425,469,425"/>
+<area shape="rect" id="Node000011" href="$astcenc__vecmathlib__avx2__8_8h.html#a3a2ce0fb403294db7fe126a6b3e87ab7" title="Return a float value for an integer vector." alt="" coords="531,360,616,385"/>
+<area shape="poly" id="edge11_Node000006_Node000011" title=" " alt="" coords="463,407,521,387,522,392,465,412"/>
+<area shape="poly" id="edge12_Node000006_Node000012" title=" " alt="" coords="457,407,478,395,550,318,554,321,482,399,460,411"/>
+<area shape="poly" id="edge13_Node000006_Node000013" title=" " alt="" coords="445,433,530,494,540,501,537,506,526,499,442,437"/>
+<area shape="poly" id="edge15_Node000006_Node000015" title=" " alt="" coords="464,432,523,453,522,458,462,437"/>
+<area shape="rect" id="Node000008" href="$astcenc__vecmathlib__avx2__8_8h.html#a5c2db475754d8da42d9b685a45c48ab8" title="Return a float value as an integer bit pattern (i.e. no conversion)." alt="" coords="674,361,762,387"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="598,411,665,389,667,394,600,416"/>
+<area shape="rect" id="Node000009" href="$astcenc__vecmathlib__avx2__8_8h.html#ac584d4929db078403c58549bafd3c1cd" title="Return a integer value as a float bit pattern (i.e. no conversion)." alt="" coords="674,411,762,436"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="599,420,660,420,660,425,599,425"/>
+<area shape="rect" id="Node000010" href="$astcenc__vecmathlib__avx2__8_8h.html#a0a3a7d755cec1c73d0ce9c50b33bc207" title="Logical shift right." alt="" coords="699,184,737,209"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="597,409,617,395,649,352,675,304,707,222,712,224,680,307,654,355,621,399,600,414"/>
+<area shape="rect" id="Node000014" href="$structvfloat4.html#a9df51cb30b68d6d51ca607e64aa1ebf0" title="Construct from zero&#45;initialized value." alt="" coords="667,561,769,587"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="611,534,669,554,667,559,610,539"/>
+<area shape="rect" id="Node000016" href="$structvint4.html#a3315184e8bb4f0cf1ca8dcff1f57cdae" title="Construct from zero&#45;initialized value." alt="" coords="677,460,759,485"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="614,470,663,470,663,475,614,475"/>
+<area shape="poly" id="edge24_Node000021_Node000010" title=" " alt="" coords="277,155,321,129,344,108,354,99,370,92,400,83,425,82,481,91,540,108,598,131,688,177,686,181,595,136,539,113,479,97,425,87,401,89,372,96,357,104,347,112,324,133,279,160"/>
+<area shape="poly" id="edge26_Node000021_Node000012" title=" " alt="" coords="295,163,336,163,384,166,434,175,481,193,506,209,528,230,560,271,555,274,524,233,503,213,479,198,432,180,383,171,336,168,295,169"/>
+<area shape="rect" id="Node000022" href="$astcenc__vecmathlib__avx2__8_8h.html#a86240f0fb5745ded88afe10d524c960f" title="Logical shift left." alt="" coords="406,107,445,132"/>
+<area shape="poly" id="edge23_Node000021_Node000022" title=" " alt="" coords="295,155,392,126,393,131,296,160"/>
+<area shape="poly" id="edge25_Node000021_Node000023" title=" " alt="" coords="296,180,392,208,390,213,295,185"/>
+<area shape="poly" id="edge28_Node000024_Node000018" title=" " alt="" coords="304,765,357,757,357,763,304,770"/>
+<area shape="poly" id="edge31_Node000026_Node000011" title=" " alt="" coords="477,370,517,370,517,375,477,375"/>
+<area shape="poly" id="edge38_Node000029_Node000014" title=" " alt="" coords="296,617,653,578,653,584,297,623"/>
+<area shape="poly" id="edge37_Node000029_Node000020" title=" " alt="" coords="295,609,367,588,368,593,297,614"/>
+<area shape="rect" id="Node000031" href="$astcenc__vecmathlib__avx2__8_8h.html#ad4c0a7bde35d6fe9c54531e1e0652f4a" title="Store a vector to a 16B aligned memory address." alt="" coords="396,1009,455,1035"/>
+<area shape="poly" id="edge40_Node000030_Node000031" title=" " alt="" coords="292,1019,382,1019,382,1025,292,1025"/>
+</map>

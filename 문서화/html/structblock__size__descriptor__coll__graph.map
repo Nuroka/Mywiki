@@ -1,0 +1,11 @@
+<map id="block_size_descriptor" name="block_size_descriptor">
+<area shape="rect" id="Node000001" title="Data tables for a single block size." alt="" coords="207,93,355,119"/>
+<area shape="rect" id="Node000002" href="$structdecimation__mode.html" title="Metadata for single decimation mode for a specific block size." alt="" coords="5,5,129,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,42,82,56,92,67,110,77,139,84,207,95,206,101,137,90,108,82,88,71,78,59,71,45"/>
+<area shape="rect" id="Node000003" href="$structdecimation__info.html" title="The weight grid information for a single decimation pattern." alt="" coords="155,5,267,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="210,45,211,57,215,68,227,81,243,91,241,95,224,85,210,71,206,58,204,45"/>
+<area shape="rect" id="Node000004" href="$structblock__mode.html" title="Metadata for single block mode for a specific block size." alt="" coords="305,5,397,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="342,44,324,71,298,95,294,91,320,68,338,41"/>
+<area shape="rect" id="Node000005" href="$structpartition__info.html" title="The partition information for a single partition." alt="" coords="421,5,516,31"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="453,44,421,72,389,86,356,96,354,91,387,81,418,67,450,40"/>
+</map>

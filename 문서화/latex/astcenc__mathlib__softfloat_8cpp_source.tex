@@ -1,0 +1,414 @@
+\doxysection{astcenc\+\_\+mathlib\+\_\+softfloat.\+cpp}
+\hypertarget{astcenc__mathlib__softfloat_8cpp_source}{}\label{astcenc__mathlib__softfloat_8cpp_source}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_mathlib\_softfloat.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_mathlib\_softfloat.cpp}}
+\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00001}00001\ \textcolor{comment}{//\ SPDX-\/License-\/Identifier:\ Apache-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00003}00003\ \textcolor{comment}{//\ Copyright\ 2011-\/2021\ Arm\ Limited}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00004}00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00005}00005\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});\ you\ may\ not}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00006}00006\ \textcolor{comment}{//\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00007}00007\ \textcolor{comment}{//\ of\ the\ License\ at:}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00008}00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00009}00009\ \textcolor{comment}{//\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00010}00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00011}00011\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00012}00012\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00013}00013\ \textcolor{comment}{//\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.\ See\ the}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00014}00014\ \textcolor{comment}{//\ License\ for\ the\ specific\ language\ governing\ permissions\ and\ limitations}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00015}00015\ \textcolor{comment}{//\ under\ the\ License.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00016}00016\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00021}00021\ \textcolor{preprocessor}{\#if\ (ASTCENC\_F16C\ ==\ 0)\ \&\&\ (ASTCENC\_NEON\ ==\ 0)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{astcenc__mathlib_8h}{astcenc\_mathlib.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00025}00025\ \textcolor{comment}{/*\ \ sized\ soft-\/float\ types.\ These\ are\ mapped\ to\ the\ sized\ integer}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00026}00026\ \textcolor{comment}{\ \ \ \ types\ of\ C99,\ instead\ of\ C's\ floating-\/point\ types;\ this\ is\ because}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00027}00027\ \textcolor{comment}{\ \ \ \ the\ library\ needs\ to\ maintain\ exact,\ bit-\/level\ control\ on\ all}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00028}00028\ \textcolor{comment}{\ \ \ \ operations\ on\ these\ data\ types.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00029}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{00029}}\ \textcolor{keyword}{typedef}\ uint16\_t\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00030}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a1b289746cf42ab34aebeaf67d2c96c98}{00030}}\ \textcolor{keyword}{typedef}\ uint32\_t\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a1b289746cf42ab34aebeaf67d2c96c98}{sf32}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00032}00032\ \textcolor{comment}{/******************************************}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00033}00033\ \textcolor{comment}{\ \ helper\ functions\ and\ their\ lookup\ tables}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00034}00034\ \textcolor{comment}{\ ******************************************/}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00035}00035\ \textcolor{comment}{/*\ count\ leading\ zeros\ functions.\ Only\ used\ when\ the\ input\ is\ nonzero.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00037}00037\ \textcolor{preprocessor}{\#if\ defined(\_\_GNUC\_\_)\ \&\&\ (defined(\_\_i386)\ ||\ defined(\_\_amd64))}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00038}00038\ \textcolor{preprocessor}{\#elif\ defined(\_\_arm\_\_)\ \&\&\ defined(\_\_ARMCC\_VERSION)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00039}00039\ \textcolor{preprocessor}{\#elif\ defined(\_\_arm\_\_)\ \&\&\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00040}00040\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{comment}{/*\ table\ used\ for\ the\ slow\ default\ versions.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00042}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a50d798d2fad2b79e838dea3228929d27}{00042}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a50d798d2fad2b79e838dea3228929d27}{clz\_table}}[256]\ =}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ 8,\ 7,\ 6,\ 6,\ 5,\ 5,\ 5,\ 5,\ 4,\ 4,\ 4,\ 4,\ 4,\ 4,\ 4,\ 4,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00060}00060\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00061}00061\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00063}00063\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00064}00064\ \textcolor{comment}{\ \ \ 32-\/bit\ count-\/leading-\/zeros\ function:\ use\ the\ Assembly\ instruction\ whenever\ possible.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00065}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a04e345d938953a60961cf7125b9dec35}{00065}}\ \textcolor{keyword}{static}\ uint32\_t\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a04e345d938953a60961cf7125b9dec35}{clz32}}(uint32\_t\ inp)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00066}00066\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00067}00067\ \textcolor{preprocessor}{\ \ \ \ \#if\ defined(\_\_GNUC\_\_)\ \&\&\ (defined(\_\_i386)\ ||\ defined(\_\_amd64))}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ uint32\_t\ bsr;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \_\_asm\_\_(\textcolor{stringliteral}{"{}bsrl\ \%1,\ \%0"{}}:\ \textcolor{stringliteral}{"{}=r"{}}(bsr):\textcolor{stringliteral}{"{}r"{}}(inp\ |\ 1));}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 31\ -\/\ bsr;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00071}00071\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00072}00072\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#if\ defined(\_\_arm\_\_)\ \&\&\ defined(\_\_ARMCC\_VERSION)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_\_clz(inp);\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ armcc\ builtin\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00074}00074\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00075}00075\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#if\ defined(\_\_arm\_\_)\ \&\&\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ lz;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_asm\_\_(\textcolor{stringliteral}{"{}clz\ \%0,\ \%1"{}}:\ \textcolor{stringliteral}{"{}=r"{}}(lz):\textcolor{stringliteral}{"{}r"{}}(inp));}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lz;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00079}00079\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ slow\ default\ version\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ summa\ =\ 24;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inp\ >=\ UINT32\_C(0x10000))}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inp\ >>=\ 16;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ summa\ -\/=\ 16;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inp\ >=\ UINT32\_C(0x100))}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inp\ >>=\ 8;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ summa\ -\/=\ 8;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ summa\ +\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a50d798d2fad2b79e838dea3228929d27}{clz\_table}}[inp];}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00093}00093\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00094}00094\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00095}00095\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00096}00096\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00098}00098\ \textcolor{comment}{/*\ the\ five\ rounding\ modes\ that\ IEEE-\/754r\ defines\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00099}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9}{00099}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00100}00100\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00101}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9abe40754aaea9f5b2fd0aa05abd57b860}{00101}}\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9abe40754aaea9f5b2fd0aa05abd57b860}{SF\_UP}}\ =\ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ round\ towards\ positive\ infinity\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00102}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9adaca08f988549ac66fc0218b8ad30f08}{00102}}\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9adaca08f988549ac66fc0218b8ad30f08}{SF\_DOWN}}\ =\ 1,\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ round\ towards\ negative\ infinity\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00103}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9a68ae1c084147e7a04649ce0499fcdb77}{00103}}\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9a68ae1c084147e7a04649ce0499fcdb77}{SF\_TOZERO}}\ =\ 2,\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ round\ towards\ zero\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00104}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9a8b11b001878e9ce6e1796c2819f40212}{00104}}\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9a8b11b001878e9ce6e1796c2819f40212}{SF\_NEARESTEVEN}}\ =\ 3,\ \ \ \ \ \ \ \textcolor{comment}{/*\ round\ toward\ nearest\ value;\ if\ mid-\/between,\ round\ to\ even\ value\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00105}00105\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9aef2b63d6803f71de3bb5e98756e361d8}{SF\_NEARESTAWAY}}\ =\ 4\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ round\ toward\ nearest\ value;\ if\ mid-\/between,\ round\ away\ from\ zero\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00106}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9aef2b63d6803f71de3bb5e98756e361d8}{00106}}\ \}\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9}{roundmode}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00109}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a60b7d8902623ead0a8c64d615daeaef3}{00109}}\ \textcolor{keyword}{static}\ uint32\_t\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a60b7d8902623ead0a8c64d615daeaef3}{rtne\_shift32}}(uint32\_t\ inp,\ uint32\_t\ shamt)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00110}00110\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00111}00111\ \ \ \ \ uint32\_t\ vl1\ =\ UINT32\_C(1)\ <<\ shamt;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00112}00112\ \ \ \ \ uint32\_t\ inp2\ =\ inp\ +\ (vl1\ >>\ 1);\ \ \ \textcolor{comment}{/*\ added\ 0.5\ ULP\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00113}00113\ \ \ \ \ uint32\_t\ msk\ =\ (inp\ |\ UINT32\_C(1))\ \&\ vl1;\ \ \ \textcolor{comment}{/*\ nonzero\ if\ odd.\ '|\ 1'\ forces\ it\ to\ 1\ if\ the\ shamt\ is\ 0.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00114}00114\ \ \ \ \ msk-\/-\/;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ negative\ if\ even,\ nonnegative\ if\ odd.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00115}00115\ \ \ \ \ inp2\ -\/=\ (msk\ >>\ 31);\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ subtract\ epsilon\ before\ shift\ if\ even.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00116}00116\ \ \ \ \ inp2\ >>=\ shamt;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00117}00117\ \ \ \ \ \textcolor{keywordflow}{return}\ inp2;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00118}00118\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00120}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa05edb8be377b6c2d1249ec0f4d77369}{00120}}\ \textcolor{keyword}{static}\ uint32\_t\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa05edb8be377b6c2d1249ec0f4d77369}{rtna\_shift32}}(uint32\_t\ inp,\ uint32\_t\ shamt)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00121}00121\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00122}00122\ \ \ \ \ uint32\_t\ vl1\ =\ (UINT32\_C(1)\ <<\ shamt)\ >>\ 1;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00123}00123\ \ \ \ \ inp\ +=\ vl1;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00124}00124\ \ \ \ \ inp\ >>=\ shamt;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keywordflow}{return}\ inp;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00126}00126\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00128}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a20381e3115c75ee2cd4bfec32b505c34}{00128}}\ \textcolor{keyword}{static}\ uint32\_t\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a20381e3115c75ee2cd4bfec32b505c34}{rtup\_shift32}}(uint32\_t\ inp,\ uint32\_t\ shamt)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00129}00129\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00130}00130\ \ \ \ \ uint32\_t\ vl1\ =\ UINT32\_C(1)\ <<\ shamt;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00131}00131\ \ \ \ \ inp\ +=\ vl1;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00132}00132\ \ \ \ \ inp-\/-\/;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00133}00133\ \ \ \ \ inp\ >>=\ shamt;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00134}00134\ \ \ \ \ \textcolor{keywordflow}{return}\ inp;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00135}00135\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00137}00137\ \textcolor{comment}{/*\ convert\ from\ FP16\ to\ FP32.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00138}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a37ae551373be99b9c70465fe17c44cb5}{00138}}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a1b289746cf42ab34aebeaf67d2c96c98}{sf32}}\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a37ae551373be99b9c70465fe17c44cb5}{sf16\_to\_sf32}}(\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\ inp)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00139}00139\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00140}00140\ \ \ \ \ uint32\_t\ inpx\ =\ inp;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00142}00142\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00143}00143\ \textcolor{comment}{\ \ \ \ \ \ \ \ This\ table\ contains,\ for\ every\ FP16\ sign/exponent\ value\ combination,}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00144}00144\ \textcolor{comment}{\ \ \ \ \ \ \ \ the\ difference\ between\ the\ input\ FP16\ value\ and\ the\ value\ obtained}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00145}00145\ \textcolor{comment}{\ \ \ \ \ \ \ \ by\ shifting\ the\ correct\ FP32\ result\ right\ by\ 13\ bits.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00146}00146\ \textcolor{comment}{\ \ \ \ \ \ \ \ This\ table\ allows\ us\ to\ handle\ every\ case\ except\ denormals\ and\ NaN}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00147}00147\ \textcolor{comment}{\ \ \ \ \ \ \ \ with\ just\ 1\ table\ lookup,\ 2\ shifts\ and\ 1\ add.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00148}00148\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00150}00150\ \textcolor{preprocessor}{\ \ \ \ \#define\ WITH\_MSB(a)\ (UINT32\_C(a)\ |\ (1u\ <<\ 31))}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ tbl[64]\ =}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00152}00152\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a09a75497423bce5ad0bf1a50f5b6ad71}{WITH\_MSB}}(0x00000),\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ \ \ \ \ \ \ \ \ \ 0x1C000,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1C000,\ \ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ \ \ \ \ \ \ \ \ \ 0x1C000,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1C000,\ \ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ \ \ \ \ \ \ \ \ \ 0x1C000,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1C000,\ \ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a09a75497423bce5ad0bf1a50f5b6ad71}{WITH\_MSB}}(0x38000),}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a09a75497423bce5ad0bf1a50f5b6ad71}{WITH\_MSB}}(0x38000),\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ \ \ \ \ \ \ \ \ \ 0x54000,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x54000,\ \ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ \ \ \ \ \ \ \ \ \ 0x54000,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x54000,\ \ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ \ \ \ \ \ \ \ \ \ 0x54000,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x54000,\ \ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a09a75497423bce5ad0bf1a50f5b6ad71}{WITH\_MSB}}(0x70000)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00161}00161\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00163}00163\ \ \ \ \ uint32\_t\ res\ =\ tbl[inpx\ >>\ 10];}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00164}00164\ \ \ \ \ res\ +=\ inpx;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00166}00166\ \ \ \ \ \textcolor{comment}{/*\ Normal\ cases:\ MSB\ of\ 'res'\ not\ set.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00167}00167\ \ \ \ \ \textcolor{keywordflow}{if}\ ((res\ \&\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a09a75497423bce5ad0bf1a50f5b6ad71}{WITH\_MSB}}(0))\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00168}00168\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res\ <<\ 13;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00170}00170\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00172}00172\ \ \ \ \ \textcolor{comment}{/*\ Infinity\ and\ Zero:\ 10\ LSB\ of\ 'res'\ not\ set.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00173}00173\ \ \ \ \ \textcolor{keywordflow}{if}\ ((res\ \&\ 0x3FF)\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00174}00174\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res\ <<\ 13;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00176}00176\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{comment}{/*\ NaN:\ the\ exponent\ field\ of\ 'inp'\ is\ non-\/zero.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00179}00179\ \ \ \ \ \textcolor{keywordflow}{if}\ ((inpx\ \&\ 0x7C00)\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00180}00180\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ All\ NaNs\ are\ quietened.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (res\ <<\ 13)\ |\ 0x400000;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00183}00183\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00185}00185\ \ \ \ \ \textcolor{comment}{/*\ Denormal\ cases\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00186}00186\ \ \ \ \ uint32\_t\ sign\ =\ (inpx\ \&\ 0x8000)\ <<\ 16;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00187}00187\ \ \ \ \ uint32\_t\ mskval\ =\ inpx\ \&\ 0x7FFF;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00188}00188\ \ \ \ \ uint32\_t\ leadingzeroes\ =\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a04e345d938953a60961cf7125b9dec35}{clz32}}(mskval);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00189}00189\ \ \ \ \ mskval\ <<=\ leadingzeroes;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00190}00190\ \ \ \ \ \textcolor{keywordflow}{return}\ (mskval\ >>\ 8)\ +\ ((0x85\ -\/\ leadingzeroes)\ <<\ 23)\ +\ sign;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00191}00191\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00193}00193\ \textcolor{comment}{/*\ Conversion\ routine\ that\ converts\ from\ FP32\ to\ FP16.\ It\ supports\ denormals\ and\ all\ rounding\ modes.\ If\ a\ NaN\ is\ given\ as\ input,\ it\ is\ quietened.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00194}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_af5a2d724c58344c691091cdb5066cc65}{00194}}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_af5a2d724c58344c691091cdb5066cc65}{sf32\_to\_sf16}}(\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a1b289746cf42ab34aebeaf67d2c96c98}{sf32}}\ inp,\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9}{roundmode}}\ rmode)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00195}00195\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00196}00196\ \ \ \ \ \textcolor{comment}{/*\ for\ each\ possible\ sign/exponent\ combination,\ store\ a\ case\ index.\ This\ gives\ a\ 512-\/byte\ table\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00197}00197\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint8\_t\ tab[512]\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ 0,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ 10,\ 10,\ 10,\ 10,\ 10,\ 20,\ 20,\ 20,\ 20,\ 20,\ 20,\ 20,\ 20,\ 20,\ 20,\ 20,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ 20,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 40,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 50,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ 5,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ 15,\ 15,\ 15,\ 15,\ 15,\ 25,\ 25,\ 25,\ 25,\ 25,\ 25,\ 25,\ 25,\ 25,\ 25,\ 25,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ 25,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 45,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 55,}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00231}00231\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00233}00233\ \ \ \ \ \textcolor{comment}{/*\ many\ of\ the\ cases\ below\ use\ a\ case-\/dependent\ magic\ constant.\ So\ we\ look\ up\ a\ magic\ constant\ before\ actually\ performing\ the\ switch.\ This\ table\ allows\ us\ to\ group\ cases,\ thereby\ minimizing\ code}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00234}00234\ \textcolor{comment}{\ \ \ \ \ \ \ size.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00235}00235\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ tabx[60]\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0x8000),\ UINT32\_C(0x80000000),\ UINT32\_C(0x8000),\ UINT32\_C(0x8000),\ UINT32\_C(0x8000),}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ UINT32\_C(1),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0x8000),\ UINT32\_C(0x8001),\ UINT32\_C(0x8000),\ UINT32\_C(0x8000),\ UINT32\_C(0x8000),}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0x8000),\ UINT32\_C(0x8000),\ UINT32\_C(0x8000),\ UINT32\_C(0x8000),\ UINT32\_C(0x8000),}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ UINT32\_C(0xC8001FFF),\ UINT32\_C(0xC8000000),\ UINT32\_C(0xC8000000),\ UINT32\_C(0xC8000FFF),\ UINT32\_C(0xC8001000),}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ UINT32\_C(0x58000000),\ UINT32\_C(0x38001FFF),\ UINT32\_C(0x58000000),\ UINT32\_C(0x58000FFF),\ UINT32\_C(0x58001000),}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ UINT32\_C(0x7C00),\ UINT32\_C(0x7BFF),\ UINT32\_C(0x7BFF),\ UINT32\_C(0x7C00),\ UINT32\_C(0x7C00),}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ UINT32\_C(0xFBFF),\ UINT32\_C(0xFC00),\ UINT32\_C(0xFBFF),\ UINT32\_C(0xFC00),\ UINT32\_C(0xFC00),}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ UINT32\_C(0x90000000),\ UINT32\_C(0x90000000),\ UINT32\_C(0x90000000),\ UINT32\_C(0x90000000),\ UINT32\_C(0x90000000),}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ UINT32\_C(0x20000000),\ UINT32\_C(0x20000000),\ UINT32\_C(0x20000000),\ UINT32\_C(0x20000000),\ UINT32\_C(0x20000000)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00245}00245\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00247}00247\ \ \ \ \ uint32\_t\ p;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00248}00248\ \ \ \ \ uint32\_t\ idx\ =\ rmode\ +\ tab[inp\ >>\ 23];}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00249}00249\ \ \ \ \ uint32\_t\ vlx\ =\ tabx[idx];}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00250}00250\ \ \ \ \ \textcolor{keywordflow}{switch}\ (idx)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00251}00251\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00253}00253\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ Positive\ number\ which\ may\ be\ Infinity\ or\ NaN.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00254}00254\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ We\ need\ to\ check\ whether\ it\ is\ NaN;\ if\ it\ is,\ quieten\ it\ by\ setting\ the\ top\ bit\ of\ the\ mantissa.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00255}00255\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ (If\ we\ don't\ do\ this\ quieting,\ then\ a\ NaN\ \ that\ is\ distinguished\ only\ by\ having}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00256}00256\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ its\ low-\/order\ bits\ set,\ would\ be\ turned\ into\ an\ INF.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00257}00257\ \ \ \ \ \textcolor{keywordflow}{case}\ 50:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00258}00258\ \ \ \ \ \textcolor{keywordflow}{case}\ 51:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00259}00259\ \ \ \ \ \textcolor{keywordflow}{case}\ 52:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00260}00260\ \ \ \ \ \textcolor{keywordflow}{case}\ 53:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00261}00261\ \ \ \ \ \textcolor{keywordflow}{case}\ 54:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00262}00262\ \ \ \ \ \textcolor{keywordflow}{case}\ 55:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00263}00263\ \ \ \ \ \textcolor{keywordflow}{case}\ 56:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00264}00264\ \ \ \ \ \textcolor{keywordflow}{case}\ 57:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00265}00265\ \ \ \ \ \textcolor{keywordflow}{case}\ 58:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00266}00266\ \ \ \ \ \textcolor{keywordflow}{case}\ 59:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00268}00268\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ the\ input\ value\ is\ 0x7F800000\ or\ 0xFF800000\ if\ it\ is\ INF.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00269}00269\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ By\ subtracting\ 1,\ we\ get\ 7F7FFFFF\ or\ FF7FFFFF,\ that\ is,\ bit\ 23\ becomes\ zero.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00270}00270\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ For\ NaNs,\ however,\ this\ operation\ will\ keep\ bit\ 23\ with\ the\ value\ 1.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00271}00271\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ We\ can\ then\ extract\ bit\ 23,\ and\ logical-\/OR\ bit\ 9\ of\ the\ result\ with\ this}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00272}00272\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ bit\ in\ order\ to\ quieten\ the\ NaN\ (a\ Quiet\ NaN\ is\ a\ NaN\ where\ the\ top\ bit}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00273}00273\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ of\ the\ mantissa\ is\ set.)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00274}00274\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ p\ =\ (inp\ -\/\ 1)\ \&\ UINT32\_C(0x800000);\ \textcolor{comment}{/*\ zero\ if\ INF,\ nonzero\ if\ NaN.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}(((inp\ +\ vlx)\ >>\ 13)\ |\ (p\ >>\ 14));}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00278}00278\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ positive,\ exponent\ =\ 0,\ round-\/mode\ ==\ UP;\ need\ to\ check\ whether\ number\ actually\ is\ 0.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00279}00279\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ If\ it\ is,\ then\ return\ 0,\ else\ return\ 1\ (the\ smallest\ representable\ nonzero\ number)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00280}00280\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00281}00281\ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00283}00283\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ -\/inp\ will\ set\ the\ MSB\ if\ the\ input\ number\ is\ nonzero.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00284}00284\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ Thus\ (-\/inp)\ >>\ 31\ will\ turn\ into\ 0\ if\ the\ input\ number\ is\ 0\ and\ 1\ otherwise.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00285}00285\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}((-\/\textcolor{keyword}{static\_cast<}int32\_t\textcolor{keyword}{>}(inp)))\ >>\ 31);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00287}00287\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00289}00289\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ negative,\ exponent\ =\ ,\ round-\/mode\ ==\ DOWN,\ need\ to\ check\ whether\ number\ is}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00290}00290\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ actually\ 0.\ If\ it\ is,\ return\ 0x8000\ (\ float\ -\/0.0\ )}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00291}00291\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ Else\ return\ the\ smallest\ negative\ number\ (\ 0x8001\ )\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00292}00292\ \ \ \ \ \textcolor{keywordflow}{case}\ 6:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00294}00294\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ in\ this\ case\ 'vlx'\ is\ 0x80000000.\ By\ subtracting\ the\ input\ value\ from\ it,}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00295}00295\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ we\ obtain\ a\ value\ that\ is\ 0\ if\ the\ input\ value\ is\ in\ fact\ zero\ and\ has}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00296}00296\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ the\ MSB\ set\ if\ it\ isn't.\ We\ then\ right-\/shift\ the\ value\ by\ 31\ places\ to}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00297}00297\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ get\ a\ value\ that\ is\ 0\ if\ the\ input\ is\ -\/0.0\ and\ 1\ otherwise.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00298}00298\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}(((vlx\ -\/\ inp)\ >>\ 31)\ +\ UINT32\_C(0x8000));}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00300}00300\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00302}00302\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ for\ all\ other\ cases\ involving\ underflow/overflow,\ we\ don't\ need\ to}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00303}00303\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ do\ actual\ tests;\ we\ just\ return\ 'vlx'.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00304}00304\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00305}00305\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00306}00306\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00307}00307\ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00308}00308\ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00309}00309\ \ \ \ \ \textcolor{keywordflow}{case}\ 5:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00310}00310\ \ \ \ \ \textcolor{keywordflow}{case}\ 7:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00311}00311\ \ \ \ \ \textcolor{keywordflow}{case}\ 8:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00312}00312\ \ \ \ \ \textcolor{keywordflow}{case}\ 9:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00313}00313\ \ \ \ \ \textcolor{keywordflow}{case}\ 10:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00314}00314\ \ \ \ \ \textcolor{keywordflow}{case}\ 11:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00315}00315\ \ \ \ \ \textcolor{keywordflow}{case}\ 12:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00316}00316\ \ \ \ \ \textcolor{keywordflow}{case}\ 13:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00317}00317\ \ \ \ \ \textcolor{keywordflow}{case}\ 14:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00318}00318\ \ \ \ \ \textcolor{keywordflow}{case}\ 15:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00319}00319\ \ \ \ \ \textcolor{keywordflow}{case}\ 16:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00320}00320\ \ \ \ \ \textcolor{keywordflow}{case}\ 17:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00321}00321\ \ \ \ \ \textcolor{keywordflow}{case}\ 18:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00322}00322\ \ \ \ \ \textcolor{keywordflow}{case}\ 19:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00323}00323\ \ \ \ \ \textcolor{keywordflow}{case}\ 40:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00324}00324\ \ \ \ \ \textcolor{keywordflow}{case}\ 41:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00325}00325\ \ \ \ \ \textcolor{keywordflow}{case}\ 42:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00326}00326\ \ \ \ \ \textcolor{keywordflow}{case}\ 43:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00327}00327\ \ \ \ \ \textcolor{keywordflow}{case}\ 44:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00328}00328\ \ \ \ \ \textcolor{keywordflow}{case}\ 45:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00329}00329\ \ \ \ \ \textcolor{keywordflow}{case}\ 46:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00330}00330\ \ \ \ \ \textcolor{keywordflow}{case}\ 47:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00331}00331\ \ \ \ \ \textcolor{keywordflow}{case}\ 48:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00332}00332\ \ \ \ \ \textcolor{keywordflow}{case}\ 49:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}(vlx);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00334}00334\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00336}00336\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ for\ normal\ numbers,\ 'vlx'\ is\ the\ difference\ between\ the\ FP32\ value\ of\ a\ number\ and\ the}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00337}00337\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ FP16\ representation\ of\ the\ same\ number\ left-\/shifted\ by\ 13\ places.\ In\ addition,\ a\ rounding\ constant\ is}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00338}00338\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ baked\ into\ 'vlx':\ for\ rounding-\/away-\/from\ zero,\ the\ constant\ is\ 2\string^13\ -\/\ 1,\ causing\ roundoff\ away}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00339}00339\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ from\ zero.\ for\ round-\/to-\/nearest\ away,\ the\ constant\ is\ 2\string^12,\ causing\ roundoff\ away\ from\ zero.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00340}00340\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ for\ round-\/to-\/nearest-\/even,\ the\ constant\ is\ 2\string^12\ -\/\ 1.\ This\ causes\ correct\ round-\/to-\/nearest-\/even}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00341}00341\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ except\ for\ odd\ input\ numbers.\ For\ odd\ input\ numbers,\ we\ need\ to\ add\ 1\ to\ the\ constant.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00342}00342\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00343}00343\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ normal\ number,\ all\ rounding\ modes\ except\ round-\/to-\/nearest-\/even:\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00344}00344\ \ \ \ \ \textcolor{keywordflow}{case}\ 30:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00345}00345\ \ \ \ \ \textcolor{keywordflow}{case}\ 31:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00346}00346\ \ \ \ \ \textcolor{keywordflow}{case}\ 32:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00347}00347\ \ \ \ \ \textcolor{keywordflow}{case}\ 34:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00348}00348\ \ \ \ \ \textcolor{keywordflow}{case}\ 35:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00349}00349\ \ \ \ \ \textcolor{keywordflow}{case}\ 36:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00350}00350\ \ \ \ \ \textcolor{keywordflow}{case}\ 37:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00351}00351\ \ \ \ \ \textcolor{keywordflow}{case}\ 39:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00352}00352\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}((inp\ +\ vlx)\ >>\ 13);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00353}00353\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ normal\ number,\ round-\/to-\/nearest-\/even.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00355}00355\ \ \ \ \ \textcolor{keywordflow}{case}\ 33:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00356}00356\ \ \ \ \ \textcolor{keywordflow}{case}\ 38:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ p\ =\ inp\ +\ vlx;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ p\ +=\ (inp\ >>\ 13)\ \&\ 1;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}(p\ >>\ 13);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00360}00360\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00362}00362\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ the\ various\ denormal\ cases.\ These\ are\ not\ expected\ to\ be\ common,\ so\ their\ performance\ is\ a\ bit}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00363}00363\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ less\ important.\ For\ each\ of\ these\ cases,\ we\ need\ to\ extract\ an\ exponent\ and\ a\ mantissa}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00364}00364\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ (including\ the\ implicit\ '1'!),\ and\ then\ right-\/shift\ the\ mantissa\ by\ a\ shift-\/amount\ that}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00365}00365\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ depends\ on\ the\ exponent.\ The\ shift\ must\ apply\ the\ correct\ rounding\ mode.\ 'vlx'\ is\ used\ to\ supply\ the}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00366}00366\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ sign\ of\ the\ resulting\ denormal\ number.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00367}00367\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00368}00368\ \ \ \ \ \textcolor{keywordflow}{case}\ 21:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00369}00369\ \ \ \ \ \textcolor{keywordflow}{case}\ 22:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00370}00370\ \ \ \ \ \textcolor{keywordflow}{case}\ 25:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00371}00371\ \ \ \ \ \textcolor{keywordflow}{case}\ 27:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00372}00372\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ denormal,\ round\ towards\ zero.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00373}00373\ \ \ \ \ \ \ \ \ p\ =\ 126\ -\/\ ((inp\ >>\ 23)\ \&\ 0xFF);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}((((inp\ \&\ UINT32\_C(0x7FFFFF))\ +\ UINT32\_C(0x800000))\ >>\ p)\ |\ vlx);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00375}00375\ \ \ \ \ \textcolor{keywordflow}{case}\ 20:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00376}00376\ \ \ \ \ \textcolor{keywordflow}{case}\ 26:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ denormal,\ round\ away\ from\ zero.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00378}00378\ \ \ \ \ \ \ \ \ p\ =\ 126\ -\/\ ((inp\ >>\ 23)\ \&\ 0xFF);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00379}00379\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}(\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a20381e3115c75ee2cd4bfec32b505c34}{rtup\_shift32}}((inp\ \&\ UINT32\_C(0x7FFFFF))\ +\ UINT32\_C(0x800000),\ p)\ |\ vlx);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00380}00380\ \ \ \ \ \textcolor{keywordflow}{case}\ 24:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00381}00381\ \ \ \ \ \textcolor{keywordflow}{case}\ 29:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ denormal,\ round\ to\ nearest-\/away\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ p\ =\ 126\ -\/\ ((inp\ >>\ 23)\ \&\ 0xFF);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}(\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa05edb8be377b6c2d1249ec0f4d77369}{rtna\_shift32}}((inp\ \&\ UINT32\_C(0x7FFFFF))\ +\ UINT32\_C(0x800000),\ p)\ |\ vlx);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00385}00385\ \ \ \ \ \textcolor{keywordflow}{case}\ 23:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00386}00386\ \ \ \ \ \textcolor{keywordflow}{case}\ 28:}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ denormal,\ round\ to\ nearest-\/even.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ p\ =\ 126\ -\/\ ((inp\ >>\ 23)\ \&\ 0xFF);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}(\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a60b7d8902623ead0a8c64d615daeaef3}{rtne\_shift32}}((inp\ \&\ UINT32\_C(0x7FFFFF))\ +\ UINT32\_C(0x800000),\ p)\ |\ vlx);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00390}00390\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00391}00391\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00392}00392\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00393}00393\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00394}00394\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00395}00395\ \textcolor{comment}{/*\ convert\ from\ soft-\/float\ to\ native-\/float\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00396}\mbox{\hyperlink{astcenc__mathlib_8h_a64d6b5e88e81fa48697c3a7272655a7c}{00396}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_ad8dc065aa7430de946add238f7279ad3}{sf16\_to\_float}}(uint16\_t\ p)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00397}00397\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00398}00398\ \ \ \ \ \mbox{\hyperlink{unionif32}{if32}}\ i;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00399}00399\ \ \ \ \ i.\mbox{\hyperlink{unionif32_ab2af01c7db8e7bce72271565ae1276bf}{u}}\ =\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a37ae551373be99b9c70465fe17c44cb5}{sf16\_to\_sf32}}(p);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00400}00400\ \ \ \ \ \textcolor{keywordflow}{return}\ i.\mbox{\hyperlink{unionif32_a6ebdf3c35d5ebd30f1cbe751d8c9285e}{f}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00401}00401\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00402}00402\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00403}00403\ \textcolor{comment}{/*\ convert\ from\ native-\/float\ to\ soft-\/float\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00404}\mbox{\hyperlink{astcenc__mathlib_8h_adcbc7cc9a9cd0ab7fca183a5d20e4182}{00404}}\ uint16\_t\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a2161f5fc773286e5ecbc106bdfbf2217}{float\_to\_sf16}}(\textcolor{keywordtype}{float}\ p)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00405}00405\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00406}00406\ \ \ \ \ \mbox{\hyperlink{unionif32}{if32}}\ i;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00407}00407\ \ \ \ \ i.\mbox{\hyperlink{unionif32_a6ebdf3c35d5ebd30f1cbe751d8c9285e}{f}}\ =\ p;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00408}00408\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_af5a2d724c58344c691091cdb5066cc65}{sf32\_to\_sf16}}(i.\mbox{\hyperlink{unionif32_ab2af01c7db8e7bce72271565ae1276bf}{u}},\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9a8b11b001878e9ce6e1796c2819f40212}{SF\_NEARESTEVEN}});}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00409}00409\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00410}00410\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib__softfloat_8cpp_source_l00411}00411\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

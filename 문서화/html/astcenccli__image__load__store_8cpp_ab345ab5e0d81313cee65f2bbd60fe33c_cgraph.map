@@ -1,0 +1,17 @@
+<map id="load_ktx_uncompressed_image" name="load_ktx_uncompressed_image">
+<area shape="rect" id="Node000001" title="Load an uncompressed KTX image using the local custom loader." alt="" coords="5,146,168,186"/>
+<area shape="rect" id="Node000002" href="$astcenccli__image_8cpp.html#a860f8be85c860429c0df12b581015b68" title="Functions for creating in&#45;memory ASTC image structures." alt="" coords="272,5,363,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,144,148,92,179,63,215,40,258,24,260,29,217,44,183,68,151,95,105,148"/>
+<area shape="rect" id="Node000003" href="$astcenccli__image__load__store_8cpp.html#a46a5fd770b78f8512d65273a03d0b6dc" title="Copy a scanline from a source file and expand to a canonical format." alt="" coords="265,55,370,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="115,144,161,115,215,89,250,77,252,83,217,94,164,120,118,148"/>
+<area shape="rect" id="Node000004" href="$astcenccli__image__load__store_8cpp.html#a7271fdd9dae7875cb69b75377840f1b6" title=" " alt="" coords="216,104,419,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="168,146,244,130,245,135,169,151"/>
+<area shape="rect" id="Node000005" href="$namespaceastc.html#a83a55552d03399cdff6cf2fed8312c9f" title="Return the maximum of two values." alt="" coords="277,153,357,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="168,163,264,163,264,169,168,169"/>
+<area shape="rect" id="Node000006" href="$astcenccli__image__load__store_8cpp.html#a3124957aedb2556d137767f4d044b5bb" title="Swap endianness of N two byte values." alt="" coords="248,203,387,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="169,181,245,197,244,202,168,186"/>
+<area shape="rect" id="Node000007" href="$astcenccli__image__load__store_8cpp.html#af1a6415da320f8926956bd7b314572aa" title="Swap endianness of N four byte values." alt="" coords="248,252,387,277"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="119,184,164,211,217,237,243,246,241,251,215,242,162,216,116,189"/>
+<area shape="rect" id="Node000008" href="$astcenccli__image__load__store_8cpp.html#a834ad2434a131242dc4fa6f1856222cb" title="Swap endianness of a u32 value." alt="" coords="272,301,363,327"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="105,185,152,236,183,263,217,286,260,302,258,307,215,291,180,267,148,240,101,188"/>
+</map>

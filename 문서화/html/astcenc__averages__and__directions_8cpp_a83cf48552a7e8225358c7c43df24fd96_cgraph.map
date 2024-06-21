@@ -1,0 +1,13 @@
+<map id="compute_partition_averages_rgba" name="compute_partition_averages_rgba">
+<area shape="rect" id="Node000001" title="Compute the average RGBA color of each partition." alt="" coords="5,103,220,128"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#aaa291a197219a09a2e1103aec6945b3c" title="Accumulate lane&#45;wise sums for a vector, folded 4&#45;wide." alt="" coords="269,29,365,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,100,267,57,268,62,150,105"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#aacd26478e4fe1f97a5d47e8adaacc898" title="Return the horizontal sum of a vector." alt="" coords="285,103,349,128"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="221,113,271,113,271,118,221,118"/>
+<area shape="rect" id="Node000004" href="$structvint4.html#a21e3d111e37da1aaaeb5ba21a831c863" title="Factory that returns a vector containing the lane IDs." alt="" coords="268,152,365,177"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="166,125,255,147,254,152,165,131"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="293,30,289,21,291,11,301,5,317,3,335,6,344,14,340,18,333,11,317,8,303,10,295,15,294,20,298,28"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="293,104,289,94,291,85,301,78,317,76,335,79,344,88,340,91,333,84,317,81,303,83,295,88,294,94,298,101"/>
+<area shape="rect" id="Node000005" href="$structvint4.html#a3315184e8bb4f0cf1ca8dcff1f57cdae" title="Construct from zero&#45;initialized value." alt="" coords="413,152,496,177"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="366,162,400,162,400,167,366,167"/>
+</map>

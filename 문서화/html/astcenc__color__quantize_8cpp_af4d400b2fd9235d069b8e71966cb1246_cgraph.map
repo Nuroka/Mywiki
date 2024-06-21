@@ -1,0 +1,46 @@
+<map id="try_quantize_rgba_delta" name="try_quantize_rgba_delta">
+<area shape="rect" id="Node000001" title="Try to quantize an LDR RGBA color using delta encoding." alt="" coords="5,228,165,253"/>
+<area shape="rect" id="Node000002" href="$astcenc__color__quantize_8cpp.html#a4390447f4e4f3f2355c2381228d2e5c2" title="Try to quantize an LDR A color using delta encoding." alt="" coords="225,97,355,137"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,226,243,141,246,146,109,230"/>
+<area shape="rect" id="Node000007" href="$astcenc__color__quantize_8cpp.html#a6b7ee442b1e9da4ac693000c4f805c7b" title="Try to quantize an LDR RGB color using delta encoding." alt="" coords="213,351,367,376"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="109,251,258,341,255,346,107,256"/>
+<area shape="rect" id="Node000003" href="$namespaceastc.html#a455f4a304ea7dcdd8fd0de030cbdbfb4" title="SP float round&#45;to&#45;nearest and convert to integer." alt="" coords="426,5,534,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="319,94,363,67,413,40,428,33,430,38,416,44,366,72,322,99"/>
+<area shape="rect" id="Node000004" href="$structvfloat4.html#a04462a7815432c6bc3ce1b5e5d11e4fc" title="Get the scalar value of a single lane." alt="" coords="435,55,525,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="355,97,420,80,422,85,356,102"/>
+<area shape="rect" id="Node000005" href="$astcenc__color__quantize_8cpp.html#a0af2fba0ed6cbe9e279c808e540eb74e" title="Determine the quantized value given a quantization level." alt="" coords="435,104,525,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="356,114,421,114,421,119,356,119"/>
+<area shape="rect" id="Node000006" href="$structvint4.html#a1e438bb142ad09e372b0834acd0c0b68" title="Set the scalar value of a single lane." alt="" coords="427,153,533,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="356,131,418,147,416,152,355,136"/>
+<area shape="poly" id="edge23_Node000007_Node000006" title=" " alt="" coords="295,349,337,274,371,228,413,188,421,183,424,187,416,192,375,232,341,277,299,352"/>
+<area shape="rect" id="Node000008" href="$astcenc__vecmathlib__avx2__8_8h.html#a1fcb81537a701f246e75fa622c2dd8ee" title="True if any lanes are enabled, false otherwise." alt="" coords="459,603,501,628"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="297,375,311,416,334,474,369,535,391,564,416,589,447,605,444,610,413,593,387,567,365,538,330,476,306,418,292,377"/>
+<area shape="rect" id="Node000010" href="$astcenc__vecmathlib__common__4_8h.html#acaab0374259bd298c1282e6a0b84bc8f" title="Apply signed bit transfer." alt="" coords="415,452,545,477"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="315,374,416,430,442,444,439,448,413,435,312,379"/>
+<area shape="rect" id="Node000011" href="$astcenc__vecmathlib__avx2__8_8h.html#a0a3a7d755cec1c73d0ce9c50b33bc207" title="Logical shift right." alt="" coords="615,403,653,428"/>
+<area shape="poly" id="edge19_Node000007_Node000011" title=" " alt="" coords="349,373,415,386,601,410,601,415,414,391,348,379"/>
+<area shape="rect" id="Node000013" href="$structvint4.html#a9dfa1c40a3c4dbc0858567dc629a80b8" title="Factory that returns a vector of zeros." alt="" coords="593,503,675,528"/>
+<area shape="poly" id="edge24_Node000007_Node000013" title=" " alt="" coords="301,375,345,431,378,463,416,488,457,503,500,512,580,516,579,522,499,517,455,508,413,492,375,467,341,435,297,378"/>
+<area shape="rect" id="Node000015" href="$astcenc__vecmathlib__avx2__8_8h.html#a598d6ea3ba27a788b12341a5263c7881" title="Return a integer value for a float vector, using round&#45;to&#45;nearest." alt="" coords="427,553,533,579"/>
+<area shape="poly" id="edge15_Node000007_Node000015" title=" " alt="" coords="300,375,343,447,377,492,416,532,435,545,432,549,413,536,373,495,339,450,295,377"/>
+<area shape="rect" id="Node000016" href="$astcenc__vecmathlib__common__4_8h.html#a48e833d0cfdf950b6bc3431fce00507e" title="Return the horizontal sum of RGB vector lanes as a scalar." alt="" coords="435,351,525,376"/>
+<area shape="poly" id="edge16_Node000007_Node000016" title=" " alt="" coords="367,361,422,361,422,366,367,366"/>
+<area shape="rect" id="Node000018" href="$astcenc__vecmathlib__avx2__8_8h.html#a86240f0fb5745ded88afe10d524c960f" title="Logical shift left." alt="" coords="461,252,499,277"/>
+<area shape="poly" id="edge18_Node000007_Node000018" title=" " alt="" coords="309,348,355,318,414,286,447,272,449,277,416,291,358,323,311,353"/>
+<area shape="rect" id="Node000019" href="$astcenc__color__quantize_8cpp.html#adae1b4db9a1942106e86b3f5ff358092" title="Determine the quantized value given a quantization level." alt="" coords="432,203,528,228"/>
+<area shape="poly" id="edge20_Node000007_Node000019" title=" " alt="" coords="299,349,344,296,377,265,413,237,423,231,426,236,416,242,380,269,348,300,303,352"/>
+<area shape="rect" id="Node000020" href="$structvfloat4.html#a2168231efa1e514fd41b3603e57be297" title="Set the scalar value of a single lane." alt="" coords="423,301,537,327"/>
+<area shape="poly" id="edge22_Node000007_Node000020" title=" " alt="" coords="339,348,416,328,417,333,340,353"/>
+<area shape="rect" id="Node000009" href="$astcenc__vecmathlib__avx2__8_8h.html#ad922a3ed6098767968916265154b6f82" title="Return a 8&#45;bit mask code indicating mask status." alt="" coords="607,577,661,603"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="501,609,593,594,593,599,502,615"/>
+<area shape="poly" id="edge11_Node000010_Node000009" title=" " alt="" coords="499,476,608,566,605,571,495,480"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="519,449,601,423,603,428,521,454"/>
+<area shape="rect" id="Node000012" href="$astcenc__vecmathlib__avx2__8_8h.html#a844ab5b69b84569f033be33bf5fb9fbc" title="Return lanes from b if cond is set, else a." alt="" coords="605,452,663,477"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="546,462,592,462,592,467,546,467"/>
+<area shape="poly" id="edge13_Node000010_Node000013" title=" " alt="" coords="520,475,582,496,581,501,519,480"/>
+<area shape="rect" id="Node000014" href="$structvint4.html#a3315184e8bb4f0cf1ca8dcff1f57cdae" title="Construct from zero&#45;initialized value." alt="" coords="723,503,805,528"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="675,513,709,513,709,518,675,518"/>
+<area shape="rect" id="Node000017" href="$structvint4.html#a01e3f7debf73dc6c757fa36d585c9d17" title="Get the scalar from a single lane." alt="" coords="594,277,674,303"/>
+<area shape="poly" id="edge17_Node000016_Node000017" title=" " alt="" coords="517,348,544,337,599,307,602,312,546,342,519,353"/>
+<area shape="poly" id="edge21_Node000019_Node000017" title=" " alt="" coords="519,226,546,237,602,268,600,272,544,242,517,230"/>
+</map>

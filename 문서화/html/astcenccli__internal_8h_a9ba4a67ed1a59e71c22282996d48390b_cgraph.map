@@ -1,0 +1,5 @@
+<map id="store_cimage" name="store_cimage">
+<area shape="rect" id="Node000001" title="Store a compressed .astc image." alt="" coords="5,5,105,31"/>
+<area shape="rect" id="Node000002" href="$astcenccli__internal_8h.html#a699ebbd5f0143120e8ccaa26ae386b56" title="Print a string to stderr." alt="" coords="153,5,233,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,15,139,15,139,21,106,21"/>
+</map>

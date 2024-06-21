@@ -1,0 +1,20 @@
+<map id="init_partition_tables" name="init_partition_tables">
+<area shape="rect" id="Node000001" title="Populate the partition tables for the target block size." alt="" coords="5,95,140,120"/>
+<area shape="rect" id="Node000002" href="$astcenc__partition__tables_8cpp.html#a83b39a9f5b84470876611393553d38b5" title=" " alt="" coords="188,58,351,98"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,95,174,90,175,95,141,100"/>
+<area shape="rect" id="Node000005" href="$astcenc__partition__tables_8cpp.html#a11a5380f66eb5461273c7d4f5c71e6d0" title="Generate a single partition info structure." alt="" coords="427,119,581,159"/>
+<area shape="poly" id="edge9_Node000001_Node000005" title=" " alt="" coords="140,110,414,130,413,135,140,115"/>
+<area shape="rect" id="Node000003" href="$astcenc__partition__tables_8cpp.html#adced470735eb4be99d56b03b57201e2a" title="Compare two canonical patterns to see if they are the same." alt="" coords="399,5,609,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="343,55,398,41,435,31,437,37,399,46,344,61"/>
+<area shape="rect" id="Node000004" href="$astcenc__partition__tables_8cpp.html#a656f2dcd2ed9221814a6f1b38bff7cb6" title="Generate a canonical representation of a partition pattern." alt="" coords="437,55,571,95"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="351,74,423,74,423,79,351,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="347,96,415,113,414,119,346,101"/>
+<area shape="rect" id="Node000006" href="$namespaceastc.html#af78c0d31374aa9923633a3a2abf8d738" title="Return the minimum of two values." alt="" coords="721,77,797,103"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="580,122,707,97,708,102,581,127"/>
+<area shape="rect" id="Node000007" href="$astcenc__vecmathlib_8h.html#ae36622d837079b4899b971731c2dda37" title="Round a count up to the largest multiple of the SIMD width." alt="" coords="657,127,860,152"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="581,137,643,137,643,142,581,142"/>
+<area shape="rect" id="Node000008" href="$astcenc__partition__tables_8cpp.html#a57b1b10c9fc1e915dcf985ea37a8cbf6" title="Select texel assignment for a single coordinate." alt="" coords="703,176,814,201"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="581,152,690,173,689,178,580,157"/>
+<area shape="rect" id="Node000009" href="$astcenc__partition__tables_8cpp.html#a28958825dfb33d5371f54dae6d247f8a" title="Hash function used for procedural partition assignment." alt="" coords="908,176,972,201"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="814,186,894,186,894,191,814,191"/>
+</map>

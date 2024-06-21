@@ -1,0 +1,103 @@
+\doxysection{astcenc\+\_\+context 구조체 참조}
+\hypertarget{structastcenc__context}{}\label{structastcenc__context}\index{astcenc\_context@{astcenc\_context}}
+
+
+The astcenc compression context.  
+
+
+
+
+{\ttfamily \#include $<$astcenc\+\_\+internal\+\_\+entry.\+h$>$}
+
+
+
+astcenc\+\_\+context에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structastcenc__context__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structastcenc__contexti}{astcenc\+\_\+contexti}} \mbox{\hyperlink{structastcenc__context_a0663f3f5721836ebad5c00941cbc1055}{context}}
+\begin{DoxyCompactList}\small\item\em The context internal state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_parallel_manager}{Parallel\+Manager}} \mbox{\hyperlink{structastcenc__context_a0b6344562547979fc8f4a4fe76e7d08d}{manage\+\_\+avg}}
+\begin{DoxyCompactList}\small\item\em The parallel manager for averages computation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_parallel_manager}{Parallel\+Manager}} \mbox{\hyperlink{structastcenc__context_a4dd4ca690cccb0567a22f0d3d81b302d}{manage\+\_\+compress}}
+\begin{DoxyCompactList}\small\item\em The parallel manager for compression. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_parallel_manager}{Parallel\+Manager}} \mbox{\hyperlink{structastcenc__context_aaef3b311610332edcbf1b0575b4c9cb2}{manage\+\_\+decompress}}
+\begin{DoxyCompactList}\small\item\em The parallel manager for decompression. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+The astcenc compression context. 
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00314}{314}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structastcenc__context_a0663f3f5721836ebad5c00941cbc1055}\index{astcenc\_context@{astcenc\_context}!context@{context}}
+\index{context@{context}!astcenc\_context@{astcenc\_context}}
+\doxysubsubsection{\texorpdfstring{context}{context}}
+{\footnotesize\ttfamily \label{structastcenc__context_a0663f3f5721836ebad5c00941cbc1055} 
+\mbox{\hyperlink{structastcenc__contexti}{astcenc\+\_\+contexti}} astcenc\+\_\+context\+::context}
+
+
+
+The context internal state. 
+
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00317}{317}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__context_a0b6344562547979fc8f4a4fe76e7d08d}\index{astcenc\_context@{astcenc\_context}!manage\_avg@{manage\_avg}}
+\index{manage\_avg@{manage\_avg}!astcenc\_context@{astcenc\_context}}
+\doxysubsubsection{\texorpdfstring{manage\_avg}{manage\_avg}}
+{\footnotesize\ttfamily \label{structastcenc__context_a0b6344562547979fc8f4a4fe76e7d08d} 
+\mbox{\hyperlink{class_parallel_manager}{Parallel\+Manager}} astcenc\+\_\+context\+::manage\+\_\+avg}
+
+
+
+The parallel manager for averages computation. 
+
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00321}{321}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__context_a4dd4ca690cccb0567a22f0d3d81b302d}\index{astcenc\_context@{astcenc\_context}!manage\_compress@{manage\_compress}}
+\index{manage\_compress@{manage\_compress}!astcenc\_context@{astcenc\_context}}
+\doxysubsubsection{\texorpdfstring{manage\_compress}{manage\_compress}}
+{\footnotesize\ttfamily \label{structastcenc__context_a4dd4ca690cccb0567a22f0d3d81b302d} 
+\mbox{\hyperlink{class_parallel_manager}{Parallel\+Manager}} astcenc\+\_\+context\+::manage\+\_\+compress}
+
+
+
+The parallel manager for compression. 
+
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00324}{324}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__context_aaef3b311610332edcbf1b0575b4c9cb2}\index{astcenc\_context@{astcenc\_context}!manage\_decompress@{manage\_decompress}}
+\index{manage\_decompress@{manage\_decompress}!astcenc\_context@{astcenc\_context}}
+\doxysubsubsection{\texorpdfstring{manage\_decompress}{manage\_decompress}}
+{\footnotesize\ttfamily \label{structastcenc__context_aaef3b311610332edcbf1b0575b4c9cb2} 
+\mbox{\hyperlink{class_parallel_manager}{Parallel\+Manager}} astcenc\+\_\+context\+::manage\+\_\+decompress}
+
+
+
+The parallel manager for decompression. 
+
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00328}{328}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__internal__entry_8h}{astcenc\+\_\+internal\+\_\+entry.\+h}}\end{DoxyCompactItemize}

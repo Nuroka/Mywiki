@@ -1,0 +1,7 @@
+<map id="load_dds_uncompressed_image" name="load_dds_uncompressed_image">
+<area shape="rect" id="Node000001" title="Load an uncompressed DDS image using the local custom loader." alt="" coords="5,23,172,63"/>
+<area shape="rect" id="Node000002" href="$astcenccli__image_8cpp.html#a860f8be85c860429c0df12b581015b68" title="Functions for creating in&#45;memory ASTC image structures." alt="" coords="227,5,318,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,29,213,23,214,29,173,34"/>
+<area shape="rect" id="Node000003" href="$astcenccli__image__load__store_8cpp.html#a46a5fd770b78f8512d65273a03d0b6dc" title="Copy a scanline from a source file and expand to a canonical format." alt="" coords="220,55,325,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,52,206,56,206,61,172,57"/>
+</map>

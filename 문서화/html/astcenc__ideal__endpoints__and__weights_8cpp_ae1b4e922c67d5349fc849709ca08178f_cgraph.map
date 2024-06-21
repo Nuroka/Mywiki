@@ -1,0 +1,29 @@
+<map id="compute_ideal_weights_for_decimation" name="compute_ideal_weights_for_decimation">
+<area shape="rect" id="Node000001" title="Compute the optimal unquantized weights for a decimation table." alt="" coords="5,198,163,238"/>
+<area shape="rect" id="Node000002" href="$astcenc__ideal__endpoints__and__weights_8cpp.html#a617a8dec1d2168023a84f5c0fa1c20ca" title="Functions for computing color endpoints and texel weights." alt="" coords="225,5,340,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,196,138,126,171,85,209,48,230,34,233,39,212,52,175,88,143,129,98,199"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#aae2f99eb48f3cde0f4739b894e8ca29f" title="Load a vector of gathered results from an array;" alt="" coords="423,56,485,81"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="97,196,142,142,173,114,210,92,261,74,315,64,366,61,409,62,409,67,366,67,315,70,262,79,212,96,177,118,146,146,101,200"/>
+<area shape="rect" id="Node000004" href="$astcenc__ideal__endpoints__and__weights_8cpp.html#a84286bd889620da3be77539ddfdf3b45" title="Compute the infilled weight for N texel indices in a decimated grid." alt="" coords="219,107,347,132"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="114,195,158,168,210,141,225,134,227,139,212,146,161,173,117,200"/>
+<area shape="rect" id="Node000005" href="$astcenc__vecmathlib__avx2__8_8h.html#ae91c0bb0ebd82ed2a7fa7aa915f6e76e" title="Return the clamped value between min and max." alt="" coords="254,156,311,181"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="162,196,240,176,241,182,163,201"/>
+<area shape="rect" id="Node000008" href="$astcenc__vecmathlib__avx2__8_8h.html#a516a2f0d872381b8c7c047845a90c9a3" title="Return the horizontal maximum of a vector." alt="" coords="255,205,310,231"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="163,215,241,215,241,221,163,221"/>
+<area shape="rect" id="Node000009" href="$structvint8.html#a2e1f0c785f4899e1b7912f2580b9f77c" title="Get the scalar from a single lane." alt="" coords="243,255,323,280"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="163,235,230,252,228,257,162,240"/>
+<area shape="rect" id="Node000010" href="$astcenc__vecmathlib_8h.html#a63b1ecd0244123ff734e6791e33bf9ca" title="Round a count down to the largest multiple of the SIMD width." alt="" coords="211,305,355,345"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="118,236,212,290,224,296,221,301,209,295,115,240"/>
+<area shape="rect" id="Node000011" href="$astcenc__vecmathlib__avx2__8_8h.html#ad4c0a7bde35d6fe9c54531e1e0652f4a" title="Store a vector to a 16B aligned memory address." alt="" coords="253,369,312,395"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="101,237,146,295,177,327,212,354,241,369,239,373,209,359,174,331,142,298,97,240"/>
+<area shape="rect" id="Node000012" href="$structvfloat4.html#a04b5f338012dab6be0b2bd7910fcbcae" title="Factory that returns a vector of zeros." alt="" coords="237,419,328,444"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="96,237,113,273,138,318,171,365,212,405,226,414,223,418,209,409,167,368,133,321,108,276,91,239"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="327,28,411,53,409,58,326,33"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="326,104,409,79,411,84,327,109"/>
+<area shape="rect" id="Node000006" href="$astcenc__vecmathlib__avx2__8_8h.html#aa162915c044e97cc1f6d630338761fd3" title="Return the max vector of two vectors." alt="" coords="431,132,477,157"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="311,162,417,147,418,152,312,167"/>
+<area shape="rect" id="Node000007" href="$astcenc__vecmathlib__avx2__8_8h.html#a165b3db4e7ced1551e1880a01a01150b" title="Return the min vector of two vectors." alt="" coords="433,181,475,207"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="312,170,420,186,419,192,311,175"/>
+<area shape="rect" id="Node000013" href="$structvfloat4.html#a9df51cb30b68d6d51ca607e64aa1ebf0" title="Construct from zero&#45;initialized value." alt="" coords="403,419,505,444"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="328,429,389,429,389,434,328,434"/>
+</map>

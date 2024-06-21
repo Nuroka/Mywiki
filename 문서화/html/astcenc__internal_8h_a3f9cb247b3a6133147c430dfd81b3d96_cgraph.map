@@ -1,0 +1,5 @@
+<map id="init_compute_averages" name="init_compute_averages">
+<area shape="rect" id="Node000001" title="Setup computation of regional averages in an image." alt="" coords="5,5,160,31"/>
+<area shape="rect" id="Node000002" href="$namespaceastc.html#af78c0d31374aa9923633a3a2abf8d738" title="Return the minimum of two values." alt="" coords="208,5,284,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,15,194,15,194,21,160,21"/>
+</map>

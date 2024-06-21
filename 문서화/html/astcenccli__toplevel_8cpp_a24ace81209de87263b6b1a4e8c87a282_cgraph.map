@@ -1,0 +1,5 @@
+<map id="image_set_pixel" name="image_set_pixel">
+<area shape="rect" id="Node000001" title="Set the value of a single pixel in an image." alt="" coords="5,5,121,31"/>
+<area shape="rect" id="Node000002" href="$structvfloat4.html#a04462a7815432c6bc3ce1b5e5d11e4fc" title="Get the scalar value of a single lane." alt="" coords="169,5,260,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,15,155,15,155,21,122,21"/>
+</map>

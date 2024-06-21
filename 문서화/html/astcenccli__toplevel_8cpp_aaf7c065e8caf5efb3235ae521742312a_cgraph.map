@@ -1,0 +1,27 @@
+<map id="init_astcenc_config" name="init_astcenc_config">
+<area shape="rect" id="Node000001" title="Initialize the astcenc_config" alt="" coords="5,179,139,204"/>
+<area shape="rect" id="Node000002" href="$astcenc__entry_8cpp.html#a061172f7c266a9f5a3270e0b76a65433" title=" " alt="" coords="203,104,336,129"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,176,186,138,207,131,209,136,188,143,100,181"/>
+<area shape="rect" id="Node000011" href="$astcenc__entry_8cpp.html#ab3696295a3d17376e7c26b936841cd20" title="Get a printable string for specific status code." alt="" coords="187,153,352,179"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="138,180,173,176,173,181,139,185"/>
+<area shape="rect" id="Node000012" href="$astcenccli__toplevel_8cpp.html#a16c8209cc5767cc7dc5240b7d897dea8" title="Test if a string argument is a well formed float." alt="" coords="238,203,301,228"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="139,197,225,207,224,213,138,202"/>
+<area shape="rect" id="Node000013" href="$astcenccli__internal_8h.html#a699ebbd5f0143120e8ccaa26ae386b56" title="Print a string to stderr." alt="" coords="229,252,309,277"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="101,202,188,238,217,248,216,253,186,243,99,207"/>
+<area shape="rect" id="Node000003" href="$namespaceastc.html#a83a55552d03399cdff6cf2fed8312c9f" title="Return the maximum of two values." alt="" coords="427,5,507,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="289,102,338,72,399,40,414,33,416,38,401,44,341,76,292,106"/>
+<area shape="rect" id="Node000004" href="$namespaceastc.html#af78c0d31374aa9923633a3a2abf8d738" title="Return the minimum of two values." alt="" coords="429,55,505,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="320,101,415,77,416,83,322,107"/>
+<area shape="rect" id="Node000005" href="$astcenc__entry_8cpp.html#acdcee8daab341db81c6cbe79f566ada0" title="Validate block size." alt="" coords="400,104,535,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="336,114,386,114,386,119,336,119"/>
+<area shape="rect" id="Node000008" href="$astcenc__entry_8cpp.html#a6005193560626fcd9fd6d910d4233876" title="Validate CPU floating point meets assumptions made in the codec." alt="" coords="405,153,529,179"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="322,127,403,147,402,153,320,132"/>
+<area shape="rect" id="Node000009" href="$astcenc__entry_8cpp.html#a12c6fc921e035b653e128a1fed66a9ea" title="Validate flags." alt="" coords="418,203,517,228"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="329,127,353,138,369,151,378,163,387,176,402,188,414,195,411,199,398,192,383,179,374,167,365,155,351,143,327,132"/>
+<area shape="rect" id="Node000006" href="$astcenc__percentile__tables_8cpp.html#a39abc45fae63fefae08ef3f2218d2439" title="Query if a 2D block size is legal." alt="" coords="583,80,739,105"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="534,106,568,101,569,107,535,111"/>
+<area shape="rect" id="Node000007" href="$astcenc__percentile__tables_8cpp.html#a54f17744601dc1a75f0f75be7a95c514" title="Query if a 3D block size is legal." alt="" coords="583,129,739,155"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="535,123,569,127,568,133,534,128"/>
+<area shape="rect" id="Node000010" href="$astcenc__vecmathlib__common__4_8h.html#a652a0112f173bddee3a84a27eb679fda" title="Population bit count." alt="" coords="623,203,698,228"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="517,213,610,213,610,218,517,218"/>
+</map>

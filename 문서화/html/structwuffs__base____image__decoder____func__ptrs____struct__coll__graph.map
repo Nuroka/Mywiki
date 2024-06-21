@@ -1,0 +1,11 @@
+<map id="wuffs_base__image_decoder__func_ptrs__struct" name="wuffs_base__image_decoder__func_ptrs__struct">
+<area shape="rect" id="Node000001" title=" " alt="" coords="355,131,543,171"/>
+<area shape="rect" id="Node000002" href="$structwuffs__base____status____struct.html" title=" " alt="" coords="25,35,161,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,68,331,107,395,128,393,133,330,112,174,74"/>
+<area shape="rect" id="Node000003" href="$structwuffs__base____rect__ie__u32____struct.html" title=" " alt="" coords="24,99,163,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="177,123,355,140,354,145,176,129"/>
+<area shape="rect" id="Node000004" href="$structwuffs__base____empty__struct____struct.html" title=" " alt="" coords="5,163,181,203"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="195,180,330,172,357,168,358,173,331,177,195,186"/>
+<area shape="rect" id="Node000005" href="$structwuffs__base____range__ii__u64____struct.html" title=" " alt="" coords="21,227,166,267"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="179,234,253,221,330,201,371,186,409,168,411,173,373,191,331,207,254,226,180,239"/>
+</map>

@@ -1,0 +1,725 @@
+\doxysection{C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/astcenc\+\_\+mathlib\+\_\+softfloat.cpp 파일 참조}
+\hypertarget{astcenc__mathlib__softfloat_8cpp}{}\label{astcenc__mathlib__softfloat_8cpp}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_mathlib\_softfloat.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_mathlib\_softfloat.cpp}}
+{\ttfamily \#include "{}astcenc\+\_\+mathlib.\+h"{}}\newline
+astcenc\+\_\+mathlib\+\_\+softfloat.\+cpp에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__mathlib__softfloat_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a09a75497423bce5ad0bf1a50f5b6ad71}{WITH\+\_\+\+MSB}}(a)~(UINT32\+\_\+C(a) \texorpdfstring{$\vert$}{|} (1u $<$$<$ 31))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{타입정의}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint16\+\_\+t \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}
+\begin{DoxyCompactList}\small\item\em Soft-\/float library for IEEE-\/754. \end{DoxyCompactList}\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a1b289746cf42ab34aebeaf67d2c96c98}{sf32}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{열거형 타입}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9}{roundmode}} \{ \newline
+\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9abe40754aaea9f5b2fd0aa05abd57b860}{SF\+\_\+\+UP}} = 0
+, \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9adaca08f988549ac66fc0218b8ad30f08}{SF\+\_\+\+DOWN}} = 1
+, \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9a68ae1c084147e7a04649ce0499fcdb77}{SF\+\_\+\+TOZERO}} = 2
+, \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9a8b11b001878e9ce6e1796c2819f40212}{SF\+\_\+\+NEARESTEVEN}} = 3
+, \newline
+\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9aef2b63d6803f71de3bb5e98756e361d8}{SF\+\_\+\+NEARESTAWAY}} = 4
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+static uint32\+\_\+t \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a04e345d938953a60961cf7125b9dec35}{clz32}} (uint32\+\_\+t inp)
+\item 
+static uint32\+\_\+t \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a60b7d8902623ead0a8c64d615daeaef3}{rtne\+\_\+shift32}} (uint32\+\_\+t inp, uint32\+\_\+t shamt)
+\item 
+static uint32\+\_\+t \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa05edb8be377b6c2d1249ec0f4d77369}{rtna\+\_\+shift32}} (uint32\+\_\+t inp, uint32\+\_\+t shamt)
+\item 
+static uint32\+\_\+t \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a20381e3115c75ee2cd4bfec32b505c34}{rtup\+\_\+shift32}} (uint32\+\_\+t inp, uint32\+\_\+t shamt)
+\item 
+static \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a1b289746cf42ab34aebeaf67d2c96c98}{sf32}} \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a37ae551373be99b9c70465fe17c44cb5}{sf16\+\_\+to\+\_\+sf32}} (\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}} inp)
+\item 
+static \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}} \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_af5a2d724c58344c691091cdb5066cc65}{sf32\+\_\+to\+\_\+sf16}} (\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a1b289746cf42ab34aebeaf67d2c96c98}{sf32}} inp, \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9}{roundmode}} rmode)
+\item 
+float \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_ad8dc065aa7430de946add238f7279ad3}{sf16\+\_\+to\+\_\+float}} (uint16\+\_\+t p)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a2161f5fc773286e5ecbc106bdfbf2217}{float\+\_\+to\+\_\+sf16}} (float p)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a50d798d2fad2b79e838dea3228929d27}{clz\+\_\+table}} \mbox{[}256\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{매크로 문서화}
+\Hypertarget{astcenc__mathlib__softfloat_8cpp_a09a75497423bce5ad0bf1a50f5b6ad71}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!WITH\_MSB@{WITH\_MSB}}
+\index{WITH\_MSB@{WITH\_MSB}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}
+\doxysubsubsection{\texorpdfstring{WITH\_MSB}{WITH\_MSB}}
+{\footnotesize\ttfamily \label{astcenc__mathlib__softfloat_8cpp_a09a75497423bce5ad0bf1a50f5b6ad71} 
+\#define WITH\+\_\+\+MSB(\begin{DoxyParamCaption}\item[{}]{a}{}\end{DoxyParamCaption})~(UINT32\+\_\+C(a) \texorpdfstring{$\vert$}{|} (1u $<$$<$ 31))}
+
+
+
+\doxysubsection{타입정의 문서화}
+\Hypertarget{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!sf16@{sf16}}
+\index{sf16@{sf16}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}
+\doxysubsubsection{\texorpdfstring{sf16}{sf16}}
+{\footnotesize\ttfamily \label{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae} 
+typedef uint16\+\_\+t \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}}
+
+
+
+Soft-\/float library for IEEE-\/754. 
+
+
+
+\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source}{astcenc\+\_\+mathlib\+\_\+softfloat.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source_l00029}{29}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenc__mathlib__softfloat_8cpp_a1b289746cf42ab34aebeaf67d2c96c98}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!sf32@{sf32}}
+\index{sf32@{sf32}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}
+\doxysubsubsection{\texorpdfstring{sf32}{sf32}}
+{\footnotesize\ttfamily \label{astcenc__mathlib__softfloat_8cpp_a1b289746cf42ab34aebeaf67d2c96c98} 
+typedef uint32\+\_\+t \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a1b289746cf42ab34aebeaf67d2c96c98}{sf32}}}
+
+
+
+\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source}{astcenc\+\_\+mathlib\+\_\+softfloat.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source_l00030}{30}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{열거형 타입 문서화}
+\Hypertarget{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!roundmode@{roundmode}}
+\index{roundmode@{roundmode}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}
+\doxysubsubsection{\texorpdfstring{roundmode}{roundmode}}
+{\footnotesize\ttfamily \label{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9} 
+enum \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9}{roundmode}}}
+
+\begin{DoxyEnumFields}{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_UP@{SF\_UP}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!SF\_UP@{SF\_UP}}}\Hypertarget{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9abe40754aaea9f5b2fd0aa05abd57b860}\label{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9} 
+SF\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_DOWN@{SF\_DOWN}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!SF\_DOWN@{SF\_DOWN}}}\Hypertarget{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9adaca08f988549ac66fc0218b8ad30f08}\label{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9} 
+SF\+\_\+\+DOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_TOZERO@{SF\_TOZERO}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!SF\_TOZERO@{SF\_TOZERO}}}\Hypertarget{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9a68ae1c084147e7a04649ce0499fcdb77}\label{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9} 
+SF\+\_\+\+TOZERO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_NEARESTEVEN@{SF\_NEARESTEVEN}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!SF\_NEARESTEVEN@{SF\_NEARESTEVEN}}}\Hypertarget{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9a8b11b001878e9ce6e1796c2819f40212}\label{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9} 
+SF\+\_\+\+NEARESTEVEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_NEARESTAWAY@{SF\_NEARESTAWAY}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!SF\_NEARESTAWAY@{SF\_NEARESTAWAY}}}\Hypertarget{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9aef2b63d6803f71de3bb5e98756e361d8}\label{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9} 
+SF\+\_\+\+NEARESTAWAY&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source}{astcenc\+\_\+mathlib\+\_\+softfloat.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source_l00099}{99}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9abe40754aaea9f5b2fd0aa05abd57b860}{SF\_UP}}\ =\ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ round\ towards\ positive\ infinity\ */}}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9adaca08f988549ac66fc0218b8ad30f08}{SF\_DOWN}}\ =\ 1,\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ round\ towards\ negative\ infinity\ */}}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9a68ae1c084147e7a04649ce0499fcdb77}{SF\_TOZERO}}\ =\ 2,\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ round\ towards\ zero\ */}}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9a8b11b001878e9ce6e1796c2819f40212}{SF\_NEARESTEVEN}}\ =\ 3,\ \ \ \ \ \ \ \textcolor{comment}{/*\ round\ toward\ nearest\ value;\ if\ mid-\/between,\ round\ to\ even\ value\ */}}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9aef2b63d6803f71de3bb5e98756e361d8}{SF\_NEARESTAWAY}}\ =\ 4\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ round\ toward\ nearest\ value;\ if\ mid-\/between,\ round\ away\ from\ zero\ */}}
+\DoxyCodeLine{00106\ \}\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9}{roundmode}};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{함수 문서화}
+\Hypertarget{astcenc__mathlib__softfloat_8cpp_a04e345d938953a60961cf7125b9dec35}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!clz32@{clz32}}
+\index{clz32@{clz32}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}
+\doxysubsubsection{\texorpdfstring{clz32()}{clz32()}}
+{\footnotesize\ttfamily \label{astcenc__mathlib__softfloat_8cpp_a04e345d938953a60961cf7125b9dec35} 
+static uint32\+\_\+t clz32 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{inp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source}{astcenc\+\_\+mathlib\+\_\+softfloat.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source_l00065}{65}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\ \ \ \ \#if\ defined(\_\_GNUC\_\_)\ \&\&\ (defined(\_\_i386)\ ||\ defined(\_\_amd64))}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ uint32\_t\ bsr;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \_\_asm\_\_(\textcolor{stringliteral}{"{}bsrl\ \%1,\ \%0"{}}:\ \textcolor{stringliteral}{"{}=r"{}}(bsr):\textcolor{stringliteral}{"{}r"{}}(inp\ |\ 1));}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 31\ -\/\ bsr;}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#if\ defined(\_\_arm\_\_)\ \&\&\ defined(\_\_ARMCC\_VERSION)}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_\_clz(inp);\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ armcc\ builtin\ */}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#if\ defined(\_\_arm\_\_)\ \&\&\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ lz;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_asm\_\_(\textcolor{stringliteral}{"{}clz\ \%0,\ \%1"{}}:\ \textcolor{stringliteral}{"{}=r"{}}(lz):\textcolor{stringliteral}{"{}r"{}}(inp));}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lz;}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ slow\ default\ version\ */}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ summa\ =\ 24;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inp\ >=\ UINT32\_C(0x10000))}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inp\ >>=\ 16;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ summa\ -\/=\ 16;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inp\ >=\ UINT32\_C(0x100))}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inp\ >>=\ 8;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ summa\ -\/=\ 8;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ summa\ +\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a50d798d2fad2b79e838dea3228929d27}{clz\_table}}[inp];}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00096\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__mathlib__softfloat_8cpp_a04e345d938953a60961cf7125b9dec35_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__mathlib__softfloat_8cpp_a2161f5fc773286e5ecbc106bdfbf2217}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!float\_to\_sf16@{float\_to\_sf16}}
+\index{float\_to\_sf16@{float\_to\_sf16}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}
+\doxysubsubsection{\texorpdfstring{float\_to\_sf16()}{float\_to\_sf16()}}
+{\footnotesize\ttfamily \label{astcenc__mathlib__softfloat_8cpp_a2161f5fc773286e5ecbc106bdfbf2217} 
+uint16\+\_\+t float\+\_\+to\+\_\+sf16 (\begin{DoxyParamCaption}\item[{float}]{p}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source}{astcenc\+\_\+mathlib\+\_\+softfloat.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source_l00404}{404}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00405\ \{}
+\DoxyCodeLine{00406\ \ \ \ \ \mbox{\hyperlink{unionif32}{if32}}\ i;}
+\DoxyCodeLine{00407\ \ \ \ \ i.\mbox{\hyperlink{unionif32_a6ebdf3c35d5ebd30f1cbe751d8c9285e}{f}}\ =\ p;}
+\DoxyCodeLine{00408\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_af5a2d724c58344c691091cdb5066cc65}{sf32\_to\_sf16}}(i.\mbox{\hyperlink{unionif32_ab2af01c7db8e7bce72271565ae1276bf}{u}},\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9a8b11b001878e9ce6e1796c2819f40212}{SF\_NEARESTEVEN}});}
+\DoxyCodeLine{00409\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__mathlib__softfloat_8cpp_a2161f5fc773286e5ecbc106bdfbf2217_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{astcenc__mathlib__softfloat_8cpp_a2161f5fc773286e5ecbc106bdfbf2217_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__mathlib__softfloat_8cpp_aa05edb8be377b6c2d1249ec0f4d77369}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!rtna\_shift32@{rtna\_shift32}}
+\index{rtna\_shift32@{rtna\_shift32}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}
+\doxysubsubsection{\texorpdfstring{rtna\_shift32()}{rtna\_shift32()}}
+{\footnotesize\ttfamily \label{astcenc__mathlib__softfloat_8cpp_aa05edb8be377b6c2d1249ec0f4d77369} 
+static uint32\+\_\+t rtna\+\_\+shift32 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{inp}{, }\item[{uint32\+\_\+t}]{shamt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source}{astcenc\+\_\+mathlib\+\_\+softfloat.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source_l00120}{120}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00121\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ uint32\_t\ vl1\ =\ (UINT32\_C(1)\ <<\ shamt)\ >>\ 1;}
+\DoxyCodeLine{00123\ \ \ \ \ inp\ +=\ vl1;}
+\DoxyCodeLine{00124\ \ \ \ \ inp\ >>=\ shamt;}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordflow}{return}\ inp;}
+\DoxyCodeLine{00126\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__mathlib__softfloat_8cpp_aa05edb8be377b6c2d1249ec0f4d77369_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__mathlib__softfloat_8cpp_a60b7d8902623ead0a8c64d615daeaef3}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!rtne\_shift32@{rtne\_shift32}}
+\index{rtne\_shift32@{rtne\_shift32}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}
+\doxysubsubsection{\texorpdfstring{rtne\_shift32()}{rtne\_shift32()}}
+{\footnotesize\ttfamily \label{astcenc__mathlib__softfloat_8cpp_a60b7d8902623ead0a8c64d615daeaef3} 
+static uint32\+\_\+t rtne\+\_\+shift32 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{inp}{, }\item[{uint32\+\_\+t}]{shamt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source}{astcenc\+\_\+mathlib\+\_\+softfloat.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source_l00109}{109}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ uint32\_t\ vl1\ =\ UINT32\_C(1)\ <<\ shamt;}
+\DoxyCodeLine{00112\ \ \ \ \ uint32\_t\ inp2\ =\ inp\ +\ (vl1\ >>\ 1);\ \ \ \textcolor{comment}{/*\ added\ 0.5\ ULP\ */}}
+\DoxyCodeLine{00113\ \ \ \ \ uint32\_t\ msk\ =\ (inp\ |\ UINT32\_C(1))\ \&\ vl1;\ \ \ \textcolor{comment}{/*\ nonzero\ if\ odd.\ '|\ 1'\ forces\ it\ to\ 1\ if\ the\ shamt\ is\ 0.\ */}}
+\DoxyCodeLine{00114\ \ \ \ \ msk-\/-\/;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ negative\ if\ even,\ nonnegative\ if\ odd.\ */}}
+\DoxyCodeLine{00115\ \ \ \ \ inp2\ -\/=\ (msk\ >>\ 31);\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ subtract\ epsilon\ before\ shift\ if\ even.\ */}}
+\DoxyCodeLine{00116\ \ \ \ \ inp2\ >>=\ shamt;}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{return}\ inp2;}
+\DoxyCodeLine{00118\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__mathlib__softfloat_8cpp_a60b7d8902623ead0a8c64d615daeaef3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__mathlib__softfloat_8cpp_a20381e3115c75ee2cd4bfec32b505c34}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!rtup\_shift32@{rtup\_shift32}}
+\index{rtup\_shift32@{rtup\_shift32}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}
+\doxysubsubsection{\texorpdfstring{rtup\_shift32()}{rtup\_shift32()}}
+{\footnotesize\ttfamily \label{astcenc__mathlib__softfloat_8cpp_a20381e3115c75ee2cd4bfec32b505c34} 
+static uint32\+\_\+t rtup\+\_\+shift32 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{inp}{, }\item[{uint32\+\_\+t}]{shamt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source}{astcenc\+\_\+mathlib\+\_\+softfloat.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source_l00128}{128}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00129\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ uint32\_t\ vl1\ =\ UINT32\_C(1)\ <<\ shamt;}
+\DoxyCodeLine{00131\ \ \ \ \ inp\ +=\ vl1;}
+\DoxyCodeLine{00132\ \ \ \ \ inp-\/-\/;}
+\DoxyCodeLine{00133\ \ \ \ \ inp\ >>=\ shamt;}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordflow}{return}\ inp;}
+\DoxyCodeLine{00135\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__mathlib__softfloat_8cpp_a20381e3115c75ee2cd4bfec32b505c34_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__mathlib__softfloat_8cpp_ad8dc065aa7430de946add238f7279ad3}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!sf16\_to\_float@{sf16\_to\_float}}
+\index{sf16\_to\_float@{sf16\_to\_float}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}
+\doxysubsubsection{\texorpdfstring{sf16\_to\_float()}{sf16\_to\_float()}}
+{\footnotesize\ttfamily \label{astcenc__mathlib__softfloat_8cpp_ad8dc065aa7430de946add238f7279ad3} 
+float sf16\+\_\+to\+\_\+float (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{p}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source}{astcenc\+\_\+mathlib\+\_\+softfloat.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source_l00396}{396}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00397\ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \mbox{\hyperlink{unionif32}{if32}}\ i;}
+\DoxyCodeLine{00399\ \ \ \ \ i.\mbox{\hyperlink{unionif32_ab2af01c7db8e7bce72271565ae1276bf}{u}}\ =\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a37ae551373be99b9c70465fe17c44cb5}{sf16\_to\_sf32}}(p);}
+\DoxyCodeLine{00400\ \ \ \ \ \textcolor{keywordflow}{return}\ i.\mbox{\hyperlink{unionif32_a6ebdf3c35d5ebd30f1cbe751d8c9285e}{f}};}
+\DoxyCodeLine{00401\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{astcenc__mathlib__softfloat_8cpp_ad8dc065aa7430de946add238f7279ad3_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{astcenc__mathlib__softfloat_8cpp_ad8dc065aa7430de946add238f7279ad3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__mathlib__softfloat_8cpp_a37ae551373be99b9c70465fe17c44cb5}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!sf16\_to\_sf32@{sf16\_to\_sf32}}
+\index{sf16\_to\_sf32@{sf16\_to\_sf32}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}
+\doxysubsubsection{\texorpdfstring{sf16\_to\_sf32()}{sf16\_to\_sf32()}}
+{\footnotesize\ttfamily \label{astcenc__mathlib__softfloat_8cpp_a37ae551373be99b9c70465fe17c44cb5} 
+static \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a1b289746cf42ab34aebeaf67d2c96c98}{sf32}} sf16\+\_\+to\+\_\+sf32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}}]{inp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source}{astcenc\+\_\+mathlib\+\_\+softfloat.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source_l00138}{138}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00139\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ uint32\_t\ inpx\ =\ inp;}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00143\ \textcolor{comment}{\ \ \ \ \ \ \ \ This\ table\ contains,\ for\ every\ FP16\ sign/exponent\ value\ combination,}}
+\DoxyCodeLine{00144\ \textcolor{comment}{\ \ \ \ \ \ \ \ the\ difference\ between\ the\ input\ FP16\ value\ and\ the\ value\ obtained}}
+\DoxyCodeLine{00145\ \textcolor{comment}{\ \ \ \ \ \ \ \ by\ shifting\ the\ correct\ FP32\ result\ right\ by\ 13\ bits.}}
+\DoxyCodeLine{00146\ \textcolor{comment}{\ \ \ \ \ \ \ \ This\ table\ allows\ us\ to\ handle\ every\ case\ except\ denormals\ and\ NaN}}
+\DoxyCodeLine{00147\ \textcolor{comment}{\ \ \ \ \ \ \ \ with\ just\ 1\ table\ lookup,\ 2\ shifts\ and\ 1\ add.}}
+\DoxyCodeLine{00148\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\ \ \ \ \#define\ WITH\_MSB(a)\ (UINT32\_C(a)\ |\ (1u\ <<\ 31))}}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ tbl[64]\ =}
+\DoxyCodeLine{00152\ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a09a75497423bce5ad0bf1a50f5b6ad71}{WITH\_MSB}}(0x00000),\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ \ \ \ \ \ \ \ \ \ 0x1C000,}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1C000,\ \ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ \ \ \ \ \ \ \ \ \ 0x1C000,}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1C000,\ \ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ \ \ \ \ \ \ \ \ \ 0x1C000,}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1C000,\ \ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ 0x1C000,\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a09a75497423bce5ad0bf1a50f5b6ad71}{WITH\_MSB}}(0x38000),}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a09a75497423bce5ad0bf1a50f5b6ad71}{WITH\_MSB}}(0x38000),\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ \ \ \ \ \ \ \ \ \ 0x54000,}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x54000,\ \ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ \ \ \ \ \ \ \ \ \ 0x54000,}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x54000,\ \ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ \ \ \ \ \ \ \ \ \ 0x54000,}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x54000,\ \ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ 0x54000,\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a09a75497423bce5ad0bf1a50f5b6ad71}{WITH\_MSB}}(0x70000)}
+\DoxyCodeLine{00161\ \ \ \ \ \};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ uint32\_t\ res\ =\ tbl[inpx\ >>\ 10];}
+\DoxyCodeLine{00164\ \ \ \ \ res\ +=\ inpx;}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{comment}{/*\ Normal\ cases:\ MSB\ of\ 'res'\ not\ set.\ */}}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{if}\ ((res\ \&\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a09a75497423bce5ad0bf1a50f5b6ad71}{WITH\_MSB}}(0))\ ==\ 0)}
+\DoxyCodeLine{00168\ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res\ <<\ 13;}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{comment}{/*\ Infinity\ and\ Zero:\ 10\ LSB\ of\ 'res'\ not\ set.\ */}}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordflow}{if}\ ((res\ \&\ 0x3FF)\ ==\ 0)}
+\DoxyCodeLine{00174\ \ \ \ \ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res\ <<\ 13;}
+\DoxyCodeLine{00176\ \ \ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{comment}{/*\ NaN:\ the\ exponent\ field\ of\ 'inp'\ is\ non-\/zero.\ */}}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordflow}{if}\ ((inpx\ \&\ 0x7C00)\ !=\ 0)}
+\DoxyCodeLine{00180\ \ \ \ \ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ All\ NaNs\ are\ quietened.\ */}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (res\ <<\ 13)\ |\ 0x400000;}
+\DoxyCodeLine{00183\ \ \ \ \ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{comment}{/*\ Denormal\ cases\ */}}
+\DoxyCodeLine{00186\ \ \ \ \ uint32\_t\ sign\ =\ (inpx\ \&\ 0x8000)\ <<\ 16;}
+\DoxyCodeLine{00187\ \ \ \ \ uint32\_t\ mskval\ =\ inpx\ \&\ 0x7FFF;}
+\DoxyCodeLine{00188\ \ \ \ \ uint32\_t\ leadingzeroes\ =\ \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a04e345d938953a60961cf7125b9dec35}{clz32}}(mskval);}
+\DoxyCodeLine{00189\ \ \ \ \ mskval\ <<=\ leadingzeroes;}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{return}\ (mskval\ >>\ 8)\ +\ ((0x85\ -\/\ leadingzeroes)\ <<\ 23)\ +\ sign;}
+\DoxyCodeLine{00191\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{astcenc__mathlib__softfloat_8cpp_a37ae551373be99b9c70465fe17c44cb5_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__mathlib__softfloat_8cpp_a37ae551373be99b9c70465fe17c44cb5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__mathlib__softfloat_8cpp_af5a2d724c58344c691091cdb5066cc65}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!sf32\_to\_sf16@{sf32\_to\_sf16}}
+\index{sf32\_to\_sf16@{sf32\_to\_sf16}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}
+\doxysubsubsection{\texorpdfstring{sf32\_to\_sf16()}{sf32\_to\_sf16()}}
+{\footnotesize\ttfamily \label{astcenc__mathlib__softfloat_8cpp_af5a2d724c58344c691091cdb5066cc65} 
+static \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}} sf32\+\_\+to\+\_\+sf16 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a1b289746cf42ab34aebeaf67d2c96c98}{sf32}}}]{inp}{, }\item[{\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa7124a94165d4e8dd7bc6db93adb92b9}{roundmode}}}]{rmode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source}{astcenc\+\_\+mathlib\+\_\+softfloat.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source_l00194}{194}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00195\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{comment}{/*\ for\ each\ possible\ sign/exponent\ combination,\ store\ a\ case\ index.\ This\ gives\ a\ 512-\/byte\ table\ */}}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint8\_t\ tab[512]\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ 0,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,\ 10,}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ 10,\ 10,\ 10,\ 10,\ 10,\ 20,\ 20,\ 20,\ 20,\ 20,\ 20,\ 20,\ 20,\ 20,\ 20,\ 20,}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ 20,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 30,\ 40,}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 40,\ 50,}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ 5,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,\ 15,}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ 15,\ 15,\ 15,\ 15,\ 15,\ 25,\ 25,\ 25,\ 25,\ 25,\ 25,\ 25,\ 25,\ 25,\ 25,\ 25,}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ 25,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 35,\ 45,}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 45,\ 55,}
+\DoxyCodeLine{00231\ \ \ \ \ \};}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{comment}{/*\ many\ of\ the\ cases\ below\ use\ a\ case-\/dependent\ magic\ constant.\ So\ we\ look\ up\ a\ magic\ constant\ before\ actually\ performing\ the\ switch.\ This\ table\ allows\ us\ to\ group\ cases,\ thereby\ minimizing\ code}}
+\DoxyCodeLine{00234\ \textcolor{comment}{\ \ \ \ \ \ \ size.\ */}}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ tabx[60]\ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0x8000),\ UINT32\_C(0x80000000),\ UINT32\_C(0x8000),\ UINT32\_C(0x8000),\ UINT32\_C(0x8000),}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ UINT32\_C(1),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0x8000),\ UINT32\_C(0x8001),\ UINT32\_C(0x8000),\ UINT32\_C(0x8000),\ UINT32\_C(0x8000),}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0),\ UINT32\_C(0x8000),\ UINT32\_C(0x8000),\ UINT32\_C(0x8000),\ UINT32\_C(0x8000),\ UINT32\_C(0x8000),}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ UINT32\_C(0xC8001FFF),\ UINT32\_C(0xC8000000),\ UINT32\_C(0xC8000000),\ UINT32\_C(0xC8000FFF),\ UINT32\_C(0xC8001000),}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ UINT32\_C(0x58000000),\ UINT32\_C(0x38001FFF),\ UINT32\_C(0x58000000),\ UINT32\_C(0x58000FFF),\ UINT32\_C(0x58001000),}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ UINT32\_C(0x7C00),\ UINT32\_C(0x7BFF),\ UINT32\_C(0x7BFF),\ UINT32\_C(0x7C00),\ UINT32\_C(0x7C00),}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ UINT32\_C(0xFBFF),\ UINT32\_C(0xFC00),\ UINT32\_C(0xFBFF),\ UINT32\_C(0xFC00),\ UINT32\_C(0xFC00),}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ UINT32\_C(0x90000000),\ UINT32\_C(0x90000000),\ UINT32\_C(0x90000000),\ UINT32\_C(0x90000000),\ UINT32\_C(0x90000000),}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ UINT32\_C(0x20000000),\ UINT32\_C(0x20000000),\ UINT32\_C(0x20000000),\ UINT32\_C(0x20000000),\ UINT32\_C(0x20000000)}
+\DoxyCodeLine{00245\ \ \ \ \ \};}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ uint32\_t\ p;}
+\DoxyCodeLine{00248\ \ \ \ \ uint32\_t\ idx\ =\ rmode\ +\ tab[inp\ >>\ 23];}
+\DoxyCodeLine{00249\ \ \ \ \ uint32\_t\ vlx\ =\ tabx[idx];}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordflow}{switch}\ (idx)}
+\DoxyCodeLine{00251\ \ \ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00253\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ Positive\ number\ which\ may\ be\ Infinity\ or\ NaN.}}
+\DoxyCodeLine{00254\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ We\ need\ to\ check\ whether\ it\ is\ NaN;\ if\ it\ is,\ quieten\ it\ by\ setting\ the\ top\ bit\ of\ the\ mantissa.}}
+\DoxyCodeLine{00255\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ (If\ we\ don't\ do\ this\ quieting,\ then\ a\ NaN\ \ that\ is\ distinguished\ only\ by\ having}}
+\DoxyCodeLine{00256\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ its\ low-\/order\ bits\ set,\ would\ be\ turned\ into\ an\ INF.\ */}}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordflow}{case}\ 50:}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordflow}{case}\ 51:}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordflow}{case}\ 52:}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordflow}{case}\ 53:}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordflow}{case}\ 54:}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordflow}{case}\ 55:}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordflow}{case}\ 56:}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordflow}{case}\ 57:}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordflow}{case}\ 58:}
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keywordflow}{case}\ 59:}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00268\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ the\ input\ value\ is\ 0x7F800000\ or\ 0xFF800000\ if\ it\ is\ INF.}}
+\DoxyCodeLine{00269\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ By\ subtracting\ 1,\ we\ get\ 7F7FFFFF\ or\ FF7FFFFF,\ that\ is,\ bit\ 23\ becomes\ zero.}}
+\DoxyCodeLine{00270\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ For\ NaNs,\ however,\ this\ operation\ will\ keep\ bit\ 23\ with\ the\ value\ 1.}}
+\DoxyCodeLine{00271\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ We\ can\ then\ extract\ bit\ 23,\ and\ logical-\/OR\ bit\ 9\ of\ the\ result\ with\ this}}
+\DoxyCodeLine{00272\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ bit\ in\ order\ to\ quieten\ the\ NaN\ (a\ Quiet\ NaN\ is\ a\ NaN\ where\ the\ top\ bit}}
+\DoxyCodeLine{00273\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ of\ the\ mantissa\ is\ set.)}}
+\DoxyCodeLine{00274\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ p\ =\ (inp\ -\/\ 1)\ \&\ UINT32\_C(0x800000);\ \textcolor{comment}{/*\ zero\ if\ INF,\ nonzero\ if\ NaN.\ */}}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}(((inp\ +\ vlx)\ >>\ 13)\ |\ (p\ >>\ 14));}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00278\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ positive,\ exponent\ =\ 0,\ round-\/mode\ ==\ UP;\ need\ to\ check\ whether\ number\ actually\ is\ 0.}}
+\DoxyCodeLine{00279\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ If\ it\ is,\ then\ return\ 0,\ else\ return\ 1\ (the\ smallest\ representable\ nonzero\ number)}}
+\DoxyCodeLine{00280\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00283\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ -\/inp\ will\ set\ the\ MSB\ if\ the\ input\ number\ is\ nonzero.}}
+\DoxyCodeLine{00284\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ Thus\ (-\/inp)\ >>\ 31\ will\ turn\ into\ 0\ if\ the\ input\ number\ is\ 0\ and\ 1\ otherwise.}}
+\DoxyCodeLine{00285\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}((-\/\textcolor{keyword}{static\_cast<}int32\_t\textcolor{keyword}{>}(inp)))\ >>\ 31);}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00289\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ negative,\ exponent\ =\ ,\ round-\/mode\ ==\ DOWN,\ need\ to\ check\ whether\ number\ is}}
+\DoxyCodeLine{00290\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ actually\ 0.\ If\ it\ is,\ return\ 0x8000\ (\ float\ -\/0.0\ )}}
+\DoxyCodeLine{00291\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ Else\ return\ the\ smallest\ negative\ number\ (\ 0x8001\ )\ */}}
+\DoxyCodeLine{00292\ \ \ \ \ \textcolor{keywordflow}{case}\ 6:}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00294\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ in\ this\ case\ 'vlx'\ is\ 0x80000000.\ By\ subtracting\ the\ input\ value\ from\ it,}}
+\DoxyCodeLine{00295\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ we\ obtain\ a\ value\ that\ is\ 0\ if\ the\ input\ value\ is\ in\ fact\ zero\ and\ has}}
+\DoxyCodeLine{00296\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ the\ MSB\ set\ if\ it\ isn't.\ We\ then\ right-\/shift\ the\ value\ by\ 31\ places\ to}}
+\DoxyCodeLine{00297\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ get\ a\ value\ that\ is\ 0\ if\ the\ input\ is\ -\/0.0\ and\ 1\ otherwise.}}
+\DoxyCodeLine{00298\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}(((vlx\ -\/\ inp)\ >>\ 31)\ +\ UINT32\_C(0x8000));}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00302\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ for\ all\ other\ cases\ involving\ underflow/overflow,\ we\ don't\ need\ to}}
+\DoxyCodeLine{00303\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ do\ actual\ tests;\ we\ just\ return\ 'vlx'.}}
+\DoxyCodeLine{00304\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keywordflow}{case}\ 5:}
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keywordflow}{case}\ 7:}
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keywordflow}{case}\ 8:}
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keywordflow}{case}\ 9:}
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{keywordflow}{case}\ 10:}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keywordflow}{case}\ 11:}
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keywordflow}{case}\ 12:}
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keywordflow}{case}\ 13:}
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{keywordflow}{case}\ 14:}
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keywordflow}{case}\ 15:}
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keywordflow}{case}\ 16:}
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordflow}{case}\ 17:}
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keywordflow}{case}\ 18:}
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordflow}{case}\ 19:}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keywordflow}{case}\ 40:}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordflow}{case}\ 41:}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordflow}{case}\ 42:}
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keywordflow}{case}\ 43:}
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keywordflow}{case}\ 44:}
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keywordflow}{case}\ 45:}
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keywordflow}{case}\ 46:}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keywordflow}{case}\ 47:}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordflow}{case}\ 48:}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keywordflow}{case}\ 49:}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}(vlx);}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00336\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ for\ normal\ numbers,\ 'vlx'\ is\ the\ difference\ between\ the\ FP32\ value\ of\ a\ number\ and\ the}}
+\DoxyCodeLine{00337\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ FP16\ representation\ of\ the\ same\ number\ left-\/shifted\ by\ 13\ places.\ In\ addition,\ a\ rounding\ constant\ is}}
+\DoxyCodeLine{00338\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ baked\ into\ 'vlx':\ for\ rounding-\/away-\/from\ zero,\ the\ constant\ is\ 2\string^13\ -\/\ 1,\ causing\ roundoff\ away}}
+\DoxyCodeLine{00339\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ from\ zero.\ for\ round-\/to-\/nearest\ away,\ the\ constant\ is\ 2\string^12,\ causing\ roundoff\ away\ from\ zero.}}
+\DoxyCodeLine{00340\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ for\ round-\/to-\/nearest-\/even,\ the\ constant\ is\ 2\string^12\ -\/\ 1.\ This\ causes\ correct\ round-\/to-\/nearest-\/even}}
+\DoxyCodeLine{00341\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ except\ for\ odd\ input\ numbers.\ For\ odd\ input\ numbers,\ we\ need\ to\ add\ 1\ to\ the\ constant.\ */}}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ normal\ number,\ all\ rounding\ modes\ except\ round-\/to-\/nearest-\/even:\ */}}
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordflow}{case}\ 30:}
+\DoxyCodeLine{00345\ \ \ \ \ \textcolor{keywordflow}{case}\ 31:}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordflow}{case}\ 32:}
+\DoxyCodeLine{00347\ \ \ \ \ \textcolor{keywordflow}{case}\ 34:}
+\DoxyCodeLine{00348\ \ \ \ \ \textcolor{keywordflow}{case}\ 35:}
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keywordflow}{case}\ 36:}
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keywordflow}{case}\ 37:}
+\DoxyCodeLine{00351\ \ \ \ \ \textcolor{keywordflow}{case}\ 39:}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}((inp\ +\ vlx)\ >>\ 13);}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ normal\ number,\ round-\/to-\/nearest-\/even.\ */}}
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keywordflow}{case}\ 33:}
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keywordflow}{case}\ 38:}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ p\ =\ inp\ +\ vlx;}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ p\ +=\ (inp\ >>\ 13)\ \&\ 1;}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}(p\ >>\ 13);}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00362\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ the\ various\ denormal\ cases.\ These\ are\ not\ expected\ to\ be\ common,\ so\ their\ performance\ is\ a\ bit}}
+\DoxyCodeLine{00363\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ less\ important.\ For\ each\ of\ these\ cases,\ we\ need\ to\ extract\ an\ exponent\ and\ a\ mantissa}}
+\DoxyCodeLine{00364\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ (including\ the\ implicit\ '1'!),\ and\ then\ right-\/shift\ the\ mantissa\ by\ a\ shift-\/amount\ that}}
+\DoxyCodeLine{00365\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ depends\ on\ the\ exponent.\ The\ shift\ must\ apply\ the\ correct\ rounding\ mode.\ 'vlx'\ is\ used\ to\ supply\ the}}
+\DoxyCodeLine{00366\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ sign\ of\ the\ resulting\ denormal\ number.}}
+\DoxyCodeLine{00367\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordflow}{case}\ 21:}
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keywordflow}{case}\ 22:}
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keywordflow}{case}\ 25:}
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keywordflow}{case}\ 27:}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ denormal,\ round\ towards\ zero.\ */}}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ p\ =\ 126\ -\/\ ((inp\ >>\ 23)\ \&\ 0xFF);}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}((((inp\ \&\ UINT32\_C(0x7FFFFF))\ +\ UINT32\_C(0x800000))\ >>\ p)\ |\ vlx);}
+\DoxyCodeLine{00375\ \ \ \ \ \textcolor{keywordflow}{case}\ 20:}
+\DoxyCodeLine{00376\ \ \ \ \ \textcolor{keywordflow}{case}\ 26:}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ denormal,\ round\ away\ from\ zero.\ */}}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ p\ =\ 126\ -\/\ ((inp\ >>\ 23)\ \&\ 0xFF);}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}(\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a20381e3115c75ee2cd4bfec32b505c34}{rtup\_shift32}}((inp\ \&\ UINT32\_C(0x7FFFFF))\ +\ UINT32\_C(0x800000),\ p)\ |\ vlx);}
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keywordflow}{case}\ 24:}
+\DoxyCodeLine{00381\ \ \ \ \ \textcolor{keywordflow}{case}\ 29:}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ denormal,\ round\ to\ nearest-\/away\ */}}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ p\ =\ 126\ -\/\ ((inp\ >>\ 23)\ \&\ 0xFF);}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}(\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa05edb8be377b6c2d1249ec0f4d77369}{rtna\_shift32}}((inp\ \&\ UINT32\_C(0x7FFFFF))\ +\ UINT32\_C(0x800000),\ p)\ |\ vlx);}
+\DoxyCodeLine{00385\ \ \ \ \ \textcolor{keywordflow}{case}\ 23:}
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{keywordflow}{case}\ 28:}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ denormal,\ round\ to\ nearest-\/even.\ */}}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ p\ =\ 126\ -\/\ ((inp\ >>\ 23)\ \&\ 0xFF);}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_aa96147e47815e2c4554f41d22879b2ae}{sf16}}\textcolor{keyword}{>}(\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_a60b7d8902623ead0a8c64d615daeaef3}{rtne\_shift32}}((inp\ \&\ UINT32\_C(0x7FFFFF))\ +\ UINT32\_C(0x800000),\ p)\ |\ vlx);}
+\DoxyCodeLine{00390\ \ \ \ \ \}}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00393\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{astcenc__mathlib__softfloat_8cpp_af5a2d724c58344c691091cdb5066cc65_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__mathlib__softfloat_8cpp_af5a2d724c58344c691091cdb5066cc65_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{변수 문서화}
+\Hypertarget{astcenc__mathlib__softfloat_8cpp_a50d798d2fad2b79e838dea3228929d27}\index{astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}!clz\_table@{clz\_table}}
+\index{clz\_table@{clz\_table}!astcenc\_mathlib\_softfloat.cpp@{astcenc\_mathlib\_softfloat.cpp}}
+\doxysubsubsection{\texorpdfstring{clz\_table}{clz\_table}}
+{\footnotesize\ttfamily \label{astcenc__mathlib__softfloat_8cpp_a50d798d2fad2b79e838dea3228929d27} 
+const uint8\+\_\+t clz\+\_\+table\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 8,\ 7,\ 6,\ 6,\ 5,\ 5,\ 5,\ 5,\ 4,\ 4,\ 4,\ 4,\ 4,\ 4,\ 4,\ 4,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source}{astcenc\+\_\+mathlib\+\_\+softfloat.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__mathlib__softfloat_8cpp_source_l00042}{42}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ 8,\ 7,\ 6,\ 6,\ 5,\ 5,\ 5,\ 5,\ 4,\ 4,\ 4,\ 4,\ 4,\ 4,\ 4,\ 4,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00060\ \ \ \ \ \};}
+
+\end{DoxyCode}

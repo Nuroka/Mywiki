@@ -1,0 +1,5 @@
+<map id="store_lanes_masked" name="store_lanes_masked">
+<area shape="rect" id="Node000001" title="Store a vector, skipping masked lanes." alt="" coords="5,5,148,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#ad922a3ed6098767968916265154b6f82" title="Return a 8&#45;bit mask code indicating mask status." alt="" coords="196,5,251,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,15,182,15,182,21,148,21"/>
+</map>

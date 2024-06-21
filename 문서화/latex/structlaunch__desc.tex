@@ -1,0 +1,105 @@
+\doxysection{launch\+\_\+desc 구조체 참조}
+\hypertarget{structlaunch__desc}{}\label{structlaunch__desc}\index{launch\_desc@{launch\_desc}}
+
+
+Worker thread helper payload for launch\+\_\+threads.  
+
+
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+pthread\+\_\+t \mbox{\hyperlink{structlaunch__desc_a5c6e008ac1ee73608f73d0c82eb1412a}{thread\+\_\+handle}}
+\begin{DoxyCompactList}\small\item\em The native thread handle. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structlaunch__desc_ae5fb121d0d0e69a2d001d44e2afffec1}{thread\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em The total number of threads in the thread pool. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structlaunch__desc_a18fa1b8ed8d5761f64f2a5cd13ebcf97}{thread\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em The thread index in the thread pool. \end{DoxyCompactList}\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structlaunch__desc_a3290fa651bf1def33151f086e69c5291}{func}} )(int, int, void \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em The user thread function to execute. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structlaunch__desc_af301f9649123b837ecb5e6106392e7c9}{payload}}
+\begin{DoxyCompactList}\small\item\em The user thread payload. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+Worker thread helper payload for launch\+\_\+threads. 
+
+\mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source}{astcenccli\+\_\+platform\+\_\+dependents.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source_l00173}{173}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structlaunch__desc_a3290fa651bf1def33151f086e69c5291}\index{launch\_desc@{launch\_desc}!func@{func}}
+\index{func@{func}!launch\_desc@{launch\_desc}}
+\doxysubsubsection{\texorpdfstring{func}{func}}
+{\footnotesize\ttfamily \label{structlaunch__desc_a3290fa651bf1def33151f086e69c5291} 
+void(\texorpdfstring{$\ast$}{*} launch\+\_\+desc\+::func) (int, int, void \texorpdfstring{$\ast$}{*})}
+
+
+
+The user thread function to execute. 
+
+
+
+\mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source}{astcenccli\+\_\+platform\+\_\+dependents.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source_l00182}{182}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structlaunch__desc_af301f9649123b837ecb5e6106392e7c9}\index{launch\_desc@{launch\_desc}!payload@{payload}}
+\index{payload@{payload}!launch\_desc@{launch\_desc}}
+\doxysubsubsection{\texorpdfstring{payload}{payload}}
+{\footnotesize\ttfamily \label{structlaunch__desc_af301f9649123b837ecb5e6106392e7c9} 
+void\texorpdfstring{$\ast$}{*} launch\+\_\+desc\+::payload}
+
+
+
+The user thread payload. 
+
+
+
+\mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source}{astcenccli\+\_\+platform\+\_\+dependents.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source_l00184}{184}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structlaunch__desc_ae5fb121d0d0e69a2d001d44e2afffec1}\index{launch\_desc@{launch\_desc}!thread\_count@{thread\_count}}
+\index{thread\_count@{thread\_count}!launch\_desc@{launch\_desc}}
+\doxysubsubsection{\texorpdfstring{thread\_count}{thread\_count}}
+{\footnotesize\ttfamily \label{structlaunch__desc_ae5fb121d0d0e69a2d001d44e2afffec1} 
+int launch\+\_\+desc\+::thread\+\_\+count}
+
+
+
+The total number of threads in the thread pool. 
+
+
+
+\mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source}{astcenccli\+\_\+platform\+\_\+dependents.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source_l00178}{178}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structlaunch__desc_a5c6e008ac1ee73608f73d0c82eb1412a}\index{launch\_desc@{launch\_desc}!thread\_handle@{thread\_handle}}
+\index{thread\_handle@{thread\_handle}!launch\_desc@{launch\_desc}}
+\doxysubsubsection{\texorpdfstring{thread\_handle}{thread\_handle}}
+{\footnotesize\ttfamily \label{structlaunch__desc_a5c6e008ac1ee73608f73d0c82eb1412a} 
+pthread\+\_\+t launch\+\_\+desc\+::thread\+\_\+handle}
+
+
+
+The native thread handle. 
+
+
+
+\mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source}{astcenccli\+\_\+platform\+\_\+dependents.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source_l00176}{176}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structlaunch__desc_a18fa1b8ed8d5761f64f2a5cd13ebcf97}\index{launch\_desc@{launch\_desc}!thread\_id@{thread\_id}}
+\index{thread\_id@{thread\_id}!launch\_desc@{launch\_desc}}
+\doxysubsubsection{\texorpdfstring{thread\_id}{thread\_id}}
+{\footnotesize\ttfamily \label{structlaunch__desc_a18fa1b8ed8d5761f64f2a5cd13ebcf97} 
+int launch\+\_\+desc\+::thread\+\_\+id}
+
+
+
+The thread index in the thread pool. 
+
+
+
+\mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source}{astcenccli\+\_\+platform\+\_\+dependents.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__platform__dependents_8cpp_source_l00180}{180}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenccli__platform__dependents_8cpp}{astcenccli\+\_\+platform\+\_\+dependents.\+cpp}}\end{DoxyCompactItemize}

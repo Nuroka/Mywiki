@@ -1,0 +1,27 @@
+<map id="symbolic_to_physical" name="symbolic_to_physical">
+<area shape="rect" id="Node000001" title="Convert a symbolic representation into a binary physical encoding." alt="" coords="5,240,152,265"/>
+<area shape="rect" id="Node000002" href="$astcenc__symbolic__physical_8cpp.html#ac8ea7de26c1e90f79a9e315407ab04ff" title="Functions for converting between symbolic and physical encodings." alt="" coords="270,5,329,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,239,94,200,117,146,151,89,173,62,198,40,226,25,255,18,257,23,228,30,202,44,177,66,156,92,122,148,99,202,86,241"/>
+<area shape="rect" id="Node000003" href="$astcenc__integer__sequence_8cpp.html#a1e3b68510a3fa2766d2decf242132f2f" title="Encode a packed string using BISE." alt="" coords="255,55,343,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="83,239,99,208,124,168,158,126,198,90,219,80,241,72,243,78,221,85,202,95,161,130,129,171,104,211,88,241"/>
+<area shape="rect" id="Node000006" href="$structblock__size__descriptor.html#a13608eb55e48c96b6243f4830278ebf3" title="Get the block mode structure for index block_mode." alt="" coords="225,105,373,145"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="91,238,136,197,199,154,212,148,215,152,201,159,140,201,95,242"/>
+<area shape="rect" id="Node000007" href="$structsymbolic__compressed__block.html#af290ce908b76242bc89e3eae4d948454" title="Get the weight quantization used by this block mode." alt="" coords="200,169,399,209"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="123,237,216,210,218,215,124,242"/>
+<area shape="rect" id="Node000008" href="$structblock__size__descriptor.html#a688445f2f90b13188372d812baf8e02d" title="Get the decimation info structure for index decimation_mode." alt="" coords="225,233,373,273"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="153,250,212,250,212,255,153,255"/>
+<area shape="rect" id="Node000009" href="$astcenc__integer__sequence_8cpp.html#af46c9322b401332698e9cb93c968fe19" title="Return the number of bits needed to encode an ISE sequence." alt="" coords="209,297,389,323"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="128,263,201,282,236,291,235,297,199,287,127,268"/>
+<area shape="rect" id="Node000010" href="$astcenc__internal_8h.html#aec456deb917676d5506d91947c6d5726" title="The number of levels use by an ASTC quantization method." alt="" coords="244,347,355,372"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="97,263,142,297,201,332,232,343,230,348,199,336,139,302,94,268"/>
+<area shape="rect" id="Node000011" href="$namespaceastc.html#af78c0d31374aa9923633a3a2abf8d738" title="Return the minimum of two values." alt="" coords="261,396,337,421"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="90,264,133,322,164,355,201,382,224,393,249,400,247,405,222,398,199,387,161,359,129,325,86,267"/>
+<area shape="rect" id="Node000012" href="$astcenc__symbolic__physical_8cpp.html#ae8ca963a290faa03da1eed39553521ec" title="Write up to 8 bits at an arbitrary bit offset." alt="" coords="447,300,524,325"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="86,265,99,300,122,348,156,395,177,415,201,432,254,455,299,462,345,454,397,432,423,413,444,388,472,337,477,339,449,391,427,417,400,436,346,460,299,468,252,460,199,436,174,420,152,399,118,350,94,302,81,266"/>
+<area shape="rect" id="Node000004" href="$astcenc__vecmathlib__avx2__8_8h.html#ad922a3ed6098767968916265154b6f82" title="Return a 8&#45;bit mask code indicating mask status." alt="" coords="572,105,627,131"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="344,67,428,74,525,90,560,100,558,105,523,95,427,80,343,72"/>
+<area shape="rect" id="Node000005" href="$astcenc__integer__sequence_8cpp.html#a52b08548f8002494f05802fc24d36489" title="Write up to 8 bits at an arbitrary bit offset." alt="" coords="447,105,524,131"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="344,76,399,90,434,100,433,105,398,95,343,81"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="524,115,559,115,559,121,524,121"/>
+<area shape="poly" id="edge13_Node000012_Node000004" title=" " alt="" coords="492,299,581,142,586,144,496,301"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="decode_block_mode_2d" name="decode_block_mode_2d">
+<area shape="rect" id="Node000001" title="Functions to generate block size descriptor and decimation tables." alt="" coords="5,5,168,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__integer__sequence_8cpp.html#af46c9322b401332698e9cb93c968fe19" title="Return the number of bits needed to encode an ISE sequence." alt="" coords="216,5,396,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,15,202,15,202,21,168,21"/>
+</map>

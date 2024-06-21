@@ -1,0 +1,9 @@
+<map id="frexp" name="frexp">
+<area shape="rect" id="Node000001" title="Extract mantissa and exponent of a float value." alt="" coords="5,55,56,80"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#a5c2db475754d8da42d9b685a45c48ab8" title="Return a float value as an integer bit pattern (i.e. no conversion)." alt="" coords="104,5,192,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,54,104,34,106,39,57,59"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#ac584d4929db078403c58549bafd3c1cd" title="Return a integer value as a float bit pattern (i.e. no conversion)." alt="" coords="104,55,192,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="56,65,90,65,90,70,56,70"/>
+<area shape="rect" id="Node000004" href="$astcenc__vecmathlib__avx2__8_8h.html#a0a3a7d755cec1c73d0ce9c50b33bc207" title="Logical shift right." alt="" coords="129,104,167,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="57,75,117,101,115,106,55,80"/>
+</map>

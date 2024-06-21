@@ -1,0 +1,5 @@
+<map id="switch_endianness2" name="switch_endianness2">
+<area shape="rect" id="Node000001" title="Swap endianness of N two byte values." alt="" coords="216,13,355,38"/>
+<area shape="rect" id="Node000002" href="$astcenccli__image__load__store_8cpp.html#ab345ab5e0d81313cee65f2bbd60fe33c" title="Load an uncompressed KTX image using the local custom loader." alt="" coords="5,5,168,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,28,168,28,168,23,202,23"/>
+</map>

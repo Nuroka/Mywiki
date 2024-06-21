@@ -1,0 +1,13 @@
+<map id="two_to_the_n" name="two_to_the_n">
+<area shape="rect" id="Node000001" title="Return lanewise 2^a for each lane in a." alt="" coords="5,80,104,105"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#ad93dff3341cbbeed568d4bd6dc4ef87c" title="True if all lanes are enabled, false otherwise." alt="" coords="177,5,215,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,77,163,32,166,36,81,82"/>
+<area shape="rect" id="Node000004" href="$astcenc__vecmathlib__avx2__8_8h.html#afdaab5e0b4a39a5dd28fb5b40642e57d" title="Return a integer value for a float vector, using truncation." alt="" coords="153,55,239,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="104,81,139,75,140,80,105,87"/>
+<area shape="rect" id="Node000005" href="$astcenc__vecmathlib__avx2__8_8h.html#ac584d4929db078403c58549bafd3c1cd" title="Return a integer value as a float bit pattern (i.e. no conversion)." alt="" coords="152,104,240,129"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="105,98,139,104,138,110,104,104"/>
+<area shape="rect" id="Node000006" href="$astcenc__vecmathlib__avx2__8_8h.html#a86240f0fb5745ded88afe10d524c960f" title="Logical shift left." alt="" coords="177,153,215,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="81,103,166,148,163,153,79,108"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#ad922a3ed6098767968916265154b6f82" title="Return a 8&#45;bit mask code indicating mask status." alt="" coords="288,5,343,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="216,15,274,15,274,21,216,21"/>
+</map>

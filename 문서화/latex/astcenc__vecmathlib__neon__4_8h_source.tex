@@ -1,0 +1,716 @@
+\doxysection{astcenc\+\_\+vecmathlib\+\_\+neon\+\_\+4.\+h}
+\hypertarget{astcenc__vecmathlib__neon__4_8h_source}{}\label{astcenc__vecmathlib__neon__4_8h_source}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_vecmathlib\_neon\_4.h@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_vecmathlib\_neon\_4.h}}
+\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00001}00001\ \textcolor{comment}{//\ SPDX-\/License-\/Identifier:\ Apache-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00003}00003\ \textcolor{comment}{//\ Copyright\ 2019-\/2023\ Arm\ Limited}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00004}00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00005}00005\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});\ you\ may\ not}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00006}00006\ \textcolor{comment}{//\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00007}00007\ \textcolor{comment}{//\ of\ the\ License\ at:}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00008}00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00009}00009\ \textcolor{comment}{//\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00010}00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00011}00011\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00012}00012\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00013}00013\ \textcolor{comment}{//\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.\ See\ the}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00014}00014\ \textcolor{comment}{//\ License\ for\ the\ specific\ language\ governing\ permissions\ and\ limitations}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00015}00015\ \textcolor{comment}{//\ under\ the\ License.}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00016}00016\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00033}00033\ \textcolor{preprocessor}{\#ifndef\ ASTC\_VECMATHLIB\_NEON\_4\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00034}00034\ \textcolor{preprocessor}{\#define\ ASTC\_VECMATHLIB\_NEON\_4\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00036}00036\ \textcolor{preprocessor}{\#ifndef\ ASTCENC\_SIMD\_INLINE}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00037}00037\ \textcolor{preprocessor}{\ \ \ \ \#error\ "{}Include\ astcenc\_vecmathlib.h,\ do\ not\ include\ directly"{}}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00038}00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00040}00040\ \textcolor{preprocessor}{\#include\ <cstdio>}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00041}00041\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00043}00043\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00044}00044\ \textcolor{comment}{//\ vfloat4\ data\ type}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00045}00045\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00050}\mbox{\hyperlink{structvfloat4}{00050}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structvfloat4}{vfloat4}}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00051}00051\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00055}\mbox{\hyperlink{structvfloat4_a9df51cb30b68d6d51ca607e64aa1ebf0}{00055}}\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4_a9df51cb30b68d6d51ca607e64aa1ebf0}{vfloat4}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00063}\mbox{\hyperlink{structvfloat4_a0473ab63d1a26071a590c8f014b90fe1}{00063}}\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structvfloat4_a0473ab63d1a26071a590c8f014b90fe1}{vfloat4}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ *p)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00064}00064\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}\ =\ vld1q\_f32(p);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00073}\mbox{\hyperlink{structvfloat4_a1b07a759d9e7dc5e283b4a7e528af345}{00073}}\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structvfloat4_a1b07a759d9e7dc5e283b4a7e528af345}{vfloat4}}(\textcolor{keywordtype}{float}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00074}00074\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}\ =\ vdupq\_n\_f32(a);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00083}\mbox{\hyperlink{structvfloat4_a5b0366cd337f3c6dc50c29e6bae2eab7}{00083}}\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structvfloat4_a5b0366cd337f3c6dc50c29e6bae2eab7}{vfloat4}}(\textcolor{keywordtype}{float}\ a,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ c,\ \textcolor{keywordtype}{float}\ d)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00084}00084\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ v[4]\ \{\ a,\ b,\ c,\ d\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}\ =\ vld1q\_f32(v);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00092}\mbox{\hyperlink{structvfloat4_ae43bda1544400edf8f92d62de3e068bb}{00092}}\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structvfloat4_ae43bda1544400edf8f92d62de3e068bb}{vfloat4}}(float32x4\_t\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00093}00093\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}\ =\ a;}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00095}00095\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00100}\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{00100}}\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}\ l>\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00101}00101\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vgetq\_lane\_f32(\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ l);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00108}\mbox{\hyperlink{structvfloat4_a2168231efa1e514fd41b3603e57be297}{00108}}\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}\ l>\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structvfloat4_a2168231efa1e514fd41b3603e57be297}{set\_lane}}(\textcolor{keywordtype}{float}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00109}00109\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}\ =\ vsetq\_lane\_f32(a,\ \mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ l);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00111}00111\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00116}\mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{00116}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{zero}}()}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00117}00117\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4_a9df51cb30b68d6d51ca607e64aa1ebf0}{vfloat4}}(vdupq\_n\_f32(0.0f));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00119}00119\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00124}\mbox{\hyperlink{structvfloat4_a0e509608b3eb96b4565b5d08a3d76147}{00124}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structvfloat4_a0e509608b3eb96b4565b5d08a3d76147}{load1}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ p)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00125}00125\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4_a9df51cb30b68d6d51ca607e64aa1ebf0}{vfloat4}}(vld1q\_dup\_f32(p));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00127}00127\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00132}\mbox{\hyperlink{structvfloat4_adb9f24117e36abce6db29dc7ac2eae83}{00132}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structvfloat4_adb9f24117e36abce6db29dc7ac2eae83}{loada}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ p)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00133}00133\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4_a9df51cb30b68d6d51ca607e64aa1ebf0}{vfloat4}}(vld1q\_f32(p));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00135}00135\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00140}\mbox{\hyperlink{structvfloat4_a13edfd5bac159c8a65e10a3bd9355b4d}{00140}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structvfloat4_a13edfd5bac159c8a65e10a3bd9355b4d}{lane\_id}}()}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00141}00141\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ \textcolor{keywordtype}{float}\ data[4]\ \{\ 0.0f,\ 1.0f,\ 2.0f,\ 3.0f\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4_a9df51cb30b68d6d51ca607e64aa1ebf0}{vfloat4}}(vld1q\_f32(data));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00144}00144\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00149}\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{00149}}\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}\ l0,\ \textcolor{keywordtype}{int}\ l1>\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00150}00150\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00151}00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4_a9df51cb30b68d6d51ca607e64aa1ebf0}{vfloat4}}(\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane<l0>}}(),\ \mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane<l1>}}(),\ 0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00152}00152\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00157}\mbox{\hyperlink{structvfloat4_aaee95a6a617e802565ca29127b449c05}{00157}}\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}\ l0,\ \textcolor{keywordtype}{int}\ l1,\ \textcolor{keywordtype}{int}\ l2>\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structvfloat4_aaee95a6a617e802565ca29127b449c05}{swz}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00158}00158\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4_a9df51cb30b68d6d51ca607e64aa1ebf0}{vfloat4}}(\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane<l0>}}(),\ \mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane<l1>}}(),\ \mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane<l2>}}(),\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00160}00160\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00165}\mbox{\hyperlink{structvfloat4_a6784f5b4c56b9ea3e874a3063698b41b}{00165}}\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}\ l0,\ \textcolor{keywordtype}{int}\ l1,\ \textcolor{keywordtype}{int}\ l2,\ \textcolor{keywordtype}{int}\ l3>\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structvfloat4_a6784f5b4c56b9ea3e874a3063698b41b}{swz}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00166}00166\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4_a9df51cb30b68d6d51ca607e64aa1ebf0}{vfloat4}}(\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane<l0>}}(),\ \mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane<l1>}}(),\ \mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane<l2>}}(),\ \mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane<l3>}}());}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00168}00168\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00173}\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{00173}}\ \ \ \ \ float32x4\_t\ \mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00174}00174\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00176}00176\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00177}00177\ \textcolor{comment}{//\ vint4\ data\ type}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00178}00178\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00183}\mbox{\hyperlink{structvint4}{00183}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structvint4}{vint4}}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00184}00184\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00188}\mbox{\hyperlink{structvint4_a3315184e8bb4f0cf1ca8dcff1f57cdae}{00188}}\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4_a3315184e8bb4f0cf1ca8dcff1f57cdae}{vint4}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00196}\mbox{\hyperlink{structvint4_a1b812f25ffa8336784bd02a6e9f0d9c5}{00196}}\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structvint4_a1b812f25ffa8336784bd02a6e9f0d9c5}{vint4}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ *p)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00197}00197\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00198}00198\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}\ =\ vld1q\_s32(p);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00199}00199\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00204}\mbox{\hyperlink{structvint4_a589524ee2f87d50caccd10ac6be55906}{00204}}\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structvint4_a589524ee2f87d50caccd10ac6be55906}{vint4}}(\textcolor{keyword}{const}\ uint8\_t\ *p)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00205}00205\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00206}00206\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cast\ is\ safe\ -\/\ NEON\ loads\ are\ allowed\ to\ be\ unaligned}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00207}00207\ \ \ \ \ \ \ \ \ uint32x2\_t\ t8\ =\ vld1\_dup\_u32(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }uint32\_t*\textcolor{keyword}{>}(p));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00208}00208\ \ \ \ \ \ \ \ \ uint16x4\_t\ t16\ =\ vget\_low\_u16(vmovl\_u8(vreinterpret\_u8\_u32(t8)));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00209}00209\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}\ =\ vreinterpretq\_s32\_u32(vmovl\_u16(t16));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00210}00210\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00217}\mbox{\hyperlink{structvint4_a12de585f3c81a2ca2e314c0708db7586}{00217}}\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structvint4_a12de585f3c81a2ca2e314c0708db7586}{vint4}}(\textcolor{keywordtype}{int}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00218}00218\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00219}00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}\ =\ vdupq\_n\_s32(a);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00220}00220\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00227}\mbox{\hyperlink{structvint4_a3a65e982fff28e65efdc09ca250ee38a}{00227}}\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structvint4_a3a65e982fff28e65efdc09ca250ee38a}{vint4}}(\textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{int}\ b,\ \textcolor{keywordtype}{int}\ c,\ \textcolor{keywordtype}{int}\ d)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00228}00228\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00229}00229\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ v[4]\ \{\ a,\ b,\ c,\ d\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00230}00230\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}\ =\ vld1q\_s32(v);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00231}00231\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00236}\mbox{\hyperlink{structvint4_a6bca681dbed63e5d42a842301ef0c0e2}{00236}}\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structvint4_a6bca681dbed63e5d42a842301ef0c0e2}{vint4}}(int32x4\_t\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00237}00237\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00238}00238\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}\ =\ a;}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00239}00239\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00244}\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{00244}}\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}\ l>\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00245}00245\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00246}00246\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vgetq\_lane\_s32(\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ l);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00247}00247\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00252}\mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{00252}}\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}\ l>\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{set\_lane}}(\textcolor{keywordtype}{int}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00253}00253\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00254}00254\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}\ =\ vsetq\_lane\_s32(a,\ \mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ l);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00255}00255\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00256}00256\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00260}\mbox{\hyperlink{structvint4_a9dfa1c40a3c4dbc0858567dc629a80b8}{00260}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{structvint4_a9dfa1c40a3c4dbc0858567dc629a80b8}{zero}}()}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00261}00261\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00262}00262\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4_a3315184e8bb4f0cf1ca8dcff1f57cdae}{vint4}}(0);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00263}00263\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00268}\mbox{\hyperlink{structvint4_a6f52405cb589874ed1d669cdcb60dac5}{00268}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{structvint4_a6f52405cb589874ed1d669cdcb60dac5}{load1}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}*\ p)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00269}00269\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00270}00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4_a3315184e8bb4f0cf1ca8dcff1f57cdae}{vint4}}(*p);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00271}00271\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00272}00272\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00276}\mbox{\hyperlink{structvint4_ab899bfb3323ffa799403172941113a7e}{00276}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{structvint4_ab899bfb3323ffa799403172941113a7e}{load}}(\textcolor{keyword}{const}\ uint8\_t*\ p)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00277}00277\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00278}00278\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ data;}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00279}00279\ \ \ \ \ \ \ \ \ std::memcpy(\&data.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ p,\ 4\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00280}00280\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data;}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00281}00281\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00282}00282\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00286}\mbox{\hyperlink{structvint4_aea20d19d7588a0f79acc5895e07ed4e8}{00286}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{structvint4_aea20d19d7588a0f79acc5895e07ed4e8}{loada}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}*\ p)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00287}00287\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00288}00288\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4_a3315184e8bb4f0cf1ca8dcff1f57cdae}{vint4}}(p);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00289}00289\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00290}00290\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00294}\mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{00294}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{lane\_id}}()}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00295}00295\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00296}00296\ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ data[4]\ \{\ 0,\ 1,\ 2,\ 3\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00297}00297\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4_a3315184e8bb4f0cf1ca8dcff1f57cdae}{vint4}}(vld1q\_s32(data));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00298}00298\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00303}\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{00303}}\ \ \ \ \ int32x4\_t\ \mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00304}00304\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00306}00306\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00307}00307\ \textcolor{comment}{//\ vmask4\ data\ type}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00308}00308\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00309}00309\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00313}\mbox{\hyperlink{structvmask4}{00313}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structvmask4}{vmask4}}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00314}00314\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00318}\mbox{\hyperlink{structvmask4_a4c655b46ecf33a50c4b12bbeccb6412f}{00318}}\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structvmask4_a4c655b46ecf33a50c4b12bbeccb6412f}{vmask4}}(uint32x4\_t\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00319}00319\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00320}00320\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}\ =\ a;}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00321}00321\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00322}00322\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00323}00323\ \textcolor{preprocessor}{\#if\ !defined(\_MSC\_VER)}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00327}\mbox{\hyperlink{structvmask4_af9b813f0004147ced490649d6ccb5833}{00327}}\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structvmask4_af9b813f0004147ced490649d6ccb5833}{vmask4}}(int32x4\_t\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00328}00328\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00329}00329\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}\ =\ vreinterpretq\_u32\_s32(a);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00330}00330\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00331}00331\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00332}00332\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00336}\mbox{\hyperlink{structvmask4_a05d56dd36e27892f46832a5d79a22742}{00336}}\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structvmask4_a05d56dd36e27892f46832a5d79a22742}{vmask4}}(\textcolor{keywordtype}{bool}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00337}00337\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00338}00338\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}\ =\ vreinterpretq\_u32\_s32(vdupq\_n\_s32(a\ ==\ \textcolor{keyword}{true}\ ?\ -\/1\ :\ 0));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00339}00339\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00340}00340\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00346}\mbox{\hyperlink{structvmask4_acd8d5491f8017b9e1af6703cf1ef8282}{00346}}\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structvmask4_acd8d5491f8017b9e1af6703cf1ef8282}{vmask4}}(\textcolor{keywordtype}{bool}\ a,\ \textcolor{keywordtype}{bool}\ b,\ \textcolor{keywordtype}{bool}\ c,\ \textcolor{keywordtype}{bool}\ d)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00347}00347\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00348}00348\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ v[4]\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ a\ ==\ \textcolor{keyword}{true}\ ?\ -\/1\ :\ 0,}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ b\ ==\ \textcolor{keyword}{true}\ ?\ -\/1\ :\ 0,}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ c\ ==\ \textcolor{keyword}{true}\ ?\ -\/1\ :\ 0,}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ d\ ==\ \textcolor{keyword}{true}\ ?\ -\/1\ :\ 0}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00353}00353\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00354}00354\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00355}00355\ \ \ \ \ \ \ \ \ int32x4\_t\ ms\ =\ vld1q\_s32(v);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00356}00356\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}\ =\ vreinterpretq\_u32\_s32(ms);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00357}00357\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00358}00358\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00362}\mbox{\hyperlink{structvmask4_af30ce438df1c692bc8b479ceeae2f5d8}{00362}}\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}32\_t\ l>\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structvmask4_af30ce438df1c692bc8b479ceeae2f5d8}{lane}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00363}00363\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00364}00364\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vgetq\_lane\_u32(\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}},\ l)\ !=\ 0;}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00365}00365\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00366}00366\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00370}\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{00370}}\ \ \ \ \ uint32x4\_t\ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00371}00371\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00372}00372\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00373}00373\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00374}00374\ \textcolor{comment}{//\ vmask4\ operators\ and\ functions}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00375}00375\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00376}00376\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00380}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_abd4449ff41ecc8e7bcd98cfffd6e5c40}{00380}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_abd4449ff41ecc8e7bcd98cfffd6e5c40}{operator|}}(\mbox{\hyperlink{structvmask4}{vmask4}}\ a,\ \mbox{\hyperlink{structvmask4}{vmask4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00381}00381\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00382}00382\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(vorrq\_u32(a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}},\ b.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00383}00383\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00384}00384\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00388}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a3c918135b34720033c36a00e92609b5f}{00388}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a3c918135b34720033c36a00e92609b5f}{operator\&}}(\mbox{\hyperlink{structvmask4}{vmask4}}\ a,\ \mbox{\hyperlink{structvmask4}{vmask4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00389}00389\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00390}00390\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(vandq\_u32(a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}},\ b.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00391}00391\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00392}00392\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00396}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad9c9d50dab86c251438557f636c62d99}{00396}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad9c9d50dab86c251438557f636c62d99}{operator\string^}}(\mbox{\hyperlink{structvmask4}{vmask4}}\ a,\ \mbox{\hyperlink{structvmask4}{vmask4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00397}00397\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00398}00398\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(veorq\_u32(a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}},\ b.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00399}00399\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00400}00400\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00404}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a78fa82697d1fa4a35ffae4ae8c083d87}{00404}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a78fa82697d1fa4a35ffae4ae8c083d87}{operator\string~}}(\mbox{\hyperlink{structvmask4}{vmask4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00405}00405\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00406}00406\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(vmvnq\_u32(a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00407}00407\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00408}00408\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00414}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{00414}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{mask}}(\mbox{\hyperlink{structvmask4}{vmask4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00415}00415\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00416}00416\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ shifta[4]\ \{\ 0,\ 1,\ 2,\ 3\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00417}00417\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ int32x4\_t\ shift\ =\ vld1q\_s32(shifta);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00418}00418\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00419}00419\ \ \ \ \ uint32x4\_t\ tmp\ =\ vshrq\_n\_u32(a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}},\ 31);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00420}00420\ \ \ \ \ \textcolor{keywordflow}{return}\ vaddvq\_u32(vshlq\_u32(tmp,\ shift));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00421}00421\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00422}00422\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00423}00423\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00424}00424\ \textcolor{comment}{//\ vint4\ operators\ and\ functions}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00425}00425\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00426}00426\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00430}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a2f09223b237ecfdc252f7626b527b187}{00430}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a2f09223b237ecfdc252f7626b527b187}{operator+}}(\mbox{\hyperlink{structvint4}{vint4}}\ a,\ \mbox{\hyperlink{structvint4}{vint4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00431}00431\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00432}00432\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vaddq\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00433}00433\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00434}00434\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00438}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_abf4f6606eda4504d550ddb0ea5ecbf07}{00438}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_abf4f6606eda4504d550ddb0ea5ecbf07}{operator-\/}}(\mbox{\hyperlink{structvint4}{vint4}}\ a,\ \mbox{\hyperlink{structvint4}{vint4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00439}00439\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00440}00440\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vsubq\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00441}00441\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00442}00442\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00446}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_afc566c10fca50ed1a8aa5c76d7c90b10}{00446}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_afc566c10fca50ed1a8aa5c76d7c90b10}{operator*}}(\mbox{\hyperlink{structvint4}{vint4}}\ a,\ \mbox{\hyperlink{structvint4}{vint4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00447}00447\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00448}00448\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vmulq\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00449}00449\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00450}00450\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00454}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a934cad24fee09ba3cbfd852ff2f1b67d}{00454}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a78fa82697d1fa4a35ffae4ae8c083d87}{operator\string~}}(\mbox{\hyperlink{structvint4}{vint4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00455}00455\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00456}00456\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vmvnq\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00457}00457\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00458}00458\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00462}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a2a45cffd7e7c564d7022e58dbbc457f7}{00462}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_abd4449ff41ecc8e7bcd98cfffd6e5c40}{operator|}}(\mbox{\hyperlink{structvint4}{vint4}}\ a,\ \mbox{\hyperlink{structvint4}{vint4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00463}00463\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00464}00464\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vorrq\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00465}00465\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00466}00466\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00470}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a70d9cfb9200ba9bdebec8be5afe57062}{00470}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a3c918135b34720033c36a00e92609b5f}{operator\&}}(\mbox{\hyperlink{structvint4}{vint4}}\ a,\ \mbox{\hyperlink{structvint4}{vint4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00471}00471\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00472}00472\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vandq\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00473}00473\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00474}00474\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00478}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a5587ea878f146d2a982182f008a3b44c}{00478}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad9c9d50dab86c251438557f636c62d99}{operator\string^}}(\mbox{\hyperlink{structvint4}{vint4}}\ a,\ \mbox{\hyperlink{structvint4}{vint4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00479}00479\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00480}00480\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(veorq\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00481}00481\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00482}00482\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00486}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ae7b23ca57bd80664266ee5812bc96ddc}{00486}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ae7b23ca57bd80664266ee5812bc96ddc}{operator==}}(\mbox{\hyperlink{structvint4}{vint4}}\ a,\ \mbox{\hyperlink{structvint4}{vint4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00487}00487\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00488}00488\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(vceqq\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00489}00489\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00490}00490\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00494}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a069f3f26b4ea8c66de0d361e0f2450fd}{00494}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a069f3f26b4ea8c66de0d361e0f2450fd}{operator!=}}(\mbox{\hyperlink{structvint4}{vint4}}\ a,\ \mbox{\hyperlink{structvint4}{vint4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00495}00495\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00496}00496\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{\string~vmask4}}(vceqq\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00497}00497\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00498}00498\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00502}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_aadaceefd305b25dde80de149e65103b3}{00502}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_aadaceefd305b25dde80de149e65103b3}{operator<}}(\mbox{\hyperlink{structvint4}{vint4}}\ a,\ \mbox{\hyperlink{structvint4}{vint4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00503}00503\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00504}00504\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(vcltq\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00505}00505\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00506}00506\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00510}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a1b41a86712a135c8e77c48fdc5896273}{00510}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a1b41a86712a135c8e77c48fdc5896273}{operator>}}(\mbox{\hyperlink{structvint4}{vint4}}\ a,\ \mbox{\hyperlink{structvint4}{vint4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00511}00511\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00512}00512\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(vcgtq\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00513}00513\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00514}00514\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00518}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a4fa40a2884139d4b717242f8c33415d5}{00518}}\ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}\ s>\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a4fa40a2884139d4b717242f8c33415d5}{lsl}}(\mbox{\hyperlink{structvint4}{vint4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00519}00519\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00520}00520\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vshlq\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ vdupq\_n\_s32(s)));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00521}00521\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00522}00522\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00526}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a8b411f4373c9d5e43f7dee1b588c979b}{00526}}\ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}\ s>\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a8b411f4373c9d5e43f7dee1b588c979b}{lsr}}(\mbox{\hyperlink{structvint4}{vint4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00527}00527\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00528}00528\ \ \ \ \ uint32x4\_t\ ua\ =\ vreinterpretq\_u32\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}});}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00529}00529\ \ \ \ \ ua\ =\ vshlq\_u32(ua,\ vdupq\_n\_s32(-\/s));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00530}00530\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vreinterpretq\_s32\_u32(ua));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00531}00531\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00532}00532\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00536}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a3aafe2c4e0e07459e5801077efe8b0e9}{00536}}\ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}\ s>\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a3aafe2c4e0e07459e5801077efe8b0e9}{asr}}(\mbox{\hyperlink{structvint4}{vint4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00537}00537\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00538}00538\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vshlq\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ vdupq\_n\_s32(-\/s)));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00539}00539\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00540}00540\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00544}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a7a85b43ef2e9f39c7c96efd70f2c4f44}{00544}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a7a85b43ef2e9f39c7c96efd70f2c4f44}{min}}(\mbox{\hyperlink{structvint4}{vint4}}\ a,\ \mbox{\hyperlink{structvint4}{vint4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00545}00545\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00546}00546\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vminq\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00547}00547\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00548}00548\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00552}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a2d6351bd14baadd98934494a251dc5a3}{00552}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a2d6351bd14baadd98934494a251dc5a3}{max}}(\mbox{\hyperlink{structvint4}{vint4}}\ a,\ \mbox{\hyperlink{structvint4}{vint4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00553}00553\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00554}00554\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vmaxq\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00555}00555\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00556}00556\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00560}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a0183aec58e3a5ebe985eb91a3878c03b}{00560}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a0183aec58e3a5ebe985eb91a3878c03b}{hmin}}(\mbox{\hyperlink{structvint4}{vint4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00561}00561\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00562}00562\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vminvq\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00563}00563\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00564}00564\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00568}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a3af99a9acad961db265a9deb1505c9c5}{00568}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a3af99a9acad961db265a9deb1505c9c5}{hmax}}(\mbox{\hyperlink{structvint4}{vint4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00569}00569\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00570}00570\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vmaxvq\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00571}00571\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00572}00572\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00576}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a815aba9fd92c23da0e753b8e19e0eedb}{00576}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a815aba9fd92c23da0e753b8e19e0eedb}{hadd\_s}}(\mbox{\hyperlink{structvint4}{vint4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00577}00577\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00578}00578\ \ \ \ \ int32x2\_t\ t\ =\ vadd\_s32(vget\_high\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}),\ vget\_low\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00579}00579\ \ \ \ \ \textcolor{keywordflow}{return}\ vget\_lane\_s32(vpadd\_s32(t,\ t),\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00580}00580\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00581}00581\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00585}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a203ae30cc77a9374d87a040df90a541c}{00585}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a203ae30cc77a9374d87a040df90a541c}{storea}}(\mbox{\hyperlink{structvint4}{vint4}}\ a,\ \textcolor{keywordtype}{int}*\ p)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00586}00586\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00587}00587\ \ \ \ \ vst1q\_s32(p,\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}});}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00588}00588\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00589}00589\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00593}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a64b2b468ffb4186087ed14323c465530}{00593}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a64b2b468ffb4186087ed14323c465530}{store}}(\mbox{\hyperlink{structvint4}{vint4}}\ a,\ \textcolor{keywordtype}{int}*\ p)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00594}00594\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00595}00595\ \ \ \ \ vst1q\_s32(p,\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}});}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00596}00596\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00597}00597\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00601}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_aaeca9cc7648e0922de5b9b112dfed12b}{00601}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a64b2b468ffb4186087ed14323c465530}{store}}(\mbox{\hyperlink{structvint4}{vint4}}\ a,\ uint8\_t*\ p)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00602}00602\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00603}00603\ \ \ \ \ std::memcpy(p,\ \&a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})\ *\ 4);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00604}00604\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00605}00605\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00609}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad4bf66a99066037a51d26da7f546fc42}{00609}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad4bf66a99066037a51d26da7f546fc42}{store\_nbytes}}(\mbox{\hyperlink{structvint4}{vint4}}\ a,\ uint8\_t*\ p)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00610}00610\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00611}00611\ \ \ \ \ vst1q\_lane\_s32(\textcolor{keyword}{reinterpret\_cast<}int32\_t*\textcolor{keyword}{>}(p),\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00612}00612\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00613}00613\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00617}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a539d4d222e2f5ee27469fc38845cd170}{00617}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a539d4d222e2f5ee27469fc38845cd170}{gatheri}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}*\ base,\ \mbox{\hyperlink{structvint4}{vint4}}\ indices)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00618}00618\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00619}00619\ \ \ \ \ \textcolor{keyword}{alignas}(16)\ \textcolor{keywordtype}{int}\ idx[4];}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00620}00620\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a203ae30cc77a9374d87a040df90a541c}{storea}}(indices,\ idx);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00621}00621\ \ \ \ \ \textcolor{keyword}{alignas}(16)\ \textcolor{keywordtype}{int}\ vals[4];}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00622}00622\ \ \ \ \ vals[0]\ =\ base[idx[0]];}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00623}00623\ \ \ \ \ vals[1]\ =\ base[idx[1]];}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00624}00624\ \ \ \ \ vals[2]\ =\ base[idx[2]];}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00625}00625\ \ \ \ \ vals[3]\ =\ base[idx[3]];}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00626}00626\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vals);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00627}00627\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00628}00628\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00632}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_af2e7991e895c7206d444344d2c4f3403}{00632}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_af2e7991e895c7206d444344d2c4f3403}{pack\_low\_bytes}}(\mbox{\hyperlink{structvint4}{vint4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00633}00633\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00634}00634\ \ \ \ \ \textcolor{keyword}{alignas}(16)\ uint8\_t\ shuf[16]\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00635}00635\ \ \ \ \ \ \ \ \ 0,\ 4,\ 8,\ 12,\ \ \ 0,\ 0,\ 0,\ 0,\ \ \ 0,\ 0,\ 0,\ 0,\ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00636}00636\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00637}00637\ \ \ \ \ uint8x16\_t\ idx\ =\ vld1q\_u8(shuf);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00638}00638\ \ \ \ \ int8x16\_t\ av\ =\ vreinterpretq\_s8\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}});}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00639}00639\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vreinterpretq\_s32\_s8(vqtbl1q\_s8(av,\ idx)));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00640}00640\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00641}00641\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00645}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_abe3db3d259e423d6a186bf5e4eb33d30}{00645}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_abe3db3d259e423d6a186bf5e4eb33d30}{select}}(\mbox{\hyperlink{structvint4}{vint4}}\ a,\ \mbox{\hyperlink{structvint4}{vint4}}\ b,\ \mbox{\hyperlink{structvmask4}{vmask4}}\ cond)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00646}00646\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00647}00647\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vbslq\_s32(cond.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}},\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00648}00648\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00649}00649\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00650}00650\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00651}00651\ \textcolor{comment}{//\ vfloat4\ operators\ and\ functions}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00652}00652\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00653}00653\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00657}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ac917d6d043ae722325a5f9e5c744135b}{00657}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a2f09223b237ecfdc252f7626b527b187}{operator+}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a,\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00658}00658\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00659}00659\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(vaddq\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00660}00660\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00661}00661\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00665}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a504ea848fa45d815a071380f97fb8fb9}{00665}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_abf4f6606eda4504d550ddb0ea5ecbf07}{operator-\/}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a,\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00666}00666\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00667}00667\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(vsubq\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00668}00668\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00669}00669\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00673}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a6ec6a9e5285329bad79fc3e7277d29bd}{00673}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_afc566c10fca50ed1a8aa5c76d7c90b10}{operator*}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a,\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00674}00674\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00675}00675\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(vmulq\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00676}00676\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00677}00677\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00681}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad535e92dcf6128bff2697d10569daf33}{00681}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad535e92dcf6128bff2697d10569daf33}{operator/}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a,\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00682}00682\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00683}00683\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(vdivq\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00684}00684\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00685}00685\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00689}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a15b3a417d47fb340e426df508cbf8284}{00689}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ae7b23ca57bd80664266ee5812bc96ddc}{operator==}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a,\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00690}00690\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00691}00691\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(vceqq\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00692}00692\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00693}00693\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00697}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ae20a417bde159a5107ac8429d5819539}{00697}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a069f3f26b4ea8c66de0d361e0f2450fd}{operator!=}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a,\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00698}00698\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00699}00699\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(vmvnq\_u32(vceqq\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}})));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00700}00700\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00701}00701\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00705}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a68157f3dd323d4858acbd9590c050f59}{00705}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_aadaceefd305b25dde80de149e65103b3}{operator<}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a,\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00706}00706\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00707}00707\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(vcltq\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00708}00708\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00709}00709\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00713}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ab98db78b76c72c25e0bf7abab20c7cd6}{00713}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a1b41a86712a135c8e77c48fdc5896273}{operator>}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a,\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00714}00714\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00715}00715\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(vcgtq\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00716}00716\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00717}00717\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00721}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a253da9de0e4c6ad15b3c7d43f4ef153c}{00721}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a253da9de0e4c6ad15b3c7d43f4ef153c}{operator<=}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a,\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00722}00722\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00723}00723\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(vcleq\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00724}00724\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00725}00725\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00729}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a70d736a3ece17213585ae4dd028ef15e}{00729}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a70d736a3ece17213585ae4dd028ef15e}{operator>=}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a,\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00730}00730\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00731}00731\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(vcgeq\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00732}00732\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00733}00733\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00739}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad216ad1f41f2407130aee5261cd6fbd1}{00739}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a7a85b43ef2e9f39c7c96efd70f2c4f44}{min}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a,\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00740}00740\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00741}00741\ \ \ \ \ \textcolor{comment}{//\ Do\ not\ reorder\ -\/\ second\ operand\ will\ return\ if\ either\ is\ NaN}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00742}00742\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(vminnmq\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00743}00743\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00744}00744\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00750}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a2e8719e762dd2a59b2583bf3b8693c44}{00750}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a2d6351bd14baadd98934494a251dc5a3}{max}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a,\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ b)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00751}00751\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00752}00752\ \ \ \ \ \textcolor{comment}{//\ Do\ not\ reorder\ -\/\ second\ operand\ will\ return\ if\ either\ is\ NaN}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00753}00753\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(vmaxnmq\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00754}00754\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00755}00755\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00759}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a3c99e71f1edc5cba06984be10ee78d80}{00759}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a3c99e71f1edc5cba06984be10ee78d80}{abs}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00760}00760\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00761}00761\ \ \ \ \ float32x4\_t\ zero\ =\ vdupq\_n\_f32(0.0f);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00762}00762\ \ \ \ \ float32x4\_t\ inv\ =\ vsubq\_f32(zero,\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}});}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00763}00763\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(vmaxq\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ inv));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00764}00764\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00765}00765\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00769}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_aef8bc219f1f9eee92b018e6773ac087d}{00769}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_aef8bc219f1f9eee92b018e6773ac087d}{round}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00770}00770\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00771}00771\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(vrndnq\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00772}00772\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00773}00773\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00777}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a1a118a105d5cdd4ce647b554e2390c24}{00777}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a0183aec58e3a5ebe985eb91a3878c03b}{hmin}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00778}00778\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00779}00779\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(vminvq\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00780}00780\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00781}00781\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00785}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a5f0ad3199c8a44b07cd8c6fc7682595f}{00785}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a3af99a9acad961db265a9deb1505c9c5}{hmax}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00786}00786\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00787}00787\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(vmaxvq\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00788}00788\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00789}00789\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00793}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad92bad1188006bf204ef65cac805c8f4}{00793}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a815aba9fd92c23da0e753b8e19e0eedb}{hadd\_s}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00794}00794\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00795}00795\ \ \ \ \ \textcolor{comment}{//\ Perform\ halving\ add\ to\ ensure\ invariance;\ we\ cannot\ use\ vaddqv\ as\ this}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00796}00796\ \ \ \ \ \textcolor{comment}{//\ does\ (0\ +\ 1\ +\ 2\ +\ 3)\ which\ is\ not\ invariant\ with\ x86\ (0\ +\ 2)\ +\ (1\ +\ 3).}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00797}00797\ \ \ \ \ float32x2\_t\ t\ =\ vadd\_f32(vget\_high\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}),\ vget\_low\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00798}00798\ \ \ \ \ \textcolor{keywordflow}{return}\ vget\_lane\_f32(vpadd\_f32(t,\ t),\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00799}00799\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00800}00800\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00804}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a79cf1473d2d948c7158856e262b3ff9b}{00804}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a79cf1473d2d948c7158856e262b3ff9b}{sqrt}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00805}00805\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00806}00806\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(vsqrtq\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00807}00807\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00808}00808\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00812}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a008027d6bed6cf6482cd912d9326685a}{00812}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_abe3db3d259e423d6a186bf5e4eb33d30}{select}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a,\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ b,\ \mbox{\hyperlink{structvmask4}{vmask4}}\ cond)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00813}00813\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00814}00814\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(vbslq\_f32(cond.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}},\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00815}00815\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00816}00816\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00820}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a7bb0d5791f7c2979e5fd3784a5216791}{00820}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a7bb0d5791f7c2979e5fd3784a5216791}{select\_msb}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a,\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ b,\ \mbox{\hyperlink{structvmask4}{vmask4}}\ cond)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00821}00821\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00822}00822\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32x4\_t\ msb\ =\ vdupq\_n\_u32(0x80000000u);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00823}00823\ \ \ \ \ uint32x4\_t\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{mask}}\ =\ vcgeq\_u32(cond.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}},\ msb);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00824}00824\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(vbslq\_f32(\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{mask}},\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00825}00825\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00826}00826\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00830}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_aff91c3b09a7495ae8a23556c9c29817a}{00830}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_aff91c3b09a7495ae8a23556c9c29817a}{gatherf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ base,\ \mbox{\hyperlink{structvint4}{vint4}}\ indices)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00831}00831\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00832}00832\ \ \ \ \ \textcolor{keyword}{alignas}(16)\ \textcolor{keywordtype}{int}\ idx[4];}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00833}00833\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a203ae30cc77a9374d87a040df90a541c}{storea}}(indices,\ idx);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00834}00834\ \ \ \ \ \textcolor{keyword}{alignas}(16)\ \textcolor{keywordtype}{float}\ vals[4];}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00835}00835\ \ \ \ \ vals[0]\ =\ base[idx[0]];}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00836}00836\ \ \ \ \ vals[1]\ =\ base[idx[1]];}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00837}00837\ \ \ \ \ vals[2]\ =\ base[idx[2]];}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00838}00838\ \ \ \ \ vals[3]\ =\ base[idx[3]];}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00839}00839\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(vals);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00840}00840\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00841}00841\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00845}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ae170cfb9f0210c7834a103cdbc30df6c}{00845}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a64b2b468ffb4186087ed14323c465530}{store}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a,\ \textcolor{keywordtype}{float}*\ p)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00846}00846\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00847}00847\ \ \ \ \ vst1q\_f32(p,\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}});}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00848}00848\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00849}00849\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00853}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_abe1f405d7566610373291f7ccaded5f3}{00853}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a203ae30cc77a9374d87a040df90a541c}{storea}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a,\ \textcolor{keywordtype}{float}*\ p)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00854}00854\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00855}00855\ \ \ \ \ vst1q\_f32(p,\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}});}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00856}00856\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00857}00857\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00861}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a29f6a36e74f642b3826523de6a8ac1ba}{00861}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a29f6a36e74f642b3826523de6a8ac1ba}{float\_to\_int}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00862}00862\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00863}00863\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vcvtq\_s32\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00864}00864\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00865}00865\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00869}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a0245151ab6070d8f5fbf9d33157deeb5}{00869}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a0245151ab6070d8f5fbf9d33157deeb5}{float\_to\_int\_rtn}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00870}00870\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00871}00871\ \ \ \ \ a\ =\ a\ +\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(0.5f);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00872}00872\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vcvtq\_s32\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00873}00873\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00874}00874\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00878}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a1616707021fd010410bd83f58b05054e}{00878}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a1616707021fd010410bd83f58b05054e}{int\_to\_float}}(\mbox{\hyperlink{structvint4}{vint4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00879}00879\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00880}00880\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(vcvtq\_f32\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00881}00881\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00882}00882\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00886}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ae8701a3f44d7b99016d54c3d6ee27581}{00886}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ae8701a3f44d7b99016d54c3d6ee27581}{float\_to\_float16}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00887}00887\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00888}00888\ \ \ \ \ \textcolor{comment}{//\ Generate\ float16\ value}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00889}00889\ \ \ \ \ float16x4\_t\ f16\ =\ vcvt\_f16\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}});}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00890}00890\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00891}00891\ \ \ \ \ \textcolor{comment}{//\ Convert\ each\ 16-\/bit\ float\ pattern\ to\ a\ 32-\/bit\ pattern}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00892}00892\ \ \ \ \ uint16x4\_t\ u16\ =\ vreinterpret\_u16\_f16(f16);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00893}00893\ \ \ \ \ uint32x4\_t\ u32\ =\ vmovl\_u16(u16);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00894}00894\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vreinterpretq\_s32\_u32(u32));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00895}00895\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00896}00896\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00900}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a10df3e400408261cacabfeb14d33ff32}{00900}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ uint16\_t\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ae8701a3f44d7b99016d54c3d6ee27581}{float\_to\_float16}}(\textcolor{keywordtype}{float}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00901}00901\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00902}00902\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ av(a);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00903}00903\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ae8701a3f44d7b99016d54c3d6ee27581}{float\_to\_float16}}(av).\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<0>());}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00904}00904\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00905}00905\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00909}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_afd7aa2069bdf377067c3abaca1256432}{00909}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_afd7aa2069bdf377067c3abaca1256432}{float16\_to\_float}}(\mbox{\hyperlink{structvint4}{vint4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00910}00910\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00911}00911\ \ \ \ \ \textcolor{comment}{//\ Convert\ each\ 32-\/bit\ float\ pattern\ to\ a\ 16-\/bit\ pattern}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00912}00912\ \ \ \ \ uint32x4\_t\ u32\ =\ vreinterpretq\_u32\_s32(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}});}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00913}00913\ \ \ \ \ uint16x4\_t\ u16\ =\ vmovn\_u32(u32);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00914}00914\ \ \ \ \ float16x4\_t\ f16\ =\ vreinterpret\_f16\_u16(u16);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00915}00915\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00916}00916\ \ \ \ \ \textcolor{comment}{//\ Generate\ float16\ value}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00917}00917\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(vcvt\_f32\_f16(f16));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00918}00918\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00919}00919\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00923}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a68520f7bd047bc3034eab0079e09fe54}{00923}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_afd7aa2069bdf377067c3abaca1256432}{float16\_to\_float}}(uint16\_t\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00924}00924\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00925}00925\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ av(a);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00926}00926\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_afd7aa2069bdf377067c3abaca1256432}{float16\_to\_float}}(av).\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>();}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00927}00927\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00928}00928\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00936}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a8141d5bdceaf57ce3b39bbbeb89ffa95}{00936}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a8141d5bdceaf57ce3b39bbbeb89ffa95}{float\_as\_int}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00937}00937\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00938}00938\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vreinterpretq\_s32\_f32(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00939}00939\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00940}00940\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00948}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ac90994971469a58b88f3a56a8d86e070}{00948}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ac90994971469a58b88f3a56a8d86e070}{int\_as\_float}}(\mbox{\hyperlink{structvint4}{vint4}}\ v)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00949}00949\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00950}00950\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(vreinterpretq\_f32\_s32(v.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00951}00951\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00952}00952\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00956}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ae02607d922cc8a6893fae4ac82bffc86}{00956}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ae02607d922cc8a6893fae4ac82bffc86}{vtable\_prepare}}(\mbox{\hyperlink{structvint4}{vint4}}\ t0,\ \mbox{\hyperlink{structvint4}{vint4}}\&\ t0p)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00957}00957\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00958}00958\ \ \ \ \ t0p\ =\ t0;}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00959}00959\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00960}00960\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00961}00961\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00965}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a85f90749a9f0cdfbf5a94b250cafff5e}{00965}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ae02607d922cc8a6893fae4ac82bffc86}{vtable\_prepare}}(\mbox{\hyperlink{structvint4}{vint4}}\ t0,\ \mbox{\hyperlink{structvint4}{vint4}}\ t1,\ \mbox{\hyperlink{structvint4}{vint4}}\&\ t0p,\ \mbox{\hyperlink{structvint4}{vint4}}\&\ t1p)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00966}00966\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00967}00967\ \ \ \ \ t0p\ =\ t0;}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00968}00968\ \ \ \ \ t1p\ =\ t1;}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00969}00969\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00970}00970\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00974}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a9dae512169e56cda22858fdcf76f3a4c}{00974}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ae02607d922cc8a6893fae4ac82bffc86}{vtable\_prepare}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00975}00975\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ t0,\ \mbox{\hyperlink{structvint4}{vint4}}\ t1,\ \mbox{\hyperlink{structvint4}{vint4}}\ t2,\ \mbox{\hyperlink{structvint4}{vint4}}\ t3,}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00976}00976\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\&\ t0p,\ \mbox{\hyperlink{structvint4}{vint4}}\&\ t1p,\ \mbox{\hyperlink{structvint4}{vint4}}\&\ t2p,\ \mbox{\hyperlink{structvint4}{vint4}}\&\ t3p)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00977}00977\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00978}00978\ \ \ \ \ t0p\ =\ t0;}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00979}00979\ \ \ \ \ t1p\ =\ t1;}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00980}00980\ \ \ \ \ t2p\ =\ t2;}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00981}00981\ \ \ \ \ t3p\ =\ t3;}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00982}00982\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00983}00983\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00987}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad4dd956a47ffd39f142c0faf8c9279b9}{00987}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad4dd956a47ffd39f142c0faf8c9279b9}{vtable\_8bt\_32bi}}(\mbox{\hyperlink{structvint4}{vint4}}\ t0,\ \mbox{\hyperlink{structvint4}{vint4}}\ idx)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00988}00988\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00989}00989\ \ \ \ \ int8x16\_t\ table\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00990}00990\ \ \ \ \ \ \ \ \ vreinterpretq\_s8\_s32(t0.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}})}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00991}00991\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00992}00992\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00993}00993\ \ \ \ \ \textcolor{comment}{//\ Set\ index\ byte\ above\ max\ index\ for\ unused\ bytes\ so\ table\ lookup\ returns\ zero}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00994}00994\ \ \ \ \ int32x4\_t\ idx\_masked\ =\ vorrq\_s32(idx.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ vdupq\_n\_s32(0xFFFFFF00));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00995}00995\ \ \ \ \ uint8x16\_t\ idx\_bytes\ =\ vreinterpretq\_u8\_s32(idx\_masked);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00996}00996\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00997}00997\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vreinterpretq\_s32\_s8(vqtbl1q\_s8(table,\ idx\_bytes)));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00998}00998\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l00999}00999\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01003}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a2855381600ae7c54b4cc6a753460f5c6}{01003}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad4dd956a47ffd39f142c0faf8c9279b9}{vtable\_8bt\_32bi}}(\mbox{\hyperlink{structvint4}{vint4}}\ t0,\ \mbox{\hyperlink{structvint4}{vint4}}\ t1,\ \mbox{\hyperlink{structvint4}{vint4}}\ idx)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01004}01004\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01005}01005\ \ \ \ \ int8x16x2\_t\ table\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01006}01006\ \ \ \ \ \ \ \ \ vreinterpretq\_s8\_s32(t0.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}),}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01007}01007\ \ \ \ \ \ \ \ \ vreinterpretq\_s8\_s32(t1.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}})}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01008}01008\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01009}01009\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01010}01010\ \ \ \ \ \textcolor{comment}{//\ Set\ index\ byte\ above\ max\ index\ for\ unused\ bytes\ so\ table\ lookup\ returns\ zero}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01011}01011\ \ \ \ \ int32x4\_t\ idx\_masked\ =\ vorrq\_s32(idx.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ vdupq\_n\_s32(0xFFFFFF00));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01012}01012\ \ \ \ \ uint8x16\_t\ idx\_bytes\ =\ vreinterpretq\_u8\_s32(idx\_masked);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01013}01013\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01014}01014\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vreinterpretq\_s32\_s8(vqtbl2q\_s8(table,\ idx\_bytes)));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01015}01015\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01016}01016\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01020}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad78f9b072711a081a4d77556cfe0c74f}{01020}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad4dd956a47ffd39f142c0faf8c9279b9}{vtable\_8bt\_32bi}}(\mbox{\hyperlink{structvint4}{vint4}}\ t0,\ \mbox{\hyperlink{structvint4}{vint4}}\ t1,\ \mbox{\hyperlink{structvint4}{vint4}}\ t2,\ \mbox{\hyperlink{structvint4}{vint4}}\ t3,\ \mbox{\hyperlink{structvint4}{vint4}}\ idx)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01021}01021\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01022}01022\ \ \ \ \ int8x16x4\_t\ table\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01023}01023\ \ \ \ \ \ \ \ \ vreinterpretq\_s8\_s32(t0.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}),}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01024}01024\ \ \ \ \ \ \ \ \ vreinterpretq\_s8\_s32(t1.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}),}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01025}01025\ \ \ \ \ \ \ \ \ vreinterpretq\_s8\_s32(t2.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}),}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01026}01026\ \ \ \ \ \ \ \ \ vreinterpretq\_s8\_s32(t3.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}})}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01027}01027\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01028}01028\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01029}01029\ \ \ \ \ \textcolor{comment}{//\ Set\ index\ byte\ above\ max\ index\ for\ unused\ bytes\ so\ table\ lookup\ returns\ zero}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01030}01030\ \ \ \ \ int32x4\_t\ idx\_masked\ =\ vorrq\_s32(idx.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ vdupq\_n\_s32(0xFFFFFF00));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01031}01031\ \ \ \ \ uint8x16\_t\ idx\_bytes\ =\ vreinterpretq\_u8\_s32(idx\_masked);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01032}01032\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01033}01033\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(vreinterpretq\_s32\_s8(vqtbl4q\_s8(table,\ idx\_bytes)));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01034}01034\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01035}01035\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01044}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a8ea3f169069b462356409fcc15f13aef}{01044}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a8ea3f169069b462356409fcc15f13aef}{interleave\_rgba8}}(\mbox{\hyperlink{structvint4}{vint4}}\ r,\ \mbox{\hyperlink{structvint4}{vint4}}\ g,\ \mbox{\hyperlink{structvint4}{vint4}}\ b,\ \mbox{\hyperlink{structvint4}{vint4}}\ a)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01045}01045\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01046}01046\ \ \ \ \ \textcolor{keywordflow}{return}\ r\ +\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a4fa40a2884139d4b717242f8c33415d5}{lsl<8>}}(g)\ +\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a4fa40a2884139d4b717242f8c33415d5}{lsl<16>}}(b)\ +\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a4fa40a2884139d4b717242f8c33415d5}{lsl<24>}}(a);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01047}01047\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01048}01048\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01052}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a8c40a8da20466cb41e43ed75b66fb284}{01052}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a8c40a8da20466cb41e43ed75b66fb284}{store\_lane}}(uint8\_t*\ base,\ \textcolor{keywordtype}{int}\ data)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01053}01053\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01054}01054\ \ \ \ \ std::memcpy(base,\ \&data,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01055}01055\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01056}01056\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01062}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a06d81cde4f48428426ef009f341fdfbb}{01062}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a06d81cde4f48428426ef009f341fdfbb}{store\_lanes\_masked}}(uint8\_t*\ base,\ \mbox{\hyperlink{structvint4}{vint4}}\ data,\ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{mask}})}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01063}01063\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01064}01064\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{mask}}.lane<3>())}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01065}01065\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01066}01066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a64b2b468ffb4186087ed14323c465530}{store}}(data,\ base);}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01067}01067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01068}01068\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{mask}}.lane<2>()\ !=\ 0.0f)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01069}01069\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01070}01070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a8c40a8da20466cb41e43ed75b66fb284}{store\_lane}}(base\ +\ 0,\ data.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<0>());}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01071}01071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a8c40a8da20466cb41e43ed75b66fb284}{store\_lane}}(base\ +\ 4,\ data.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<1>());}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01072}01072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a8c40a8da20466cb41e43ed75b66fb284}{store\_lane}}(base\ +\ 8,\ data.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<2>());}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01073}01073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01074}01074\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{mask}}.lane<1>()\ !=\ 0.0f)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01075}01075\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01076}01076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a8c40a8da20466cb41e43ed75b66fb284}{store\_lane}}(base\ +\ 0,\ data.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<0>());}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01077}01077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a8c40a8da20466cb41e43ed75b66fb284}{store\_lane}}(base\ +\ 4,\ data.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<1>());}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01078}01078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01079}01079\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{mask}}.lane<0>()\ !=\ 0.0f)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01080}01080\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01081}01081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a8c40a8da20466cb41e43ed75b66fb284}{store\_lane}}(base\ +\ 0,\ data.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<0>());}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01082}01082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01083}01083\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01084}01084\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01085}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a8ffbc8eb454658970dbe079262970690}{01085}}\ \textcolor{preprocessor}{\#define\ ASTCENC\_USE\_NATIVE\_POPCOUNT\ 1}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01086}01086\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01094}\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a845600ac8b7f852bc903584736718c62}{01094}}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\_SIMD\_INLINE}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_a845600ac8b7f852bc903584736718c62}{popcount}}(uint64\_t\ v)}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01095}01095\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01096}01096\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(vaddlv\_u8(vcnt\_u8(vcreate\_u8(v))));}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01097}01097\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01098}01098\ }
+\DoxyCodeLine{\Hypertarget{astcenc__vecmathlib__neon__4_8h_source_l01099}01099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ ASTC\_VECMATHLIB\_NEON\_4\_H\_INCLUDED}}
+
+\end{DoxyCode}

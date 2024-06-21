@@ -1,0 +1,119 @@
+<map id="decompression_workload_runner" name="decompression_workload_runner">
+<area shape="rect" id="Node000001" title="Runner callback function for a decompression worker thread." alt="" coords="5,786,173,826"/>
+<area shape="rect" id="Node000002" href="$astcenc__entry_8cpp.html#a062987fc41b9df7d34d8eb668f29eb21" title="Decompress an image." alt="" coords="221,786,368,826"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,803,208,803,208,809,174,809"/>
+<area shape="rect" id="Node000003" href="$astcenc__entry_8cpp.html#a8bb4009be59101fe3004e39f9bd97d27" title="Reset the codec state for a new decompression." alt="" coords="431,167,577,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="299,785,344,630,413,412,487,220,492,221,419,414,349,631,304,787"/>
+<area shape="rect" id="Node000005" href="$class_parallel_manager.html#a5236e474ddffa7f805e425f1dc660d1c" title="Complete a task assignment." alt="" coords="416,425,592,465"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="295,786,303,726,323,643,338,598,358,554,383,512,414,475,419,471,422,475,418,479,388,515,363,556,343,600,328,645,308,727,300,786"/>
+<area shape="rect" id="Node000006" href="$astcenc__decompress__symbolic_8cpp.html#a4a5f09c362972951a31e4d7ff918f89f" title="Decompress a symbolic block in to an image block." alt="" coords="428,489,580,529"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="308,784,479,539,483,542,312,787"/>
+<area shape="rect" id="Node000072" href="$class_parallel_manager.html#ae0bb955f3fa52427590633355f0da01c" title="Request a task assignment." alt="" coords="433,757,575,797"/>
+<area shape="poly" id="edge39_Node000002_Node000072" title=" " alt="" coords="368,793,419,786,420,791,369,798"/>
+<area shape="rect" id="Node000073" href="$class_parallel_manager.html#af5c7b0a9139c6f1709ead3f135f0a861" title="Trigger the pipeline stage init step." alt="" coords="434,821,574,847"/>
+<area shape="poly" id="edge41_Node000002_Node000073" title=" " alt="" coords="369,813,421,820,420,825,368,818"/>
+<area shape="rect" id="Node000074" href="$astcenc__symbolic__physical_8cpp.html#acd6272d8cee006f73e936e16739c4cab" title="Convert a binary physical encoding into a symbolic representation." alt="" coords="431,1101,577,1127"/>
+<area shape="poly" id="edge42_Node000002_Node000074" title=" " alt="" coords="312,825,488,1088,484,1091,307,828"/>
+<area shape="rect" id="Node000080" href="$astcenc__image_8cpp.html#a987bc85f97f6168e6c99aa60879622f5" title="Store a single image block to the output image." alt="" coords="670,872,801,897"/>
+<area shape="poly" id="edge49_Node000002_Node000080" title=" " alt="" coords="334,824,373,842,417,857,479,869,542,877,656,883,656,888,542,883,478,875,415,862,371,847,332,829"/>
+<area shape="rect" id="Node000088" href="$astcenc__entry_8cpp.html#ae5661d23b1b5377887d5fd9f7c7e8fae" title="Validate overall decompression swizzle." alt="" coords="424,1221,584,1261"/>
+<area shape="poly" id="edge66_Node000002_Node000088" title=" " alt="" coords="303,826,318,882,342,961,375,1051,418,1138,445,1176,474,1209,470,1213,441,1179,414,1141,370,1053,337,963,312,883,298,827"/>
+<area shape="rect" id="Node000004" href="$class_parallel_manager.html#a9dfbf8571d608ce0d4196ac32184eea5" title="Reset the tracker for a new processing batch." alt="" coords="659,5,811,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="516,166,565,104,600,70,639,41,654,33,656,38,641,46,603,74,569,108,521,169"/>
+<area shape="rect" id="Node000007" href="$astcenc__vecmathlib__avx2__8_8h.html#aff39374b256d568d084ba4fd2fed7819" title="Arithmetic shift right." alt="" coords="933,272,973,297"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="571,486,590,475,605,458,613,442,622,425,638,408,665,393,689,384,733,378,778,374,803,367,829,354,844,343,853,332,862,320,877,308,918,290,921,295,880,312,866,324,857,335,847,347,832,359,804,372,779,379,734,384,690,389,667,397,642,412,626,428,618,444,610,461,594,479,574,491"/>
+<area shape="rect" id="Node000008" href="$astcenc__decompress__symbolic_8cpp.html#a9389a206914c0bbd0cb8a5d065dc56fe" title="Convert integer color value into a float value for the decoder." alt="" coords="686,521,785,547"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="581,514,673,525,672,530,580,520"/>
+<area shape="rect" id="Node000012" href="$astcenc__vecmathlib__neon__4_8h.html#afd7aa2069bdf377067c3abaca1256432" title="Return a float value for a float16 vector." alt="" coords="898,321,1007,347"/>
+<area shape="poly" id="edge20_Node000006_Node000012" title=" " alt="" coords="560,486,591,474,639,454,693,439,737,431,779,421,829,398,843,388,853,378,863,368,877,357,893,349,895,354,880,362,866,372,857,382,847,393,832,403,781,426,738,436,695,444,641,459,593,479,562,491"/>
+<area shape="rect" id="Node000017" href="$astcenc__vecmathlib__avx2__8_8h.html#a844ab5b69b84569f033be33bf5fb9fbc" title="Return lanes from b if cond is set, else a." alt="" coords="1087,371,1145,396"/>
+<area shape="poly" id="edge32_Node000006_Node000017" title=" " alt="" coords="577,487,590,475,604,455,613,434,620,393,616,352,607,311,598,271,597,231,600,212,608,193,620,174,638,156,672,138,718,129,773,126,832,129,892,138,947,150,994,166,1028,185,1048,203,1064,224,1089,271,1105,317,1114,356,1108,357,1100,319,1084,273,1060,227,1044,207,1025,190,992,171,946,155,891,143,832,135,773,132,719,134,673,143,642,160,625,177,613,195,606,213,602,232,604,270,612,310,621,351,625,393,618,436,609,457,594,478,581,491"/>
+<area shape="rect" id="Node000018" href="$astcenc__vecmathlib_8h.html#a478b1f2bc7a3589bfbe32b398583c502" title="Convert unorm16 [0, 65535] to float16 in range [0, 1]." alt="" coords="892,371,1013,396"/>
+<area shape="poly" id="edge33_Node000006_Node000018" title=" " alt="" coords="580,504,637,499,701,489,767,473,829,449,844,439,853,429,863,418,877,406,892,399,894,404,880,411,866,422,857,433,847,443,832,454,768,478,702,495,638,505,581,510"/>
+<area shape="rect" id="Node000029" href="$astcenc__decompress__symbolic_8cpp.html#ae3bd8201885791610ec22338320c146a" title="Return an FP32 NaN value for use in error colors." alt="" coords="680,220,791,245"/>
+<area shape="poly" id="edge19_Node000006_Node000029" title=" " alt="" coords="576,487,590,475,608,448,615,421,615,394,612,366,609,339,610,312,619,284,638,256,666,239,668,243,642,260,623,286,615,312,615,339,617,366,620,393,620,421,612,450,594,478,580,491"/>
+<area shape="rect" id="Node000030" href="$structblock__size__descriptor.html#a13608eb55e48c96b6243f4830278ebf3" title="Get the block mode structure for index block_mode." alt="" coords="661,973,809,1013"/>
+<area shape="poly" id="edge21_Node000006_Node000030" title=" " alt="" coords="516,528,553,621,595,744,602,777,605,806,606,856,607,879,613,903,624,927,642,952,654,963,650,967,638,956,619,929,608,904,602,880,600,856,600,806,597,777,589,745,548,623,511,530"/>
+<area shape="rect" id="Node000031" href="$structblock__size__descriptor.html#a688445f2f90b13188372d812baf8e02d" title="Get the decimation info structure for index decimation_mode." alt="" coords="661,1037,809,1077"/>
+<area shape="poly" id="edge22_Node000006_Node000031" title=" " alt="" coords="517,528,554,620,595,744,603,787,604,826,600,894,600,926,605,957,618,989,642,1023,652,1032,648,1036,638,1026,613,991,600,958,595,926,595,894,599,826,597,788,589,745,549,622,512,530"/>
+<area shape="rect" id="Node000032" href="$structblock__size__descriptor.html#aa9dfc7b23c8b5e6c71e956e2e39fff74" title="Get the partition info structure for a given partition count and seed." alt="" coords="661,55,809,95"/>
+<area shape="poly" id="edge23_Node000006_Node000032" title=" " alt="" coords="577,487,590,475,606,452,617,429,626,384,623,340,614,297,605,252,602,207,611,161,622,137,638,112,649,101,652,105,642,116,627,139,616,162,608,207,611,252,619,295,628,340,631,385,622,431,610,454,594,478,581,491"/>
+<area shape="rect" id="Node000034" href="$astcenc__internal_8h.html#ae5b8f23d2bc3cab55806e21c091b1381" title="Get a vector mask indicating lanes decompressing into a UNORM8 value." alt="" coords="650,269,821,295"/>
+<area shape="poly" id="edge25_Node000006_Node000034" title=" " alt="" coords="576,486,590,475,605,454,611,433,612,391,614,348,622,327,638,306,644,300,648,304,642,309,626,329,619,349,618,391,617,434,609,456,594,478,579,491"/>
+<area shape="rect" id="Node000035" href="$structvfloat4.html#a04462a7815432c6bc3ce1b5e5d11e4fc" title="Get the scalar value of a single lane." alt="" coords="907,669,998,695"/>
+<area shape="poly" id="edge26_Node000006_Node000035" title=" " alt="" coords="556,526,641,557,695,570,739,577,781,586,832,609,847,621,857,633,866,644,880,656,896,664,893,668,877,660,862,648,853,636,844,625,829,614,780,591,738,582,694,575,639,562,555,531"/>
+<area shape="rect" id="Node000036" href="$structvint4.html#a21e3d111e37da1aaaeb5ba21a831c863" title="Factory that returns a vector containing the lane IDs." alt="" coords="904,1364,1001,1389"/>
+<area shape="poly" id="edge27_Node000006_Node000036" title=" " alt="" coords="516,528,551,621,595,744,605,793,607,834,615,871,625,889,642,908,665,925,689,932,713,933,737,931,762,929,786,931,810,940,833,959,851,984,864,1009,871,1034,874,1059,870,1107,859,1156,848,1204,843,1253,845,1277,852,1301,863,1326,881,1351,893,1362,890,1366,877,1354,859,1329,847,1303,840,1278,838,1253,842,1203,854,1155,865,1107,868,1059,866,1035,859,1011,847,987,829,962,807,944,785,936,762,934,737,936,713,938,688,937,663,929,638,912,621,892,610,873,602,835,599,794,589,745,546,622,511,530"/>
+<area shape="rect" id="Node000037" href="$astcenc__decompress__symbolic_8cpp.html#ae5360e637f5ba7f34bc952c0112f4e8e" title="Functions to decompress a symbolic block." alt="" coords="686,319,785,344"/>
+<area shape="poly" id="edge29_Node000006_Node000037" title=" " alt="" coords="574,486,590,475,602,461,608,447,613,419,619,391,626,376,638,361,654,350,672,341,674,346,657,354,642,365,630,379,624,392,618,420,613,449,606,464,594,479,578,491"/>
+<area shape="rect" id="Node000038" href="$astcenc__color__unquantize_8cpp.html#ab9b659180fb522b05391892336dbc095" title="Unpack a single pair of encoded endpoints." alt="" coords="654,171,817,196"/>
+<area shape="poly" id="edge34_Node000006_Node000038" title=" " alt="" coords="577,486,590,475,611,441,618,408,617,375,612,342,607,308,606,275,615,241,638,207,643,202,647,206,642,210,620,243,612,275,612,308,617,341,622,374,623,408,615,443,594,478,580,490"/>
+<area shape="rect" id="Node000063" href="$astcenc__decompress__symbolic_8cpp.html#aec197676ba4b10bf63a6523a775530d8" title="Unpack a set of quantized and decimated weights." alt="" coords="678,693,793,719"/>
+<area shape="poly" id="edge36_Node000006_Node000063" title=" " alt="" coords="521,527,570,590,604,626,642,658,689,686,686,690,638,663,601,630,566,594,517,530"/>
+<area shape="rect" id="Node000070" href="$structvfloat4.html#a04b5f338012dab6be0b2bd7910fcbcae" title="Factory that returns a vector of zeros." alt="" coords="690,623,781,648"/>
+<area shape="poly" id="edge38_Node000006_Node000070" title=" " alt="" coords="531,527,580,564,641,601,678,616,676,621,639,606,577,568,528,531"/>
+<area shape="rect" id="Node000009" href="$astcenc__vecmathlib__avx2__8_8h.html#ad93dff3341cbbeed568d4bd6dc4ef87c" title="True if all lanes are enabled, false otherwise." alt="" coords="933,420,972,445"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="783,519,829,500,853,482,877,462,919,442,921,447,880,467,857,486,832,504,785,524"/>
+<area shape="rect" id="Node000011" href="$astcenc__vecmathlib__avx2__8_8h.html#a1fcb81537a701f246e75fa622c2dd8ee" title="True if any lanes are enabled, false otherwise." alt="" coords="931,620,974,645"/>
+<area shape="poly" id="edge9_Node000008_Node000011" title=" " alt="" coords="786,544,832,564,847,575,857,586,866,596,880,606,919,622,917,627,877,611,862,600,853,589,843,579,829,568,784,549"/>
+<area shape="poly" id="edge10_Node000008_Node000012" title=" " alt="" coords="753,519,790,489,829,450,843,425,850,402,858,380,877,357,885,351,889,355,880,361,863,383,855,404,848,427,833,453,794,493,756,523"/>
+<area shape="rect" id="Node000013" href="$astcenc__vecmathlib_8h.html#aa1ab2044e5354115ee71324e30fba1ed" title="Convert 16&#45;bit LNS to float16." alt="" coords="909,521,997,547"/>
+<area shape="poly" id="edge11_Node000008_Node000013" title=" " alt="" coords="785,531,895,531,895,537,785,537"/>
+<area shape="poly" id="edge14_Node000008_Node000017" title=" " alt="" coords="784,522,916,491,980,473,1025,456,1062,431,1091,405,1095,408,1065,436,1028,460,982,478,917,496,785,527"/>
+<area shape="poly" id="edge15_Node000008_Node000018" title=" " alt="" coords="784,523,808,514,829,500,846,478,852,455,859,431,877,407,885,400,889,405,881,411,864,433,857,456,851,480,832,504,810,518,786,528"/>
+<area shape="rect" id="Node000027" href="$structvint4.html#a9dfa1c40a3c4dbc0858567dc629a80b8" title="Factory that returns a vector of zeros." alt="" coords="912,571,993,596"/>
+<area shape="poly" id="edge17_Node000008_Node000027" title=" " alt="" coords="785,542,899,569,898,574,784,548"/>
+<area shape="rect" id="Node000016" href="$astcenc__vecmathlib__avx2__8_8h.html#a165b3db4e7ced1551e1880a01a01150b" title="Return the min vector of two vectors." alt="" coords="1095,696,1137,721"/>
+<area shape="poly" id="edge12_Node000013_Node000016" title=" " alt="" coords="998,541,1028,557,1056,586,1079,620,1108,682,1103,684,1074,622,1052,590,1025,561,996,546"/>
+<area shape="poly" id="edge13_Node000013_Node000017" title=" " alt="" coords="991,519,1025,500,1048,478,1069,453,1099,407,1104,409,1073,457,1052,482,1028,504,994,524"/>
+<area shape="poly" id="edge16_Node000018_Node000017" title=" " alt="" coords="1013,381,1073,381,1073,386,1013,386"/>
+<area shape="rect" id="Node000028" href="$structvint4.html#a3315184e8bb4f0cf1ca8dcff1f57cdae" title="Construct from zero&#45;initialized value." alt="" coords="1075,968,1157,993"/>
+<area shape="poly" id="edge18_Node000027_Node000028" title=" " alt="" coords="995,587,1013,595,1029,607,1039,627,1050,662,1074,760,1113,954,1107,955,1069,762,1045,663,1034,629,1025,610,1010,599,993,592"/>
+<area shape="rect" id="Node000033" href="$structblock__size__descriptor.html#a6d0c429d925ab011c22ab28b5807c368" title="Get the partition info table for a given partition count." alt="" coords="879,55,1027,95"/>
+<area shape="poly" id="edge24_Node000032_Node000033" title=" " alt="" coords="809,73,865,73,865,78,809,78"/>
+<area shape="poly" id="edge28_Node000036_Node000028" title=" " alt="" coords="1000,1366,1025,1351,1041,1325,1056,1287,1081,1189,1099,1086,1109,1007,1114,1008,1104,1087,1086,1190,1061,1289,1046,1327,1029,1355,1003,1371"/>
+<area shape="poly" id="edge30_Node000037_Node000007" title=" " alt="" coords="784,318,918,289,919,294,785,323"/>
+<area shape="poly" id="edge31_Node000037_Node000017" title=" " alt="" coords="784,322,829,305,843,294,852,281,861,269,877,258,919,243,954,237,988,242,1028,258,1056,278,1078,304,1107,357,1103,359,1074,307,1052,282,1025,263,987,247,954,243,920,249,880,263,865,273,856,284,847,297,832,310,786,327"/>
+<area shape="poly" id="edge35_Node000038_Node000017" title=" " alt="" coords="817,176,867,179,923,187,978,203,1028,229,1058,257,1082,292,1099,326,1110,357,1105,358,1094,328,1077,294,1054,261,1025,234,976,208,921,192,867,184,817,181"/>
+<area shape="rect" id="Node000067" href="$astcenc__vecmathlib__avx2__8_8h.html#a61add2970baac5cf6b04177472ae1ed1" title="Store a vector to an unaligned memory address." alt="" coords="927,719,978,744"/>
+<area shape="poly" id="edge37_Node000063_Node000067" title=" " alt="" coords="793,710,914,724,913,730,793,715"/>
+<area shape="rect" id="Node000051" href="$namespaceastc.html#af78c0d31374aa9923633a3a2abf8d738" title="Return the minimum of two values." alt="" coords="915,768,991,793"/>
+<area shape="poly" id="edge40_Node000072_Node000051" title=" " alt="" coords="575,775,901,778,901,783,575,780"/>
+<area shape="poly" id="edge45_Node000074_Node000030" title=" " alt="" coords="520,1099,571,1062,639,1022,654,1015,657,1020,641,1027,574,1067,523,1103"/>
+<area shape="poly" id="edge46_Node000074_Node000031" title=" " alt="" coords="555,1099,648,1076,649,1081,557,1104"/>
+<area shape="rect" id="Node000075" href="$astcenc__symbolic__physical_8cpp.html#ac8ea7de26c1e90f79a9e315407ab04ff" title="Functions for converting between symbolic and physical encodings." alt="" coords="706,1101,765,1127"/>
+<area shape="poly" id="edge43_Node000074_Node000075" title=" " alt="" coords="578,1111,692,1111,692,1117,578,1117"/>
+<area shape="rect" id="Node000076" href="$astcenc__integer__sequence_8cpp.html#a1cc25f0a98b60ff2bc5fd65f6b4190fa" title="Decode a packed string using BISE." alt="" coords="691,1151,779,1176"/>
+<area shape="poly" id="edge44_Node000074_Node000076" title=" " alt="" coords="565,1124,679,1149,677,1154,564,1129"/>
+<area shape="rect" id="Node000078" href="$astcenc__integer__sequence_8cpp.html#af46c9322b401332698e9cb93c968fe19" title="Return the number of bits needed to encode an ISE sequence." alt="" coords="645,1200,825,1225"/>
+<area shape="poly" id="edge47_Node000074_Node000078" title=" " alt="" coords="526,1125,577,1155,641,1186,662,1194,661,1199,639,1191,574,1160,523,1129"/>
+<area shape="rect" id="Node000079" href="$astcenc__symbolic__physical_8cpp.html#a6062008b44453960d62c54f571cccfe1" title="Read up to 8 bits at an arbitrary bit offset." alt="" coords="698,1249,773,1275"/>
+<area shape="poly" id="edge48_Node000074_Node000079" title=" " alt="" coords="517,1125,567,1179,602,1210,641,1236,685,1252,683,1257,639,1240,599,1214,563,1183,513,1129"/>
+<area shape="poly" id="edge50_Node000080_Node000011" title=" " alt="" coords="743,870,877,656,896,644,917,637,919,642,899,649,881,660,747,873"/>
+<area shape="poly" id="edge59_Node000080_Node000016" title=" " alt="" coords="801,889,853,891,911,886,971,873,999,862,1025,848,1053,823,1076,793,1093,761,1104,733,1109,735,1097,764,1080,796,1057,827,1028,852,1001,867,972,878,912,891,853,896,801,895"/>
+<area shape="poly" id="edge60_Node000080_Node000017" title=" " alt="" coords="789,869,935,832,997,815,1025,804,1043,775,1060,731,1085,617,1102,499,1110,410,1115,410,1107,499,1090,618,1065,732,1048,777,1028,808,998,820,936,837,790,874"/>
+<area shape="poly" id="edge54_Node000080_Node000035" title=" " alt="" coords="741,870,791,793,830,746,877,705,893,696,896,700,880,710,834,750,795,797,746,873"/>
+<area shape="poly" id="edge56_Node000080_Node000036" title=" " alt="" coords="802,893,819,902,833,915,852,944,865,972,873,1000,875,1028,870,1082,857,1135,844,1189,839,1242,842,1269,849,1296,862,1323,881,1351,893,1362,890,1366,877,1354,857,1326,844,1298,837,1270,834,1242,839,1188,852,1134,864,1081,870,1028,867,1001,860,974,848,946,829,918,816,907,800,898"/>
+<area shape="poly" id="edge63_Node000080_Node000067" title=" " alt="" coords="746,870,799,815,836,783,877,754,913,739,915,744,880,759,839,787,802,819,749,874"/>
+<area shape="poly" id="edge58_Node000080_Node000051" title=" " alt="" coords="760,869,878,810,908,796,910,801,880,815,762,874"/>
+<area shape="rect" id="Node000081" href="$astcenc__vecmathlib__neon__4_8h.html#ae8701a3f44d7b99016d54c3d6ee27581" title="Return a float16 value for a float vector, using round&#45;to&#45;nearest." alt="" coords="898,920,1007,945"/>
+<area shape="poly" id="edge51_Node000080_Node000081" title=" " alt="" coords="794,895,885,915,884,920,793,900"/>
+<area shape="rect" id="Node000082" href="$astcenc__vecmathlib__avx2__8_8h.html#a598d6ea3ba27a788b12341a5263c7881" title="Return a integer value for a float vector, using round&#45;to&#45;nearest." alt="" coords="899,969,1006,995"/>
+<area shape="poly" id="edge52_Node000080_Node000082" title=" " alt="" coords="787,895,832,914,847,925,857,936,866,946,880,956,892,962,890,967,877,960,863,950,853,939,843,929,829,919,784,900"/>
+<area shape="rect" id="Node000083" href="$astcenc__vecmathlib__avx2__8_8h.html#a635c0c8b5f0ea77a88ccc25f53eab588" title="Return a vector of interleaved RGBA data." alt="" coords="895,1019,1010,1044"/>
+<area shape="poly" id="edge53_Node000080_Node000083" title=" " alt="" coords="798,895,832,915,850,938,857,961,864,984,881,1005,887,1010,883,1014,877,1009,859,986,852,963,846,940,829,919,795,900"/>
+<area shape="rect" id="Node000057" href="$structvint4.html#a01e3f7debf73dc6c757fa36d585c9d17" title="Get the scalar from a single lane." alt="" coords="913,1068,993,1093"/>
+<area shape="poly" id="edge55_Node000080_Node000057" title=" " alt="" coords="802,895,832,915,846,933,854,951,857,986,861,1021,867,1038,880,1055,901,1068,898,1072,877,1059,863,1041,855,1022,852,987,849,952,842,935,829,919,799,900"/>
+<area shape="rect" id="Node000020" href="$astcenc__vecmathlib__avx2__8_8h.html#aa162915c044e97cc1f6d630338761fd3" title="Return the max vector of two vectors." alt="" coords="929,1117,976,1143"/>
+<area shape="poly" id="edge57_Node000080_Node000020" title=" " alt="" coords="802,895,818,903,833,915,850,939,857,964,859,988,857,1012,856,1035,857,1058,864,1081,881,1104,897,1116,917,1123,915,1128,895,1121,877,1108,860,1083,852,1059,850,1035,852,1011,853,988,852,965,845,942,829,918,815,907,800,899"/>
+<area shape="rect" id="Node000084" href="$namespaceastc.html#a31e63d01af92a8a63ffdee93d6f342ae" title="Fast approximation of sqrt(val)." alt="" coords="914,1167,991,1192"/>
+<area shape="poly" id="edge61_Node000080_Node000084" title=" " alt="" coords="802,894,818,903,833,915,853,946,861,977,861,1007,857,1036,853,1066,854,1095,861,1124,881,1153,902,1168,899,1172,877,1157,856,1126,848,1096,848,1066,852,1036,856,1006,856,977,848,948,829,918,815,907,800,899"/>
+<area shape="rect" id="Node000085" href="$astcenc__vecmathlib__avx2__8_8h.html#a46b31b19ff13c14adb023db4b5df8e52" title="Return the sqrt of the lanes in the vector." alt="" coords="931,1216,975,1241"/>
+<area shape="poly" id="edge62_Node000080_Node000085" title=" " alt="" coords="802,894,819,903,833,915,856,952,864,989,863,1026,857,1061,851,1097,850,1132,858,1167,881,1203,898,1216,918,1223,916,1228,895,1220,877,1206,853,1169,845,1132,846,1096,852,1060,858,1025,859,990,851,954,829,918,816,907,800,899"/>
+<area shape="rect" id="Node000086" href="$astcenc__vecmathlib__avx2__8_8h.html#a2766c60947c6dea0a84cd8d86806c6eb" title="Store a vector, skipping masked lanes." alt="" coords="881,1265,1024,1291"/>
+<area shape="poly" id="edge64_Node000080_Node000086" title=" " alt="" coords="802,894,819,902,833,915,848,937,859,959,868,1002,865,1044,857,1086,849,1127,846,1168,855,1210,865,1231,881,1252,884,1255,880,1259,877,1256,861,1234,850,1212,841,1169,844,1127,852,1085,860,1044,863,1002,854,961,844,940,829,918,816,907,800,898"/>
+<area shape="rect" id="Node000087" href="$structimage__block.html#af99de7d75e1e380b31d70d131509caa9" title="Get an RGBA texel value from the data." alt="" coords="887,1315,1018,1340"/>
+<area shape="poly" id="edge65_Node000080_Node000087" title=" " alt="" coords="802,893,819,902,833,915,850,940,862,965,869,990,871,1015,868,1063,857,1111,847,1158,843,1205,845,1229,852,1253,864,1277,881,1302,883,1304,879,1308,877,1305,859,1280,847,1255,840,1230,838,1205,841,1157,852,1110,862,1062,866,1015,864,991,857,967,846,943,829,918,816,907,800,898"/>
+<area shape="rect" id="Node000089" href="$astcenc__entry_8cpp.html#a329012efcccee5dd5d8ccaee0f264ba8" title="Validate single channel decompression swizzle." alt="" coords="640,1299,831,1324"/>
+<area shape="poly" id="edge67_Node000088_Node000089" title=" " alt="" coords="561,1258,641,1285,668,1293,667,1298,639,1290,559,1263"/>
+</map>

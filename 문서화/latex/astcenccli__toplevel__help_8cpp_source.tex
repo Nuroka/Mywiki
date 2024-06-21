@@ -1,0 +1,597 @@
+\doxysection{astcenccli\+\_\+toplevel\+\_\+help.\+cpp}
+\hypertarget{astcenccli__toplevel__help_8cpp_source}{}\label{astcenccli__toplevel__help_8cpp_source}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_toplevel\_help.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_toplevel\_help.cpp}}
+\mbox{\hyperlink{astcenccli__toplevel__help_8cpp}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00001}00001\ \textcolor{comment}{//\ SPDX-\/License-\/Identifier:\ Apache-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00003}00003\ \textcolor{comment}{//\ Copyright\ 2011-\/2023\ Arm\ Limited}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00004}00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00005}00005\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});\ you\ may\ not}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00006}00006\ \textcolor{comment}{//\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00007}00007\ \textcolor{comment}{//\ of\ the\ License\ at:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00008}00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00009}00009\ \textcolor{comment}{//\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00010}00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00011}00011\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00012}00012\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00013}00013\ \textcolor{comment}{//\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.\ See\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00014}00014\ \textcolor{comment}{//\ License\ for\ the\ specific\ language\ governing\ permissions\ and\ limitations}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00015}00015\ \textcolor{comment}{//\ under\ the\ License.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00016}00016\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{astcenccli__internal_8h}{astcenccli\_internal.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}astcenccli\_version.h"{}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00026}\mbox{\hyperlink{astcenccli__toplevel__help_8cpp_afb573e80aa8090f02b3424f167ff1ae1}{00026}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{astcenccli__toplevel__help_8cpp_afb573e80aa8090f02b3424f167ff1ae1}{astcenc\_copyright\_string}}\ =}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00027}00027\ R\textcolor{stringliteral}{"{}(astcenc\ v\%s,\ \%u-\/bit\ \%s\%s\%s}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00028}00028\ \textcolor{stringliteral}{Copyright\ (c)\ 2011-\/\%s\ Arm\ Limited.\ All\ rights\ reserved.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00029}00029\ \textcolor{stringliteral}{)"{};}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00030}00030\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00032}\mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a1143e88ff4e7fd8c7b364556dd4a64f4}{00032}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a1143e88ff4e7fd8c7b364556dd4a64f4}{astcenc\_short\_help}}\ =}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00033}00033\ R\textcolor{stringliteral}{"{}(}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00034}00034\ \textcolor{stringliteral}{Basic\ usage:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00035}00035\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00036}00036\ \textcolor{stringliteral}{To\ compress\ an\ image\ use:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00037}00037\ \textcolor{stringliteral}{\ \ \ \ astcenc\ \{-\/cl|-\/cs|-\/ch|-\/cH\}\ <in>\ <out>\ <blockdim>\ <quality>\ [options]}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00038}00038\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00039}00039\ \textcolor{stringliteral}{e.g.\ using\ LDR\ profile,\ 8x6\ blocks,\ and\ the\ thorough\ quality\ preset:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00040}00040\ \textcolor{stringliteral}{\ \ \ \ astcenc\ -\/cl\ kodim01.png\ kodim01.astc\ 8x6\ -\/thorough}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00041}00041\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00042}00042\ \textcolor{stringliteral}{To\ decompress\ an\ image\ use:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00043}00043\ \textcolor{stringliteral}{\ \ \ \ astcenc\ \{-\/dl|-\/ds|-\/dh|-\/dH\}\ <in>\ <out>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00044}00044\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00045}00045\ \textcolor{stringliteral}{e.g.\ using\ LDR\ profile:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00046}00046\ \textcolor{stringliteral}{\ \ \ \ astcenc\ -\/dl\ kodim01.astc\ kodim01.png}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00047}00047\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00048}00048\ \textcolor{stringliteral}{To\ perform\ a\ compression\ test,\ writing\ back\ the\ decompressed\ output,\ use:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00049}00049\ \textcolor{stringliteral}{\ \ \ \ astcenc\ \{-\/tl|-\/ts|-\/th|-\/tH\}\ <in>\ <out>\ <blockdim>\ <quality>\ [options]}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00050}00050\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00051}00051\ \textcolor{stringliteral}{e.g.\ using\ LDR\ profile,\ 8x6\ blocks,\ and\ the\ thorough\ quality\ preset:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00052}00052\ \textcolor{stringliteral}{\ \ \ \ astcenc\ -\/tl\ kodim01.png\ kodim01-\/test.png\ 8x6\ -\/thorough}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00053}00053\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00054}00054\ \textcolor{stringliteral}{The\ -\/*l\ options\ are\ used\ to\ configure\ the\ codec\ to\ support\ only\ the\ linear}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00055}00055\ \textcolor{stringliteral}{LDR\ profile,\ preventing\ use\ of\ the\ HDR\ encoding\ features.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00056}00056\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00057}00057\ \textcolor{stringliteral}{The\ -\/*s\ options\ are\ used\ to\ configure\ the\ codec\ to\ support\ only}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00058}00058\ \textcolor{stringliteral}{the\ sRGB\ LDR\ profile,\ preventing\ use\ of\ the\ HDR\ encoding\ features.\ Input}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00059}00059\ \textcolor{stringliteral}{texture\ data\ must\ be\ encoded\ in\ the\ sRGB\ colorspace\ for\ this\ option\ to}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00060}00060\ \textcolor{stringliteral}{provide\ correct\ output\ results.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00061}00061\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00062}00062\ \textcolor{stringliteral}{The\ -\/*h/-\/*H\ options\ are\ used\ to\ configure\ the\ codec\ to\ support\ the\ HDR\ ASTC}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00063}00063\ \textcolor{stringliteral}{color\ profile.\ Textures\ compressed\ with\ this\ profile\ may\ fail\ to\ decompress}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00064}00064\ \textcolor{stringliteral}{correctly\ on\ GPU\ hardware\ without\ HDR\ profile\ support.\ The\ -\/*h\ options}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00065}00065\ \textcolor{stringliteral}{configure\ the\ compressor\ for\ HDR\ RGB\ components\ and\ an\ LDR\ alpha\ component.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00066}00066\ \textcolor{stringliteral}{The\ -\/*H\ options\ configure\ the\ compressor\ for\ HDR\ across\ all\ 4\ components.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00067}00067\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00068}00068\ \textcolor{stringliteral}{For\ full\ help\ documentation\ run\ 'astcenc\ -\/help'.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00069}00069\ \textcolor{stringliteral}{)"{};}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00070}00070\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00072}\mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a8f1389189daa58ba75bc5fafa8742739}{00072}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a8f1389189daa58ba75bc5fafa8742739}{astcenc\_long\_help}}\ =\ R\textcolor{stringliteral}{"{}(}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00073}00073\ \textcolor{stringliteral}{NAME}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00074}00074\ \textcolor{stringliteral}{\ \ \ \ \ \ \ astcenc\ -\/\ compress\ or\ decompress\ images\ using\ the\ ASTC\ format}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00075}00075\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00076}00076\ \textcolor{stringliteral}{SYNOPSIS}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00077}00077\ \textcolor{stringliteral}{\ \ \ \ \ \ \ astcenc\ \{-\/h|-\/help\}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00078}00078\ \textcolor{stringliteral}{\ \ \ \ \ \ \ astcenc\ \{-\/v|-\/version\}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00079}00079\ \textcolor{stringliteral}{\ \ \ \ \ \ \ astcenc\ \{-\/cl|-\/cs|-\/ch|-\/cH\}\ <in>\ <out>\ <blocksize>\ <quality>\ [options]}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00080}00080\ \textcolor{stringliteral}{\ \ \ \ \ \ \ astcenc\ \{-\/dl|-\/ds|-\/dh|-\/dH\}\ <in>\ <out>\ <blocksize>\ <quality>\ [options]}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00081}00081\ \textcolor{stringliteral}{\ \ \ \ \ \ \ astcenc\ \{-\/tl|-\/ts|-\/th|-\/tH\}\ <in>\ <out>\ <blocksize>\ <quality>\ [options]}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00082}00082\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00083}00083\ \textcolor{stringliteral}{DESCRIPTION}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00084}00084\ \textcolor{stringliteral}{\ \ \ \ \ \ \ astcenc\ compresses\ image\ files\ into\ the\ Adaptive\ Scalable\ Texture}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00085}00085\ \textcolor{stringliteral}{\ \ \ \ \ \ \ Compression\ (ASTC)\ image\ format,\ a\ lossy\ compression\ format\ design}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00086}00086\ \textcolor{stringliteral}{\ \ \ \ \ \ \ for\ use\ in\ real-\/time\ graphics\ applications.\ It\ is\ a\ fully\ featured}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00087}00087\ \textcolor{stringliteral}{\ \ \ \ \ \ \ compressor\ implementation,\ supporting\ all\ of\ the\ compression}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00088}00088\ \textcolor{stringliteral}{\ \ \ \ \ \ \ profiles\ and\ block\ sizes\ specified\ by\ the\ ASTC\ format:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00089}00089\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00090}00090\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ All\ color\ profiles\ (LDR\ linear,\ LDR\ sRGB,\ and\ HDR)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00091}00091\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ All\ 2D\ block\ sizes\ (4x4\ though\ to\ 12x12)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00092}00092\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ All\ 3D\ block\ sizes\ (3x3x3\ through\ to\ 6x6x6)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00093}00093\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00094}00094\ \textcolor{stringliteral}{\ \ \ \ \ \ \ The\ compressor\ provides\ a\ flexible\ quality\ level,\ allowing\ users\ to}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00095}00095\ \textcolor{stringliteral}{\ \ \ \ \ \ \ trade\ off\ compressed\ image\ quality\ against\ compression\ performance.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00096}00096\ \textcolor{stringliteral}{\ \ \ \ \ \ \ For\ ease\ of\ use,\ a\ number\ of\ quality\ presets\ are\ also\ provided.\ For}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00097}00097\ \textcolor{stringliteral}{\ \ \ \ \ \ \ advanced\ users\ the\ compressor\ provides\ many\ additional\ control}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00098}00098\ \textcolor{stringliteral}{\ \ \ \ \ \ \ options\ for\ fine\ tuning\ quality.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00099}00099\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00100}00100\ \textcolor{stringliteral}{\ \ \ \ \ \ \ astcenc\ can\ also\ be\ used\ to\ decompress\ ASTC\ compressed\ images,\ and}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00101}00101\ \textcolor{stringliteral}{\ \ \ \ \ \ \ perform\ compression\ image\ quality\ analysis.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00102}00102\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00103}00103\ \textcolor{stringliteral}{COMPRESSION}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00104}00104\ \textcolor{stringliteral}{\ \ \ \ \ \ \ To\ compress\ an\ image\ using\ the\ ASTC\ format\ you\ must\ specify\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00105}00105\ \textcolor{stringliteral}{\ \ \ \ \ \ \ color\ profile,\ the\ input\ file\ name,\ the\ output\ file\ name,\ the\ target}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00106}00106\ \textcolor{stringliteral}{\ \ \ \ \ \ \ block\ size,\ and\ the\ quality\ preset.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00107}00107\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00108}00108\ \textcolor{stringliteral}{\ \ \ \ \ \ \ The\ color\ profile\ is\ specified\ using\ the\ -\/cl\ (LDR\ linear),\ -\/cs\ (LDR}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00109}00109\ \textcolor{stringliteral}{\ \ \ \ \ \ \ sRGB),\ -\/ch\ (HDR\ RGB,\ LDR\ A),\ or\ -\/cH\ (HDR\ RGBA)\ encoder\ options.\ Note}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00110}00110\ \textcolor{stringliteral}{\ \ \ \ \ \ \ that\ not\ all\ GPUs\ implementing\ ASTC\ support\ the\ HDR\ profile.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00111}00111\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00112}00112\ \textcolor{stringliteral}{\ \ \ \ \ \ \ The\ input\ file\ path\ must\ match\ a\ valid\ file\ format\ for\ compression,}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00113}00113\ \textcolor{stringliteral}{\ \ \ \ \ \ \ and\ the\ output\ file\ format\ must\ be\ a\ valid\ output\ for\ compression.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00114}00114\ \textcolor{stringliteral}{\ \ \ \ \ \ \ See\ the\ FILE\ FORMATS\ section\ for\ the\ list\ of\ supported\ formats.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00115}00115\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00116}00116\ \textcolor{stringliteral}{\ \ \ \ \ \ \ The\ block\ size\ must\ be\ a\ valid\ ASTC\ block\ size.\ Every\ block}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00117}00117\ \textcolor{stringliteral}{\ \ \ \ \ \ \ compresses\ into\ 128\ bits\ of\ compressed\ output,\ so\ the\ block\ size}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00118}00118\ \textcolor{stringliteral}{\ \ \ \ \ \ \ determines\ the\ compressed\ data\ bitrate.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00119}00119\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00120}00120\ \textcolor{stringliteral}{\ \ \ \ \ \ \ Supported\ 2D\ block\ sizes\ are:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00121}00121\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00122}00122\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ 4x4:\ 8.00\ bpp\ \ \ \ \ \ \ \ 10x5:\ 2.56\ bpp}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00123}00123\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ 5x4:\ 6.40\ bpp\ \ \ \ \ \ \ \ 10x6:\ 2.13\ bpp}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00124}00124\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ 5x5:\ 5.12\ bpp\ \ \ \ \ \ \ \ \ 8x8:\ 2.00\ bpp}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00125}00125\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ 6x5:\ 4.27\ bpp\ \ \ \ \ \ \ \ 10x8:\ 1.60\ bpp}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00126}00126\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ 6x6:\ 3.56\ bpp\ \ \ \ \ \ \ 10x10:\ 1.28\ bpp}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00127}00127\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ 8x5:\ 3.20\ bpp\ \ \ \ \ \ \ 12x10:\ 1.07\ bpp}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00128}00128\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ 8x6:\ 2.67\ bpp\ \ \ \ \ \ \ 12x12:\ 0.89\ bpp}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00129}00129\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00130}00130\ \textcolor{stringliteral}{\ \ \ \ \ \ \ Supported\ 3D\ block\ sizes\ are:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00131}00131\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00132}00132\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ 3x3x3:\ 4.74\ bpp\ \ \ \ \ \ \ 5x5x4:\ 1.28\ bpp}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00133}00133\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ 4x3x3:\ 3.56\ bpp\ \ \ \ \ \ \ 5x5x5:\ 1.02\ bpp}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00134}00134\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ 4x4x3:\ 2.67\ bpp\ \ \ \ \ \ \ 6x5x5:\ 0.85\ bpp}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00135}00135\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ 4x4x4:\ 2.00\ bpp\ \ \ \ \ \ \ 6x6x5:\ 0.71\ bpp}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00136}00136\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ 5x4x4:\ 1.60\ bpp\ \ \ \ \ \ \ 6x6x6:\ 0.59\ bpp}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00137}00137\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00138}00138\ \textcolor{stringliteral}{\ \ \ \ \ \ \ The\ quality\ level\ configures\ the\ quality-\/performance\ tradeoff\ for}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00139}00139\ \textcolor{stringliteral}{\ \ \ \ \ \ \ the\ compressor;\ more\ complete\ searches\ of\ the\ search\ space\ improve}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00140}00140\ \textcolor{stringliteral}{\ \ \ \ \ \ \ image\ quality\ at\ the\ expense\ of\ compression\ time.\ The\ quality\ level}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00141}00141\ \textcolor{stringliteral}{\ \ \ \ \ \ \ can\ be\ set\ to\ any\ value\ between\ 0\ (fastest)\ and\ 100\ (exhaustive),}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00142}00142\ \textcolor{stringliteral}{\ \ \ \ \ \ \ or\ to\ a\ fixed\ quality\ preset:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00143}00143\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00144}00144\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ -\/fastest\ \ \ \ \ \ (equivalent\ to\ quality\ =\ \ \ 0)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00145}00145\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ -\/fast\ \ \ \ \ \ \ \ \ (equivalent\ to\ quality\ =\ \ 10)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00146}00146\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ -\/medium\ \ \ \ \ \ \ (equivalent\ to\ quality\ =\ \ 60)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00147}00147\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ -\/thorough\ \ \ \ \ (equivalent\ to\ quality\ =\ \ 98)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00148}00148\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ -\/verythorough\ (equivalent\ to\ quality\ =\ \ 99)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00149}00149\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ -\/exhaustive\ \ \ (equivalent\ to\ quality\ =\ 100)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00150}00150\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00151}00151\ \textcolor{stringliteral}{\ \ \ \ \ \ \ For\ compression\ of\ production\ content\ we\ recommend\ using\ a\ quality}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00152}00152\ \textcolor{stringliteral}{\ \ \ \ \ \ \ level\ equivalent\ to\ -\/medium\ or\ higher.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00153}00153\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00154}00154\ \textcolor{stringliteral}{\ \ \ \ \ \ \ Using\ quality\ levels\ higher\ than\ -\/thorough\ will\ significantly}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00155}00155\ \textcolor{stringliteral}{\ \ \ \ \ \ \ increase\ compression\ time,\ but\ typically\ only\ gives\ minor\ quality}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00156}00156\ \textcolor{stringliteral}{\ \ \ \ \ \ \ improvements.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00157}00157\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00158}00158\ \textcolor{stringliteral}{\ \ \ \ \ \ \ There\ are\ a\ number\ of\ additional\ compressor\ options\ which\ are\ useful}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00159}00159\ \textcolor{stringliteral}{\ \ \ \ \ \ \ to\ consider\ for\ common\ usage,\ based\ on\ the\ type\ of\ image\ data\ being}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00160}00160\ \textcolor{stringliteral}{\ \ \ \ \ \ \ compressed.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00161}00161\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00162}00162\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/decode\_unorm8}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00163}00163\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Indicate\ that\ an\ LDR\ compressed\ texture\ will\ be\ used\ with}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00164}00164\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ the\ decode\_unorm8\ extension\ behavior,\ instead\ of\ the\ default}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00165}00165\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ decode\_float16\ decompression.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00166}00166\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00167}00167\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Matching\ the\ decode\ mode\ used\ during\ compression\ to\ the\ mode}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00168}00168\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ used\ at\ runtime\ will\ improve\ image\ quality\ as\ the\ compressor}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00169}00169\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ can\ ensure\ that\ rounding\ goes\ the\ right\ way.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00170}00170\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00171}00171\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ This\ mode\ is\ used\ automatically\ if\ you\ decompress\ to\ an\ 8-\/bit}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00172}00172\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ per\ component\ output\ image\ format.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00173}00173\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00174}00174\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/normal}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00175}00175\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ The\ input\ texture\ is\ a\ three\ component\ linear\ LDR\ normal\ map}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00176}00176\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ storing\ unit\ length\ normals\ as\ (R=X,\ G=Y,\ B=Z).\ The\ output\ will}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00177}00177\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ be\ a\ two\ component\ X+Y\ normal\ map\ stored\ as\ (RGB=X,\ A=Y).\ The\ Z}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00178}00178\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ component\ can\ be\ recovered\ programmatically\ in\ shader\ code\ by}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00179}00179\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ using\ the\ equation:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00180}00180\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00181}00181\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nml.xy\ =\ texture(...).ga;\ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ Load\ in\ [0,1]}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00182}00182\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nml.xy\ =\ nml.xy\ *\ 2.0\ -\/\ 1.0;\ \ \ \ \ \ \ \ \ \ \ //\ Unpack\ to\ [-\/1,1]}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00183}00183\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nml.z\ =\ sqrt(1\ -\/\ dot(nml.xy,\ nml.xy));\ //\ Compute\ Z}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00184}00184\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00185}00185\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Alternative\ component\ swizzles\ can\ be\ set\ with\ -\/esw\ and\ -\/dsw}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00186}00186\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ parameters.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00187}00187\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00188}00188\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/rgbm\ <max>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00189}00189\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ The\ input\ texture\ is\ an\ RGBM\ encoded\ texture,\ storing\ values\ HDR}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00190}00190\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ values\ between\ 0\ and\ <max>\ in\ an\ LDR\ container\ format\ with\ a}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00191}00191\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ shared\ multiplier.\ Shaders\ reconstruct\ the\ HDR\ value\ as:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00192}00192\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00193}00193\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vec3\ hdr\_value\ =\ tex.rgb\ *\ tex.a\ *\ max;}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00194}00194\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00195}00195\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ The\ compression\ behavior\ of\ the\ ASTC\ format\ for\ RGBM\ data}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00196}00196\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ requires\ that\ the\ user's\ RGBM\ encoding\ preprocess\ keeps\ values}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00197}00197\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ of\ M\ above\ a\ lower\ threshold\ to\ avoid\ them\ quantizing\ to\ zero}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00198}00198\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ during\ compression.\ We\ recommend\ trying\ 16/255\ or\ 32/255.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00199}00199\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00200}00200\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/perceptual}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00201}00201\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ The\ codec\ should\ optimize\ perceptual\ error,\ instead\ of\ direct}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00202}00202\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ RMS\ error.\ This\ aims\ to\ improves\ perceived\ image\ quality,\ but}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00203}00203\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ typically\ lowers\ the\ measured\ PSNR\ score.\ Perceptual\ methods\ are}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00204}00204\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ currently\ only\ available\ for\ normal\ maps\ and\ RGB\ color\ data.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00205}00205\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00206}00206\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/zdim\ <zdim>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00207}00207\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Load\ a\ sequence\ of\ <zdim>\ 2D\ image\ slices\ to\ use\ as\ a\ 3D\ image.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00208}00208\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ The\ input\ filename\ given\ is\ used\ is\ decorated\ with\ the\ postfix}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00209}00209\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ "{}\_<slice>"{}\ to\ find\ the\ file\ to\ load.\ For\ example,\ an\ input\ named}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00210}00210\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ "{}input.png"{}\ would\ load\ as\ input\_0.png,\ input\_1.png,\ etc.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00211}00211\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00212}00212\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/pp-\/normalize}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00213}00213\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ Run\ a\ preprocess\ over\ the\ image\ that\ forces\ normal\ vectors\ to}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00214}00214\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ be\ unit\ length.\ Preprocessing\ applies\ before\ any\ codec\ encoding}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00215}00215\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ swizzle,\ so\ normal\ data\ must\ be\ in\ the\ RGB\ components\ in\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00216}00216\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ source\ image.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00217}00217\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00218}00218\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/pp-\/premultiply}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00219}00219\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ Run\ a\ preprocess\ over\ the\ image\ that\ scales\ RGB\ components\ in}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00220}00220\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ the\ image\ by\ the\ alpha\ value.\ Preprocessing\ applies\ before\ any}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00221}00221\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ codec\ encoding\ swizzle,\ so\ color\ data\ must\ be\ in\ the\ RGB}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00222}00222\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ components\ in\ the\ source\ image.)"{}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00223}00223\ \textcolor{stringliteral}{}\textcolor{comment}{//\ This\ split\ in\ the\ literals\ is\ needed\ for\ Visual\ Studio;\ the\ compiler}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00224}00224\ \textcolor{comment}{//\ will\ concatenate\ these\ two\ strings\ together\ ...}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00225}00225\ R\textcolor{stringliteral}{"{}(}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00226}00226\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00227}00227\ \textcolor{stringliteral}{COMPRESSION\ TIPS\ \&\ TRICKS}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00228}00228\ \textcolor{stringliteral}{\ \ \ \ \ \ \ ASTC\ is\ a\ block-\/based\ format\ that\ can\ be\ prone\ to\ block\ artifacts.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00229}00229\ \textcolor{stringliteral}{\ \ \ \ \ \ \ If\ block\ artifacts\ are\ a\ problem\ when\ compressing\ a\ given\ texture,}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00230}00230\ \textcolor{stringliteral}{\ \ \ \ \ \ \ increasing\ the\ compressor\ quality\ preset\ can\ help\ to\ alleviate\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00231}00231\ \textcolor{stringliteral}{\ \ \ \ \ \ \ problem.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00232}00232\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00233}00233\ \textcolor{stringliteral}{\ \ \ \ \ \ \ If\ a\ texture\ exhibits\ severe\ block\ artifacts\ in\ only\ some\ of\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00234}00234\ \textcolor{stringliteral}{\ \ \ \ \ \ \ color\ components,\ which\ is\ a\ common\ problem\ for\ mask\ textures,\ then}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00235}00235\ \textcolor{stringliteral}{\ \ \ \ \ \ \ using\ the\ -\/cw\ option\ to\ raise\ the\ weighting\ of\ the\ affected\ color}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00236}00236\ \textcolor{stringliteral}{\ \ \ \ \ \ \ component(s)\ may\ help.\ For\ example,\ if\ the\ green\ color\ component\ is}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00237}00237\ \textcolor{stringliteral}{\ \ \ \ \ \ \ particularly\ badly\ encoded\ then\ try\ '-\/cw\ 1\ 6\ 1\ 1'.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00238}00238\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00239}00239\ \textcolor{stringliteral}{ADVANCED\ COMPRESSION}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00240}00240\ \textcolor{stringliteral}{\ \ \ \ \ \ \ Error\ weighting\ options}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00241}00241\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00242}00242\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00243}00243\ \textcolor{stringliteral}{\ \ \ \ \ \ \ These\ options\ provide\ low-\/level\ control\ of\ the\ codec\ error\ metric}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00244}00244\ \textcolor{stringliteral}{\ \ \ \ \ \ \ computation,\ used\ to\ determine\ what\ good\ compression\ looks\ like.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00245}00245\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00246}00246\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/a\ <radius>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00247}00247\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ For\ textures\ with\ alpha\ component,\ scale\ per-\/texel\ weights\ by}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00248}00248\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ the\ alpha\ value.\ The\ alpha\ value\ chosen\ for\ scaling\ of\ any}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00249}00249\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ particular\ texel\ is\ taken\ as\ an\ average\ across\ a\ neighborhood\ of}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00250}00250\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ the\ texel\ defined\ by\ the\ <radius>\ argument.\ Setting\ <radius>\ to}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00251}00251\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ 0\ causes\ only\ the\ texel's\ own\ alpha\ to\ be\ used.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00252}00252\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00253}00253\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ ASTC\ blocks\ that\ are\ entirely\ zero\ weighted,\ after\ the\ radius\ is}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00254}00254\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ taken\ into\ account,\ are\ replaced\ by\ constant\ color\ blocks.\ This}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00255}00255\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ is\ an\ RDO-\/like\ technique\ to\ improve\ compression\ ratio\ in\ any}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00256}00256\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ application\ packaging\ compression\ that\ is\ applied.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00257}00257\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00258}00258\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/cw\ <red>\ <green>\ <blue>\ <alpha>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00259}00259\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Assign\ an\ additional\ weight\ scaling\ to\ each\ color\ component,}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00260}00260\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ allowing\ the\ components\ to\ be\ treated\ differently\ in\ terms\ of}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00261}00261\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ error\ significance.\ Set\ values\ above\ 1\ to\ increase\ a\ component's}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00262}00262\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ significance,\ and\ values\ below\ 1\ to\ decrease\ it.\ Set\ to\ 0\ to}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00263}00263\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ exclude\ a\ component\ from\ error\ computation.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00264}00264\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00265}00265\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/mpsnr\ <low>\ <high>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00266}00266\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Set\ the\ low\ and\ high\ f-\/stop\ values\ for\ the\ mPSNR\ error\ metric.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00267}00267\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ The\ mPSNR\ error\ metric\ only\ applies\ to\ HDR\ textures.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00268}00268\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00269}00269\ \textcolor{stringliteral}{\ \ \ \ \ \ \ Performance-\/quality\ tradeoff\ options}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00270}00270\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00271}00271\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00272}00272\ \textcolor{stringliteral}{\ \ \ \ \ \ \ These\ options\ provide\ low-\/level\ control\ of\ the\ codec\ heuristics\ that}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00273}00273\ \textcolor{stringliteral}{\ \ \ \ \ \ \ drive\ the\ performance-\/quality\ trade\ off.\ The\ presets\ vary\ by\ block}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00274}00274\ \textcolor{stringliteral}{\ \ \ \ \ \ \ bitrate;\ the\ recommended\ starting\ point\ for\ a\ 4x4\ block\ is\ very}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00275}00275\ \textcolor{stringliteral}{\ \ \ \ \ \ \ different\ to\ a\ 8x8\ block.\ The\ presets\ documented\ here\ are\ for\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00276}00276\ \textcolor{stringliteral}{\ \ \ \ \ \ \ high\ bitrate\ mode\ (fewer\ than\ 25\ texels).}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00277}00277\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00278}00278\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/partitioncountlimit\ <number>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00279}00279\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Test\ up\ to\ and\ including\ <number>\ partitions\ for\ each\ block.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00280}00280\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Higher\ numbers\ give\ better\ quality,\ as\ more\ complex\ blocks\ can}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00281}00281\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ be\ encoded,\ but\ will\ increase\ search\ time.\ Preset\ defaults\ are:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00282}00282\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00283}00283\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fastest\ \ \ \ \ \ :\ 2}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00284}00284\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fast\ \ \ \ \ \ \ \ \ :\ 3}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00285}00285\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/medium\ \ \ \ \ \ \ :\ 4}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00286}00286\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/thorough\ \ \ \ \ :\ 4}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00287}00287\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/verythorough\ :\ 4}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00288}00288\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/exhaustive\ \ \ :\ 4}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00289}00289\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00290}00290\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/[2|3|4]partitionindexlimit\ <number>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00291}00291\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Estimate\ errors\ for\ <number>\ block\ partition\ indices\ for\ this}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00292}00292\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ partition\ count.\ Higher\ numbers\ give\ better\ quality,\ however}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00293}00293\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ large\ values\ give\ diminishing\ returns\ especially\ for\ smaller}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00294}00294\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ block\ sizes.\ Preset\ defaults\ are:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00295}00295\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00296}00296\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fastest\ \ \ \ \ \ :\ \ \ 10\ |\ \ \ 6\ |\ \ \ 4}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00297}00297\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fast\ \ \ \ \ \ \ \ \ :\ \ \ 18\ |\ \ 10\ |\ \ \ 8}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00298}00298\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/medium\ \ \ \ \ \ \ :\ \ \ 34\ |\ \ 28\ |\ \ 16}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00299}00299\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/thorough\ \ \ \ \ :\ \ \ 82\ |\ \ 60\ |\ \ 30}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00300}00300\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/verythorough\ :\ \ 256\ |\ 128\ |\ \ 64}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00301}00301\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/exhaustive\ \ \ :\ \ 512\ |\ 512\ |\ 512}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00302}00302\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00303}00303\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/[2|3|4]partitioncandidatelimit\ <number>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00304}00304\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Calculate\ errors\ for\ <number>\ block\ partition\ indices\ for\ this}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00305}00305\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ partition\ count.\ Higher\ numbers\ give\ better\ quality,\ however}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00306}00306\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ large\ values\ give\ diminishing\ returns\ especially\ for\ smaller}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00307}00307\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ block\ sizes.\ Preset\ defaults\ are:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00308}00308\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00309}00309\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fastest\ \ \ \ \ \ :\ \ \ 2\ |\ \ 2\ |\ \ 2}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00310}00310\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fast\ \ \ \ \ \ \ \ \ :\ \ \ 2\ |\ \ 2\ |\ \ 2}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00311}00311\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/medium\ \ \ \ \ \ \ :\ \ \ 2\ |\ \ 2\ |\ \ 2}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00312}00312\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/thorough\ \ \ \ \ :\ \ \ 3\ |\ \ 2\ |\ \ 2}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00313}00313\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/verythorough\ :\ \ 20\ |\ 14\ |\ \ 8}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00314}00314\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/exhaustive\ \ \ :\ \ 32\ |\ 32\ |\ 32}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00315}00315\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00316}00316\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/blockmodelimit\ <number>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00317}00317\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Test\ block\ modes\ below\ <number>\ usage\ centile\ in\ an\ empirically}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00318}00318\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ determined\ distribution\ of\ block\ mode\ frequency.\ This\ option\ is}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00319}00319\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ ineffective\ for\ 3D\ textures.\ Preset\ defaults\ are:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00320}00320\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00321}00321\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fastest\ \ \ \ \ \ :\ \ 43}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00322}00322\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fast\ \ \ \ \ \ \ \ \ :\ \ 55}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00323}00323\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/medium\ \ \ \ \ \ \ :\ \ 77}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00324}00324\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/thorough\ \ \ \ \ :\ \ 94}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00325}00325\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/verythorough\ :\ \ 98}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00326}00326\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/exhaustive\ \ \ :\ 100}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00327}00327\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00328}00328\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/refinementlimit\ <number>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00329}00329\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Iterate\ <number>\ refinement\ iterations\ on\ colors\ and}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00330}00330\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ weights.\ Minimum\ value\ is\ 1.\ Preset\ defaults\ are:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00331}00331\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00332}00332\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fastest\ \ \ \ \ \ :\ 2}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00333}00333\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fast\ \ \ \ \ \ \ \ \ :\ 3}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00334}00334\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/medium\ \ \ \ \ \ \ :\ 3}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00335}00335\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/thorough\ \ \ \ \ :\ 4}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00336}00336\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/verythorough\ :\ 4}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00337}00337\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/exhaustive\ \ \ :\ 4}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00338}00338\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00339}00339\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/candidatelimit\ <number>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00340}00340\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Trial\ <number>\ candidate\ encodings\ for\ each\ block\ mode:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00341}00341\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00342}00342\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fastest\ \ \ \ \ \ :\ 2}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00343}00343\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fast\ \ \ \ \ \ \ \ \ :\ 3}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00344}00344\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/medium\ \ \ \ \ \ \ :\ 3}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00345}00345\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/thorough\ \ \ \ \ :\ 4}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00346}00346\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/verythorough\ :\ 6}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00347}00347\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/exhaustive\ \ \ :\ 8}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00348}00348\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00349}00349\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/dblimit\ <number>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00350}00350\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Stop\ compression\ work\ on\ a\ block\ as\ soon\ as\ the\ PSNR\ of\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00351}00351\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ block,\ measured\ in\ dB,\ exceeds\ <number>.\ This\ option\ is}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00352}00352\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ ineffective\ for\ HDR\ textures.\ Preset\ defaults,\ where\ N\ is\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00353}00353\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ number\ of\ texels\ in\ a\ block,\ are:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00354}00354\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00355}00355\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fastest\ \ \ \ \ \ :\ MAX(63-\/19*log10(N),\ \ 85-\/35*log10(N))}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00356}00356\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fast\ \ \ \ \ \ \ \ \ :\ MAX(63-\/19*log10(N),\ \ 85-\/35*log10(N))}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00357}00357\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/medium\ \ \ \ \ \ \ :\ MAX(70-\/19*log10(N),\ \ 95-\/35*log10(N))}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00358}00358\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/thorough\ \ \ \ \ :\ MAX(77-\/19*log10(N),\ 105-\/35*log10(N))}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00359}00359\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/verythorough\ :\ 999}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00360}00360\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/exhaustive\ \ \ :\ 999}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00361}00361\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00362}00362\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/[2|3]partitionlimitfactor\ <factor>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00363}00363\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Stop\ compression\ work\ on\ a\ block\ after\ only\ testing\ blocks\ with}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00364}00364\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ up\ to\ 2/3\ partitions\ and\ one\ plane\ of\ weights,\ unless\ the\ 2/3}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00365}00365\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ partition\ error\ term\ is\ lower\ than\ the\ error\ term\ from\ encoding}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00366}00366\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ with\ 1/2\ partitions\ by\ more\ than\ the\ specified\ factor.\ Preset}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00367}00367\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ defaults\ are:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00368}00368\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00369}00369\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fastest\ \ \ \ \ \ \ :\ 1.00\ |\ 1.00}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00370}00370\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fast\ \ \ \ \ \ \ \ \ \ :\ 1.00\ |\ 1.00}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00371}00371\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/medium\ \ \ \ \ \ \ \ :\ 1.10\ |\ 1.05}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00372}00372\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/thorough\ \ \ \ \ \ :\ 1.35\ |\ 1.15}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00373}00373\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/verythrorough\ :\ 1.60\ |\ 1.40}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00374}00374\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/exhaustive\ \ \ \ :\ 2.00\ |\ 2.00}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00375}00375\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00376}00376\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/2planelimitcorrelation\ <factor>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00377}00377\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Stop\ compression\ after\ testing\ only\ one\ plane\ of\ weights,\ unless}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00378}00378\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ the\ minimum\ color\ correlation\ factor\ between\ any\ pair\ of\ color}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00379}00379\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ components\ is\ below\ this\ factor.\ This\ option\ is\ ineffective\ for}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00380}00380\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ normal\ maps.\ Preset\ defaults\ are:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00381}00381\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00382}00382\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fastest\ \ \ \ \ \ :\ 0.50}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00383}00383\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/fast\ \ \ \ \ \ \ \ \ :\ 0.65}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00384}00384\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/medium\ \ \ \ \ \ \ :\ 0.85}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00385}00385\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/thorough\ \ \ \ \ :\ 0.95}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00386}00386\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/verythorough\ :\ 0.98}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00387}00387\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/exhaustive\ \ \ :\ 0.99}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00388}00388\ \textcolor{stringliteral}{)"{}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00389}00389\ \textcolor{stringliteral}{}\textcolor{comment}{//\ This\ split\ in\ the\ literals\ is\ needed\ for\ Visual\ Studio;\ the\ compiler}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00390}00390\ \textcolor{comment}{//\ will\ concatenate\ these\ two\ strings\ together\ ...}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00391}00391\ R\textcolor{stringliteral}{"{}(}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00392}00392\ \textcolor{stringliteral}{\ \ \ \ \ \ \ Other\ options}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00393}00393\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00394}00394\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00395}00395\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/esw\ <swizzle>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00396}00396\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Specify\ an\ encoding\ swizzle\ to\ reorder\ the\ color\ components}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00397}00397\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ before\ compression.\ The\ swizzle\ is\ specified\ using\ a\ four}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00398}00398\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ character\ string,\ which\ defines\ the\ format\ ordering\ used\ by}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00399}00399\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ the\ compressor.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00400}00400\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00401}00401\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ The\ characters\ may\ be\ taken\ from\ the\ set\ [rgba01],\ selecting}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00402}00402\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ either\ input\ color\ components\ or\ a\ literal\ zero\ or\ one.\ For}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00403}00403\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ example\ to\ swap\ the\ RG\ components,\ and\ replace\ alpha\ with\ 1,}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00404}00404\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ the\ swizzle\ 'grb1'\ should\ be\ used.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00405}00405\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00406}00406\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ By\ default\ all\ 4\ post-\/swizzle\ components\ are\ included\ in\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00407}00407\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ compression\ error\ metrics.\ When\ using\ -\/esw\ to\ map\ two}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00408}00408\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ component\ data\ to\ the\ L+A\ endpoint\ (e.g.\ -\/esw\ rrrg)\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00409}00409\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ luminance\ data\ stored\ in\ the\ RGB\ components\ will\ be\ weighted\ 3}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00410}00410\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ times\ more\ strongly\ than\ the\ alpha\ component.\ This\ can\ be}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00411}00411\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ corrected\ using\ the\ -\/ssw\ option\ to\ specify\ which\ components}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00412}00412\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ will\ be\ sampled\ at\ runtime\ e.g.\ -\/ssw\ ra.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00413}00413\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00414}00414\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/ssw\ <swizzle>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00415}00415\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Specify\ a\ sampling\ swizzle\ to\ identify\ which\ color\ components}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00416}00416\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ are\ actually\ read\ by\ the\ application\ shader\ program.\ For\ example,}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00417}00417\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ using\ -\/ssw\ ra\ tells\ the\ compressor\ that\ the\ green\ and\ blue\ error}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00418}00418\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ does\ not\ matter\ because\ the\ data\ is\ not\ actually\ read.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00419}00419\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00420}00420\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ The\ sampling\ swizzle\ is\ based\ on\ the\ channel\ ordering\ after\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00421}00421\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ -\/esw\ transform\ has\ been\ applied.\ Note\ -\/ssw\ exposes\ the\ same}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00422}00422\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ functionality\ as\ -\/cw,\ but\ in\ a\ more\ user-\/friendly\ form.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00423}00423\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00424}00424\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/dsw\ <swizzle>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00425}00425\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Specify\ a\ decompression\ swizzle\ used\ to\ reorder\ the\ color}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00426}00426\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ components\ after\ decompression.\ The\ swizzle\ is\ specified\ using}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00427}00427\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ the\ same\ method\ as\ the\ -\/esw\ option,\ with\ support\ for\ an\ extra}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00428}00428\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ "{}z"{}\ character.\ This\ is\ used\ to\ specify\ that\ the\ compressed\ data}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00429}00429\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ stores\ an\ X+Y\ normal\ map,\ and\ that\ the\ Z\ output\ component}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00430}00430\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ should\ be\ reconstructed\ from\ the\ two\ components\ stored\ in\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00431}00431\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ data.\ For\ the\ typical\ ASTC\ normal\ encoding,\ which\ uses\ an}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00432}00432\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ 'rrrg'\ compression\ swizzle,\ you\ should\ specify\ an\ 'raz1'}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00433}00433\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ swizzle\ for\ decompression.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00434}00434\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00435}00435\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/yflip}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00436}00436\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Flip\ the\ image\ in\ the\ vertical\ axis\ prior\ to\ compression\ and}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00437}00437\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ after\ decompression.\ Note\ that\ using\ this\ option\ in\ a\ test\ mode}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00438}00438\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ (-\/t*)\ will\ have\ no\ effect\ as\ the\ image\ will\ be\ flipped\ twice.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00439}00439\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00440}00440\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/j\ <threads>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00441}00441\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Explicitly\ specify\ the\ number\ of\ threads\ to\ use\ in\ the\ codec.\ If}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00442}00442\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ not\ specified,\ the\ codec\ will\ use\ one\ thread\ per\ CPU\ detected\ in}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00443}00443\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ the\ system.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00444}00444\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00445}00445\ \textcolor{stringliteral}{\ \ \ \ \ \ \ -\/silent}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00446}00446\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Suppresses\ all\ non-\/essential\ diagnostic\ output\ from\ the\ codec.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00447}00447\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Error\ messages\ will\ always\ be\ printed,\ as\ will\ mandatory\ outputs}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00448}00448\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ for\ the\ selected\ operation\ mode.\ For\ example,\ the\ test\ mode\ will}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00449}00449\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ always\ output\ image\ quality\ metrics\ and\ compression\ time\ but}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00450}00450\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ will\ suppress\ all\ other\ output.)"{}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00451}00451\ \textcolor{stringliteral}{}\textcolor{comment}{//\ This\ split\ in\ the\ literals\ is\ needed\ for\ Visual\ Studio;\ the\ compiler}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00452}00452\ \textcolor{comment}{//\ will\ concatenate\ these\ two\ strings\ together\ ...}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00453}00453\ R\textcolor{stringliteral}{"{}(}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00454}00454\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00455}00455\ \textcolor{stringliteral}{DECOMPRESSION}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00456}00456\ \textcolor{stringliteral}{\ \ \ \ \ \ \ To\ decompress\ an\ image\ stored\ in\ the\ ASTC\ format\ you\ must\ specify}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00457}00457\ \textcolor{stringliteral}{\ \ \ \ \ \ \ the\ color\ profile,\ the\ input\ file\ name,\ and\ the\ output\ file\ name.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00458}00458\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00459}00459\ \textcolor{stringliteral}{\ \ \ \ \ \ \ The\ color\ profile\ is\ specified\ using\ the\ -\/dl\ (LDR\ linear),\ -\/ds\ (LDR}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00460}00460\ \textcolor{stringliteral}{\ \ \ \ \ \ \ sRGB),\ -\/dh\ (HDR\ RGB,\ LDR\ A),\ or\ -\/dH\ (HDR\ RGBA)\ decoder\ options.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00461}00461\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00462}00462\ \textcolor{stringliteral}{\ \ \ \ \ \ \ The\ input\ file\ path\ must\ match\ a\ valid\ file\ format\ for}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00463}00463\ \textcolor{stringliteral}{\ \ \ \ \ \ \ decompression,\ and\ the\ output\ file\ format\ must\ be\ a\ valid\ output\ for}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00464}00464\ \textcolor{stringliteral}{\ \ \ \ \ \ \ a\ decompressed\ image.\ Note\ that\ not\ all\ output\ formats\ that\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00465}00465\ \textcolor{stringliteral}{\ \ \ \ \ \ \ compression\ path\ can\ produce\ are\ supported\ for\ decompression.\ See}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00466}00466\ \textcolor{stringliteral}{\ \ \ \ \ \ \ the\ FILE\ FORMATS\ section\ for\ the\ list\ of\ supported\ formats.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00467}00467\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00468}00468\ \textcolor{stringliteral}{\ \ \ \ \ \ \ The\ -\/dsw\ option\ documented\ in\ ADVANCED\ COMPRESSION\ option}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00469}00469\ \textcolor{stringliteral}{\ \ \ \ \ \ \ documentation\ is\ also\ relevant\ to\ decompression.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00470}00470\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00471}00471\ \textcolor{stringliteral}{TEST}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00472}00472\ \textcolor{stringliteral}{\ \ \ \ \ \ \ To\ perform\ a\ compression\ test\ which\ round-\/trips\ a\ single\ image}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00473}00473\ \textcolor{stringliteral}{\ \ \ \ \ \ \ through\ compression\ and\ decompression\ and\ stores\ the\ decompressed}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00474}00474\ \textcolor{stringliteral}{\ \ \ \ \ \ \ result\ back\ to\ file,\ you\ must\ specify\ same\ settings\ as\ COMPRESSION}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00475}00475\ \textcolor{stringliteral}{\ \ \ \ \ \ \ other\ than\ swapping\ the\ color\ profile\ to\ select\ test\ mode.\ Note\ that}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00476}00476\ \textcolor{stringliteral}{\ \ \ \ \ \ \ the\ compressed\ intermediate\ data\ is\ discarded\ in\ this\ mode.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00477}00477\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00478}00478\ \textcolor{stringliteral}{\ \ \ \ \ \ \ The\ color\ profile\ is\ specified\ using\ the\ -\/tl\ (LDR\ linear),\ -\/ts\ (LDR}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00479}00479\ \textcolor{stringliteral}{\ \ \ \ \ \ \ sRGB),\ -\/th\ (HDR\ RGB,\ LDR\ A),\ or\ -\/tH\ (HDR\ RGBA)\ encoder\ options.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00480}00480\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00481}00481\ \textcolor{stringliteral}{\ \ \ \ \ \ \ This\ operation\ mode\ will\ print\ error\ metrics\ suitable\ for\ either\ LDR}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00482}00482\ \textcolor{stringliteral}{\ \ \ \ \ \ \ and\ HDR\ images,\ allowing\ some\ assessment\ of\ the\ compression\ image}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00483}00483\ \textcolor{stringliteral}{\ \ \ \ \ \ \ quality.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00484}00484\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00485}00485\ \textcolor{stringliteral}{COMPRESSION\ FILE\ FORMATS}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00486}00486\ \textcolor{stringliteral}{\ \ \ \ \ \ \ The\ following\ formats\ are\ supported\ as\ compression\ inputs:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00487}00487\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00488}00488\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ LDR\ Formats:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00489}00489\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BMP\ (*.bmp)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00490}00490\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PNG\ (*.png)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00491}00491\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Targa\ (*.tga)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00492}00492\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JPEG\ (*.jpg)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00493}00493\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00494}00494\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ HDR\ Formats:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00495}00495\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OpenEXR\ (*.exr)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00496}00496\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Radiance\ HDR\ (*.hdr)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00497}00497\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00498}00498\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Container\ Formats:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00499}00499\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Khronos\ Texture\ KTX\ (*.ktx)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00500}00500\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DirectDraw\ Surface\ DDS\ (*.dds)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00501}00501\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00502}00502\ \textcolor{stringliteral}{\ \ \ \ \ \ \ For\ the\ KTX\ and\ DDS\ formats\ only\ a\ subset\ of\ the\ features\ of\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00503}00503\ \textcolor{stringliteral}{\ \ \ \ \ \ \ formats\ are\ supported:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00504}00504\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00505}00505\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Texture\ topology\ must\ be\ 2D,\ 2D-\/array,\ 3D,\ or\ cube-\/map.\ Note}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00506}00506\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ that\ 2D-\/array\ textures\ are\ treated\ as\ 3D\ block\ input.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00507}00507\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00508}00508\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Texel\ format\ must\ be\ R,\ RG,\ RGB,\ BGR,\ RGBA,\ BGRA,\ L,\ or\ LA.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00509}00509\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00510}00510\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Only\ the\ first\ mipmap\ in\ the\ file\ will\ be\ read.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00511}00511\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00512}00512\ \textcolor{stringliteral}{\ \ \ \ \ \ \ The\ following\ formats\ are\ supported\ as\ compression\ outputs:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00513}00513\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00514}00514\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ ASTC\ (*.astc)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00515}00515\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Khronos\ Texture\ KTX\ (*.ktx)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00516}00516\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00517}00517\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00518}00518\ \textcolor{stringliteral}{DECOMPRESSION\ FILE\ FORMATS}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00519}00519\ \textcolor{stringliteral}{\ \ \ \ \ \ \ The\ following\ formats\ are\ supported\ as\ decompression\ inputs:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00520}00520\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00521}00521\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ ASTC\ (*.astc)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00522}00522\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Khronos\ Texture\ KTX\ (*.ktx)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00523}00523\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00524}00524\ \textcolor{stringliteral}{\ \ \ \ \ \ \ The\ following\ formats\ are\ supported\ as\ decompression\ outputs:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00525}00525\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00526}00526\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ LDR\ Formats:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00527}00527\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BMP\ (*.bmp)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00528}00528\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PNG\ (*.png)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00529}00529\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Targa\ (*.tga)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00530}00530\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00531}00531\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ HDR\ Formats:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00532}00532\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OpenEXR\ (*.exr)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00533}00533\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Radiance\ HDR\ (*.hdr)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00534}00534\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00535}00535\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ Container\ Formats:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00536}00536\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Khronos\ Texture\ KTX\ (*.ktx)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00537}00537\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DirectDraw\ Surface\ DDS\ (*.dds)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00538}00538\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00539}00539\ \textcolor{stringliteral}{QUICK\ REFERENCE}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00540}00540\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00541}00541\ \textcolor{stringliteral}{\ \ \ \ \ \ \ To\ compress\ an\ image\ use:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00542}00542\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ astcenc\ \{-\/cl|-\/cs|-\/ch|-\/cH\}\ <in>\ <out>\ <blockdim>\ <quality>\ [options]}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00543}00543\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00544}00544\ \textcolor{stringliteral}{\ \ \ \ \ \ \ To\ decompress\ an\ image\ use:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00545}00545\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ astcenc\ \{-\/dl|-\/ds|-\/dh|-\/dH\}\ <in>\ <out>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00546}00546\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00547}00547\ \textcolor{stringliteral}{\ \ \ \ \ \ \ To\ perform\ a\ quality\ test\ use:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00548}00548\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ astcenc\ \{-\/tl|-\/ts|-\/th|-\/tH\}\ <in>\ <out>\ <blockdim>\ <quality>\ [options]}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00549}00549\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00550}00550\ \textcolor{stringliteral}{\ \ \ \ \ \ \ Mode\ -\/*l\ =\ linear\ LDR,\ -\/*s\ =\ sRGB\ LDR,\ -\/*h\ =\ HDR\ RGB/LDR\ A,\ -\/*H\ =\ HDR.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00551}00551\ \textcolor{stringliteral}{\ \ \ \ \ \ \ Quality\ =\ -\/fastest/-\/fast/-\/medium/-\/thorough/-\/verythorough/-\/exhaustive/a\ float\ [0-\/100].}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00552}00552\ \textcolor{stringliteral}{)"{};}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00553}00553\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00554}00554\ \textcolor{stringliteral}{}\textcolor{comment}{/*\ See\ header\ for\ documentation.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00555}\mbox{\hyperlink{astcenccli__internal_8h_a3cf209b603114ef9a2c2c9e28697bbe7}{00555}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a3cf209b603114ef9a2c2c9e28697bbe7}{astcenc\_print\_header}}()}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00556}00556\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00557}00557\ \textcolor{preprocessor}{\#if\ (ASTCENC\_AVX\ ==\ 2)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00558}00558\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ simdtype\ =\ \textcolor{stringliteral}{"{}avx2"{}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00559}00559\ \textcolor{preprocessor}{\#elif\ (ASTCENC\_SSE\ ==\ 41)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00560}00560\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ simdtype\ =\ \textcolor{stringliteral}{"{}sse4.1"{}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00561}00561\ \textcolor{preprocessor}{\#elif\ (ASTCENC\_SSE\ ==\ 20)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00562}00562\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ simdtype\ =\ \textcolor{stringliteral}{"{}sse2"{}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00563}00563\ \textcolor{preprocessor}{\#elif\ (ASTCENC\_NEON\ ==\ 1)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00564}00564\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ simdtype\ =\ \textcolor{stringliteral}{"{}neon"{}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00565}00565\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00566}00566\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ simdtype\ =\ \textcolor{stringliteral}{"{}none"{}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00567}00567\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00568}00568\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00569}00569\ \textcolor{preprocessor}{\#if\ (ASTCENC\_POPCNT\ ==\ 1)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00570}00570\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ pcnttype\ =\ \textcolor{stringliteral}{"{}+popcnt"{}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00571}00571\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00572}00572\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ pcnttype\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00573}00573\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00574}00574\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00575}00575\ \textcolor{preprocessor}{\#if\ (ASTCENC\_F16C\ ==\ 1)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00576}00576\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ f16ctype\ =\ \textcolor{stringliteral}{"{}+f16c"{}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00577}00577\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00578}00578\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ f16ctype\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00579}00579\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00580}00580\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00581}00581\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ bits\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void}*)\ *\ 8);}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00582}00582\ \ \ \ \ printf(\mbox{\hyperlink{astcenccli__toplevel__help_8cpp_afb573e80aa8090f02b3424f167ff1ae1}{astcenc\_copyright\_string}},}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00583}00583\ \ \ \ \ \ \ \ \ \ \ \ VERSION\_STRING,\ bits,\ simdtype,\ pcnttype,\ f16ctype,\ YEAR\_STRING);}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00584}00584\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00585}00585\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00586}00586\ \textcolor{comment}{/*\ See\ header\ for\ documentation.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00587}\mbox{\hyperlink{astcenccli__internal_8h_af5bf7c6ac05f0f401cfde7d73ed2b852}{00587}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_af5bf7c6ac05f0f401cfde7d73ed2b852}{astcenc\_print\_shorthelp}}()}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00588}00588\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00589}00589\ \ \ \ \ \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a3cf209b603114ef9a2c2c9e28697bbe7}{astcenc\_print\_header}}();}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00590}00590\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a1143e88ff4e7fd8c7b364556dd4a64f4}{astcenc\_short\_help}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00591}00591\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00592}00592\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00593}00593\ \textcolor{comment}{/*\ See\ header\ for\ documentation.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00594}\mbox{\hyperlink{astcenccli__internal_8h_a7377ad0be8285dd96c932d2744fc4641}{00594}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a7377ad0be8285dd96c932d2744fc4641}{astcenc\_print\_longhelp}}()}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00595}00595\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00596}00596\ \ \ \ \ \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a3cf209b603114ef9a2c2c9e28697bbe7}{astcenc\_print\_header}}();}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00597}00597\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a8f1389189daa58ba75bc5fafa8742739}{astcenc\_long\_help}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__toplevel__help_8cpp_source_l00598}00598\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,2034 @@
+\doxysection{C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.h 파일 참조}
+\hypertarget{astcenc__vecmathlib__none__4_8h}{}\label{astcenc__vecmathlib__none__4_8h}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_vecmathlib\_none\_4.h@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_vecmathlib\_none\_4.h}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$cfenv$>$}\newline
+astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{astcenc__vecmathlib__none__4_8h__incl}
+\end{center}
+\end{figure}
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__none__4_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structvfloat4}{vfloat4}}
+\begin{DoxyCompactList}\small\item\em 4x32-\/bit vectors, implemented using Armv8-\/A NEON. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structvint4}{vint4}}
+\begin{DoxyCompactList}\small\item\em Data type for 4-\/wide ints. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structvmask4}{vmask4}}
+\begin{DoxyCompactList}\small\item\em Data type for 4-\/wide control plane masks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_abd4449ff41ecc8e7bcd98cfffd6e5c40}{operator\texorpdfstring{$\vert$}{|}}} (\mbox{\hyperlink{structvmask4}{vmask4}} a, \mbox{\hyperlink{structvmask4}{vmask4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: mask union (or). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a3c918135b34720033c36a00e92609b5f}{operator\&}} (\mbox{\hyperlink{structvmask4}{vmask4}} a, \mbox{\hyperlink{structvmask4}{vmask4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: mask intersect (and). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ad9c9d50dab86c251438557f636c62d99}{operator\texorpdfstring{$^\wedge$}{\string^}}} (\mbox{\hyperlink{structvmask4}{vmask4}} a, \mbox{\hyperlink{structvmask4}{vmask4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: mask difference (xor). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a78fa82697d1fa4a35ffae4ae8c083d87}{operator\texorpdfstring{$\sim$}{\string~}}} (\mbox{\hyperlink{structvmask4}{vmask4}} a)
+\begin{DoxyCompactList}\small\item\em Overload\+: mask invert (not). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} unsigned int \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{mask}} (\mbox{\hyperlink{structvmask4}{vmask4}} a)
+\begin{DoxyCompactList}\small\item\em Return a 1-\/bit mask code indicating mask status. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a2f09223b237ecfdc252f7626b527b187}{operator+}} (\mbox{\hyperlink{structvint4}{vint4}} a, \mbox{\hyperlink{structvint4}{vint4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector addition. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_abf4f6606eda4504d550ddb0ea5ecbf07}{operator-\/}} (\mbox{\hyperlink{structvint4}{vint4}} a, \mbox{\hyperlink{structvint4}{vint4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector subtraction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_afc566c10fca50ed1a8aa5c76d7c90b10}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{structvint4}{vint4}} a, \mbox{\hyperlink{structvint4}{vint4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector multiplication. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a934cad24fee09ba3cbfd852ff2f1b67d}{operator\texorpdfstring{$\sim$}{\string~}}} (\mbox{\hyperlink{structvint4}{vint4}} a)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector bit invert. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a2a45cffd7e7c564d7022e58dbbc457f7}{operator\texorpdfstring{$\vert$}{|}}} (\mbox{\hyperlink{structvint4}{vint4}} a, \mbox{\hyperlink{structvint4}{vint4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector bitwise or. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a70d9cfb9200ba9bdebec8be5afe57062}{operator\&}} (\mbox{\hyperlink{structvint4}{vint4}} a, \mbox{\hyperlink{structvint4}{vint4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector bitwise and. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a5587ea878f146d2a982182f008a3b44c}{operator\texorpdfstring{$^\wedge$}{\string^}}} (\mbox{\hyperlink{structvint4}{vint4}} a, \mbox{\hyperlink{structvint4}{vint4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector bitwise xor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ae7b23ca57bd80664266ee5812bc96ddc}{operator==}} (\mbox{\hyperlink{structvint4}{vint4}} a, \mbox{\hyperlink{structvint4}{vint4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector equality. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a069f3f26b4ea8c66de0d361e0f2450fd}{operator!=}} (\mbox{\hyperlink{structvint4}{vint4}} a, \mbox{\hyperlink{structvint4}{vint4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector inequality. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_aadaceefd305b25dde80de149e65103b3}{operator$<$}} (\mbox{\hyperlink{structvint4}{vint4}} a, \mbox{\hyperlink{structvint4}{vint4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector less than. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a1b41a86712a135c8e77c48fdc5896273}{operator$>$}} (\mbox{\hyperlink{structvint4}{vint4}} a, \mbox{\hyperlink{structvint4}{vint4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector greater than. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int s$>$ }\\\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a4fa40a2884139d4b717242f8c33415d5}{lsl}} (\mbox{\hyperlink{structvint4}{vint4}} a)
+\begin{DoxyCompactList}\small\item\em Logical shift left. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int s$>$ }\\\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a8b411f4373c9d5e43f7dee1b588c979b}{lsr}} (\mbox{\hyperlink{structvint4}{vint4}} a)
+\begin{DoxyCompactList}\small\item\em Logical shift right. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int s$>$ }\\\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a3aafe2c4e0e07459e5801077efe8b0e9}{asr}} (\mbox{\hyperlink{structvint4}{vint4}} a)
+\begin{DoxyCompactList}\small\item\em Arithmetic shift right. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a7a85b43ef2e9f39c7c96efd70f2c4f44}{min}} (\mbox{\hyperlink{structvint4}{vint4}} a, \mbox{\hyperlink{structvint4}{vint4}} b)
+\begin{DoxyCompactList}\small\item\em Return the min vector of two vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a2d6351bd14baadd98934494a251dc5a3}{max}} (\mbox{\hyperlink{structvint4}{vint4}} a, \mbox{\hyperlink{structvint4}{vint4}} b)
+\begin{DoxyCompactList}\small\item\em Return the min vector of two vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a0183aec58e3a5ebe985eb91a3878c03b}{hmin}} (\mbox{\hyperlink{structvint4}{vint4}} a)
+\begin{DoxyCompactList}\small\item\em Return the horizontal minimum of a single vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a3af99a9acad961db265a9deb1505c9c5}{hmax}} (\mbox{\hyperlink{structvint4}{vint4}} a)
+\begin{DoxyCompactList}\small\item\em Return the horizontal maximum of a single vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} int \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a815aba9fd92c23da0e753b8e19e0eedb}{hadd\+\_\+s}} (\mbox{\hyperlink{structvint4}{vint4}} a)
+\begin{DoxyCompactList}\small\item\em Return the horizontal sum of vector lanes as a scalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a203ae30cc77a9374d87a040df90a541c}{storea}} (\mbox{\hyperlink{structvint4}{vint4}} a, int \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Store a vector to an aligned memory address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a64b2b468ffb4186087ed14323c465530}{store}} (\mbox{\hyperlink{structvint4}{vint4}} a, int \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Store a vector to an unaligned memory address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_aaeca9cc7648e0922de5b9b112dfed12b}{store}} (\mbox{\hyperlink{structvint4}{vint4}} a, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Store a vector to an unaligned memory address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ad4bf66a99066037a51d26da7f546fc42}{store\+\_\+nbytes}} (\mbox{\hyperlink{structvint4}{vint4}} a, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Store lowest N (vector width) bytes into an unaligned address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a539d4d222e2f5ee27469fc38845cd170}{gatheri}} (const int \texorpdfstring{$\ast$}{*}base, \mbox{\hyperlink{structvint4}{vint4}} indices)
+\begin{DoxyCompactList}\small\item\em Gather N (vector width) indices from the array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_af2e7991e895c7206d444344d2c4f3403}{pack\+\_\+low\+\_\+bytes}} (\mbox{\hyperlink{structvint4}{vint4}} a)
+\begin{DoxyCompactList}\small\item\em Pack low 8 bits of N (vector width) lanes into bottom of vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_abe3db3d259e423d6a186bf5e4eb33d30}{select}} (\mbox{\hyperlink{structvint4}{vint4}} a, \mbox{\hyperlink{structvint4}{vint4}} b, \mbox{\hyperlink{structvmask4}{vmask4}} cond)
+\begin{DoxyCompactList}\small\item\em Return lanes from {\ttfamily b} if MSB of {\ttfamily cond} is set, else {\ttfamily a}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ac917d6d043ae722325a5f9e5c744135b}{operator+}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a, \mbox{\hyperlink{structvfloat4}{vfloat4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector addition. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a504ea848fa45d815a071380f97fb8fb9}{operator-\/}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a, \mbox{\hyperlink{structvfloat4}{vfloat4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector subtraction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a6ec6a9e5285329bad79fc3e7277d29bd}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a, \mbox{\hyperlink{structvfloat4}{vfloat4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector multiplication. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ad535e92dcf6128bff2697d10569daf33}{operator/}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a, \mbox{\hyperlink{structvfloat4}{vfloat4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector division. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a15b3a417d47fb340e426df508cbf8284}{operator==}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a, \mbox{\hyperlink{structvfloat4}{vfloat4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector equality. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ae20a417bde159a5107ac8429d5819539}{operator!=}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a, \mbox{\hyperlink{structvfloat4}{vfloat4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector inequality. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a68157f3dd323d4858acbd9590c050f59}{operator$<$}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a, \mbox{\hyperlink{structvfloat4}{vfloat4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector less than. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ab98db78b76c72c25e0bf7abab20c7cd6}{operator$>$}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a, \mbox{\hyperlink{structvfloat4}{vfloat4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector greater than. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a253da9de0e4c6ad15b3c7d43f4ef153c}{operator$<$=}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a, \mbox{\hyperlink{structvfloat4}{vfloat4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector less than or equal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a70d736a3ece17213585ae4dd028ef15e}{operator$>$=}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a, \mbox{\hyperlink{structvfloat4}{vfloat4}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector greater than or equal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ad216ad1f41f2407130aee5261cd6fbd1}{min}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a, \mbox{\hyperlink{structvfloat4}{vfloat4}} b)
+\begin{DoxyCompactList}\small\item\em Return the min vector of two vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a2e8719e762dd2a59b2583bf3b8693c44}{max}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a, \mbox{\hyperlink{structvfloat4}{vfloat4}} b)
+\begin{DoxyCompactList}\small\item\em Return the max vector of two vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a3c99e71f1edc5cba06984be10ee78d80}{abs}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a)
+\begin{DoxyCompactList}\small\item\em Return the absolute value of the float vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_aef8bc219f1f9eee92b018e6773ac087d}{round}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a)
+\begin{DoxyCompactList}\small\item\em Return a float rounded to the nearest integer value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a1a118a105d5cdd4ce647b554e2390c24}{hmin}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a)
+\begin{DoxyCompactList}\small\item\em Return the horizontal minimum of a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a5f0ad3199c8a44b07cd8c6fc7682595f}{hmax}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a)
+\begin{DoxyCompactList}\small\item\em Return the horizontal maximum of a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} float \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ad92bad1188006bf204ef65cac805c8f4}{hadd\+\_\+s}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a)
+\begin{DoxyCompactList}\small\item\em Return the horizontal sum of a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a79cf1473d2d948c7158856e262b3ff9b}{sqrt}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a)
+\begin{DoxyCompactList}\small\item\em Return the sqrt of the lanes in the vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a008027d6bed6cf6482cd912d9326685a}{select}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a, \mbox{\hyperlink{structvfloat4}{vfloat4}} b, \mbox{\hyperlink{structvmask4}{vmask4}} cond)
+\begin{DoxyCompactList}\small\item\em Return lanes from {\ttfamily b} if {\ttfamily cond} is set, else {\ttfamily a}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a7bb0d5791f7c2979e5fd3784a5216791}{select\+\_\+msb}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a, \mbox{\hyperlink{structvfloat4}{vfloat4}} b, \mbox{\hyperlink{structvmask4}{vmask4}} cond)
+\begin{DoxyCompactList}\small\item\em Return lanes from {\ttfamily b} if MSB of {\ttfamily cond} is set, else {\ttfamily a}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_aff91c3b09a7495ae8a23556c9c29817a}{gatherf}} (const float \texorpdfstring{$\ast$}{*}base, \mbox{\hyperlink{structvint4}{vint4}} indices)
+\begin{DoxyCompactList}\small\item\em Load a vector of gathered results from an array; \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a808e71beb4498d2831b0dcf30885b0fa}{store}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a, float \texorpdfstring{$\ast$}{*}ptr)
+\begin{DoxyCompactList}\small\item\em Store a vector to an unaligned memory address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a5f436bef7a69f9722dd0692464bb3019}{storea}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a, float \texorpdfstring{$\ast$}{*}ptr)
+\begin{DoxyCompactList}\small\item\em Store a vector to an aligned memory address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a29f6a36e74f642b3826523de6a8ac1ba}{float\+\_\+to\+\_\+int}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a)
+\begin{DoxyCompactList}\small\item\em Return a integer value for a float vector, using truncation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a0245151ab6070d8f5fbf9d33157deeb5}{float\+\_\+to\+\_\+int\+\_\+rtn}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a)
+\begin{DoxyCompactList}\small\item\em Return a integer value for a float vector, using round-\/to-\/nearest. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a1616707021fd010410bd83f58b05054e}{int\+\_\+to\+\_\+float}} (\mbox{\hyperlink{structvint4}{vint4}} a)
+\begin{DoxyCompactList}\small\item\em Return a float value for a integer vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ae8701a3f44d7b99016d54c3d6ee27581}{float\+\_\+to\+\_\+float16}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a)
+\begin{DoxyCompactList}\small\item\em Return a float16 value for a float vector, using round-\/to-\/nearest. \end{DoxyCompactList}\item 
+static uint16\+\_\+t \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a10df3e400408261cacabfeb14d33ff32}{float\+\_\+to\+\_\+float16}} (float a)
+\begin{DoxyCompactList}\small\item\em Return a float16 value for a float scalar, using round-\/to-\/nearest. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_afd7aa2069bdf377067c3abaca1256432}{float16\+\_\+to\+\_\+float}} (\mbox{\hyperlink{structvint4}{vint4}} a)
+\begin{DoxyCompactList}\small\item\em Return a float value for a float16 vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} float \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a68520f7bd047bc3034eab0079e09fe54}{float16\+\_\+to\+\_\+float}} (uint16\+\_\+t a)
+\begin{DoxyCompactList}\small\item\em Return a float value for a float16 scalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a8141d5bdceaf57ce3b39bbbeb89ffa95}{float\+\_\+as\+\_\+int}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} a)
+\begin{DoxyCompactList}\small\item\em Return a float value as an integer bit pattern (i.\+e. no conversion). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a8705324f187cf3e67d0da06f05dd84b4}{int\+\_\+as\+\_\+float}} (\mbox{\hyperlink{structvint4}{vint4}} a)
+\begin{DoxyCompactList}\small\item\em Return a integer value as a float bit pattern (i.\+e. no conversion). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ae02607d922cc8a6893fae4ac82bffc86}{vtable\+\_\+prepare}} (\mbox{\hyperlink{structvint4}{vint4}} t0, \mbox{\hyperlink{structvint4}{vint4}} \&t0p)
+\begin{DoxyCompactList}\small\item\em Prepare a vtable lookup table for use with the native SIMD size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a85f90749a9f0cdfbf5a94b250cafff5e}{vtable\+\_\+prepare}} (\mbox{\hyperlink{structvint4}{vint4}} t0, \mbox{\hyperlink{structvint4}{vint4}} t1, \mbox{\hyperlink{structvint4}{vint4}} \&t0p, \mbox{\hyperlink{structvint4}{vint4}} \&t1p)
+\begin{DoxyCompactList}\small\item\em Prepare a vtable lookup table for use with the native SIMD size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a9dae512169e56cda22858fdcf76f3a4c}{vtable\+\_\+prepare}} (\mbox{\hyperlink{structvint4}{vint4}} t0, \mbox{\hyperlink{structvint4}{vint4}} t1, \mbox{\hyperlink{structvint4}{vint4}} t2, \mbox{\hyperlink{structvint4}{vint4}} t3, \mbox{\hyperlink{structvint4}{vint4}} \&t0p, \mbox{\hyperlink{structvint4}{vint4}} \&t1p, \mbox{\hyperlink{structvint4}{vint4}} \&t2p, \mbox{\hyperlink{structvint4}{vint4}} \&t3p)
+\begin{DoxyCompactList}\small\item\em Prepare a vtable lookup table for use with the native SIMD size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ad4dd956a47ffd39f142c0faf8c9279b9}{vtable\+\_\+8bt\+\_\+32bi}} (\mbox{\hyperlink{structvint4}{vint4}} t0, \mbox{\hyperlink{structvint4}{vint4}} idx)
+\begin{DoxyCompactList}\small\item\em Perform an 8-\/bit 16-\/entry table lookup, with 32-\/bit indexes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a2855381600ae7c54b4cc6a753460f5c6}{vtable\+\_\+8bt\+\_\+32bi}} (\mbox{\hyperlink{structvint4}{vint4}} t0, \mbox{\hyperlink{structvint4}{vint4}} t1, \mbox{\hyperlink{structvint4}{vint4}} idx)
+\begin{DoxyCompactList}\small\item\em Perform an 8-\/bit 32-\/entry table lookup, with 32-\/bit indexes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ad78f9b072711a081a4d77556cfe0c74f}{vtable\+\_\+8bt\+\_\+32bi}} (\mbox{\hyperlink{structvint4}{vint4}} t0, \mbox{\hyperlink{structvint4}{vint4}} t1, \mbox{\hyperlink{structvint4}{vint4}} t2, \mbox{\hyperlink{structvint4}{vint4}} t3, \mbox{\hyperlink{structvint4}{vint4}} idx)
+\begin{DoxyCompactList}\small\item\em Perform an 8-\/bit 64-\/entry table lookup, with 32-\/bit indexes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a8ea3f169069b462356409fcc15f13aef}{interleave\+\_\+rgba8}} (\mbox{\hyperlink{structvint4}{vint4}} r, \mbox{\hyperlink{structvint4}{vint4}} g, \mbox{\hyperlink{structvint4}{vint4}} b, \mbox{\hyperlink{structvint4}{vint4}} a)
+\begin{DoxyCompactList}\small\item\em Return a vector of interleaved RGBA data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a8c40a8da20466cb41e43ed75b66fb284}{store\+\_\+lane}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}base, int data)
+\begin{DoxyCompactList}\small\item\em Store a single vector lane to an unaligned address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a06d81cde4f48428426ef009f341fdfbb}{store\+\_\+lanes\+\_\+masked}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}base, \mbox{\hyperlink{structvint4}{vint4}} data, \mbox{\hyperlink{structvmask4}{vmask4}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}})
+\begin{DoxyCompactList}\small\item\em Store a vector, skipping masked lanes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a3c99e71f1edc5cba06984be10ee78d80}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!abs@{abs}}
+\index{abs@{abs}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{abs()}{abs()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a3c99e71f1edc5cba06984be10ee78d80} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} abs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the absolute value of the float vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00866}{866}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00867\ \{}
+\DoxyCodeLine{00868\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(std::abs(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]),}
+\DoxyCodeLine{00869\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::abs(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]),}
+\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::abs(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2]),}
+\DoxyCodeLine{00871\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::abs(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]));}
+\DoxyCodeLine{00872\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a3aafe2c4e0e07459e5801077efe8b0e9}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!asr@{asr}}
+\index{asr@{asr}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{asr()}{asr()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a3aafe2c4e0e07459e5801077efe8b0e9} 
+template$<$int s$>$ \\
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} asr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Arithmetic shift right. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00591}{591}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00592\ \{}
+\DoxyCodeLine{00593\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ >>\ s,}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]\ >>\ s,}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2]\ >>\ s,}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]\ >>\ s);}
+\DoxyCodeLine{00597\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a68520f7bd047bc3034eab0079e09fe54}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!float16\_to\_float@{float16\_to\_float}}
+\index{float16\_to\_float@{float16\_to\_float}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{float16\_to\_float()}{float16\_to\_float()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a68520f7bd047bc3034eab0079e09fe54} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} float float16\+\_\+to\+\_\+float (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a float value for a float16 scalar. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l01050}{1050}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01051\ \{}
+\DoxyCodeLine{01052\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__mathlib_8h_a64d6b5e88e81fa48697c3a7272655a7c}{sf16\_to\_float}}(a);}
+\DoxyCodeLine{01053\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__none__4_8h_a68520f7bd047bc3034eab0079e09fe54_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_afd7aa2069bdf377067c3abaca1256432}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!float16\_to\_float@{float16\_to\_float}}
+\index{float16\_to\_float@{float16\_to\_float}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{float16\_to\_float()}{float16\_to\_float()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_afd7aa2069bdf377067c3abaca1256432} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} float16\+\_\+to\+\_\+float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a float value for a float16 vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l01038}{1038}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01039\ \{}
+\DoxyCodeLine{01040\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(}
+\DoxyCodeLine{01041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_a64d6b5e88e81fa48697c3a7272655a7c}{sf16\_to\_float}}(\textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<0>())),}
+\DoxyCodeLine{01042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_a64d6b5e88e81fa48697c3a7272655a7c}{sf16\_to\_float}}(\textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<1>())),}
+\DoxyCodeLine{01043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_a64d6b5e88e81fa48697c3a7272655a7c}{sf16\_to\_float}}(\textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<2>())),}
+\DoxyCodeLine{01044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_a64d6b5e88e81fa48697c3a7272655a7c}{sf16\_to\_float}}(\textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<3>())));}
+\DoxyCodeLine{01045\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__none__4_8h_afd7aa2069bdf377067c3abaca1256432_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a8141d5bdceaf57ce3b39bbbeb89ffa95}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!float\_as\_int@{float\_as\_int}}
+\index{float\_as\_int@{float\_as\_int}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{float\_as\_int()}{float\_as\_int()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a8141d5bdceaf57ce3b39bbbeb89ffa95} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} float\+\_\+as\+\_\+int (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a float value as an integer bit pattern (i.\+e. no conversion). 
+
+It is a common trick to convert floats into integer bit patterns, perform some bit hackery based on knowledge they are IEEE 754 layout, and then convert them back again. This is the first half of that flip. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l01062}{1062}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01063\ \{}
+\DoxyCodeLine{01064\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ r;}
+\DoxyCodeLine{01065\ \ \ \ \ std::memcpy(r.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ 4\ *\ 4);}
+\DoxyCodeLine{01066\ \ \ \ \ \textcolor{keywordflow}{return}\ r;}
+\DoxyCodeLine{01067\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a10df3e400408261cacabfeb14d33ff32}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!float\_to\_float16@{float\_to\_float16}}
+\index{float\_to\_float16@{float\_to\_float16}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{float\_to\_float16()}{float\_to\_float16()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a10df3e400408261cacabfeb14d33ff32} 
+static uint16\+\_\+t float\+\_\+to\+\_\+float16 (\begin{DoxyParamCaption}\item[{float}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return a float16 value for a float scalar, using round-\/to-\/nearest. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l01030}{1030}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01031\ \{}
+\DoxyCodeLine{01032\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__mathlib_8h_adcbc7cc9a9cd0ab7fca183a5d20e4182}{float\_to\_sf16}}(a);}
+\DoxyCodeLine{01033\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__none__4_8h_a10df3e400408261cacabfeb14d33ff32_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_ae8701a3f44d7b99016d54c3d6ee27581}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!float\_to\_float16@{float\_to\_float16}}
+\index{float\_to\_float16@{float\_to\_float16}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{float\_to\_float16()}{float\_to\_float16()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_ae8701a3f44d7b99016d54c3d6ee27581} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} float\+\_\+to\+\_\+float16 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a float16 value for a float vector, using round-\/to-\/nearest. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l01018}{1018}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01019\ \{}
+\DoxyCodeLine{01020\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(}
+\DoxyCodeLine{01021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adcbc7cc9a9cd0ab7fca183a5d20e4182}{float\_to\_sf16}}(a.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>()),}
+\DoxyCodeLine{01022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adcbc7cc9a9cd0ab7fca183a5d20e4182}{float\_to\_sf16}}(a.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>()),}
+\DoxyCodeLine{01023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adcbc7cc9a9cd0ab7fca183a5d20e4182}{float\_to\_sf16}}(a.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>()),}
+\DoxyCodeLine{01024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adcbc7cc9a9cd0ab7fca183a5d20e4182}{float\_to\_sf16}}(a.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()));}
+\DoxyCodeLine{01025\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__none__4_8h_ae8701a3f44d7b99016d54c3d6ee27581_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a29f6a36e74f642b3826523de6a8ac1ba}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!float\_to\_int@{float\_to\_int}}
+\index{float\_to\_int@{float\_to\_int}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{float\_to\_int()}{float\_to\_int()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a29f6a36e74f642b3826523de6a8ac1ba} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} float\+\_\+to\+\_\+int (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a integer value for a float vector, using truncation. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00984}{984}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00985\ \{}
+\DoxyCodeLine{00986\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]),}
+\DoxyCodeLine{00987\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]),}
+\DoxyCodeLine{00988\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2]),}
+\DoxyCodeLine{00989\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]));}
+\DoxyCodeLine{00990\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a0245151ab6070d8f5fbf9d33157deeb5}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!float\_to\_int\_rtn@{float\_to\_int\_rtn}}
+\index{float\_to\_int\_rtn@{float\_to\_int\_rtn}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{float\_to\_int\_rtn()}{float\_to\_int\_rtn()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a0245151ab6070d8f5fbf9d33157deeb5} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} float\+\_\+to\+\_\+int\+\_\+rtn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a integer value for a float vector, using round-\/to-\/nearest. 
+
+f 
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00995}{995}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00996\ \{}
+\DoxyCodeLine{00997\ \ \ \ \ a\ =\ a\ +\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(0.5f);}
+\DoxyCodeLine{00998\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]),}
+\DoxyCodeLine{00999\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]),}
+\DoxyCodeLine{01000\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2]),}
+\DoxyCodeLine{01001\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]));}
+\DoxyCodeLine{01002\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_aff91c3b09a7495ae8a23556c9c29817a}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!gatherf@{gatherf}}
+\index{gatherf@{gatherf}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{gatherf()}{gatherf()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_aff91c3b09a7495ae8a23556c9c29817a} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} gatherf (\begin{DoxyParamCaption}\item[{const float \texorpdfstring{$\ast$}{*}}]{base}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{indices}{}\end{DoxyParamCaption})}
+
+
+
+Load a vector of gathered results from an array; 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00951}{951}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00952\ \{}
+\DoxyCodeLine{00953\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(base[indices.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]],}
+\DoxyCodeLine{00954\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ base[indices.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]],}
+\DoxyCodeLine{00955\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ base[indices.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2]],}
+\DoxyCodeLine{00956\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ base[indices.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]]);}
+\DoxyCodeLine{00957\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a539d4d222e2f5ee27469fc38845cd170}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!gatheri@{gatheri}}
+\index{gatheri@{gatheri}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{gatheri()}{gatheri()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a539d4d222e2f5ee27469fc38845cd170} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} gatheri (\begin{DoxyParamCaption}\item[{const int \texorpdfstring{$\ast$}{*}}]{base}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{indices}{}\end{DoxyParamCaption})}
+
+
+
+Gather N (vector width) indices from the array. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00690}{690}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00691\ \{}
+\DoxyCodeLine{00692\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(base[indices.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]],}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ base[indices.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]],}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ base[indices.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2]],}
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ base[indices.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]]);}
+\DoxyCodeLine{00696\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_ad92bad1188006bf204ef65cac805c8f4}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!hadd\_s@{hadd\_s}}
+\index{hadd\_s@{hadd\_s}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{hadd\_s()}{hadd\_s()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_ad92bad1188006bf204ef65cac805c8f4} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} float hadd\+\_\+s (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the horizontal sum of a vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00909}{909}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00910\ \{}
+\DoxyCodeLine{00911\ \ \ \ \ \textcolor{comment}{//\ Use\ halving\ add,\ gives\ invariance\ with\ SIMD\ versions}}
+\DoxyCodeLine{00912\ \ \ \ \ \textcolor{keywordflow}{return}\ (a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ +\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2])\ +\ (a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]\ +\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]);}
+\DoxyCodeLine{00913\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a815aba9fd92c23da0e753b8e19e0eedb}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!hadd\_s@{hadd\_s}}
+\index{hadd\_s@{hadd\_s}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{hadd\_s()}{hadd\_s()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a815aba9fd92c23da0e753b8e19e0eedb} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} int hadd\+\_\+s (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the horizontal sum of vector lanes as a scalar. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00644}{644}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00645\ \{}
+\DoxyCodeLine{00646\ \ \ \ \ \textcolor{keywordflow}{return}\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ +\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]\ +\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2]\ +\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3];}
+\DoxyCodeLine{00647\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a5f0ad3199c8a44b07cd8c6fc7682595f}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!hmax@{hmax}}
+\index{hmax@{hmax}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{hmax()}{hmax()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a5f0ad3199c8a44b07cd8c6fc7682595f} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} hmax (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the horizontal maximum of a vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00899}{899}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00900\ \{}
+\DoxyCodeLine{00901\ \ \ \ \ \textcolor{keywordtype}{float}\ tmp1\ =\ std::max(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0],\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]);}
+\DoxyCodeLine{00902\ \ \ \ \ \textcolor{keywordtype}{float}\ tmp2\ =\ std::max(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2],\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]);}
+\DoxyCodeLine{00903\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(std::max(tmp1,\ tmp2));}
+\DoxyCodeLine{00904\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a3af99a9acad961db265a9deb1505c9c5}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!hmax@{hmax}}
+\index{hmax@{hmax}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{hmax()}{hmax()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a3af99a9acad961db265a9deb1505c9c5} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} hmax (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the horizontal maximum of a single vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00634}{634}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00635\ \{}
+\DoxyCodeLine{00636\ \ \ \ \ \textcolor{keywordtype}{int}\ b\ =\ std::max(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0],\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]);}
+\DoxyCodeLine{00637\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ std::max(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2],\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]);}
+\DoxyCodeLine{00638\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(std::max(b,\ c));}
+\DoxyCodeLine{00639\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a1a118a105d5cdd4ce647b554e2390c24}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!hmin@{hmin}}
+\index{hmin@{hmin}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{hmin()}{hmin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a1a118a105d5cdd4ce647b554e2390c24} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} hmin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the horizontal minimum of a vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00889}{889}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00890\ \{}
+\DoxyCodeLine{00891\ \ \ \ \ \textcolor{keywordtype}{float}\ tmp1\ =\ std::min(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0],\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]);}
+\DoxyCodeLine{00892\ \ \ \ \ \textcolor{keywordtype}{float}\ tmp2\ =\ std::min(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2],\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]);}
+\DoxyCodeLine{00893\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(std::min(tmp1,\ tmp2));}
+\DoxyCodeLine{00894\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a0183aec58e3a5ebe985eb91a3878c03b}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!hmin@{hmin}}
+\index{hmin@{hmin}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{hmin()}{hmin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a0183aec58e3a5ebe985eb91a3878c03b} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} hmin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the horizontal minimum of a single vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00624}{624}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00625\ \{}
+\DoxyCodeLine{00626\ \ \ \ \ \textcolor{keywordtype}{int}\ b\ =\ std::min(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0],\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]);}
+\DoxyCodeLine{00627\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ std::min(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2],\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]);}
+\DoxyCodeLine{00628\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(std::min(b,\ c));}
+\DoxyCodeLine{00629\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a8705324f187cf3e67d0da06f05dd84b4}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!int\_as\_float@{int\_as\_float}}
+\index{int\_as\_float@{int\_as\_float}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{int\_as\_float()}{int\_as\_float()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a8705324f187cf3e67d0da06f05dd84b4} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} int\+\_\+as\+\_\+float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a integer value as a float bit pattern (i.\+e. no conversion). 
+
+It is a common trick to convert floats into integer bit patterns, perform some bit hackery based on knowledge they are IEEE 754 layout, and then convert them back again. This is the second half of that flip. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l01076}{1076}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01077\ \{}
+\DoxyCodeLine{01078\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ r;}
+\DoxyCodeLine{01079\ \ \ \ \ std::memcpy(r.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}},\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ 4\ *\ 4);}
+\DoxyCodeLine{01080\ \ \ \ \ \textcolor{keywordflow}{return}\ r;}
+\DoxyCodeLine{01081\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a1616707021fd010410bd83f58b05054e}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!int\_to\_float@{int\_to\_float}}
+\index{int\_to\_float@{int\_to\_float}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{int\_to\_float()}{int\_to\_float()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a1616707021fd010410bd83f58b05054e} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} int\+\_\+to\+\_\+float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a float value for a integer vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l01007}{1007}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01008\ \{}
+\DoxyCodeLine{01009\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]),}
+\DoxyCodeLine{01010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]),}
+\DoxyCodeLine{01011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2]),}
+\DoxyCodeLine{01012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]));}
+\DoxyCodeLine{01013\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a8ea3f169069b462356409fcc15f13aef}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!interleave\_rgba8@{interleave\_rgba8}}
+\index{interleave\_rgba8@{interleave\_rgba8}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{interleave\_rgba8()}{interleave\_rgba8()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a8ea3f169069b462356409fcc15f13aef} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} interleave\+\_\+rgba8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{r}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{g}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{b}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a vector of interleaved RGBA data. 
+
+Input vectors have the value stored in the bottom 8 bits of each lane, with high bits set to zero.
+
+Output vector stores a single RGBA texel packed in each lane. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l01171}{1171}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01172\ \{}
+\DoxyCodeLine{01173\ \ \ \ \ \textcolor{keywordflow}{return}\ r\ +\ \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a4fa40a2884139d4b717242f8c33415d5}{lsl<8>}}(g)\ +\ \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a4fa40a2884139d4b717242f8c33415d5}{lsl<16>}}(b)\ +\ \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a4fa40a2884139d4b717242f8c33415d5}{lsl<24>}}(a);}
+\DoxyCodeLine{01174\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{astcenc__vecmathlib__none__4_8h_a8ea3f169069b462356409fcc15f13aef_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a4fa40a2884139d4b717242f8c33415d5}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!lsl@{lsl}}
+\index{lsl@{lsl}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{lsl()}{lsl()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a4fa40a2884139d4b717242f8c33415d5} 
+template$<$int s$>$ \\
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} lsl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Logical shift left. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00557}{557}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00558\ \{}
+\DoxyCodeLine{00559\ \ \ \ \ \textcolor{comment}{//\ Cast\ to\ unsigned\ to\ avoid\ shift\ in/out\ of\ sign\ bit\ undefined\ behavior}}
+\DoxyCodeLine{00560\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ as0\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0])\ <<\ s;}
+\DoxyCodeLine{00561\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ as1\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1])\ <<\ s;}
+\DoxyCodeLine{00562\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ as2\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2])\ <<\ s;}
+\DoxyCodeLine{00563\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ as3\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3])\ <<\ s;}
+\DoxyCodeLine{00564\ }
+\DoxyCodeLine{00565\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(as0),}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(as1),}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(as2),}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(as3));}
+\DoxyCodeLine{00569\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{astcenc__vecmathlib__none__4_8h_a4fa40a2884139d4b717242f8c33415d5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a8b411f4373c9d5e43f7dee1b588c979b}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!lsr@{lsr}}
+\index{lsr@{lsr}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{lsr()}{lsr()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a8b411f4373c9d5e43f7dee1b588c979b} 
+template$<$int s$>$ \\
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} lsr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Logical shift right. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00574}{574}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00575\ \{}
+\DoxyCodeLine{00576\ \ \ \ \ \textcolor{comment}{//\ Cast\ to\ unsigned\ to\ avoid\ shift\ in/out\ of\ sign\ bit\ undefined\ behavior}}
+\DoxyCodeLine{00577\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ as0\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0])\ >>\ s;}
+\DoxyCodeLine{00578\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ as1\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1])\ >>\ s;}
+\DoxyCodeLine{00579\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ as2\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2])\ >>\ s;}
+\DoxyCodeLine{00580\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ as3\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3])\ >>\ s;}
+\DoxyCodeLine{00581\ }
+\DoxyCodeLine{00582\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(as0),}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(as1),}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(as2),}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(as3));}
+\DoxyCodeLine{00586\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_ad9df1f93677ac4d73ece1d22cc345045}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!mask@{mask}}
+\index{mask@{mask}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{mask()}{mask()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_ad9df1f93677ac4d73ece1d22cc345045} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} unsigned int mask (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvmask4}{vmask4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a 1-\/bit mask code indicating mask status. 
+
+bit0 = lane 0 
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00421}{421}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00422\ \{}
+\DoxyCodeLine{00423\ \ \ \ \ \textcolor{keywordflow}{return}\ ((a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[0]\ >>\ 31)\ \&\ 0x1)\ |}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ ((a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[1]\ >>\ 30)\ \&\ 0x2)\ |}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ ((a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[2]\ >>\ 29)\ \&\ 0x4)\ |}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ ((a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[3]\ >>\ 28)\ \&\ 0x8);}
+\DoxyCodeLine{00427\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{astcenc__vecmathlib__none__4_8h_ad9df1f93677ac4d73ece1d22cc345045_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a2e8719e762dd2a59b2583bf3b8693c44}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!max@{max}}
+\index{max@{max}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a2e8719e762dd2a59b2583bf3b8693c44} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} max (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Return the max vector of two vectors. 
+
+If either lane value is NaN, {\ttfamily b} will be returned for that lane. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00855}{855}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00856\ \{}
+\DoxyCodeLine{00857\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ >\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ ?\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ :\ b.m[0],}
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.m[1]\ >\ b.m[1]\ ?\ a.m[1]\ :\ b.m[1],}
+\DoxyCodeLine{00859\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.m[2]\ >\ b.m[2]\ ?\ a.m[2]\ :\ b.m[2],}
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.m[3]\ >\ b.m[3]\ ?\ a.m[3]\ :\ b.m[3]);}
+\DoxyCodeLine{00861\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a2d6351bd14baadd98934494a251dc5a3}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!max@{max}}
+\index{max@{max}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a2d6351bd14baadd98934494a251dc5a3} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} max (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Return the min vector of two vectors. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00613}{613}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00614\ \{}
+\DoxyCodeLine{00615\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ >\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ ?\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ :\ b.m[0],}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.m[1]\ >\ b.m[1]\ ?\ a.m[1]\ :\ b.m[1],}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.m[2]\ >\ b.m[2]\ ?\ a.m[2]\ :\ b.m[2],}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.m[3]\ >\ b.m[3]\ ?\ a.m[3]\ :\ b.m[3]);}
+\DoxyCodeLine{00619\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_ad216ad1f41f2407130aee5261cd6fbd1}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!min@{min}}
+\index{min@{min}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_ad216ad1f41f2407130aee5261cd6fbd1} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} min (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Return the min vector of two vectors. 
+
+If either lane value is NaN, {\ttfamily b} will be returned for that lane. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00842}{842}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00843\ \{}
+\DoxyCodeLine{00844\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ <\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ ?\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ :\ b.m[0],}
+\DoxyCodeLine{00845\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.m[1]\ <\ b.m[1]\ ?\ a.m[1]\ :\ b.m[1],}
+\DoxyCodeLine{00846\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.m[2]\ <\ b.m[2]\ ?\ a.m[2]\ :\ b.m[2],}
+\DoxyCodeLine{00847\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.m[3]\ <\ b.m[3]\ ?\ a.m[3]\ :\ b.m[3]);}
+\DoxyCodeLine{00848\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a7a85b43ef2e9f39c7c96efd70f2c4f44}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!min@{min}}
+\index{min@{min}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a7a85b43ef2e9f39c7c96efd70f2c4f44} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} min (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Return the min vector of two vectors. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00602}{602}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00603\ \{}
+\DoxyCodeLine{00604\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ <\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ ?\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ :\ b.m[0],}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.m[1]\ <\ b.m[1]\ ?\ a.m[1]\ :\ b.m[1],}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.m[2]\ <\ b.m[2]\ ?\ a.m[2]\ :\ b.m[2],}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.m[3]\ <\ b.m[3]\ ?\ a.m[3]\ :\ b.m[3]);}
+\DoxyCodeLine{00608\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_ae20a417bde159a5107ac8429d5819539}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_ae20a417bde159a5107ac8429d5819539} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector inequality. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00785}{785}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00786\ \{}
+\DoxyCodeLine{00787\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ !=\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0],}
+\DoxyCodeLine{00788\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]\ !=\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1],}
+\DoxyCodeLine{00789\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2]\ !=\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2],}
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]\ !=\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]);}
+\DoxyCodeLine{00791\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a069f3f26b4ea8c66de0d361e0f2450fd}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a069f3f26b4ea8c66de0d361e0f2450fd} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector inequality. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00524}{524}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00525\ \{}
+\DoxyCodeLine{00526\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ !=\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0],}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]\ !=\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1],}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2]\ !=\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2],}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]\ !=\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]);}
+\DoxyCodeLine{00530\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a70d9cfb9200ba9bdebec8be5afe57062}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator\&()}{operator\&()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a70d9cfb9200ba9bdebec8be5afe57062} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} operator\& (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector bitwise and. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00491}{491}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00492\ \{}
+\DoxyCodeLine{00493\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ \&\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0],}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]\ \&\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1],}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2]\ \&\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2],}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]\ \&\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]);}
+\DoxyCodeLine{00497\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a3c918135b34720033c36a00e92609b5f}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator\&()}{operator\&()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a3c918135b34720033c36a00e92609b5f} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} operator\& (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvmask4}{vmask4}}}]{a}{, }\item[{\mbox{\hyperlink{structvmask4}{vmask4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: mask intersect (and). 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00386}{386}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00387\ \{}
+\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[0]\ \&\ b.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[0],}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[1]\ \&\ b.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[1],}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[2]\ \&\ b.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[2],}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[3]\ \&\ b.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[3]);}
+\DoxyCodeLine{00392\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a6ec6a9e5285329bad79fc3e7277d29bd}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a6ec6a9e5285329bad79fc3e7277d29bd} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector multiplication. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00752}{752}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00753\ \{}
+\DoxyCodeLine{00754\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ *\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0],}
+\DoxyCodeLine{00755\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]\ *\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1],}
+\DoxyCodeLine{00756\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2]\ *\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2],}
+\DoxyCodeLine{00757\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]\ *\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]);}
+\DoxyCodeLine{00758\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_afc566c10fca50ed1a8aa5c76d7c90b10}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_afc566c10fca50ed1a8aa5c76d7c90b10} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector multiplication. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00458}{458}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00459\ \{}
+\DoxyCodeLine{00460\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ *\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0],}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]\ *\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1],}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2]\ *\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2],}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]\ *\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]);}
+\DoxyCodeLine{00464\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_ac917d6d043ae722325a5f9e5c744135b}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator+@{operator+}}
+\index{operator+@{operator+}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_ac917d6d043ae722325a5f9e5c744135b} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector addition. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00730}{730}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00731\ \{}
+\DoxyCodeLine{00732\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ +\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0],}
+\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]\ +\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1],}
+\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2]\ +\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2],}
+\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]\ +\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]);}
+\DoxyCodeLine{00736\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a2f09223b237ecfdc252f7626b527b187}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator+@{operator+}}
+\index{operator+@{operator+}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a2f09223b237ecfdc252f7626b527b187} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector addition. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00436}{436}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00437\ \{}
+\DoxyCodeLine{00438\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ +\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0],}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]\ +\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1],}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2]\ +\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2],}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]\ +\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]);}
+\DoxyCodeLine{00442\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a504ea848fa45d815a071380f97fb8fb9}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a504ea848fa45d815a071380f97fb8fb9} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector subtraction. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00741}{741}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00742\ \{}
+\DoxyCodeLine{00743\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ -\/\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0],}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]\ -\/\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1],}
+\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2]\ -\/\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2],}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]\ -\/\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]);}
+\DoxyCodeLine{00747\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_abf4f6606eda4504d550ddb0ea5ecbf07}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_abf4f6606eda4504d550ddb0ea5ecbf07} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector subtraction. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00447}{447}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00448\ \{}
+\DoxyCodeLine{00449\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ -\/\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0],}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]\ -\/\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1],}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2]\ -\/\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2],}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]\ -\/\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]);}
+\DoxyCodeLine{00453\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_ad535e92dcf6128bff2697d10569daf33}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator/@{operator/}}
+\index{operator/@{operator/}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_ad535e92dcf6128bff2697d10569daf33} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} operator/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector division. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00763}{763}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00764\ \{}
+\DoxyCodeLine{00765\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ /\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0],}
+\DoxyCodeLine{00766\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]\ /\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1],}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2]\ /\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2],}
+\DoxyCodeLine{00768\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]\ /\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]);}
+\DoxyCodeLine{00769\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a68157f3dd323d4858acbd9590c050f59}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a68157f3dd323d4858acbd9590c050f59} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector less than. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00796}{796}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00797\ \{}
+\DoxyCodeLine{00798\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ <\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0],}
+\DoxyCodeLine{00799\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]\ <\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1],}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2]\ <\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2],}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]\ <\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]);}
+\DoxyCodeLine{00802\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_aadaceefd305b25dde80de149e65103b3}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_aadaceefd305b25dde80de149e65103b3} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector less than. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00535}{535}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00536\ \{}
+\DoxyCodeLine{00537\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ <\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0],}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]\ <\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1],}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2]\ <\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2],}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]\ <\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]);}
+\DoxyCodeLine{00541\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a253da9de0e4c6ad15b3c7d43f4ef153c}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a253da9de0e4c6ad15b3c7d43f4ef153c} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} operator$<$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector less than or equal. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00818}{818}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00819\ \{}
+\DoxyCodeLine{00820\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ <=\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0],}
+\DoxyCodeLine{00821\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]\ <=\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1],}
+\DoxyCodeLine{00822\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2]\ <=\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2],}
+\DoxyCodeLine{00823\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]\ <=\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]);}
+\DoxyCodeLine{00824\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a15b3a417d47fb340e426df508cbf8284}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator==@{operator==}}
+\index{operator==@{operator==}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a15b3a417d47fb340e426df508cbf8284} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector equality. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00774}{774}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00775\ \{}
+\DoxyCodeLine{00776\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ ==\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0],}
+\DoxyCodeLine{00777\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]\ ==\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1],}
+\DoxyCodeLine{00778\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2]\ ==\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2],}
+\DoxyCodeLine{00779\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]\ ==\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]);}
+\DoxyCodeLine{00780\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_ae7b23ca57bd80664266ee5812bc96ddc}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator==@{operator==}}
+\index{operator==@{operator==}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_ae7b23ca57bd80664266ee5812bc96ddc} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector equality. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00513}{513}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00514\ \{}
+\DoxyCodeLine{00515\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ ==\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0],}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]\ ==\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1],}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2]\ ==\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2],}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]\ ==\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]);}
+\DoxyCodeLine{00519\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_ab98db78b76c72c25e0bf7abab20c7cd6}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_ab98db78b76c72c25e0bf7abab20c7cd6} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} operator$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector greater than. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00807}{807}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00808\ \{}
+\DoxyCodeLine{00809\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ >\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0],}
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]\ >\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1],}
+\DoxyCodeLine{00811\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2]\ >\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2],}
+\DoxyCodeLine{00812\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]\ >\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]);}
+\DoxyCodeLine{00813\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a1b41a86712a135c8e77c48fdc5896273}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a1b41a86712a135c8e77c48fdc5896273} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} operator$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector greater than. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00546}{546}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00547\ \{}
+\DoxyCodeLine{00548\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ >\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0],}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]\ >\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1],}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2]\ >\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2],}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]\ >\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]);}
+\DoxyCodeLine{00552\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a70d736a3ece17213585ae4dd028ef15e}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a70d736a3ece17213585ae4dd028ef15e} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} operator$>$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector greater than or equal. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00829}{829}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00830\ \{}
+\DoxyCodeLine{00831\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ >=\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0],}
+\DoxyCodeLine{00832\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]\ >=\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1],}
+\DoxyCodeLine{00833\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2]\ >=\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2],}
+\DoxyCodeLine{00834\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]\ >=\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]);}
+\DoxyCodeLine{00835\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a5587ea878f146d2a982182f008a3b44c}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}}
+\index{operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}()}{operator\string^()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a5587ea878f146d2a982182f008a3b44c} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} operator\texorpdfstring{$^\wedge$}{\string^} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector bitwise xor. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00502}{502}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00503\ \{}
+\DoxyCodeLine{00504\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ \string^\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0],}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]\ \string^\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1],}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2]\ \string^\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2],}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]\ \string^\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]);}
+\DoxyCodeLine{00508\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_ad9c9d50dab86c251438557f636c62d99}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}}
+\index{operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}()}{operator\string^()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_ad9c9d50dab86c251438557f636c62d99} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} operator\texorpdfstring{$^\wedge$}{\string^} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvmask4}{vmask4}}}]{a}{, }\item[{\mbox{\hyperlink{structvmask4}{vmask4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: mask difference (xor). 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00397}{397}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00398\ \{}
+\DoxyCodeLine{00399\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[0]\ \string^\ b.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[0],}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[1]\ \string^\ b.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[1],}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[2]\ \string^\ b.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[2],}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[3]\ \string^\ b.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[3]);}
+\DoxyCodeLine{00403\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a2a45cffd7e7c564d7022e58dbbc457f7}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}()}{operator|()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a2a45cffd7e7c564d7022e58dbbc457f7} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} operator\texorpdfstring{$\vert$}{|} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector bitwise or. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00480}{480}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00481\ \{}
+\DoxyCodeLine{00482\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ |\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0],}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]\ |\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1],}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2]\ |\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2],}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]\ |\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]);}
+\DoxyCodeLine{00486\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_abd4449ff41ecc8e7bcd98cfffd6e5c40}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}()}{operator|()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_abd4449ff41ecc8e7bcd98cfffd6e5c40} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} operator\texorpdfstring{$\vert$}{|} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvmask4}{vmask4}}}]{a}{, }\item[{\mbox{\hyperlink{structvmask4}{vmask4}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: mask union (or). 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00375}{375}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00376\ \{}
+\DoxyCodeLine{00377\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[0]\ |\ b.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[0],}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[1]\ |\ b.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[1],}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[2]\ |\ b.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[2],}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[3]\ |\ b.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[3]);}
+\DoxyCodeLine{00381\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a934cad24fee09ba3cbfd852ff2f1b67d}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator\texorpdfstring{$\sim$}{\string~}@{operator\texorpdfstring{$\sim$}{\string~}}}
+\index{operator\texorpdfstring{$\sim$}{\string~}@{operator\texorpdfstring{$\sim$}{\string~}}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\sim$}{\string~}()}{operator\string~()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a934cad24fee09ba3cbfd852ff2f1b67d} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} operator\texorpdfstring{$\sim$}{\string~} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector bit invert. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00469}{469}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00470\ \{}
+\DoxyCodeLine{00471\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(\string~a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0],}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \string~a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1],}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \string~a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2],}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \string~a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]);}
+\DoxyCodeLine{00475\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a78fa82697d1fa4a35ffae4ae8c083d87}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!operator\texorpdfstring{$\sim$}{\string~}@{operator\texorpdfstring{$\sim$}{\string~}}}
+\index{operator\texorpdfstring{$\sim$}{\string~}@{operator\texorpdfstring{$\sim$}{\string~}}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\sim$}{\string~}()}{operator\string~()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a78fa82697d1fa4a35ffae4ae8c083d87} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4}{vmask4}} operator\texorpdfstring{$\sim$}{\string~} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvmask4}{vmask4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: mask invert (not). 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00408}{408}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00409\ \{}
+\DoxyCodeLine{00410\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4}{vmask4}}(\string~a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[0],}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \string~a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[1],}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \string~a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[2],}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \string~a.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[3]);}
+\DoxyCodeLine{00414\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_af2e7991e895c7206d444344d2c4f3403}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!pack\_low\_bytes@{pack\_low\_bytes}}
+\index{pack\_low\_bytes@{pack\_low\_bytes}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{pack\_low\_bytes()}{pack\_low\_bytes()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_af2e7991e895c7206d444344d2c4f3403} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} pack\+\_\+low\+\_\+bytes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Pack low 8 bits of N (vector width) lanes into bottom of vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00701}{701}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00702\ \{}
+\DoxyCodeLine{00703\ \ \ \ \ \textcolor{keywordtype}{int}\ b0\ =\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ \&\ 0xFF;}
+\DoxyCodeLine{00704\ \ \ \ \ \textcolor{keywordtype}{int}\ b1\ =\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1]\ \&\ 0xFF;}
+\DoxyCodeLine{00705\ \ \ \ \ \textcolor{keywordtype}{int}\ b2\ =\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2]\ \&\ 0xFF;}
+\DoxyCodeLine{00706\ \ \ \ \ \textcolor{keywordtype}{int}\ b3\ =\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3]\ \&\ 0xFF;}
+\DoxyCodeLine{00707\ }
+\DoxyCodeLine{00708\ \ \ \ \ \textcolor{keywordtype}{int}\ b\ =\ b0\ |\ (b1\ <<\ 8)\ |\ (b2\ <<\ 16)\ |\ (b3\ <<\ 24);}
+\DoxyCodeLine{00709\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(b,\ 0,\ 0,\ 0);}
+\DoxyCodeLine{00710\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_aef8bc219f1f9eee92b018e6773ac087d}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!round@{round}}
+\index{round@{round}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{round()}{round()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_aef8bc219f1f9eee92b018e6773ac087d} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} round (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a float rounded to the nearest integer value. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00877}{877}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00878\ \{}
+\DoxyCodeLine{00879\ \ \ \ \ assert(std::fegetround()\ ==\ FE\_TONEAREST);}
+\DoxyCodeLine{00880\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(std::nearbyint(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]),}
+\DoxyCodeLine{00881\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::nearbyint(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]),}
+\DoxyCodeLine{00882\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::nearbyint(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2]),}
+\DoxyCodeLine{00883\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::nearbyint(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]));}
+\DoxyCodeLine{00884\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a008027d6bed6cf6482cd912d9326685a}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!select@{select}}
+\index{select@{select}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{select()}{select()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a008027d6bed6cf6482cd912d9326685a} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} select (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{b}{, }\item[{\mbox{\hyperlink{structvmask4}{vmask4}}}]{cond}{}\end{DoxyParamCaption})}
+
+
+
+Return lanes from {\ttfamily b} if {\ttfamily cond} is set, else {\ttfamily a}. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00929}{929}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00930\ \{}
+\DoxyCodeLine{00931\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}((cond.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[0]\ \&\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(0x80000000))\ ?\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ :\ a.m[0],}
+\DoxyCodeLine{00932\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (cond.m[1]\ \&\ static\_cast<int>(0x80000000))\ ?\ b.m[1]\ :\ a.m[1],}
+\DoxyCodeLine{00933\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (cond.m[2]\ \&\ static\_cast<int>(0x80000000))\ ?\ b.m[2]\ :\ a.m[2],}
+\DoxyCodeLine{00934\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (cond.m[3]\ \&\ static\_cast<int>(0x80000000))\ ?\ b.m[3]\ :\ a.m[3]);}
+\DoxyCodeLine{00935\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_abe3db3d259e423d6a186bf5e4eb33d30}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!select@{select}}
+\index{select@{select}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{select()}{select()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_abe3db3d259e423d6a186bf5e4eb33d30} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} select (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{b}{, }\item[{\mbox{\hyperlink{structvmask4}{vmask4}}}]{cond}{}\end{DoxyParamCaption})}
+
+
+
+Return lanes from {\ttfamily b} if MSB of {\ttfamily cond} is set, else {\ttfamily a}. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00715}{715}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00716\ \{}
+\DoxyCodeLine{00717\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}((cond.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[0]\ \&\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(0x80000000))\ ?\ b.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0]\ :\ a.m[0],}
+\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (cond.m[1]\ \&\ static\_cast<int>(0x80000000))\ ?\ b.m[1]\ :\ a.m[1],}
+\DoxyCodeLine{00719\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (cond.m[2]\ \&\ static\_cast<int>(0x80000000))\ ?\ b.m[2]\ :\ a.m[2],}
+\DoxyCodeLine{00720\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (cond.m[3]\ \&\ static\_cast<int>(0x80000000))\ ?\ b.m[3]\ :\ a.m[3]);}
+\DoxyCodeLine{00721\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a7bb0d5791f7c2979e5fd3784a5216791}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!select\_msb@{select\_msb}}
+\index{select\_msb@{select\_msb}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{select\_msb()}{select\_msb()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a7bb0d5791f7c2979e5fd3784a5216791} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} select\+\_\+msb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{b}{, }\item[{\mbox{\hyperlink{structvmask4}{vmask4}}}]{cond}{}\end{DoxyParamCaption})}
+
+
+
+Return lanes from {\ttfamily b} if MSB of {\ttfamily cond} is set, else {\ttfamily a}. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00940}{940}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00941\ \{}
+\DoxyCodeLine{00942\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}((cond.\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[0]\ \&\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(0x80000000))\ ?\ b.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]\ :\ a.m[0],}
+\DoxyCodeLine{00943\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (cond.m[1]\ \&\ static\_cast<int>(0x80000000))\ ?\ b.m[1]\ :\ a.m[1],}
+\DoxyCodeLine{00944\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (cond.m[2]\ \&\ static\_cast<int>(0x80000000))\ ?\ b.m[2]\ :\ a.m[2],}
+\DoxyCodeLine{00945\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (cond.m[3]\ \&\ static\_cast<int>(0x80000000))\ ?\ b.m[3]\ :\ a.m[3]);}
+\DoxyCodeLine{00946\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a79cf1473d2d948c7158856e262b3ff9b}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!sqrt@{sqrt}}
+\index{sqrt@{sqrt}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{sqrt()}{sqrt()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a79cf1473d2d948c7158856e262b3ff9b} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat4}{vfloat4}} sqrt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the sqrt of the lanes in the vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00918}{918}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00919\ \{}
+\DoxyCodeLine{00920\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(std::sqrt(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0]),}
+\DoxyCodeLine{00921\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::sqrt(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1]),}
+\DoxyCodeLine{00922\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::sqrt(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2]),}
+\DoxyCodeLine{00923\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::sqrt(a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3]));}
+\DoxyCodeLine{00924\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a808e71beb4498d2831b0dcf30885b0fa}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!store@{store}}
+\index{store@{store}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{store()}{store()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a808e71beb4498d2831b0dcf30885b0fa} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void store (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{ptr}{}\end{DoxyParamCaption})}
+
+
+
+Store a vector to an unaligned memory address. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00962}{962}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00963\ \{}
+\DoxyCodeLine{00964\ \ \ \ \ ptr[0]\ =\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0];}
+\DoxyCodeLine{00965\ \ \ \ \ ptr[1]\ =\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1];}
+\DoxyCodeLine{00966\ \ \ \ \ ptr[2]\ =\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2];}
+\DoxyCodeLine{00967\ \ \ \ \ ptr[3]\ =\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3];}
+\DoxyCodeLine{00968\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a64b2b468ffb4186087ed14323c465530}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!store@{store}}
+\index{store@{store}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{store()}{store()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a64b2b468ffb4186087ed14323c465530} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void store (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Store a vector to an unaligned memory address. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00663}{663}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00664\ \{}
+\DoxyCodeLine{00665\ \ \ \ \ p[0]\ =\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0];}
+\DoxyCodeLine{00666\ \ \ \ \ p[1]\ =\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1];}
+\DoxyCodeLine{00667\ \ \ \ \ p[2]\ =\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2];}
+\DoxyCodeLine{00668\ \ \ \ \ p[3]\ =\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3];}
+\DoxyCodeLine{00669\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{astcenc__vecmathlib__none__4_8h_a64b2b468ffb4186087ed14323c465530_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_aaeca9cc7648e0922de5b9b112dfed12b}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!store@{store}}
+\index{store@{store}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{store()}{store()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_aaeca9cc7648e0922de5b9b112dfed12b} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void store (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Store a vector to an unaligned memory address. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00674}{674}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00675\ \{}
+\DoxyCodeLine{00676\ \ \ \ \ std::memcpy(p,\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})\ *\ 4);}
+\DoxyCodeLine{00677\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a8c40a8da20466cb41e43ed75b66fb284}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!store\_lane@{store\_lane}}
+\index{store\_lane@{store\_lane}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{store\_lane()}{store\_lane()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a8c40a8da20466cb41e43ed75b66fb284} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void store\+\_\+lane (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{base}{, }\item[{int}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Store a single vector lane to an unaligned address. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l01179}{1179}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01180\ \{}
+\DoxyCodeLine{01181\ \ \ \ \ std::memcpy(base,\ \&data,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{01182\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{astcenc__vecmathlib__none__4_8h_a8c40a8da20466cb41e43ed75b66fb284_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a06d81cde4f48428426ef009f341fdfbb}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!store\_lanes\_masked@{store\_lanes\_masked}}
+\index{store\_lanes\_masked@{store\_lanes\_masked}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{store\_lanes\_masked()}{store\_lanes\_masked()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a06d81cde4f48428426ef009f341fdfbb} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void store\+\_\+lanes\+\_\+masked (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{base}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{data}{, }\item[{\mbox{\hyperlink{structvmask4}{vmask4}}}]{mask}{}\end{DoxyParamCaption})}
+
+
+
+Store a vector, skipping masked lanes. 
+
+All masked lanes must be at the end of vector, after all non-\/masked lanes. Input is a byte array of at least 4 bytes per unmasked entry. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l01190}{1190}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01191\ \{}
+\DoxyCodeLine{01192\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{mask}}.m[3])}
+\DoxyCodeLine{01193\ \ \ \ \ \{}
+\DoxyCodeLine{01194\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a64b2b468ffb4186087ed14323c465530}{store}}(data,\ base);}
+\DoxyCodeLine{01195\ \ \ \ \ \}}
+\DoxyCodeLine{01196\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{mask}}.m[2])}
+\DoxyCodeLine{01197\ \ \ \ \ \{}
+\DoxyCodeLine{01198\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a8c40a8da20466cb41e43ed75b66fb284}{store\_lane}}(base\ +\ 0,\ data.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<0>());}
+\DoxyCodeLine{01199\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a8c40a8da20466cb41e43ed75b66fb284}{store\_lane}}(base\ +\ 4,\ data.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<1>());}
+\DoxyCodeLine{01200\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a8c40a8da20466cb41e43ed75b66fb284}{store\_lane}}(base\ +\ 8,\ data.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<2>());}
+\DoxyCodeLine{01201\ \ \ \ \ \}}
+\DoxyCodeLine{01202\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{mask}}.m[1])}
+\DoxyCodeLine{01203\ \ \ \ \ \{}
+\DoxyCodeLine{01204\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a8c40a8da20466cb41e43ed75b66fb284}{store\_lane}}(base\ +\ 0,\ data.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<0>());}
+\DoxyCodeLine{01205\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a8c40a8da20466cb41e43ed75b66fb284}{store\_lane}}(base\ +\ 4,\ data.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<1>());}
+\DoxyCodeLine{01206\ \ \ \ \ \}}
+\DoxyCodeLine{01207\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{mask}}.m[0])}
+\DoxyCodeLine{01208\ \ \ \ \ \{}
+\DoxyCodeLine{01209\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_a8c40a8da20466cb41e43ed75b66fb284}{store\_lane}}(base\ +\ 0,\ data.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<0>());}
+\DoxyCodeLine{01210\ \ \ \ \ \}}
+\DoxyCodeLine{01211\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{astcenc__vecmathlib__none__4_8h_a06d81cde4f48428426ef009f341fdfbb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_ad4bf66a99066037a51d26da7f546fc42}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!store\_nbytes@{store\_nbytes}}
+\index{store\_nbytes@{store\_nbytes}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{store\_nbytes()}{store\_nbytes()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_ad4bf66a99066037a51d26da7f546fc42} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void store\+\_\+nbytes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Store lowest N (vector width) bytes into an unaligned address. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00682}{682}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00683\ \{}
+\DoxyCodeLine{00684\ \ \ \ \ std::memcpy(p,\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ \textcolor{keyword}{sizeof}(uint8\_t)\ *\ 4);}
+\DoxyCodeLine{00685\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a5f436bef7a69f9722dd0692464bb3019}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!storea@{storea}}
+\index{storea@{storea}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{storea()}{storea()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a5f436bef7a69f9722dd0692464bb3019} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void storea (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{a}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{ptr}{}\end{DoxyParamCaption})}
+
+
+
+Store a vector to an aligned memory address. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00973}{973}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00974\ \{}
+\DoxyCodeLine{00975\ \ \ \ \ ptr[0]\ =\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[0];}
+\DoxyCodeLine{00976\ \ \ \ \ ptr[1]\ =\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[1];}
+\DoxyCodeLine{00977\ \ \ \ \ ptr[2]\ =\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[2];}
+\DoxyCodeLine{00978\ \ \ \ \ ptr[3]\ =\ a.\mbox{\hyperlink{structvfloat4_aa5b76d9b7b17f6a36d17822bf529761f}{m}}[3];}
+\DoxyCodeLine{00979\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a203ae30cc77a9374d87a040df90a541c}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!storea@{storea}}
+\index{storea@{storea}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{storea()}{storea()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a203ae30cc77a9374d87a040df90a541c} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void storea (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{a}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Store a vector to an aligned memory address. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00652}{652}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00653\ \{}
+\DoxyCodeLine{00654\ \ \ \ \ p[0]\ =\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[0];}
+\DoxyCodeLine{00655\ \ \ \ \ p[1]\ =\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[1];}
+\DoxyCodeLine{00656\ \ \ \ \ p[2]\ =\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[2];}
+\DoxyCodeLine{00657\ \ \ \ \ p[3]\ =\ a.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}}[3];}
+\DoxyCodeLine{00658\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_ad4dd956a47ffd39f142c0faf8c9279b9}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!vtable\_8bt\_32bi@{vtable\_8bt\_32bi}}
+\index{vtable\_8bt\_32bi@{vtable\_8bt\_32bi}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{vtable\_8bt\_32bi()}{vtable\_8bt\_32bi()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_ad4dd956a47ffd39f142c0faf8c9279b9} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} vtable\+\_\+8bt\+\_\+32bi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{idx}{}\end{DoxyParamCaption})}
+
+
+
+Perform an 8-\/bit 16-\/entry table lookup, with 32-\/bit indexes. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l01116}{1116}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01117\ \{}
+\DoxyCodeLine{01118\ \ \ \ \ uint8\_t\ table[16];}
+\DoxyCodeLine{01119\ }
+\DoxyCodeLine{01120\ \ \ \ \ std::memcpy(table\ +\ \ 0,\ t0.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ 4\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{01121\ }
+\DoxyCodeLine{01122\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(table[idx.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<0>()],}
+\DoxyCodeLine{01123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table[idx.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<1>()],}
+\DoxyCodeLine{01124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table[idx.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<2>()],}
+\DoxyCodeLine{01125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table[idx.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<3>()]);}
+\DoxyCodeLine{01126\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{astcenc__vecmathlib__none__4_8h_ad4dd956a47ffd39f142c0faf8c9279b9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a2855381600ae7c54b4cc6a753460f5c6}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!vtable\_8bt\_32bi@{vtable\_8bt\_32bi}}
+\index{vtable\_8bt\_32bi@{vtable\_8bt\_32bi}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{vtable\_8bt\_32bi()}{vtable\_8bt\_32bi()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a2855381600ae7c54b4cc6a753460f5c6} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} vtable\+\_\+8bt\+\_\+32bi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t1}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{idx}{}\end{DoxyParamCaption})}
+
+
+
+Perform an 8-\/bit 32-\/entry table lookup, with 32-\/bit indexes. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l01132}{1132}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01133\ \{}
+\DoxyCodeLine{01134\ \ \ \ \ uint8\_t\ table[32];}
+\DoxyCodeLine{01135\ }
+\DoxyCodeLine{01136\ \ \ \ \ std::memcpy(table\ +\ \ 0,\ t0.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ 4\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{01137\ \ \ \ \ std::memcpy(table\ +\ 16,\ t1.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ 4\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{01138\ }
+\DoxyCodeLine{01139\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(table[idx.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<0>()],}
+\DoxyCodeLine{01140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table[idx.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<1>()],}
+\DoxyCodeLine{01141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table[idx.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<2>()],}
+\DoxyCodeLine{01142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table[idx.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<3>()]);}
+\DoxyCodeLine{01143\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{astcenc__vecmathlib__none__4_8h_a2855381600ae7c54b4cc6a753460f5c6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_ad78f9b072711a081a4d77556cfe0c74f}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!vtable\_8bt\_32bi@{vtable\_8bt\_32bi}}
+\index{vtable\_8bt\_32bi@{vtable\_8bt\_32bi}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{vtable\_8bt\_32bi()}{vtable\_8bt\_32bi()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_ad78f9b072711a081a4d77556cfe0c74f} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} vtable\+\_\+8bt\+\_\+32bi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t1}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t2}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t3}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{idx}{}\end{DoxyParamCaption})}
+
+
+
+Perform an 8-\/bit 64-\/entry table lookup, with 32-\/bit indexes. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l01148}{1148}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01149\ \{}
+\DoxyCodeLine{01150\ \ \ \ \ uint8\_t\ table[64];}
+\DoxyCodeLine{01151\ }
+\DoxyCodeLine{01152\ \ \ \ \ std::memcpy(table\ +\ \ 0,\ t0.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ 4\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{01153\ \ \ \ \ std::memcpy(table\ +\ 16,\ t1.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ 4\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{01154\ \ \ \ \ std::memcpy(table\ +\ 32,\ t2.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ 4\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{01155\ \ \ \ \ std::memcpy(table\ +\ 48,\ t3.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ 4\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{01156\ }
+\DoxyCodeLine{01157\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint4}{vint4}}(table[idx.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<0>()],}
+\DoxyCodeLine{01158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table[idx.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<1>()],}
+\DoxyCodeLine{01159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table[idx.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<2>()],}
+\DoxyCodeLine{01160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table[idx.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<3>()]);}
+\DoxyCodeLine{01161\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{astcenc__vecmathlib__none__4_8h_ad78f9b072711a081a4d77556cfe0c74f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_ae02607d922cc8a6893fae4ac82bffc86}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!vtable\_prepare@{vtable\_prepare}}
+\index{vtable\_prepare@{vtable\_prepare}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{vtable\_prepare()}{vtable\_prepare()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_ae02607d922cc8a6893fae4ac82bffc86} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void vtable\+\_\+prepare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{t0p}{}\end{DoxyParamCaption})}
+
+
+
+Prepare a vtable lookup table for use with the native SIMD size. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l01086}{1086}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01087\ \{}
+\DoxyCodeLine{01088\ \ \ \ \ t0p\ =\ t0;}
+\DoxyCodeLine{01089\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a85f90749a9f0cdfbf5a94b250cafff5e}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!vtable\_prepare@{vtable\_prepare}}
+\index{vtable\_prepare@{vtable\_prepare}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{vtable\_prepare()}{vtable\_prepare()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a85f90749a9f0cdfbf5a94b250cafff5e} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void vtable\+\_\+prepare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t1}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{t0p}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{t1p}{}\end{DoxyParamCaption})}
+
+
+
+Prepare a vtable lookup table for use with the native SIMD size. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l01094}{1094}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01095\ \{}
+\DoxyCodeLine{01096\ \ \ \ \ t0p\ =\ t0;}
+\DoxyCodeLine{01097\ \ \ \ \ t1p\ =\ t1;}
+\DoxyCodeLine{01098\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__none__4_8h_a9dae512169e56cda22858fdcf76f3a4c}\index{astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}!vtable\_prepare@{vtable\_prepare}}
+\index{vtable\_prepare@{vtable\_prepare}!astcenc\_vecmathlib\_none\_4.h@{astcenc\_vecmathlib\_none\_4.h}}
+\doxysubsubsection{\texorpdfstring{vtable\_prepare()}{vtable\_prepare()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__none__4_8h_a9dae512169e56cda22858fdcf76f3a4c} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void vtable\+\_\+prepare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t1}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t2}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t3}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{t0p}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{t1p}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{t2p}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{t3p}{}\end{DoxyParamCaption})}
+
+
+
+Prepare a vtable lookup table for use with the native SIMD size. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l01103}{1103}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01106\ \{}
+\DoxyCodeLine{01107\ \ \ \ \ t0p\ =\ t0;}
+\DoxyCodeLine{01108\ \ \ \ \ t1p\ =\ t1;}
+\DoxyCodeLine{01109\ \ \ \ \ t2p\ =\ t2;}
+\DoxyCodeLine{01110\ \ \ \ \ t3p\ =\ t3;}
+\DoxyCodeLine{01111\ \}}
+
+\end{DoxyCode}

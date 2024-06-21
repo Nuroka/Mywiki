@@ -1,0 +1,430 @@
+\doxysection{astcenc\+\_\+weight\+\_\+align.\+cpp}
+\hypertarget{astcenc__weight__align_8cpp_source}{}\label{astcenc__weight__align_8cpp_source}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_weight\_align.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_weight\_align.cpp}}
+\mbox{\hyperlink{astcenc__weight__align_8cpp}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00001}00001\ \textcolor{comment}{//\ SPDX-\/License-\/Identifier:\ Apache-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00003}00003\ \textcolor{comment}{//\ Copyright\ 2011-\/2024\ Arm\ Limited}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00004}00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00005}00005\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});\ you\ may\ not}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00006}00006\ \textcolor{comment}{//\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00007}00007\ \textcolor{comment}{//\ of\ the\ License\ at:}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00008}00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00009}00009\ \textcolor{comment}{//\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00010}00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00011}00011\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00012}00012\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00013}00013\ \textcolor{comment}{//\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.\ See\ the}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00014}00014\ \textcolor{comment}{//\ License\ for\ the\ specific\ language\ governing\ permissions\ and\ limitations}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00015}00015\ \textcolor{comment}{//\ under\ the\ License.}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00016}00016\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00018}00018\ \textcolor{preprocessor}{\#if\ !defined(ASTCENC\_DECOMPRESS\_ONLY)}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00040}00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{astcenc__internal_8h}{astcenc\_internal.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00041}00041\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{astcenc__vecmathlib_8h}{astcenc\_vecmathlib.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00043}00043\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00044}00044\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00045}00045\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00047}\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{00047}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}}\ \{\ 32\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00049}00049\ \textcolor{keyword}{static\_assert}((\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}}\ \%\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})\ ==\ 0,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ANGULAR\_STEPS\ must\ be\ multiple\ of\ ASTCENC\_SIMD\_WIDTH"{}});}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00052}00052\ \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}}\ >=\ 32,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ANGULAR\_STEPS\ must\ be\ at\ least\ max(steps\_for\_quant\_level)"{}});}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00055}00055\ \textcolor{comment}{//\ Store\ a\ reduced\ sin/cos\ table\ for\ 64\ possible\ weight\ values;\ this\ causes}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00056}00056\ \textcolor{comment}{//\ slight\ quality\ loss\ compared\ to\ using\ sin()\ and\ cos()\ directly.\ Must\ be\ 2\string^N.}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00057}\mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{00057}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\_STEPS}}\ \{\ 64\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00059}\mbox{\hyperlink{astcenc__weight__align_8cpp_a03594d799b3a246b0005c6bbe4f5cd48}{00059}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{astcenc__weight__align_8cpp_a03594d799b3a246b0005c6bbe4f5cd48}{steps\_for\_quant\_level}}[12]\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00060}00060\ \ \ \ \ 2,\ 3,\ 4,\ 5,\ 6,\ 8,\ 10,\ 12,\ 16,\ 20,\ 24,\ 32}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00061}00061\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00063}\mbox{\hyperlink{astcenc__weight__align_8cpp_a2300d1e0bcd154e01c2376d89ea3a91c}{00063}}\ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{astcenc__weight__align_8cpp_a2300d1e0bcd154e01c2376d89ea3a91c}{sin\_table}}[\mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\_STEPS}}][\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00064}\mbox{\hyperlink{astcenc__weight__align_8cpp_a3a16cc5209c93b9b81783d37a7566553}{00064}}\ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{astcenc__weight__align_8cpp_a3a16cc5209c93b9b81783d37a7566553}{cos\_table}}[\mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\_STEPS}}][\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00066}00066\ \textcolor{preprocessor}{\#if\ defined(ASTCENC\_DIAGNOSTICS)}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ print\_once\ \{\ \textcolor{keyword}{true}\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00068}00068\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00070}00070\ \textcolor{comment}{/*\ See\ header\ for\ documentation.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00071}\mbox{\hyperlink{astcenc__internal_8h_acbcb48fd316ab1025cf7e456a5df014f}{00071}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__weight__align_8cpp_acbcb48fd316ab1025cf7e456a5df014f}{prepare\_angular\_tables}}()}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00072}00072\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}};\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00074}00074\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ angle\_step\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(i\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\_STEPS}};\ j++)}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__weight__align_8cpp_a2300d1e0bcd154e01c2376d89ea3a91c}{sin\_table}}[j][i]\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(sinf((2.0f\ *\ \mbox{\hyperlink{namespaceastc_a7b7581e8dda9382d1d6effd9c4925065}{astc::PI}}\ /\ (\mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\_STEPS}}\ -\/\ 1.0f))\ *\ angle\_step\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(j)));}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__weight__align_8cpp_a3a16cc5209c93b9b81783d37a7566553}{cos\_table}}[j][i]\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(cosf((2.0f\ *\ \mbox{\hyperlink{namespaceastc_a7b7581e8dda9382d1d6effd9c4925065}{astc::PI}}\ /\ (\mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\_STEPS}}\ -\/\ 1.0f))\ *\ angle\_step\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(j)));}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00083}00083\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00093}\mbox{\hyperlink{astcenc__weight__align_8cpp_a54fb7b3aab0c6f60a65ce3dd07b088da}{00093}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__weight__align_8cpp_a54fb7b3aab0c6f60a65ce3dd07b088da}{compute\_angular\_offsets}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ weight\_count,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ dec\_weight\_ideal\_value,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_angular\_steps,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{keywordtype}{float}*\ offsets}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00098}00098\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00099}00099\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(weight\_count\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00100}00100\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(max\_angular\_steps\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00102}00102\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keywordtype}{int}\ isamplev[\mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{comment}{//\ Precompute\ isample;\ arrays\ are\ always\ allocated\ 64\ elements\ long}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ weight\_count;\ i\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00106}00106\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ 2\string^23\ and\ interpreting\ bits\ extracts\ round-\/to-\/nearest\ int}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ sample\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(dec\_weight\_ideal\_value\ +\ i)\ *\ (\mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\_STEPS}}\ -\/\ 1.0f)\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(12582912.0f);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ isample\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a5c2db475754d8da42d9b685a45c48ab8}{float\_as\_int}}(sample)\ \&\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}((\mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\_STEPS}}\ -\/\ 1));}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(isample,\ isamplev\ +\ i);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00111}00111\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{comment}{//\ Arrays\ are\ multiple\ of\ SIMD\ width\ (ANGULAR\_STEPS),\ safe\ to\ overshoot\ max}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00114}00114\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ mult\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(1.0f\ /\ (2.0f\ *\ \mbox{\hyperlink{namespaceastc_a7b7581e8dda9382d1d6effd9c4925065}{astc::PI}}));}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00116}00116\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ max\_angular\_steps;\ i\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00117}00117\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ anglesum\_x\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat::zero}}();}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ anglesum\_y\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat::zero}}();}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ weight\_count;\ j++)}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ isample\ =\ isamplev[j];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ anglesum\_x\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(\mbox{\hyperlink{astcenc__weight__align_8cpp_a3a16cc5209c93b9b81783d37a7566553}{cos\_table}}[isample]\ +\ i);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ anglesum\_y\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(\mbox{\hyperlink{astcenc__weight__align_8cpp_a2300d1e0bcd154e01c2376d89ea3a91c}{sin\_table}}[isample]\ +\ i);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ angle\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a0d4a4b324b23d5b82c16b03e83a2d056}{atan2}}(anglesum\_y,\ anglesum\_x);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ ofs\ =\ angle\ *\ mult;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(ofs,\ offsets\ +\ i);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00131}00131\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00132}00132\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00152}\mbox{\hyperlink{astcenc__weight__align_8cpp_a32b24429143eb7c5b7050885943aad1b}{00152}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__weight__align_8cpp_a32b24429143eb7c5b7050885943aad1b}{compute\_lowest\_and\_highest\_weight}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00153}00153\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ weight\_count,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00154}00154\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ dec\_weight\_ideal\_value,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_angular\_steps,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_quant\_steps,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00157}00157\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ offsets,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00158}00158\ \ \ \ \ \textcolor{keywordtype}{float}*\ lowest\_weight,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00159}00159\ \ \ \ \ \textcolor{keywordtype}{int}*\ weight\_span,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00160}00160\ \ \ \ \ \textcolor{keywordtype}{float}*\ error,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00161}00161\ \ \ \ \ \textcolor{keywordtype}{float}*\ cut\_low\_weight\_error,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00162}00162\ \ \ \ \ \textcolor{keywordtype}{float}*\ cut\_high\_weight\_error}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00163}00163\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00164}00164\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(weight\_count\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00165}00165\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(max\_angular\_steps\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00167}00167\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ rcp\_stepsize\ =\ \mbox{\hyperlink{structvfloat4_a13edfd5bac159c8a65e10a3bd9355b4d}{vfloat::lane\_id}}()\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(1.0f);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00169}00169\ \ \ \ \ \textcolor{comment}{//\ Arrays\ are\ ANGULAR\_STEPS\ long,\ so\ always\ safe\ to\ run\ full\ vectors}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ sp\ =\ 0;\ sp\ <\ max\_angular\_steps;\ sp\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00171}00171\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ minidx(128.0f);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ maxidx(-\/128.0f);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ errval\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat::zero}}();}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ cut\_low\_weight\_err\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat::zero}}();}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ cut\_high\_weight\_err\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat::zero}}();}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ offset\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(offsets\ +\ sp);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ weight\_count;\ j++)}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ sval\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ac9c9ecce219189fd272c1a9d6cb9c4d2}{load1}}(dec\_weight\_ideal\_value\ +\ j)\ *\ rcp\_stepsize\ -\/\ offset;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ svalrte\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a0cc9d8a88b3c39b3ea66e52d515ac661}{round}}(sval);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ diff\ =\ sval\ -\/\ svalrte;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ errval\ +=\ diff\ *\ diff;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ tracker\ on\ min\ hit}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ svalrte\ <\ minidx;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ minidx\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(minidx,\ svalrte,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ cut\_low\_weight\_err\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(cut\_low\_weight\_err,\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat::zero}}(),\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Accumulate\ on\ min\ hit}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ svalrte\ ==\ minidx;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ accum\ =\ cut\_low\_weight\_err\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(1.0f)\ -\/\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(2.0f)\ *\ diff;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ cut\_low\_weight\_err\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(cut\_low\_weight\_err,\ accum,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ tracker\ on\ max\ hit}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ svalrte\ >\ maxidx;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ maxidx\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(maxidx,\ svalrte,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ cut\_high\_weight\_err\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(cut\_high\_weight\_err,\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat::zero}}(),\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Accumulate\ on\ max\ hit}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ svalrte\ ==\ maxidx;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ accum\ =\ cut\_high\_weight\_err\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(1.0f)\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(2.0f)\ *\ diff;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ cut\_high\_weight\_err\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(cut\_high\_weight\_err,\ accum,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ out\ min\ weight\ and\ weight\ span;\ clamp\ span\ to\ a\ usable\ range}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ span\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_afdaab5e0b4a39a5dd28fb5b40642e57d}{float\_to\_int}}(maxidx\ -\/\ minidx\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(1));}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ span\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(span,\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(max\_quant\_steps\ +\ 3));}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ span\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}{max}}(span,\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(2));}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(minidx,\ lowest\_weight\ +\ sp);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(span,\ weight\_span\ +\ sp);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ cut\_(lowest/highest)\_weight\_error\ indicate\ the\ error\ that\ results\ from\ \ forcing}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ samples\ that\ should\ have\ had\ the\ weight\ value\ one\ step\ (up/down).}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ ssize\ =\ 1.0f\ /\ rcp\_stepsize;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ errscale\ =\ ssize\ *\ ssize;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(errval\ *\ errscale,\ error\ +\ sp);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(cut\_low\_weight\_err\ *\ errscale,\ cut\_low\_weight\_error\ +\ sp);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(cut\_high\_weight\_err\ *\ errscale,\ cut\_high\_weight\_error\ +\ sp);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ rcp\_stepsize\ =\ rcp\_stepsize\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}});}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00223}00223\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00224}00224\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00235}\mbox{\hyperlink{astcenc__weight__align_8cpp_a52f057b7da5fc35adac361b3696ac963}{00235}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__weight__align_8cpp_a52f057b7da5fc35adac361b3696ac963}{compute\_angular\_endpoints\_for\_quant\_levels}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00236}00236\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ weight\_count,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00237}00237\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ dec\_weight\_ideal\_value,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00238}00238\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_quant\_level,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00239}00239\ \ \ \ \ \textcolor{keywordtype}{float}\ low\_value[\mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}}\ +\ 1],}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00240}00240\ \ \ \ \ \textcolor{keywordtype}{float}\ high\_value[\mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}}\ +\ 1]}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00241}00241\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00242}00242\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_quant\_steps\ =\ \mbox{\hyperlink{astcenc__weight__align_8cpp_a03594d799b3a246b0005c6bbe4f5cd48}{steps\_for\_quant\_level}}[max\_quant\_level];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00243}00243\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_angular\_steps\ =\ \mbox{\hyperlink{astcenc__weight__align_8cpp_a03594d799b3a246b0005c6bbe4f5cd48}{steps\_for\_quant\_level}}[max\_quant\_level];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00245}00245\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keywordtype}{float}\ angular\_offsets[\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00247}00247\ \ \ \ \ \mbox{\hyperlink{astcenc__weight__align_8cpp_a54fb7b3aab0c6f60a65ce3dd07b088da}{compute\_angular\_offsets}}(weight\_count,\ dec\_weight\_ideal\_value,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ max\_angular\_steps,\ angular\_offsets);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00250}00250\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keywordtype}{float}\ lowest\_weight[\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00251}00251\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ int32\_t\ weight\_span[\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00252}00252\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keywordtype}{float}\ error[\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00253}00253\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keywordtype}{float}\ cut\_low\_weight\_error[\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00254}00254\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keywordtype}{float}\ cut\_high\_weight\_error[\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}}];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00256}00256\ \ \ \ \ \mbox{\hyperlink{astcenc__weight__align_8cpp_a32b24429143eb7c5b7050885943aad1b}{compute\_lowest\_and\_highest\_weight}}(weight\_count,\ dec\_weight\_ideal\_value,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ max\_angular\_steps,\ max\_quant\_steps,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ angular\_offsets,\ lowest\_weight,\ weight\_span,\ error,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cut\_low\_weight\_error,\ cut\_high\_weight\_error);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00261}00261\ \ \ \ \ \textcolor{comment}{//\ For\ each\ quantization\ level,\ find\ the\ best\ error\ terms.\ Use\ packed\ vectors\ so\ data-\/dependent}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00262}00262\ \ \ \ \ \textcolor{comment}{//\ branches\ can\ become\ selects.\ This\ involves\ some\ integer\ to\ float\ casts,\ but\ the\ values\ are}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00263}00263\ \ \ \ \ \textcolor{comment}{//\ small\ enough\ so\ they\ never\ round\ the\ wrong\ way.}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00264}00264\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ best\_results[36];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00266}00266\ \ \ \ \ \textcolor{comment}{//\ Initialize\ the\ array\ to\ some\ safe\ defaults}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00267}00267\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(max\_quant\_steps\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00268}00268\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (max\_quant\_steps\ +\ 4);\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00269}00269\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lane<0>\ =\ Best\ error}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lane<1>\ =\ Best\ scale;\ -\/1\ indicates\ no\ solution\ found}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lane<2>\ =\ Cut\ low\ weight}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ best\_results[i]\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(\mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}},\ -\/1.0f,\ 0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00274}00274\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00276}00276\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(max\_angular\_steps\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00277}00277\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ max\_angular\_steps;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00278}00278\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ i\_flt\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(i);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx\_span\ =\ weight\_span[i];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00282}00282\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_cut\_low\ =\ error[i]\ +\ cut\_low\_weight\_error[i];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_cut\_high\ =\ error[i]\ +\ cut\_high\_weight\_error[i];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_cut\_low\_high\ =\ error[i]\ +\ cut\_low\_weight\_error[i]\ +\ cut\_high\_weight\_error[i];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ best\ error\ against\ record\ N}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ best\_result\ =\ best\_results[idx\_span];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ new\_result\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(error[i],\ i\_flt,\ 0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(best\_result.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>())\ >\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(error[i]);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ best\_results[idx\_span]\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_result,\ new\_result,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00292}00292\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ best\ error\ against\ record\ N-\/1\ with\ either\ cut\ low\ or\ cut\ high}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ best\_result\ =\ best\_results[idx\_span\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00295}00295\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ new\_result\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(error\_cut\_low,\ i\_flt,\ 1.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(best\_result.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>())\ >\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(error\_cut\_low);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ best\_result\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_result,\ new\_result,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ new\_result\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(error\_cut\_high,\ i\_flt,\ 0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(best\_result.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>())\ >\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(error\_cut\_high);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ best\_results[idx\_span\ -\/\ 1]\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_result,\ new\_result,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00303}00303\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ best\ error\ against\ record\ N-\/2\ with\ both\ cut\ low\ and\ high}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ best\_result\ =\ best\_results[idx\_span\ -\/\ 2];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ new\_result\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(error\_cut\_low\_high,\ i\_flt,\ 1.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(best\_result.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>())\ >\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(error\_cut\_low\_high);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ best\_results[idx\_span\ -\/\ 2]\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_result,\ new\_result,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00309}00309\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00310}00310\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00311}00311\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <=\ max\_quant\_level;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00312}00312\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ q\ =\ \mbox{\hyperlink{astcenc__weight__align_8cpp_a03594d799b3a246b0005c6bbe4f5cd48}{steps\_for\_quant\_level}}[i];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ bsi\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(best\_results[q].\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00315}00315\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Did\ we\ find\ anything?}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00317}00317\ \textcolor{preprocessor}{\#if\ defined(ASTCENC\_DIAGNOSTICS)}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((bsi\ <\ 0)\ \&\&\ print\_once)}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ print\_once\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}INFO:\ Unable\ to\ find\ full\ encoding\ within\ search\ error\ limit.\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00323}00323\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00324}00324\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ bsi\ =\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}(0,\ bsi);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00326}00326\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lwi\ =\ lowest\_weight[bsi]\ +\ best\_results[q].\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>();}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ hwi\ =\ lwi\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(q)\ -\/\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00329}00329\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ stepsize\ =\ 1.0f\ /\ (1.0f\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(bsi));}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ low\_value[i]\ \ =\ (angular\_offsets[bsi]\ +\ lwi)\ *\ stepsize;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ high\_value[i]\ =\ (angular\_offsets[bsi]\ +\ hwi)\ *\ stepsize;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00333}00333\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00334}00334\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00335}00335\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00336}00336\ \textcolor{comment}{/*\ See\ header\ for\ documentation.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00337}\mbox{\hyperlink{astcenc__internal_8h_af1b151d02c3af92eb002dc7172111233}{00337}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__weight__align_8cpp_af1b151d02c3af92eb002dc7172111233}{compute\_angular\_endpoints\_1plane}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00338}00338\ \ \ \ \ \textcolor{keywordtype}{bool}\ only\_always,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00339}00339\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__size__descriptor}{block\_size\_descriptor}}\&\ bsd,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00340}00340\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ dec\_weight\_ideal\_value,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00341}00341\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_weight\_quant,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00342}00342\ \ \ \ \ \mbox{\hyperlink{structcompression__working__buffers}{compression\_working\_buffers}}\&\ tmpbuf}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00343}00343\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00344}00344\ \ \ \ \ float\ (\&low\_value)[\mbox{\hyperlink{astcenc__internal_8h_ac446d816e6883587f7cd6fd115d9a40c}{WEIGHTS\_MAX\_BLOCK\_MODES}}]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a504af2e4e5a146cd80b52c1b6c93b782}{weight\_low\_value1}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00345}00345\ \ \ \ \ float\ (\&high\_value)[\mbox{\hyperlink{astcenc__internal_8h_ac446d816e6883587f7cd6fd115d9a40c}{WEIGHTS\_MAX\_BLOCK\_MODES}}]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_adebd00f87afd06131aa6e22e12effae2}{weight\_high\_value1}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00346}00346\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00347}00347\ \ \ \ \ float\ (\&low\_values)[\mbox{\hyperlink{astcenc__internal_8h_a803b1633e5a45c902bc513ef4c333327}{WEIGHTS\_MAX\_DECIMATION\_MODES}}][\mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}}\ +\ 1]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a13570ddf604795f219b4bb30f3a7b40f}{weight\_low\_values1}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00348}00348\ \ \ \ \ float\ (\&high\_values)[\mbox{\hyperlink{astcenc__internal_8h_a803b1633e5a45c902bc513ef4c333327}{WEIGHTS\_MAX\_DECIMATION\_MODES}}][\mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}}\ +\ 1]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a85b21c3ce2a327c89fdac870dce07cba}{weight\_high\_values1}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00350}00350\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_decimation\_modes\ =\ only\_always\ ?\ bsd.\mbox{\hyperlink{structblock__size__descriptor_ab9f7c875237ad395d3795506d934dba1}{decimation\_mode\_count\_always}}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a5344a8e95df2fe4fe2b396b669993140}{decimation\_mode\_count\_selected}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00352}00352\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(max\_decimation\_modes\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00353}00353\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ max\_decimation\_modes;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00354}00354\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00355}00355\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdecimation__mode}{decimation\_mode}}\&\ dm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_acfb1b28b22c740a1c8262587f5a6364f}{decimation\_modes}}[i];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00356}00356\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!dm.\mbox{\hyperlink{structdecimation__mode_ad3899521e22d446efacfceb12f264d4f}{is\_ref\_1plane}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\textcolor{keyword}{>}(max\_weight\_quant)))}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00360}00360\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ weight\_count\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(i).\mbox{\hyperlink{structdecimation__info_af7d0c86be805995a20a6c09f6c3ab8ca}{weight\_count}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00362}00362\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_precision\ =\ dm.\mbox{\hyperlink{structdecimation__mode_a469a9f9e5df5748e571801cd921b7b9b}{maxprec\_1plane}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00364}00364\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (max\_precision\ >\ \mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}})}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ max\_precision\ =\ \mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00367}00367\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00368}00368\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00369}00369\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (max\_precision\ >\ max\_weight\_quant)}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ max\_precision\ =\ max\_weight\_quant;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00372}00372\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00373}00373\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__weight__align_8cpp_a52f057b7da5fc35adac361b3696ac963}{compute\_angular\_endpoints\_for\_quant\_levels}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ weight\_count,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weight\_ideal\_value\ +\ i\ *\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}},}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ max\_precision,\ low\_values[i],\ high\_values[i]);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00378}00378\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00379}00379\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00380}00380\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_block\_modes\ =\ only\_always\ ?\ bsd.\mbox{\hyperlink{structblock__size__descriptor_ae2f4cd561ea1618e1c44f9afbead038f}{block\_mode\_count\_1plane\_always}}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a2f96c6e4d1e35b4bac8778c474c69bb1}{block\_mode\_count\_1plane\_selected}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00382}00382\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(max\_block\_modes\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00383}00383\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ max\_block\_modes;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00384}00384\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__mode}{block\_mode}}\&\ bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a82d0bf7e49df4683f0823b4951fb77f8}{block\_modes}}[i];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ assert(!bm.\mbox{\hyperlink{structblock__mode_a78b282103d0a8bee2b07c0da075a3dc4}{is\_dual\_plane}});}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00387}00387\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ quant\_mode\ =\ bm.\mbox{\hyperlink{structblock__mode_a57910e5bd3d21447cdea6c7789723a86}{quant\_mode}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ decim\_mode\ =\ bm.\mbox{\hyperlink{structblock__mode_aaf9846117d40406d5e84508f429cf949}{decimation\_mode}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00390}00390\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (quant\_mode\ <=\ \mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}})}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ low\_value[i]\ =\ low\_values[decim\_mode][quant\_mode];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ high\_value[i]\ =\ high\_values[decim\_mode][quant\_mode];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00396}00396\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00397}00397\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ low\_value[i]\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ high\_value[i]\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00401}00401\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00402}00402\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00403}00403\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00404}00404\ \textcolor{comment}{/*\ See\ header\ for\ documentation.\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00405}\mbox{\hyperlink{astcenc__internal_8h_a571d7379fd52446338ef4fa7e700cb42}{00405}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenc__weight__align_8cpp_a571d7379fd52446338ef4fa7e700cb42}{compute\_angular\_endpoints\_2planes}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00406}00406\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__size__descriptor}{block\_size\_descriptor}}\&\ bsd,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00407}00407\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ dec\_weight\_ideal\_value,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00408}00408\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_weight\_quant,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00409}00409\ \ \ \ \ \mbox{\hyperlink{structcompression__working__buffers}{compression\_working\_buffers}}\&\ tmpbuf}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00410}00410\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00411}00411\ \ \ \ \ float\ (\&low\_value1)[\mbox{\hyperlink{astcenc__internal_8h_ac446d816e6883587f7cd6fd115d9a40c}{WEIGHTS\_MAX\_BLOCK\_MODES}}]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a504af2e4e5a146cd80b52c1b6c93b782}{weight\_low\_value1}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00412}00412\ \ \ \ \ float\ (\&high\_value1)[\mbox{\hyperlink{astcenc__internal_8h_ac446d816e6883587f7cd6fd115d9a40c}{WEIGHTS\_MAX\_BLOCK\_MODES}}]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_adebd00f87afd06131aa6e22e12effae2}{weight\_high\_value1}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00413}00413\ \ \ \ \ float\ (\&low\_value2)[\mbox{\hyperlink{astcenc__internal_8h_ac446d816e6883587f7cd6fd115d9a40c}{WEIGHTS\_MAX\_BLOCK\_MODES}}]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a6b3f7da41bb370993657d209bbb95d03}{weight\_low\_value2}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00414}00414\ \ \ \ \ float\ (\&high\_value2)[\mbox{\hyperlink{astcenc__internal_8h_ac446d816e6883587f7cd6fd115d9a40c}{WEIGHTS\_MAX\_BLOCK\_MODES}}]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a72e3ac47a49cfb6ed8b4933699014858}{weight\_high\_value2}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00415}00415\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00416}00416\ \ \ \ \ float\ (\&low\_values1)[\mbox{\hyperlink{astcenc__internal_8h_a803b1633e5a45c902bc513ef4c333327}{WEIGHTS\_MAX\_DECIMATION\_MODES}}][\mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}}\ +\ 1]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a13570ddf604795f219b4bb30f3a7b40f}{weight\_low\_values1}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00417}00417\ \ \ \ \ float\ (\&high\_values1)[\mbox{\hyperlink{astcenc__internal_8h_a803b1633e5a45c902bc513ef4c333327}{WEIGHTS\_MAX\_DECIMATION\_MODES}}][\mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}}\ +\ 1]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a85b21c3ce2a327c89fdac870dce07cba}{weight\_high\_values1}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00418}00418\ \ \ \ \ float\ (\&low\_values2)[\mbox{\hyperlink{astcenc__internal_8h_a803b1633e5a45c902bc513ef4c333327}{WEIGHTS\_MAX\_DECIMATION\_MODES}}][\mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}}\ +\ 1]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_aeff8a7659105845e54015919ccb4b856}{weight\_low\_values2}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00419}00419\ \ \ \ \ float\ (\&high\_values2)[\mbox{\hyperlink{astcenc__internal_8h_a803b1633e5a45c902bc513ef4c333327}{WEIGHTS\_MAX\_DECIMATION\_MODES}}][\mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}}\ +\ 1]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_aa9a374a18f80c58cdcd780ab70ced8b0}{weight\_high\_values2}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00420}00420\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00421}00421\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(bsd.\mbox{\hyperlink{structblock__size__descriptor_a5344a8e95df2fe4fe2b396b669993140}{decimation\_mode\_count\_selected}}\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00422}00422\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a5344a8e95df2fe4fe2b396b669993140}{decimation\_mode\_count\_selected}};\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00423}00423\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00424}00424\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdecimation__mode}{decimation\_mode}}\&\ dm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_acfb1b28b22c740a1c8262587f5a6364f}{decimation\_modes}}[i];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00425}00425\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!dm.\mbox{\hyperlink{structdecimation__mode_aa2fe4a73b6781930c375b1810a03f73b}{is\_ref\_2plane}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\textcolor{keyword}{>}(max\_weight\_quant)))}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00426}00426\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00428}00428\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00429}00429\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00430}00430\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ weight\_count\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(i).\mbox{\hyperlink{structdecimation__info_af7d0c86be805995a20a6c09f6c3ab8ca}{weight\_count}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00431}00431\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00432}00432\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_precision\ =\ dm.\mbox{\hyperlink{structdecimation__mode_a6cc1d777d75001f629a2a0661894a334}{maxprec\_2planes}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00433}00433\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (max\_precision\ >\ \mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}})}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00434}00434\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ max\_precision\ =\ \mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00436}00436\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00437}00437\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00438}00438\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (max\_precision\ >\ max\_weight\_quant)}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00439}00439\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ max\_precision\ =\ max\_weight\_quant;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00441}00441\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00442}00442\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00443}00443\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__weight__align_8cpp_a52f057b7da5fc35adac361b3696ac963}{compute\_angular\_endpoints\_for\_quant\_levels}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00444}00444\ \ \ \ \ \ \ \ \ \ \ \ \ weight\_count,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weight\_ideal\_value\ +\ i\ *\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}},}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ max\_precision,\ low\_values1[i],\ high\_values1[i]);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00447}00447\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00448}00448\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__weight__align_8cpp_a52f057b7da5fc35adac361b3696ac963}{compute\_angular\_endpoints\_for\_quant\_levels}}(}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00449}00449\ \ \ \ \ \ \ \ \ \ \ \ \ weight\_count,}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00450}00450\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weight\_ideal\_value\ +\ i\ *\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}}\ +\ \mbox{\hyperlink{astcenc__internal_8h_a2dcf39b1f3c1e5f152abdf1f24e698da}{WEIGHTS\_PLANE2\_OFFSET}},}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00451}00451\ \ \ \ \ \ \ \ \ \ \ \ \ max\_precision,\ low\_values2[i],\ high\_values2[i]);}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00452}00452\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00453}00453\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00454}00454\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ start\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a2f96c6e4d1e35b4bac8778c474c69bb1}{block\_mode\_count\_1plane\_selected}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00455}00455\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ end\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a796557a9c78ee86175f67ed504731ac5}{block\_mode\_count\_1plane\_2plane\_selected}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00456}00456\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ start;\ i\ <\ end;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00457}00457\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00458}00458\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__mode}{block\_mode}}\&\ bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a82d0bf7e49df4683f0823b4951fb77f8}{block\_modes}}[i];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00459}00459\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ quant\_mode\ =\ bm.\mbox{\hyperlink{structblock__mode_a57910e5bd3d21447cdea6c7789723a86}{quant\_mode}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00460}00460\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ decim\_mode\ =\ bm.\mbox{\hyperlink{structblock__mode_aaf9846117d40406d5e84508f429cf949}{decimation\_mode}};}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00461}00461\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00462}00462\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (quant\_mode\ <=\ \mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}})}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00463}00463\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ low\_value1[i]\ =\ low\_values1[decim\_mode][quant\_mode];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ high\_value1[i]\ =\ high\_values1[decim\_mode][quant\_mode];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ low\_value2[i]\ =\ low\_values2[decim\_mode][quant\_mode];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ high\_value2[i]\ =\ high\_values2[decim\_mode][quant\_mode];}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00468}00468\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00469}00469\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00470}00470\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00471}00471\ \ \ \ \ \ \ \ \ \ \ \ \ low\_value1[i]\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ high\_value1[i]\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00473}00473\ \ \ \ \ \ \ \ \ \ \ \ \ low\_value2[i]\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ \ \ high\_value2[i]\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00475}00475\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00476}00476\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00477}00477\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00478}00478\ }
+\DoxyCodeLine{\Hypertarget{astcenc__weight__align_8cpp_source_l00479}00479\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

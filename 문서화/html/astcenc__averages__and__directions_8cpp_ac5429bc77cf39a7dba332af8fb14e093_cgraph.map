@@ -1,0 +1,21 @@
+<map id="compute_partition_averages_rgb" name="compute_partition_averages_rgb">
+<area shape="rect" id="Node000001" title="Functions for finding dominant direction of a set of colors." alt="" coords="5,152,213,177"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#aaa291a197219a09a2e1103aec6945b3c" title="Accumulate lane&#45;wise sums for a vector, folded 4&#45;wide." alt="" coords="262,29,358,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,150,186,110,260,64,269,59,272,63,263,68,189,115,130,154"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#aacd26478e4fe1f97a5d47e8adaacc898" title="Return the horizontal sum of a vector." alt="" coords="278,103,342,128"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="161,149,264,124,265,129,162,155"/>
+<area shape="rect" id="Node000004" href="$structvint4.html#a21e3d111e37da1aaaeb5ba21a831c863" title="Factory that returns a vector containing the lane IDs." alt="" coords="261,152,359,177"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="214,162,247,162,247,167,214,167"/>
+<area shape="rect" id="Node000006" href="$structvfloat4.html#a0a3e390831722cc8e54f29155699f3a5" title="Return a swizzled float 2." alt="" coords="265,201,355,227"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="162,175,253,197,252,203,161,180"/>
+<area shape="rect" id="Node000009" href="$astcenc__vecmathlib_8h.html#a1a2e12d78738b0b4b550f57b2dc05f07" title="Factory that returns a 3 component vfloat4." alt="" coords="281,251,339,276"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="137,175,272,242,269,247,135,180"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="285,31,280,21,283,11,293,5,310,3,330,6,339,15,335,18,328,11,310,8,295,10,287,15,285,20,290,28"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="285,104,280,94,283,85,293,78,310,76,330,80,339,88,335,92,328,84,310,81,295,83,287,88,285,94,290,101"/>
+<area shape="rect" id="Node000005" href="$structvint4.html#a3315184e8bb4f0cf1ca8dcff1f57cdae" title="Construct from zero&#45;initialized value." alt="" coords="417,152,499,177"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="359,162,403,162,403,167,359,167"/>
+<area shape="rect" id="Node000007" href="$structvfloat4.html#a04462a7815432c6bc3ce1b5e5d11e4fc" title="Get the scalar value of a single lane." alt="" coords="413,201,503,227"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="355,211,399,211,399,217,355,217"/>
+<area shape="rect" id="Node000008" href="$structvfloat4.html#a9df51cb30b68d6d51ca607e64aa1ebf0" title="Construct from zero&#45;initialized value." alt="" coords="407,251,509,276"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="350,224,407,244,405,249,348,229"/>
+</map>

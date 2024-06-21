@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['image_0',['image',['../structcompression__workload.html#a3b9e0060a67dd9683baf335501583de8',1,'compression_workload']]],
+  ['image_5fout_1',['image_out',['../structdecompression__workload.html#ab689a3629431892c34eb2c043ccd0b3b',1,'decompression_workload']]],
+  ['img_2',['img',['../structpixel__region__args.html#ac5b935bba066fe2123725c1f14381f2b',1,'pixel_region_args']]],
+  ['img_5fsize_5fx_3',['img_size_x',['../structavg__args.html#a50501736215a165ef2d8ca4a86e6950f',1,'avg_args']]],
+  ['img_5fsize_5fy_4',['img_size_y',['../structavg__args.html#a3641de71f3d20658cee5edc2661a7b13',1,'avg_args']]],
+  ['img_5fsize_5fz_5',['img_size_z',['../structavg__args.html#a97ac91020845ae5946ee158b9aebd982',1,'avg_args']]],
+  ['index_6',['index',['../structwuffs__base____frame__config____struct.html#aac648bff5ea7816b7e47ae5931c24cd3',1,'wuffs_base__frame_config__struct']]],
+  ['initial_5fpercs_7',['initial_percs',['../structpacked__percentile__table.html#a95e482ab9da46570b6f0e039844a8336',1,'packed_percentile_table']]],
+  ['input_5falpha_5faverages_8',['input_alpha_averages',['../structastcenc__contexti.html#af902f846866885cc9cd3bf1a76d2b2cf',1,'astcenc_contexti']]],
+  ['integer_5fof_5fquints_9',['integer_of_quints',['../astcenc__integer__sequence_8cpp.html#a5aa65122e76bd75121e99756ed140207',1,'astcenc_integer_sequence.cpp']]],
+  ['integer_5fof_5ftrits_10',['integer_of_trits',['../astcenc__integer__sequence_8cpp.html#aa64aa03999ca2424dd3e59be268482fa',1,'astcenc_integer_sequence.cpp']]],
+  ['io_5fposition_11',['io_position',['../structwuffs__base____frame__config____struct.html#a039783f2f7933bb9830008e16540839f',1,'wuffs_base__frame_config__struct']]],
+  ['is_5fconstant_5fblock_12',['is_constant_block',['../structastcenc__block__info.html#af49f46e1eb0dd622b20faa9bbac291cc',1,'astcenc_block_info']]],
+  ['is_5fconstant_5fweight_5ferror_5fscale_13',['is_constant_weight_error_scale',['../structendpoints__and__weights.html#a351e13ebfb998f06c4134c405cb5d0ec',1,'endpoints_and_weights']]],
+  ['is_5fdual_5fplane_14',['is_dual_plane',['../structblock__mode.html#a78b282103d0a8bee2b07c0da075a3dc4',1,'block_mode']]],
+  ['is_5fdual_5fplane_5fblock_15',['is_dual_plane_block',['../structastcenc__block__info.html#a9b8ab4d8cc6b6ba7372f71fef06dfd50',1,'astcenc_block_info']]],
+  ['is_5ferror_5fblock_16',['is_error_block',['../structastcenc__block__info.html#ae3092bdbe4c12a539bb446847621d9a4',1,'astcenc_block_info']]],
+  ['is_5fhdr_5fblock_17',['is_hdr_block',['../structastcenc__block__info.html#a63a31ae79677591001714c1af72f1d92',1,'astcenc_block_info']]],
+  ['is_5fsrgb_18',['is_srgb',['../structformat__entry.html#a7335f3bbba22c182fe61ba40f38c58bc',1,'format_entry']]],
+  ['ise_5fsizes_19',['ise_sizes',['../astcenc__integer__sequence_8cpp.html#a70437debc60482d24e983ddb26c0bba2',1,'astcenc_integer_sequence.cpp']]],
+  ['item_5fcount_20',['item_count',['../structpacked__percentile__table.html#a2985dbb914d63db5e4cdbd8c452c3bff',1,'packed_percentile_table']]],
+  ['items_21',['items',['../structpacked__percentile__table.html#ae021462f29fc6db6ab0c5b0135d0afc4',1,'packed_percentile_table']]]
+];

@@ -1,0 +1,10 @@
+<map id="store_ncimage" name="store_ncimage">
+<area shape="rect" id="Node000001" title="Save an uncompressed image." alt="" coords="465,5,572,31"/>
+<area shape="rect" id="Node000002" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,5,207,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="452,21,207,21,207,15,452,15"/>
+<area shape="rect" id="Node000004" href="$astcenccli__toplevel_8cpp.html#a65c87ee1ff0ed0736cffa06692853479" title="Print a set of diagnostic images showing aspects of the encoding." alt="" coords="255,31,417,56"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="452,30,418,35,417,29,452,25"/>
+<area shape="rect" id="Node000003" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="90,21,57,21,57,15,90,15"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="241,33,206,28,207,22,242,27"/>
+</map>

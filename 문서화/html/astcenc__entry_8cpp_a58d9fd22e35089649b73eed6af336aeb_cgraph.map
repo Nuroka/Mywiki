@@ -1,0 +1,19 @@
+<map id="validate_config" name="validate_config">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,104,112,129"/>
+<area shape="rect" id="Node000002" href="$namespaceastc.html#a8f8b2ad23b04a389f6785bc80b61349b" title="Clamp a value value between mn and mx." alt="" coords="182,5,273,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,101,110,71,159,40,172,33,174,38,161,44,114,75,76,106"/>
+<area shape="rect" id="Node000003" href="$namespaceastc.html#a83a55552d03399cdff6cf2fed8312c9f" title="Return the maximum of two values." alt="" coords="187,55,267,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="102,101,173,80,175,85,104,107"/>
+<area shape="rect" id="Node000004" href="$astcenc__entry_8cpp.html#acdcee8daab341db81c6cbe79f566ada0" title="Validate block size." alt="" coords="160,104,295,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="112,114,146,114,146,119,112,119"/>
+<area shape="rect" id="Node000007" href="$astcenc__entry_8cpp.html#a12c6fc921e035b653e128a1fed66a9ea" title="Validate flags." alt="" coords="178,153,277,179"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="104,127,170,147,169,152,102,132"/>
+<area shape="rect" id="Node000009" href="$astcenc__entry_8cpp.html#ae42b59d6ea829c1cc20497ce104f4156" title="Validate config profile." alt="" coords="174,203,281,228"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="76,128,114,158,161,189,174,195,172,200,159,194,110,162,73,132"/>
+<area shape="rect" id="Node000005" href="$astcenc__percentile__tables_8cpp.html#a39abc45fae63fefae08ef3f2218d2439" title="Query if a 2D block size is legal." alt="" coords="343,55,499,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="277,101,356,81,357,86,278,107"/>
+<area shape="rect" id="Node000006" href="$astcenc__percentile__tables_8cpp.html#a54f17744601dc1a75f0f75be7a95c514" title="Query if a 3D block size is legal." alt="" coords="343,104,499,129"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="295,114,329,114,329,119,295,119"/>
+<area shape="rect" id="Node000008" href="$astcenc__vecmathlib__common__4_8h.html#a652a0112f173bddee3a84a27eb679fda" title="Population bit count." alt="" coords="383,153,458,179"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="277,163,370,163,370,169,277,169"/>
+</map>

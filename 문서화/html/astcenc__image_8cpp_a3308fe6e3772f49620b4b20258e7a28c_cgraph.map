@@ -1,0 +1,5 @@
+<map id="load_texel_u8" name="load_texel_u8">
+<area shape="rect" id="Node000001" title="Load a 8&#45;bit UNORM texel from a data array." alt="" coords="5,5,108,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#a3a2ce0fb403294db7fe126a6b3e87ab7" title="Return a float value for an integer vector." alt="" coords="156,5,241,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,15,142,15,142,21,108,21"/>
+</map>

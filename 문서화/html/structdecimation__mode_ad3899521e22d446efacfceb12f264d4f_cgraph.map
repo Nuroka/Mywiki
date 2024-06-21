@@ -1,0 +1,5 @@
+<map id="decimation_mode::is_ref_1plane" name="decimation_mode::is_ref_1plane">
+<area shape="rect" id="Node000001" title="Test if this mode is active below a given 1 plane weight quant (inclusive)." alt="" coords="5,5,148,45"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#ad922a3ed6098767968916265154b6f82" title="Return a 8&#45;bit mask code indicating mask status." alt="" coords="196,13,251,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,23,182,23,182,28,148,28"/>
+</map>

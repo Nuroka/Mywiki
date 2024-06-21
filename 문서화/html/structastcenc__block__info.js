@@ -1,0 +1,25 @@
+var structastcenc__block__info =
+[
+    [ "block_x", "structastcenc__block__info.html#acaf94924e3b045106fdc09e5b56e3b22", null ],
+    [ "block_y", "structastcenc__block__info.html#a37deab7b53e3108e9ee41770cd4e9cd2", null ],
+    [ "block_z", "structastcenc__block__info.html#a011c623bf0fcf552aabe5e9baa2e8e81", null ],
+    [ "color_endpoint_modes", "structastcenc__block__info.html#a2b46ba510161fcb2d9fffb951817635d", null ],
+    [ "color_endpoints", "structastcenc__block__info.html#acf16c8776bb5795bdc4e31ca80a3f933", null ],
+    [ "color_level_count", "structastcenc__block__info.html#a7c0b03db68cbc0393e65edd9bd38df18", null ],
+    [ "dual_plane_component", "structastcenc__block__info.html#a21d8cd1b003665a88e494efce089424e", null ],
+    [ "is_constant_block", "structastcenc__block__info.html#af49f46e1eb0dd622b20faa9bbac291cc", null ],
+    [ "is_dual_plane_block", "structastcenc__block__info.html#a9b8ab4d8cc6b6ba7372f71fef06dfd50", null ],
+    [ "is_error_block", "structastcenc__block__info.html#ae3092bdbe4c12a539bb446847621d9a4", null ],
+    [ "is_hdr_block", "structastcenc__block__info.html#a63a31ae79677591001714c1af72f1d92", null ],
+    [ "partition_assignment", "structastcenc__block__info.html#aba56a138d8ba06a8aaa4dedeaa9263b3", null ],
+    [ "partition_count", "structastcenc__block__info.html#a299c7fdbeb1159df28f49aed1f856598", null ],
+    [ "partition_index", "structastcenc__block__info.html#a01c2ca7c5f5d298177722dbb74b41501", null ],
+    [ "profile", "structastcenc__block__info.html#ac114a0b6da361e3bacf2d10f603da012", null ],
+    [ "texel_count", "structastcenc__block__info.html#af286f5059188b512c97b1bc565add0c3", null ],
+    [ "weight_level_count", "structastcenc__block__info.html#a0a82009e2c7ff591d8fcebe2f1c7c017", null ],
+    [ "weight_values_plane1", "structastcenc__block__info.html#aa1a4523fbf26b0efac442e538c228c5a", null ],
+    [ "weight_values_plane2", "structastcenc__block__info.html#a09f9a8cd3124ba43153bbcd433e11cf1", null ],
+    [ "weight_x", "structastcenc__block__info.html#ae3161ecab31af252946f51b1cfda381d", null ],
+    [ "weight_y", "structastcenc__block__info.html#a575d5c79f0bdd63f515c4e2a2376ddd3", null ],
+    [ "weight_z", "structastcenc__block__info.html#a87f45d11b423a56bfe85cbb978f8d1f1", null ]
+];

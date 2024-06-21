@@ -1,0 +1,703 @@
+\doxysection{C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/astcenc\+\_\+partition\+\_\+tables.cpp 파일 참조}
+\hypertarget{astcenc__partition__tables_8cpp}{}\label{astcenc__partition__tables_8cpp}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_partition\_tables.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_partition\_tables.cpp}}
+{\ttfamily \#include "{}astcenc\+\_\+internal.\+h"{}}\newline
+astcenc\+\_\+partition\+\_\+tables.\+cpp에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__partition__tables_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{astcenc__partition__tables_8cpp_a3cbabd2f1c2e8586309b33ccdba38378}{BIT\+\_\+\+PATTERN\+\_\+\+WORDS}}~(((\mbox{\hyperlink{astcenc__internal_8h_a6dd4def42ee3960aa239837933da9df9}{ASTCENC\+\_\+\+BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}} \texorpdfstring{$\ast$}{*} 2) + 63) / 64)
+\begin{DoxyCompactList}\small\item\em Functions for generating partition tables on demand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{astcenc__partition__tables_8cpp_a656f2dcd2ed9221814a6f1b38bff7cb6}{generate\+\_\+canonical\+\_\+partitioning}} (unsigned int texel\+\_\+count, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}partition\+\_\+of\+\_\+texel, uint64\+\_\+t bit\+\_\+pattern\mbox{[}\mbox{\hyperlink{astcenc__partition__tables_8cpp_a3cbabd2f1c2e8586309b33ccdba38378}{BIT\+\_\+\+PATTERN\+\_\+\+WORDS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Generate a canonical representation of a partition pattern. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{astcenc__partition__tables_8cpp_adced470735eb4be99d56b03b57201e2a}{compare\+\_\+canonical\+\_\+partitionings}} (const uint64\+\_\+t part1\mbox{[}\mbox{\hyperlink{astcenc__partition__tables_8cpp_a3cbabd2f1c2e8586309b33ccdba38378}{BIT\+\_\+\+PATTERN\+\_\+\+WORDS}}\mbox{]}, const uint64\+\_\+t part2\mbox{[}\mbox{\hyperlink{astcenc__partition__tables_8cpp_a3cbabd2f1c2e8586309b33ccdba38378}{BIT\+\_\+\+PATTERN\+\_\+\+WORDS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Compare two canonical patterns to see if they are the same. \end{DoxyCompactList}\item 
+static uint32\+\_\+t \mbox{\hyperlink{astcenc__partition__tables_8cpp_a28958825dfb33d5371f54dae6d247f8a}{hash52}} (uint32\+\_\+t inp)
+\begin{DoxyCompactList}\small\item\em Hash function used for procedural partition assignment. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \mbox{\hyperlink{astcenc__partition__tables_8cpp_a57b1b10c9fc1e915dcf985ea37a8cbf6}{select\+\_\+partition}} (int seed, int x, int y, int z, int partition\+\_\+count, bool small\+\_\+block)
+\begin{DoxyCompactList}\small\item\em Select texel assignment for a single coordinate. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{astcenc__partition__tables_8cpp_a11a5380f66eb5461273c7d4f5c71e6d0}{generate\+\_\+one\+\_\+partition\+\_\+info\+\_\+entry}} (\mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&bsd, unsigned int partition\+\_\+count, unsigned int partition\+\_\+index, unsigned int partition\+\_\+remap\+\_\+index, \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&pi)
+\begin{DoxyCompactList}\small\item\em Generate a single partition info structure. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__partition__tables_8cpp_a83b39a9f5b84470876611393553d38b5}{build\+\_\+partition\+\_\+table\+\_\+for\+\_\+one\+\_\+partition\+\_\+count}} (\mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&bsd, bool can\+\_\+omit\+\_\+partitionings, unsigned int partition\+\_\+count\+\_\+cutoff, unsigned int partition\+\_\+count, \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \texorpdfstring{$\ast$}{*}ptab, uint64\+\_\+t \texorpdfstring{$\ast$}{*}canonical\+\_\+patterns)
+\item 
+void \mbox{\hyperlink{astcenc__partition__tables_8cpp_a9460ca3acf0175a93580b78d5d99a36a}{init\+\_\+partition\+\_\+tables}} (\mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&bsd, bool can\+\_\+omit\+\_\+partitionings, unsigned int partition\+\_\+count\+\_\+cutoff)
+\begin{DoxyCompactList}\small\item\em Populate the partition tables for the target block size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{매크로 문서화}
+\Hypertarget{astcenc__partition__tables_8cpp_a3cbabd2f1c2e8586309b33ccdba38378}\index{astcenc\_partition\_tables.cpp@{astcenc\_partition\_tables.cpp}!BIT\_PATTERN\_WORDS@{BIT\_PATTERN\_WORDS}}
+\index{BIT\_PATTERN\_WORDS@{BIT\_PATTERN\_WORDS}!astcenc\_partition\_tables.cpp@{astcenc\_partition\_tables.cpp}}
+\doxysubsubsection{\texorpdfstring{BIT\_PATTERN\_WORDS}{BIT\_PATTERN\_WORDS}}
+{\footnotesize\ttfamily \label{astcenc__partition__tables_8cpp_a3cbabd2f1c2e8586309b33ccdba38378} 
+\#define BIT\+\_\+\+PATTERN\+\_\+\+WORDS~(((\mbox{\hyperlink{astcenc__internal_8h_a6dd4def42ee3960aa239837933da9df9}{ASTCENC\+\_\+\+BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}} \texorpdfstring{$\ast$}{*} 2) + 63) / 64)}
+
+
+
+Functions for generating partition tables on demand. 
+
+The number of 64-\/bit words needed to represent a canonical partition bit pattern. 
+
+\mbox{\hyperlink{astcenc__partition__tables_8cpp_source}{astcenc\+\_\+partition\+\_\+tables.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__partition__tables_8cpp_source_l00025}{25}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{함수 문서화}
+\Hypertarget{astcenc__partition__tables_8cpp_a83b39a9f5b84470876611393553d38b5}\index{astcenc\_partition\_tables.cpp@{astcenc\_partition\_tables.cpp}!build\_partition\_table\_for\_one\_partition\_count@{build\_partition\_table\_for\_one\_partition\_count}}
+\index{build\_partition\_table\_for\_one\_partition\_count@{build\_partition\_table\_for\_one\_partition\_count}!astcenc\_partition\_tables.cpp@{astcenc\_partition\_tables.cpp}}
+\doxysubsubsection{\texorpdfstring{build\_partition\_table\_for\_one\_partition\_count()}{build\_partition\_table\_for\_one\_partition\_count()}}
+{\footnotesize\ttfamily \label{astcenc__partition__tables_8cpp_a83b39a9f5b84470876611393553d38b5} 
+static void build\+\_\+partition\+\_\+table\+\_\+for\+\_\+one\+\_\+partition\+\_\+count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&}]{bsd}{, }\item[{bool}]{can\+\_\+omit\+\_\+partitionings}{, }\item[{unsigned int}]{partition\+\_\+count\+\_\+cutoff}{, }\item[{unsigned int}]{partition\+\_\+count}{, }\item[{\mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \texorpdfstring{$\ast$}{*}}]{ptab}{, }\item[{uint64\+\_\+t \texorpdfstring{$\ast$}{*}}]{canonical\+\_\+patterns}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{astcenc__partition__tables_8cpp_source}{astcenc\+\_\+partition\+\_\+tables.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__partition__tables_8cpp_source_l00382}{382}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00389\ \ \ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ next\_index\ =\ 0;}
+\DoxyCodeLine{00391\ \ \ \ \ bsd.\mbox{\hyperlink{structblock__size__descriptor_aecc5b82b77caa9b3bf69294d06f84e19}{partitioning\_count\_selected}}[partition\_count\ -\/\ 1]\ =\ 0;}
+\DoxyCodeLine{00392\ \ \ \ \ bsd.\mbox{\hyperlink{structblock__size__descriptor_aff40c19af89f6790db9247963dcf05eb}{partitioning\_count\_all}}[partition\_count\ -\/\ 1]\ =\ 0;}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{comment}{//\ Skip\ tables\ larger\ than\ config\ max\ partition\ count\ if\ we\ can\ omit\ modes}}
+\DoxyCodeLine{00395\ \ \ \ \ \textcolor{keywordflow}{if}\ (can\_omit\_partitionings\ \&\&\ (partition\_count\ >\ partition\_count\_cutoff))}
+\DoxyCodeLine{00396\ \ \ \ \ \{}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00398\ \ \ \ \ \}}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00400\ \ \ \ \ \textcolor{comment}{//\ Iterate\ through\ twice}}
+\DoxyCodeLine{00401\ \ \ \ \ \textcolor{comment}{//\ \ \ -\/\ Pass\ 0:\ Keep\ selected\ partitionings}}
+\DoxyCodeLine{00402\ \ \ \ \ \textcolor{comment}{//\ \ \ -\/\ Pass\ 1:\ Keep\ non-\/selected\ partitionings\ (skip\ if\ in\ omit\ mode)}}
+\DoxyCodeLine{00403\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_iter\ =\ can\_omit\_partitionings\ ?\ 1\ :\ 2;}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \ \ \ \ \textcolor{comment}{//\ Tracker\ for\ things\ we\ built\ in\ the\ first\ iteration}}
+\DoxyCodeLine{00406\ \ \ \ \ uint8\_t\ build[\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\_MAX\_PARTITIONINGS}}]\ \{\ 0\ \};}
+\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ max\_iter;\ x++)}
+\DoxyCodeLine{00408\ \ \ \ \ \{}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\_MAX\_PARTITIONINGS}};\ i++)}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Don't\ include\ things\ we\ built\ in\ the\ first\ pass}}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((x\ ==\ 1)\ \&\&\ build[i])}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ keep\_useful\ =\ \mbox{\hyperlink{astcenc__partition__tables_8cpp_a11a5380f66eb5461273c7d4f5c71e6d0}{generate\_one\_partition\_info\_entry}}(bsd,\ partition\_count,\ i,\ next\_index,\ ptab[next\_index]);}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((x\ ==\ 0)\ \&\&\ !keep\_useful)}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00422\ }
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__partition__tables_8cpp_a656f2dcd2ed9221814a6f1b38bff7cb6}{generate\_canonical\_partitioning}}(bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}},\ ptab[next\_index].partition\_of\_texel,\ canonical\_patterns\ +\ next\_index\ *\ \mbox{\hyperlink{astcenc__partition__tables_8cpp_a3cbabd2f1c2e8586309b33ccdba38378}{BIT\_PATTERN\_WORDS}});}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ keep\_canonical\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ next\_index;\ j++)}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ match\ =\ \mbox{\hyperlink{astcenc__partition__tables_8cpp_adced470735eb4be99d56b03b57201e2a}{compare\_canonical\_partitionings}}(canonical\_patterns\ +\ next\_index\ *\ \mbox{\hyperlink{astcenc__partition__tables_8cpp_a3cbabd2f1c2e8586309b33ccdba38378}{BIT\_PATTERN\_WORDS}},\ canonical\_patterns\ +\ \ j\ *\ \mbox{\hyperlink{astcenc__partition__tables_8cpp_a3cbabd2f1c2e8586309b33ccdba38378}{BIT\_PATTERN\_WORDS}});}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (match)}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keep\_canonical\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keep\_useful\ \&\&\ keep\_canonical)}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ ==\ 0)}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bsd.\mbox{\hyperlink{structblock__size__descriptor_a27d19c3a69a9e0844b9bf35331656d24}{partitioning\_packed\_index}}[partition\_count\ -\/\ 2][i]\ =\ \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(next\_index);}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bsd.\mbox{\hyperlink{structblock__size__descriptor_aecc5b82b77caa9b3bf69294d06f84e19}{partitioning\_count\_selected}}[partition\_count\ -\/\ 1]++;}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bsd.\mbox{\hyperlink{structblock__size__descriptor_aff40c19af89f6790db9247963dcf05eb}{partitioning\_count\_all}}[partition\_count\ -\/\ 1]++;}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ build[i]\ =\ 1;}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ next\_index++;}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ ==\ 1)}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bsd.\mbox{\hyperlink{structblock__size__descriptor_a27d19c3a69a9e0844b9bf35331656d24}{partitioning\_packed\_index}}[partition\_count\ -\/\ 2][i]\ =\ \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(next\_index);}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bsd.\mbox{\hyperlink{structblock__size__descriptor_aff40c19af89f6790db9247963dcf05eb}{partitioning\_count\_all}}[partition\_count\ -\/\ 1]++;}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ next\_index++;}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00456\ \ \ \ \ \}}
+\DoxyCodeLine{00457\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__partition__tables_8cpp_a83b39a9f5b84470876611393553d38b5_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__partition__tables_8cpp_a83b39a9f5b84470876611393553d38b5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__partition__tables_8cpp_adced470735eb4be99d56b03b57201e2a}\index{astcenc\_partition\_tables.cpp@{astcenc\_partition\_tables.cpp}!compare\_canonical\_partitionings@{compare\_canonical\_partitionings}}
+\index{compare\_canonical\_partitionings@{compare\_canonical\_partitionings}!astcenc\_partition\_tables.cpp@{astcenc\_partition\_tables.cpp}}
+\doxysubsubsection{\texorpdfstring{compare\_canonical\_partitionings()}{compare\_canonical\_partitionings()}}
+{\footnotesize\ttfamily \label{astcenc__partition__tables_8cpp_adced470735eb4be99d56b03b57201e2a} 
+static bool compare\+\_\+canonical\+\_\+partitionings (\begin{DoxyParamCaption}\item[{const uint64\+\_\+t}]{part1}{\mbox{[}\+BIT\+\_\+\+PATTERN\+\_\+\+WORDS\mbox{]}, }\item[{const uint64\+\_\+t}]{part2}{\mbox{[}\+BIT\+\_\+\+PATTERN\+\_\+\+WORDS\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compare two canonical patterns to see if they are the same. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em part1} & The first canonical bit pattern to check. \\
+\hline
+{\em part2} & The second canonical bit pattern to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+{\ttfamily true} if the patterns are the same, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__partition__tables_8cpp_source}{astcenc\+\_\+partition\+\_\+tables.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__partition__tables_8cpp_source_l00081}{81}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{return}\ (part1[0]\ ==\ part2[0])}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#if\ BIT\_PATTERN\_WORDS\ >\ 1}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \&\&\ (part1[1]\ ==\ part2[1])}
+\DoxyCodeLine{00088\ \#endif}
+\DoxyCodeLine{00089\ \#\textcolor{keywordflow}{if}\ \mbox{\hyperlink{astcenc__partition__tables_8cpp_a3cbabd2f1c2e8586309b33ccdba38378}{BIT\_PATTERN\_WORDS}}\ >\ 2}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \&\&\ (part1[2]\ ==\ part2[2])}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#if\ BIT\_PATTERN\_WORDS\ >\ 3}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \&\&\ (part1[3]\ ==\ part2[3])}
+\DoxyCodeLine{00094\ \#endif}
+\DoxyCodeLine{00095\ \#\textcolor{keywordflow}{if}\ \mbox{\hyperlink{astcenc__partition__tables_8cpp_a3cbabd2f1c2e8586309b33ccdba38378}{BIT\_PATTERN\_WORDS}}\ >\ 4}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \&\&\ (part1[4]\ ==\ part2[4])}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#if\ BIT\_PATTERN\_WORDS\ >\ 5}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \&\&\ (part1[5]\ ==\ part2[5])}
+\DoxyCodeLine{00100\ \#endif}
+\DoxyCodeLine{00101\ \#\textcolor{keywordflow}{if}\ \mbox{\hyperlink{astcenc__partition__tables_8cpp_a3cbabd2f1c2e8586309b33ccdba38378}{BIT\_PATTERN\_WORDS}}\ >\ 6}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \&\&\ (part1[6]\ ==\ part2[6])}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ ;}
+\DoxyCodeLine{00105\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__partition__tables_8cpp_adced470735eb4be99d56b03b57201e2a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__partition__tables_8cpp_a656f2dcd2ed9221814a6f1b38bff7cb6}\index{astcenc\_partition\_tables.cpp@{astcenc\_partition\_tables.cpp}!generate\_canonical\_partitioning@{generate\_canonical\_partitioning}}
+\index{generate\_canonical\_partitioning@{generate\_canonical\_partitioning}!astcenc\_partition\_tables.cpp@{astcenc\_partition\_tables.cpp}}
+\doxysubsubsection{\texorpdfstring{generate\_canonical\_partitioning()}{generate\_canonical\_partitioning()}}
+{\footnotesize\ttfamily \label{astcenc__partition__tables_8cpp_a656f2dcd2ed9221814a6f1b38bff7cb6} 
+static void generate\+\_\+canonical\+\_\+partitioning (\begin{DoxyParamCaption}\item[{unsigned int}]{texel\+\_\+count}{, }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{partition\+\_\+of\+\_\+texel}{, }\item[{uint64\+\_\+t}]{bit\+\_\+pattern}{\mbox{[}\+BIT\+\_\+\+PATTERN\+\_\+\+WORDS\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generate a canonical representation of a partition pattern. 
+
+The returned value stores two bits per texel, for up to 6x6x6 texels, where the two bits store the remapped texel index. Remapping ensures that we only match on the partition pattern, independent of the partition order generated by the hash.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em texel\+\_\+count} & The number of texels in the block. \\
+\hline
+ & {\em partition\+\_\+of\+\_\+texel} & The partition assignments, in hash order. \\
+\hline
+\mbox{\texttt{ out}}  & {\em bit\+\_\+pattern} & The output bit pattern representation. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__partition__tables_8cpp_source}{astcenc\+\_\+partition\+\_\+tables.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__partition__tables_8cpp_source_l00038}{38}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Clear\ the\ pattern}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{astcenc__partition__tables_8cpp_a3cbabd2f1c2e8586309b33ccdba38378}{BIT\_PATTERN\_WORDS}};\ i++)}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ bit\_pattern[i]\ =\ 0;}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ Store\ a\ mapping\ to\ reorder\ the\ raw\ partitions\ so\ that\ the\ partitions\ are\ ordered\ such}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ that\ the\ lowest\ texel\ index\ in\ partition\ N\ is\ smaller\ than\ the\ lowest\ texel\ index\ in}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ partition\ N\ +\ 1.}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ mapped\_index[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ map\_weight\_count\ =\ 0;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}};\ i++)}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ mapped\_index[i]\ =\ -\/1;}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i++)}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ partition\_of\_texel[i];}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mapped\_index[index]\ <\ 0)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ mapped\_index[index]\ =\ map\_weight\_count++;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ uint64\_t\ xlat\_index\ =\ mapped\_index[index];}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ bit\_pattern[i\ >>\ 5]\ |=\ xlat\_index\ <<\ (2\ *\ (i\ \&\ 0x1F));}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__partition__tables_8cpp_a656f2dcd2ed9221814a6f1b38bff7cb6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__partition__tables_8cpp_a11a5380f66eb5461273c7d4f5c71e6d0}\index{astcenc\_partition\_tables.cpp@{astcenc\_partition\_tables.cpp}!generate\_one\_partition\_info\_entry@{generate\_one\_partition\_info\_entry}}
+\index{generate\_one\_partition\_info\_entry@{generate\_one\_partition\_info\_entry}!astcenc\_partition\_tables.cpp@{astcenc\_partition\_tables.cpp}}
+\doxysubsubsection{\texorpdfstring{generate\_one\_partition\_info\_entry()}{generate\_one\_partition\_info\_entry()}}
+{\footnotesize\ttfamily \label{astcenc__partition__tables_8cpp_a11a5380f66eb5461273c7d4f5c71e6d0} 
+static bool generate\+\_\+one\+\_\+partition\+\_\+info\+\_\+entry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&}]{bsd}{, }\item[{unsigned int}]{partition\+\_\+count}{, }\item[{unsigned int}]{partition\+\_\+index}{, }\item[{unsigned int}]{partition\+\_\+remap\+\_\+index}{, }\item[{\mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&}]{pi}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generate a single partition info structure. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+\mbox{\texttt{ out}}  & {\em bsd} & The block size information. \\
+\hline
+ & {\em partition\+\_\+count} & The partition count of this partitioning. \\
+\hline
+ & {\em partition\+\_\+index} & The partition index / seed of this partitioning. \\
+\hline
+ & {\em partition\+\_\+remap\+\_\+index} & The remapped partition index of this partitioning. \\
+\hline
+\mbox{\texttt{ out}}  & {\em pi} & The partition info structure to populate.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+True if this is a useful partition index, False if we can skip it. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__partition__tables_8cpp_source}{astcenc\+\_\+partition\+\_\+tables.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__partition__tables_8cpp_source_l00276}{276}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00282\ \ \ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordtype}{int}\ texels\_per\_block\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}};}
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keywordtype}{bool}\ small\_block\ =\ texels\_per\_block\ <\ 32;}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ uint8\_t\ *partition\_of\_texel\ =\ pi.\mbox{\hyperlink{structpartition__info_ad9cde9216bbe8865a4660a6c955a6793}{partition\_of\_texel}};}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{comment}{//\ Assign\ texels\ to\ partitions}}
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordtype}{int}\ texel\_idx\ =\ 0;}
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordtype}{int}\ counts[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}]\ \{\ 0\ \};}
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ z\ =\ 0;\ z\ <\ bsd.\mbox{\hyperlink{structblock__size__descriptor_afc7428efe69cba2425ae335d9d266714}{zdim}};\ z++)}
+\DoxyCodeLine{00292\ \ \ \ \ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ \ bsd.\mbox{\hyperlink{structblock__size__descriptor_a44583f2512e5ae120df42bfc4270fa03}{ydim}};\ y++)}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ \ bsd.\mbox{\hyperlink{structblock__size__descriptor_aa00a247a5ba4c0501174c3ff6ecb9145}{xdim}};\ x++)}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ part\ =\ \mbox{\hyperlink{astcenc__partition__tables_8cpp_a57b1b10c9fc1e915dcf985ea37a8cbf6}{select\_partition}}(partition\_index,\ x,\ y,\ z,\ partition\_count,\ small\_block);}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pi.\mbox{\hyperlink{structpartition__info_af0987713fff05a82c3230d9400c6e1e7}{texels\_of\_partition}}[part][counts[part]++]\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(texel\_idx++);}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *partition\_of\_texel++\ =\ part;}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00302\ \ \ \ \ \}}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{comment}{//\ Fill\ loop\ tail\ so\ we\ can\ overfetch\ later}}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{00306\ \ \ \ \ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ptex\_count\ =\ counts[i];}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ptex\_count\_simd\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ae36622d837079b4899b971731c2dda37}{round\_up\_to\_simd\_multiple\_vla}}(ptex\_count);}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ ptex\_count;\ j\ <\ ptex\_count\_simd;\ j++)}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ pi.\mbox{\hyperlink{structpartition__info_af0987713fff05a82c3230d9400c6e1e7}{texels\_of\_partition}}[i][j]\ =\ pi.\mbox{\hyperlink{structpartition__info_af0987713fff05a82c3230d9400c6e1e7}{texels\_of\_partition}}[i][ptex\_count\ -\/\ 1];}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00313\ \ \ \ \ \}}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{comment}{//\ Populate\ the\ actual\ procedural\ partition\ count}}
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keywordflow}{if}\ (counts[0]\ ==\ 0)}
+\DoxyCodeLine{00317\ \ \ \ \ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ pi.\mbox{\hyperlink{structpartition__info_a1ffb0fdd4d560f536d6118f032fba4f3}{partition\_count}}\ =\ 0;}
+\DoxyCodeLine{00319\ \ \ \ \ \}}
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (counts[1]\ ==\ 0)}
+\DoxyCodeLine{00321\ \ \ \ \ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ pi.\mbox{\hyperlink{structpartition__info_a1ffb0fdd4d560f536d6118f032fba4f3}{partition\_count}}\ =\ 1;}
+\DoxyCodeLine{00323\ \ \ \ \ \}}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (counts[2]\ ==\ 0)}
+\DoxyCodeLine{00325\ \ \ \ \ \{}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ pi.\mbox{\hyperlink{structpartition__info_a1ffb0fdd4d560f536d6118f032fba4f3}{partition\_count}}\ =\ 2;}
+\DoxyCodeLine{00327\ \ \ \ \ \}}
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (counts[3]\ ==\ 0)}
+\DoxyCodeLine{00329\ \ \ \ \ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ pi.\mbox{\hyperlink{structpartition__info_a1ffb0fdd4d560f536d6118f032fba4f3}{partition\_count}}\ =\ 3;}
+\DoxyCodeLine{00331\ \ \ \ \ \}}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00333\ \ \ \ \ \{}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ pi.\mbox{\hyperlink{structpartition__info_a1ffb0fdd4d560f536d6118f032fba4f3}{partition\_count}}\ =\ 4;}
+\DoxyCodeLine{00335\ \ \ \ \ \}}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \ \ \ \ \textcolor{comment}{//\ Populate\ the\ partition\ index}}
+\DoxyCodeLine{00338\ \ \ \ \ pi.\mbox{\hyperlink{structpartition__info_ada3e4c7f4d0078a7ae43b1951d856e38}{partition\_index}}\ =\ \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(partition\_index);}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{comment}{//\ Populate\ the\ coverage\ bitmaps\ for\ 2/3/4\ partitions}}
+\DoxyCodeLine{00341\ \ \ \ \ uint64\_t*\ bitmaps\ \{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{00342\ \ \ \ \ \textcolor{keywordflow}{if}\ (partition\_count\ ==\ 2)}
+\DoxyCodeLine{00343\ \ \ \ \ \{}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ bitmaps\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_afb199f7b25412c63ee070afc4f22d647}{coverage\_bitmaps\_2}}[partition\_remap\_index];}
+\DoxyCodeLine{00345\ \ \ \ \ \}}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (partition\_count\ ==\ 3)}
+\DoxyCodeLine{00347\ \ \ \ \ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ bitmaps\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a2de235b96a8763b4d757954e66f084a3}{coverage\_bitmaps\_3}}[partition\_remap\_index];}
+\DoxyCodeLine{00349\ \ \ \ \ \}}
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (partition\_count\ ==\ 4)}
+\DoxyCodeLine{00351\ \ \ \ \ \{}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ bitmaps\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a2efb4a6e89af7eb8f833c5a7c5c65ac2}{coverage\_bitmaps\_4}}[partition\_remap\_index];}
+\DoxyCodeLine{00353\ \ \ \ \ \}}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}};\ i++)}
+\DoxyCodeLine{00356\ \ \ \ \ \{}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[i]\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(counts[i]);}
+\DoxyCodeLine{00358\ \ \ \ \ \}}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{comment}{//\ Valid\ partitionings\ have\ texels\ in\ all\ of\ the\ requested\ partitions}}
+\DoxyCodeLine{00361\ \ \ \ \ \textcolor{keywordtype}{bool}\ valid\ =\ pi.\mbox{\hyperlink{structpartition__info_a1ffb0fdd4d560f536d6118f032fba4f3}{partition\_count}}\ ==\ partition\_count;}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \ \ \ \ \textcolor{keywordflow}{if}\ (bitmaps)}
+\DoxyCodeLine{00364\ \ \ \ \ \{}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Populate\ the\ partition\ coverage\ bitmap}}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ bitmaps[i]\ =\ 0ULL;}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texels\_to\_process\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}},\ \mbox{\hyperlink{astcenc__internal_8h_a24bfd76e0fe1130b9741b58cc3e2b675}{BLOCK\_MAX\_KMEANS\_TEXELS}});}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texels\_to\_process;\ i++)}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ idx\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a8bc9e1751fe1a81b9ee33c0925fb8f4f}{kmeans\_texels}}[i];}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ bitmaps[pi.\mbox{\hyperlink{structpartition__info_ad9cde9216bbe8865a4660a6c955a6793}{partition\_of\_texel}}[idx]]\ |=\ 1ULL\ <<\ i;}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00377\ \ \ \ \ \}}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \ \ \ \ \textcolor{keywordflow}{return}\ valid;}
+\DoxyCodeLine{00380\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__partition__tables_8cpp_a11a5380f66eb5461273c7d4f5c71e6d0_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__partition__tables_8cpp_a11a5380f66eb5461273c7d4f5c71e6d0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__partition__tables_8cpp_a28958825dfb33d5371f54dae6d247f8a}\index{astcenc\_partition\_tables.cpp@{astcenc\_partition\_tables.cpp}!hash52@{hash52}}
+\index{hash52@{hash52}!astcenc\_partition\_tables.cpp@{astcenc\_partition\_tables.cpp}}
+\doxysubsubsection{\texorpdfstring{hash52()}{hash52()}}
+{\footnotesize\ttfamily \label{astcenc__partition__tables_8cpp_a28958825dfb33d5371f54dae6d247f8a} 
+static uint32\+\_\+t hash52 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{inp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Hash function used for procedural partition assignment. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em inp} & The hash seed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The hashed value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__partition__tables_8cpp_source}{astcenc\+\_\+partition\+\_\+tables.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__partition__tables_8cpp_source_l00114}{114}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00116\ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ inp\ \string^=\ inp\ >>\ 15;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{//\ (2\string^4\ +\ 1)\ *\ (2\string^7\ +\ 1)\ *\ (2\string^17\ -\/\ 1)}}
+\DoxyCodeLine{00120\ \ \ \ \ inp\ *=\ 0xEEDE0891;}
+\DoxyCodeLine{00121\ \ \ \ \ inp\ \string^=\ inp\ >>\ 5;}
+\DoxyCodeLine{00122\ \ \ \ \ inp\ +=\ inp\ <<\ 16;}
+\DoxyCodeLine{00123\ \ \ \ \ inp\ \string^=\ inp\ >>\ 7;}
+\DoxyCodeLine{00124\ \ \ \ \ inp\ \string^=\ inp\ >>\ 3;}
+\DoxyCodeLine{00125\ \ \ \ \ inp\ \string^=\ inp\ <<\ 6;}
+\DoxyCodeLine{00126\ \ \ \ \ inp\ \string^=\ inp\ >>\ 17;}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{return}\ inp;}
+\DoxyCodeLine{00128\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__partition__tables_8cpp_a28958825dfb33d5371f54dae6d247f8a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__partition__tables_8cpp_a9460ca3acf0175a93580b78d5d99a36a}\index{astcenc\_partition\_tables.cpp@{astcenc\_partition\_tables.cpp}!init\_partition\_tables@{init\_partition\_tables}}
+\index{init\_partition\_tables@{init\_partition\_tables}!astcenc\_partition\_tables.cpp@{astcenc\_partition\_tables.cpp}}
+\doxysubsubsection{\texorpdfstring{init\_partition\_tables()}{init\_partition\_tables()}}
+{\footnotesize\ttfamily \label{astcenc__partition__tables_8cpp_a9460ca3acf0175a93580b78d5d99a36a} 
+void init\+\_\+partition\+\_\+tables (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&}]{bsd}{, }\item[{bool}]{can\+\_\+omit\+\_\+partitionings}{, }\item[{unsigned int}]{partition\+\_\+count\+\_\+cutoff}{}\end{DoxyParamCaption})}
+
+
+
+Populate the partition tables for the target block size. 
+
+Note the {\ttfamily bsd} descriptor must be initialized by calling {\ttfamily \doxylink{astcenc__internal_8h_a5c46863585cc583c3deb49323dfb73d8}{init\+\_\+block\+\_\+size\+\_\+descriptor()}} before calling this function.
+
+
+\begin{DoxyParams}[1]{매개변수}
+\mbox{\texttt{ out}}  & {\em bsd} & The block size information structure to populate. \\
+\hline
+ & {\em can\+\_\+omit\+\_\+partitionings} & True if we can we drop partitionings that astcenc won\textquotesingle{}t use. \\
+\hline
+ & {\em partition\+\_\+count\+\_\+cutoff} & The partition count cutoff to use, if we can omit partitionings. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__partition__tables_8cpp_source}{astcenc\+\_\+partition\+\_\+tables.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__partition__tables_8cpp_source_l00460}{460}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00464\ \ \ \{}
+\DoxyCodeLine{00465\ \ \ \ \ \mbox{\hyperlink{structpartition__info}{partition\_info}}*\ par\_tab2\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a12f6652af04c44bf46b255cd5367104c}{partitionings}};}
+\DoxyCodeLine{00466\ \ \ \ \ \mbox{\hyperlink{structpartition__info}{partition\_info}}*\ par\_tab3\ =\ par\_tab2\ +\ \mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\_MAX\_PARTITIONINGS}};}
+\DoxyCodeLine{00467\ \ \ \ \ \mbox{\hyperlink{structpartition__info}{partition\_info}}*\ par\_tab4\ =\ par\_tab3\ +\ \mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\_MAX\_PARTITIONINGS}};}
+\DoxyCodeLine{00468\ \ \ \ \ \mbox{\hyperlink{structpartition__info}{partition\_info}}*\ par\_tab1\ =\ par\_tab4\ +\ \mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\_MAX\_PARTITIONINGS}};}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \ \ \ \ \mbox{\hyperlink{astcenc__partition__tables_8cpp_a11a5380f66eb5461273c7d4f5c71e6d0}{generate\_one\_partition\_info\_entry}}(bsd,\ 1,\ 0,\ 0,\ *par\_tab1);}
+\DoxyCodeLine{00471\ \ \ \ \ bsd.\mbox{\hyperlink{structblock__size__descriptor_aecc5b82b77caa9b3bf69294d06f84e19}{partitioning\_count\_selected}}[0]\ =\ 1;}
+\DoxyCodeLine{00472\ \ \ \ \ bsd.\mbox{\hyperlink{structblock__size__descriptor_aff40c19af89f6790db9247963dcf05eb}{partitioning\_count\_all}}[0]\ =\ 1;}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \ \ \ \ uint64\_t*\ canonical\_patterns\ =\ \textcolor{keyword}{new}\ uint64\_t[\mbox{\hyperlink{astcenc__internal_8h_adf3049fd85d49f282c72b012b87a267d}{BLOCK\_MAX\_PARTITIONINGS}}\ *\ \mbox{\hyperlink{astcenc__partition__tables_8cpp_a3cbabd2f1c2e8586309b33ccdba38378}{BIT\_PATTERN\_WORDS}}];}
+\DoxyCodeLine{00475\ }
+\DoxyCodeLine{00476\ \ \ \ \ \mbox{\hyperlink{astcenc__partition__tables_8cpp_a83b39a9f5b84470876611393553d38b5}{build\_partition\_table\_for\_one\_partition\_count}}(bsd,\ can\_omit\_partitionings,\ partition\_count\_cutoff,\ 2,\ par\_tab2,\ canonical\_patterns);}
+\DoxyCodeLine{00477\ \ \ \ \ \mbox{\hyperlink{astcenc__partition__tables_8cpp_a83b39a9f5b84470876611393553d38b5}{build\_partition\_table\_for\_one\_partition\_count}}(bsd,\ can\_omit\_partitionings,\ partition\_count\_cutoff,\ 3,\ par\_tab3,\ canonical\_patterns);}
+\DoxyCodeLine{00478\ \ \ \ \ \mbox{\hyperlink{astcenc__partition__tables_8cpp_a83b39a9f5b84470876611393553d38b5}{build\_partition\_table\_for\_one\_partition\_count}}(bsd,\ can\_omit\_partitionings,\ partition\_count\_cutoff,\ 4,\ par\_tab4,\ canonical\_patterns);}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keyword}{delete}[]\ canonical\_patterns;}
+\DoxyCodeLine{00481\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__partition__tables_8cpp_a9460ca3acf0175a93580b78d5d99a36a_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__partition__tables_8cpp_a9460ca3acf0175a93580b78d5d99a36a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__partition__tables_8cpp_a57b1b10c9fc1e915dcf985ea37a8cbf6}\index{astcenc\_partition\_tables.cpp@{astcenc\_partition\_tables.cpp}!select\_partition@{select\_partition}}
+\index{select\_partition@{select\_partition}!astcenc\_partition\_tables.cpp@{astcenc\_partition\_tables.cpp}}
+\doxysubsubsection{\texorpdfstring{select\_partition()}{select\_partition()}}
+{\footnotesize\ttfamily \label{astcenc__partition__tables_8cpp_a57b1b10c9fc1e915dcf985ea37a8cbf6} 
+static uint8\+\_\+t select\+\_\+partition (\begin{DoxyParamCaption}\item[{int}]{seed}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{z}{, }\item[{int}]{partition\+\_\+count}{, }\item[{bool}]{small\+\_\+block}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Select texel assignment for a single coordinate. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em seed} & The seed -\/ the partition index from the block. \\
+\hline
+{\em x} & The texel X coordinate in the block. \\
+\hline
+{\em y} & The texel Y coordinate in the block. \\
+\hline
+{\em z} & The texel Z coordinate in the block. \\
+\hline
+{\em partition\+\_\+count} & The total partition count of this encoding. \\
+\hline
+{\em small\+\_\+block} & {\ttfamily true} if the block has fewer than 32 texels.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The assigned partition index for this texel. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__partition__tables_8cpp_source}{astcenc\+\_\+partition\+\_\+tables.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__partition__tables_8cpp_source_l00142}{142}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00149\ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{comment}{//\ For\ small\ blocks\ bias\ the\ coordinates\ to\ get\ better\ distribution}}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{if}\ (small\_block)}
+\DoxyCodeLine{00152\ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ x\ <<=\ 1;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ y\ <<=\ 1;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ z\ <<=\ 1;}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ seed\ +=\ (partition\_count\ -\/\ 1)\ *\ 1024;}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ uint32\_t\ rnum\ =\ \mbox{\hyperlink{astcenc__partition__tables_8cpp_a28958825dfb33d5371f54dae6d247f8a}{hash52}}(seed);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ uint8\_t\ seed1\ =\ rnum\ \&\ 0xF;}
+\DoxyCodeLine{00163\ \ \ \ \ uint8\_t\ seed2\ =\ (rnum\ >>\ 4)\ \&\ 0xF;}
+\DoxyCodeLine{00164\ \ \ \ \ uint8\_t\ seed3\ =\ (rnum\ >>\ 8)\ \&\ 0xF;}
+\DoxyCodeLine{00165\ \ \ \ \ uint8\_t\ seed4\ =\ (rnum\ >>\ 12)\ \&\ 0xF;}
+\DoxyCodeLine{00166\ \ \ \ \ uint8\_t\ seed5\ =\ (rnum\ >>\ 16)\ \&\ 0xF;}
+\DoxyCodeLine{00167\ \ \ \ \ uint8\_t\ seed6\ =\ (rnum\ >>\ 20)\ \&\ 0xF;}
+\DoxyCodeLine{00168\ \ \ \ \ uint8\_t\ seed7\ =\ (rnum\ >>\ 24)\ \&\ 0xF;}
+\DoxyCodeLine{00169\ \ \ \ \ uint8\_t\ seed8\ =\ (rnum\ >>\ 28)\ \&\ 0xF;}
+\DoxyCodeLine{00170\ \ \ \ \ uint8\_t\ seed9\ =\ (rnum\ >>\ 18)\ \&\ 0xF;}
+\DoxyCodeLine{00171\ \ \ \ \ uint8\_t\ seed10\ =\ (rnum\ >>\ 22)\ \&\ 0xF;}
+\DoxyCodeLine{00172\ \ \ \ \ uint8\_t\ seed11\ =\ (rnum\ >>\ 26)\ \&\ 0xF;}
+\DoxyCodeLine{00173\ \ \ \ \ uint8\_t\ seed12\ =\ ((rnum\ >>\ 30)\ |\ (rnum\ <<\ 2))\ \&\ 0xF;}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{comment}{//\ Squaring\ all\ the\ seeds\ in\ order\ to\ bias\ their\ distribution\ towards\ lower\ values.}}
+\DoxyCodeLine{00176\ \ \ \ \ seed1\ *=\ seed1;}
+\DoxyCodeLine{00177\ \ \ \ \ seed2\ *=\ seed2;}
+\DoxyCodeLine{00178\ \ \ \ \ seed3\ *=\ seed3;}
+\DoxyCodeLine{00179\ \ \ \ \ seed4\ *=\ seed4;}
+\DoxyCodeLine{00180\ \ \ \ \ seed5\ *=\ seed5;}
+\DoxyCodeLine{00181\ \ \ \ \ seed6\ *=\ seed6;}
+\DoxyCodeLine{00182\ \ \ \ \ seed7\ *=\ seed7;}
+\DoxyCodeLine{00183\ \ \ \ \ seed8\ *=\ seed8;}
+\DoxyCodeLine{00184\ \ \ \ \ seed9\ *=\ seed9;}
+\DoxyCodeLine{00185\ \ \ \ \ seed10\ *=\ seed10;}
+\DoxyCodeLine{00186\ \ \ \ \ seed11\ *=\ seed11;}
+\DoxyCodeLine{00187\ \ \ \ \ seed12\ *=\ seed12;}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{int}\ sh1,\ sh2;}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{if}\ (seed\ \&\ 1)}
+\DoxyCodeLine{00191\ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ sh1\ =\ (seed\ \&\ 2\ ?\ 4\ :\ 5);}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ sh2\ =\ (partition\_count\ ==\ 3\ ?\ 6\ :\ 5);}
+\DoxyCodeLine{00194\ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00196\ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ sh1\ =\ (partition\_count\ ==\ 3\ ?\ 6\ :\ 5);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ sh2\ =\ (seed\ \&\ 2\ ?\ 4\ :\ 5);}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{int}\ sh3\ =\ (seed\ \&\ 0x10)\ ?\ sh1\ :\ sh2;}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ seed1\ >>=\ sh1;}
+\DoxyCodeLine{00204\ \ \ \ \ seed2\ >>=\ sh2;}
+\DoxyCodeLine{00205\ \ \ \ \ seed3\ >>=\ sh1;}
+\DoxyCodeLine{00206\ \ \ \ \ seed4\ >>=\ sh2;}
+\DoxyCodeLine{00207\ \ \ \ \ seed5\ >>=\ sh1;}
+\DoxyCodeLine{00208\ \ \ \ \ seed6\ >>=\ sh2;}
+\DoxyCodeLine{00209\ \ \ \ \ seed7\ >>=\ sh1;}
+\DoxyCodeLine{00210\ \ \ \ \ seed8\ >>=\ sh2;}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ seed9\ >>=\ sh3;}
+\DoxyCodeLine{00213\ \ \ \ \ seed10\ >>=\ sh3;}
+\DoxyCodeLine{00214\ \ \ \ \ seed11\ >>=\ sh3;}
+\DoxyCodeLine{00215\ \ \ \ \ seed12\ >>=\ sh3;}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{int}\ a\ =\ seed1\ *\ x\ +\ seed2\ *\ y\ +\ seed11\ *\ z\ +\ (rnum\ >>\ 14);}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{int}\ b\ =\ seed3\ *\ x\ +\ seed4\ *\ y\ +\ seed12\ *\ z\ +\ (rnum\ >>\ 10);}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ seed5\ *\ x\ +\ seed6\ *\ y\ +\ seed9\ *\ z\ +\ (rnum\ >>\ 6);}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{int}\ d\ =\ seed7\ *\ x\ +\ seed8\ *\ y\ +\ seed10\ *\ z\ +\ (rnum\ >>\ 2);}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{comment}{//\ Apply\ the\ saw}}
+\DoxyCodeLine{00223\ \ \ \ \ a\ \&=\ 0x3F;}
+\DoxyCodeLine{00224\ \ \ \ \ b\ \&=\ 0x3F;}
+\DoxyCodeLine{00225\ \ \ \ \ c\ \&=\ 0x3F;}
+\DoxyCodeLine{00226\ \ \ \ \ d\ \&=\ 0x3F;}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{comment}{//\ Remove\ some\ of\ the\ components\ if\ we\ are\ to\ output\ <\ 4\ partitions.}}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordflow}{if}\ (partition\_count\ <=\ 3)}
+\DoxyCodeLine{00230\ \ \ \ \ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ d\ =\ 0;}
+\DoxyCodeLine{00232\ \ \ \ \ \}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordflow}{if}\ (partition\_count\ <=\ 2)}
+\DoxyCodeLine{00235\ \ \ \ \ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ c\ =\ 0;}
+\DoxyCodeLine{00237\ \ \ \ \ \}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordflow}{if}\ (partition\_count\ <=\ 1)}
+\DoxyCodeLine{00240\ \ \ \ \ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ b\ =\ 0;}
+\DoxyCodeLine{00242\ \ \ \ \ \}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ uint8\_t\ partition;}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ >=\ b\ \&\&\ a\ >=\ c\ \&\&\ a\ >=\ d)}
+\DoxyCodeLine{00246\ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ partition\ =\ 0;}
+\DoxyCodeLine{00248\ \ \ \ \ \}}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (b\ >=\ c\ \&\&\ b\ >=\ d)}
+\DoxyCodeLine{00250\ \ \ \ \ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ partition\ =\ 1;}
+\DoxyCodeLine{00252\ \ \ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (c\ >=\ d)}
+\DoxyCodeLine{00254\ \ \ \ \ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ partition\ =\ 2;}
+\DoxyCodeLine{00256\ \ \ \ \ \}}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00258\ \ \ \ \ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ partition\ =\ 3;}
+\DoxyCodeLine{00260\ \ \ \ \ \}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordflow}{return}\ partition;}
+\DoxyCodeLine{00263\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{astcenc__partition__tables_8cpp_a57b1b10c9fc1e915dcf985ea37a8cbf6_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__partition__tables_8cpp_a57b1b10c9fc1e915dcf985ea37a8cbf6_icgraph}
+\end{center}
+\end{figure}

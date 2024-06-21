@@ -1,0 +1,9 @@
+<map id="clamp" name="clamp">
+<area shape="rect" id="Node000001" title="Return the clamped value between min and max." alt="" coords="5,67,63,92"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__common__4_8h.html#af86427a432d5d76734813825a1603411" title="Return the max vector of a vector and a scalar." alt="" coords="111,29,157,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="62,66,97,53,99,58,64,71"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__common__4_8h.html#af309247a31161ead526e965c1b0e4980" title="Return the min vector of a vector and a scalar." alt="" coords="113,103,155,128"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="64,87,101,101,99,106,62,92"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="116,30,113,21,115,12,122,5,134,3,148,6,154,15,150,18,145,11,134,8,124,10,119,14,118,20,121,28"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="116,103,113,94,115,85,122,78,134,76,148,80,154,88,150,91,145,84,134,81,124,83,119,88,118,94,121,102"/>
+</map>

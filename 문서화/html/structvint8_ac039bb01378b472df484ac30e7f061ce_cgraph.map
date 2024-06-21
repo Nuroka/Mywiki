@@ -1,0 +1,5 @@
+<map id="vint8::lane_id" name="vint8::lane_id">
+<area shape="rect" id="Node000001" title="Factory that returns a vector containing the lane IDs." alt="" coords="5,5,103,31"/>
+<area shape="rect" id="Node000002" href="$structvint8.html#ad2b458c4b597d2cd8e61e7f5e9f86161" title="Construct from zero&#45;initialized value." alt="" coords="151,5,233,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,15,137,15,137,21,103,21"/>
+</map>

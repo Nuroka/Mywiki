@@ -1,0 +1,15 @@
+digraph "wuffs_base__range_ii_u32__unite"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="wuffs_base__range_ii\l_u32__unite",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge4_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="wuffs_base__range_ii\l_u32__is_empty",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$wuffs-v0_83_8c.html#af82720c1a341e7fd413f04fb7a52b49b",tooltip=" "];
+  Node1 -> Node3 [id="edge5_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="wuffs_base__u32__max",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$wuffs-v0_83_8c.html#a76cb92d1a572d5c7b5041a1ae8cef400",tooltip=" "];
+  Node1 -> Node4 [id="edge6_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="wuffs_base__u32__min",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$wuffs-v0_83_8c.html#a3eab5ba39daa09624f213af3548b1294",tooltip=" "];
+}

@@ -1,0 +1,6 @@
+<map id="dot" name="dot">
+<area shape="rect" id="Node000001" title="Return the dot product for the full 4 lanes, returning vector." alt="" coords="5,29,45,55"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#aacd26478e4fe1f97a5d47e8adaacc898" title="Return the horizontal sum of a vector." alt="" coords="93,29,157,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="45,39,79,39,79,45,45,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="108,30,104,21,106,12,113,5,125,3,139,6,146,15,141,18,136,11,125,8,116,10,111,14,110,20,113,28"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="max" name="max">
+<area shape="rect" id="Node000001" title="Return the max vector of a vector and a scalar." alt="" coords="5,5,52,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#aa162915c044e97cc1f6d630338761fd3" title="Return the max vector of two vectors." alt="" coords="100,5,147,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="52,15,87,15,87,21,52,21"/>
+</map>

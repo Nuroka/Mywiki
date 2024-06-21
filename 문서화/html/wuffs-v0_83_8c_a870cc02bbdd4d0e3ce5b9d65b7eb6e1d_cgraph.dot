@@ -1,0 +1,11 @@
+digraph "wuffs_base__token_buffer__reader_slice"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="wuffs_base__token_buffer\l__reader_slice",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="wuffs_base__empty_slice\l_token",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$wuffs-v0_83_8c.html#a6f050f80bb4ed6d7a0dbf93dccbb9f2e",tooltip=" "];
+}

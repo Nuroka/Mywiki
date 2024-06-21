@@ -1,0 +1,5 @@
+<map id="luminance_alpha_delta_unpack" name="luminance_alpha_delta_unpack">
+<area shape="rect" id="Node000001" title="Unpack an LDR LA color that uses delta encoding." alt="" coords="5,5,160,45"/>
+<area shape="rect" id="Node000002" href="$namespaceastc.html#a8f8b2ad23b04a389f6785bc80b61349b" title="Clamp a value value between mn and mx." alt="" coords="208,13,299,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,23,194,23,194,28,160,28"/>
+</map>

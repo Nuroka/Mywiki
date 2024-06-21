@@ -1,0 +1,13 @@
+<map id="build_partition_table_for_one_partition_count" name="build_partition_table_for_one_partition_count">
+<area shape="rect" id="Node000001" title=" " alt="" coords="857,5,1020,45"/>
+<area shape="rect" id="Node000002" href="$astcenc__partition__tables_8cpp.html#a9460ca3acf0175a93580b78d5d99a36a" title="Populate the partition tables for the target block size." alt="" coords="675,13,809,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="844,28,810,28,810,23,844,23"/>
+<area shape="rect" id="Node000003" href="$astcenc__block__sizes_8cpp.html#a5c46863585cc583c3deb49323dfb73d8" title="Populate the block size descriptor for the target block size." alt="" coords="455,13,627,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="661,28,627,28,627,23,661,23"/>
+<area shape="rect" id="Node000004" href="$astcenc__entry_8cpp.html#a823234313a697f5b4cdbd2cd6caaef4a" title="Allocate a new codec context based on a config." alt="" coords="255,13,407,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="441,28,407,28,407,23,441,23"/>
+<area shape="rect" id="Node000005" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,13,207,38"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="241,28,207,28,207,23,241,23"/>
+<area shape="rect" id="Node000006" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,56,38"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="90,28,57,28,57,23,90,23"/>
+</map>

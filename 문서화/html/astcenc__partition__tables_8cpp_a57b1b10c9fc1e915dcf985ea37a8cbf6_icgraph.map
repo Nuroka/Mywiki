@@ -1,0 +1,18 @@
+<map id="select_partition" name="select_partition">
+<area shape="rect" id="Node000001" title="Select texel assignment for a single coordinate." alt="" coords="1269,42,1380,67"/>
+<area shape="rect" id="Node000002" href="$astcenc__partition__tables_8cpp.html#a11a5380f66eb5461273c7d4f5c71e6d0" title="Generate a single partition info structure." alt="" coords="1068,35,1221,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1256,57,1221,57,1221,52,1256,52"/>
+<area shape="rect" id="Node000003" href="$astcenc__partition__tables_8cpp.html#a83b39a9f5b84470876611393553d38b5" title=" " alt="" coords="857,5,1020,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1054,44,1020,40,1021,34,1055,39"/>
+<area shape="rect" id="Node000004" href="$astcenc__partition__tables_8cpp.html#a9460ca3acf0175a93580b78d5d99a36a" title="Populate the partition tables for the target block size." alt="" coords="675,42,809,67"/>
+<area shape="poly" id="edge8_Node000002_Node000004" title=" " alt="" coords="1054,59,1020,60,857,60,810,59,810,54,857,55,1020,55,1054,54"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="844,42,810,47,809,42,843,37"/>
+<area shape="rect" id="Node000005" href="$astcenc__block__sizes_8cpp.html#a5c46863585cc583c3deb49323dfb73d8" title="Populate the block size descriptor for the target block size." alt="" coords="455,42,627,67"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="661,57,627,57,627,52,661,52"/>
+<area shape="rect" id="Node000006" href="$astcenc__entry_8cpp.html#a823234313a697f5b4cdbd2cd6caaef4a" title="Allocate a new codec context based on a config." alt="" coords="255,42,407,67"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="441,57,407,57,407,52,441,52"/>
+<area shape="rect" id="Node000007" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,42,207,67"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="241,57,207,57,207,52,241,52"/>
+<area shape="rect" id="Node000008" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,42,56,67"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="90,57,57,57,57,52,90,52"/>
+</map>

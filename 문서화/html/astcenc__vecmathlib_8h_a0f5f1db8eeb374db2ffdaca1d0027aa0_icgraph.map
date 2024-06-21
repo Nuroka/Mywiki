@@ -1,0 +1,26 @@
+<map id="two_to_the_n" name="two_to_the_n">
+<area shape="rect" id="Node000001" title="Return lanewise 2^a for each lane in a." alt="" coords="1244,55,1343,80"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib_8h.html#a478b1f2bc7a3589bfbe32b398583c502" title="Convert unorm16 [0, 65535] to float16 in range [0, 1]." alt="" coords="1075,55,1196,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1230,70,1196,70,1196,65,1230,65"/>
+<area shape="rect" id="Node000003" href="$astcenc__entry_8cpp.html#a4138a9fb500526b5bfd98ea53a3ecec7" title="Provide a high level summary of a block&#39;s encoding." alt="" coords="868,5,1027,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1073,54,996,33,998,28,1074,49"/>
+<area shape="rect" id="Node000008" href="$astcenc__decompress__symbolic_8cpp.html#a9389a206914c0bbd0cb8a5d065dc56fe" title="Convert integer color value into a float value for the decoder." alt="" coords="898,55,997,80"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="1061,70,997,70,997,65,1061,65"/>
+<area shape="rect" id="Node000009" href="$astcenc__decompress__symbolic_8cpp.html#a4a5f09c362972951a31e4d7ff918f89f" title="Decompress a symbolic block in to an image block." alt="" coords="667,77,819,117"/>
+<area shape="poly" id="edge13_Node000002_Node000009" title=" " alt="" coords="1077,86,1027,95,918,103,819,103,819,97,918,97,1026,90,1076,81"/>
+<area shape="rect" id="Node000004" href="$astcenccli__toplevel_8cpp.html#ac1760850c83dafab500f7cf8ab789246" title="Populate a single diagnostic image showing aspects of the encoding." alt="" coords="665,5,820,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="854,21,821,21,821,15,854,15"/>
+<area shape="rect" id="Node000005" href="$astcenccli__toplevel_8cpp.html#a65c87ee1ff0ed0736cffa06692853479" title="Print a set of diagnostic images showing aspects of the encoding." alt="" coords="257,5,420,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="651,21,420,21,420,15,651,15"/>
+<area shape="rect" id="Node000006" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,56,207,81"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="279,37,203,58,202,53,278,32"/>
+<area shape="rect" id="Node000007" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,56,56,81"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="90,71,57,71,57,66,90,66"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="884,79,819,88,818,83,883,74"/>
+<area shape="rect" id="Node000010" href="$astcenc__entry_8cpp.html#a062987fc41b9df7d34d8eb668f29eb21" title="Decompress an image." alt="" coords="471,77,617,117"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="652,99,617,99,617,94,652,94"/>
+<area shape="poly" id="edge10_Node000010_Node000006" title=" " alt="" coords="457,93,207,75,207,70,457,88"/>
+<area shape="rect" id="Node000011" href="$astcenccli__toplevel_8cpp.html#a02c55a799cc33b39f9d733b1a7e91281" title="Runner callback function for a decompression worker thread." alt="" coords="255,106,423,146"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="458,112,423,117,422,111,457,106"/>
+<area shape="poly" id="edge12_Node000011_Node000006" title=" " alt="" coords="260,104,196,84,198,79,262,99"/>
+</map>

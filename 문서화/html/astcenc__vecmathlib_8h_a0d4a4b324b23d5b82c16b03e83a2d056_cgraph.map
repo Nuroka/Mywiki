@@ -1,0 +1,20 @@
+<map id="atan2" name="atan2">
+<area shape="rect" id="Node000001" title="Return fast, but approximate, vector atan2(x, y)." alt="" coords="5,105,60,131"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#aeac50750508168aeab5115733d3ee63c" title="Return the absolute value of the float vector." alt="" coords="271,5,314,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="40,104,67,71,85,54,107,40,145,25,186,17,257,13,258,19,187,22,147,30,109,44,89,58,71,74,44,107"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib_8h.html#a57f123f6c9bc31cdb2da321b778954a2" title="Return fast, but approximate, vector atan(x)." alt="" coords="129,55,176,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="59,104,116,80,118,85,61,109"/>
+<area shape="rect" id="Node000004" href="$astcenc__vecmathlib_8h.html#aa88e9d6b0f056012a4fc61c558f99c2e" title="Return a with lanes negated if the b lane is negative." alt="" coords="245,105,340,131"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="60,115,232,115,232,121,60,121"/>
+<area shape="rect" id="Node000005" href="$astcenc__vecmathlib__avx2__8_8h.html#a5c2db475754d8da42d9b685a45c48ab8" title="Return a float value as an integer bit pattern (i.e. no conversion)." alt="" coords="388,155,476,180"/>
+<area shape="poly" id="edge9_Node000001_Node000005" title=" " alt="" coords="60,119,375,158,374,163,60,124"/>
+<area shape="rect" id="Node000008" href="$astcenc__vecmathlib__avx2__8_8h.html#a0c89452ffbab98a181c44460db41cae8" title="Return lanes from b if MSB of cond is set, else a." alt="" coords="108,207,197,232"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="48,129,110,185,124,196,120,201,106,189,45,133"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="175,57,257,27,259,32,177,62"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="177,73,245,98,243,103,175,78"/>
+<area shape="rect" id="Node000007" href="$astcenc__vecmathlib__avx2__8_8h.html#a844ab5b69b84569f033be33bf5fb9fbc" title="Return lanes from b if cond is set, else a." alt="" coords="264,55,321,80"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="176,65,250,65,250,70,176,70"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="330,128,383,147,381,152,328,133"/>
+<area shape="rect" id="Node000006" href="$astcenc__vecmathlib__avx2__8_8h.html#ac584d4929db078403c58549bafd3c1cd" title="Return a integer value as a float bit pattern (i.e. no conversion)." alt="" coords="388,105,476,131"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="340,115,374,115,374,121,340,121"/>
+</map>

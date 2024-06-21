@@ -1,0 +1,11 @@
+<map id="lns_to_sf16" name="lns_to_sf16">
+<area shape="rect" id="Node000001" title="Convert 16&#45;bit LNS to float16." alt="" coords="5,80,93,105"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#a86240f0fb5745ded88afe10d524c960f" title="Logical shift left." alt="" coords="151,5,189,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,77,138,34,141,39,73,82"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#a0a3a7d755cec1c73d0ce9c50b33bc207" title="Logical shift right." alt="" coords="151,55,189,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="93,81,136,72,137,77,94,86"/>
+<area shape="rect" id="Node000004" href="$astcenc__vecmathlib__avx2__8_8h.html#a165b3db4e7ced1551e1880a01a01150b" title="Return the min vector of two vectors." alt="" coords="149,104,191,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="94,99,136,107,135,112,93,104"/>
+<area shape="rect" id="Node000005" href="$astcenc__vecmathlib__avx2__8_8h.html#a844ab5b69b84569f033be33bf5fb9fbc" title="Return lanes from b if cond is set, else a." alt="" coords="141,153,199,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="73,103,138,144,135,148,70,108"/>
+</map>

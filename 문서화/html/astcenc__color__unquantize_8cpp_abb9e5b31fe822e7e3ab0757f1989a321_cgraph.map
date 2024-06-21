@@ -1,0 +1,32 @@
+<map id="rgba_delta_unpack" name="rgba_delta_unpack">
+<area shape="rect" id="Node000001" title="Unpack an LDR RGBA color that uses delta encoding." alt="" coords="5,228,136,253"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__common__4_8h.html#acaab0374259bd298c1282e6a0b84bc8f" title="Apply signed bit transfer." alt="" coords="184,104,315,129"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,226,217,135,220,139,92,230"/>
+<area shape="rect" id="Node000008" href="$astcenc__vecmathlib__avx2__8_8h.html#ae91c0bb0ebd82ed2a7fa7aa915f6e76e" title="Return the clamped value between min and max." alt="" coords="221,301,278,327"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="101,251,185,288,209,297,207,302,183,292,99,256"/>
+<area shape="rect" id="Node000011" href="$astcenc__vecmathlib__common__4_8h.html#a48e833d0cfdf950b6bc3431fce00507e" title="Return the horizontal sum of RGB vector lanes as a scalar." alt="" coords="205,252,294,277"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="136,247,191,254,191,260,136,252"/>
+<area shape="rect" id="Node000013" href="$astcenc__color__unquantize_8cpp.html#a604a48c74e6d1c8476146b0955331344" title="Functions for color unquantization." alt="" coords="190,203,309,228"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="136,229,176,223,176,228,136,234"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#a0a3a7d755cec1c73d0ce9c50b33bc207" title="Logical shift right." alt="" coords="384,5,423,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="268,102,361,40,371,34,374,38,364,44,271,106"/>
+<area shape="rect" id="Node000004" href="$astcenc__vecmathlib__avx2__8_8h.html#ad922a3ed6098767968916265154b6f82" title="Return a 8&#45;bit mask code indicating mask status." alt="" coords="376,104,431,129"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="315,114,362,114,362,119,315,119"/>
+<area shape="rect" id="Node000005" href="$astcenc__vecmathlib__avx2__8_8h.html#a844ab5b69b84569f033be33bf5fb9fbc" title="Return lanes from b if cond is set, else a." alt="" coords="375,153,432,179"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="290,127,362,150,361,155,289,132"/>
+<area shape="rect" id="Node000006" href="$structvint4.html#a9dfa1c40a3c4dbc0858567dc629a80b8" title="Factory that returns a vector of zeros." alt="" coords="363,55,444,80"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="289,101,349,82,350,87,290,106"/>
+<area shape="rect" id="Node000007" href="$structvint4.html#a3315184e8bb4f0cf1ca8dcff1f57cdae" title="Construct from zero&#45;initialized value." alt="" coords="492,55,575,80"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="444,65,478,65,478,70,444,70"/>
+<area shape="rect" id="Node000009" href="$astcenc__vecmathlib__avx2__8_8h.html#aa162915c044e97cc1f6d630338761fd3" title="Return the max vector of two vectors." alt="" coords="380,301,427,327"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="278,311,366,311,366,317,278,317"/>
+<area shape="rect" id="Node000010" href="$astcenc__vecmathlib__avx2__8_8h.html#a165b3db4e7ced1551e1880a01a01150b" title="Return the min vector of two vectors." alt="" coords="382,351,425,376"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="279,320,370,350,368,355,277,325"/>
+<area shape="rect" id="Node000012" href="$structvint4.html#a01e3f7debf73dc6c757fa36d585c9d17" title="Get the scalar from a single lane." alt="" coords="363,252,443,277"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="294,262,350,262,350,267,294,267"/>
+<area shape="poly" id="edge15_Node000013_Node000004" title=" " alt="" coords="269,200,361,140,369,135,372,139,364,144,272,205"/>
+<area shape="poly" id="edge16_Node000013_Node000005" title=" " alt="" coords="289,200,361,177,362,182,290,205"/>
+<area shape="poly" id="edge14_Node000013_Node000012" title=" " alt="" coords="290,226,351,245,349,250,289,231"/>
+<area shape="rect" id="Node000014" href="$astcenc__vecmathlib__avx2__8_8h.html#aff39374b256d568d084ba4fd2fed7819" title="Arithmetic shift right." alt="" coords="383,203,423,228"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="309,213,369,213,369,218,309,218"/>
+</map>

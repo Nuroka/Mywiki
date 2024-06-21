@@ -1,0 +1,7 @@
+<map id="edit_astcenc_config" name="edit_astcenc_config">
+<area shape="rect" id="Node000001" title="Edit the astcenc_config" alt="" coords="5,31,143,56"/>
+<area shape="rect" id="Node000002" href="$astcenccli__platform__dependents_8cpp.html#a17e6f066d58e29a143787fe2f78d19d6" title="Get the number of CPU cores." alt="" coords="191,5,297,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,30,177,25,177,31,143,36"/>
+<area shape="rect" id="Node000003" href="$astcenccli__internal_8h.html#a699ebbd5f0143120e8ccaa26ae386b56" title="Print a string to stderr." alt="" coords="204,55,284,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,50,191,57,190,62,143,56"/>
+</map>

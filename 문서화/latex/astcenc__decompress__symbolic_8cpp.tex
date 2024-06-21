@@ -1,0 +1,941 @@
+\doxysection{C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/astcenc\+\_\+decompress\+\_\+symbolic.cpp 파일 참조}
+\hypertarget{astcenc__decompress__symbolic_8cpp}{}\label{astcenc__decompress__symbolic_8cpp}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_decompress\_symbolic.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_decompress\_symbolic.cpp}}
+{\ttfamily \#include "{}astcenc\+\_\+internal.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+astcenc\+\_\+decompress\+\_\+symbolic.\+cpp에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__decompress__symbolic_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_ae5360e637f5ba7f34bc952c0112f4e8e}{lerp\+\_\+color\+\_\+int}} (\mbox{\hyperlink{structvmask4}{vmask4}} u8\+\_\+mask, \mbox{\hyperlink{structvint4}{vint4}} color0, \mbox{\hyperlink{structvint4}{vint4}} color1, \mbox{\hyperlink{structvint4}{vint4}} weights)
+\begin{DoxyCompactList}\small\item\em Functions to decompress a symbolic block. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_a9389a206914c0bbd0cb8a5d065dc56fe}{decode\+\_\+texel}} (\mbox{\hyperlink{structvint4}{vint4}} data, \mbox{\hyperlink{structvmask4}{vmask4}} lns\+\_\+mask)
+\begin{DoxyCompactList}\small\item\em Convert integer color value into a float value for the decoder. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_aec197676ba4b10bf63a6523a775530d8}{unpack\+\_\+weights}} (const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&bsd, const \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&scb, const \mbox{\hyperlink{structdecimation__info}{decimation\+\_\+info}} \&di, bool is\+\_\+dual\+\_\+plane, int weights\+\_\+plane1\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}, int weights\+\_\+plane2\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Unpack a set of quantized and decimated weights. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_ae3bd8201885791610ec22338320c146a}{error\+\_\+color\+\_\+nan}} ()
+\begin{DoxyCompactList}\small\item\em Return an FP32 NaN value for use in error colors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_a4a5f09c362972951a31e4d7ff918f89f}{decompress\+\_\+symbolic\+\_\+block}} (\mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}{astcenc\+\_\+profile}} decode\+\_\+mode, const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&bsd, int xpos, int ypos, int zpos, const \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&scb, \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk)
+\begin{DoxyCompactList}\small\item\em Decompress a symbolic block in to an image block. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_a9c23f8373c9f5e708650b7c8e038b182}{compute\+\_\+symbolic\+\_\+block\+\_\+difference\+\_\+2plane}} (const \mbox{\hyperlink{structastcenc__config}{astcenc\+\_\+config}} \&config, const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&bsd, const \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&scb, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk)
+\begin{DoxyCompactList}\small\item\em Compute the error between a symbolic block and the original input data. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_a0541138e65930f39f6caba517e76dfe4}{compute\+\_\+symbolic\+\_\+block\+\_\+difference\+\_\+1plane}} (const \mbox{\hyperlink{structastcenc__config}{astcenc\+\_\+config}} \&config, const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&bsd, const \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&scb, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk)
+\begin{DoxyCompactList}\small\item\em Compute the error between a symbolic block and the original input data. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_aff8e27acd948a9cc5631d99c80906b2f}{compute\+\_\+symbolic\+\_\+block\+\_\+difference\+\_\+1plane\+\_\+1partition}} (const \mbox{\hyperlink{structastcenc__config}{astcenc\+\_\+config}} \&config, const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&bsd, const \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&scb, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk)
+\begin{DoxyCompactList}\small\item\em Compute the error between a symbolic block and the original input data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\Hypertarget{astcenc__decompress__symbolic_8cpp_a0541138e65930f39f6caba517e76dfe4}\index{astcenc\_decompress\_symbolic.cpp@{astcenc\_decompress\_symbolic.cpp}!compute\_symbolic\_block\_difference\_1plane@{compute\_symbolic\_block\_difference\_1plane}}
+\index{compute\_symbolic\_block\_difference\_1plane@{compute\_symbolic\_block\_difference\_1plane}!astcenc\_decompress\_symbolic.cpp@{astcenc\_decompress\_symbolic.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_symbolic\_block\_difference\_1plane()}{compute\_symbolic\_block\_difference\_1plane()}}
+{\footnotesize\ttfamily \label{astcenc__decompress__symbolic_8cpp_a0541138e65930f39f6caba517e76dfe4} 
+float compute\+\_\+symbolic\+\_\+block\+\_\+difference\+\_\+1plane (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structastcenc__config}{astcenc\+\_\+config}} \&}]{config}{, }\item[{const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&}]{bsd}{, }\item[{const \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&}]{scb}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{}\end{DoxyParamCaption})}
+
+
+
+Compute the error between a symbolic block and the original input data. 
+
+This function is specialized for 1 plane and N partition search.
+
+In RGBM mode this will reject blocks that attempt to encode a zero M value.
+
+
+\begin{DoxyParams}{매개변수}
+{\em config} & The compressor config. \\
+\hline
+{\em bsd} & The block size information. \\
+\hline
+{\em scb} & The symbolic compressed encoding. \\
+\hline
+{\em blk} & The original image block color data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+Returns the computed error, or a negative value if the encoding should be rejected for any reason. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_source}{astcenc\+\_\+decompress\+\_\+symbolic.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_source_l00418}{418}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00423\ \ \ \{}
+\DoxyCodeLine{00424\ \ \ \ \ assert(bsd.\mbox{\hyperlink{structblock__size__descriptor_a13608eb55e48c96b6243f4830278ebf3}{get\_block\_mode}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}}).\mbox{\hyperlink{structblock__mode_a78b282103d0a8bee2b07c0da075a3dc4}{is\_dual\_plane}}\ ==\ 0);}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00426\ \ \ \ \ \textcolor{comment}{//\ If\ we\ detected\ an\ error-\/block,\ blow\ up\ immediately.}}
+\DoxyCodeLine{00427\ \ \ \ \ \textcolor{keywordflow}{if}\ (scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ ==\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}})}
+\DoxyCodeLine{00428\ \ \ \ \ \{}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00430\ \ \ \ \ \}}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \ \ \ \ assert(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}}\ >=\ 0);}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00434\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ appropriate\ partition-\/table\ entry}}
+\DoxyCodeLine{00435\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\_count}};}
+\DoxyCodeLine{00436\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pi\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_aa9dfc7b23c8b5e6c71e956e2e39fff74}{get\_partition\_info}}(partition\_count,\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a17d42e08747747b32c650a48fe1b5b6e}{partition\_index}});}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ appropriate\ block\ descriptor}}
+\DoxyCodeLine{00439\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__mode}{block\_mode}}\&\ bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a13608eb55e48c96b6243f4830278ebf3}{get\_block\_mode}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}});}
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdecimation__info}{decimation\_info}}\&\ di\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(bm.\mbox{\hyperlink{structblock__mode_aaf9846117d40406d5e84508f429cf949}{decimation\_mode}});}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{comment}{//\ Unquantize\ and\ undecimate\ the\ weights}}
+\DoxyCodeLine{00443\ \ \ \ \ \textcolor{keywordtype}{int}\ plane1\_weights[\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\_MAX\_TEXELS}}];}
+\DoxyCodeLine{00444\ \ \ \ \ \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_aec197676ba4b10bf63a6523a775530d8}{unpack\_weights}}(bsd,\ scb,\ di,\ \textcolor{keyword}{false},\ plane1\_weights,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00446\ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ u8\_mask\ =\ \mbox{\hyperlink{astcenc__internal_8h_ae5b8f23d2bc3cab55806e21c091b1381}{get\_u8\_component\_mask}}(config.\mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}},\ blk);}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00448\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ summa\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00449\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{00450\ \ \ \ \ \{}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Decode\ the\ color\ endpoints\ for\ this\ partition}}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ ep0;}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ ep1;}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ rgb\_lns;}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ a\_lns;}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ab9b659180fb522b05391892336dbc095}{unpack\_color\_endpoints}}(config.\mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}},}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[i],}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ad539bb907ce654690e8a89cf62196f9c}{color\_values}}[i],}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_lns,\ a\_lns,}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ep0,\ ep1);}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Unpack\ and\ compute\ error\ for\ each\ texel\ in\ the\ partition}}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\_count\ =\ pi.partition\_texel\_count[i];}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ texel\_count;\ j++)}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ tix\ =\ pi.texels\_of\_partition[i][j];}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ colori\ =\ \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_ae5360e637f5ba7f34bc952c0112f4e8e}{lerp\_color\_int}}(u8\_mask,\ ep0,\ ep1,}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}(plane1\_weights[tix]));}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a3a2ce0fb403294db7fe126a6b3e87ab7}{int\_to\_float}}(colori);}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ oldColor\ =\ blk.\mbox{\hyperlink{structimage__block_af99de7d75e1e380b31d70d131509caa9}{texel}}(tix);}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compare\ error\ using\ a\ perceptual\ decode\ metric\ for\ RGBM\ textures}}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (config.\mbox{\hyperlink{structastcenc__config_a7175e94561eeb3b83f8bf4549306cf95}{flags}}\ \&\ \mbox{\hyperlink{astcenc_8h_a95967a4184547bc51b3f993c8a3b9643}{ASTCENC\_FLG\_MAP\_RGBM}})}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Fail\ encodings\ that\ result\ in\ zero\ weight\ M\ pixels.\ Note\ that\ this\ can\ cause}}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ "{}interesting"{}\ artifacts\ if\ we\ reject\ all\ useful\ encodings\ -\/\ we\ typically\ get\ max}}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ brightness\ encodings\ instead\ which\ look\ just\ as\ bad.\ We\ recommend\ users\ apply\ a}}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ bias\ to\ their\ stored\ M\ value,\ limiting\ the\ lower\ value\ to\ 16\ or\ 32\ to\ avoid}}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ getting\ small\ M\ values\ post-\/quantization,\ but\ we\ can't\ prove\ it\ would\ never}}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ happen,\ especially\ at\ low\ bit\ rates\ ...}}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ ==\ 0.0f)}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/\mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ error\ based\ on\ decoded\ RGBM\ color}}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>()\ *\ color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ *\ config.\mbox{\hyperlink{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199}{rgbm\_m\_scale}},}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>()\ *\ color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ *\ config.\mbox{\hyperlink{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199}{rgbm\_m\_scale}},}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>()\ *\ color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ *\ config.\mbox{\hyperlink{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199}{rgbm\_m\_scale}},}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.0f}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldColor\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldColor.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>()\ *\ oldColor.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ *\ config.\mbox{\hyperlink{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199}{rgbm\_m\_scale}},}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldColor.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>()\ *\ oldColor.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ *\ config.\mbox{\hyperlink{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199}{rgbm\_m\_scale}},}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldColor.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>()\ *\ oldColor.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ *\ config.\mbox{\hyperlink{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199}{rgbm\_m\_scale}},}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.0f}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00503\ }
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ error\ =\ oldColor\ -\/\ color;}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ error\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aeac50750508168aeab5115733d3ee63c}{abs}}(error),\ 1e15f);}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ error\ =\ error\ *\ error;}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ \ \ summa\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(\mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a6d7561f8f0ebee752b0e217101d9d5f3}{dot}}(error,\ blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}}),\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}});}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00510\ \ \ \ \ \}}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00512\ \ \ \ \ \textcolor{keywordflow}{return}\ summa.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>();}
+\DoxyCodeLine{00513\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{astcenc__decompress__symbolic_8cpp_a0541138e65930f39f6caba517e76dfe4_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__decompress__symbolic_8cpp_a0541138e65930f39f6caba517e76dfe4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__decompress__symbolic_8cpp_aff8e27acd948a9cc5631d99c80906b2f}\index{astcenc\_decompress\_symbolic.cpp@{astcenc\_decompress\_symbolic.cpp}!compute\_symbolic\_block\_difference\_1plane\_1partition@{compute\_symbolic\_block\_difference\_1plane\_1partition}}
+\index{compute\_symbolic\_block\_difference\_1plane\_1partition@{compute\_symbolic\_block\_difference\_1plane\_1partition}!astcenc\_decompress\_symbolic.cpp@{astcenc\_decompress\_symbolic.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_symbolic\_block\_difference\_1plane\_1partition()}{compute\_symbolic\_block\_difference\_1plane\_1partition()}}
+{\footnotesize\ttfamily \label{astcenc__decompress__symbolic_8cpp_aff8e27acd948a9cc5631d99c80906b2f} 
+float compute\+\_\+symbolic\+\_\+block\+\_\+difference\+\_\+1plane\+\_\+1partition (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structastcenc__config}{astcenc\+\_\+config}} \&}]{config}{, }\item[{const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&}]{bsd}{, }\item[{const \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&}]{scb}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{}\end{DoxyParamCaption})}
+
+
+
+Compute the error between a symbolic block and the original input data. 
+
+This function is specialized for 1 plane and 1 partition search.
+
+In RGBM mode this will reject blocks that attempt to encode a zero M value.
+
+
+\begin{DoxyParams}{매개변수}
+{\em config} & The compressor config. \\
+\hline
+{\em bsd} & The block size information. \\
+\hline
+{\em scb} & The symbolic compressed encoding. \\
+\hline
+{\em blk} & The original image block color data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+Returns the computed error, or a negative value if the encoding should be rejected for any reason. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_source}{astcenc\+\_\+decompress\+\_\+symbolic.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_source_l00516}{516}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00521\ \ \ \{}
+\DoxyCodeLine{00522\ \ \ \ \ \textcolor{comment}{//\ If\ we\ detected\ an\ error-\/block,\ blow\ up\ immediately.}}
+\DoxyCodeLine{00523\ \ \ \ \ \textcolor{keywordflow}{if}\ (scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ ==\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}})}
+\DoxyCodeLine{00524\ \ \ \ \ \{}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00526\ \ \ \ \ \}}
+\DoxyCodeLine{00527\ }
+\DoxyCodeLine{00528\ \ \ \ \ assert(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}}\ >=\ 0);}
+\DoxyCodeLine{00529\ \ \ \ \ assert(bsd.\mbox{\hyperlink{structblock__size__descriptor_aa9dfc7b23c8b5e6c71e956e2e39fff74}{get\_partition\_info}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\_count}},\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a17d42e08747747b32c650a48fe1b5b6e}{partition\_index}}).\mbox{\hyperlink{structpartition__info_a1ffb0fdd4d560f536d6118f032fba4f3}{partition\_count}}\ ==\ 1);}
+\DoxyCodeLine{00530\ }
+\DoxyCodeLine{00531\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ appropriate\ block\ descriptor}}
+\DoxyCodeLine{00532\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__mode}{block\_mode}}\&\ bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a13608eb55e48c96b6243f4830278ebf3}{get\_block\_mode}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}});}
+\DoxyCodeLine{00533\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdecimation__info}{decimation\_info}}\&\ di\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(bm.\mbox{\hyperlink{structblock__mode_aaf9846117d40406d5e84508f429cf949}{decimation\_mode}});}
+\DoxyCodeLine{00534\ }
+\DoxyCodeLine{00535\ \ \ \ \ \textcolor{comment}{//\ Unquantize\ and\ undecimate\ the\ weights}}
+\DoxyCodeLine{00536\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keywordtype}{int}\ plane1\_weights[\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\_MAX\_TEXELS}}];}
+\DoxyCodeLine{00537\ \ \ \ \ \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_aec197676ba4b10bf63a6523a775530d8}{unpack\_weights}}(bsd,\ scb,\ di,\ \textcolor{keyword}{false},\ plane1\_weights,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00538\ }
+\DoxyCodeLine{00539\ \ \ \ \ \textcolor{comment}{//\ Decode\ the\ color\ endpoints\ for\ this\ partition}}
+\DoxyCodeLine{00540\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ ep0;}
+\DoxyCodeLine{00541\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ ep1;}
+\DoxyCodeLine{00542\ \ \ \ \ \textcolor{keywordtype}{bool}\ rgb\_lns;}
+\DoxyCodeLine{00543\ \ \ \ \ \textcolor{keywordtype}{bool}\ a\_lns;}
+\DoxyCodeLine{00544\ }
+\DoxyCodeLine{00545\ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ab9b659180fb522b05391892336dbc095}{unpack\_color\_endpoints}}(config.\mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}},}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[0],}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ad539bb907ce654690e8a89cf62196f9c}{color\_values}}[0],}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_lns,\ a\_lns,}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ep0,\ ep1);}
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00551\ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ u8\_mask\ =\ \mbox{\hyperlink{astcenc__internal_8h_ae5b8f23d2bc3cab55806e21c091b1381}{get\_u8\_component\_mask}}(config.\mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}},\ blk);}
+\DoxyCodeLine{00552\ }
+\DoxyCodeLine{00553\ \ \ \ \ \textcolor{comment}{//\ Unpack\ and\ compute\ error\ for\ each\ texel\ in\ the\ partition}}
+\DoxyCodeLine{00554\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloatacc}}\ summav\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloatacc::zero}}();}
+\DoxyCodeLine{00555\ }
+\DoxyCodeLine{00556\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ lane\_id\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint::lane\_id}}();}
+\DoxyCodeLine{00557\ }
+\DoxyCodeLine{00558\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\_count\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}};}
+\DoxyCodeLine{00559\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{00560\ \ \ \ \ \{}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ EP1\ contribution}}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ weight1\ =\ \mbox{\hyperlink{structvint4_aea20d19d7588a0f79acc5895e07ed4e8}{vint::loada}}(plane1\_weights\ +\ i);}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ ep1\_r\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(ep1.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<0>())\ *\ weight1;}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ ep1\_g\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(ep1.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<1>())\ *\ weight1;}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ ep1\_b\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(ep1.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<2>())\ *\ weight1;}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ ep1\_a\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(ep1.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<3>())\ *\ weight1;}
+\DoxyCodeLine{00567\ }
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ EP0\ contribution}}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ weight0\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(64)\ -\/\ weight1;}
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ ep0\_r\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(ep0.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<0>())\ *\ weight0;}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ ep0\_g\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(ep0.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<1>())\ *\ weight0;}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ ep0\_b\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(ep0.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<2>())\ *\ weight0;}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ ep0\_a\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(ep0.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<3>())\ *\ weight0;}
+\DoxyCodeLine{00574\ }
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Combine\ contributions}}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ colori\_r\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819}{asr<6>}}(ep0\_r\ +\ ep1\_r\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(32));}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ colori\_g\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819}{asr<6>}}(ep0\_g\ +\ ep1\_g\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(32));}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ colori\_b\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819}{asr<6>}}(ep0\_b\ +\ ep1\_b\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(32));}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ colori\_a\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819}{asr<6>}}(ep0\_a\ +\ ep1\_a\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(32));}
+\DoxyCodeLine{00580\ }
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ using\ a\ U8\ decode\ mode\ bit\ replicate\ top\ 8\ bits}}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ so\ rest\ of\ codec\ can\ assume\ 0xFFFF\ max\ range\ everywhere}}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ colori\_r8\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819}{asr<8>}}(colori\_r)\ *\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(257);}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ colori\_r\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(colori\_r,\ colori\_r8,\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aafe2a7a9de8f289f12f7b6590400c3a0}{vmask}}(u8\_mask.\mbox{\hyperlink{structvmask4_af30ce438df1c692bc8b479ceeae2f5d8}{lane}}<0>()));}
+\DoxyCodeLine{00585\ }
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ colori\_g8\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819}{asr<8>}}(colori\_g)\ *\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(257);}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ colori\_g\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(colori\_g,\ colori\_g8,\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aafe2a7a9de8f289f12f7b6590400c3a0}{vmask}}(u8\_mask.\mbox{\hyperlink{structvmask4_af30ce438df1c692bc8b479ceeae2f5d8}{lane}}<1>()));}
+\DoxyCodeLine{00588\ }
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ colori\_b8\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819}{asr<8>}}(colori\_b)\ *\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(257);}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ colori\_b\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(colori\_b,\ colori\_b8,\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aafe2a7a9de8f289f12f7b6590400c3a0}{vmask}}(u8\_mask.\mbox{\hyperlink{structvmask4_af30ce438df1c692bc8b479ceeae2f5d8}{lane}}<2>()));}
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ colori\_a8\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819}{asr<8>}}(colori\_a)\ *\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(257);}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ colori\_a\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(colori\_a,\ colori\_a8,\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aafe2a7a9de8f289f12f7b6590400c3a0}{vmask}}(u8\_mask.\mbox{\hyperlink{structvmask4_af30ce438df1c692bc8b479ceeae2f5d8}{lane}}<3>()));}
+\DoxyCodeLine{00594\ }
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ color\ diff}}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ color\_r\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a3a2ce0fb403294db7fe126a6b3e87ab7}{int\_to\_float}}(colori\_r);}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ color\_g\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a3a2ce0fb403294db7fe126a6b3e87ab7}{int\_to\_float}}(colori\_g);}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ color\_b\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a3a2ce0fb403294db7fe126a6b3e87ab7}{int\_to\_float}}(colori\_b);}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ color\_a\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a3a2ce0fb403294db7fe126a6b3e87ab7}{int\_to\_float}}(colori\_a);}
+\DoxyCodeLine{00600\ }
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ color\_orig\_r\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}}\ +\ i);}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ color\_orig\_g\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}}\ +\ i);}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ color\_orig\_b\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}}\ +\ i);}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ color\_orig\_a\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(blk.\mbox{\hyperlink{structimage__block_a602c8c88dc1ceef33e833f6d6cbc09ea}{data\_a}}\ +\ i);}
+\DoxyCodeLine{00605\ }
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ color\_error\_r\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aeac50750508168aeab5115733d3ee63c}{abs}}(color\_orig\_r\ -\/\ color\_r),\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(1e15f));}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ color\_error\_g\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aeac50750508168aeab5115733d3ee63c}{abs}}(color\_orig\_g\ -\/\ color\_g),\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(1e15f));}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ color\_error\_b\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aeac50750508168aeab5115733d3ee63c}{abs}}(color\_orig\_b\ -\/\ color\_b),\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(1e15f));}
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ color\_error\_a\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aeac50750508168aeab5115733d3ee63c}{abs}}(color\_orig\_a\ -\/\ color\_a),\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(1e15f));}
+\DoxyCodeLine{00610\ }
+\DoxyCodeLine{00611\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ squared\ error\ metric}}
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ color\_error\_r\ =\ color\_error\_r\ *\ color\_error\_r;}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ color\_error\_g\ =\ color\_error\_g\ *\ color\_error\_g;}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ color\_error\_b\ =\ color\_error\_b\ *\ color\_error\_b;}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ color\_error\_a\ =\ color\_error\_a\ *\ color\_error\_a;}
+\DoxyCodeLine{00616\ }
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ metric\ =\ color\_error\_r\ *\ blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>()}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ color\_error\_g\ *\ blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>()}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ color\_error\_b\ *\ blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>()}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ color\_error\_a\ *\ blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>();}
+\DoxyCodeLine{00621\ }
+\DoxyCodeLine{00622\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mask\ off\ bad\ lanes}}
+\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ lane\_id\ <\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(texel\_count);}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ lane\_id\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}});}
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(summav,\ metric,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00626\ \ \ \ \ \}}
+\DoxyCodeLine{00627\ }
+\DoxyCodeLine{00628\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(summav);}
+\DoxyCodeLine{00629\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{astcenc__decompress__symbolic_8cpp_aff8e27acd948a9cc5631d99c80906b2f_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__decompress__symbolic_8cpp_aff8e27acd948a9cc5631d99c80906b2f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__decompress__symbolic_8cpp_a9c23f8373c9f5e708650b7c8e038b182}\index{astcenc\_decompress\_symbolic.cpp@{astcenc\_decompress\_symbolic.cpp}!compute\_symbolic\_block\_difference\_2plane@{compute\_symbolic\_block\_difference\_2plane}}
+\index{compute\_symbolic\_block\_difference\_2plane@{compute\_symbolic\_block\_difference\_2plane}!astcenc\_decompress\_symbolic.cpp@{astcenc\_decompress\_symbolic.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_symbolic\_block\_difference\_2plane()}{compute\_symbolic\_block\_difference\_2plane()}}
+{\footnotesize\ttfamily \label{astcenc__decompress__symbolic_8cpp_a9c23f8373c9f5e708650b7c8e038b182} 
+float compute\+\_\+symbolic\+\_\+block\+\_\+difference\+\_\+2plane (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structastcenc__config}{astcenc\+\_\+config}} \&}]{config}{, }\item[{const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&}]{bsd}{, }\item[{const \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&}]{scb}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{}\end{DoxyParamCaption})}
+
+
+
+Compute the error between a symbolic block and the original input data. 
+
+This function is specialized for 2 plane and 1 partition search.
+
+In RGBM mode this will reject blocks that attempt to encode a zero M value.
+
+
+\begin{DoxyParams}{매개변수}
+{\em config} & The compressor config. \\
+\hline
+{\em bsd} & The block size information. \\
+\hline
+{\em scb} & The symbolic compressed encoding. \\
+\hline
+{\em blk} & The original image block color data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+Returns the computed error, or a negative value if the encoding should be rejected for any reason. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_source}{astcenc\+\_\+decompress\+\_\+symbolic.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_source_l00324}{324}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00329\ \ \ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{comment}{//\ If\ we\ detected\ an\ error-\/block,\ blow\ up\ immediately.}}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordflow}{if}\ (scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ ==\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}})}
+\DoxyCodeLine{00332\ \ \ \ \ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00334\ \ \ \ \ \}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \ \ \ \ assert(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}}\ >=\ 0);}
+\DoxyCodeLine{00337\ \ \ \ \ assert(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\_count}}\ ==\ 1);}
+\DoxyCodeLine{00338\ \ \ \ \ assert(bsd.\mbox{\hyperlink{structblock__size__descriptor_a13608eb55e48c96b6243f4830278ebf3}{get\_block\_mode}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}}).\mbox{\hyperlink{structblock__mode_a78b282103d0a8bee2b07c0da075a3dc4}{is\_dual\_plane}}\ ==\ 1);}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ appropriate\ block\ descriptor}}
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__mode}{block\_mode}}\&\ bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a13608eb55e48c96b6243f4830278ebf3}{get\_block\_mode}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}});}
+\DoxyCodeLine{00342\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdecimation__info}{decimation\_info}}\&\ di\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(bm.\mbox{\hyperlink{structblock__mode_aaf9846117d40406d5e84508f429cf949}{decimation\_mode}});}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{comment}{//\ Unquantize\ and\ undecimate\ the\ weights}}
+\DoxyCodeLine{00345\ \ \ \ \ \textcolor{keywordtype}{int}\ plane1\_weights[\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\_MAX\_TEXELS}}];}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordtype}{int}\ plane2\_weights[\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\_MAX\_TEXELS}}];}
+\DoxyCodeLine{00347\ \ \ \ \ \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_aec197676ba4b10bf63a6523a775530d8}{unpack\_weights}}(bsd,\ scb,\ di,\ \textcolor{keyword}{true},\ plane1\_weights,\ plane2\_weights);}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ plane2\_mask\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint4::lane\_id}}()\ ==\ \mbox{\hyperlink{structvint4}{vint4}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a49f36c368c0d976f230c76c33aed2b9d}{plane2\_component}});}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ summa\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{comment}{//\ Decode\ the\ color\ endpoints\ for\ this\ partition}}
+\DoxyCodeLine{00354\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ ep0;}
+\DoxyCodeLine{00355\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ ep1;}
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keywordtype}{bool}\ rgb\_lns;}
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keywordtype}{bool}\ a\_lns;}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ab9b659180fb522b05391892336dbc095}{unpack\_color\_endpoints}}(config.\mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}},}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[0],}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ad539bb907ce654690e8a89cf62196f9c}{color\_values}}[0],}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_lns,\ a\_lns,}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ep0,\ ep1);}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00365\ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ u8\_mask\ =\ \mbox{\hyperlink{astcenc__internal_8h_ae5b8f23d2bc3cab55806e21c091b1381}{get\_u8\_component\_mask}}(config.\mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}},\ blk);}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \ \ \textcolor{comment}{//\ Unpack\ and\ compute\ error\ for\ each\ texel\ in\ the\ partition}}
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\_count\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}};}
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i++)}
+\DoxyCodeLine{00370\ \ \ \ \ \{}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ weight\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(\mbox{\hyperlink{structvint4}{vint4}}(plane1\_weights[i]),\ \mbox{\hyperlink{structvint4}{vint4}}(plane2\_weights[i]),\ plane2\_mask);}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ colori\ =\ \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_ae5360e637f5ba7f34bc952c0112f4e8e}{lerp\_color\_int}}(u8\_mask,\ ep0,\ ep1,\ weight);}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a3a2ce0fb403294db7fe126a6b3e87ab7}{int\_to\_float}}(colori);}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ oldColor\ =\ blk.\mbox{\hyperlink{structimage__block_af99de7d75e1e380b31d70d131509caa9}{texel}}(i);}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compare\ error\ using\ a\ perceptual\ decode\ metric\ for\ RGBM\ textures}}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (config.\mbox{\hyperlink{structastcenc__config_a7175e94561eeb3b83f8bf4549306cf95}{flags}}\ \&\ \mbox{\hyperlink{astcenc_8h_a95967a4184547bc51b3f993c8a3b9643}{ASTCENC\_FLG\_MAP\_RGBM}})}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Fail\ encodings\ that\ result\ in\ zero\ weight\ M\ pixels.\ Note\ that\ this\ can\ cause}}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ "{}interesting"{}\ artifacts\ if\ we\ reject\ all\ useful\ encodings\ -\/\ we\ typically\ get\ max}}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ brightness\ encodings\ instead\ which\ look\ just\ as\ bad.\ We\ recommend\ users\ apply\ a}}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ bias\ to\ their\ stored\ M\ value,\ limiting\ the\ lower\ value\ to\ 16\ or\ 32\ to\ avoid}}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ getting\ small\ M\ values\ post-\/quantization,\ but\ we\ can't\ prove\ it\ would\ never}}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ happen,\ especially\ at\ low\ bit\ rates\ ...}}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ ==\ 0.0f)}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/\mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00390\ }
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ error\ based\ on\ decoded\ RGBM\ color}}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ color\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>()\ *\ color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ *\ config.\mbox{\hyperlink{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199}{rgbm\_m\_scale}},}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>()\ *\ color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ *\ config.\mbox{\hyperlink{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199}{rgbm\_m\_scale}},}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>()\ *\ color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ *\ config.\mbox{\hyperlink{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199}{rgbm\_m\_scale}},}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.0f}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ oldColor\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldColor.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>()\ *\ oldColor.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ *\ config.\mbox{\hyperlink{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199}{rgbm\_m\_scale}},}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldColor.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>()\ *\ oldColor.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ *\ config.\mbox{\hyperlink{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199}{rgbm\_m\_scale}},}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldColor.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>()\ *\ oldColor.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ *\ config.\mbox{\hyperlink{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199}{rgbm\_m\_scale}},}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.0f}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ error\ =\ oldColor\ -\/\ color;}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ error\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aeac50750508168aeab5115733d3ee63c}{abs}}(error),\ 1e15f);}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ error\ =\ error\ *\ error;}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ summa\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(\mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a6d7561f8f0ebee752b0e217101d9d5f3}{dot}}(error,\ blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}}),\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}});}
+\DoxyCodeLine{00412\ \ \ \ \ \}}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \ \ \ \ \textcolor{keywordflow}{return}\ summa.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>();}
+\DoxyCodeLine{00415\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{astcenc__decompress__symbolic_8cpp_a9c23f8373c9f5e708650b7c8e038b182_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__decompress__symbolic_8cpp_a9c23f8373c9f5e708650b7c8e038b182_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__decompress__symbolic_8cpp_a9389a206914c0bbd0cb8a5d065dc56fe}\index{astcenc\_decompress\_symbolic.cpp@{astcenc\_decompress\_symbolic.cpp}!decode\_texel@{decode\_texel}}
+\index{decode\_texel@{decode\_texel}!astcenc\_decompress\_symbolic.cpp@{astcenc\_decompress\_symbolic.cpp}}
+\doxysubsubsection{\texorpdfstring{decode\_texel()}{decode\_texel()}}
+{\footnotesize\ttfamily \label{astcenc__decompress__symbolic_8cpp_a9389a206914c0bbd0cb8a5d065dc56fe} 
+static \mbox{\hyperlink{structvfloat4}{vfloat4}} decode\+\_\+texel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{data}{, }\item[{\mbox{\hyperlink{structvmask4}{vmask4}}}]{lns\+\_\+mask}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Convert integer color value into a float value for the decoder. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em data} & The integer color value post-\/interpolation. \\
+\hline
+{\em lns\+\_\+mask} & If set treat lane as HDR (LNS) else LDR (unorm16).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The float color value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_source}{astcenc\+\_\+decompress\+\_\+symbolic.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_source_l00066}{66}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ color\_lns\ =\ \mbox{\hyperlink{structvint4_a9dfa1c40a3c4dbc0858567dc629a80b8}{vint4::zero}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ color\_unorm\ =\ \mbox{\hyperlink{structvint4_a9dfa1c40a3c4dbc0858567dc629a80b8}{vint4::zero}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a1fcb81537a701f246e75fa622c2dd8ee}{any}}(lns\_mask))}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ color\_lns\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aa1ab2044e5354115ee71324e30fba1ed}{lns\_to\_sf16}}(data);}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad93dff3341cbbeed568d4bd6dc4ef87c}{all}}(lns\_mask))}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ color\_unorm\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a478b1f2bc7a3589bfbe32b398583c502}{unorm16\_to\_sf16}}(data);}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\ Pick\ components\ and\ then\ convert\ to\ FP16}}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ datai\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(color\_unorm,\ color\_lns,\ lns\_mask);}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_afd7aa2069bdf377067c3abaca1256432}{float16\_to\_float}}(datai);}
+\DoxyCodeLine{00086\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__decompress__symbolic_8cpp_a9389a206914c0bbd0cb8a5d065dc56fe_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__decompress__symbolic_8cpp_a9389a206914c0bbd0cb8a5d065dc56fe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__decompress__symbolic_8cpp_a4a5f09c362972951a31e4d7ff918f89f}\index{astcenc\_decompress\_symbolic.cpp@{astcenc\_decompress\_symbolic.cpp}!decompress\_symbolic\_block@{decompress\_symbolic\_block}}
+\index{decompress\_symbolic\_block@{decompress\_symbolic\_block}!astcenc\_decompress\_symbolic.cpp@{astcenc\_decompress\_symbolic.cpp}}
+\doxysubsubsection{\texorpdfstring{decompress\_symbolic\_block()}{decompress\_symbolic\_block()}}
+{\footnotesize\ttfamily \label{astcenc__decompress__symbolic_8cpp_a4a5f09c362972951a31e4d7ff918f89f} 
+void decompress\+\_\+symbolic\+\_\+block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}{astcenc\+\_\+profile}}}]{decode\+\_\+mode}{, }\item[{const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&}]{bsd}{, }\item[{int}]{xpos}{, }\item[{int}]{ypos}{, }\item[{int}]{zpos}{, }\item[{const \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&}]{scb}{, }\item[{\mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{}\end{DoxyParamCaption})}
+
+
+
+Decompress a symbolic block in to an image block. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em decode\+\_\+mode} & The decode mode (LDR, HDR, etc). \\
+\hline
+ & {\em bsd} & The block size information. \\
+\hline
+ & {\em xpos} & The X coordinate of the block in the overall image. \\
+\hline
+ & {\em ypos} & The Y coordinate of the block in the overall image. \\
+\hline
+ & {\em zpos} & The Z coordinate of the block in the overall image. \\
+\hline
+\mbox{\texttt{ out}}  & {\em blk} & The decompressed image block color data. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_source}{astcenc\+\_\+decompress\+\_\+symbolic.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_source_l00181}{181}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00189\ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_a352aaf95790a294ff0b8b037b49def86}{xpos}}\ =\ xpos;}
+\DoxyCodeLine{00191\ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_a77a79aa3bc8909bb34673e86ee30584f}{ypos}}\ =\ ypos;}
+\DoxyCodeLine{00192\ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_aef3e6199531833e9b855f7fde1d06593}{zpos}}\ =\ zpos;}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_a4222fc6e5a97194fd342700adff483db}{data\_min}}\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00195\ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_ac6bd4890338be887b61f857e37d23459}{data\_mean}}\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00196\ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_af1b03600b295cf8dc02a333db04871fc}{data\_max}}\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00197\ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_a3250483facfd20ef4d418bd5f3ef4acb}{grayscale}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{comment}{//\ If\ we\ detected\ an\ error-\/block,\ blow\ up\ immediately.}}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordflow}{if}\ (scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ ==\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}})}
+\DoxyCodeLine{00201\ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}};\ i++)}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}}[i]\ =\ \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_ae3bd8201885791610ec22338320c146a}{error\_color\_nan}}();}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}}[i]\ =\ \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_ae3bd8201885791610ec22338320c146a}{error\_color\_nan}}();}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}}[i]\ =\ \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_ae3bd8201885791610ec22338320c146a}{error\_color\_nan}}();}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_a602c8c88dc1ceef33e833f6d6cbc09ea}{data\_a}}[i]\ =\ \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_ae3bd8201885791610ec22338320c146a}{error\_color\_nan}}();}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_af1a9e601f3d03dc488993b81258058e0}{rgb\_lns}}[i]\ =\ 0;}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_ade6f78d73e016d4e9222cbe89f5b1eec}{alpha\_lns}}[i]\ =\ 0;}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00213\ \ \ \ \ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordflow}{if}\ ((scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ ==\ \mbox{\hyperlink{astcenc__internal_8h_aebc278aa5ca9c97969af61d9186f9172}{SYM\_BTYPE\_CONST\_F16}})\ ||}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ (scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ ==\ \mbox{\hyperlink{astcenc__internal_8h_adb59df7fefb94a8c52948d49ce70b1f5}{SYM\_BTYPE\_CONST\_U16}}))}
+\DoxyCodeLine{00217\ \ \ \ \ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color;}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ uint8\_t\ use\_lns\ =\ 0;}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ UNORM16\ constant\ color\ block}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ ==\ \mbox{\hyperlink{astcenc__internal_8h_adb59df7fefb94a8c52948d49ce70b1f5}{SYM\_BTYPE\_CONST\_U16}})}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ colori(scb.\mbox{\hyperlink{structsymbolic__compressed__block_abb86a3a9a9bf54d5138c1883ed6159a5}{constant\_color}});}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Determine\ the\ UNORM8\ rounding\ on\ the\ decode}}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ u8\_mask\ =\ \mbox{\hyperlink{astcenc__internal_8h_ae5b8f23d2bc3cab55806e21c091b1381}{get\_u8\_component\_mask}}(decode\_mode,\ blk);}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ real\ decoder\ would\ just\ use\ the\ top\ 8\ bits,\ but\ we\ rescale}}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ in\ to\ a\ 16-\/bit\ value\ that\ rounds\ correctly.}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ colori\_u8\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819}{asr<8>}}(colori)\ *\ 257;}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ colori\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(colori,\ colori\_u8,\ u8\_mask);}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ colorf16\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a478b1f2bc7a3589bfbe32b398583c502}{unorm16\_to\_sf16}}(colori);}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ color\ =\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_afd7aa2069bdf377067c3abaca1256432}{float16\_to\_float}}(colorf16);}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ FLOAT16\ constant\ color\ block}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (decode\_mode)}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a331abc1d96b4fa991757e6ef8199f298}{ASTCENC\_PRF\_LDR\_SRGB}}:}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a92cc31c9011e699ed4c41f9a4959c295}{ASTCENC\_PRF\_LDR}}:}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(\mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_ae3bd8201885791610ec22338320c146a}{error\_color\_nan}}());}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a9043bc19a890aeff156f664ccbef677f}{ASTCENC\_PRF\_HDR\_RGB\_LDR\_A}}:}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a4493639842d745d4bccd6a94836d2ca9}{ASTCENC\_PRF\_HDR}}:}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Constant-\/color\ block;\ unpack\ from\ FP16\ to\ FP32.}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color\ =\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_afd7aa2069bdf377067c3abaca1256432}{float16\_to\_float}}(\mbox{\hyperlink{structvint4}{vint4}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_abb86a3a9a9bf54d5138c1883ed6159a5}{constant\_color}}));}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ use\_lns\ =\ 1;}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}};\ i++)}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}}[i]\ =\ color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>();}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}}[i]\ =\ color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>();}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}}[i]\ =\ color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>();}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_a602c8c88dc1ceef33e833f6d6cbc09ea}{data\_a}}[i]\ =\ color.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>();}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_af1a9e601f3d03dc488993b81258058e0}{rgb\_lns}}[i]\ =\ use\_lns;}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_ade6f78d73e016d4e9222cbe89f5b1eec}{alpha\_lns}}[i]\ =\ use\_lns;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00266\ \ \ \ \ \}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ appropriate\ partition-\/table\ entry}}
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordtype}{int}\ partition\_count\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\_count}};}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pi\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_aa9dfc7b23c8b5e6c71e956e2e39fff74}{get\_partition\_info}}(partition\_count,\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a17d42e08747747b32c650a48fe1b5b6e}{partition\_index}});}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ appropriate\ block\ descriptors}}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a13608eb55e48c96b6243f4830278ebf3}{get\_block\_mode}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}});}
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ di\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(bm.decimation\_mode);}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_dual\_plane\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool}\textcolor{keyword}{>}(bm.is\_dual\_plane);}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{comment}{//\ Unquantize\ and\ undecimate\ the\ weights}}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordtype}{int}\ plane1\_weights[\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\_MAX\_TEXELS}}];}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordtype}{int}\ plane2\_weights[\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\_MAX\_TEXELS}}];}
+\DoxyCodeLine{00281\ \ \ \ \ \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_aec197676ba4b10bf63a6523a775530d8}{unpack\_weights}}(bsd,\ scb,\ di,\ is\_dual\_plane,\ plane1\_weights,\ plane2\_weights);}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{comment}{//\ Now\ that\ we\ have\ endpoint\ colors\ and\ weights,\ we\ can\ unpack\ texel\ colors}}
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keywordtype}{int}\ plane2\_component\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a49f36c368c0d976f230c76c33aed2b9d}{plane2\_component}};}
+\DoxyCodeLine{00285\ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ plane2\_mask\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint4::lane\_id}}()\ ==\ \mbox{\hyperlink{structvint4}{vint4}}(plane2\_component);}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ u8\_mask\ =\ \mbox{\hyperlink{astcenc__internal_8h_ae5b8f23d2bc3cab55806e21c091b1381}{get\_u8\_component\_mask}}(decode\_mode,\ blk);}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{00290\ \ \ \ \ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Decode\ the\ color\ endpoints\ for\ this\ partition}}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ ep0;}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ ep1;}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ rgb\_lns;}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ a\_lns;}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ab9b659180fb522b05391892336dbc095}{unpack\_color\_endpoints}}(decode\_mode,}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[i],}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ad539bb907ce654690e8a89cf62196f9c}{color\_values}}[i],}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_lns,\ a\_lns,}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ep0,\ ep1);}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ lns\_mask(rgb\_lns,\ rgb\_lns,\ rgb\_lns,\ a\_lns);}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ texel\_count\ =\ pi.partition\_texel\_count[i];}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ texel\_count;\ j++)}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tix\ =\ pi.texels\_of\_partition[i][j];}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ weight\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(\mbox{\hyperlink{structvint4}{vint4}}(plane1\_weights[tix]),\ \mbox{\hyperlink{structvint4}{vint4}}(plane2\_weights[tix]),\ plane2\_mask);}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ color\ =\ \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_ae5360e637f5ba7f34bc952c0112f4e8e}{lerp\_color\_int}}(u8\_mask,\ ep0,\ ep1,\ weight);}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ colorf\ =\ \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_a9389a206914c0bbd0cb8a5d065dc56fe}{decode\_texel}}(color,\ lns\_mask);}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}}[tix]\ =\ colorf.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>();}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}}[tix]\ =\ colorf.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>();}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}}[tix]\ =\ colorf.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>();}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_a602c8c88dc1ceef33e833f6d6cbc09ea}{data\_a}}[tix]\ =\ colorf.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>();}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00318\ \ \ \ \ \}}
+\DoxyCodeLine{00319\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{astcenc__decompress__symbolic_8cpp_a4a5f09c362972951a31e4d7ff918f89f_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__decompress__symbolic_8cpp_a4a5f09c362972951a31e4d7ff918f89f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__decompress__symbolic_8cpp_ae3bd8201885791610ec22338320c146a}\index{astcenc\_decompress\_symbolic.cpp@{astcenc\_decompress\_symbolic.cpp}!error\_color\_nan@{error\_color\_nan}}
+\index{error\_color\_nan@{error\_color\_nan}!astcenc\_decompress\_symbolic.cpp@{astcenc\_decompress\_symbolic.cpp}}
+\doxysubsubsection{\texorpdfstring{error\_color\_nan()}{error\_color\_nan()}}
+{\footnotesize\ttfamily \label{astcenc__decompress__symbolic_8cpp_ae3bd8201885791610ec22338320c146a} 
+static float error\+\_\+color\+\_\+nan (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Return an FP32 NaN value for use in error colors. 
+
+This NaN encoding will turn into 0x\+FFFF when converted to an FP16 NaN.
+
+\begin{DoxyReturn}{반환값}
+The float color value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_source}{astcenc\+\_\+decompress\+\_\+symbolic.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_source_l00173}{173}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00174\ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{unionif32}{if32}}\ v;}
+\DoxyCodeLine{00176\ \ \ \ \ v.\mbox{\hyperlink{unionif32_ab2af01c7db8e7bce72271565ae1276bf}{u}}\ =\ 0xFFFFE000U;}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordflow}{return}\ v.\mbox{\hyperlink{unionif32_a6ebdf3c35d5ebd30f1cbe751d8c9285e}{f}};}
+\DoxyCodeLine{00178\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__decompress__symbolic_8cpp_ae3bd8201885791610ec22338320c146a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__decompress__symbolic_8cpp_ae5360e637f5ba7f34bc952c0112f4e8e}\index{astcenc\_decompress\_symbolic.cpp@{astcenc\_decompress\_symbolic.cpp}!lerp\_color\_int@{lerp\_color\_int}}
+\index{lerp\_color\_int@{lerp\_color\_int}!astcenc\_decompress\_symbolic.cpp@{astcenc\_decompress\_symbolic.cpp}}
+\doxysubsubsection{\texorpdfstring{lerp\_color\_int()}{lerp\_color\_int()}}
+{\footnotesize\ttfamily \label{astcenc__decompress__symbolic_8cpp_ae5360e637f5ba7f34bc952c0112f4e8e} 
+static \mbox{\hyperlink{structvint4}{vint4}} lerp\+\_\+color\+\_\+int (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvmask4}{vmask4}}}]{u8\+\_\+mask}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{color0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{color1}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{weights}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Functions to decompress a symbolic block. 
+
+Compute the integer linear interpolation of two color endpoints.
+
+
+\begin{DoxyParams}{매개변수}
+{\em u8\+\_\+mask} & The mask for lanes using decode\+\_\+unorm8 rather than decode\+\_\+f16. \\
+\hline
+{\em color0} & The endpoint0 color. \\
+\hline
+{\em color1} & The endpoint1 color. \\
+\hline
+{\em weights} & The interpolation weight (between 0 and 64).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The interpolated color. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_source}{astcenc\+\_\+decompress\+\_\+symbolic.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_source_l00037}{37}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ weight1\ =\ weights;}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ weight0\ =\ \mbox{\hyperlink{structvint4}{vint4}}(64)\ -\/\ weight1;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ color\ =\ (color0\ *\ weight0)\ +\ (color1\ *\ weight1)\ +\ \mbox{\hyperlink{structvint4}{vint4}}(32);}
+\DoxyCodeLine{00047\ \ \ \ \ color\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819}{asr<6>}}(color);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ For\ decode\_unorm8\ values\ force\ the\ codec\ to\ bit\ replicate.\ This\ allows\ the}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ rest\ of\ the\ codec\ to\ assume\ the\ full\ 0xFFFF\ range\ for\ everything\ and\ ignore}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ the\ decode\_mode\ setting}}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ color\_u8\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819}{asr<8>}}(color)\ *\ \mbox{\hyperlink{structvint4}{vint4}}(257);}
+\DoxyCodeLine{00053\ \ \ \ \ color\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(color,\ color\_u8,\ u8\_mask);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{return}\ color;}
+\DoxyCodeLine{00056\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{astcenc__decompress__symbolic_8cpp_ae5360e637f5ba7f34bc952c0112f4e8e_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__decompress__symbolic_8cpp_ae5360e637f5ba7f34bc952c0112f4e8e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__decompress__symbolic_8cpp_aec197676ba4b10bf63a6523a775530d8}\index{astcenc\_decompress\_symbolic.cpp@{astcenc\_decompress\_symbolic.cpp}!unpack\_weights@{unpack\_weights}}
+\index{unpack\_weights@{unpack\_weights}!astcenc\_decompress\_symbolic.cpp@{astcenc\_decompress\_symbolic.cpp}}
+\doxysubsubsection{\texorpdfstring{unpack\_weights()}{unpack\_weights()}}
+{\footnotesize\ttfamily \label{astcenc__decompress__symbolic_8cpp_aec197676ba4b10bf63a6523a775530d8} 
+void unpack\+\_\+weights (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&}]{bsd}{, }\item[{const \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&}]{scb}{, }\item[{const \mbox{\hyperlink{structdecimation__info}{decimation\+\_\+info}} \&}]{di}{, }\item[{bool}]{is\+\_\+dual\+\_\+plane}{, }\item[{int}]{weights\+\_\+plane1}{\mbox{[}\+BLOCK\+\_\+\+MAX\+\_\+\+TEXELS\mbox{]}, }\item[{int}]{weights\+\_\+plane2}{\mbox{[}\+BLOCK\+\_\+\+MAX\+\_\+\+TEXELS\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Unpack a set of quantized and decimated weights. 
+
+TODO\+: Can we skip this for non-\/decimated weights now that the {\ttfamily scb} is already storing unquantized weights?
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em bsd} & The block size information. \\
+\hline
+ & {\em scb} & The symbolic compressed encoding. \\
+\hline
+ & {\em di} & The weight grid decimation table. \\
+\hline
+ & {\em is\+\_\+dual\+\_\+plane} & {\ttfamily true} if this is a dual plane block, {\ttfamily false} otherwise. \\
+\hline
+\mbox{\texttt{ out}}  & {\em weights\+\_\+plane1} & The output array for storing the plane 1 weights. \\
+\hline
+\mbox{\texttt{ out}}  & {\em weights\+\_\+plane2} & The output array for storing the plane 2 weights. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_source}{astcenc\+\_\+decompress\+\_\+symbolic.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_source_l00089}{89}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096\ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{comment}{//\ Safe\ to\ overshoot\ as\ all\ arrays\ are\ allocated\ to\ full\ size}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{if}\ (!is\_dual\_plane)}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Build\ full\ 64-\/entry\ weight\ lookup\ table}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ tab0\ =\ \mbox{\hyperlink{structvint4_ab899bfb3323ffa799403172941113a7e}{vint4::load}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}\ +\ \ 0);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ tab1\ =\ \mbox{\hyperlink{structvint4_ab899bfb3323ffa799403172941113a7e}{vint4::load}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}\ +\ 16);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ tab2\ =\ \mbox{\hyperlink{structvint4_ab899bfb3323ffa799403172941113a7e}{vint4::load}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}\ +\ 32);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ tab3\ =\ \mbox{\hyperlink{structvint4_ab899bfb3323ffa799403172941113a7e}{vint4::load}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}\ +\ 48);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ tab0p,\ tab1p,\ tab2p,\ tab3p;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a38035a0e5616592fa235308dc60c476f}{vtable\_prepare}}(tab0,\ tab1,\ tab2,\ tab3,\ tab0p,\ tab1p,\ tab2p,\ tab3p);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}};\ i\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ summed\_value(8);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ weight\_count(di.\mbox{\hyperlink{structdecimation__info_a3bb3777eb8526788c915e582b10d6d27}{texel\_weight\_count}}\ +\ i);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ max\_weight\_count\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a516a2f0d872381b8c7c047845a90c9a3}{hmax}}(weight\_count).\mbox{\hyperlink{structvint8_a2e1f0c785f4899e1b7912f2580b9f77c}{lane}}<0>();}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(max\_weight\_count\ >\ 0);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ max\_weight\_count;\ j++)}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ texel\_weights(di.\mbox{\hyperlink{structdecimation__info_adcee6ed79e4c94e1bcb305d429e3cff5}{texel\_weights\_tr}}[j]\ +\ i);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ texel\_weights\_int(di.\mbox{\hyperlink{structdecimation__info_ab27eb4b71fcc9d8b7827ce5abbf43d4a}{texel\_weight\_contribs\_int\_tr}}[j]\ +\ i);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ summed\_value\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a2778951898aea88de4dd7881e7cd817b}{vtable\_8bt\_32bi}}(tab0p,\ tab1p,\ tab2p,\ tab3p,\ texel\_weights)\ *\ texel\_weights\_int;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a61add2970baac5cf6b04177472ae1ed1}{store}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a0a3a7d755cec1c73d0ce9c50b33bc207}{lsr<4>}}(summed\_value),\ weights\_plane1\ +\ i);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00128\ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Build\ a\ 32-\/entry\ weight\ lookup\ table\ per\ plane}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Plane\ 1}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ tab0\_plane1\ =\ \mbox{\hyperlink{structvint4_ab899bfb3323ffa799403172941113a7e}{vint4::load}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}\ +\ \ 0);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ tab1\_plane1\ =\ \mbox{\hyperlink{structvint4_ab899bfb3323ffa799403172941113a7e}{vint4::load}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}\ +\ 16);}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ tab0\_plane1p,\ tab1\_plane1p;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a38035a0e5616592fa235308dc60c476f}{vtable\_prepare}}(tab0\_plane1,\ tab1\_plane1,\ tab0\_plane1p,\ tab1\_plane1p);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Plane\ 2}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ tab0\_plane2\ =\ \mbox{\hyperlink{structvint4_ab899bfb3323ffa799403172941113a7e}{vint4::load}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}\ +\ 32);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ tab1\_plane2\ =\ \mbox{\hyperlink{structvint4_ab899bfb3323ffa799403172941113a7e}{vint4::load}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}\ +\ 48);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ tab0\_plane2p,\ tab1\_plane2p;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a38035a0e5616592fa235308dc60c476f}{vtable\_prepare}}(tab0\_plane2,\ tab1\_plane2,\ tab0\_plane2p,\ tab1\_plane2p);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}};\ i\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ sum\_plane1(8);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ sum\_plane2(8);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ weight\_count(di.\mbox{\hyperlink{structdecimation__info_a3bb3777eb8526788c915e582b10d6d27}{texel\_weight\_count}}\ +\ i);}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ max\_weight\_count\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a516a2f0d872381b8c7c047845a90c9a3}{hmax}}(weight\_count).\mbox{\hyperlink{structvint8_a2e1f0c785f4899e1b7912f2580b9f77c}{lane}}<0>();}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(max\_weight\_count\ >\ 0);}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ max\_weight\_count;\ j++)}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ texel\_weights(di.\mbox{\hyperlink{structdecimation__info_adcee6ed79e4c94e1bcb305d429e3cff5}{texel\_weights\_tr}}[j]\ +\ i);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ texel\_weights\_int(di.\mbox{\hyperlink{structdecimation__info_ab27eb4b71fcc9d8b7827ce5abbf43d4a}{texel\_weight\_contribs\_int\_tr}}[j]\ +\ i);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sum\_plane1\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a2778951898aea88de4dd7881e7cd817b}{vtable\_8bt\_32bi}}(tab0\_plane1p,\ tab1\_plane1p,\ texel\_weights)\ *\ texel\_weights\_int;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sum\_plane2\ +=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a2778951898aea88de4dd7881e7cd817b}{vtable\_8bt\_32bi}}(tab0\_plane2p,\ tab1\_plane2p,\ texel\_weights)\ *\ texel\_weights\_int;}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a61add2970baac5cf6b04177472ae1ed1}{store}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a0a3a7d755cec1c73d0ce9c50b33bc207}{lsr<4>}}(sum\_plane1),\ weights\_plane1\ +\ i);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a61add2970baac5cf6b04177472ae1ed1}{store}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a0a3a7d755cec1c73d0ce9c50b33bc207}{lsr<4>}}(sum\_plane2),\ weights\_plane2\ +\ i);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{astcenc__decompress__symbolic_8cpp_aec197676ba4b10bf63a6523a775530d8_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__decompress__symbolic_8cpp_aec197676ba4b10bf63a6523a775530d8_icgraph}
+\end{center}
+\end{figure}

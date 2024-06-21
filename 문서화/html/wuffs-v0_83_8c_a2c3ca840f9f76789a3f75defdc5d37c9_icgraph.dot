@@ -1,0 +1,25 @@
+digraph "wuffs_base__u64__sat_add"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="wuffs_base__u64__sat_add",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="wuffs_base__io_buffer\l__compact",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$wuffs-v0_83_8c.html#af8f33becc57e5bae67bea0334bb07de8",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="wuffs_base__io_buffer\l__reader_io_position",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$wuffs-v0_83_8c.html#a26508163342a17b7f7c28a0974cdf6a7",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="wuffs_base__io_buffer\l__reader_position",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$wuffs-v0_83_8c.html#a03c0989a40f34f52996cc64ed1472bfd",tooltip=" "];
+  Node1 -> Node5 [id="edge4_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="wuffs_base__io_buffer\l__writer_io_position",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$wuffs-v0_83_8c.html#a21b8b2fb28eae9b7b0efc710bd060a23",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="wuffs_base__io_buffer\l__writer_position",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$wuffs-v0_83_8c.html#a66d7176908300b752333542ad0527d4d",tooltip=" "];
+  Node1 -> Node7 [id="edge6_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="wuffs_base__token_buffer\l__compact",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$wuffs-v0_83_8c.html#aceeeb339272692f65562ea323813cdff",tooltip=" "];
+  Node1 -> Node8 [id="edge7_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="wuffs_base__token_buffer\l__reader_token_position",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$wuffs-v0_83_8c.html#a28aa3379826b67d7e50fc3fd171a2871",tooltip=" "];
+  Node1 -> Node9 [id="edge8_Node000001_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="wuffs_base__token_buffer\l__writer_token_position",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$wuffs-v0_83_8c.html#a6399e7a6b8f21bfbef6cd79ddc3df61d",tooltip=" "];
+}

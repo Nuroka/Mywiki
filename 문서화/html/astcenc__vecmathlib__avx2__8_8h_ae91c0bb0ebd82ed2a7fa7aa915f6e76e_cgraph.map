@@ -1,0 +1,7 @@
+<map id="clamp" name="clamp">
+<area shape="rect" id="Node000001" title="Return the clamped value between min and max." alt="" coords="5,31,63,56"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#aa162915c044e97cc1f6d630338761fd3" title="Return the max vector of two vectors." alt="" coords="111,5,157,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="62,34,97,25,98,30,64,39"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#a165b3db4e7ced1551e1880a01a01150b" title="Return the min vector of two vectors." alt="" coords="113,55,155,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="64,48,100,57,99,62,62,53"/>
+</map>

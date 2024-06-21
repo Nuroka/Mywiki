@@ -1,0 +1,5 @@
+<map id="hadd_rgb_s" name="hadd_rgb_s">
+<area shape="rect" id="Node000001" title="Return the horizontal sum of RGB vector lanes as a scalar." alt="" coords="5,5,95,31"/>
+<area shape="rect" id="Node000002" href="$structvfloat4.html#a04462a7815432c6bc3ce1b5e5d11e4fc" title="Get the scalar value of a single lane." alt="" coords="143,5,233,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,15,129,15,129,21,95,21"/>
+</map>

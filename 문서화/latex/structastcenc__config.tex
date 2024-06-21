@@ -1,0 +1,483 @@
+\doxysection{astcenc\+\_\+config 구조체 참조}
+\hypertarget{structastcenc__config}{}\label{structastcenc__config}\index{astcenc\_config@{astcenc\_config}}
+
+
+The config structure.  
+
+
+
+
+{\ttfamily \#include $<$astcenc.\+h$>$}
+
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}{astcenc\+\_\+profile}} \mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}}
+\begin{DoxyCompactList}\small\item\em The color profile. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__config_a7175e94561eeb3b83f8bf4549306cf95}{flags}}
+\begin{DoxyCompactList}\small\item\em The set of set flags. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__config_a8c97a59f9605127f7ff9c055c1d18aba}{block\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em The ASTC block size X dimension. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__config_ada95d4600038d7798676667453684068}{block\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em The ASTC block size Y dimension. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__config_a2941ec9c7df3b211604c9cf7d8d1fe5e}{block\+\_\+z}}
+\begin{DoxyCompactList}\small\item\em The ASTC block size Z dimension. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structastcenc__config_a94850051a1dc753abf8d3148bd59d9cd}{cw\+\_\+r\+\_\+weight}}
+\begin{DoxyCompactList}\small\item\em The red component weight scale for error weighting (-\/cw). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structastcenc__config_ac1f865f94a531f5c52bf30696f88c172}{cw\+\_\+g\+\_\+weight}}
+\begin{DoxyCompactList}\small\item\em The green component weight scale for error weighting (-\/cw). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structastcenc__config_ae8b3c68b4b4890c75eaac694aa3588db}{cw\+\_\+b\+\_\+weight}}
+\begin{DoxyCompactList}\small\item\em The blue component weight scale for error weighting (-\/cw). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structastcenc__config_a15b13fe88b80a45ac0333519417a58af}{cw\+\_\+a\+\_\+weight}}
+\begin{DoxyCompactList}\small\item\em The alpha component weight scale for error weighting (-\/cw). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__config_af310c1840af0e5baf2cbc3f61ecc1485}{a\+\_\+scale\+\_\+radius}}
+\begin{DoxyCompactList}\small\item\em The radius for any alpha-\/weight scaling (-\/a). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199}{rgbm\+\_\+m\+\_\+scale}}
+\begin{DoxyCompactList}\small\item\em The RGBM scale factor for the shared multiplier (-\/rgbm). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__config_aa7930792899cf0f4e06d0443e7c7c376}{tune\+\_\+partition\+\_\+count\+\_\+limit}}
+\begin{DoxyCompactList}\small\item\em The maximum number of partitions searched (-\/partitioncountlimit). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__config_a13172c9ee7823e27bcc760748bbca7ec}{tune\+\_\+2partition\+\_\+index\+\_\+limit}}
+\begin{DoxyCompactList}\small\item\em The maximum number of partitions searched (-\/2partitionindexlimit). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__config_a9f7de080850731a6ee84e3c8ec9c7084}{tune\+\_\+3partition\+\_\+index\+\_\+limit}}
+\begin{DoxyCompactList}\small\item\em The maximum number of partitions searched (-\/3partitionindexlimit). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__config_a378d1dd2bf306399c29a5f7883565c3c}{tune\+\_\+4partition\+\_\+index\+\_\+limit}}
+\begin{DoxyCompactList}\small\item\em The maximum number of partitions searched (-\/4partitionindexlimit). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__config_a68388fd9e07722288b73d63fb545532c}{tune\+\_\+block\+\_\+mode\+\_\+limit}}
+\begin{DoxyCompactList}\small\item\em The maximum centile for block modes searched (-\/blockmodelimit). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__config_ae756e28f11bd615a23198c4ae2b1e90f}{tune\+\_\+refinement\+\_\+limit}}
+\begin{DoxyCompactList}\small\item\em The maximum iterative refinements applied (-\/refinementlimit). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__config_a1985670205a89fcb92ba1995e6645c5e}{tune\+\_\+candidate\+\_\+limit}}
+\begin{DoxyCompactList}\small\item\em The number of trial candidates per mode search (-\/candidatelimit). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__config_a841535a5913a073022ab7098a0f329ac}{tune\+\_\+2partitioning\+\_\+candidate\+\_\+limit}}
+\begin{DoxyCompactList}\small\item\em The number of trial partitionings per search (-\/2partitioncandidatelimit). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__config_a076f40134b7cefe41079e8a3aa8899f6}{tune\+\_\+3partitioning\+\_\+candidate\+\_\+limit}}
+\begin{DoxyCompactList}\small\item\em The number of trial partitionings per search (-\/3partitioncandidatelimit). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__config_afc8d64039868048fef1e1a9749737528}{tune\+\_\+4partitioning\+\_\+candidate\+\_\+limit}}
+\begin{DoxyCompactList}\small\item\em The number of trial partitionings per search (-\/4partitioncandidatelimit). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structastcenc__config_a2065412aaae88cff4e1f648946e13181}{tune\+\_\+db\+\_\+limit}}
+\begin{DoxyCompactList}\small\item\em The dB threshold for stopping block search (-\/dblimit). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structastcenc__config_a1ca7ffa6cf39b0236c3ac07a81e41748}{tune\+\_\+mse\+\_\+overshoot}}
+\begin{DoxyCompactList}\small\item\em The amount of MSE overshoot needed to early-\/out trials. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structastcenc__config_a428f0ba612186c229f66865dd615d567}{tune\+\_\+2partition\+\_\+early\+\_\+out\+\_\+limit\+\_\+factor}}
+\begin{DoxyCompactList}\small\item\em The threshold for skipping 3.\+1/4.1 trials (-\/2partitionlimitfactor). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structastcenc__config_adb6bf5fd3979c612e5c6b377c6aca281}{tune\+\_\+3partition\+\_\+early\+\_\+out\+\_\+limit\+\_\+factor}}
+\begin{DoxyCompactList}\small\item\em The threshold for skipping 4.\+1 trials (-\/3partitionlimitfactor). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structastcenc__config_a01cfcdc6f3903a6b7fc96ebda9550102}{tune\+\_\+2plane\+\_\+early\+\_\+out\+\_\+limit\+\_\+correlation}}
+\begin{DoxyCompactList}\small\item\em The threshold for skipping two weight planes (-\/2planelimitcorrelation). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structastcenc__config_a00c34d7b516c391a763592497da58312}{tune\+\_\+search\+\_\+mode0\+\_\+enable}}
+\begin{DoxyCompactList}\small\item\em The config enable for the mode0 fast-\/path search. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc_8h_ac79f6173b76e98afecc86b24412e6427}{astcenc\+\_\+progress\+\_\+callback}} \mbox{\hyperlink{structastcenc__config_ac8edb578937f34f766b1dfe9460a97cb}{progress\+\_\+callback}}
+\begin{DoxyCompactList}\small\item\em The progress callback, can be {\ttfamily nullptr}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+The config structure. 
+
+This structure will initially be populated by a call to astcenc\+\_\+config\+\_\+init, but power users may modify it before calling astcenc\+\_\+context\+\_\+alloc. See \doxylink{astcenccli__toplevel__help_8cpp}{astcenccli\+\_\+toplevel\+\_\+help.\+cpp} for full user documentation of the power-\/user settings.
+
+Note for any settings which are associated with a specific color component, the value in the config applies to the component that exists after any compression data swizzle is applied. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00415}{415}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structastcenc__config_af310c1840af0e5baf2cbc3f61ecc1485}\index{astcenc\_config@{astcenc\_config}!a\_scale\_radius@{a\_scale\_radius}}
+\index{a\_scale\_radius@{a\_scale\_radius}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{a\_scale\_radius}{a\_scale\_radius}}
+{\footnotesize\ttfamily \label{structastcenc__config_af310c1840af0e5baf2cbc3f61ecc1485} 
+unsigned int astcenc\+\_\+config\+::a\+\_\+scale\+\_\+radius}
+
+
+
+The radius for any alpha-\/weight scaling (-\/a). 
+
+It is recommended that this is set to 1 when using FLG\+\_\+\+USE\+\_\+\+ALPHA\+\_\+\+WEIGHT on a texture that will be sampled using linear texture filtering to minimize color bleed out of transparent texels that are adjacent to non-\/transparent texels. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00451}{451}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_a8c97a59f9605127f7ff9c055c1d18aba}\index{astcenc\_config@{astcenc\_config}!block\_x@{block\_x}}
+\index{block\_x@{block\_x}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{block\_x}{block\_x}}
+{\footnotesize\ttfamily \label{structastcenc__config_a8c97a59f9605127f7ff9c055c1d18aba} 
+unsigned int astcenc\+\_\+config\+::block\+\_\+x}
+
+
+
+The ASTC block size X dimension. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00424}{424}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_ada95d4600038d7798676667453684068}\index{astcenc\_config@{astcenc\_config}!block\_y@{block\_y}}
+\index{block\_y@{block\_y}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{block\_y}{block\_y}}
+{\footnotesize\ttfamily \label{structastcenc__config_ada95d4600038d7798676667453684068} 
+unsigned int astcenc\+\_\+config\+::block\+\_\+y}
+
+
+
+The ASTC block size Y dimension. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00427}{427}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_a2941ec9c7df3b211604c9cf7d8d1fe5e}\index{astcenc\_config@{astcenc\_config}!block\_z@{block\_z}}
+\index{block\_z@{block\_z}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{block\_z}{block\_z}}
+{\footnotesize\ttfamily \label{structastcenc__config_a2941ec9c7df3b211604c9cf7d8d1fe5e} 
+unsigned int astcenc\+\_\+config\+::block\+\_\+z}
+
+
+
+The ASTC block size Z dimension. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00430}{430}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_a15b13fe88b80a45ac0333519417a58af}\index{astcenc\_config@{astcenc\_config}!cw\_a\_weight@{cw\_a\_weight}}
+\index{cw\_a\_weight@{cw\_a\_weight}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{cw\_a\_weight}{cw\_a\_weight}}
+{\footnotesize\ttfamily \label{structastcenc__config_a15b13fe88b80a45ac0333519417a58af} 
+float astcenc\+\_\+config\+::cw\+\_\+a\+\_\+weight}
+
+
+
+The alpha component weight scale for error weighting (-\/cw). 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00442}{442}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_ae8b3c68b4b4890c75eaac694aa3588db}\index{astcenc\_config@{astcenc\_config}!cw\_b\_weight@{cw\_b\_weight}}
+\index{cw\_b\_weight@{cw\_b\_weight}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{cw\_b\_weight}{cw\_b\_weight}}
+{\footnotesize\ttfamily \label{structastcenc__config_ae8b3c68b4b4890c75eaac694aa3588db} 
+float astcenc\+\_\+config\+::cw\+\_\+b\+\_\+weight}
+
+
+
+The blue component weight scale for error weighting (-\/cw). 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00439}{439}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_ac1f865f94a531f5c52bf30696f88c172}\index{astcenc\_config@{astcenc\_config}!cw\_g\_weight@{cw\_g\_weight}}
+\index{cw\_g\_weight@{cw\_g\_weight}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{cw\_g\_weight}{cw\_g\_weight}}
+{\footnotesize\ttfamily \label{structastcenc__config_ac1f865f94a531f5c52bf30696f88c172} 
+float astcenc\+\_\+config\+::cw\+\_\+g\+\_\+weight}
+
+
+
+The green component weight scale for error weighting (-\/cw). 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00436}{436}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_a94850051a1dc753abf8d3148bd59d9cd}\index{astcenc\_config@{astcenc\_config}!cw\_r\_weight@{cw\_r\_weight}}
+\index{cw\_r\_weight@{cw\_r\_weight}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{cw\_r\_weight}{cw\_r\_weight}}
+{\footnotesize\ttfamily \label{structastcenc__config_a94850051a1dc753abf8d3148bd59d9cd} 
+float astcenc\+\_\+config\+::cw\+\_\+r\+\_\+weight}
+
+
+
+The red component weight scale for error weighting (-\/cw). 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00433}{433}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_a7175e94561eeb3b83f8bf4549306cf95}\index{astcenc\_config@{astcenc\_config}!flags@{flags}}
+\index{flags@{flags}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily \label{structastcenc__config_a7175e94561eeb3b83f8bf4549306cf95} 
+unsigned int astcenc\+\_\+config\+::flags}
+
+
+
+The set of set flags. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00421}{421}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}\index{astcenc\_config@{astcenc\_config}!profile@{profile}}
+\index{profile@{profile}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{profile}{profile}}
+{\footnotesize\ttfamily \label{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856} 
+\mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}{astcenc\+\_\+profile}} astcenc\+\_\+config\+::profile}
+
+
+
+The color profile. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00418}{418}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_ac8edb578937f34f766b1dfe9460a97cb}\index{astcenc\_config@{astcenc\_config}!progress\_callback@{progress\_callback}}
+\index{progress\_callback@{progress\_callback}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{progress\_callback}{progress\_callback}}
+{\footnotesize\ttfamily \label{structastcenc__config_ac8edb578937f34f766b1dfe9460a97cb} 
+\mbox{\hyperlink{astcenc_8h_ac79f6173b76e98afecc86b24412e6427}{astcenc\+\_\+progress\+\_\+callback}} astcenc\+\_\+config\+::progress\+\_\+callback}
+
+
+
+The progress callback, can be {\ttfamily nullptr}. 
+
+If this is specified the codec will peridocially report progress for compression as a percentage between 0 and 100. The callback is called from one of the compressor threads, so doing significant work in the callback will reduce compression performance. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00582}{582}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199}\index{astcenc\_config@{astcenc\_config}!rgbm\_m\_scale@{rgbm\_m\_scale}}
+\index{rgbm\_m\_scale@{rgbm\_m\_scale}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{rgbm\_m\_scale}{rgbm\_m\_scale}}
+{\footnotesize\ttfamily \label{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199} 
+float astcenc\+\_\+config\+::rgbm\+\_\+m\+\_\+scale}
+
+
+
+The RGBM scale factor for the shared multiplier (-\/rgbm). 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00454}{454}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_a428f0ba612186c229f66865dd615d567}\index{astcenc\_config@{astcenc\_config}!tune\_2partition\_early\_out\_limit\_factor@{tune\_2partition\_early\_out\_limit\_factor}}
+\index{tune\_2partition\_early\_out\_limit\_factor@{tune\_2partition\_early\_out\_limit\_factor}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_2partition\_early\_out\_limit\_factor}{tune\_2partition\_early\_out\_limit\_factor}}
+{\footnotesize\ttfamily \label{structastcenc__config_a428f0ba612186c229f66865dd615d567} 
+float astcenc\+\_\+config\+::tune\+\_\+2partition\+\_\+early\+\_\+out\+\_\+limit\+\_\+factor}
+
+
+
+The threshold for skipping 3.\+1/4.1 trials (-\/2partitionlimitfactor). 
+
+This option is further scaled for normal maps, so it skips less often. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00550}{550}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_a13172c9ee7823e27bcc760748bbca7ec}\index{astcenc\_config@{astcenc\_config}!tune\_2partition\_index\_limit@{tune\_2partition\_index\_limit}}
+\index{tune\_2partition\_index\_limit@{tune\_2partition\_index\_limit}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_2partition\_index\_limit}{tune\_2partition\_index\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__config_a13172c9ee7823e27bcc760748bbca7ec} 
+unsigned int astcenc\+\_\+config\+::tune\+\_\+2partition\+\_\+index\+\_\+limit}
+
+
+
+The maximum number of partitions searched (-\/2partitionindexlimit). 
+
+Valid values are between 1 and 1024. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00468}{468}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_a841535a5913a073022ab7098a0f329ac}\index{astcenc\_config@{astcenc\_config}!tune\_2partitioning\_candidate\_limit@{tune\_2partitioning\_candidate\_limit}}
+\index{tune\_2partitioning\_candidate\_limit@{tune\_2partitioning\_candidate\_limit}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_2partitioning\_candidate\_limit}{tune\_2partitioning\_candidate\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__config_a841535a5913a073022ab7098a0f329ac} 
+unsigned int astcenc\+\_\+config\+::tune\+\_\+2partitioning\+\_\+candidate\+\_\+limit}
+
+
+
+The number of trial partitionings per search (-\/2partitioncandidatelimit). 
+
+Valid values are between 1 and TUNE\+\_\+\+MAX\+\_\+\+PARTITIONING\+\_\+\+CANDIDATES. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00511}{511}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_a01cfcdc6f3903a6b7fc96ebda9550102}\index{astcenc\_config@{astcenc\_config}!tune\_2plane\_early\_out\_limit\_correlation@{tune\_2plane\_early\_out\_limit\_correlation}}
+\index{tune\_2plane\_early\_out\_limit\_correlation@{tune\_2plane\_early\_out\_limit\_correlation}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_2plane\_early\_out\_limit\_correlation}{tune\_2plane\_early\_out\_limit\_correlation}}
+{\footnotesize\ttfamily \label{structastcenc__config_a01cfcdc6f3903a6b7fc96ebda9550102} 
+float astcenc\+\_\+config\+::tune\+\_\+2plane\+\_\+early\+\_\+out\+\_\+limit\+\_\+correlation}
+
+
+
+The threshold for skipping two weight planes (-\/2planelimitcorrelation). 
+
+This option is ineffective for normal maps. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00564}{564}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_adb6bf5fd3979c612e5c6b377c6aca281}\index{astcenc\_config@{astcenc\_config}!tune\_3partition\_early\_out\_limit\_factor@{tune\_3partition\_early\_out\_limit\_factor}}
+\index{tune\_3partition\_early\_out\_limit\_factor@{tune\_3partition\_early\_out\_limit\_factor}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_3partition\_early\_out\_limit\_factor}{tune\_3partition\_early\_out\_limit\_factor}}
+{\footnotesize\ttfamily \label{structastcenc__config_adb6bf5fd3979c612e5c6b377c6aca281} 
+float astcenc\+\_\+config\+::tune\+\_\+3partition\+\_\+early\+\_\+out\+\_\+limit\+\_\+factor}
+
+
+
+The threshold for skipping 4.\+1 trials (-\/3partitionlimitfactor). 
+
+This option is further scaled for normal maps, so it skips less often. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00557}{557}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_a9f7de080850731a6ee84e3c8ec9c7084}\index{astcenc\_config@{astcenc\_config}!tune\_3partition\_index\_limit@{tune\_3partition\_index\_limit}}
+\index{tune\_3partition\_index\_limit@{tune\_3partition\_index\_limit}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_3partition\_index\_limit}{tune\_3partition\_index\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__config_a9f7de080850731a6ee84e3c8ec9c7084} 
+unsigned int astcenc\+\_\+config\+::tune\+\_\+3partition\+\_\+index\+\_\+limit}
+
+
+
+The maximum number of partitions searched (-\/3partitionindexlimit). 
+
+Valid values are between 1 and 1024. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00475}{475}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_a076f40134b7cefe41079e8a3aa8899f6}\index{astcenc\_config@{astcenc\_config}!tune\_3partitioning\_candidate\_limit@{tune\_3partitioning\_candidate\_limit}}
+\index{tune\_3partitioning\_candidate\_limit@{tune\_3partitioning\_candidate\_limit}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_3partitioning\_candidate\_limit}{tune\_3partitioning\_candidate\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__config_a076f40134b7cefe41079e8a3aa8899f6} 
+unsigned int astcenc\+\_\+config\+::tune\+\_\+3partitioning\+\_\+candidate\+\_\+limit}
+
+
+
+The number of trial partitionings per search (-\/3partitioncandidatelimit). 
+
+Valid values are between 1 and TUNE\+\_\+\+MAX\+\_\+\+PARTITIONING\+\_\+\+CANDIDATES. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00518}{518}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_a378d1dd2bf306399c29a5f7883565c3c}\index{astcenc\_config@{astcenc\_config}!tune\_4partition\_index\_limit@{tune\_4partition\_index\_limit}}
+\index{tune\_4partition\_index\_limit@{tune\_4partition\_index\_limit}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_4partition\_index\_limit}{tune\_4partition\_index\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__config_a378d1dd2bf306399c29a5f7883565c3c} 
+unsigned int astcenc\+\_\+config\+::tune\+\_\+4partition\+\_\+index\+\_\+limit}
+
+
+
+The maximum number of partitions searched (-\/4partitionindexlimit). 
+
+Valid values are between 1 and 1024. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00482}{482}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_afc8d64039868048fef1e1a9749737528}\index{astcenc\_config@{astcenc\_config}!tune\_4partitioning\_candidate\_limit@{tune\_4partitioning\_candidate\_limit}}
+\index{tune\_4partitioning\_candidate\_limit@{tune\_4partitioning\_candidate\_limit}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_4partitioning\_candidate\_limit}{tune\_4partitioning\_candidate\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__config_afc8d64039868048fef1e1a9749737528} 
+unsigned int astcenc\+\_\+config\+::tune\+\_\+4partitioning\+\_\+candidate\+\_\+limit}
+
+
+
+The number of trial partitionings per search (-\/4partitioncandidatelimit). 
+
+Valid values are between 1 and TUNE\+\_\+\+MAX\+\_\+\+PARTITIONING\+\_\+\+CANDIDATES. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00525}{525}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_a68388fd9e07722288b73d63fb545532c}\index{astcenc\_config@{astcenc\_config}!tune\_block\_mode\_limit@{tune\_block\_mode\_limit}}
+\index{tune\_block\_mode\_limit@{tune\_block\_mode\_limit}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_block\_mode\_limit}{tune\_block\_mode\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__config_a68388fd9e07722288b73d63fb545532c} 
+unsigned int astcenc\+\_\+config\+::tune\+\_\+block\+\_\+mode\+\_\+limit}
+
+
+
+The maximum centile for block modes searched (-\/blockmodelimit). 
+
+Valid values are between 1 and 100. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00489}{489}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_a1985670205a89fcb92ba1995e6645c5e}\index{astcenc\_config@{astcenc\_config}!tune\_candidate\_limit@{tune\_candidate\_limit}}
+\index{tune\_candidate\_limit@{tune\_candidate\_limit}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_candidate\_limit}{tune\_candidate\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__config_a1985670205a89fcb92ba1995e6645c5e} 
+unsigned int astcenc\+\_\+config\+::tune\+\_\+candidate\+\_\+limit}
+
+
+
+The number of trial candidates per mode search (-\/candidatelimit). 
+
+Valid values are between 1 and TUNE\+\_\+\+MAX\+\_\+\+TRIAL\+\_\+\+CANDIDATES. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00504}{504}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_a2065412aaae88cff4e1f648946e13181}\index{astcenc\_config@{astcenc\_config}!tune\_db\_limit@{tune\_db\_limit}}
+\index{tune\_db\_limit@{tune\_db\_limit}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_db\_limit}{tune\_db\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__config_a2065412aaae88cff4e1f648946e13181} 
+float astcenc\+\_\+config\+::tune\+\_\+db\+\_\+limit}
+
+
+
+The dB threshold for stopping block search (-\/dblimit). 
+
+This option is ineffective for HDR textures. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00532}{532}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_a1ca7ffa6cf39b0236c3ac07a81e41748}\index{astcenc\_config@{astcenc\_config}!tune\_mse\_overshoot@{tune\_mse\_overshoot}}
+\index{tune\_mse\_overshoot@{tune\_mse\_overshoot}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_mse\_overshoot}{tune\_mse\_overshoot}}
+{\footnotesize\ttfamily \label{structastcenc__config_a1ca7ffa6cf39b0236c3ac07a81e41748} 
+float astcenc\+\_\+config\+::tune\+\_\+mse\+\_\+overshoot}
+
+
+
+The amount of MSE overshoot needed to early-\/out trials. 
+
+The first early-\/out is for 1 partition, 1 plane trials, where we try a minimal encode using the high probability block modes. This can short-\/cut compression for simple blocks.
+
+The second early-\/out is for refinement trials, where we can exit refinement once quality is reached. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00543}{543}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_aa7930792899cf0f4e06d0443e7c7c376}\index{astcenc\_config@{astcenc\_config}!tune\_partition\_count\_limit@{tune\_partition\_count\_limit}}
+\index{tune\_partition\_count\_limit@{tune\_partition\_count\_limit}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_partition\_count\_limit}{tune\_partition\_count\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__config_aa7930792899cf0f4e06d0443e7c7c376} 
+unsigned int astcenc\+\_\+config\+::tune\+\_\+partition\+\_\+count\+\_\+limit}
+
+
+
+The maximum number of partitions searched (-\/partitioncountlimit). 
+
+Valid values are between 1 and 4. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00461}{461}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_ae756e28f11bd615a23198c4ae2b1e90f}\index{astcenc\_config@{astcenc\_config}!tune\_refinement\_limit@{tune\_refinement\_limit}}
+\index{tune\_refinement\_limit@{tune\_refinement\_limit}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_refinement\_limit}{tune\_refinement\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__config_ae756e28f11bd615a23198c4ae2b1e90f} 
+unsigned int astcenc\+\_\+config\+::tune\+\_\+refinement\+\_\+limit}
+
+
+
+The maximum iterative refinements applied (-\/refinementlimit). 
+
+Valid values are between 1 and N; there is no technical upper limit but little benefit is expected after N=4. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00497}{497}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__config_a00c34d7b516c391a763592497da58312}\index{astcenc\_config@{astcenc\_config}!tune\_search\_mode0\_enable@{tune\_search\_mode0\_enable}}
+\index{tune\_search\_mode0\_enable@{tune\_search\_mode0\_enable}!astcenc\_config@{astcenc\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_search\_mode0\_enable}{tune\_search\_mode0\_enable}}
+{\footnotesize\ttfamily \label{structastcenc__config_a00c34d7b516c391a763592497da58312} 
+float astcenc\+\_\+config\+::tune\+\_\+search\+\_\+mode0\+\_\+enable}
+
+
+
+The config enable for the mode0 fast-\/path search. 
+
+If this is set to TUNE\+\_\+\+MIN\+\_\+\+TEXELS\+\_\+\+MODE0 or higher then the early-\/out fast mode0 search is enabled. This option is ineffective for 3D block sizes. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00572}{572}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc_8h}{astcenc.\+h}}\end{DoxyCompactItemize}

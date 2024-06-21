@@ -1,0 +1,10 @@
+<map id="normalize" name="normalize">
+<area shape="rect" id="Node000001" title="Normalize a non&#45;zero length vector to unit length." alt="" coords="5,55,84,80"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__common__4_8h.html#a6d7561f8f0ebee752b0e217101d9d5f3" title="Return the dot product for the full 4 lanes, returning vector." alt="" coords="134,29,174,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,56,120,47,121,52,85,61"/>
+<area shape="rect" id="Node000004" href="$astcenc__vecmathlib__avx2__8_8h.html#a46b31b19ff13c14adb023db4b5df8e52" title="Return the sqrt of the lanes in the vector." alt="" coords="132,79,176,104"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="85,73,119,81,118,86,84,79"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#aacd26478e4fe1f97a5d47e8adaacc898" title="Return the horizontal sum of a vector." alt="" coords="224,29,288,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="174,39,210,39,210,45,174,45"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="238,30,234,21,236,12,244,5,256,3,270,6,277,15,273,18,267,11,256,8,246,10,241,14,240,20,243,28"/>
+</map>

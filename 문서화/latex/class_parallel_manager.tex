@@ -1,0 +1,642 @@
+\doxysection{Parallel\+Manager 클래스 참조}
+\hypertarget{class_parallel_manager}{}\label{class_parallel_manager}\index{ParallelManager@{ParallelManager}}
+
+
+Functions and data declarations for the outer context.  
+
+
+
+
+{\ttfamily \#include $<$astcenc\+\_\+internal\+\_\+entry.\+h$>$}
+
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_parallel_manager_a1e02cb39549d6da06d04872d6f800af1}{Parallel\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Create a new \doxylink{class_parallel_manager}{Parallel\+Manager}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_parallel_manager_a9dfbf8571d608ce0d4196ac32184eea5}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset the tracker for a new processing batch. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_parallel_manager_af5c7b0a9139c6f1709ead3f135f0a861}{init}} (std\+::function$<$ unsigned int(void)$>$ init\+\_\+func)
+\begin{DoxyCompactList}\small\item\em Trigger the pipeline stage init step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_parallel_manager_a262e4af2afe0b0e458cde249d653c213}{init}} (unsigned int task\+\_\+count, \mbox{\hyperlink{astcenc_8h_ac79f6173b76e98afecc86b24412e6427}{astcenc\+\_\+progress\+\_\+callback}} callback)
+\begin{DoxyCompactList}\small\item\em Trigger the pipeline stage init step. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_parallel_manager_ae0bb955f3fa52427590633355f0da01c}{get\+\_\+task\+\_\+assignment}} (unsigned int granule, unsigned int \&count)
+\begin{DoxyCompactList}\small\item\em Request a task assignment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_parallel_manager_a5236e474ddffa7f805e425f1dc660d1c}{complete\+\_\+task\+\_\+assignment}} (unsigned int count)
+\begin{DoxyCompactList}\small\item\em Complete a task assignment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_parallel_manager_afdfb2d5fce334f335edb01c8106e784c}{wait}} ()
+\begin{DoxyCompactList}\small\item\em Wait for stage processing to complete. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_parallel_manager_aa4855579e8b5efa4190e1f30db498300}{term}} (std\+::function$<$ void(void)$>$ term\+\_\+func)
+\begin{DoxyCompactList}\small\item\em Trigger the pipeline stage term step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mutex \mbox{\hyperlink{class_parallel_manager_a78c2b0d70371da3256f106fcbf0e0de8}{m\+\_\+lock}}
+\begin{DoxyCompactList}\small\item\em Lock used for critical section and condition synchronization. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_parallel_manager_a7c45a88ba849131d1f1b480d6bb5c4a0}{m\+\_\+init\+\_\+done}}
+\begin{DoxyCompactList}\small\item\em True if the stage \doxylink{class_parallel_manager_af5c7b0a9139c6f1709ead3f135f0a861}{init()} step has been executed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_parallel_manager_a7bc9946d3d066f031eac30e2946a691e}{m\+\_\+term\+\_\+done}}
+\begin{DoxyCompactList}\small\item\em True if the stage \doxylink{class_parallel_manager_aa4855579e8b5efa4190e1f30db498300}{term()} step has been executed. \end{DoxyCompactList}\item 
+std\+::condition\+\_\+variable \mbox{\hyperlink{class_parallel_manager_aa80d8c651189bd0226bcd5191c237600}{m\+\_\+complete}}
+\begin{DoxyCompactList}\small\item\em Condition variable for tracking stage processing completion. \end{DoxyCompactList}\item 
+std\+::atomic$<$ unsigned int $>$ \mbox{\hyperlink{class_parallel_manager_a76cdf9b5d6096679945bbe0bd9b44bb2}{m\+\_\+start\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em Number of tasks started, but not necessarily finished. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_parallel_manager_ade2c969d0ba13af71389a2d948d9c097}{m\+\_\+done\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em Number of tasks finished. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_parallel_manager_ac6bf316b25d3c2c70a2c8a6fb8105226}{m\+\_\+task\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em Number of tasks that need to be processed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc_8h_ac79f6173b76e98afecc86b24412e6427}{astcenc\+\_\+progress\+\_\+callback}} \mbox{\hyperlink{class_parallel_manager_aab2e7503263926e0bbd3d801471d19f4}{m\+\_\+callback}}
+\begin{DoxyCompactList}\small\item\em Progress callback (optional). \end{DoxyCompactList}\item 
+std\+::mutex \mbox{\hyperlink{class_parallel_manager_ac5332fbb1f0efebbc94ed9e686c9f95b}{m\+\_\+callback\+\_\+lock}}
+\begin{DoxyCompactList}\small\item\em Lock used for callback synchronization. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_parallel_manager_a8bd79d543760c771790410d854e749e8}{m\+\_\+callback\+\_\+min\+\_\+diff}}
+\begin{DoxyCompactList}\small\item\em Minimum progress before making a callback. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_parallel_manager_abbdfb2955b00fc8efa01b4fca87b4185}{m\+\_\+callback\+\_\+last\+\_\+value}}
+\begin{DoxyCompactList}\small\item\em Last progress callback value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+Functions and data declarations for the outer context. 
+
+The outer context includes thread-\/pool management, which is slower to compile due to increased use of C++ stdlib. The inner context used in the majority of the codec library does not include this.
+
+A simple counter-\/based manager for parallel task execution.
+
+The task processing execution consists of\+: \begin{DoxyVerb}* A single-threaded init stage.
+* A multi-threaded processing stage.
+* A condition variable so threads can wait for processing completion.
+\end{DoxyVerb}
+ The init stage will be executed by the first thread to arrive in the critical section, there is no main thread in the thread pool.
+
+The processing stage uses dynamic dispatch to assign task tickets to threads on an on-\/demand basis. Threads may each therefore executed different numbers of tasks, depending on their processing complexity. The task queue and the task tickets are just counters; the caller must map these integers to an actual processing partition in a specific problem domain.
+
+The exit wait condition is needed to ensure processing has finished before a worker thread can progress to the next stage of the pipeline. Specifically a worker may exit the processing stage because there are no new tasks to assign to it while other worker threads are still processing. Calling {\ttfamily \doxylink{class_parallel_manager_afdfb2d5fce334f335edb01c8106e784c}{wait()}} will ensure that all other worker have finished before the thread can proceed.
+
+The basic usage model\+: \begin{DoxyVerb}// --------- From single-threaded code ---------
+
+// Reset the tracker state
+manager->reset()
+
+// --------- From multi-threaded code ---------
+
+// Run the stage init; only first thread actually runs the lambda
+manager->init(<lambda>)
+
+do
+{
+    // Request a task assignment
+    uint task_count;
+    uint base_index = manager->get_tasks(<granule>, task_count);
+
+    // Process any tasks we were given (task_count <= granule size)
+    if (task_count)
+    {
+        // Run the user task processing code for N tasks here
+        ...
+
+        // Flag these tasks as complete
+        manager->complete_tasks(task_count);
+    }
+} while (task_count);
+
+// Wait for all threads to complete tasks before progressing
+manager->wait()
+
+ // Run the stage term; only first thread actually runs the lambda
+manager->term(<lambda>)
+\end{DoxyVerb}
+ 
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00097}{97}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_parallel_manager_a1e02cb39549d6da06d04872d6f800af1}\index{ParallelManager@{ParallelManager}!ParallelManager@{ParallelManager}}
+\index{ParallelManager@{ParallelManager}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{ParallelManager()}{ParallelManager()}}
+{\footnotesize\ttfamily \label{class_parallel_manager_a1e02cb39549d6da06d04872d6f800af1} 
+Parallel\+Manager\+::\+Parallel\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a new \doxylink{class_parallel_manager}{Parallel\+Manager}. 
+
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00135}{135}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00136\ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_a9dfbf8571d608ce0d4196ac32184eea5}{reset}}();}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parallel_manager_a1e02cb39549d6da06d04872d6f800af1_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_parallel_manager_a5236e474ddffa7f805e425f1dc660d1c}\index{ParallelManager@{ParallelManager}!complete\_task\_assignment@{complete\_task\_assignment}}
+\index{complete\_task\_assignment@{complete\_task\_assignment}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{complete\_task\_assignment()}{complete\_task\_assignment()}}
+{\footnotesize\ttfamily \label{class_parallel_manager_a5236e474ddffa7f805e425f1dc660d1c} 
+void Parallel\+Manager\+::complete\+\_\+task\+\_\+assignment (\begin{DoxyParamCaption}\item[{unsigned int}]{count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Complete a task assignment. 
+
+Mark {\ttfamily count} tasks as complete. This will notify all threads blocked on {\ttfamily \doxylink{class_parallel_manager_afdfb2d5fce334f335edb01c8106e784c}{wait()}} if this completes the processing of the stage.
+
+
+\begin{DoxyParams}{매개변수}
+{\em count} & The number of completed tasks. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00232}{232}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00233\ \ \ \ \ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Note:\ m\_done\_count\ cannot\ use\ an\ atomic\ without\ the\ mutex;\ this\ has\ a\ race\ between\ the}}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ update\ here\ and\ the\ wait()\ for\ other\ threads}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ local\_count;}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ local\_last\_value;}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ lck(\mbox{\hyperlink{class_parallel_manager_a78c2b0d70371da3256f106fcbf0e0de8}{m\_lock}});}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_ade2c969d0ba13af71389a2d948d9c097}{m\_done\_count}}\ +=\ count;}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ local\_count\ =\ \mbox{\hyperlink{class_parallel_manager_ade2c969d0ba13af71389a2d948d9c097}{m\_done\_count}};}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ local\_last\_value\ =\ \mbox{\hyperlink{class_parallel_manager_abbdfb2955b00fc8efa01b4fca87b4185}{m\_callback\_last\_value}};}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_parallel_manager_ade2c969d0ba13af71389a2d948d9c097}{m\_done\_count}}\ ==\ \mbox{\hyperlink{class_parallel_manager_ac6bf316b25d3c2c70a2c8a6fb8105226}{m\_task\_count}})}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ensure\ the\ progress\ bar\ hits\ 100\%}}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_parallel_manager_aab2e7503263926e0bbd3d801471d19f4}{m\_callback}})}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ cblck(\mbox{\hyperlink{class_parallel_manager_ac5332fbb1f0efebbc94ed9e686c9f95b}{m\_callback\_lock}});}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_aab2e7503263926e0bbd3d801471d19f4}{m\_callback}}(100.0f);}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_abbdfb2955b00fc8efa01b4fca87b4185}{m\_callback\_last\_value}}\ =\ 100.0f;}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lck.unlock();}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_aa80d8c651189bd0226bcd5191c237600}{m\_complete}}.notify\_all();}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Process\ progress\ callback\ if\ we\ have\ one}}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_parallel_manager_aab2e7503263926e0bbd3d801471d19f4}{m\_callback}})}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Initial\ lockless\ test\ -\/\ have\ we\ progressed\ enough\ to\ emit?}}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ num\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(local\_count);}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ den\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\mbox{\hyperlink{class_parallel_manager_ac6bf316b25d3c2c70a2c8a6fb8105226}{m\_task\_count}});}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ this\_value\ =\ \ (num\ /\ den)\ *\ 100.0f;}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ report\_test\ =\ (this\_value\ -\/\ local\_last\_value)\ >\ \mbox{\hyperlink{class_parallel_manager_a8bd79d543760c771790410d854e749e8}{m\_callback\_min\_diff}};}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Recheck\ under\ lock,\ because\ another\ thread\ might\ report\ first}}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (report\_test)}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ cblck(\mbox{\hyperlink{class_parallel_manager_ac5332fbb1f0efebbc94ed9e686c9f95b}{m\_callback\_lock}});}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ report\_retest\ =\ (this\_value\ -\/\ \mbox{\hyperlink{class_parallel_manager_abbdfb2955b00fc8efa01b4fca87b4185}{m\_callback\_last\_value}})\ >\ \mbox{\hyperlink{class_parallel_manager_a8bd79d543760c771790410d854e749e8}{m\_callback\_min\_diff}};}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (report\_retest)}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_aab2e7503263926e0bbd3d801471d19f4}{m\_callback}}(this\_value);}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_abbdfb2955b00fc8efa01b4fca87b4185}{m\_callback\_last\_value}}\ =\ this\_value;}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00280\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parallel_manager_a5236e474ddffa7f805e425f1dc660d1c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_parallel_manager_ae0bb955f3fa52427590633355f0da01c}\index{ParallelManager@{ParallelManager}!get\_task\_assignment@{get\_task\_assignment}}
+\index{get\_task\_assignment@{get\_task\_assignment}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{get\_task\_assignment()}{get\_task\_assignment()}}
+{\footnotesize\ttfamily \label{class_parallel_manager_ae0bb955f3fa52427590633355f0da01c} 
+unsigned int Parallel\+Manager\+::get\+\_\+task\+\_\+assignment (\begin{DoxyParamCaption}\item[{unsigned int}]{granule}{, }\item[{unsigned int \&}]{count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Request a task assignment. 
+
+Assign up to {\ttfamily granule} tasks to the caller for processing.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em granule} & Maximum number of tasks that can be assigned. \\
+\hline
+\mbox{\texttt{ out}}  & {\em count} & Actual number of tasks assigned, or zero if no tasks were assigned.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+Task index of the first assigned task; assigned tasks increment from this. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00211}{211}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00212\ \ \ \ \ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ base\ =\ \mbox{\hyperlink{class_parallel_manager_a76cdf9b5d6096679945bbe0bd9b44bb2}{m\_start\_count}}.fetch\_add(granule,\ std::memory\_order\_relaxed);}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (base\ >=\ \mbox{\hyperlink{class_parallel_manager_ac6bf316b25d3c2c70a2c8a6fb8105226}{m\_task\_count}})}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ count\ =\ 0;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ count\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(\mbox{\hyperlink{class_parallel_manager_ac6bf316b25d3c2c70a2c8a6fb8105226}{m\_task\_count}}\ -\/\ base,\ granule);}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ base;}
+\DoxyCodeLine{00222\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{class_parallel_manager_ae0bb955f3fa52427590633355f0da01c_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parallel_manager_ae0bb955f3fa52427590633355f0da01c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_parallel_manager_af5c7b0a9139c6f1709ead3f135f0a861}\index{ParallelManager@{ParallelManager}!init@{init}}
+\index{init@{init}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_parallel_manager_af5c7b0a9139c6f1709ead3f135f0a861} 
+void Parallel\+Manager\+::init (\begin{DoxyParamCaption}\item[{std\+::function$<$ unsigned int(void)$>$}]{init\+\_\+func}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Trigger the pipeline stage init step. 
+
+This can be called from multi-\/threaded code. The first thread to hit this will process the initialization. Other threads will block and wait for it to complete.
+
+
+\begin{DoxyParams}{매개변수}
+{\em init\+\_\+func} & Callable which executes the stage initialization. It must return the total number of tasks in the stage. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00167}{167}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00168\ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lck(\mbox{\hyperlink{class_parallel_manager_a78c2b0d70371da3256f106fcbf0e0de8}{m\_lock}});}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_parallel_manager_a7c45a88ba849131d1f1b480d6bb5c4a0}{m\_init\_done}})}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_ac6bf316b25d3c2c70a2c8a6fb8105226}{m\_task\_count}}\ =\ init\_func();}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_a7c45a88ba849131d1f1b480d6bb5c4a0}{m\_init\_done}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00175\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parallel_manager_af5c7b0a9139c6f1709ead3f135f0a861_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_parallel_manager_a262e4af2afe0b0e458cde249d653c213}\index{ParallelManager@{ParallelManager}!init@{init}}
+\index{init@{init}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_parallel_manager_a262e4af2afe0b0e458cde249d653c213} 
+void Parallel\+Manager\+::init (\begin{DoxyParamCaption}\item[{unsigned int}]{task\+\_\+count}{, }\item[{\mbox{\hyperlink{astcenc_8h_ac79f6173b76e98afecc86b24412e6427}{astcenc\+\_\+progress\+\_\+callback}}}]{callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Trigger the pipeline stage init step. 
+
+This can be called from multi-\/threaded code. The first thread to hit this will process the initialization. Other threads will block and wait for it to complete.
+
+
+\begin{DoxyParams}{매개변수}
+{\em task\+\_\+count} & Total number of tasks needing processing. \\
+\hline
+{\em callback} & Function pointer for progress status callbacks. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00186}{186}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00187\ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lck(\mbox{\hyperlink{class_parallel_manager_a78c2b0d70371da3256f106fcbf0e0de8}{m\_lock}});}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_parallel_manager_a7c45a88ba849131d1f1b480d6bb5c4a0}{m\_init\_done}})}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_aab2e7503263926e0bbd3d801471d19f4}{m\_callback}}\ =\ callback;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_ac6bf316b25d3c2c70a2c8a6fb8105226}{m\_task\_count}}\ =\ task\_count;}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_a7c45a88ba849131d1f1b480d6bb5c4a0}{m\_init\_done}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Report\ every\ 1\%\ or\ 4096\ blocks,\ whichever\ is\ larger,\ to\ avoid\ callback\ overhead}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ min\_diff\ =\ (4096.0f\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(task\_count))\ *\ 100.0f;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_a8bd79d543760c771790410d854e749e8}{m\_callback\_min\_diff}}\ =\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}(min\_diff,\ 1.0f);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{class_parallel_manager_a262e4af2afe0b0e458cde249d653c213_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_parallel_manager_a9dfbf8571d608ce0d4196ac32184eea5}\index{ParallelManager@{ParallelManager}!reset@{reset}}
+\index{reset@{reset}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \label{class_parallel_manager_a9dfbf8571d608ce0d4196ac32184eea5} 
+void Parallel\+Manager\+::reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reset the tracker for a new processing batch. 
+
+This must be called from single-\/threaded code before starting the multi-\/threaded processing operations. 
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00146}{146}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00147\ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_a7c45a88ba849131d1f1b480d6bb5c4a0}{m\_init\_done}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_a7bc9946d3d066f031eac30e2946a691e}{m\_term\_done}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_a76cdf9b5d6096679945bbe0bd9b44bb2}{m\_start\_count}}\ =\ 0;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_ade2c969d0ba13af71389a2d948d9c097}{m\_done\_count}}\ =\ 0;}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_ac6bf316b25d3c2c70a2c8a6fb8105226}{m\_task\_count}}\ =\ 0;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_aab2e7503263926e0bbd3d801471d19f4}{m\_callback}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_abbdfb2955b00fc8efa01b4fca87b4185}{m\_callback\_last\_value}}\ =\ 0.0f;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_a8bd79d543760c771790410d854e749e8}{m\_callback\_min\_diff}}\ =\ 1.0f;}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parallel_manager_a9dfbf8571d608ce0d4196ac32184eea5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_parallel_manager_aa4855579e8b5efa4190e1f30db498300}\index{ParallelManager@{ParallelManager}!term@{term}}
+\index{term@{term}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{term()}{term()}}
+{\footnotesize\ttfamily \label{class_parallel_manager_aa4855579e8b5efa4190e1f30db498300} 
+void Parallel\+Manager\+::term (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(void)$>$}]{term\+\_\+func}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Trigger the pipeline stage term step. 
+
+This can be called from multi-\/threaded code. The first thread to hit this will process the work pool termination. Caller must have called {\ttfamily \doxylink{class_parallel_manager_afdfb2d5fce334f335edb01c8106e784c}{wait()}} prior to calling this function to ensure that processing is complete.
+
+
+\begin{DoxyParams}{매개변수}
+{\em term\+\_\+func} & Callable which executes the stage termination. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00300}{300}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00301\ \ \ \ \ \{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lck(\mbox{\hyperlink{class_parallel_manager_a78c2b0d70371da3256f106fcbf0e0de8}{m\_lock}});}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_parallel_manager_a7bc9946d3d066f031eac30e2946a691e}{m\_term\_done}})}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ term\_func();}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_a7bc9946d3d066f031eac30e2946a691e}{m\_term\_done}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00308\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parallel_manager_aa4855579e8b5efa4190e1f30db498300_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_parallel_manager_afdfb2d5fce334f335edb01c8106e784c}\index{ParallelManager@{ParallelManager}!wait@{wait}}
+\index{wait@{wait}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily \label{class_parallel_manager_afdfb2d5fce334f335edb01c8106e784c} 
+void Parallel\+Manager\+::wait (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wait for stage processing to complete. 
+
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00285}{285}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00286\ \ \ \ \ \{}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ lck(\mbox{\hyperlink{class_parallel_manager_a78c2b0d70371da3256f106fcbf0e0de8}{m\_lock}});}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parallel_manager_aa80d8c651189bd0226bcd5191c237600}{m\_complete}}.wait(lck,\ [\textcolor{keyword}{this}]\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parallel_manager_ade2c969d0ba13af71389a2d948d9c097}{m\_done\_count}}\ ==\ \mbox{\hyperlink{class_parallel_manager_ac6bf316b25d3c2c70a2c8a6fb8105226}{m\_task\_count}};\ \});}
+\DoxyCodeLine{00289\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parallel_manager_afdfb2d5fce334f335edb01c8106e784c_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_parallel_manager_aab2e7503263926e0bbd3d801471d19f4}\index{ParallelManager@{ParallelManager}!m\_callback@{m\_callback}}
+\index{m\_callback@{m\_callback}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{m\_callback}{m\_callback}}
+{\footnotesize\ttfamily \label{class_parallel_manager_aab2e7503263926e0bbd3d801471d19f4} 
+\mbox{\hyperlink{astcenc_8h_ac79f6173b76e98afecc86b24412e6427}{astcenc\+\_\+progress\+\_\+callback}} Parallel\+Manager\+::m\+\_\+callback\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Progress callback (optional). 
+
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00122}{122}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_parallel_manager_abbdfb2955b00fc8efa01b4fca87b4185}\index{ParallelManager@{ParallelManager}!m\_callback\_last\_value@{m\_callback\_last\_value}}
+\index{m\_callback\_last\_value@{m\_callback\_last\_value}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{m\_callback\_last\_value}{m\_callback\_last\_value}}
+{\footnotesize\ttfamily \label{class_parallel_manager_abbdfb2955b00fc8efa01b4fca87b4185} 
+float Parallel\+Manager\+::m\+\_\+callback\+\_\+last\+\_\+value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Last progress callback value. 
+
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00131}{131}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_parallel_manager_ac5332fbb1f0efebbc94ed9e686c9f95b}\index{ParallelManager@{ParallelManager}!m\_callback\_lock@{m\_callback\_lock}}
+\index{m\_callback\_lock@{m\_callback\_lock}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{m\_callback\_lock}{m\_callback\_lock}}
+{\footnotesize\ttfamily \label{class_parallel_manager_ac5332fbb1f0efebbc94ed9e686c9f95b} 
+std\+::mutex Parallel\+Manager\+::m\+\_\+callback\+\_\+lock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Lock used for callback synchronization. 
+
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00125}{125}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_parallel_manager_a8bd79d543760c771790410d854e749e8}\index{ParallelManager@{ParallelManager}!m\_callback\_min\_diff@{m\_callback\_min\_diff}}
+\index{m\_callback\_min\_diff@{m\_callback\_min\_diff}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{m\_callback\_min\_diff}{m\_callback\_min\_diff}}
+{\footnotesize\ttfamily \label{class_parallel_manager_a8bd79d543760c771790410d854e749e8} 
+float Parallel\+Manager\+::m\+\_\+callback\+\_\+min\+\_\+diff\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Minimum progress before making a callback. 
+
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00128}{128}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_parallel_manager_aa80d8c651189bd0226bcd5191c237600}\index{ParallelManager@{ParallelManager}!m\_complete@{m\_complete}}
+\index{m\_complete@{m\_complete}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{m\_complete}{m\_complete}}
+{\footnotesize\ttfamily \label{class_parallel_manager_aa80d8c651189bd0226bcd5191c237600} 
+std\+::condition\+\_\+variable Parallel\+Manager\+::m\+\_\+complete\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Condition variable for tracking stage processing completion. 
+
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00110}{110}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_parallel_manager_ade2c969d0ba13af71389a2d948d9c097}\index{ParallelManager@{ParallelManager}!m\_done\_count@{m\_done\_count}}
+\index{m\_done\_count@{m\_done\_count}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{m\_done\_count}{m\_done\_count}}
+{\footnotesize\ttfamily \label{class_parallel_manager_ade2c969d0ba13af71389a2d948d9c097} 
+unsigned int Parallel\+Manager\+::m\+\_\+done\+\_\+count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of tasks finished. 
+
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00116}{116}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_parallel_manager_a7c45a88ba849131d1f1b480d6bb5c4a0}\index{ParallelManager@{ParallelManager}!m\_init\_done@{m\_init\_done}}
+\index{m\_init\_done@{m\_init\_done}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{m\_init\_done}{m\_init\_done}}
+{\footnotesize\ttfamily \label{class_parallel_manager_a7c45a88ba849131d1f1b480d6bb5c4a0} 
+bool Parallel\+Manager\+::m\+\_\+init\+\_\+done\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+True if the stage \doxylink{class_parallel_manager_af5c7b0a9139c6f1709ead3f135f0a861}{init()} step has been executed. 
+
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00104}{104}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_parallel_manager_a78c2b0d70371da3256f106fcbf0e0de8}\index{ParallelManager@{ParallelManager}!m\_lock@{m\_lock}}
+\index{m\_lock@{m\_lock}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{m\_lock}{m\_lock}}
+{\footnotesize\ttfamily \label{class_parallel_manager_a78c2b0d70371da3256f106fcbf0e0de8} 
+std\+::mutex Parallel\+Manager\+::m\+\_\+lock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Lock used for critical section and condition synchronization. 
+
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00101}{101}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_parallel_manager_a76cdf9b5d6096679945bbe0bd9b44bb2}\index{ParallelManager@{ParallelManager}!m\_start\_count@{m\_start\_count}}
+\index{m\_start\_count@{m\_start\_count}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{m\_start\_count}{m\_start\_count}}
+{\footnotesize\ttfamily \label{class_parallel_manager_a76cdf9b5d6096679945bbe0bd9b44bb2} 
+std\+::atomic$<$unsigned int$>$ Parallel\+Manager\+::m\+\_\+start\+\_\+count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of tasks started, but not necessarily finished. 
+
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00113}{113}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_parallel_manager_ac6bf316b25d3c2c70a2c8a6fb8105226}\index{ParallelManager@{ParallelManager}!m\_task\_count@{m\_task\_count}}
+\index{m\_task\_count@{m\_task\_count}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{m\_task\_count}{m\_task\_count}}
+{\footnotesize\ttfamily \label{class_parallel_manager_ac6bf316b25d3c2c70a2c8a6fb8105226} 
+unsigned int Parallel\+Manager\+::m\+\_\+task\+\_\+count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of tasks that need to be processed. 
+
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00119}{119}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_parallel_manager_a7bc9946d3d066f031eac30e2946a691e}\index{ParallelManager@{ParallelManager}!m\_term\_done@{m\_term\_done}}
+\index{m\_term\_done@{m\_term\_done}!ParallelManager@{ParallelManager}}
+\doxysubsubsection{\texorpdfstring{m\_term\_done}{m\_term\_done}}
+{\footnotesize\ttfamily \label{class_parallel_manager_a7bc9946d3d066f031eac30e2946a691e} 
+bool Parallel\+Manager\+::m\+\_\+term\+\_\+done\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+True if the stage \doxylink{class_parallel_manager_aa4855579e8b5efa4190e1f30db498300}{term()} step has been executed. 
+
+
+
+\mbox{\hyperlink{astcenc__internal__entry_8h_source}{astcenc\+\_\+internal\+\_\+entry.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal__entry_8h_source_l00107}{107}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__internal__entry_8h}{astcenc\+\_\+internal\+\_\+entry.\+h}}\end{DoxyCompactItemize}

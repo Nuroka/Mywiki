@@ -1,0 +1,8 @@
+<map id="encode_ise" name="encode_ise">
+<area shape="rect" id="Node000001" title="Encode a packed string using BISE." alt="" coords="5,5,93,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#ad922a3ed6098767968916265154b6f82" title="Return a 8&#45;bit mask code indicating mask status." alt="" coords="267,5,321,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,15,253,15,253,21,93,21"/>
+<area shape="rect" id="Node000003" href="$astcenc__integer__sequence_8cpp.html#a52b08548f8002494f05802fc24d36489" title="Write up to 8 bits at an arbitrary bit offset." alt="" coords="141,31,219,56"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="94,24,128,31,127,36,93,29"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="218,32,253,24,254,30,220,37"/>
+</map>

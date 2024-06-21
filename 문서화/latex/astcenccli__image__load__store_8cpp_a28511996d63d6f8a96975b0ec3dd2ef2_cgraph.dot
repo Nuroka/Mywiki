@@ -1,0 +1,22 @@
+digraph "load_image_with_stb"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="load_image_with_stb",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Load an image using STBImage to provide the loader."];
+  Node1 -> Node2 [id="edge8_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="astc_img_from_floatx4\l_array",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__image_8cpp.html#a6ee147f7602455b96f9ec14ae0d31dca",tooltip="Create an image from a 2D float data array."];
+  Node2 -> Node3 [id="edge9_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="alloc_image",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__image_8cpp.html#a860f8be85c860429c0df12b581015b68",tooltip="Functions for creating in-memory ASTC image structures."];
+  Node2 -> Node4 [id="edge10_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="float_to_float16",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__vecmathlib__neon__4_8h.html#ae8701a3f44d7b99016d54c3d6ee27581",tooltip="Return a float16 value for a float vector, using round-to-nearest."];
+  Node2 -> Node5 [id="edge11_Node000002_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="vint4::lane",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structvint4.html#a01e3f7debf73dc6c757fa36d585c9d17",tooltip="Get the scalar from a single lane."];
+  Node1 -> Node6 [id="edge12_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="astc_img_from_unorm8x4\l_array",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__image_8cpp.html#a9ecc1dac86584f7e086e9962fb6c0509",tooltip="Create an image from a 2D byte data array."];
+  Node6 -> Node3 [id="edge13_Node000006_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node7 [id="edge14_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="print_error",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__internal_8h.html#a699ebbd5f0143120e8ccaa26ae386b56",tooltip="Print a string to stderr."];
+}

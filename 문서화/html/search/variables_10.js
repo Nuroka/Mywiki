@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['r_0',['r',['../structastcenc__swizzle.html#a0c0124d7a26431ae7bbbf51a0e8f0c66',1,'astcenc_swizzle']]],
+  ['rbitmask_1',['rbitmask',['../structdds__pixelformat.html#a2e54c8ae4dcbc289a39fb3a8de14667f',1,'dds_pixelformat']]],
+  ['refprec_5f1plane_2',['refprec_1plane',['../structdecimation__mode.html#af7821f4c585e26acef567aca653879c1',1,'decimation_mode']]],
+  ['refprec_5f2planes_3',['refprec_2planes',['../structdecimation__mode.html#a3f0254c125ad2fab3716af8cc856b77a',1,'decimation_mode']]],
+  ['repeat_5fcount_4',['repeat_count',['../structcli__config__options.html#ad7f8190a774cc3922ce995e198002541',1,'cli_config_options']]],
+  ['repr_5',['repr',['../structwuffs__base____status____struct.html#a41d0e1b59d019e94b7f3c030d53db6e7',1,'wuffs_base__status__struct::repr'],['../structwuffs__base____token____struct.html#a210642017c67848d4379fc488f914c6d',1,'wuffs_base__token__struct::repr'],['../structwuffs__base____pixel__format____struct.html#acdc4fd4f3b4a1bdf26d81dc56dea8da9',1,'wuffs_base__pixel_format__struct::repr'],['../structwuffs__base____pixel__subsampling____struct.html#a20dbb3bb829f020748af7e5de43ef859',1,'wuffs_base__pixel_subsampling__struct::repr']]],
+  ['reserved_6',['reserved',['../structdds__header__dx10.html#a2c24ce907edcbac34b9e6c8e5968c397',1,'dds_header_dx10']]],
+  ['reserved1_7',['reserved1',['../structdds__header.html#aa94014f2a78ed532e11b7e8ce89ce095',1,'dds_header']]],
+  ['reserved2_8',['reserved2',['../structdds__header.html#acd97471168eda84ae2bff11725c41603',1,'dds_header']]],
+  ['resource_5fdimension_9',['resource_dimension',['../structdds__header__dx10.html#ae7185bb5a87294b8edf8f6cfa18f65e6',1,'dds_header_dx10']]],
+  ['restart_5fframe_10',['restart_frame',['../structwuffs__base____image__decoder____func__ptrs____struct.html#af6f0ee0224e31436334e6ee9e423257a',1,'wuffs_base__image_decoder__func_ptrs__struct']]],
+  ['rgb_5flns_11',['rgb_lns',['../structimage__block.html#af1a9e601f3d03dc488993b81258058e0',1,'image_block']]],
+  ['rgb_5fluma_5ferror_12',['rgb_luma_error',['../structencoding__choice__errors.html#a5db32b77467b23beb70562840f173a54',1,'encoding_choice_errors']]],
+  ['rgb_5fscale_5ferror_13',['rgb_scale_error',['../structencoding__choice__errors.html#a7833d66ba6360569a3cbad8a9d4c743f',1,'encoding_choice_errors']]],
+  ['rgbbitcount_14',['rgbbitcount',['../structdds__pixelformat.html#a70988d2b8bad835746090318a599fd7a',1,'dds_pixelformat']]],
+  ['rgbm_5fm_5fscale_15',['rgbm_m_scale',['../structastcenc__config.html#ae5bdf46b1afda62ec18cf882e2dbf199',1,'astcenc_config']]],
+  ['ri_16',['ri',['../structwuffs__base____io__buffer__meta____struct.html#af9d037a86417f7f7f7f0fb2be5c9e025',1,'wuffs_base__io_buffer_meta__struct::ri'],['../structwuffs__base____token__buffer__meta____struct.html#ae5d2b86793401a03e8849021230362ae',1,'wuffs_base__token_buffer_meta__struct::ri']]]
+];

@@ -1,0 +1,5 @@
+<map id="astc_img_from_unorm8x4_array" name="astc_img_from_unorm8x4_array">
+<area shape="rect" id="Node000001" title="Create an image from a 2D byte data array." alt="" coords="5,5,176,45"/>
+<area shape="rect" id="Node000002" href="$astcenccli__image_8cpp.html#a860f8be85c860429c0df12b581015b68" title="Functions for creating in&#45;memory ASTC image structures." alt="" coords="224,13,315,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,23,210,23,210,28,176,28"/>
+</map>

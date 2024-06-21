@@ -1,0 +1,11 @@
+digraph "quantize_and_unquantize_retain_top_two_bits"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="quantize_and_unquantize\l_retain_top_two_bits",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Quantize and unquantize a value ensuring top two bits are the same."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="quant_color",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__color__quantize_8cpp.html#a0af2fba0ed6cbe9e279c808e540eb74e",tooltip="Determine the quantized value given a quantization level."];
+}

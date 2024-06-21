@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Project1: C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-encoder-main/Source/astcenccli_internal.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Project1
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('astcenccli__internal_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">astcenccli_internal.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="astcenccli__internal_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-License-Identifier: Apache-2.0</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// Copyright 2011-2023 Arm Limited</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// use this file except in compliance with the License. You may obtain a copy</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// of the License at:</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//     http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// License for the specific language governing permissions and limitations</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// under the License.</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#ifndef ASTCENCCLI_INTERNAL_INCLUDED</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define ASTCENCCLI_INTERNAL_INCLUDED</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;cstdio&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &quot;<a class="code" href="astcenc_8h.html">astcenc.h</a>&quot;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="astcenc__mathlib_8h.html">astcenc_mathlib.h</a>&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structastc__compressed__image.html">   36</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structastc__compressed__image.html">astc_compressed_image</a></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structastc__compressed__image.html#aeafe1da3bf5227bcd020c62035d905fe">   39</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structastc__compressed__image.html#aeafe1da3bf5227bcd020c62035d905fe">block_x</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structastc__compressed__image.html#a819085bbeed627f0e6e33d7d8efb34cb">   42</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structastc__compressed__image.html#a819085bbeed627f0e6e33d7d8efb34cb">block_y</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structastc__compressed__image.html#a507b65951cf307eb7481c65929cb5e67">   45</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structastc__compressed__image.html#a507b65951cf307eb7481c65929cb5e67">block_z</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="structastc__compressed__image.html#ab8b069942fbe6cc5441abfe20053abff">   48</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structastc__compressed__image.html#ab8b069942fbe6cc5441abfe20053abff">dim_x</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structastc__compressed__image.html#a15c6ae8cb877cf74f963d1ea3d15afb3">   51</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structastc__compressed__image.html#a15c6ae8cb877cf74f963d1ea3d15afb3">dim_y</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structastc__compressed__image.html#a09c8a9676fc4b269cff40386515120e7">   54</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structastc__compressed__image.html#a09c8a9676fc4b269cff40386515120e7">dim_z</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structastc__compressed__image.html#a2f8dadc1beecd1f0b84e8c01078ebb75">   57</a></span>    uint8_t* <a class="code hl_variable" href="structastc__compressed__image.html#a2f8dadc1beecd1f0b84e8c01078ebb75">data</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structastc__compressed__image.html#ac18330848346858e41c3f9464deacb0f">   60</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structastc__compressed__image.html#ac18330848346858e41c3f9464deacb0f">data_len</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>};</div>
+</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="};">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="structcli__config__options.html">   66</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structcli__config__options.html">cli_config_options</a></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structcli__config__options.html#a5729ac031743bf09cedab9174c30dba7">   69</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structcli__config__options.html#a5729ac031743bf09cedab9174c30dba7">thread_count</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structcli__config__options.html#ad7f8190a774cc3922ce995e198002541">   72</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structcli__config__options.html#ad7f8190a774cc3922ce995e198002541">repeat_count</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structcli__config__options.html#aa280195b5d3e148b5d1a5ffa20ab2897">   75</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structcli__config__options.html#aa280195b5d3e148b5d1a5ffa20ab2897">array_size</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="structcli__config__options.html#a4435eda315b9fd7ce13dcbca064d49a2">   78</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structcli__config__options.html#a4435eda315b9fd7ce13dcbca064d49a2">silentmode</a>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structcli__config__options.html#aa1de498436670c2df73b4e2fdb81c9da">   81</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structcli__config__options.html#aa1de498436670c2df73b4e2fdb81c9da">y_flip</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="structcli__config__options.html#ae29681b91eca4dbccfed2888e71baaba">   84</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structcli__config__options.html#ae29681b91eca4dbccfed2888e71baaba">diagnostic_images</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="structcli__config__options.html#aca5d5736ae904c8d1728dd39631cb050">   87</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structcli__config__options.html#aca5d5736ae904c8d1728dd39631cb050">low_fstop</a>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="structcli__config__options.html#afae13b252bf41eaef171b9a15c8801e2">   90</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structcli__config__options.html#afae13b252bf41eaef171b9a15c8801e2">high_fstop</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="structcli__config__options.html#ac2c3ab39b201b862383511810879fee5">   93</a></span>    <a class="code hl_struct" href="structastcenc__swizzle.html">astcenc_swizzle</a> <a class="code hl_variable" href="structcli__config__options.html#ac2c3ab39b201b862383511810879fee5">swz_encode</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="structcli__config__options.html#ab5d2b28136e22f62f1efc73cb6ea565f">   96</a></span>    <a class="code hl_struct" href="structastcenc__swizzle.html">astcenc_swizzle</a> <a class="code hl_variable" href="structcli__config__options.html#ab5d2b28136e22f62f1efc73cb6ea565f">swz_decode</a>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>};</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="astcenccli__internal_8h.html#a699ebbd5f0143120e8ccaa26ae386b56">  102</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="astcenccli__internal_8h.html#a699ebbd5f0143120e8ccaa26ae386b56">print_error</a>(</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* format</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>) {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    fprintf(stderr, <span class="stringliteral">&quot;%s&quot;</span>, format);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
+</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> ... _Args&gt;</div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="astcenccli__internal_8h.html#a4a3f02fce6a0f57b6a1166483b5dffe4">  112</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="astcenccli__internal_8h.html#a699ebbd5f0143120e8ccaa26ae386b56">print_error</a>(</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* format,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    _Args...args</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    fprintf(stderr, format, args...);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>}</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><a class="code hl_struct" href="structastcenc__image.html">astcenc_image</a>* <a class="code hl_function" href="astcenccli__internal_8h.html#aff0de9c0d50e5630b61f0d6e597fcd65">load_ncimage</a>(</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* filename,</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordtype">bool</span> y_flip,</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordtype">bool</span>&amp; is_hdr,</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; component_count);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><a class="code hl_struct" href="structastcenc__image.html">astcenc_image</a>* <a class="code hl_variable" href="astcenccli__image__load__store_8cpp.html#ab9461ff96d07d9c2004c9599d2742150">load_png_with_wuffs</a>(</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* filename,</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordtype">bool</span> y_flip,</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordtype">bool</span>&amp; is_hdr,</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; component_count);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="keywordtype">bool</span> <a class="code hl_function" href="astcenccli__internal_8h.html#a263b2ab9e4335fc13f801ba569eed939">store_ncimage</a>(</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structastcenc__image.html">astcenc_image</a>* img,</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* filename,</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordtype">int</span> y_flip);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="keywordtype">int</span> <a class="code hl_function" href="astcenccli__internal_8h.html#a36fb7c666f502f49e4d18cf130a7958d">get_output_filename_enforced_bitness</a>(</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* filename);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><a class="code hl_struct" href="structastcenc__image.html">astcenc_image</a>* <a class="code hl_function" href="astcenccli__internal_8h.html#a860f8be85c860429c0df12b581015b68">alloc_image</a>(</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> bitness,</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> dim_x,</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> dim_y,</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> dim_z);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="keywordtype">void</span> <a class="code hl_function" href="astcenccli__internal_8h.html#aeb0cd9b24656f2c4dac144e89217057c">free_image</a>(</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <a class="code hl_struct" href="structastcenc__image.html">astcenc_image</a>* img);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="keywordtype">int</span> <a class="code hl_function" href="astcenccli__internal_8h.html#add1dea8ff2bad1b823a131776f37ee83">determine_image_components</a>(</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structastcenc__image.html">astcenc_image</a>* img);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="keywordtype">int</span> <a class="code hl_function" href="astcenccli__internal_8h.html#a6ef0eed7ff787726c2e16ab96196ed8b">load_cimage</a>(</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* filename,</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <a class="code hl_struct" href="structastc__compressed__image.html">astc_compressed_image</a>&amp; img);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="keywordtype">int</span> <a class="code hl_function" href="astcenccli__internal_8h.html#a9ba4a67ed1a59e71c22282996d48390b">store_cimage</a>(</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structastc__compressed__image.html">astc_compressed_image</a>&amp; img,</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* filename);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="keywordtype">bool</span> <a class="code hl_function" href="astcenccli__internal_8h.html#a10761592472e9cc4d632946459d00bee">load_ktx_compressed_image</a>(</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* filename,</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keywordtype">bool</span>&amp; is_srgb,</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    <a class="code hl_struct" href="structastc__compressed__image.html">astc_compressed_image</a>&amp; img) ;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="keywordtype">bool</span> <a class="code hl_function" href="astcenccli__internal_8h.html#a3e674d4952496a98a942815392b1a3a5">store_ktx_compressed_image</a>(</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structastc__compressed__image.html">astc_compressed_image</a>&amp; img,</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* filename,</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <span class="keywordtype">bool</span> is_srgb);</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><a class="code hl_struct" href="structastcenc__image.html">astcenc_image</a>* <a class="code hl_function" href="astcenccli__internal_8h.html#a6ee147f7602455b96f9ec14ae0d31dca">astc_img_from_floatx4_array</a>(</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="keyword">const</span> <span class="keywordtype">float</span>* data,</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> dim_x,</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> dim_y,</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="keywordtype">bool</span> y_flip);</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span><a class="code hl_struct" href="structastcenc__image.html">astcenc_image</a>* <a class="code hl_function" href="astcenccli__internal_8h.html#a9ecc1dac86584f7e086e9962fb6c0509">astc_img_from_unorm8x4_array</a>(</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    <span class="keyword">const</span> uint8_t* data,</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> dim_x,</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> dim_y,</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="keywordtype">bool</span> y_flip);</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="keywordtype">float</span>* <a class="code hl_function" href="astcenccli__internal_8h.html#ad7c980fed3ad50dec28ebfa941f4a7b7">floatx4_array_from_astc_img</a>(</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structastcenc__image.html">astcenc_image</a>* img,</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    <span class="keywordtype">bool</span> y_flip,</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> z_index);</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span> </div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>uint8_t* <a class="code hl_function" href="astcenccli__internal_8h.html#a9706acc840e996830702a831d846559c">unorm8x4_array_from_astc_img</a>(</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structastcenc__image.html">astcenc_image</a>* img,</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    <span class="keywordtype">bool</span> y_flip);</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span><span class="comment">/* ============================================================================</span></div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span><span class="comment">  Functions for printing build info and help messages</span></div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="comment">============================================================================ */</span></div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="keywordtype">void</span> <a class="code hl_function" href="astcenccli__internal_8h.html#a3cf209b603114ef9a2c2c9e28697bbe7">astcenc_print_header</a>();</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span><span class="keywordtype">void</span> <a class="code hl_function" href="astcenccli__internal_8h.html#af5bf7c6ac05f0f401cfde7d73ed2b852">astcenc_print_shorthelp</a>();</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span> </div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="keywordtype">void</span> <a class="code hl_function" href="astcenccli__internal_8h.html#a7377ad0be8285dd96c932d2744fc4641">astcenc_print_longhelp</a>();</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span> </div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span><span class="keywordtype">void</span> <a class="code hl_function" href="astcenccli__internal_8h.html#a478be461420681d7c83aa89569ea92c4">compute_error_metrics</a>(</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    <span class="keywordtype">bool</span> compute_hdr_metrics,</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    <span class="keywordtype">bool</span> compute_normal_metrics,</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    <span class="keywordtype">int</span> input_components,</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structastcenc__image.html">astcenc_image</a>* img1,</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structastcenc__image.html">astcenc_image</a>* img2,</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    <span class="keywordtype">int</span> fstop_lo,</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>    <span class="keywordtype">int</span> fstop_hi);</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span> </div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span><span class="keywordtype">double</span> <a class="code hl_function" href="astcenccli__internal_8h.html#af7ab092ab10d65db3b9051a12420fa52">get_time</a>();</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span> </div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span><span class="keywordtype">int</span> <a class="code hl_function" href="astcenccli__internal_8h.html#a17e6f066d58e29a143787fe2f78d19d6">get_cpu_count</a>();</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span> </div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span><span class="keywordtype">void</span> <a class="code hl_function" href="astcenccli__internal_8h.html#aaa9dcd56cd7089c481e7ef8355ae5c2f">launch_threads</a>(</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* operation,</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>    <span class="keywordtype">int</span> thread_count,</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>    <span class="keywordtype">void</span> (*func)(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <span class="keywordtype">void</span>*),</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>    <span class="keywordtype">void</span> *payload);</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span> </div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span><span class="keywordtype">int</span> <a class="code hl_function" href="astcenccli__internal_8h.html#a073d18880f24fd648661b01d2e20340e">astcenc_main</a>(</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>    <span class="keywordtype">int</span> argc,</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>    <span class="keywordtype">char</span> **argv);</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span> </div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aastcenc_8h_html"><div class="ttname"><a href="astcenc_8h.html">astcenc.h</a></div></div>
+<div class="ttc" id="aastcenc__mathlib_8h_html"><div class="ttname"><a href="astcenc__mathlib_8h.html">astcenc_mathlib.h</a></div></div>
+<div class="ttc" id="aastcenccli__image__load__store_8cpp_html_ab9461ff96d07d9c2004c9599d2742150"><div class="ttname"><a href="astcenccli__image__load__store_8cpp.html#ab9461ff96d07d9c2004c9599d2742150">load_png_with_wuffs</a></div><div class="ttdeci">static const struct @2 load_png_with_wuffs[]</div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_a073d18880f24fd648661b01d2e20340e"><div class="ttname"><a href="astcenccli__internal_8h.html#a073d18880f24fd648661b01d2e20340e">astcenc_main</a></div><div class="ttdeci">int astcenc_main(int argc, char **argv)</div><div class="ttdoc">The main entry point.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__toplevel_8cpp_source.html#l01885">astcenccli_toplevel.cpp:1885</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_a10761592472e9cc4d632946459d00bee"><div class="ttname"><a href="astcenccli__internal_8h.html#a10761592472e9cc4d632946459d00bee">load_ktx_compressed_image</a></div><div class="ttdeci">bool load_ktx_compressed_image(const char *filename, bool &amp;is_srgb, astc_compressed_image &amp;img)</div><div class="ttdoc">Load a compressed .ktx image.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__image__load__store_8cpp_source.html#l01275">astcenccli_image_load_store.cpp:1275</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_a17e6f066d58e29a143787fe2f78d19d6"><div class="ttname"><a href="astcenccli__internal_8h.html#a17e6f066d58e29a143787fe2f78d19d6">get_cpu_count</a></div><div class="ttdeci">int get_cpu_count()</div><div class="ttdoc">Get the number of CPU cores.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__platform__dependents_8cpp_source.html#l00155">astcenccli_platform_dependents.cpp:155</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_a263b2ab9e4335fc13f801ba569eed939"><div class="ttname"><a href="astcenccli__internal_8h.html#a263b2ab9e4335fc13f801ba569eed939">store_ncimage</a></div><div class="ttdeci">bool store_ncimage(const astcenc_image *img, const char *filename, int y_flip)</div><div class="ttdoc">Save an uncompressed image.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__image__load__store_8cpp_source.html#l02405">astcenccli_image_load_store.cpp:2405</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_a36fb7c666f502f49e4d18cf130a7958d"><div class="ttname"><a href="astcenccli__internal_8h.html#a36fb7c666f502f49e4d18cf130a7958d">get_output_filename_enforced_bitness</a></div><div class="ttdeci">int get_output_filename_enforced_bitness(const char *filename)</div><div class="ttdoc">Check if the output file type requires a specific bitness.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__image__load__store_8cpp_source.html#l02354">astcenccli_image_load_store.cpp:2354</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_a3cf209b603114ef9a2c2c9e28697bbe7"><div class="ttname"><a href="astcenccli__internal_8h.html#a3cf209b603114ef9a2c2c9e28697bbe7">astcenc_print_header</a></div><div class="ttdeci">void astcenc_print_header()</div><div class="ttdoc">Print the tool copyright and version header to stdout.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__toplevel__help_8cpp_source.html#l00555">astcenccli_toplevel_help.cpp:555</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_a3e674d4952496a98a942815392b1a3a5"><div class="ttname"><a href="astcenccli__internal_8h.html#a3e674d4952496a98a942815392b1a3a5">store_ktx_compressed_image</a></div><div class="ttdeci">bool store_ktx_compressed_image(const astc_compressed_image &amp;img, const char *filename, bool is_srgb)</div><div class="ttdoc">Store a compressed .ktx image.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__image__load__store_8cpp_source.html#l01389">astcenccli_image_load_store.cpp:1389</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_a478be461420681d7c83aa89569ea92c4"><div class="ttname"><a href="astcenccli__internal_8h.html#a478be461420681d7c83aa89569ea92c4">compute_error_metrics</a></div><div class="ttdeci">void compute_error_metrics(bool compute_hdr_metrics, bool compute_normal_metrics, int input_components, const astcenc_image *img1, const astcenc_image *img2, int fstop_lo, int fstop_hi)</div><div class="ttdoc">Compute error metrics comparing two images.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__error__metrics_8cpp_source.html#l00110">astcenccli_error_metrics.cpp:110</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_a699ebbd5f0143120e8ccaa26ae386b56"><div class="ttname"><a href="astcenccli__internal_8h.html#a699ebbd5f0143120e8ccaa26ae386b56">print_error</a></div><div class="ttdeci">static void print_error(const char *format)</div><div class="ttdoc">Print a string to stderr.</div><div class="ttdef"><b>Definition</b> <a href="#l00102">astcenccli_internal.h:102</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_a6ee147f7602455b96f9ec14ae0d31dca"><div class="ttname"><a href="astcenccli__internal_8h.html#a6ee147f7602455b96f9ec14ae0d31dca">astc_img_from_floatx4_array</a></div><div class="ttdeci">astcenc_image * astc_img_from_floatx4_array(const float *data, unsigned int dim_x, unsigned int dim_y, bool y_flip)</div><div class="ttdoc">Create an image from a 2D float data array.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__image_8cpp_source.html#l00171">astcenccli_image.cpp:171</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_a6ef0eed7ff787726c2e16ab96196ed8b"><div class="ttname"><a href="astcenccli__internal_8h.html#a6ef0eed7ff787726c2e16ab96196ed8b">load_cimage</a></div><div class="ttdeci">int load_cimage(const char *filename, astc_compressed_image &amp;img)</div><div class="ttdoc">Load a compressed .astc image.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__image__load__store_8cpp_source.html#l02459">astcenccli_image_load_store.cpp:2459</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_a7377ad0be8285dd96c932d2744fc4641"><div class="ttname"><a href="astcenccli__internal_8h.html#a7377ad0be8285dd96c932d2744fc4641">astcenc_print_longhelp</a></div><div class="ttdeci">void astcenc_print_longhelp()</div><div class="ttdoc">Print the tool copyright, version, and long-form help to stdout.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__toplevel__help_8cpp_source.html#l00594">astcenccli_toplevel_help.cpp:594</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_a860f8be85c860429c0df12b581015b68"><div class="ttname"><a href="astcenccli__internal_8h.html#a860f8be85c860429c0df12b581015b68">alloc_image</a></div><div class="ttdeci">astcenc_image * alloc_image(unsigned int bitness, unsigned int dim_x, unsigned int dim_y, unsigned int dim_z)</div><div class="ttdoc">Allocate a new image in a canonical format.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__image_8cpp_source.html#l00028">astcenccli_image.cpp:28</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_a9706acc840e996830702a831d846559c"><div class="ttname"><a href="astcenccli__internal_8h.html#a9706acc840e996830702a831d846559c">unorm8x4_array_from_astc_img</a></div><div class="ttdeci">uint8_t * unorm8x4_array_from_astc_img(const astcenc_image *img, bool y_flip)</div><div class="ttdoc">Create a flattened RGBA UNORM8 data array from an image structure.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__image_8cpp_source.html#l00307">astcenccli_image.cpp:307</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_a9ba4a67ed1a59e71c22282996d48390b"><div class="ttname"><a href="astcenccli__internal_8h.html#a9ba4a67ed1a59e71c22282996d48390b">store_cimage</a></div><div class="ttdeci">int store_cimage(const astc_compressed_image &amp;img, const char *filename)</div><div class="ttdoc">Store a compressed .astc image.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__image__load__store_8cpp_source.html#l02527">astcenccli_image_load_store.cpp:2527</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_a9ecc1dac86584f7e086e9962fb6c0509"><div class="ttname"><a href="astcenccli__internal_8h.html#a9ecc1dac86584f7e086e9962fb6c0509">astc_img_from_unorm8x4_array</a></div><div class="ttdeci">astcenc_image * astc_img_from_unorm8x4_array(const uint8_t *data, unsigned int dim_x, unsigned int dim_y, bool y_flip)</div><div class="ttdoc">Create an image from a 2D byte data array.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__image_8cpp_source.html#l00205">astcenccli_image.cpp:205</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_aaa9dcd56cd7089c481e7ef8355ae5c2f"><div class="ttname"><a href="astcenccli__internal_8h.html#aaa9dcd56cd7089c481e7ef8355ae5c2f">launch_threads</a></div><div class="ttdeci">void launch_threads(const char *operation, int thread_count, void(*func)(int, int, void *), void *payload)</div><div class="ttdoc">Launch N worker threads and wait for them to complete.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__platform__dependents_8cpp_source.html#l00204">astcenccli_platform_dependents.cpp:204</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_ad7c980fed3ad50dec28ebfa941f4a7b7"><div class="ttname"><a href="astcenccli__internal_8h.html#ad7c980fed3ad50dec28ebfa941f4a7b7">floatx4_array_from_astc_img</a></div><div class="ttdeci">float * floatx4_array_from_astc_img(const astcenc_image *img, bool y_flip, unsigned int z_index)</div><div class="ttdoc">Create a flattened RGBA FLOAT32 data array for a single slice from an image structure.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__image_8cpp_source.html#l00234">astcenccli_image.cpp:234</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_add1dea8ff2bad1b823a131776f37ee83"><div class="ttname"><a href="astcenccli__internal_8h.html#add1dea8ff2bad1b823a131776f37ee83">determine_image_components</a></div><div class="ttdeci">int determine_image_components(const astcenc_image *img)</div><div class="ttdoc">Determine the number of active components in an image.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__image_8cpp_source.html#l00089">astcenccli_image.cpp:89</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_aeb0cd9b24656f2c4dac144e89217057c"><div class="ttname"><a href="astcenccli__internal_8h.html#aeb0cd9b24656f2c4dac144e89217057c">free_image</a></div><div class="ttdeci">void free_image(astcenc_image *img)</div><div class="ttdoc">Free an image.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__image_8cpp_source.html#l00072">astcenccli_image.cpp:72</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_af5bf7c6ac05f0f401cfde7d73ed2b852"><div class="ttname"><a href="astcenccli__internal_8h.html#af5bf7c6ac05f0f401cfde7d73ed2b852">astcenc_print_shorthelp</a></div><div class="ttdeci">void astcenc_print_shorthelp()</div><div class="ttdoc">Print the tool copyright, version, and short-form help to stdout.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__toplevel__help_8cpp_source.html#l00587">astcenccli_toplevel_help.cpp:587</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_af7ab092ab10d65db3b9051a12420fa52"><div class="ttname"><a href="astcenccli__internal_8h.html#af7ab092ab10d65db3b9051a12420fa52">get_time</a></div><div class="ttdeci">double get_time()</div><div class="ttdoc">Get the current time.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__platform__dependents_8cpp_source.html#l00161">astcenccli_platform_dependents.cpp:161</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_aff0de9c0d50e5630b61f0d6e597fcd65"><div class="ttname"><a href="astcenccli__internal_8h.html#aff0de9c0d50e5630b61f0d6e597fcd65">load_ncimage</a></div><div class="ttdeci">astcenc_image * load_ncimage(const char *filename, bool y_flip, bool &amp;is_hdr, unsigned int &amp;component_count)</div><div class="ttdoc">Load uncompressed image.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__image__load__store_8cpp_source.html#l02376">astcenccli_image_load_store.cpp:2376</a></div></div>
+<div class="ttc" id="astructastc__compressed__image_html"><div class="ttname"><a href="structastc__compressed__image.html">astc_compressed_image</a></div><div class="ttdoc">Functions and data declarations.</div><div class="ttdef"><b>Definition</b> <a href="#l00036">astcenccli_internal.h:37</a></div></div>
+<div class="ttc" id="astructastc__compressed__image_html_a09c8a9676fc4b269cff40386515120e7"><div class="ttname"><a href="structastc__compressed__image.html#a09c8a9676fc4b269cff40386515120e7">astc_compressed_image::dim_z</a></div><div class="ttdeci">unsigned int dim_z</div><div class="ttdoc">The image depth in texels.</div><div class="ttdef"><b>Definition</b> <a href="#l00054">astcenccli_internal.h:54</a></div></div>
+<div class="ttc" id="astructastc__compressed__image_html_a15c6ae8cb877cf74f963d1ea3d15afb3"><div class="ttname"><a href="structastc__compressed__image.html#a15c6ae8cb877cf74f963d1ea3d15afb3">astc_compressed_image::dim_y</a></div><div class="ttdeci">unsigned int dim_y</div><div class="ttdoc">The image height in texels.</div><div class="ttdef"><b>Definition</b> <a href="#l00051">astcenccli_internal.h:51</a></div></div>
+<div class="ttc" id="astructastc__compressed__image_html_a2f8dadc1beecd1f0b84e8c01078ebb75"><div class="ttname"><a href="structastc__compressed__image.html#a2f8dadc1beecd1f0b84e8c01078ebb75">astc_compressed_image::data</a></div><div class="ttdeci">uint8_t * data</div><div class="ttdoc">The binary data payload.</div><div class="ttdef"><b>Definition</b> <a href="#l00057">astcenccli_internal.h:57</a></div></div>
+<div class="ttc" id="astructastc__compressed__image_html_a507b65951cf307eb7481c65929cb5e67"><div class="ttname"><a href="structastc__compressed__image.html#a507b65951cf307eb7481c65929cb5e67">astc_compressed_image::block_z</a></div><div class="ttdeci">unsigned int block_z</div><div class="ttdoc">The block depth in texels.</div><div class="ttdef"><b>Definition</b> <a href="#l00045">astcenccli_internal.h:45</a></div></div>
+<div class="ttc" id="astructastc__compressed__image_html_a819085bbeed627f0e6e33d7d8efb34cb"><div class="ttname"><a href="structastc__compressed__image.html#a819085bbeed627f0e6e33d7d8efb34cb">astc_compressed_image::block_y</a></div><div class="ttdeci">unsigned int block_y</div><div class="ttdoc">The block height in texels.</div><div class="ttdef"><b>Definition</b> <a href="#l00042">astcenccli_internal.h:42</a></div></div>
+<div class="ttc" id="astructastc__compressed__image_html_ab8b069942fbe6cc5441abfe20053abff"><div class="ttname"><a href="structastc__compressed__image.html#ab8b069942fbe6cc5441abfe20053abff">astc_compressed_image::dim_x</a></div><div class="ttdeci">unsigned int dim_x</div><div class="ttdoc">The image width in texels.</div><div class="ttdef"><b>Definition</b> <a href="#l00048">astcenccli_internal.h:48</a></div></div>
+<div class="ttc" id="astructastc__compressed__image_html_ac18330848346858e41c3f9464deacb0f"><div class="ttname"><a href="structastc__compressed__image.html#ac18330848346858e41c3f9464deacb0f">astc_compressed_image::data_len</a></div><div class="ttdeci">size_t data_len</div><div class="ttdoc">The binary data length in bytes.</div><div class="ttdef"><b>Definition</b> <a href="#l00060">astcenccli_internal.h:60</a></div></div>
+<div class="ttc" id="astructastc__compressed__image_html_aeafe1da3bf5227bcd020c62035d905fe"><div class="ttname"><a href="structastc__compressed__image.html#aeafe1da3bf5227bcd020c62035d905fe">astc_compressed_image::block_x</a></div><div class="ttdeci">unsigned int block_x</div><div class="ttdoc">The block width in texels.</div><div class="ttdef"><b>Definition</b> <a href="#l00039">astcenccli_internal.h:39</a></div></div>
+<div class="ttc" id="astructastcenc__image_html"><div class="ttname"><a href="structastcenc__image.html">astcenc_image</a></div><div class="ttdoc">An uncompressed 2D or 3D image.</div><div class="ttdef"><b>Definition</b> <a href="astcenc_8h_source.html#l00601">astcenc.h:602</a></div></div>
+<div class="ttc" id="astructastcenc__swizzle_html"><div class="ttname"><a href="structastcenc__swizzle.html">astcenc_swizzle</a></div><div class="ttdoc">A texel component swizzle.</div><div class="ttdef"><b>Definition</b> <a href="astcenc_8h_source.html#l00282">astcenc.h:283</a></div></div>
+<div class="ttc" id="astructcli__config__options_html"><div class="ttname"><a href="structcli__config__options.html">cli_config_options</a></div><div class="ttdoc">Config options that have been read from command line.</div><div class="ttdef"><b>Definition</b> <a href="#l00066">astcenccli_internal.h:67</a></div></div>
+<div class="ttc" id="astructcli__config__options_html_a4435eda315b9fd7ce13dcbca064d49a2"><div class="ttname"><a href="structcli__config__options.html#a4435eda315b9fd7ce13dcbca064d49a2">cli_config_options::silentmode</a></div><div class="ttdeci">bool silentmode</div><div class="ttdoc">true if running in silent mode with minimal output.</div><div class="ttdef"><b>Definition</b> <a href="#l00078">astcenccli_internal.h:78</a></div></div>
+<div class="ttc" id="astructcli__config__options_html_a5729ac031743bf09cedab9174c30dba7"><div class="ttname"><a href="structcli__config__options.html#a5729ac031743bf09cedab9174c30dba7">cli_config_options::thread_count</a></div><div class="ttdeci">unsigned int thread_count</div><div class="ttdoc">The number of threads to use for processing.</div><div class="ttdef"><b>Definition</b> <a href="#l00069">astcenccli_internal.h:69</a></div></div>
+<div class="ttc" id="astructcli__config__options_html_aa1de498436670c2df73b4e2fdb81c9da"><div class="ttname"><a href="structcli__config__options.html#aa1de498436670c2df73b4e2fdb81c9da">cli_config_options::y_flip</a></div><div class="ttdeci">bool y_flip</div><div class="ttdoc">true if the images should be y-flipped.</div><div class="ttdef"><b>Definition</b> <a href="#l00081">astcenccli_internal.h:81</a></div></div>
+<div class="ttc" id="astructcli__config__options_html_aa280195b5d3e148b5d1a5ffa20ab2897"><div class="ttname"><a href="structcli__config__options.html#aa280195b5d3e148b5d1a5ffa20ab2897">cli_config_options::array_size</a></div><div class="ttdeci">unsigned int array_size</div><div class="ttdoc">The number of image slices to load for a 3D image.</div><div class="ttdef"><b>Definition</b> <a href="#l00075">astcenccli_internal.h:75</a></div></div>
+<div class="ttc" id="astructcli__config__options_html_ab5d2b28136e22f62f1efc73cb6ea565f"><div class="ttname"><a href="structcli__config__options.html#ab5d2b28136e22f62f1efc73cb6ea565f">cli_config_options::swz_decode</a></div><div class="ttdeci">astcenc_swizzle swz_decode</div><div class="ttdoc">The post-decode swizzle.</div><div class="ttdef"><b>Definition</b> <a href="#l00096">astcenccli_internal.h:96</a></div></div>
+<div class="ttc" id="astructcli__config__options_html_ac2c3ab39b201b862383511810879fee5"><div class="ttname"><a href="structcli__config__options.html#ac2c3ab39b201b862383511810879fee5">cli_config_options::swz_encode</a></div><div class="ttdeci">astcenc_swizzle swz_encode</div><div class="ttdoc">The pre-encode swizzle.</div><div class="ttdef"><b>Definition</b> <a href="#l00093">astcenccli_internal.h:93</a></div></div>
+<div class="ttc" id="astructcli__config__options_html_aca5d5736ae904c8d1728dd39631cb050"><div class="ttname"><a href="structcli__config__options.html#aca5d5736ae904c8d1728dd39631cb050">cli_config_options::low_fstop</a></div><div class="ttdeci">int low_fstop</div><div class="ttdoc">The low exposure fstop for error computation.</div><div class="ttdef"><b>Definition</b> <a href="#l00087">astcenccli_internal.h:87</a></div></div>
+<div class="ttc" id="astructcli__config__options_html_ad7f8190a774cc3922ce995e198002541"><div class="ttname"><a href="structcli__config__options.html#ad7f8190a774cc3922ce995e198002541">cli_config_options::repeat_count</a></div><div class="ttdeci">unsigned int repeat_count</div><div class="ttdoc">The number of repeats to execute for benchmarking.</div><div class="ttdef"><b>Definition</b> <a href="#l00072">astcenccli_internal.h:72</a></div></div>
+<div class="ttc" id="astructcli__config__options_html_ae29681b91eca4dbccfed2888e71baaba"><div class="ttname"><a href="structcli__config__options.html#ae29681b91eca4dbccfed2888e71baaba">cli_config_options::diagnostic_images</a></div><div class="ttdeci">bool diagnostic_images</div><div class="ttdoc">true if diagnostic images should be stored.</div><div class="ttdef"><b>Definition</b> <a href="#l00084">astcenccli_internal.h:84</a></div></div>
+<div class="ttc" id="astructcli__config__options_html_afae13b252bf41eaef171b9a15c8801e2"><div class="ttname"><a href="structcli__config__options.html#afae13b252bf41eaef171b9a15c8801e2">cli_config_options::high_fstop</a></div><div class="ttdeci">int high_fstop</div><div class="ttdoc">The high exposure fstop for error computation.</div><div class="ttdef"><b>Definition</b> <a href="#l00090">astcenccli_internal.h:90</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_211b531afad3b7391864460492782af6.html">astc-encoder-main</a></li><li class="navelem"><a class="el" href="dir_7df889ea08e038e0b05c337eccc30153.html">Source</a></li><li class="navelem"><a class="el" href="astcenccli__internal_8h.html">astcenccli_internal.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+  </ul>
+</div>
+</body>
+</html>

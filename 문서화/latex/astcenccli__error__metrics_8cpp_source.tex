@@ -1,0 +1,383 @@
+\doxysection{astcenccli\+\_\+error\+\_\+metrics.\+cpp}
+\hypertarget{astcenccli__error__metrics_8cpp_source}{}\label{astcenccli__error__metrics_8cpp_source}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_error\_metrics.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_error\_metrics.cpp}}
+\mbox{\hyperlink{astcenccli__error__metrics_8cpp}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00001}00001\ \textcolor{comment}{//\ SPDX-\/License-\/Identifier:\ Apache-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00003}00003\ \textcolor{comment}{//\ Copyright\ 2011-\/2022\ Arm\ Limited}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00004}00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00005}00005\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});\ you\ may\ not}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00006}00006\ \textcolor{comment}{//\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00007}00007\ \textcolor{comment}{//\ of\ the\ License\ at:}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00008}00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00009}00009\ \textcolor{comment}{//\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00010}00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00011}00011\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00012}00012\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00013}00013\ \textcolor{comment}{//\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.\ See\ the}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00014}00014\ \textcolor{comment}{//\ License\ for\ the\ specific\ language\ governing\ permissions\ and\ limitations}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00015}00015\ \textcolor{comment}{//\ under\ the\ License.}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00016}00016\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <cstdio>}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{astcenccli__internal_8h}{astcenccli\_internal.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00030}\mbox{\hyperlink{classerror__accum4}{00030}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classerror__accum4}{error\_accum4}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00031}00031\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00032}00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00034}\mbox{\hyperlink{classerror__accum4_adda196a39fba65e9cc8287b4d6f7756a}{00034}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classerror__accum4_adda196a39fba65e9cc8287b4d6f7756a}{sum\_r}}\ \{\ 0.0\ \};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00035}\mbox{\hyperlink{classerror__accum4_a84566c5eb0b66dc66f5d4ca064de137f}{00035}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classerror__accum4_a84566c5eb0b66dc66f5d4ca064de137f}{sum\_g}}\ \{\ 0.0\ \};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00036}\mbox{\hyperlink{classerror__accum4_a74442d4adfe6a20ba9713d4d9ba81e74}{00036}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classerror__accum4_a74442d4adfe6a20ba9713d4d9ba81e74}{sum\_b}}\ \{\ 0.0\ \};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00037}\mbox{\hyperlink{classerror__accum4_aa8e1133f0001609343aa7a5ce3a60d61}{00037}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classerror__accum4_aa8e1133f0001609343aa7a5ce3a60d61}{sum\_a}}\ \{\ 0.0\ \};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00038}00038\ \};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00048}\mbox{\hyperlink{astcenccli__error__metrics_8cpp_a6b9160dec0f2298e682e8d8e77132a03}{00048}}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classerror__accum4}{error\_accum4}}\&\ \mbox{\hyperlink{astcenccli__error__metrics_8cpp_a6b9160dec0f2298e682e8d8e77132a03}{operator+=}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{classerror__accum4}{error\_accum4}}\ \&val,}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ inc}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00051}00051\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00052}00052\ \ \ \ \ val.\mbox{\hyperlink{classerror__accum4_adda196a39fba65e9cc8287b4d6f7756a}{sum\_r}}\ +=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(inc.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>());}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00053}00053\ \ \ \ \ val.\mbox{\hyperlink{classerror__accum4_a84566c5eb0b66dc66f5d4ca064de137f}{sum\_g}}\ +=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(inc.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00054}00054\ \ \ \ \ val.\mbox{\hyperlink{classerror__accum4_a74442d4adfe6a20ba9713d4d9ba81e74}{sum\_b}}\ +=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(inc.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>());}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00055}00055\ \ \ \ \ val.\mbox{\hyperlink{classerror__accum4_aa8e1133f0001609343aa7a5ce3a60d61}{sum\_a}}\ +=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(inc.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>());}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{return}\ val;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00067}\mbox{\hyperlink{astcenccli__error__metrics_8cpp_a4504544fb13100fa0507716d5c7708c8}{00067}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{astcenccli__error__metrics_8cpp_a4504544fb13100fa0507716d5c7708c8}{mpsnr\_operator}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{float}\ val,}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{int}\ fstop}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00070}00070\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00071}00071\ \ \ \ \ \mbox{\hyperlink{unionif32}{if32}}\ p;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00072}00072\ \ \ \ \ p.\mbox{\hyperlink{unionif32_ab2af01c7db8e7bce72271565ae1276bf}{u}}\ =\ 0x3f800000\ +\ (fstop\ <<\ 23);\ \ \textcolor{comment}{//\ 0x3f800000\ is\ 1.0f}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00073}00073\ \ \ \ \ val\ *=\ p.\mbox{\hyperlink{unionif32_a6ebdf3c35d5ebd30f1cbe751d8c9285e}{f}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00074}00074\ \ \ \ \ val\ =\ powf(val,\ (1.0f\ /\ 2.2f));}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00075}00075\ \ \ \ \ val\ *=\ 255.0f;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b}{astc::clamp}}(val,\ 0.0f,\ 255.0f);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00078}00078\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00092}\mbox{\hyperlink{astcenccli__error__metrics_8cpp_a9e0a98a390f6b1399d67fe4005866da8}{00092}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{astcenccli__error__metrics_8cpp_a9e0a98a390f6b1399d67fe4005866da8}{mpsnr\_sumdiff}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{keywordtype}{float}\ val1,}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordtype}{float}\ val2,}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordtype}{int}\ fstop\_lo,}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordtype}{int}\ fstop\_hi}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00097}00097\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{keywordtype}{float}\ summa\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ fstop\_lo;\ i\ <=\ fstop\_hi;\ i++)}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00100}00100\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ mval1\ =\ \mbox{\hyperlink{astcenccli__error__metrics_8cpp_a4504544fb13100fa0507716d5c7708c8}{mpsnr\_operator}}(val1,\ i);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ mval2\ =\ \mbox{\hyperlink{astcenccli__error__metrics_8cpp_a4504544fb13100fa0507716d5c7708c8}{mpsnr\_operator}}(val2,\ i);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ mdiff\ =\ mval1\ -\/\ mval2;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ summa\ +=\ mdiff\ *\ mdiff;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{return}\ summa;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00107}00107\ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00109}00109\ \textcolor{comment}{/*\ See\ header\ for\ documentation\ */}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00110}\mbox{\hyperlink{astcenccli__error__metrics_8cpp_a478be461420681d7c83aa89569ea92c4}{00110}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{astcenccli__error__metrics_8cpp_a478be461420681d7c83aa89569ea92c4}{compute\_error\_metrics}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordtype}{bool}\ compute\_hdr\_metrics,}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{keywordtype}{bool}\ compute\_normal\_metrics,}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordtype}{int}\ input\_components,}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structastcenc__image}{astcenc\_image}}*\ img1,}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00115}00115\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structastcenc__image}{astcenc\_image}}*\ img2,}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00116}00116\ \ \ \ \ \textcolor{keywordtype}{int}\ fstop\_lo,}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00117}00117\ \ \ \ \ \textcolor{keywordtype}{int}\ fstop\_hi}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00118}00118\ )\ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00119}00119\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ componentmasks[5]\ \{\ 0x00,\ 0x07,\ 0x0C,\ 0x07,\ 0x0F\ \};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00120}00120\ \ \ \ \ \textcolor{keywordtype}{int}\ componentmask\ =\ componentmasks[input\_components];}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00122}00122\ \ \ \ \ \mbox{\hyperlink{classerror__accum4}{error\_accum4}}\ errorsum;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00123}00123\ \ \ \ \ \mbox{\hyperlink{classerror__accum4}{error\_accum4}}\ alpha\_scaled\_errorsum;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00124}00124\ \ \ \ \ \mbox{\hyperlink{classerror__accum4}{error\_accum4}}\ log\_errorsum;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00125}00125\ \ \ \ \ \mbox{\hyperlink{classerror__accum4}{error\_accum4}}\ mpsnr\_errorsum;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{keywordtype}{double}\ mean\_angular\_errorsum\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keywordtype}{double}\ worst\_angular\_errorsum\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ dim\_x\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(img1-\/>\mbox{\hyperlink{structastcenc__image_a8bb8eebb59215778176674951c6da70a}{dim\_x}},\ img2-\/>\mbox{\hyperlink{structastcenc__image_a8bb8eebb59215778176674951c6da70a}{dim\_x}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ dim\_y\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(img1-\/>\mbox{\hyperlink{structastcenc__image_a3a62fbbc3a16a390eca3b03b6e489750}{dim\_y}},\ img2-\/>\mbox{\hyperlink{structastcenc__image_a3a62fbbc3a16a390eca3b03b6e489750}{dim\_y}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ dim\_z\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(img1-\/>\mbox{\hyperlink{structastcenc__image_a9c71edbb23f1cca0de775c508b6219ee}{dim\_z}},\ img2-\/>\mbox{\hyperlink{structastcenc__image_a9c71edbb23f1cca0de775c508b6219ee}{dim\_z}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{keywordflow}{if}\ (img1-\/>\mbox{\hyperlink{structastcenc__image_a8bb8eebb59215778176674951c6da70a}{dim\_x}}\ !=\ img2-\/>\mbox{\hyperlink{structastcenc__image_a8bb8eebb59215778176674951c6da70a}{dim\_x}}\ ||}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ img1-\/>\mbox{\hyperlink{structastcenc__image_a3a62fbbc3a16a390eca3b03b6e489750}{dim\_y}}\ !=\ img2-\/>\mbox{\hyperlink{structastcenc__image_a3a62fbbc3a16a390eca3b03b6e489750}{dim\_y}}\ ||}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ img1-\/>\mbox{\hyperlink{structastcenc__image_a9c71edbb23f1cca0de775c508b6219ee}{dim\_z}}\ !=\ img2-\/>\mbox{\hyperlink{structastcenc__image_a9c71edbb23f1cca0de775c508b6219ee}{dim\_z}})}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00136}00136\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}WARNING:\ Only\ intersection\ of\ images\ will\ be\ compared:\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ Image\ 1:\ \%dx\%dx\%d\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ Image\ 2:\ \%dx\%dx\%d\(\backslash\)n"{}},}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ img1-\/>\mbox{\hyperlink{structastcenc__image_a8bb8eebb59215778176674951c6da70a}{dim\_x}},\ img1-\/>\mbox{\hyperlink{structastcenc__image_a3a62fbbc3a16a390eca3b03b6e489750}{dim\_y}},\ img1-\/>\mbox{\hyperlink{structastcenc__image_a9c71edbb23f1cca0de775c508b6219ee}{dim\_z}},}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ img2-\/>\mbox{\hyperlink{structastcenc__image_a8bb8eebb59215778176674951c6da70a}{dim\_x}},\ img2-\/>\mbox{\hyperlink{structastcenc__image_a3a62fbbc3a16a390eca3b03b6e489750}{dim\_y}},\ img2-\/>\mbox{\hyperlink{structastcenc__image_a9c71edbb23f1cca0de775c508b6219ee}{dim\_z}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00142}00142\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00144}00144\ \ \ \ \ \textcolor{keywordtype}{double}\ rgb\_peak\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ xsize1\ =\ img1-\/>\mbox{\hyperlink{structastcenc__image_a8bb8eebb59215778176674951c6da70a}{dim\_x}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00146}00146\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ xsize2\ =\ img2-\/>\mbox{\hyperlink{structastcenc__image_a8bb8eebb59215778176674951c6da70a}{dim\_x}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00148}00148\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ z\ =\ 0;\ z\ <\ dim\_z;\ z++)}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00149}00149\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ dim\_y;\ y++)}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ dim\_x;\ x++)}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color1;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color2;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (img1-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ ==\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aa91ac7b6329d0a39c879dff7a1bcdf759}{ASTCENC\_TYPE\_U8}})}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t*\ data8\ =\ \textcolor{keyword}{static\_cast<}uint8\_t*\textcolor{keyword}{>}(img1-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[z]);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color1\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data8[(4\ *\ xsize1\ *\ y)\ +\ (4\ *\ x\ \ \ \ )],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data8[(4\ *\ xsize1\ *\ y)\ +\ (4\ *\ x\ +\ 1)],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data8[(4\ *\ xsize1\ *\ y)\ +\ (4\ *\ x\ +\ 2)],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data8[(4\ *\ xsize1\ *\ y)\ +\ (4\ *\ x\ +\ 3)]);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color1\ =\ color1\ /\ 255.0f;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (img1-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ ==\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aad39e16b7f2e55ed676ce400619f0759d}{ASTCENC\_TYPE\_F16}})}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t*\ data16\ =\ \textcolor{keyword}{static\_cast<}uint16\_t*\textcolor{keyword}{>}(img1-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[z]);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ color1i\ =\ \mbox{\hyperlink{structvint4}{vint4}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ xsize1\ *\ y)\ +\ (4\ *\ x\ \ \ \ )],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ xsize1\ *\ y)\ +\ (4\ *\ x\ +\ 1)],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ xsize1\ *\ y)\ +\ (4\ *\ x\ +\ 2)],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ xsize1\ *\ y)\ +\ (4\ *\ x\ +\ 3)]);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color1\ =\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_afd7aa2069bdf377067c3abaca1256432}{float16\_to\_float}}(color1i);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color1\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ae91c0bb0ebd82ed2a7fa7aa915f6e76e}{clamp}}(0,\ 65504.0f,\ color1);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ if\ (img1-\/>data\_type\ ==\ ASTCENC\_TYPE\_F32)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assert(img1-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ ==\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aaf996e38de0e0ac57175c09da275c6062}{ASTCENC\_TYPE\_F32}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}*\ data32\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}*\textcolor{keyword}{>}(img1-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[z]);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color1\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data32[(4\ *\ xsize1\ *\ y)\ +\ (4\ *\ x\ \ \ \ )],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data32[(4\ *\ xsize1\ *\ y)\ +\ (4\ *\ x\ +\ 1)],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data32[(4\ *\ xsize1\ *\ y)\ +\ (4\ *\ x\ +\ 2)],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data32[(4\ *\ xsize1\ *\ y)\ +\ (4\ *\ x\ +\ 3)]);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color1\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ae91c0bb0ebd82ed2a7fa7aa915f6e76e}{clamp}}(0,\ 65504.0f,\ color1);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (img2-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ ==\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aa91ac7b6329d0a39c879dff7a1bcdf759}{ASTCENC\_TYPE\_U8}})}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t*\ data8\ =\ \textcolor{keyword}{static\_cast<}uint8\_t*\textcolor{keyword}{>}(img2-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[z]);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color2\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data8[(4\ *\ xsize2\ *\ y)\ +\ (4\ *\ x\ \ \ \ )],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data8[(4\ *\ xsize2\ *\ y)\ +\ (4\ *\ x\ +\ 1)],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data8[(4\ *\ xsize2\ *\ y)\ +\ (4\ *\ x\ +\ 2)],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data8[(4\ *\ xsize2\ *\ y)\ +\ (4\ *\ x\ +\ 3)]);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color2\ =\ color2\ /\ 255.0f;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (img2-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ ==\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aad39e16b7f2e55ed676ce400619f0759d}{ASTCENC\_TYPE\_F16}})}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t*\ data16\ =\ \textcolor{keyword}{static\_cast<}uint16\_t*\textcolor{keyword}{>}(img2-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[z]);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ color2i\ =\ \mbox{\hyperlink{structvint4}{vint4}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ xsize2\ *\ y)\ +\ (4\ *\ x\ \ \ \ )],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ xsize2\ *\ y)\ +\ (4\ *\ x\ +\ 1)],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ xsize2\ *\ y)\ +\ (4\ *\ x\ +\ 2)],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data16[(4\ *\ xsize2\ *\ y)\ +\ (4\ *\ x\ +\ 3)]);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color2\ =\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_afd7aa2069bdf377067c3abaca1256432}{float16\_to\_float}}(color2i);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color2\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ae91c0bb0ebd82ed2a7fa7aa915f6e76e}{clamp}}(0,\ 65504.0f,\ color2);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ if\ (img2-\/>data\_type\ ==\ ASTCENC\_TYPE\_F32)}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assert(img2-\/>\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ ==\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aaf996e38de0e0ac57175c09da275c6062}{ASTCENC\_TYPE\_F32}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}*\ data32\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}*\textcolor{keyword}{>}(img2-\/>\mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}[z]);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color2\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data32[(4\ *\ xsize2\ *\ y)\ +\ (4\ *\ x\ \ \ \ )],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data32[(4\ *\ xsize2\ *\ y)\ +\ (4\ *\ x\ +\ 1)],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data32[(4\ *\ xsize2\ *\ y)\ +\ (4\ *\ x\ +\ 2)],}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data32[(4\ *\ xsize2\ *\ y)\ +\ (4\ *\ x\ +\ 3)]);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color2\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ae91c0bb0ebd82ed2a7fa7aa915f6e76e}{clamp}}(0,\ 65504.0f,\ color2);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_peak\ =\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(color1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>()),}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(color1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>()),}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(color1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>()),}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_peak);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ diffcolor\ =\ color1\ -\/\ color2;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ diffcolor\_sq\ =\ diffcolor\ *\ diffcolor;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ errorsum\ +=\ diffcolor\_sq;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ alpha\_scaled\_diffcolor\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ diffcolor.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>()\ *\ color1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>(),}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ diffcolor.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>()\ *\ color1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>(),}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ diffcolor.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>()\ *\ color1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>(),}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ diffcolor.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>());}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ alpha\_scaled\_diffcolor\_sq\ =\ alpha\_scaled\_diffcolor\ *\ alpha\_scaled\_diffcolor;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ alpha\_scaled\_errorsum\ +=\ alpha\_scaled\_diffcolor\_sq;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (compute\_hdr\_metrics)}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ log\_input\_color1\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a77245e9181fb31efa0a97cfbf4084e5e}{log2}}(color1);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ log\_input\_color2\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a77245e9181fb31efa0a97cfbf4084e5e}{log2}}(color2);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ log\_diffcolor\ =\ log\_input\_color1\ -\/\ log\_input\_color2;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_errorsum\ +=\ log\_diffcolor\ *\ log\_diffcolor;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00261}00261\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ mpsnr\_error\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenccli__error__metrics_8cpp_a9e0a98a390f6b1399d67fe4005866da8}{mpsnr\_sumdiff}}(color1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>(),\ color2.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>(),\ fstop\_lo,\ fstop\_hi),}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenccli__error__metrics_8cpp_a9e0a98a390f6b1399d67fe4005866da8}{mpsnr\_sumdiff}}(color1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>(),\ color2.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>(),\ fstop\_lo,\ fstop\_hi),}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenccli__error__metrics_8cpp_a9e0a98a390f6b1399d67fe4005866da8}{mpsnr\_sumdiff}}(color1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>(),\ color2.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>(),\ fstop\_lo,\ fstop\_hi),}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenccli__error__metrics_8cpp_a9e0a98a390f6b1399d67fe4005866da8}{mpsnr\_sumdiff}}(color1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>(),\ color2.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>(),\ fstop\_lo,\ fstop\_hi));}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mpsnr\_errorsum\ +=\ mpsnr\_error;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (compute\_normal\_metrics)}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Decode\ the\ normal\ vector}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ normal1\ =\ (color1\ -\/\ 0.5f)\ *\ 2.0f;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ normal1\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3b0e8ae23a514219217b72164a7909a4}{normalize\_safe}}(normal1.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 1,\ 2>(),\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3cf3e0218d808e69f31668dbc458dc08}{unit3}}());}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00276}00276\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ normal2\ =\ (color2\ -\/\ 0.5f)\ *\ 2.0f;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ normal2\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3b0e8ae23a514219217b72164a7909a4}{normalize\_safe}}(normal2.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 1,\ 2>(),\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3cf3e0218d808e69f31668dbc458dc08}{unit3}}());}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00279}00279\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Float\ error\ can\ push\ this\ outside\ of\ valid\ range\ for\ acos,\ so\ clamp\ to\ avoid\ NaN\ issues}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ normal\_cos\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ae91c0bb0ebd82ed2a7fa7aa915f6e76e}{clamp}}(-\/1.0f,\ 1.0f,\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_ae36c7167bc89ff2bf984c1a912526dcb}{dot3}}(normal1,\ normal2)).\mbox{\hyperlink{structvfloat8_a550f9d3958113f0ec64c7e52c422132d}{lane}}<0>();}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rad\_to\_degrees\ =\ 180.0f\ /\ \mbox{\hyperlink{namespaceastc_a7b7581e8dda9382d1d6effd9c4925065}{astc::PI}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ error\_degrees\ =\ std::acos(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(normal\_cos))\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(rad\_to\_degrees);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mean\_angular\_errorsum\ +=\ error\_degrees\ /\ (dim\_x\ *\ dim\_y\ *\ dim\_z);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ worst\_angular\_errorsum\ =\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}(worst\_angular\_errorsum,\ error\_degrees);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00290}00290\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00291}00291\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00292}00292\ \ \ \ \ \textcolor{keywordtype}{double}\ pixels\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(dim\_x\ *\ dim\_y\ *\ dim\_z);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00293}00293\ \ \ \ \ \textcolor{keywordtype}{double}\ samples\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00294}00294\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00295}00295\ \ \ \ \ \textcolor{keywordtype}{double}\ num\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00296}00296\ \ \ \ \ \textcolor{keywordtype}{double}\ alpha\_num\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00297}00297\ \ \ \ \ \textcolor{keywordtype}{double}\ log\_num\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00298}00298\ \ \ \ \ \textcolor{keywordtype}{double}\ mpsnr\_num\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00300}00300\ \ \ \ \ \textcolor{keywordflow}{if}\ (componentmask\ \&\ 1)}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00301}00301\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ num\ +=\ errorsum.\mbox{\hyperlink{classerror__accum4_adda196a39fba65e9cc8287b4d6f7756a}{sum\_r}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ alpha\_num\ +=\ alpha\_scaled\_errorsum.\mbox{\hyperlink{classerror__accum4_adda196a39fba65e9cc8287b4d6f7756a}{sum\_r}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ log\_num\ +=\ log\_errorsum.\mbox{\hyperlink{classerror__accum4_adda196a39fba65e9cc8287b4d6f7756a}{sum\_r}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ mpsnr\_num\ +=\ mpsnr\_errorsum.\mbox{\hyperlink{classerror__accum4_adda196a39fba65e9cc8287b4d6f7756a}{sum\_r}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ samples\ +=\ pixels;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00307}00307\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00308}00308\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00309}00309\ \ \ \ \ \textcolor{keywordflow}{if}\ (componentmask\ \&\ 2)}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00310}00310\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ num\ +=\ errorsum.\mbox{\hyperlink{classerror__accum4_a84566c5eb0b66dc66f5d4ca064de137f}{sum\_g}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \ alpha\_num\ +=\ alpha\_scaled\_errorsum.\mbox{\hyperlink{classerror__accum4_a84566c5eb0b66dc66f5d4ca064de137f}{sum\_g}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ log\_num\ +=\ log\_errorsum.\mbox{\hyperlink{classerror__accum4_a84566c5eb0b66dc66f5d4ca064de137f}{sum\_g}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ mpsnr\_num\ +=\ mpsnr\_errorsum.\mbox{\hyperlink{classerror__accum4_a84566c5eb0b66dc66f5d4ca064de137f}{sum\_g}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ samples\ +=\ pixels;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00316}00316\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00317}00317\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00318}00318\ \ \ \ \ \textcolor{keywordflow}{if}\ (componentmask\ \&\ 4)}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00319}00319\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ num\ +=\ errorsum.\mbox{\hyperlink{classerror__accum4_a74442d4adfe6a20ba9713d4d9ba81e74}{sum\_b}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ alpha\_num\ +=\ alpha\_scaled\_errorsum.\mbox{\hyperlink{classerror__accum4_a74442d4adfe6a20ba9713d4d9ba81e74}{sum\_b}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ log\_num\ +=\ log\_errorsum.\mbox{\hyperlink{classerror__accum4_a74442d4adfe6a20ba9713d4d9ba81e74}{sum\_b}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ mpsnr\_num\ +=\ mpsnr\_errorsum.\mbox{\hyperlink{classerror__accum4_a74442d4adfe6a20ba9713d4d9ba81e74}{sum\_b}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ samples\ +=\ pixels;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00325}00325\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00326}00326\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00327}00327\ \ \ \ \ \textcolor{keywordflow}{if}\ (componentmask\ \&\ 8)}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00328}00328\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ num\ +=\ errorsum.\mbox{\hyperlink{classerror__accum4_aa8e1133f0001609343aa7a5ce3a60d61}{sum\_a}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ alpha\_num\ +=\ alpha\_scaled\_errorsum.\mbox{\hyperlink{classerror__accum4_aa8e1133f0001609343aa7a5ce3a60d61}{sum\_a}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ samples\ +=\ pixels;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00332}00332\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00333}00333\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00334}00334\ \ \ \ \ \textcolor{keywordtype}{double}\ denom\ =\ samples;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00335}00335\ \ \ \ \ \textcolor{keywordtype}{double}\ stopcount\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(fstop\_hi\ -\/\ fstop\_lo\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00336}00336\ \ \ \ \ \textcolor{keywordtype}{double}\ mpsnr\_denom\ =\ pixels\ *\ 3.0\ *\ stopcount\ *\ 255.0\ *\ 255.0;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00337}00337\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00338}00338\ \ \ \ \ \textcolor{keywordtype}{double}\ psnr;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00339}00339\ \ \ \ \ \textcolor{keywordflow}{if}\ (num\ ==\ 0.0)}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00340}00340\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ psnr\ =\ 999.0;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00342}00342\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00343}00343\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00344}00344\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ psnr\ =\ 10.0\ *\ log10(denom\ /\ num);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00346}00346\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00348}00348\ \ \ \ \ \textcolor{keywordtype}{double}\ rgb\_psnr\ =\ psnr;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00350}00350\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Quality\ metrics\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00351}00351\ \ \ \ \ printf(\textcolor{stringliteral}{"{}===============\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00352}00352\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00353}00353\ \ \ \ \ \textcolor{keywordflow}{if}\ (componentmask\ \&\ 8)}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00354}00354\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00355}00355\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ \ \ PSNR\ (LDR-\/RGBA):\ \ \ \ \ \ \ \ \ \ \%9.4f\ dB\(\backslash\)n"{}},\ psnr);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00356}00356\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ alpha\_psnr;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (alpha\_num\ ==\ 0.0)}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ alpha\_psnr\ =\ 999.0;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ alpha\_psnr\ =\ 10.0\ *\ log10(denom\ /\ alpha\_num);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ \ \ Alpha-\/weighted\ PSNR:\ \ \ \ \ \ \%9.4f\ dB\(\backslash\)n"{}},\ alpha\_psnr);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00367}00367\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ rgb\_num\ =\ errorsum.\mbox{\hyperlink{classerror__accum4_adda196a39fba65e9cc8287b4d6f7756a}{sum\_r}}\ +\ errorsum.\mbox{\hyperlink{classerror__accum4_a84566c5eb0b66dc66f5d4ca064de137f}{sum\_g}}\ +\ errorsum.\mbox{\hyperlink{classerror__accum4_a74442d4adfe6a20ba9713d4d9ba81e74}{sum\_b}};}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00369}00369\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rgb\_num\ ==\ 0.0)}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_psnr\ =\ 999.0;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00372}00372\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00373}00373\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_psnr\ =\ 10.0\ *\ log10(pixels\ *\ 3.0\ /\ rgb\_num);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ \ \ PSNR\ (LDR-\/RGB):\ \ \ \ \ \ \ \ \ \ \ \%9.4f\ dB\(\backslash\)n"{}},\ rgb\_psnr);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00378}00378\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00379}00379\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00380}00380\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ \ \ PSNR\ (LDR-\/RGB):\ \ \ \ \ \ \ \ \ \ \ \%9.4f\ dB\(\backslash\)n"{}},\ psnr);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00382}00382\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00383}00383\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00384}00384\ \ \ \ \ \textcolor{keywordflow}{if}\ (compute\_hdr\_metrics)}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00385}00385\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ \ \ PSNR\ (RGB\ norm\ to\ peak):\ \ \%9.4f\ dB\ (peak\ \%f)\(\backslash\)n"{}},}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_psnr\ +\ 20.0\ *\ log10(rgb\_peak),\ rgb\_peak);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00388}00388\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ mpsnr;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mpsnr\_num\ ==\ 0.0)}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ mpsnr\ =\ 999.0;}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00393}00393\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ mpsnr\ =\ 10.0\ *\ log10(mpsnr\_denom\ /\ mpsnr\_num);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00397}00397\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00398}00398\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ \ \ mPSNR\ (RGB):\ \ \ \ \ \ \ \ \ \ \ \ \ \ \%9.4f\ dB\ (fstops\ \%+d\ to\ \%+d)\(\backslash\)n"{}},}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mpsnr,\ fstop\_lo,\ fstop\_hi);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00401}00401\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ logrmse\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a46b31b19ff13c14adb023db4b5df8e52}{sqrt}}(log\_num\ /\ pixels);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00403}00403\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ \ \ LogRMSE\ (RGB):\ \ \ \ \ \ \ \ \ \ \ \ \%9.4f\(\backslash\)n"{}},\ logrmse);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00404}00404\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00405}00405\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00406}00406\ \ \ \ \ \textcolor{keywordflow}{if}\ (compute\_normal\_metrics)}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00407}00407\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00408}00408\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ \ \ Mean\ Angular\ Error:\ \ \ \ \ \ \ \%9.4f\ degrees\(\backslash\)n"{}},\ mean\_angular\_errorsum);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00409}00409\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ \ \ Worst\ Angular\ Error:\ \ \ \ \ \ \%9.4f\ degrees\(\backslash\)n"{}},\ worst\_angular\_errorsum);}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00410}00410\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00411}00411\ }
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00412}00412\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{astcenccli__error__metrics_8cpp_source_l00413}00413\ \}}
+
+\end{DoxyCode}

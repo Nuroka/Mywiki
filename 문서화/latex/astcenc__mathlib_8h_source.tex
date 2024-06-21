@@ -1,0 +1,308 @@
+\doxysection{astcenc\+\_\+mathlib.\+h}
+\hypertarget{astcenc__mathlib_8h_source}{}\label{astcenc__mathlib_8h_source}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_mathlib.h@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_mathlib.h}}
+\mbox{\hyperlink{astcenc__mathlib_8h}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00001}00001\ \textcolor{comment}{//\ SPDX-\/License-\/Identifier:\ Apache-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00003}00003\ \textcolor{comment}{//\ Copyright\ 2011-\/2024\ Arm\ Limited}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00004}00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00005}00005\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});\ you\ may\ not}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00006}00006\ \textcolor{comment}{//\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00007}00007\ \textcolor{comment}{//\ of\ the\ License\ at:}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00008}00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00009}00009\ \textcolor{comment}{//\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00010}00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00011}00011\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00012}00012\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00013}00013\ \textcolor{comment}{//\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.\ See\ the}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00014}00014\ \textcolor{comment}{//\ License\ for\ the\ specific\ language\ governing\ permissions\ and\ limitations}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00015}00015\ \textcolor{comment}{//\ under\ the\ License.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00016}00016\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00018}00018\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00019}00019\ \textcolor{comment}{\ *\ This\ module\ implements\ a\ variety\ of\ mathematical\ data\ types\ and\ library}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00020}00020\ \textcolor{comment}{\ *\ functions\ used\ by\ the\ codec.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00021}00021\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00023}00023\ \textcolor{preprocessor}{\#ifndef\ ASTC\_MATHLIB\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00024}00024\ \textcolor{preprocessor}{\#define\ ASTC\_MATHLIB\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00026}00026\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00027}00027\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00028}00028\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00030}00030\ \textcolor{preprocessor}{\#ifndef\ ASTCENC\_POPCNT}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00031}00031\ \textcolor{preprocessor}{\ \ \#if\ defined(\_\_POPCNT\_\_)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00032}00032\ \textcolor{preprocessor}{\ \ \ \ \#define\ ASTCENC\_POPCNT\ 1}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00033}00033\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00034}\mbox{\hyperlink{astcenc__mathlib_8h_a7fa02edb1959306e6fdcfd3927fcafe0}{00034}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ ASTCENC\_POPCNT\ 0}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00035}00035\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00036}00036\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00038}00038\ \textcolor{preprocessor}{\#ifndef\ ASTCENC\_F16C}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00039}00039\ \textcolor{preprocessor}{\ \ \#if\ defined(\_\_F16C\_\_)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00040}00040\ \textcolor{preprocessor}{\ \ \ \ \#define\ ASTCENC\_F16C\ 1}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00041}00041\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00042}\mbox{\hyperlink{astcenc__mathlib_8h_aac9f95244bf5e2d1053e9f27b559d2e6}{00042}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ ASTCENC\_F16C\ 0}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00043}00043\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00044}00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00046}00046\ \textcolor{preprocessor}{\#ifndef\ ASTCENC\_SSE}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00047}00047\ \textcolor{preprocessor}{\ \ \#if\ defined(\_\_SSE4\_2\_\_)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00048}00048\ \textcolor{preprocessor}{\ \ \ \ \#define\ ASTCENC\_SSE\ 42}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00049}00049\ \textcolor{preprocessor}{\ \ \#elif\ defined(\_\_SSE4\_1\_\_)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00050}00050\ \textcolor{preprocessor}{\ \ \ \ \#define\ ASTCENC\_SSE\ 41}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00051}00051\ \textcolor{preprocessor}{\ \ \#elif\ defined(\_\_SSE2\_\_)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00052}00052\ \textcolor{preprocessor}{\ \ \ \ \#define\ ASTCENC\_SSE\ 20}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00053}00053\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00054}\mbox{\hyperlink{astcenc__mathlib_8h_ac3c149e6cee783d4a438947034c565f3}{00054}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ ASTCENC\_SSE\ 0}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00055}00055\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00056}00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00058}00058\ \textcolor{preprocessor}{\#ifndef\ ASTCENC\_AVX}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00059}00059\ \textcolor{preprocessor}{\ \ \#if\ defined(\_\_AVX2\_\_)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00060}00060\ \textcolor{preprocessor}{\ \ \ \ \#define\ ASTCENC\_AVX\ 2}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00061}00061\ \textcolor{preprocessor}{\ \ \#elif\ defined(\_\_AVX\_\_)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00062}00062\ \textcolor{preprocessor}{\ \ \ \ \#define\ ASTCENC\_AVX\ 1}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00063}00063\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00064}\mbox{\hyperlink{astcenc__mathlib_8h_a33e29f88ba93dca0ad80cef33b95ad41}{00064}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ ASTCENC\_AVX\ 0}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00065}00065\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00066}00066\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00068}00068\ \textcolor{preprocessor}{\#ifndef\ ASTCENC\_NEON}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00069}00069\ \textcolor{preprocessor}{\ \ \#if\ defined(\_\_aarch64\_\_)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00070}00070\ \textcolor{preprocessor}{\ \ \ \ \#define\ ASTCENC\_NEON\ 1}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00071}00071\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00072}\mbox{\hyperlink{astcenc__mathlib_8h_a0ed19c7e661b5011a83310fc617da03d}{00072}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ ASTCENC\_NEON\ 0}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00073}00073\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00074}00074\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00076}00076\ \textcolor{comment}{//\ Force\ vector-\/sized\ SIMD\ alignment}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00077}00077\ \textcolor{preprocessor}{\#if\ ASTCENC\_AVX}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00078}00078\ \textcolor{preprocessor}{\ \ \#define\ ASTCENC\_VECALIGN\ 32}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00079}00079\ \textcolor{preprocessor}{\#elif\ ASTCENC\_SSE\ ||\ ASTCENC\_NEON}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00080}00080\ \textcolor{preprocessor}{\ \ \#define\ ASTCENC\_VECALIGN\ 16}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00081}00081\ \textcolor{comment}{//\ Use\ default\ alignment\ for\ non-\/SIMD\ builds}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00082}00082\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00083}\mbox{\hyperlink{astcenc__mathlib_8h_a1bca7c38f3d8e2af697b16c6b9827ea6}{00083}}\ \textcolor{preprocessor}{\ \ \#define\ ASTCENC\_VECALIGN\ 0}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00084}00084\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00086}00086\ \textcolor{comment}{//\ C++11\ states\ that\ alignas(0)\ should\ be\ ignored\ but\ GCC\ doesn't\ do}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00087}00087\ \textcolor{comment}{//\ this\ on\ some\ versions,\ so\ workaround\ and\ avoid\ emitting\ alignas(0)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00088}00088\ \textcolor{preprocessor}{\#if\ ASTCENC\_VECALIGN\ >\ 0}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00089}00089\ \textcolor{preprocessor}{\ \ \ \ \#define\ ASTCENC\_ALIGNAS\ alignas(ASTCENC\_VECALIGN)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00090}00090\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00091}\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{00091}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ ASTCENC\_ALIGNAS}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00092}00092\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00094}00094\ \textcolor{preprocessor}{\#if\ ASTCENC\_SSE\ !=\ 0\ ||\ ASTCENC\_AVX\ !=\ 0\ ||\ ASTCENC\_POPCNT\ !=\ 0}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00095}00095\ \textcolor{preprocessor}{\ \ \ \ \#include\ <immintrin.h>}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00096}00096\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00098}00098\ \textcolor{comment}{/*\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00099}00099\ \textcolor{comment}{\ \ Fast\ math\ library;\ note\ that\ many\ of\ the\ higher-\/order\ functions\ in\ this\ set}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00100}00100\ \textcolor{comment}{\ \ use\ approximations\ which\ are\ less\ accurate,\ but\ faster,\ than\ <cmath>\ standard}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00101}00101\ \textcolor{comment}{\ \ library\ equivalents.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00102}00102\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00103}00103\ \textcolor{comment}{\ \ Note:\ Many\ of\ these\ are\ not\ necessarily\ faster\ than\ simple\ C\ versions\ when}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00104}00104\ \textcolor{comment}{\ \ used\ on\ a\ single\ scalar\ value,\ but\ are\ included\ for\ testing\ purposes\ as\ most}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00105}00105\ \textcolor{comment}{\ \ have\ an\ option\ based\ on\ SSE\ intrinsics\ and\ therefore\ provide\ an\ obvious\ route}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00106}00106\ \textcolor{comment}{\ \ to\ future\ vectorization.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00107}00107\ \textcolor{comment}{============================================================================\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00109}00109\ \textcolor{comment}{//\ Union\ for\ manipulation\ of\ float\ bit\ patterns}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00110}\mbox{\hyperlink{unionif32}{00110}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00111}00111\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00112}\mbox{\hyperlink{unionif32_ab2af01c7db8e7bce72271565ae1276bf}{00112}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{unionif32_ab2af01c7db8e7bce72271565ae1276bf}{u}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00113}\mbox{\hyperlink{unionif32_a708712d4a18047e8a8b12360ac5758fd}{00113}}\ \ \ \ \ int32\_t\ \mbox{\hyperlink{unionif32_a708712d4a18047e8a8b12360ac5758fd}{s}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00114}\mbox{\hyperlink{unionif32_a6ebdf3c35d5ebd30f1cbe751d8c9285e}{00114}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{unionif32_a6ebdf3c35d5ebd30f1cbe751d8c9285e}{f}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00115}00115\ \}\ \mbox{\hyperlink{unionif32}{if32}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00117}00117\ \textcolor{comment}{//\ These\ are\ namespaced\ to\ avoid\ colliding\ with\ C\ standard\ library\ functions.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00118}\mbox{\hyperlink{namespaceastc}{00118}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceastc}{astc}}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00119}00119\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00121}\mbox{\hyperlink{namespaceastc_a7b7581e8dda9382d1d6effd9c4925065}{00121}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceastc_a7b7581e8dda9382d1d6effd9c4925065}{PI}}\ \ \ \ \ \ \ \ \ \ =\ 3.14159265358979323846f;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00122}\mbox{\hyperlink{namespaceastc_a24a71ac075a8786d39f281397f77a278}{00122}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceastc_a24a71ac075a8786d39f281397f77a278}{PI\_OVER\_TWO}}\ =\ 1.57079632679489661923f;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00131}\mbox{\hyperlink{namespaceastc_acac8447d6d93a5b371b791c6e15fba6b}{00131}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceastc_acac8447d6d93a5b371b791c6e15fba6b}{fabs}}(\textcolor{keywordtype}{float}\ v)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00132}00132\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00133}00133\ \ \ \ \ \textcolor{keywordflow}{return}\ std::fabs(v);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00134}00134\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00143}\mbox{\hyperlink{namespaceastc_aa80ae2eee0ffb5b754bdf0bb08b8759b}{00143}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceastc_aa80ae2eee0ffb5b754bdf0bb08b8759b}{isnan}}(\textcolor{keywordtype}{float}\ v)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00144}00144\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00145}00145\ \ \ \ \ \textcolor{keywordflow}{return}\ v\ !=\ v;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00146}00146\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00158}00158\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00159}\mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{00159}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ T\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{min}}(T\ p,\ T\ q)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00160}00160\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00161}00161\ \ \ \ \ \textcolor{keywordflow}{return}\ p\ <\ q\ ?\ p\ :\ q;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00162}00162\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00175}00175\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00176}\mbox{\hyperlink{namespaceastc_ae6a0e03e6d3d62f82091604290a5a2fe}{00176}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ T\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{min}}(T\ p,\ T\ q,\ T\ r)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00177}00177\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00178}00178\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{min}}(\mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{min}}(p,\ q),\ r);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00179}00179\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00193}00193\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00194}\mbox{\hyperlink{namespaceastc_affe4def63b7037742cee70bb11201fbd}{00194}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ T\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{min}}(T\ p,\ T\ q,\ T\ r,\ T\ s)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00195}00195\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00196}00196\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{min}}(\mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{min}}(p,\ q),\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{min}}(r,\ s));}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00197}00197\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00209}00209\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00210}\mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{00210}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ T\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{max}}(T\ p,\ T\ q)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00211}00211\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00212}00212\ \ \ \ \ \textcolor{keywordflow}{return}\ p\ >\ q\ ?\ p\ :\ q;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00213}00213\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00226}00226\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00227}\mbox{\hyperlink{namespaceastc_a91d7d57ac86f32500b30ac52961ad4ff}{00227}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ T\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{max}}(T\ p,\ T\ q,\ T\ r)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00228}00228\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00229}00229\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{max}}(\mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{max}}(p,\ q),\ r);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00230}00230\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00244}00244\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00245}\mbox{\hyperlink{namespaceastc_a4462fcc378f7e27e2464501812d9d0fd}{00245}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ T\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{max}}(T\ p,\ T\ q,\ T\ r,\ T\ s)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00246}00246\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00247}00247\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{max}}(\mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{max}}(p,\ q),\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{max}}(r,\ s));}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00248}00248\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00261}00261\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00262}\mbox{\hyperlink{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b}{00262}}\ \textcolor{keyword}{inline}\ T\ \mbox{\hyperlink{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b}{clamp}}(T\ v,\ T\ mn,\ T\ mx)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00263}00263\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00264}00264\ \ \ \ \ \textcolor{comment}{//\ Do\ not\ reorder;\ correct\ NaN\ handling\ relies\ on\ the\ fact\ that\ comparison}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00265}00265\ \ \ \ \ \textcolor{comment}{//\ with\ NaN\ returns\ false\ and\ will\ fall-\/though\ to\ the\ "{}min"{}\ value.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00266}00266\ \ \ \ \ \textcolor{keywordflow}{if}\ (v\ >\ mx)\ \textcolor{keywordflow}{return}\ mx;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00267}00267\ \ \ \ \ \textcolor{keywordflow}{if}\ (v\ >\ mn)\ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00268}00268\ \ \ \ \ \textcolor{keywordflow}{return}\ mn;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00269}00269\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00280}\mbox{\hyperlink{namespaceastc_ac60307af42a98d70a956170894e29e9e}{00280}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceastc_ac60307af42a98d70a956170894e29e9e}{clamp1f}}(\textcolor{keywordtype}{float}\ v)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00281}00281\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00282}00282\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b}{astc::clamp}}(v,\ 0.0f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00283}00283\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00294}\mbox{\hyperlink{namespaceastc_a1861708487807ec08c172e2f7ff58978}{00294}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceastc_a1861708487807ec08c172e2f7ff58978}{clamp255f}}(\textcolor{keywordtype}{float}\ v)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00295}00295\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00296}00296\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b}{astc::clamp}}(v,\ 0.0f,\ 255.0f);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00297}00297\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00298}00298\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00306}\mbox{\hyperlink{namespaceastc_a6f84a2ae8e217d7ea5a490b7ac34d03d}{00306}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceastc_a6f84a2ae8e217d7ea5a490b7ac34d03d}{flt\_rd}}(\textcolor{keywordtype}{float}\ v)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00307}00307\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00308}00308\ \ \ \ \ \textcolor{keywordflow}{return}\ std::floor(v);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00309}00309\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00310}00310\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00318}\mbox{\hyperlink{namespaceastc_a455f4a304ea7dcdd8fd0de030cbdbfb4}{00318}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceastc_a455f4a304ea7dcdd8fd0de030cbdbfb4}{flt2int\_rtn}}(\textcolor{keywordtype}{float}\ v)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00319}00319\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00320}00320\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00321}00321\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(v\ +\ 0.5f);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00322}00322\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00323}00323\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00331}\mbox{\hyperlink{namespaceastc_a66b6b0dcd7cbf1ade42d2657820f249f}{00331}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceastc_a66b6b0dcd7cbf1ade42d2657820f249f}{flt2int\_rd}}(\textcolor{keywordtype}{float}\ v)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00332}00332\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00333}00333\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(v);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00334}00334\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00335}00335\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00343}\mbox{\hyperlink{namespaceastc_a515188b0c6818735536af2b546f06333}{00343}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceastc_a515188b0c6818735536af2b546f06333}{float\_as\_int}}(\textcolor{keywordtype}{float}\ v)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00344}00344\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00345}00345\ \ \ \ \ \textcolor{keyword}{union\ }\{\ \textcolor{keywordtype}{int}\ a;\ \textcolor{keywordtype}{float}\ b;\ \}\ u;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00346}00346\ \ \ \ \ u.b\ =\ v;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00347}00347\ \ \ \ \ \textcolor{keywordflow}{return}\ u.a;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00348}00348\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00357}\mbox{\hyperlink{namespaceastc_a1d23dba10443bc9ffec344007f57251a}{00357}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceastc_a1d23dba10443bc9ffec344007f57251a}{int\_as\_float}}(\textcolor{keywordtype}{int}\ v)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00358}00358\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00359}00359\ \ \ \ \ \textcolor{keyword}{union\ }\{\ \textcolor{keywordtype}{int}\ a;\ \textcolor{keywordtype}{float}\ b;\ \}\ u;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00360}00360\ \ \ \ \ u.a\ =\ v;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00361}00361\ \ \ \ \ \textcolor{keywordflow}{return}\ u.b;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00362}00362\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00363}00363\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00371}\mbox{\hyperlink{namespaceastc_a5e60e4c749fe4fc5c746f481af9564f4}{00371}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceastc_a5e60e4c749fe4fc5c746f481af9564f4}{rsqrt}}(\textcolor{keywordtype}{float}\ v)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00372}00372\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00373}00373\ \ \ \ \ \textcolor{keywordflow}{return}\ 1.0f\ /\ std::sqrt(v);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00374}00374\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00375}00375\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00383}\mbox{\hyperlink{namespaceastc_a31e63d01af92a8a63ffdee93d6f342ae}{00383}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceastc_a31e63d01af92a8a63ffdee93d6f342ae}{sqrt}}(\textcolor{keywordtype}{float}\ v)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00384}00384\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00385}00385\ \ \ \ \ \textcolor{keywordflow}{return}\ std::sqrt(v);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00386}00386\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00387}00387\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00396}\mbox{\hyperlink{namespaceastc_a387cad5cd8373577fc089f5c65eb2657}{00396}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceastc_a387cad5cd8373577fc089f5c65eb2657}{frexp}}(\textcolor{keywordtype}{float}\ v,\ \textcolor{keywordtype}{int}*\ expo)}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00397}00397\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00398}00398\ \ \ \ \ \mbox{\hyperlink{unionif32}{if32}}\ p;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00399}00399\ \ \ \ \ p.\mbox{\hyperlink{unionif32_a6ebdf3c35d5ebd30f1cbe751d8c9285e}{f}}\ =\ v;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00400}00400\ \ \ \ \ *expo\ =\ ((p.\mbox{\hyperlink{unionif32_ab2af01c7db8e7bce72271565ae1276bf}{u}}\ >>\ 23)\ \&\ 0xFF)\ -\/\ 126;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00401}00401\ \ \ \ \ p.\mbox{\hyperlink{unionif32_ab2af01c7db8e7bce72271565ae1276bf}{u}}\ =\ (p.\mbox{\hyperlink{unionif32_ab2af01c7db8e7bce72271565ae1276bf}{u}}\ \&\ 0x807fffff)\ |\ 0x3f000000;}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00402}00402\ \ \ \ \ \textcolor{keywordflow}{return}\ p.\mbox{\hyperlink{unionif32_a6ebdf3c35d5ebd30f1cbe751d8c9285e}{f}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00403}00403\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00404}00404\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00416}00416\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceastc_a3a0b157316c84b208b4195916b2593e1}{rand\_init}}(uint64\_t\ state[2]);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00417}00417\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00427}00427\ uint64\_t\ \mbox{\hyperlink{namespaceastc_acd6244a33d585dcaa70ceb08313115ff}{rand}}(uint64\_t\ state[2]);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00428}00428\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00429}00429\ \}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00430}00430\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00431}00431\ \textcolor{comment}{/*\ ============================================================================}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00432}00432\ \textcolor{comment}{\ \ Softfloat\ library\ with\ fp32\ and\ fp16\ conversion\ functionality.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00433}00433\ \textcolor{comment}{============================================================================\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00434}00434\ \textcolor{preprocessor}{\#if\ (ASTCENC\_F16C\ ==\ 0)\ \&\&\ (ASTCENC\_NEON\ ==\ 0)}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00435}00435\ \ \ \ \ \textcolor{comment}{/*\ narrowing\ float-\/>float\ conversions\ */}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00436}00436\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{astcenc__mathlib_8h_adcbc7cc9a9cd0ab7fca183a5d20e4182}{float\_to\_sf16}}(\textcolor{keywordtype}{float}\ val);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00437}00437\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{astcenc__mathlib_8h_a64d6b5e88e81fa48697c3a7272655a7c}{sf16\_to\_float}}(uint16\_t\ val);}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00438}00438\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00439}00439\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00440}00440\ \textcolor{comment}{/*********************************}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00441}00441\ \textcolor{comment}{\ \ Vector\ library}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00442}00442\ \textcolor{comment}{*********************************/}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00443}00443\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{astcenc__vecmathlib_8h}{astcenc\_vecmathlib.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00444}00444\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00445}00445\ \textcolor{comment}{/*********************************}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00446}00446\ \textcolor{comment}{\ \ Declaration\ of\ line\ types}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00447}00447\ \textcolor{comment}{*********************************/}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00448}00448\ \textcolor{comment}{//\ parametric\ line,\ 2D:\ The\ line\ is\ given\ by\ line\ =\ a\ +\ b\ *\ t.}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00449}00449\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00450}\mbox{\hyperlink{structline2}{00450}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structline2}{line2}}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00451}00451\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00452}\mbox{\hyperlink{structline2_a9f4290e2148b060c6199656d7d781fac}{00452}}\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structline2_a9f4290e2148b060c6199656d7d781fac}{a}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00453}\mbox{\hyperlink{structline2_abec6614c3a9e3fb5331950710d89ffd4}{00453}}\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structline2_abec6614c3a9e3fb5331950710d89ffd4}{b}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00454}00454\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00455}00455\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00456}00456\ \textcolor{comment}{//\ parametric\ line,\ 3D}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00457}\mbox{\hyperlink{structline3}{00457}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structline3}{line3}}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00458}00458\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00459}\mbox{\hyperlink{structline3_a9f31b902a534755efedc7f07672353c3}{00459}}\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structline3_a9f31b902a534755efedc7f07672353c3}{a}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00460}\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{00460}}\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00461}00461\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00462}00462\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00463}\mbox{\hyperlink{structline4}{00463}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structline4}{line4}}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00464}00464\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00465}\mbox{\hyperlink{structline4_a35162a2f9eccdf19bd1bc79a9030df30}{00465}}\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structline4_a35162a2f9eccdf19bd1bc79a9030df30}{a}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00466}\mbox{\hyperlink{structline4_a6cdd2a7bcf113eb9bd2085f9a07b9084}{00466}}\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structline4_a6cdd2a7bcf113eb9bd2085f9a07b9084}{b}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00467}00467\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00468}00468\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00469}00469\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00470}\mbox{\hyperlink{structprocessed__line2}{00470}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structprocessed__line2}{processed\_line2}}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00471}00471\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00472}\mbox{\hyperlink{structprocessed__line2_a10b98e239dcbc4b0b5affa052b5f830a}{00472}}\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structprocessed__line2_a10b98e239dcbc4b0b5affa052b5f830a}{amod}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00473}\mbox{\hyperlink{structprocessed__line2_adf5dc764bd7eaffa56004e71249698cc}{00473}}\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structprocessed__line2_adf5dc764bd7eaffa56004e71249698cc}{bs}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00474}00474\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00475}00475\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00476}\mbox{\hyperlink{structprocessed__line3}{00476}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structprocessed__line3}{processed\_line3}}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00477}00477\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00478}\mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{00478}}\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{amod}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00479}\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{00479}}\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00480}00480\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00481}00481\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00482}\mbox{\hyperlink{structprocessed__line4}{00482}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structprocessed__line4}{processed\_line4}}}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00483}00483\ \{}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00484}\mbox{\hyperlink{structprocessed__line4_a15d23ed62e7f387dde80641c087fa578}{00484}}\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structprocessed__line4_a15d23ed62e7f387dde80641c087fa578}{amod}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00485}\mbox{\hyperlink{structprocessed__line4_a0e2bff0306a32a7f07e0f127ff13febc}{00485}}\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ \mbox{\hyperlink{structprocessed__line4_a0e2bff0306a32a7f07e0f127ff13febc}{bs}};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00486}00486\ \};}
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00487}00487\ }
+\DoxyCodeLine{\Hypertarget{astcenc__mathlib_8h_source_l00488}00488\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

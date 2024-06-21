@@ -1,0 +1,11 @@
+digraph "vmask8::vmask8"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="vmask8::vmask8",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Construct from 1 scalar value."];
+  Node1 -> Node2 [id="edge2_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="mask",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__vecmathlib__avx2__8_8h.html#ad922a3ed6098767968916265154b6f82",tooltip="Return a 8-bit mask code indicating mask status."];
+}

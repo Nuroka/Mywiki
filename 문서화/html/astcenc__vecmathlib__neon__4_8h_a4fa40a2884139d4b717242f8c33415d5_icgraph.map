@@ -1,0 +1,5 @@
+<map id="lsl" name="lsl">
+<area shape="rect" id="Node000001" title="Logical shift left." alt="" coords="168,5,207,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__neon__4_8h.html#a8ea3f169069b462356409fcc15f13aef" title="Return a vector of interleaved RGBA data." alt="" coords="5,5,120,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,21,120,21,120,15,154,15"/>
+</map>

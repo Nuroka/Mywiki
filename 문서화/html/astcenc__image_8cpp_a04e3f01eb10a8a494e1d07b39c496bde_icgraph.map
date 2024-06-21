@@ -1,0 +1,14 @@
+<map id="load_image_block_fast_ldr" name="load_image_block_fast_ldr">
+<area shape="rect" id="Node000001" title="Load a single image block from the input image." alt="" coords="849,5,1024,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__entry_8cpp.html#acbecfd32ce013d567cac16a877c20f42" title="Compress an image, after any preflight has completed." alt="" coords="680,5,801,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="835,21,802,21,802,15,835,15"/>
+<area shape="rect" id="Node000003" href="$astcenc__entry_8cpp.html#ad762aa055eed75156c99309158a40e90" title="Compress an image." alt="" coords="457,5,632,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="666,21,632,21,632,15,666,15"/>
+<area shape="rect" id="Node000004" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,5,207,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="444,17,409,17,255,17,207,18,207,13,255,11,409,11,444,12"/>
+<area shape="rect" id="Node000006" href="$astcenccli__toplevel_8cpp.html#a57bafe66bbd689a53aad2d190fe7a3fa" title="Runner callback function for a compression worker thread." alt="" coords="255,26,409,66"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="444,34,410,38,409,33,443,29"/>
+<area shape="rect" id="Node000005" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="90,21,57,21,57,15,90,15"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="241,34,206,29,207,23,242,29"/>
+</map>

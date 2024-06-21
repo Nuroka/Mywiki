@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Project1: C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-encoder-main/Source/astcenccli_image_external.cpp 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Project1
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('astcenccli__image__external_8cpp_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">astcenccli_image_external.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="astcenccli__image__external_8cpp.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-License-Identifier: Apache-2.0</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// Copyright 2011-2023 Arm Limited</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// use this file except in compliance with the License. You may obtain a copy</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// of the License at:</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//     http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// License for the specific language governing permissions and limitations</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// under the License.</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;cstdio&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &quot;<a class="code" href="astcenccli__internal_8h.html">astcenccli_internal.h</a>&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">// Configure the STB image write library build.</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#a18372412ad2fc3ce1e3240b3cf0efe78">   30</a></span><span class="preprocessor">#define STB_IMAGE_IMPLEMENTATION</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#aefe397a94e8feddc652f92ef40ce9597">   31</a></span><span class="preprocessor">#define STB_IMAGE_WRITE_IMPLEMENTATION</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#aeb08d34d1eaadcd2e6a05da5ff930c5e">   32</a></span><span class="preprocessor">#define STBI_NO_GIF</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#a5e76f68e1c2f6762f36287090e83e1ef">   33</a></span><span class="preprocessor">#define STBI_NO_PIC</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#afaa171549c75c368baa419a1024d72a2">   34</a></span><span class="preprocessor">#define STBI_NO_PNM</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#a17856f964cfbba0fac175cdd4b4ba383">   35</a></span><span class="preprocessor">#define STBI_NO_PNG</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#af59a8a253ea647864c910ebd7ea7ed65">   36</a></span><span class="preprocessor">#define STBI_NO_PSD</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// Configure the TinyEXR library build.</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#a64d249aa3458d57a008b0713db24e604">   39</a></span><span class="preprocessor">#define TINYEXR_IMPLEMENTATION</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">// Configure the Wuffs library build.</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#acf8a8a9a685417efacde0d4d8a1f8333">   42</a></span><span class="preprocessor">#define WUFFS_IMPLEMENTATION</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#ad37fc127832de2d42a55f7c7a797f269">   43</a></span><span class="preprocessor">#define WUFFS_CONFIG__MODULES</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#a6478c1400404231b605e8f692e1d80a1">   44</a></span><span class="preprocessor">#define WUFFS_CONFIG__MODULE__ADLER32</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#ab42451676675b256bbb0110cf9ab881a">   45</a></span><span class="preprocessor">#define WUFFS_CONFIG__MODULE__BASE</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#acd7dff66ed86424e2828b40174568a79">   46</a></span><span class="preprocessor">#define WUFFS_CONFIG__MODULE__CRC32</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#a8ba6e5629db1ed9854b2dc0fdc92f8fc">   47</a></span><span class="preprocessor">#define WUFFS_CONFIG__MODULE__DEFLATE</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#aec64cbe7ac19355c8cfb54f5f4c12737">   48</a></span><span class="preprocessor">#define WUFFS_CONFIG__MODULE__PNG</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#a8c6812f97203584c9162ca95c03a472c">   49</a></span><span class="preprocessor">#define WUFFS_CONFIG__MODULE__ZLIB</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#include &quot;<a class="code" href="wuffs-v0_83_8c.html">wuffs-v0.3.c</a>&quot;</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">// For both libraries force asserts (which can be triggered by corrupt input</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">// images) to be handled at runtime in release builds to avoid security issues.</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#abcf0d8bc32a73fd449d918aac2ed3882">   54</a></span><span class="preprocessor">#define STBI_ASSERT(x) astcenc_runtime_assert(x)</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#a51f1f2b6ad6f1cf01f75b18a61f8207e">   55</a></span><span class="preprocessor">#define TEXR_ASSERT(x) astcenc_runtime_assert(x)</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#a6f32cae7789a8da7c1dd5fa66a5a1e8a">   60</a></span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="astcenccli__image__external_8cpp.html#a6f32cae7789a8da7c1dd5fa66a5a1e8a">astcenc_runtime_assert</a>(<span class="keywordtype">bool</span> condition)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">if</span> (!condition)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_function" href="astcenccli__internal_8h.html#a699ebbd5f0143120e8ccaa26ae386b56">print_error</a>(<span class="stringliteral">&quot;ERROR: Corrupt input image\n&quot;</span>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        exit(1);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#include &quot;ThirdParty/stb_image.h&quot;</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#include &quot;ThirdParty/stb_image_write.h&quot;</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#include &quot;ThirdParty/tinyexr.h&quot;</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="astcenccli__image__external_8cpp.html#a9920dcae3265967744c9b31e9ac8a999">   83</a></span><a class="code hl_struct" href="structastcenc__image.html">astcenc_image</a>* <a class="code hl_variable" href="astcenccli__image__load__store_8cpp.html#ab9461ff96d07d9c2004c9599d2742150">load_png_with_wuffs</a>(</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* filename,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">bool</span> y_flip,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">bool</span>&amp; is_hdr,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; component_count</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    is_hdr = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    component_count = 4;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    std::ifstream file(filename, std::ios::binary | std::ios::ate);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">if</span> (!file)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <a class="code hl_function" href="astcenccli__internal_8h.html#a699ebbd5f0143120e8ccaa26ae386b56">print_error</a>(<span class="stringliteral">&quot;ERROR: Failed to load image %s (can&#39;t fopen)\n&quot;</span>, filename);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    std::streamsize size = file.tellg();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    file.seekg(0, std::ios::beg);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    std::vector&lt;uint8_t&gt; buffer(size);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    file.read((<span class="keywordtype">char</span>*)buffer.data(), size);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_typedef" href="wuffs-v0_83_8c.html#aca1b5132af7875ae6352d8791d6beddf">wuffs_png__decoder</a> *dec = <a class="code hl_function" href="wuffs-v0_83_8c.html#a5d2bcf3dfcd583a62738e059b0d27d80">wuffs_png__decoder__alloc</a>();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">if</span> (!dec)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <a class="code hl_struct" href="structwuffs__base____image__config____struct.html">wuffs_base__image_config</a> ic;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_struct" href="structwuffs__base____io__buffer____struct.html">wuffs_base__io_buffer</a> src = <a class="code hl_function" href="wuffs-v0_83_8c.html#a00677163623339195a082d5c359983d7">wuffs_base__ptr_u8__reader</a>(buffer.data(), size, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <a class="code hl_struct" href="structwuffs__base____status____struct.html">wuffs_base__status</a> status = <a class="code hl_function" href="wuffs-v0_83_8c.html#ad48f0296dc931ce5dcea8a0c30e642c0">wuffs_png__decoder__decode_image_config</a>(dec, &amp;ic, &amp;src);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">if</span> (status.<a class="code hl_variable" href="structwuffs__base____status____struct.html#a41d0e1b59d019e94b7f3c030d53db6e7">repr</a>)</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    uint32_t dim_x = <a class="code hl_function" href="wuffs-v0_83_8c.html#a5f2035e154cd391ccf4d43a5f759f25f">wuffs_base__pixel_config__width</a>(&amp;ic.<a class="code hl_variable" href="structwuffs__base____image__config____struct.html#aa5f3a74ab32427acb8f935e04dd6b2ab">pixcfg</a>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    uint32_t dim_y = <a class="code hl_function" href="wuffs-v0_83_8c.html#adefd33c267daa0d55e11eb5f6d363625">wuffs_base__pixel_config__height</a>(&amp;ic.<a class="code hl_variable" href="structwuffs__base____image__config____struct.html#aa5f3a74ab32427acb8f935e04dd6b2ab">pixcfg</a>);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordtype">size_t</span> num_pixels = dim_x * dim_y;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">if</span> (num_pixels &gt; (SIZE_MAX / 4))</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="comment">// Override the image&#39;s native pixel format to be RGBA_NONPREMUL</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <a class="code hl_function" href="wuffs-v0_83_8c.html#a0a7abef0beaadad92348c82277311994">wuffs_base__pixel_config__set</a>(</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        &amp;ic.<a class="code hl_variable" href="structwuffs__base____image__config____struct.html#aa5f3a74ab32427acb8f935e04dd6b2ab">pixcfg</a>,</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <a class="code hl_define" href="wuffs-v0_83_8c.html#a0efba23849688a4bf2cfef718ee492e0">WUFFS_BASE__PIXEL_FORMAT__RGBA_NONPREMUL</a>,</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <a class="code hl_define" href="wuffs-v0_83_8c.html#aa9cb97fbf916a4c85bfe263a57fe3b87">WUFFS_BASE__PIXEL_SUBSAMPLING__NONE</a>,</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        dim_x, dim_y);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="comment">// Configure the work buffer</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordtype">size_t</span> workbuf_len = <a class="code hl_function" href="wuffs-v0_83_8c.html#af83f3e29886ee92948f6e9c792ea018e">wuffs_png__decoder__workbuf_len</a>(dec).<a class="code hl_variable" href="structwuffs__base____range__ii__u64____struct.html#aa643f515f792f8962152af0d6054fb51">max_incl</a>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordflow">if</span> (workbuf_len &gt; SIZE_MAX)</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    wuffs_base__slice_u8 workbuf_slice = wuffs_base__make_slice_u8((uint8_t*)malloc(workbuf_len), workbuf_len);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">if</span> (!workbuf_slice.ptr)</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    }</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    wuffs_base__slice_u8 pixbuf_slice = wuffs_base__make_slice_u8((uint8_t*)malloc(num_pixels * 4), num_pixels * 4);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordflow">if</span> (!pixbuf_slice.ptr)</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <a class="code hl_struct" href="structwuffs__base____pixel__buffer____struct.html">wuffs_base__pixel_buffer</a> pb;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    status = <a class="code hl_function" href="wuffs-v0_83_8c.html#a6dbfe45a4cad9cea69bdcf64aec9fb8d">wuffs_base__pixel_buffer__set_from_slice</a>(&amp;pb, &amp;ic.<a class="code hl_variable" href="structwuffs__base____image__config____struct.html#aa5f3a74ab32427acb8f935e04dd6b2ab">pixcfg</a>, pixbuf_slice);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordflow">if</span> (status.<a class="code hl_variable" href="structwuffs__base____status____struct.html#a41d0e1b59d019e94b7f3c030d53db6e7">repr</a>)</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    {</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="comment">// Decode the pixels</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    status = <a class="code hl_function" href="wuffs-v0_83_8c.html#af57d8e43628d94b43f9443fb8303fdeb">wuffs_png__decoder__decode_frame</a>(dec, &amp;pb, &amp;src, <a class="code hl_define" href="wuffs-v0_83_8c.html#afbc54096d64714b332c602a7a5710fdc">WUFFS_BASE__PIXEL_BLEND__SRC</a>, workbuf_slice, NULL);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordflow">if</span> (status.<a class="code hl_variable" href="structwuffs__base____status____struct.html#a41d0e1b59d019e94b7f3c030d53db6e7">repr</a>)</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <a class="code hl_struct" href="structastcenc__image.html">astcenc_image</a>* img = <a class="code hl_function" href="astcenccli__image_8cpp.html#a9ecc1dac86584f7e086e9962fb6c0509">astc_img_from_unorm8x4_array</a>(pixbuf_slice.ptr, dim_x, dim_y, y_flip);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    free(pixbuf_slice.ptr);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    free(workbuf_slice.ptr);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    free(dec);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">return</span> img;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>}</div>
+</div>
+<div class="ttc" id="aastcenccli__image_8cpp_html_a9ecc1dac86584f7e086e9962fb6c0509"><div class="ttname"><a href="astcenccli__image_8cpp.html#a9ecc1dac86584f7e086e9962fb6c0509">astc_img_from_unorm8x4_array</a></div><div class="ttdeci">astcenc_image * astc_img_from_unorm8x4_array(const uint8_t *data, unsigned int dim_x, unsigned int dim_y, bool y_flip)</div><div class="ttdoc">Create an image from a 2D byte data array.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__image_8cpp_source.html#l00205">astcenccli_image.cpp:205</a></div></div>
+<div class="ttc" id="aastcenccli__image__external_8cpp_html_a6f32cae7789a8da7c1dd5fa66a5a1e8a"><div class="ttname"><a href="astcenccli__image__external_8cpp.html#a6f32cae7789a8da7c1dd5fa66a5a1e8a">astcenc_runtime_assert</a></div><div class="ttdeci">static void astcenc_runtime_assert(bool condition)</div><div class="ttdoc">Trap image load failures and convert into a runtime error.</div><div class="ttdef"><b>Definition</b> <a href="#l00060">astcenccli_image_external.cpp:60</a></div></div>
+<div class="ttc" id="aastcenccli__image__load__store_8cpp_html_ab9461ff96d07d9c2004c9599d2742150"><div class="ttname"><a href="astcenccli__image__load__store_8cpp.html#ab9461ff96d07d9c2004c9599d2742150">load_png_with_wuffs</a></div><div class="ttdeci">static const struct @2 load_png_with_wuffs[]</div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html"><div class="ttname"><a href="astcenccli__internal_8h.html">astcenccli_internal.h</a></div></div>
+<div class="ttc" id="aastcenccli__internal_8h_html_a699ebbd5f0143120e8ccaa26ae386b56"><div class="ttname"><a href="astcenccli__internal_8h.html#a699ebbd5f0143120e8ccaa26ae386b56">print_error</a></div><div class="ttdeci">static void print_error(const char *format)</div><div class="ttdoc">Print a string to stderr.</div><div class="ttdef"><b>Definition</b> <a href="astcenccli__internal_8h_source.html#l00102">astcenccli_internal.h:102</a></div></div>
+<div class="ttc" id="astructastcenc__image_html"><div class="ttname"><a href="structastcenc__image.html">astcenc_image</a></div><div class="ttdoc">An uncompressed 2D or 3D image.</div><div class="ttdef"><b>Definition</b> <a href="astcenc_8h_source.html#l00601">astcenc.h:602</a></div></div>
+<div class="ttc" id="astructwuffs__base____image__config____struct_html"><div class="ttname"><a href="structwuffs__base____image__config____struct.html">wuffs_base__image_config__struct</a></div><div class="ttdef"><b>Definition</b> <a href="wuffs-v0_83_8c_source.html#l04420">wuffs-v0.3.c:4420</a></div></div>
+<div class="ttc" id="astructwuffs__base____image__config____struct_html_aa5f3a74ab32427acb8f935e04dd6b2ab"><div class="ttname"><a href="structwuffs__base____image__config____struct.html#aa5f3a74ab32427acb8f935e04dd6b2ab">wuffs_base__image_config__struct::pixcfg</a></div><div class="ttdeci">wuffs_base__pixel_config pixcfg</div><div class="ttdef"><b>Definition</b> <a href="wuffs-v0_83_8c_source.html#l04421">wuffs-v0.3.c:4421</a></div></div>
+<div class="ttc" id="astructwuffs__base____io__buffer____struct_html"><div class="ttname"><a href="structwuffs__base____io__buffer____struct.html">wuffs_base__io_buffer__struct</a></div><div class="ttdef"><b>Definition</b> <a href="wuffs-v0_83_8c_source.html#l02881">wuffs-v0.3.c:2881</a></div></div>
+<div class="ttc" id="astructwuffs__base____pixel__buffer____struct_html"><div class="ttname"><a href="structwuffs__base____pixel__buffer____struct.html">wuffs_base__pixel_buffer__struct</a></div><div class="ttdef"><b>Definition</b> <a href="wuffs-v0_83_8c_source.html#l04802">wuffs-v0.3.c:4802</a></div></div>
+<div class="ttc" id="astructwuffs__base____range__ii__u64____struct_html_aa643f515f792f8962152af0d6054fb51"><div class="ttname"><a href="structwuffs__base____range__ii__u64____struct.html#aa643f515f792f8962152af0d6054fb51">wuffs_base__range_ii_u64__struct::max_incl</a></div><div class="ttdeci">uint64_t max_incl</div><div class="ttdef"><b>Definition</b> <a href="wuffs-v0_83_8c_source.html#l02061">wuffs-v0.3.c:2061</a></div></div>
+<div class="ttc" id="astructwuffs__base____status____struct_html"><div class="ttname"><a href="structwuffs__base____status____struct.html">wuffs_base__status__struct</a></div><div class="ttdef"><b>Definition</b> <a href="wuffs-v0_83_8c_source.html#l00414">wuffs-v0.3.c:414</a></div></div>
+<div class="ttc" id="astructwuffs__base____status____struct_html_a41d0e1b59d019e94b7f3c030d53db6e7"><div class="ttname"><a href="structwuffs__base____status____struct.html#a41d0e1b59d019e94b7f3c030d53db6e7">wuffs_base__status__struct::repr</a></div><div class="ttdeci">const char * repr</div><div class="ttdef"><b>Definition</b> <a href="wuffs-v0_83_8c_source.html#l00415">wuffs-v0.3.c:415</a></div></div>
+<div class="ttc" id="awuffs-v0_83_8c_html"><div class="ttname"><a href="wuffs-v0_83_8c.html">wuffs-v0.3.c</a></div></div>
+<div class="ttc" id="awuffs-v0_83_8c_html_a00677163623339195a082d5c359983d7"><div class="ttname"><a href="wuffs-v0_83_8c.html#a00677163623339195a082d5c359983d7">wuffs_base__ptr_u8__reader</a></div><div class="ttdeci">static wuffs_base__io_buffer wuffs_base__ptr_u8__reader(uint8_t *ptr, size_t len, bool closed)</div><div class="ttdef"><b>Definition</b> <a href="wuffs-v0_83_8c_source.html#l02928">wuffs-v0.3.c:2928</a></div></div>
+<div class="ttc" id="awuffs-v0_83_8c_html_a0a7abef0beaadad92348c82277311994"><div class="ttname"><a href="wuffs-v0_83_8c.html#a0a7abef0beaadad92348c82277311994">wuffs_base__pixel_config__set</a></div><div class="ttdeci">static void wuffs_base__pixel_config__set(wuffs_base__pixel_config *c, uint32_t pixfmt_repr, uint32_t pixsub_repr, uint32_t width, uint32_t height)</div><div class="ttdef"><b>Definition</b> <a href="wuffs-v0_83_8c_source.html#l04248">wuffs-v0.3.c:4248</a></div></div>
+<div class="ttc" id="awuffs-v0_83_8c_html_a0efba23849688a4bf2cfef718ee492e0"><div class="ttname"><a href="wuffs-v0_83_8c.html#a0efba23849688a4bf2cfef718ee492e0">WUFFS_BASE__PIXEL_FORMAT__RGBA_NONPREMUL</a></div><div class="ttdeci">#define WUFFS_BASE__PIXEL_FORMAT__RGBA_NONPREMUL</div><div class="ttdef"><b>Definition</b> <a href="wuffs-v0_83_8c_source.html#l04012">wuffs-v0.3.c:4012</a></div></div>
+<div class="ttc" id="awuffs-v0_83_8c_html_a5d2bcf3dfcd583a62738e059b0d27d80"><div class="ttname"><a href="wuffs-v0_83_8c.html#a5d2bcf3dfcd583a62738e059b0d27d80">wuffs_png__decoder__alloc</a></div><div class="ttdeci">wuffs_png__decoder * wuffs_png__decoder__alloc()</div></div>
+<div class="ttc" id="awuffs-v0_83_8c_html_a5f2035e154cd391ccf4d43a5f759f25f"><div class="ttname"><a href="wuffs-v0_83_8c.html#a5f2035e154cd391ccf4d43a5f759f25f">wuffs_base__pixel_config__width</a></div><div class="ttdeci">static uint32_t wuffs_base__pixel_config__width(const wuffs_base__pixel_config *c)</div><div class="ttdef"><b>Definition</b> <a href="wuffs-v0_83_8c_source.html#l04319">wuffs-v0.3.c:4319</a></div></div>
+<div class="ttc" id="awuffs-v0_83_8c_html_a6dbfe45a4cad9cea69bdcf64aec9fb8d"><div class="ttname"><a href="wuffs-v0_83_8c.html#a6dbfe45a4cad9cea69bdcf64aec9fb8d">wuffs_base__pixel_buffer__set_from_slice</a></div><div class="ttdeci">static wuffs_base__status wuffs_base__pixel_buffer__set_from_slice(wuffs_base__pixel_buffer *pb, const wuffs_base__pixel_config *pixcfg, wuffs_base__slice_u8 pixbuf_memory)</div><div class="ttdef"><b>Definition</b> <a href="wuffs-v0_83_8c_source.html#l04901">wuffs-v0.3.c:4901</a></div></div>
+<div class="ttc" id="awuffs-v0_83_8c_html_aa9cb97fbf916a4c85bfe263a57fe3b87"><div class="ttname"><a href="wuffs-v0_83_8c.html#aa9cb97fbf916a4c85bfe263a57fe3b87">WUFFS_BASE__PIXEL_SUBSAMPLING__NONE</a></div><div class="ttdeci">#define WUFFS_BASE__PIXEL_SUBSAMPLING__NONE</div><div class="ttdef"><b>Definition</b> <a href="wuffs-v0_83_8c_source.html#l04144">wuffs-v0.3.c:4144</a></div></div>
+<div class="ttc" id="awuffs-v0_83_8c_html_aca1b5132af7875ae6352d8791d6beddf"><div class="ttname"><a href="wuffs-v0_83_8c.html#aca1b5132af7875ae6352d8791d6beddf">wuffs_png__decoder</a></div><div class="ttdeci">struct wuffs_png__decoder__struct wuffs_png__decoder</div><div class="ttdef"><b>Definition</b> <a href="wuffs-v0_83_8c_source.html#l09609">wuffs-v0.3.c:9609</a></div></div>
+<div class="ttc" id="awuffs-v0_83_8c_html_ad48f0296dc931ce5dcea8a0c30e642c0"><div class="ttname"><a href="wuffs-v0_83_8c.html#ad48f0296dc931ce5dcea8a0c30e642c0">wuffs_png__decoder__decode_image_config</a></div><div class="ttdeci">WUFFS_BASE__MAYBE_STATIC wuffs_base__status wuffs_png__decoder__decode_image_config(wuffs_png__decoder *self, wuffs_base__image_config *a_dst, wuffs_base__io_buffer *a_src)</div></div>
+<div class="ttc" id="awuffs-v0_83_8c_html_adefd33c267daa0d55e11eb5f6d363625"><div class="ttname"><a href="wuffs-v0_83_8c.html#adefd33c267daa0d55e11eb5f6d363625">wuffs_base__pixel_config__height</a></div><div class="ttdeci">static uint32_t wuffs_base__pixel_config__height(const wuffs_base__pixel_config *c)</div><div class="ttdef"><b>Definition</b> <a href="wuffs-v0_83_8c_source.html#l04324">wuffs-v0.3.c:4324</a></div></div>
+<div class="ttc" id="awuffs-v0_83_8c_html_af57d8e43628d94b43f9443fb8303fdeb"><div class="ttname"><a href="wuffs-v0_83_8c.html#af57d8e43628d94b43f9443fb8303fdeb">wuffs_png__decoder__decode_frame</a></div><div class="ttdeci">WUFFS_BASE__MAYBE_STATIC wuffs_base__status wuffs_png__decoder__decode_frame(wuffs_png__decoder *self, wuffs_base__pixel_buffer *a_dst, wuffs_base__io_buffer *a_src, wuffs_base__pixel_blend a_blend, wuffs_base__slice_u8 a_workbuf, wuffs_base__decode_frame_options *a_opts)</div></div>
+<div class="ttc" id="awuffs-v0_83_8c_html_af83f3e29886ee92948f6e9c792ea018e"><div class="ttname"><a href="wuffs-v0_83_8c.html#af83f3e29886ee92948f6e9c792ea018e">wuffs_png__decoder__workbuf_len</a></div><div class="ttdeci">WUFFS_BASE__MAYBE_STATIC wuffs_base__range_ii_u64 wuffs_png__decoder__workbuf_len(const wuffs_png__decoder *self)</div></div>
+<div class="ttc" id="awuffs-v0_83_8c_html_afbc54096d64714b332c602a7a5710fdc"><div class="ttname"><a href="wuffs-v0_83_8c.html#afbc54096d64714b332c602a7a5710fdc">WUFFS_BASE__PIXEL_BLEND__SRC</a></div><div class="ttdeci">#define WUFFS_BASE__PIXEL_BLEND__SRC</div><div class="ttdef"><b>Definition</b> <a href="wuffs-v0_83_8c_source.html#l03918">wuffs-v0.3.c:3918</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_211b531afad3b7391864460492782af6.html">astc-encoder-main</a></li><li class="navelem"><a class="el" href="dir_7df889ea08e038e0b05c337eccc30153.html">Source</a></li><li class="navelem"><a class="el" href="astcenccli__image__external_8cpp.html">astcenccli_image_external.cpp</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+  </ul>
+</div>
+</body>
+</html>

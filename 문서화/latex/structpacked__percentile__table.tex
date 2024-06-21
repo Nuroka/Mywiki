@@ -1,0 +1,103 @@
+\doxysection{packed\+\_\+percentile\+\_\+table 구조체 참조}
+\hypertarget{structpacked__percentile__table}{}\label{structpacked__percentile__table}\index{packed\_percentile\_table@{packed\_percentile\_table}}
+
+
+Percentile data tables for different block encodings.  
+
+
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structpacked__percentile__table_a4a0915a92490dce778ea11aa37f99652}{xdim}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structpacked__percentile__table_ac1ed94f5e2d6e782c1c646440fdd8ec6}{ydim}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structpacked__percentile__table_a2985dbb914d63db5e4cdbd8c452c3bff}{item\+\_\+count}} \mbox{[}2\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structpacked__percentile__table_acd4fb860c00adf1a65c503f8c1c977b4}{difscales}} \mbox{[}2\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structpacked__percentile__table_a95e482ab9da46570b6f0e039844a8336}{initial\+\_\+percs}} \mbox{[}2\mbox{]}
+\item 
+const uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structpacked__percentile__table_ae021462f29fc6db6ab0c5b0135d0afc4}{items}} \mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+Percentile data tables for different block encodings. 
+
+To reduce binary size the tables are stored using a packed differential encoding.
+
+Structure containing packed percentile metadata.
+
+Note that percentile tables do not exist for 3D textures, so no zdim is stored. 
+
+\mbox{\hyperlink{astcenc__percentile__tables_8cpp_source}{astcenc\+\_\+percentile\+\_\+tables.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__percentile__tables_8cpp_source_l00032}{32}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structpacked__percentile__table_acd4fb860c00adf1a65c503f8c1c977b4}\index{packed\_percentile\_table@{packed\_percentile\_table}!difscales@{difscales}}
+\index{difscales@{difscales}!packed\_percentile\_table@{packed\_percentile\_table}}
+\doxysubsubsection{\texorpdfstring{difscales}{difscales}}
+{\footnotesize\ttfamily \label{structpacked__percentile__table_acd4fb860c00adf1a65c503f8c1c977b4} 
+uint16\+\_\+t packed\+\_\+percentile\+\_\+table\+::difscales\mbox{[}2\mbox{]}}
+
+The accumulator divisor for 1 and 2 plane data. 
+
+\mbox{\hyperlink{astcenc__percentile__tables_8cpp_source}{astcenc\+\_\+percentile\+\_\+tables.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__percentile__tables_8cpp_source_l00044}{44}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structpacked__percentile__table_a95e482ab9da46570b6f0e039844a8336}\index{packed\_percentile\_table@{packed\_percentile\_table}!initial\_percs@{initial\_percs}}
+\index{initial\_percs@{initial\_percs}!packed\_percentile\_table@{packed\_percentile\_table}}
+\doxysubsubsection{\texorpdfstring{initial\_percs}{initial\_percs}}
+{\footnotesize\ttfamily \label{structpacked__percentile__table_a95e482ab9da46570b6f0e039844a8336} 
+uint16\+\_\+t packed\+\_\+percentile\+\_\+table\+::initial\+\_\+percs\mbox{[}2\mbox{]}}
+
+The initial accumulator values for 1 and 2 plane data. 
+
+\mbox{\hyperlink{astcenc__percentile__tables_8cpp_source}{astcenc\+\_\+percentile\+\_\+tables.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__percentile__tables_8cpp_source_l00047}{47}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structpacked__percentile__table_a2985dbb914d63db5e4cdbd8c452c3bff}\index{packed\_percentile\_table@{packed\_percentile\_table}!item\_count@{item\_count}}
+\index{item\_count@{item\_count}!packed\_percentile\_table@{packed\_percentile\_table}}
+\doxysubsubsection{\texorpdfstring{item\_count}{item\_count}}
+{\footnotesize\ttfamily \label{structpacked__percentile__table_a2985dbb914d63db5e4cdbd8c452c3bff} 
+uint16\+\_\+t packed\+\_\+percentile\+\_\+table\+::item\+\_\+count\mbox{[}2\mbox{]}}
+
+The number of packed items in the 1 and 2 plane data. 
+
+\mbox{\hyperlink{astcenc__percentile__tables_8cpp_source}{astcenc\+\_\+percentile\+\_\+tables.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__percentile__tables_8cpp_source_l00041}{41}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structpacked__percentile__table_ae021462f29fc6db6ab0c5b0135d0afc4}\index{packed\_percentile\_table@{packed\_percentile\_table}!items@{items}}
+\index{items@{items}!packed\_percentile\_table@{packed\_percentile\_table}}
+\doxysubsubsection{\texorpdfstring{items}{items}}
+{\footnotesize\ttfamily \label{structpacked__percentile__table_ae021462f29fc6db6ab0c5b0135d0afc4} 
+const uint16\+\_\+t\texorpdfstring{$\ast$}{*} packed\+\_\+percentile\+\_\+table\+::items\mbox{[}2\mbox{]}}
+
+The packed data for the 1 and 2 plane data. 
+
+\mbox{\hyperlink{astcenc__percentile__tables_8cpp_source}{astcenc\+\_\+percentile\+\_\+tables.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__percentile__tables_8cpp_source_l00050}{50}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structpacked__percentile__table_a4a0915a92490dce778ea11aa37f99652}\index{packed\_percentile\_table@{packed\_percentile\_table}!xdim@{xdim}}
+\index{xdim@{xdim}!packed\_percentile\_table@{packed\_percentile\_table}}
+\doxysubsubsection{\texorpdfstring{xdim}{xdim}}
+{\footnotesize\ttfamily \label{structpacked__percentile__table_a4a0915a92490dce778ea11aa37f99652} 
+uint8\+\_\+t packed\+\_\+percentile\+\_\+table\+::xdim}
+
+The block X dimension. 
+
+\mbox{\hyperlink{astcenc__percentile__tables_8cpp_source}{astcenc\+\_\+percentile\+\_\+tables.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__percentile__tables_8cpp_source_l00035}{35}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structpacked__percentile__table_ac1ed94f5e2d6e782c1c646440fdd8ec6}\index{packed\_percentile\_table@{packed\_percentile\_table}!ydim@{ydim}}
+\index{ydim@{ydim}!packed\_percentile\_table@{packed\_percentile\_table}}
+\doxysubsubsection{\texorpdfstring{ydim}{ydim}}
+{\footnotesize\ttfamily \label{structpacked__percentile__table_ac1ed94f5e2d6e782c1c646440fdd8ec6} 
+uint8\+\_\+t packed\+\_\+percentile\+\_\+table\+::ydim}
+
+The block Y dimension. 
+
+\mbox{\hyperlink{astcenc__percentile__tables_8cpp_source}{astcenc\+\_\+percentile\+\_\+tables.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__percentile__tables_8cpp_source_l00038}{38}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__percentile__tables_8cpp}{astcenc\+\_\+percentile\+\_\+tables.\+cpp}}\end{DoxyCompactItemize}

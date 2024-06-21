@@ -1,0 +1,49 @@
+<map id="vtable_8bt_32bi" name="vtable_8bt_32bi">
+<area shape="rect" id="Node000001" title="Perform an 8&#45;bit 16&#45;entry table lookup, with 32&#45;bit indexes." alt="" coords="1697,210,1808,236"/>
+<area shape="rect" id="Node000002" href="$astcenc__ideal__endpoints__and__weights_8cpp.html#af42cf444db5f16e2ed4fb642acf81f4a" title="Compute the optimal quantized weights for a decimation table." alt="" coords="1299,270,1485,310"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1684,238,1486,275,1485,270,1683,233"/>
+<area shape="rect" id="Node000011" href="$astcenc__decompress__symbolic_8cpp.html#aec197676ba4b10bf63a6523a775530d8" title="Unpack a set of quantized and decimated weights." alt="" coords="1535,181,1649,206"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="1683,213,1649,207,1650,201,1684,208"/>
+<area shape="rect" id="Node000003" href="$astcenc__compress__symbolic_8cpp.html#af5f518a15600c71922e69267dea2db99" title="Compress a block using a chosen partitioning and 1 plane of weights." alt="" coords="1073,206,1249,246"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1305,268,1233,248,1235,243,1307,263"/>
+<area shape="rect" id="Node000010" href="$astcenc__compress__symbolic_8cpp.html#af11a976c8ea386db054bef472ce0667c" title="Compress a block using a chosen partitioning and 2 planes of weights." alt="" coords="1073,270,1249,310"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="1285,292,1250,292,1250,287,1285,287"/>
+<area shape="rect" id="Node000004" href="$astcenc__compress__symbolic_8cpp.html#a579b9a2ceeecda2fb3abe63b8311df1c" title="Compress an image block into a physical block." alt="" coords="885,213,1003,238"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1060,228,1003,228,1003,223,1060,223"/>
+<area shape="rect" id="Node000005" href="$astcenc__entry_8cpp.html#acbecfd32ce013d567cac16a877c20f42" title="Compress an image, after any preflight has completed." alt="" coords="693,213,815,238"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="871,228,815,228,815,223,871,223"/>
+<area shape="rect" id="Node000006" href="$astcenc__entry_8cpp.html#ad762aa055eed75156c99309158a40e90" title="Compress an image." alt="" coords="471,213,645,238"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="680,228,645,228,645,223,680,223"/>
+<area shape="rect" id="Node000007" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,98,207,124"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="457,236,408,235,356,230,304,220,254,203,225,186,200,165,164,126,168,122,204,162,228,182,256,198,305,215,357,225,409,229,457,230"/>
+<area shape="rect" id="Node000009" href="$astcenccli__toplevel_8cpp.html#a57bafe66bbd689a53aad2d190fe7a3fa" title="Runner callback function for a compression worker thread." alt="" coords="261,148,416,188"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="495,212,415,191,416,186,496,207"/>
+<area shape="rect" id="Node000008" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,98,56,124"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="90,114,57,114,57,108,90,108"/>
+<area shape="poly" id="edge9_Node000009_Node000007" title=" " alt="" coords="260,147,196,126,198,121,262,142"/>
+<area shape="poly" id="edge11_Node000010_Node000004" title=" " alt="" coords="1079,268,987,241,989,236,1080,263"/>
+<area shape="rect" id="Node000012" href="$astcenc__entry_8cpp.html#a4138a9fb500526b5bfd98ea53a3ecec7" title="Provide a high level summary of a block&#39;s encoding." alt="" coords="1313,92,1471,117"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="1561,175,1526,153,1486,132,1450,119,1451,114,1488,127,1528,148,1563,171"/>
+<area shape="rect" id="Node000015" href="$astcenc__decompress__symbolic_8cpp.html#a0541138e65930f39f6caba517e76dfe4" title="Compute the error between a symbolic block and the original input data." alt="" coords="1307,142,1477,182"/>
+<area shape="poly" id="edge17_Node000011_Node000015" title=" " alt="" coords="1521,185,1476,178,1477,172,1522,180"/>
+<area shape="rect" id="Node000016" href="$astcenc__decompress__symbolic_8cpp.html#aff8e27acd948a9cc5631d99c80906b2f" title="Compute the error between a symbolic block and the original input data." alt="" coords="1297,206,1487,246"/>
+<area shape="poly" id="edge19_Node000011_Node000016" title=" " alt="" coords="1522,207,1487,213,1486,208,1521,202"/>
+<area shape="rect" id="Node000017" href="$astcenc__decompress__symbolic_8cpp.html#a9c23f8373c9f5e708650b7c8e038b182" title="Compute the error between a symbolic block and the original input data." alt="" coords="1307,334,1477,374"/>
+<area shape="poly" id="edge21_Node000011_Node000017" title=" " alt="" coords="1579,220,1542,272,1517,300,1488,324,1467,336,1464,331,1485,319,1513,296,1538,269,1574,217"/>
+<area shape="rect" id="Node000018" href="$astcenc__decompress__symbolic_8cpp.html#a4a5f09c362972951a31e4d7ff918f89f" title="Decompress a symbolic block in to an image block." alt="" coords="868,34,1020,74"/>
+<area shape="poly" id="edge23_Node000011_Node000018" title=" " alt="" coords="1574,171,1538,123,1514,100,1485,83,1426,60,1364,44,1300,34,1237,30,1117,32,1020,43,1020,37,1117,27,1237,25,1301,29,1365,39,1428,55,1488,78,1517,96,1542,120,1579,167"/>
+<area shape="rect" id="Node000013" href="$astcenccli__toplevel_8cpp.html#ac1760850c83dafab500f7cf8ab789246" title="Populate a single diagnostic image showing aspects of the encoding." alt="" coords="1084,94,1239,120"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="1299,108,1239,109,1239,103,1299,103"/>
+<area shape="rect" id="Node000014" href="$astcenccli__toplevel_8cpp.html#a65c87ee1ff0ed0736cffa06692853479" title="Print a set of diagnostic images showing aspects of the encoding." alt="" coords="863,98,1025,124"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="1070,111,1025,112,1025,107,1070,106"/>
+<area shape="poly" id="edge16_Node000014_Node000007" title=" " alt="" coords="849,114,207,114,207,108,849,108"/>
+<area shape="poly" id="edge18_Node000015_Node000003" title=" " alt="" coords="1307,188,1235,208,1233,203,1305,183"/>
+<area shape="poly" id="edge20_Node000016_Node000003" title=" " alt="" coords="1284,228,1250,228,1250,223,1284,223"/>
+<area shape="poly" id="edge22_Node000017_Node000010" title=" " alt="" coords="1305,332,1233,312,1235,307,1307,327"/>
+<area shape="rect" id="Node000019" href="$astcenc__entry_8cpp.html#a062987fc41b9df7d34d8eb668f29eb21" title="Decompress an image." alt="" coords="485,34,631,74"/>
+<area shape="poly" id="edge24_Node000018_Node000019" title=" " alt="" coords="854,56,631,56,631,51,854,51"/>
+<area shape="poly" id="edge25_Node000019_Node000007" title=" " alt="" coords="490,32,438,19,378,10,315,10,285,15,256,24,228,39,203,60,168,100,164,96,199,56,225,35,254,19,284,10,315,5,378,4,439,13,491,27"/>
+<area shape="rect" id="Node000020" href="$astcenccli__toplevel_8cpp.html#a02c55a799cc33b39f9d733b1a7e91281" title="Runner callback function for a decompression worker thread." alt="" coords="255,34,423,74"/>
+<area shape="poly" id="edge26_Node000019_Node000020" title=" " alt="" coords="471,56,423,56,423,51,471,51"/>
+<area shape="poly" id="edge27_Node000020_Node000007" title=" " alt="" coords="262,80,198,101,196,96,260,75"/>
+</map>

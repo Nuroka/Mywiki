@@ -1,0 +1,129 @@
+\doxysection{vmask8 구조체 참조}
+\hypertarget{structvmask8}{}\label{structvmask8}\index{vmask8@{vmask8}}
+
+
+Data type for 8-\/wide control plane masks.  
+
+
+
+
+{\ttfamily \#include $<$astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h$>$}
+
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8_ae14dda510fb383e0b85acd2a0e747a4a}{vmask8}} (\+\_\+\+\_\+m256 a)
+\begin{DoxyCompactList}\small\item\em Construct from an existing SIMD register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8_ae7cdf565599f8d074c04c421ddce3c8b}{vmask8}} (\+\_\+\+\_\+m256i a)
+\begin{DoxyCompactList}\small\item\em Construct from an existing SIMD register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8_a18832b11d77a9460960f748cd7e84987}{vmask8}} (bool a)
+\begin{DoxyCompactList}\small\item\em Construct from 1 scalar value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+m256 \mbox{\hyperlink{structvmask8_a4f9d3849e610eba5bc5590ffd6557064}{m}}
+\begin{DoxyCompactList}\small\item\em The vector ... \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+Data type for 8-\/wide control plane masks. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00281}{281}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{structvmask8_ae14dda510fb383e0b85acd2a0e747a4a}\index{vmask8@{vmask8}!vmask8@{vmask8}}
+\index{vmask8@{vmask8}!vmask8@{vmask8}}
+\doxysubsubsection{\texorpdfstring{vmask8()}{vmask8()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{structvmask8_ae14dda510fb383e0b85acd2a0e747a4a} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vmask8\+::vmask8 (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+m256}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from an existing SIMD register. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00286}{286}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00287\ \ \ \ \ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask8_a4f9d3849e610eba5bc5590ffd6557064}{m}}\ =\ a;}
+\DoxyCodeLine{00289\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structvmask8_ae7cdf565599f8d074c04c421ddce3c8b}\index{vmask8@{vmask8}!vmask8@{vmask8}}
+\index{vmask8@{vmask8}!vmask8@{vmask8}}
+\doxysubsubsection{\texorpdfstring{vmask8()}{vmask8()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{structvmask8_ae7cdf565599f8d074c04c421ddce3c8b} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vmask8\+::vmask8 (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+m256i}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from an existing SIMD register. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00294}{294}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00295\ \ \ \ \ \{}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask8_a4f9d3849e610eba5bc5590ffd6557064}{m}}\ =\ \_mm256\_castsi256\_ps(a);}
+\DoxyCodeLine{00297\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structvmask8_a18832b11d77a9460960f748cd7e84987}\index{vmask8@{vmask8}!vmask8@{vmask8}}
+\index{vmask8@{vmask8}!vmask8@{vmask8}}
+\doxysubsubsection{\texorpdfstring{vmask8()}{vmask8()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{structvmask8_a18832b11d77a9460960f748cd7e84987} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vmask8\+::vmask8 (\begin{DoxyParamCaption}\item[{bool}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from 1 scalar value. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00302}{302}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00303\ \ \ \ \ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint8}{vint8}}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}(a\ ==\ \textcolor{keyword}{false}\ ?\ 0\ :\ -\/1);}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask8_a4f9d3849e610eba5bc5590ffd6557064}{m}}\ =\ \_mm256\_castsi256\_ps(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}.m);}
+\DoxyCodeLine{00306\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{structvmask8_a18832b11d77a9460960f748cd7e84987_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structvmask8_a4f9d3849e610eba5bc5590ffd6557064}\index{vmask8@{vmask8}!m@{m}}
+\index{m@{m}!vmask8@{vmask8}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily \label{structvmask8_a4f9d3849e610eba5bc5590ffd6557064} 
+\+\_\+\+\_\+m256 vmask8\+::m}
+
+
+
+The vector ... 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00311}{311}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}}\end{DoxyCompactItemize}

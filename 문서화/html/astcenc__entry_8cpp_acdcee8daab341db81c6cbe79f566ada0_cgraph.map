@@ -1,0 +1,7 @@
+<map id="validate_block_size" name="validate_block_size">
+<area shape="rect" id="Node000001" title="Validate block size." alt="" coords="5,31,140,56"/>
+<area shape="rect" id="Node000002" href="$astcenc__percentile__tables_8cpp.html#a39abc45fae63fefae08ef3f2218d2439" title="Query if a 2D block size is legal." alt="" coords="188,5,344,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,32,174,27,174,33,141,37"/>
+<area shape="rect" id="Node000003" href="$astcenc__percentile__tables_8cpp.html#a54f17744601dc1a75f0f75be7a95c514" title="Query if a 3D block size is legal." alt="" coords="188,55,344,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,49,174,53,174,59,140,54"/>
+</map>

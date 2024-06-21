@@ -1,0 +1,7 @@
+<map id="image_set_pixel_u8" name="image_set_pixel_u8">
+<area shape="rect" id="Node000001" title="Set the value of a single pixel in an image." alt="" coords="5,31,143,56"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#a98f7a50685f56b5c84d1c760fa037d6d" title="Pack low 8 bits of N (vector width) lanes into bottom of vector." alt="" coords="191,5,305,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,31,177,26,177,31,143,36"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#ac55f9ffdc41bee5d274cb6433809fefc" title="Store lowest N (vector width) bytes into an unaligned address." alt="" coords="199,55,297,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,50,186,56,185,61,143,55"/>
+</map>

@@ -1,0 +1,23 @@
+digraph "build_partition_table_for_one_partition_count"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="build_partition_table\l_for_one_partition_count",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge8_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="compare_canonical_partitionings",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__partition__tables_8cpp.html#adced470735eb4be99d56b03b57201e2a",tooltip="Compare two canonical patterns to see if they are the same."];
+  Node1 -> Node3 [id="edge9_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="generate_canonical\l_partitioning",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__partition__tables_8cpp.html#a656f2dcd2ed9221814a6f1b38bff7cb6",tooltip="Generate a canonical representation of a partition pattern."];
+  Node1 -> Node4 [id="edge10_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="generate_one_partition\l_info_entry",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__partition__tables_8cpp.html#a11a5380f66eb5461273c7d4f5c71e6d0",tooltip="Generate a single partition info structure."];
+  Node4 -> Node5 [id="edge11_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="astc::min",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceastc.html#af78c0d31374aa9923633a3a2abf8d738",tooltip="Return the minimum of two values."];
+  Node4 -> Node6 [id="edge12_Node000004_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="round_up_to_simd_multiple_vla",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__vecmathlib_8h.html#ae36622d837079b4899b971731c2dda37",tooltip="Round a count up to the largest multiple of the SIMD width."];
+  Node4 -> Node7 [id="edge13_Node000004_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="select_partition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__partition__tables_8cpp.html#a57b1b10c9fc1e915dcf985ea37a8cbf6",tooltip="Select texel assignment for a single coordinate."];
+  Node7 -> Node8 [id="edge14_Node000007_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="hash52",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__partition__tables_8cpp.html#a28958825dfb33d5371f54dae6d247f8a",tooltip="Hash function used for procedural partition assignment."];
+}

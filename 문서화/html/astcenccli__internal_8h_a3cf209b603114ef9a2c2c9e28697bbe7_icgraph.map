@@ -1,0 +1,13 @@
+<map id="astcenc_print_header" name="astcenc_print_header">
+<area shape="rect" id="Node000001" title="Print the tool copyright and version header to stdout." alt="" coords="463,24,609,50"/>
+<area shape="rect" id="Node000002" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,24,207,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="472,24,414,14,335,8,255,14,197,27,196,22,254,9,335,3,415,9,473,19"/>
+<area shape="rect" id="Node000004" href="$astcenccli__toplevel__help_8cpp.html#a7377ad0be8285dd96c932d2744fc4641" title="Print the tool copyright, version, and long&#45;form help to stdout." alt="" coords="257,24,412,50"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="449,40,412,40,412,34,449,34"/>
+<area shape="rect" id="Node000005" href="$astcenccli__toplevel__help_8cpp.html#af5bf7c6ac05f0f401cfde7d73ed2b852" title="Print the tool copyright, version, and short&#45;form help to stdout." alt="" coords="255,74,415,99"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="471,56,388,76,387,71,470,50"/>
+<area shape="rect" id="Node000003" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,24,56,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="90,40,57,40,57,34,90,34"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="243,40,207,40,207,34,243,34"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="274,72,202,52,203,47,275,67"/>
+</map>

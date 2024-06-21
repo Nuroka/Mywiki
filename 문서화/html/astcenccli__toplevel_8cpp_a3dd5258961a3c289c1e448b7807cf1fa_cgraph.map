@@ -1,0 +1,13 @@
+<map id="load_uncomp_file" name="load_uncomp_file">
+<area shape="rect" id="Node000001" title="Load a non&#45;astc image file from memory." alt="" coords="5,104,128,129"/>
+<area shape="rect" id="Node000002" href="$astcenccli__image_8cpp.html#a860f8be85c860429c0df12b581015b68" title="Functions for creating in&#45;memory ASTC image structures." alt="" coords="195,5,286,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,102,123,72,175,40,188,33,190,38,177,44,126,76,85,106"/>
+<area shape="rect" id="Node000003" href="$astcenccli__image_8cpp.html#aeb0cd9b24656f2c4dac144e89217057c" title="Free an image." alt="" coords="198,55,283,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="111,101,184,81,185,86,113,107"/>
+<area shape="rect" id="Node000004" href="$astcenccli__toplevel_8cpp.html#ac11a8d0439e2ad21cd1770a195c89ab8" title="Utility to generate a slice file name from a pattern." alt="" coords="176,104,305,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="128,114,162,114,162,119,128,119"/>
+<area shape="rect" id="Node000005" href="$astcenccli__image__load__store_8cpp.html#aff0de9c0d50e5630b61f0d6e597fcd65" title="Load uncompressed image." alt="" coords="189,153,292,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="113,127,183,147,181,152,111,132"/>
+<area shape="rect" id="Node000006" href="$astcenccli__internal_8h.html#a699ebbd5f0143120e8ccaa26ae386b56" title="Print a string to stderr." alt="" coords="201,203,281,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="86,127,127,157,177,188,192,195,190,200,175,192,124,161,83,132"/>
+</map>

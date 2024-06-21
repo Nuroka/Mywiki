@@ -1,0 +1,101 @@
+\doxysection{quant\+\_\+and\+\_\+transfer\+\_\+table 구조체 참조}
+\hypertarget{structquant__and__transfer__table}{}\label{structquant__and__transfer__table}\index{quant\_and\_transfer\_table@{quant\_and\_transfer\_table}}
+
+
+Weight quantization transfer table.  
+
+
+
+
+{\ttfamily \#include $<$astcenc\+\_\+internal.\+h$>$}
+
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structquant__and__transfer__table_ab19e214b6fa5cc1b432419d34133fbc9}{quant\+\_\+to\+\_\+unquant}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em The unscrambled unquantized value. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structquant__and__transfer__table_a930638f1d1e8e9dc153b36f2caf2111e}{scramble\+\_\+map}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em The scrambling order\+: scrambled\+\_\+quant = map\mbox{[}unscrambled\+\_\+quant\mbox{]}. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structquant__and__transfer__table_a138ed061c0be02a0b95900334fceed36}{unscramble\+\_\+and\+\_\+unquant\+\_\+map}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em The unscrambling order\+: unscrambled\+\_\+unquant = map\mbox{[}scrambled\+\_\+quant\mbox{]}. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{structquant__and__transfer__table_a6e8a9f0e2cb20155c0d2034399802b29}{prev\+\_\+next\+\_\+values}} \mbox{[}65\mbox{]}
+\begin{DoxyCompactList}\small\item\em A table of previous-\/and-\/next weights, indexed by the current unquantized value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+Weight quantization transfer table. 
+
+ASTC can store texel weights at many quantization levels, so for performance we store essential information about each level as a precomputed data structure. Unquantized weights are integers or floats in the range \mbox{[}0, 64\mbox{]}.
+
+This structure provides a table, used to estimate the closest quantized weight for a given floating-\/point weight. For each quantized weight, the corresponding unquantized values. For each quantized weight, a previous-\/value and a next-\/value. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01031}{1031}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structquant__and__transfer__table_a6e8a9f0e2cb20155c0d2034399802b29}\index{quant\_and\_transfer\_table@{quant\_and\_transfer\_table}!prev\_next\_values@{prev\_next\_values}}
+\index{prev\_next\_values@{prev\_next\_values}!quant\_and\_transfer\_table@{quant\_and\_transfer\_table}}
+\doxysubsubsection{\texorpdfstring{prev\_next\_values}{prev\_next\_values}}
+{\footnotesize\ttfamily \label{structquant__and__transfer__table_a6e8a9f0e2cb20155c0d2034399802b29} 
+uint16\+\_\+t quant\+\_\+and\+\_\+transfer\+\_\+table\+::prev\+\_\+next\+\_\+values\mbox{[}65\mbox{]}}
+
+
+
+A table of previous-\/and-\/next weights, indexed by the current unquantized value. 
+
+
+\begin{DoxyItemize}
+\item bits 7\+:0 = previous-\/index, unquantized
+\item bits 15\+:8 = next-\/index, unquantized 
+\end{DoxyItemize}
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01047}{1047}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structquant__and__transfer__table_ab19e214b6fa5cc1b432419d34133fbc9}\index{quant\_and\_transfer\_table@{quant\_and\_transfer\_table}!quant\_to\_unquant@{quant\_to\_unquant}}
+\index{quant\_to\_unquant@{quant\_to\_unquant}!quant\_and\_transfer\_table@{quant\_and\_transfer\_table}}
+\doxysubsubsection{\texorpdfstring{quant\_to\_unquant}{quant\_to\_unquant}}
+{\footnotesize\ttfamily \label{structquant__and__transfer__table_ab19e214b6fa5cc1b432419d34133fbc9} 
+uint8\+\_\+t quant\+\_\+and\+\_\+transfer\+\_\+table\+::quant\+\_\+to\+\_\+unquant\mbox{[}32\mbox{]}}
+
+
+
+The unscrambled unquantized value. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01034}{1034}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structquant__and__transfer__table_a930638f1d1e8e9dc153b36f2caf2111e}\index{quant\_and\_transfer\_table@{quant\_and\_transfer\_table}!scramble\_map@{scramble\_map}}
+\index{scramble\_map@{scramble\_map}!quant\_and\_transfer\_table@{quant\_and\_transfer\_table}}
+\doxysubsubsection{\texorpdfstring{scramble\_map}{scramble\_map}}
+{\footnotesize\ttfamily \label{structquant__and__transfer__table_a930638f1d1e8e9dc153b36f2caf2111e} 
+uint8\+\_\+t quant\+\_\+and\+\_\+transfer\+\_\+table\+::scramble\+\_\+map\mbox{[}32\mbox{]}}
+
+
+
+The scrambling order\+: scrambled\+\_\+quant = map\mbox{[}unscrambled\+\_\+quant\mbox{]}. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01037}{1037}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structquant__and__transfer__table_a138ed061c0be02a0b95900334fceed36}\index{quant\_and\_transfer\_table@{quant\_and\_transfer\_table}!unscramble\_and\_unquant\_map@{unscramble\_and\_unquant\_map}}
+\index{unscramble\_and\_unquant\_map@{unscramble\_and\_unquant\_map}!quant\_and\_transfer\_table@{quant\_and\_transfer\_table}}
+\doxysubsubsection{\texorpdfstring{unscramble\_and\_unquant\_map}{unscramble\_and\_unquant\_map}}
+{\footnotesize\ttfamily \label{structquant__and__transfer__table_a138ed061c0be02a0b95900334fceed36} 
+uint8\+\_\+t quant\+\_\+and\+\_\+transfer\+\_\+table\+::unscramble\+\_\+and\+\_\+unquant\+\_\+map\mbox{[}32\mbox{]}}
+
+
+
+The unscrambling order\+: unscrambled\+\_\+unquant = map\mbox{[}scrambled\+\_\+quant\mbox{]}. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01040}{1040}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__internal_8h}{astcenc\+\_\+internal.\+h}}\end{DoxyCompactItemize}

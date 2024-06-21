@@ -1,0 +1,13 @@
+<map id="init_decimation_info_3d" name="init_decimation_info_3d">
+<area shape="rect" id="Node000001" title="Create a 3D decimation entry for a block&#45;size and weight&#45;decimation pair." alt="" coords="868,13,1025,38"/>
+<area shape="rect" id="Node000002" href="$astcenc__block__sizes_8cpp.html#a3fde919cf8b9a7f9db851cfff6a7a87c" title="Allocate block modes and decimation tables for a single 3D block size." alt="" coords="675,5,820,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="854,28,820,28,820,23,854,23"/>
+<area shape="rect" id="Node000003" href="$astcenc__block__sizes_8cpp.html#a5c46863585cc583c3deb49323dfb73d8" title="Populate the block size descriptor for the target block size." alt="" coords="455,13,627,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="661,28,627,28,627,23,661,23"/>
+<area shape="rect" id="Node000004" href="$astcenc__entry_8cpp.html#a823234313a697f5b4cdbd2cd6caaef4a" title="Allocate a new codec context based on a config." alt="" coords="255,13,407,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="441,28,407,28,407,23,441,23"/>
+<area shape="rect" id="Node000005" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,13,207,38"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="241,28,207,28,207,23,241,23"/>
+<area shape="rect" id="Node000006" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,56,38"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="90,28,57,28,57,23,90,23"/>
+</map>

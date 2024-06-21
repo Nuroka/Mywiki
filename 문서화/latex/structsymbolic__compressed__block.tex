@@ -1,0 +1,275 @@
+\doxysection{symbolic\+\_\+compressed\+\_\+block 구조체 참조}
+\hypertarget{structsymbolic__compressed__block}{}\label{structsymbolic__compressed__block}\index{symbolic\_compressed\_block@{symbolic\_compressed\_block}}
+
+
+A symbolic representation of a compressed block.  
+
+
+
+
+{\ttfamily \#include $<$astcenc\+\_\+internal.\+h$>$}
+
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}} \mbox{\hyperlink{structsymbolic__compressed__block_af290ce908b76242bc89e3eae4d948454}{get\+\_\+color\+\_\+quant\+\_\+mode}} () const
+\begin{DoxyCompactList}\small\item\em Get the weight quantization used by this block mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em The block type, one of the {\ttfamily SYM\+\_\+\+BTYPE\+\_\+\texorpdfstring{$\ast$}{*}} constants. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em The number of partitions; valid for {\ttfamily NONCONST} blocks. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structsymbolic__compressed__block_a2ad392432ebf011c42f7a72f49000d13}{color\+\_\+formats\+\_\+matched}}
+\begin{DoxyCompactList}\small\item\em Non-\/zero if the color formats matched; valid for {\ttfamily NONCONST} blocks. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{structsymbolic__compressed__block_a49f36c368c0d976f230c76c33aed2b9d}{plane2\+\_\+component}}
+\begin{DoxyCompactList}\small\item\em The plane 2 color component, or -\/1 if single plane; valid for {\ttfamily NONCONST} blocks. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em The block mode; valid for {\ttfamily NONCONST} blocks. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{structsymbolic__compressed__block_a17d42e08747747b32c650a48fe1b5b6e}{partition\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em The partition index; valid for {\ttfamily NONCONST} blocks if 2 or more partitions. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\+\_\+formats}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The endpoint color formats for each partition; valid for {\ttfamily NONCONST} blocks. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}} \mbox{\hyperlink{structsymbolic__compressed__block_a449d8e3e4362348f1bd588eecaaa12c9}{quant\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em The endpoint color quant mode; valid for {\ttfamily NONCONST} blocks. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structsymbolic__compressed__block_a4ed0a59a081d379e15d29e29f761d105}{errorval}}
+\begin{DoxyCompactList}\small\item\em The error of the current encoding; valid for {\ttfamily NONCONST} blocks. \end{DoxyCompactList}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>int \mbox{\hyperlink{structsymbolic__compressed__block_abb86a3a9a9bf54d5138c1883ed6159a5}{constant\_color}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_acfaa28ad6768cb0ebe7f535fc8a9e6df}{BLOCK\_MAX\_COMPONENTS}}\mbox{]}\\
+\>\>{\em The constant color; valid for {\ttfamily CONST} blocks. }\\
+\>uint8\_t \mbox{\hyperlink{structsymbolic__compressed__block_ad539bb907ce654690e8a89cf62196f9c}{color\_values}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}\mbox{]}\mbox{[}8\mbox{]}\\
+\>\>{\em The quantized endpoint color pairs; valid for {\ttfamily NONCONST} blocks. }\\
+\}; \\
+
+\end{tabbing}\item 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} uint8\+\_\+t \mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\+\_\+\+MAX\+\_\+\+WEIGHTS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The quantized and decimated weights. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+A symbolic representation of a compressed block. 
+
+The symbolic representation stores the unpacked content of a single physical compressed block, in a form which is much easier to access for the rest of the compressor code. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01072}{1072}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{structsymbolic__compressed__block_af290ce908b76242bc89e3eae4d948454}\index{symbolic\_compressed\_block@{symbolic\_compressed\_block}!get\_color\_quant\_mode@{get\_color\_quant\_mode}}
+\index{get\_color\_quant\_mode@{get\_color\_quant\_mode}!symbolic\_compressed\_block@{symbolic\_compressed\_block}}
+\doxysubsubsection{\texorpdfstring{get\_color\_quant\_mode()}{get\_color\_quant\_mode()}}
+{\footnotesize\ttfamily \label{structsymbolic__compressed__block_af290ce908b76242bc89e3eae4d948454} 
+\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}} symbolic\+\_\+compressed\+\_\+block\+::get\+\_\+color\+\_\+quant\+\_\+mode (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the weight quantization used by this block mode. 
+
+\begin{DoxyReturn}{반환값}
+The quantization level. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01125}{1125}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01126\ \ \ \ \ \{}
+\DoxyCodeLine{01127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{structsymbolic__compressed__block_a449d8e3e4362348f1bd588eecaaa12c9}{quant\_mode}};}
+\DoxyCodeLine{01128\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structsymbolic__compressed__block_af290ce908b76242bc89e3eae4d948454_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structsymbolic__compressed__block_a7d15ca88c1592322132e1284f4c00ee5}\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily \label{structsymbolic__compressed__block_a7d15ca88c1592322132e1284f4c00ee5} 
+union  \{ ... \}  \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}}}
+
+\Hypertarget{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}\index{symbolic\_compressed\_block@{symbolic\_compressed\_block}!block\_mode@{block\_mode}}
+\index{block\_mode@{block\_mode}!symbolic\_compressed\_block@{symbolic\_compressed\_block}}
+\doxysubsubsection{\texorpdfstring{block\_mode}{block\_mode}}
+{\footnotesize\ttfamily \label{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b} 
+uint16\+\_\+t symbolic\+\_\+compressed\+\_\+block\+::block\+\_\+mode}
+
+
+
+The block mode; valid for {\ttfamily NONCONST} blocks. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01087}{1087}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}\index{symbolic\_compressed\_block@{symbolic\_compressed\_block}!block\_type@{block\_type}}
+\index{block\_type@{block\_type}!symbolic\_compressed\_block@{symbolic\_compressed\_block}}
+\doxysubsubsection{\texorpdfstring{block\_type}{block\_type}}
+{\footnotesize\ttfamily \label{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909} 
+uint8\+\_\+t symbolic\+\_\+compressed\+\_\+block\+::block\+\_\+type}
+
+
+
+The block type, one of the {\ttfamily SYM\+\_\+\+BTYPE\+\_\+\texorpdfstring{$\ast$}{*}} constants. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01075}{1075}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}\index{symbolic\_compressed\_block@{symbolic\_compressed\_block}!color\_formats@{color\_formats}}
+\index{color\_formats@{color\_formats}!symbolic\_compressed\_block@{symbolic\_compressed\_block}}
+\doxysubsubsection{\texorpdfstring{color\_formats}{color\_formats}}
+{\footnotesize\ttfamily \label{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60} 
+uint8\+\_\+t symbolic\+\_\+compressed\+\_\+block\+::color\+\_\+formats\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]}}
+
+
+
+The endpoint color formats for each partition; valid for {\ttfamily NONCONST} blocks. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01093}{1093}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structsymbolic__compressed__block_a2ad392432ebf011c42f7a72f49000d13}\index{symbolic\_compressed\_block@{symbolic\_compressed\_block}!color\_formats\_matched@{color\_formats\_matched}}
+\index{color\_formats\_matched@{color\_formats\_matched}!symbolic\_compressed\_block@{symbolic\_compressed\_block}}
+\doxysubsubsection{\texorpdfstring{color\_formats\_matched}{color\_formats\_matched}}
+{\footnotesize\ttfamily \label{structsymbolic__compressed__block_a2ad392432ebf011c42f7a72f49000d13} 
+uint8\+\_\+t symbolic\+\_\+compressed\+\_\+block\+::color\+\_\+formats\+\_\+matched}
+
+
+
+Non-\/zero if the color formats matched; valid for {\ttfamily NONCONST} blocks. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01081}{1081}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structsymbolic__compressed__block_ad539bb907ce654690e8a89cf62196f9c}\index{symbolic\_compressed\_block@{symbolic\_compressed\_block}!color\_values@{color\_values}}
+\index{color\_values@{color\_values}!symbolic\_compressed\_block@{symbolic\_compressed\_block}}
+\doxysubsubsection{\texorpdfstring{color\_values}{color\_values}}
+{\footnotesize\ttfamily \label{structsymbolic__compressed__block_ad539bb907ce654690e8a89cf62196f9c} 
+uint8\+\_\+t symbolic\+\_\+compressed\+\_\+block\+::color\+\_\+values\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]}\mbox{[}8\mbox{]}}
+
+
+
+The quantized endpoint color pairs; valid for {\ttfamily NONCONST} blocks. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01107}{1107}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structsymbolic__compressed__block_abb86a3a9a9bf54d5138c1883ed6159a5}\index{symbolic\_compressed\_block@{symbolic\_compressed\_block}!constant\_color@{constant\_color}}
+\index{constant\_color@{constant\_color}!symbolic\_compressed\_block@{symbolic\_compressed\_block}}
+\doxysubsubsection{\texorpdfstring{constant\_color}{constant\_color}}
+{\footnotesize\ttfamily \label{structsymbolic__compressed__block_abb86a3a9a9bf54d5138c1883ed6159a5} 
+int symbolic\+\_\+compressed\+\_\+block\+::constant\+\_\+color\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_acfaa28ad6768cb0ebe7f535fc8a9e6df}{BLOCK\+\_\+\+MAX\+\_\+\+COMPONENTS}}\mbox{]}}
+
+
+
+The constant color; valid for {\ttfamily CONST} blocks. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01104}{1104}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structsymbolic__compressed__block_a4ed0a59a081d379e15d29e29f761d105}\index{symbolic\_compressed\_block@{symbolic\_compressed\_block}!errorval@{errorval}}
+\index{errorval@{errorval}!symbolic\_compressed\_block@{symbolic\_compressed\_block}}
+\doxysubsubsection{\texorpdfstring{errorval}{errorval}}
+{\footnotesize\ttfamily \label{structsymbolic__compressed__block_a4ed0a59a081d379e15d29e29f761d105} 
+float symbolic\+\_\+compressed\+\_\+block\+::errorval}
+
+
+
+The error of the current encoding; valid for {\ttfamily NONCONST} blocks. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01099}{1099}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}\index{symbolic\_compressed\_block@{symbolic\_compressed\_block}!partition\_count@{partition\_count}}
+\index{partition\_count@{partition\_count}!symbolic\_compressed\_block@{symbolic\_compressed\_block}}
+\doxysubsubsection{\texorpdfstring{partition\_count}{partition\_count}}
+{\footnotesize\ttfamily \label{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551} 
+uint8\+\_\+t symbolic\+\_\+compressed\+\_\+block\+::partition\+\_\+count}
+
+
+
+The number of partitions; valid for {\ttfamily NONCONST} blocks. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01078}{1078}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structsymbolic__compressed__block_a17d42e08747747b32c650a48fe1b5b6e}\index{symbolic\_compressed\_block@{symbolic\_compressed\_block}!partition\_index@{partition\_index}}
+\index{partition\_index@{partition\_index}!symbolic\_compressed\_block@{symbolic\_compressed\_block}}
+\doxysubsubsection{\texorpdfstring{partition\_index}{partition\_index}}
+{\footnotesize\ttfamily \label{structsymbolic__compressed__block_a17d42e08747747b32c650a48fe1b5b6e} 
+uint16\+\_\+t symbolic\+\_\+compressed\+\_\+block\+::partition\+\_\+index}
+
+
+
+The partition index; valid for {\ttfamily NONCONST} blocks if 2 or more partitions. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01090}{1090}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structsymbolic__compressed__block_a49f36c368c0d976f230c76c33aed2b9d}\index{symbolic\_compressed\_block@{symbolic\_compressed\_block}!plane2\_component@{plane2\_component}}
+\index{plane2\_component@{plane2\_component}!symbolic\_compressed\_block@{symbolic\_compressed\_block}}
+\doxysubsubsection{\texorpdfstring{plane2\_component}{plane2\_component}}
+{\footnotesize\ttfamily \label{structsymbolic__compressed__block_a49f36c368c0d976f230c76c33aed2b9d} 
+int8\+\_\+t symbolic\+\_\+compressed\+\_\+block\+::plane2\+\_\+component}
+
+
+
+The plane 2 color component, or -\/1 if single plane; valid for {\ttfamily NONCONST} blocks. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01084}{1084}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structsymbolic__compressed__block_a449d8e3e4362348f1bd588eecaaa12c9}\index{symbolic\_compressed\_block@{symbolic\_compressed\_block}!quant\_mode@{quant\_mode}}
+\index{quant\_mode@{quant\_mode}!symbolic\_compressed\_block@{symbolic\_compressed\_block}}
+\doxysubsubsection{\texorpdfstring{quant\_mode}{quant\_mode}}
+{\footnotesize\ttfamily \label{structsymbolic__compressed__block_a449d8e3e4362348f1bd588eecaaa12c9} 
+\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}} symbolic\+\_\+compressed\+\_\+block\+::quant\+\_\+mode}
+
+
+
+The endpoint color quant mode; valid for {\ttfamily NONCONST} blocks. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01096}{1096}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}\index{symbolic\_compressed\_block@{symbolic\_compressed\_block}!weights@{weights}}
+\index{weights@{weights}!symbolic\_compressed\_block@{symbolic\_compressed\_block}}
+\doxysubsubsection{\texorpdfstring{weights}{weights}}
+{\footnotesize\ttfamily \label{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b} 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} uint8\+\_\+t symbolic\+\_\+compressed\+\_\+block\+::weights\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\+\_\+\+MAX\+\_\+\+WEIGHTS}}\mbox{]}}
+
+
+
+The quantized and decimated weights. 
+
+Weights are stored in the 0-\/64 unpacked range allowing them to be used directly in encoding passes without per-\/use unpacking. Packing happens when converting to/from the physical bitstream encoding.
+
+If dual plane, the second plane starts at {\ttfamily weights}\mbox{[}WEIGHTS\+\_\+\+PLANE2\+\_\+\+OFFSET\mbox{]}. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01118}{1118}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__internal_8h}{astcenc\+\_\+internal.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="exp2" name="exp2">
+<area shape="rect" id="Node000001" title="Compute an approximate exp2(x) for each lane in the vector." alt="" coords="99,5,149,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib_8h.html#a4c1d7b228b3f79a7260ea87d535324cb" title="Compute an approximate pow(x, y) for each lane in the vector." alt="" coords="5,5,51,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,21,51,21,51,15,85,15"/>
+</map>

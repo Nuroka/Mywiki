@@ -1,0 +1,35 @@
+<map id="load_png_with_wuffs" name="load_png_with_wuffs">
+<area shape="rect" id="Node000001" title="Load an image using Wuffs to provide the loader." alt="" coords="5,306,145,331"/>
+<area shape="rect" id="Node000002" href="$astcenccli__image_8cpp.html#a9ecc1dac86584f7e086e9962fb6c0509" title="Create an image from a 2D byte data array." alt="" coords="208,5,379,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,305,86,258,107,191,141,119,164,85,192,55,197,51,200,55,195,59,168,88,145,121,112,193,91,260,81,306"/>
+<area shape="rect" id="Node000004" href="$astcenccli__internal_8h.html#a699ebbd5f0143120e8ccaa26ae386b56" title="Print a string to stderr." alt="" coords="253,70,333,95"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="77,305,90,266,112,212,146,155,167,129,192,106,215,93,239,85,241,90,217,98,195,110,171,132,150,158,117,214,95,268,82,307"/>
+<area shape="rect" id="Node000005" href="$wuffs-v0_83_8c.html#a6dbfe45a4cad9cea69bdcf64aec9fb8d" title=" " alt="" coords="211,120,376,160"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="81,304,122,240,154,203,192,170,201,164,204,169,195,174,158,206,126,244,86,307"/>
+<area shape="rect" id="Node000010" href="$wuffs-v0_83_8c.html#adefd33c267daa0d55e11eb5f6d363625" title=" " alt="" coords="209,184,377,224"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="90,304,134,269,192,234,207,227,209,232,195,238,137,274,93,308"/>
+<area shape="rect" id="Node000011" href="$wuffs-v0_83_8c.html#a0a7abef0beaadad92348c82277311994" title=" " alt="" coords="193,249,393,274"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="122,303,193,284,228,275,229,280,194,289,123,308"/>
+<area shape="rect" id="Node000012" href="$wuffs-v0_83_8c.html#a5f2035e154cd391ccf4d43a5f759f25f" title=" " alt="" coords="209,299,377,339"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="145,316,196,316,196,321,145,321"/>
+<area shape="rect" id="Node000013" href="$wuffs-v0_83_8c.html#a00677163623339195a082d5c359983d7" title=" " alt="" coords="225,363,361,403"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="120,329,213,356,211,361,119,334"/>
+<area shape="rect" id="Node000014" href="$wuffs-v0_83_8c.html#a5d2bcf3dfcd583a62738e059b0d27d80" title=" " alt="" coords="224,427,363,467"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="91,330,135,370,164,393,195,412,212,421,210,426,192,417,160,397,131,374,87,334"/>
+<area shape="rect" id="Node000015" href="$wuffs-v0_83_8c.html#af57d8e43628d94b43f9443fb8303fdeb" title=" " alt="" coords="224,491,363,531"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="85,330,124,400,156,441,195,477,213,487,210,492,192,481,152,445,120,403,80,333"/>
+<area shape="rect" id="Node000016" href="$wuffs-v0_83_8c.html#ad48f0296dc931ce5dcea8a0c30e642c0" title=" " alt="" coords="213,555,374,595"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="82,331,94,371,116,428,149,488,171,516,195,541,202,546,199,550,192,545,167,520,145,491,111,430,89,373,77,332"/>
+<area shape="rect" id="Node000017" href="$wuffs-v0_83_8c.html#af83f3e29886ee92948f6e9c792ea018e" title=" " alt="" coords="224,619,363,659"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="81,331,89,382,108,456,123,496,142,535,166,572,195,605,213,617,210,622,192,609,162,576,138,538,118,498,103,457,84,383,75,332"/>
+<area shape="rect" id="Node000003" href="$astcenccli__image_8cpp.html#a860f8be85c860429c0df12b581015b68" title="Functions for creating in&#45;memory ASTC image structures." alt="" coords="483,13,574,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="379,23,469,23,469,28,379,28"/>
+<area shape="rect" id="Node000006" href="$wuffs-v0_83_8c.html#abf415145017be45d9598bb8977e4b0ee" title=" " alt="" coords="441,66,616,91"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="370,117,466,92,467,97,372,122"/>
+<area shape="rect" id="Node000007" href="$wuffs-v0_83_8c.html#a25648a08376355264061fa84cb465f27" title=" " alt="" coords="443,116,614,156"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="376,136,430,135,430,140,376,141"/>
+<area shape="rect" id="Node000008" href="$wuffs-v0_83_8c.html#a2ae9a1c922cc1b3a5df8d69588682fb1" title=" " alt="" coords="443,180,614,220"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="373,158,437,174,436,179,372,163"/>
+<area shape="rect" id="Node000009" href="$wuffs-v0_83_8c.html#a98e6ab25267903c352474a6b2faced0c" title=" " alt="" coords="443,244,614,284"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="373,158,395,170,411,185,420,200,428,215,443,230,451,235,448,239,440,234,424,219,415,203,407,188,392,174,371,163"/>
+</map>

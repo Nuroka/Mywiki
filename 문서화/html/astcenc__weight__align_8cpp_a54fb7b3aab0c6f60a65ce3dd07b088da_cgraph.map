@@ -1,0 +1,29 @@
+<map id="compute_angular_offsets" name="compute_angular_offsets">
+<area shape="rect" id="Node000001" title="Compute the angular alignment factors and offsets." alt="" coords="5,283,172,308"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib_8h.html#a0d4a4b324b23d5b82c16b03e83a2d056" title="Return fast, but approximate, vector atan2(x, y)." alt="" coords="238,131,293,156"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,280,237,163,241,167,107,284"/>
+<area shape="rect" id="Node000006" href="$astcenc__vecmathlib__avx2__8_8h.html#a5c2db475754d8da42d9b685a45c48ab8" title="Return a float value as an integer bit pattern (i.e. no conversion)." alt="" coords="652,156,740,181"/>
+<area shape="poly" id="edge12_Node000001_Node000006" title=" " alt="" coords="172,286,308,270,461,242,562,214,648,184,650,189,563,219,462,247,309,275,173,291"/>
+<area shape="rect" id="Node000010" href="$astcenc__vecmathlib__avx2__8_8h.html#ad4c0a7bde35d6fe9c54531e1e0652f4a" title="Store a vector to a 16B aligned memory address." alt="" coords="236,308,295,333"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="173,305,223,312,222,317,172,310"/>
+<area shape="rect" id="Node000011" href="$structvfloat4.html#a04b5f338012dab6be0b2bd7910fcbcae" title="Factory that returns a vector of zeros." alt="" coords="220,357,311,383"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="121,306,223,350,221,354,119,311"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#aeac50750508168aeab5115733d3ee63c" title="Return the absolute value of the float vector." alt="" coords="535,5,578,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="272,129,304,84,329,59,357,40,400,24,444,15,521,13,521,18,444,20,401,29,360,44,332,63,309,87,276,132"/>
+<area shape="rect" id="Node000004" href="$astcenc__vecmathlib_8h.html#a57f123f6c9bc31cdb2da321b778954a2" title="Return fast, but approximate, vector atan(x)." alt="" coords="387,55,433,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="289,128,373,83,376,88,292,133"/>
+<area shape="rect" id="Node000005" href="$astcenc__vecmathlib_8h.html#aa88e9d6b0f056012a4fc61c558f99c2e" title="Return a with lanes negated if the b lane is negative." alt="" coords="509,105,604,131"/>
+<area shape="poly" id="edge9_Node000002_Node000005" title=" " alt="" coords="293,138,495,121,496,126,293,144"/>
+<area shape="poly" id="edge10_Node000002_Node000006" title=" " alt="" coords="293,142,638,163,638,168,293,148"/>
+<area shape="rect" id="Node000009" href="$astcenc__vecmathlib__avx2__8_8h.html#a0c89452ffbab98a181c44460db41cae8" title="Return lanes from b if MSB of cond is set, else a." alt="" coords="365,207,455,232"/>
+<area shape="poly" id="edge11_Node000002_Node000009" title=" " alt="" coords="292,154,374,198,372,203,289,159"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="433,57,522,27,523,32,435,62"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="435,73,507,98,505,103,433,78"/>
+<area shape="rect" id="Node000008" href="$astcenc__vecmathlib__avx2__8_8h.html#a844ab5b69b84569f033be33bf5fb9fbc" title="Return lanes from b if cond is set, else a." alt="" coords="528,55,585,80"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="434,65,514,65,514,70,434,70"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="593,128,648,149,647,154,592,133"/>
+<area shape="rect" id="Node000007" href="$astcenc__vecmathlib__avx2__8_8h.html#ac584d4929db078403c58549bafd3c1cd" title="Return a integer value as a float bit pattern (i.e. no conversion)." alt="" coords="652,105,740,131"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="604,115,638,115,638,121,604,121"/>
+<area shape="rect" id="Node000012" href="$structvfloat4.html#a9df51cb30b68d6d51ca607e64aa1ebf0" title="Construct from zero&#45;initialized value." alt="" coords="359,357,461,383"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="311,367,345,367,345,373,311,373"/>
+</map>

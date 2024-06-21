@@ -1,0 +1,20 @@
+<map id="physical_to_symbolic" name="physical_to_symbolic">
+<area shape="rect" id="Node000001" title="Convert a binary physical encoding into a symbolic representation." alt="" coords="5,144,152,169"/>
+<area shape="rect" id="Node000002" href="$astcenc__symbolic__physical_8cpp.html#ac8ea7de26c1e90f79a9e315407ab04ff" title="Functions for converting between symbolic and physical encodings." alt="" coords="261,5,319,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,142,132,92,163,64,199,40,222,29,247,22,248,27,224,34,201,44,167,68,136,96,92,146"/>
+<area shape="rect" id="Node000003" href="$astcenc__integer__sequence_8cpp.html#a1cc25f0a98b60ff2bc5fd65f6b4190fa" title="Decode a packed string using BISE." alt="" coords="246,55,334,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="99,142,144,116,199,90,232,79,233,84,201,95,147,121,102,146"/>
+<area shape="rect" id="Node000006" href="$structblock__size__descriptor.html#a13608eb55e48c96b6243f4830278ebf3" title="Get the block mode structure for index block_mode." alt="" coords="216,105,364,145"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="152,143,202,135,203,141,153,148"/>
+<area shape="rect" id="Node000007" href="$structblock__size__descriptor.html#a688445f2f90b13188372d812baf8e02d" title="Get the decimation info structure for index decimation_mode." alt="" coords="216,169,364,209"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="153,165,203,173,202,178,152,170"/>
+<area shape="rect" id="Node000008" href="$astcenc__integer__sequence_8cpp.html#af46c9322b401332698e9cb93c968fe19" title="Return the number of bits needed to encode an ISE sequence." alt="" coords="200,233,380,259"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="102,167,147,192,201,218,225,227,223,232,199,223,144,197,99,172"/>
+<area shape="rect" id="Node000009" href="$astcenc__symbolic__physical_8cpp.html#a6062008b44453960d62c54f571cccfe1" title="Read up to 8 bits at an arbitrary bit offset." alt="" coords="428,195,503,220"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="90,168,133,220,165,248,201,269,249,285,289,289,330,284,379,269,413,251,441,228,444,232,416,255,381,274,331,289,289,295,248,290,199,274,161,252,129,224,86,171"/>
+<area shape="rect" id="Node000004" href="$astcenc__integer__sequence_8cpp.html#a203e1098560cd6c7b9b9004d9704123e" title="Read up to 16 bits from two bytes." alt="" coords="428,100,503,125"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="335,76,415,97,414,102,333,81"/>
+<area shape="rect" id="Node000005" href="$astcenc__vecmathlib__avx2__8_8h.html#ad922a3ed6098767968916265154b6f82" title="Return a 8&#45;bit mask code indicating mask status." alt="" coords="551,148,605,173"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="497,123,539,141,537,146,495,128"/>
+<area shape="poly" id="edge9_Node000009_Node000005" title=" " alt="" coords="496,192,537,175,539,180,498,197"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="validate_compression_swizzle" name="validate_compression_swizzle">
+<area shape="rect" id="Node000001" title="Validate overall compression swizzle." alt="" coords="680,5,827,45"/>
+<area shape="rect" id="Node000002" href="$astcenc__entry_8cpp.html#ad762aa055eed75156c99309158a40e90" title="Compress an image." alt="" coords="457,13,632,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="666,28,632,28,632,23,666,23"/>
+<area shape="rect" id="Node000003" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,13,207,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="444,25,409,24,255,24,207,26,207,20,255,19,409,19,444,19"/>
+<area shape="rect" id="Node000005" href="$astcenccli__toplevel_8cpp.html#a57bafe66bbd689a53aad2d190fe7a3fa" title="Runner callback function for a compression worker thread." alt="" coords="255,33,409,73"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="444,41,410,46,409,41,443,36"/>
+<area shape="rect" id="Node000004" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,56,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="90,28,57,28,57,23,90,23"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="241,42,206,36,207,31,242,36"/>
+</map>

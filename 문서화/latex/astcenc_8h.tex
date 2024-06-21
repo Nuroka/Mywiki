@@ -1,0 +1,1783 @@
+\doxysection{C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/astcenc.h 파일 참조}
+\hypertarget{astcenc_8h}{}\label{astcenc_8h}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc.h@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc.h}}
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+astcenc.\+h에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{astcenc_8h__incl}
+\end{center}
+\end{figure}
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structastcenc__swizzle}{astcenc\+\_\+swizzle}}
+\begin{DoxyCompactList}\small\item\em A texel component swizzle. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structastcenc__config}{astcenc\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em The config structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}}
+\begin{DoxyCompactList}\small\item\em An uncompressed 2D or 3D image. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structastcenc__block__info}{astcenc\+\_\+block\+\_\+info}}
+\begin{DoxyCompactList}\small\item\em A block encoding metadata query result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}}
+\begin{DoxyCompactList}\small\item\em The core astcenc codec library interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{타입정의}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{astcenc_8h_ac79f6173b76e98afecc86b24412e6427}{astcenc\+\_\+progress\+\_\+callback}}) (float)
+\begin{DoxyCompactList}\small\item\em Function pointer type for compression progress reporting callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{열거형 타입}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}} \{ \newline
+\mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\+\_\+\+SUCCESS}} = 0
+, \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2ac8d991baf44f9e033ae9c862886fdf29}{ASTCENC\+\_\+\+ERR\+\_\+\+OUT\+\_\+\+OF\+\_\+\+MEM}}
+, \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2aab2edb79add12adad46569c53fb252c3}{ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+CPU\+\_\+\+FLOAT}}
+, \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a17b738af7aa5ad5c804065791b1264f2}{ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+PARAM}}
+, \newline
+\mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a7313412df8ff1c4f401514c965ba6b7c}{ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+BLOCK\+\_\+\+SIZE}}
+, \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a6be8918de1d5cd96ee48e256c39f165b}{ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+PROFILE}}
+, \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a45b7153ebdc711a5928cd35efbac551b}{ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+QUALITY}}
+, \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a8a2ec2ffa2c2362271a1999b38617c89}{ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+SWIZZLE}}
+, \newline
+\mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a2b1e8dc851e24bf609b575a7c06ca814}{ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+FLAGS}}
+, \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2af79664c3406260bd6fe9bd361cf1613d}{ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+CONTEXT}}
+, \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2af6c1281285dfbb534d29e957fcb7c7cb}{ASTCENC\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+IMPLEMENTED}}
+, \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2af27784c1b6c06f3eaf3e78041acbc2b7}{ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+DECODE\+\_\+\+MODE}}
+ \}
+\begin{DoxyCompactList}\small\item\em A codec API error code. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}{astcenc\+\_\+profile}} \{ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a331abc1d96b4fa991757e6ef8199f298}{ASTCENC\+\_\+\+PRF\+\_\+\+LDR\+\_\+\+SRGB}} = 0
+, \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a92cc31c9011e699ed4c41f9a4959c295}{ASTCENC\+\_\+\+PRF\+\_\+\+LDR}}
+, \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a9043bc19a890aeff156f664ccbef677f}{ASTCENC\+\_\+\+PRF\+\_\+\+HDR\+\_\+\+RGB\+\_\+\+LDR\+\_\+A}}
+, \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a4493639842d745d4bccd6a94836d2ca9}{ASTCENC\+\_\+\+PRF\+\_\+\+HDR}}
+ \}
+\begin{DoxyCompactList}\small\item\em A codec color profile. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687}{astcenc\+\_\+swz}} \{ \newline
+\mbox{\hyperlink{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687a2766a38ed1e99377723a4efb3510acd3}{ASTCENC\+\_\+\+SWZ\+\_\+R}} = 0
+, \mbox{\hyperlink{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687ad07f821ba0081fbbfcc5b59ebb744b3d}{ASTCENC\+\_\+\+SWZ\+\_\+G}} = 1
+, \mbox{\hyperlink{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687aa90469ed153f096e4db49d557b5ed3f0}{ASTCENC\+\_\+\+SWZ\+\_\+B}} = 2
+, \mbox{\hyperlink{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687a0fa7695144b4779ee0270c590765c713}{ASTCENC\+\_\+\+SWZ\+\_\+A}} = 3
+, \newline
+\mbox{\hyperlink{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687a57fb016aa14a558856f737b35d6a0c17}{ASTCENC\+\_\+\+SWZ\+\_\+0}} = 4
+, \mbox{\hyperlink{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687a6c62cc90aa131c1d547561c2833eb0d7}{ASTCENC\+\_\+\+SWZ\+\_\+1}} = 5
+, \mbox{\hyperlink{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687a865a6b0c084162fcd67976b4c4c457d0}{ASTCENC\+\_\+\+SWZ\+\_\+Z}} = 6
+ \}
+\begin{DoxyCompactList}\small\item\em A codec component swizzle selector. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109a}{astcenc\+\_\+type}} \{ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aa91ac7b6329d0a39c879dff7a1bcdf759}{ASTCENC\+\_\+\+TYPE\+\_\+\+U8}} = 0
+, \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aad39e16b7f2e55ed676ce400619f0759d}{ASTCENC\+\_\+\+TYPE\+\_\+\+F16}} = 1
+, \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aaf996e38de0e0ac57175c09da275c6062}{ASTCENC\+\_\+\+TYPE\+\_\+\+F32}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em A texel component data format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}} \mbox{\hyperlink{astcenc_8h_a7d841c47ab68c3705ddcf61fc651d422}{astcenc\+\_\+config\+\_\+init}} (\mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}{astcenc\+\_\+profile}} profile, unsigned int block\+\_\+x, unsigned int block\+\_\+y, unsigned int block\+\_\+z, float quality, unsigned int flags, \mbox{\hyperlink{structastcenc__config}{astcenc\+\_\+config}} \texorpdfstring{$\ast$}{*}config)
+\item 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}} \mbox{\hyperlink{astcenc_8h_a53428ef5ae3cc106c40f19a50cd5fc5d}{astcenc\+\_\+context\+\_\+alloc}} (const \mbox{\hyperlink{structastcenc__config}{astcenc\+\_\+config}} \texorpdfstring{$\ast$}{*}config, unsigned int thread\+\_\+count, \mbox{\hyperlink{structastcenc__context}{astcenc\+\_\+context}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}context)
+\begin{DoxyCompactList}\small\item\em Allocate a new codec context based on a config. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}} \mbox{\hyperlink{astcenc_8h_a3d9bc940f578f9d66c5339d7f7b4b069}{astcenc\+\_\+compress\+\_\+image}} (\mbox{\hyperlink{structastcenc__context}{astcenc\+\_\+context}} \texorpdfstring{$\ast$}{*}context, \mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*}image, const \mbox{\hyperlink{structastcenc__swizzle}{astcenc\+\_\+swizzle}} \texorpdfstring{$\ast$}{*}swizzle, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data\+\_\+out, size\+\_\+t data\+\_\+len, unsigned int thread\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Compress an image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}} \mbox{\hyperlink{astcenc_8h_a93d80ab0fdd1546df397476d773df545}{astcenc\+\_\+compress\+\_\+reset}} (\mbox{\hyperlink{structastcenc__context}{astcenc\+\_\+context}} \texorpdfstring{$\ast$}{*}context)
+\begin{DoxyCompactList}\small\item\em Reset the codec state for a new compression. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}} \mbox{\hyperlink{astcenc_8h_aabf20ebf7bc4f75c2ae12070a60f23c0}{astcenc\+\_\+decompress\+\_\+image}} (\mbox{\hyperlink{structastcenc__context}{astcenc\+\_\+context}} \texorpdfstring{$\ast$}{*}context, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+\_\+len, \mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*}image\+\_\+out, const \mbox{\hyperlink{structastcenc__swizzle}{astcenc\+\_\+swizzle}} \texorpdfstring{$\ast$}{*}swizzle, unsigned int thread\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Decompress an image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}} \mbox{\hyperlink{astcenc_8h_a0a92db919a1334c1d5844fdc081cba30}{astcenc\+\_\+decompress\+\_\+reset}} (\mbox{\hyperlink{structastcenc__context}{astcenc\+\_\+context}} \texorpdfstring{$\ast$}{*}context)
+\begin{DoxyCompactList}\small\item\em Reset the codec state for a new decompression. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} void \mbox{\hyperlink{astcenc_8h_ae8bcc4e15bfd67d13c59a629bd64767a}{astcenc\+\_\+context\+\_\+free}} (\mbox{\hyperlink{structastcenc__context}{astcenc\+\_\+context}} \texorpdfstring{$\ast$}{*}context)
+\item 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}} \mbox{\hyperlink{astcenc_8h_a533ada8a24b9b13c4aa20c729f7915ce}{astcenc\+\_\+get\+\_\+block\+\_\+info}} (\mbox{\hyperlink{structastcenc__context}{astcenc\+\_\+context}} \texorpdfstring{$\ast$}{*}context, const uint8\+\_\+t data\mbox{[}16\mbox{]}, \mbox{\hyperlink{structastcenc__block__info}{astcenc\+\_\+block\+\_\+info}} \texorpdfstring{$\ast$}{*}info)
+\begin{DoxyCompactList}\small\item\em Provide a high level summary of a block\textquotesingle{}s encoding. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{astcenc_8h_a5768699cf6bc52f54a21968bb480a1d2}{astcenc\+\_\+get\+\_\+error\+\_\+string}} (\mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}} status)
+\begin{DoxyCompactList}\small\item\em Get a printable string for specific status code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+static const float \mbox{\hyperlink{astcenc_8h_ad2b7499ede8d23218e06263ae971c6da}{ASTCENC\+\_\+\+PRE\+\_\+\+FASTEST}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em The fastest, lowest quality, search preset. \end{DoxyCompactList}\item 
+static const float \mbox{\hyperlink{astcenc_8h_ad62d291df9c09826409c2dc90c23c485}{ASTCENC\+\_\+\+PRE\+\_\+\+FAST}} = 10.\+0f
+\begin{DoxyCompactList}\small\item\em The fast search preset. \end{DoxyCompactList}\item 
+static const float \mbox{\hyperlink{astcenc_8h_ac0462be63a5417efd56d4c1aa8226d93}{ASTCENC\+\_\+\+PRE\+\_\+\+MEDIUM}} = 60.\+0f
+\begin{DoxyCompactList}\small\item\em The medium quality search preset. \end{DoxyCompactList}\item 
+static const float \mbox{\hyperlink{astcenc_8h_a0c21c807b9ceedc4be7e0d4c00e04fcd}{ASTCENC\+\_\+\+PRE\+\_\+\+THOROUGH}} = 98.\+0f
+\begin{DoxyCompactList}\small\item\em The thorough quality search preset. \end{DoxyCompactList}\item 
+static const float \mbox{\hyperlink{astcenc_8h_a4eacbb4f0297a5d7f2fbf20a66bce063}{ASTCENC\+\_\+\+PRE\+\_\+\+VERYTHOROUGH}} = 99.\+0f
+\begin{DoxyCompactList}\small\item\em The thorough quality search preset. \end{DoxyCompactList}\item 
+static const float \mbox{\hyperlink{astcenc_8h_a6bdd89709e4169c3a83b64793435b5e4}{ASTCENC\+\_\+\+PRE\+\_\+\+EXHAUSTIVE}} = 100.\+0f
+\begin{DoxyCompactList}\small\item\em The exhaustive, highest quality, search preset. \end{DoxyCompactList}\item 
+static const unsigned int \mbox{\hyperlink{astcenc_8h_a4010dadc54cded4b9d1abdb6c62f5c03}{ASTCENC\+\_\+\+FLG\+\_\+\+MAP\+\_\+\+NORMAL}} = 1 $<$$<$ 0
+\begin{DoxyCompactList}\small\item\em Enable normal map compression. \end{DoxyCompactList}\item 
+static const unsigned int \mbox{\hyperlink{astcenc_8h_a915298ea1a81ba542b20535c0f19a090}{ASTCENC\+\_\+\+FLG\+\_\+\+USE\+\_\+\+DECODE\+\_\+\+UNORM8}} = 1 $<$$<$ 1
+\begin{DoxyCompactList}\small\item\em Enable compression heuristics that assume use of decode\+\_\+unorm8 decode mode. \end{DoxyCompactList}\item 
+static const unsigned int \mbox{\hyperlink{astcenc_8h_ade366f74dc79b01f55e646c72d886845}{ASTCENC\+\_\+\+FLG\+\_\+\+USE\+\_\+\+ALPHA\+\_\+\+WEIGHT}} = 1 $<$$<$ 2
+\begin{DoxyCompactList}\small\item\em Enable alpha weighting. \end{DoxyCompactList}\item 
+static const unsigned int \mbox{\hyperlink{astcenc_8h_a9b9a216f5d2096aa82d2cafa92ef2971}{ASTCENC\+\_\+\+FLG\+\_\+\+USE\+\_\+\+PERCEPTUAL}} = 1 $<$$<$ 3
+\begin{DoxyCompactList}\small\item\em Enable perceptual error metrics. \end{DoxyCompactList}\item 
+static const unsigned int \mbox{\hyperlink{astcenc_8h_af9772b0ac33e823a13096f43a22e0da4}{ASTCENC\+\_\+\+FLG\+\_\+\+DECOMPRESS\+\_\+\+ONLY}} = 1 $<$$<$ 4
+\begin{DoxyCompactList}\small\item\em Create a decompression-\/only context. \end{DoxyCompactList}\item 
+static const unsigned int \mbox{\hyperlink{astcenc_8h_a0fa6f44fa9b0cc85accae3857fb57068}{ASTCENC\+\_\+\+FLG\+\_\+\+SELF\+\_\+\+DECOMPRESS\+\_\+\+ONLY}} = 1 $<$$<$ 5
+\begin{DoxyCompactList}\small\item\em Create a self-\/decompression context. \end{DoxyCompactList}\item 
+static const unsigned int \mbox{\hyperlink{astcenc_8h_a95967a4184547bc51b3f993c8a3b9643}{ASTCENC\+\_\+\+FLG\+\_\+\+MAP\+\_\+\+RGBM}} = 1 $<$$<$ 6
+\begin{DoxyCompactList}\small\item\em Enable RGBM map compression. \end{DoxyCompactList}\item 
+static const unsigned int \mbox{\hyperlink{astcenc_8h_ac659264ed3d41ad52f1c8d7459166e86}{ASTCENC\+\_\+\+ALL\+\_\+\+FLAGS}}
+\begin{DoxyCompactList}\small\item\em The bit mask of all valid flags. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{매크로 문서화}
+\Hypertarget{astcenc_8h_aa8a5ec38846136889daddea423155aab}\index{astcenc.h@{astcenc.h}!ASTCENC\_PUBLIC@{ASTCENC\_PUBLIC}}
+\index{ASTCENC\_PUBLIC@{ASTCENC\_PUBLIC}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{ASTCENC\_PUBLIC}{ASTCENC\_PUBLIC}}
+{\footnotesize\ttfamily \label{astcenc_8h_aa8a5ec38846136889daddea423155aab} 
+\#define ASTCENC\+\_\+\+PUBLIC}
+
+
+
+The core astcenc codec library interface. 
+
+This interface is the entry point to the core astcenc codec. It aims to be easy to use for non-\/experts, but also to allow experts to have fine control over the compressor heuristics if needed. The core codec only handles compression and decompression, transferring all inputs and outputs via memory buffers. To catch obvious input/output buffer sizing issues, which can cause security and stability problems, all transfer buffers are explicitly sized.
+
+While the aim is that we keep this interface mostly stable, it should be viewed as a mutable interface tied to a specific source version. We are not trying to maintain backwards compatibility across codec versions.
+
+The API state management is based around an explicit context object, which is the context for all allocated memory resources needed to compress and decompress a single image. A context can be used to sequentially compress multiple images using the same configuration, allowing setup overheads to be amortized over multiple images, which is particularly important when images are small.
+
+Multi-\/threading can be used two ways. \begin{DoxyVerb}* An application wishing to process multiple images in parallel can allocate multiple
+  contexts and assign each context to a thread.
+* An application wishing to process a single image in using multiple threads can configure
+  contexts for multi-threaded use, and invoke astcenc_compress/decompress() once per thread
+  for faster processing. The caller is responsible for creating the worker threads, and
+  synchronizing between images.
+\end{DoxyVerb}
+ \hypertarget{astcenc_8h_autotoc_md0}{}\doxysubsection{\texorpdfstring{Extended instruction set support}{Extended instruction set support}}\label{astcenc_8h_autotoc_md0}
+This library supports use of extended instruction sets, such as SSE4.\+1 and AVX2. These are enabled at compile time when building the library. There is no runtime checking in the core library that the instruction sets used are actually available. Checking compatibility is the responsibility of the calling code.\hypertarget{astcenc_8h_autotoc_md1}{}\doxysubsection{\texorpdfstring{Threading}{Threading}}\label{astcenc_8h_autotoc_md1}
+In pseudo-\/code, the usage for manual user threading looks like this\+: \begin{DoxyVerb}// Configure the compressor run
+astcenc_config my_config;
+astcenc_config_init(..., &my_config);
+
+// Power users can tweak <my_config> settings here ...
+
+// Allocate working state given config and thread_count
+astcenc_context* my_context;
+astcenc_context_alloc(&my_config, thread_count, &my_context);
+
+// Compress each image using these config settings
+foreach image:
+    // For each thread in the thread pool
+    for i in range(0, thread_count):
+        astcenc_compress_image(my_context, &my_input, my_output, i);
+
+    astcenc_compress_reset(my_context);
+
+// Clean up
+astcenc_context_free(my_context);
+\end{DoxyVerb}
+ \hypertarget{astcenc_8h_autotoc_md2}{}\doxysubsection{\texorpdfstring{Images}{Images}}\label{astcenc_8h_autotoc_md2}
+The codec supports compressing single images, which can be either 2D images or volumetric 3D images. Calling code is responsible for any handling of aggregate types, such as mipmap chains, texture arrays, or sliced 3D textures.
+
+Images are passed in as an \doxylink{structastcenc__image}{astcenc\+\_\+image} structure. Inputs can be either 8-\/bit unorm, 16-\/bit half-\/float, or 32-\/bit float, as indicated by the data\+\_\+type field.
+
+Images can be any dimension; there is no requirement to be a multiple of the ASTC block size.
+
+Data is always passed in as 4 color components, and accessed as an array of 2D image slices. Data within an image slice is always tightly packed without padding. Addressing looks like this\+: \begin{DoxyVerb}data[z_coord][y_coord * x_dim * 4 + x_coord * 4    ]   // Red
+data[z_coord][y_coord * x_dim * 4 + x_coord * 4 + 1]   // Green
+data[z_coord][y_coord * x_dim * 4 + x_coord * 4 + 2]   // Blue
+data[z_coord][y_coord * x_dim * 4 + x_coord * 4 + 3]   // Alpha
+\end{DoxyVerb}
+ \hypertarget{astcenc_8h_autotoc_md3}{}\doxysubsection{\texorpdfstring{Common compressor usage}{Common compressor usage}}\label{astcenc_8h_autotoc_md3}
+One of the most important things for coding image quality is to align the input data component count with the ASTC color endpoint mode. This avoids wasting bits encoding components you don\textquotesingle{}t actually need in the endpoint colors. \begin{DoxyVerb}    | Input data   | Encoding swizzle | Sampling swizzle |
+    | ------------ | ---------------- | ---------------- |
+    | 1 component  | RRR1             | .[rgb]           |
+    | 2 components | RRRG             | .[rgb]a          |
+    | 3 components | RGB1             | .rgb             |
+    | 4 components | RGBA             | .rgba            |
+\end{DoxyVerb}
+ The 1 and 2 component modes recommend sampling from "{}g"{} to recover the luminance value as this provide best compatibility with other texture formats where the green component may be stored at higher precision than the others, such as RGB565. For ASTC any of the RGB components can be used; the luminance endpoint component will be returned for all three.
+
+When using the normal map compression mode ASTC will store normals as a two component X+Y map. Input images must contain unit-\/length normalized and should be passed in using a two component swizzle. The astcenc command line tool defaults to an RRRG swizzle, but some developers prefer to use GGGR for compatability with BC5n which will work just as well. The Z component can be recovered programmatically in shader code, using knowledge that the vector is unit length and that Z must be positive for a tangent-\/space normal map.\hypertarget{astcenc_8h_autotoc_md4}{}\doxysubsection{\texorpdfstring{Decompress-\/only usage}{Decompress-\/only usage}}\label{astcenc_8h_autotoc_md4}
+For some use cases it is useful to have a cut-\/down context and/or library which supports decompression but not compression.
+
+A context can be made decompress-\/only using the ASTCENC\+\_\+\+FLG\+\_\+\+DECOMPRESS\+\_\+\+ONLY flag when the context is allocated. These contexts have lower dynamic memory footprint than a full context.
+
+The entire library can be made decompress-\/only by building the files with the define ASTCENC\+\_\+\+DECOMPRESS\+\_\+\+ONLY set. In this build the context will be smaller, and the library will exclude the functionality which is only needed for compression. This reduces the binary size by \texorpdfstring{$\sim$}{\string~}180\+KB. For these builds contexts must be created with the ASTCENC\+\_\+\+FLG\+\_\+\+DECOMPRESS\+\_\+\+ONLY flag.
+
+Note that context structures returned by a library built as decompress-\/only are incompatible with a library built with compression included, and visa versa, as they have different sizes and memory layout.\hypertarget{astcenc_8h_autotoc_md5}{}\doxysubsection{\texorpdfstring{Self-\/decompress-\/only usage}{Self-\/decompress-\/only usage}}\label{astcenc_8h_autotoc_md5}
+ASTC is a complex format with a large search space. The parts of this search space that are searched is determined by heuristics that are, in part, tied to the quality level used when creating the context.
+
+A normal context is capable of decompressing any ASTC texture, including those generated by other compressors with unknown heuristics. This is the most flexible implementation, but forces the data tables used by the codec to include entries that are not needed during compression. This can slow down context creation by a significant amount, especially for the faster compression modes where few data table entries are actually used. To optimize this use case the context can be created with the ASTCENC\+\_\+\+FLG\+\_\+\+SELF\+\_\+\+DECOMPRESS\+\_\+\+ONLY flag. This tells the compressor that it will only be asked to decompress images that it compressed itself, allowing the data tables to exclude entries that are not needed by the current compression configuration. This reduces the size of the context data tables in memory and improves context creation performance. Note that, as of the 3.\+6 release, this flag no longer affects compression performance.
+
+Using this flag while attempting to decompress an valid image which was created by another compressor, or even another astcenc compressor version or configuration, may result in blocks returning as solid magenta or NaN value error blocks. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00180}{180}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{타입정의 문서화}
+\Hypertarget{astcenc_8h_ac79f6173b76e98afecc86b24412e6427}\index{astcenc.h@{astcenc.h}!astcenc\_progress\_callback@{astcenc\_progress\_callback}}
+\index{astcenc\_progress\_callback@{astcenc\_progress\_callback}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{astcenc\_progress\_callback}{astcenc\_progress\_callback}}
+{\footnotesize\ttfamily \label{astcenc_8h_ac79f6173b76e98afecc86b24412e6427} 
+typedef void(\texorpdfstring{$\ast$}{*} astcenc\+\_\+progress\+\_\+callback) (float)}
+
+
+
+Function pointer type for compression progress reporting callback. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00310}{310}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{열거형 타입 문서화}
+\Hypertarget{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}\index{astcenc.h@{astcenc.h}!astcenc\_error@{astcenc\_error}}
+\index{astcenc\_error@{astcenc\_error}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{astcenc\_error}{astcenc\_error}}
+{\footnotesize\ttfamily \label{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2} 
+enum \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}}}
+
+
+
+A codec API error code. 
+
+\begin{DoxyEnumFields}{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_SUCCESS@{ASTCENC\_SUCCESS}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_SUCCESS@{ASTCENC\_SUCCESS}}}\Hypertarget{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}\label{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2} 
+ASTCENC\+\_\+\+SUCCESS&The call was successful. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_ERR\_OUT\_OF\_MEM@{ASTCENC\_ERR\_OUT\_OF\_MEM}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_ERR\_OUT\_OF\_MEM@{ASTCENC\_ERR\_OUT\_OF\_MEM}}}\Hypertarget{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2ac8d991baf44f9e033ae9c862886fdf29}\label{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2} 
+ASTCENC\+\_\+\+ERR\+\_\+\+OUT\+\_\+\+OF\+\_\+\+MEM&The call failed due to low memory, or undersized I/O buffers. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_ERR\_BAD\_CPU\_FLOAT@{ASTCENC\_ERR\_BAD\_CPU\_FLOAT}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_ERR\_BAD\_CPU\_FLOAT@{ASTCENC\_ERR\_BAD\_CPU\_FLOAT}}}\Hypertarget{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2aab2edb79add12adad46569c53fb252c3}\label{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2} 
+ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+CPU\+\_\+\+FLOAT&The call failed due to the build using fast math. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_ERR\_BAD\_PARAM@{ASTCENC\_ERR\_BAD\_PARAM}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_ERR\_BAD\_PARAM@{ASTCENC\_ERR\_BAD\_PARAM}}}\Hypertarget{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a17b738af7aa5ad5c804065791b1264f2}\label{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2} 
+ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+PARAM&The call failed due to an out-\/of-\/spec parameter. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_ERR\_BAD\_BLOCK\_SIZE@{ASTCENC\_ERR\_BAD\_BLOCK\_SIZE}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_ERR\_BAD\_BLOCK\_SIZE@{ASTCENC\_ERR\_BAD\_BLOCK\_SIZE}}}\Hypertarget{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a7313412df8ff1c4f401514c965ba6b7c}\label{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2} 
+ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+BLOCK\+\_\+\+SIZE&The call failed due to an out-\/of-\/spec block size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_ERR\_BAD\_PROFILE@{ASTCENC\_ERR\_BAD\_PROFILE}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_ERR\_BAD\_PROFILE@{ASTCENC\_ERR\_BAD\_PROFILE}}}\Hypertarget{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a6be8918de1d5cd96ee48e256c39f165b}\label{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2} 
+ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+PROFILE&The call failed due to an out-\/of-\/spec color profile. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_ERR\_BAD\_QUALITY@{ASTCENC\_ERR\_BAD\_QUALITY}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_ERR\_BAD\_QUALITY@{ASTCENC\_ERR\_BAD\_QUALITY}}}\Hypertarget{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a45b7153ebdc711a5928cd35efbac551b}\label{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2} 
+ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+QUALITY&The call failed due to an out-\/of-\/spec quality value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_ERR\_BAD\_SWIZZLE@{ASTCENC\_ERR\_BAD\_SWIZZLE}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_ERR\_BAD\_SWIZZLE@{ASTCENC\_ERR\_BAD\_SWIZZLE}}}\Hypertarget{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a8a2ec2ffa2c2362271a1999b38617c89}\label{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2} 
+ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+SWIZZLE&The call failed due to an out-\/of-\/spec component swizzle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_ERR\_BAD\_FLAGS@{ASTCENC\_ERR\_BAD\_FLAGS}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_ERR\_BAD\_FLAGS@{ASTCENC\_ERR\_BAD\_FLAGS}}}\Hypertarget{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a2b1e8dc851e24bf609b575a7c06ca814}\label{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2} 
+ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+FLAGS&The call failed due to an out-\/of-\/spec flag set. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_ERR\_BAD\_CONTEXT@{ASTCENC\_ERR\_BAD\_CONTEXT}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_ERR\_BAD\_CONTEXT@{ASTCENC\_ERR\_BAD\_CONTEXT}}}\Hypertarget{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2af79664c3406260bd6fe9bd361cf1613d}\label{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2} 
+ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+CONTEXT&The call failed due to the context not supporting the operation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_ERR\_NOT\_IMPLEMENTED@{ASTCENC\_ERR\_NOT\_IMPLEMENTED}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_ERR\_NOT\_IMPLEMENTED@{ASTCENC\_ERR\_NOT\_IMPLEMENTED}}}\Hypertarget{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2af6c1281285dfbb534d29e957fcb7c7cb}\label{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2} 
+ASTCENC\+\_\+\+ERR\+\_\+\+NOT\+\_\+\+IMPLEMENTED&The call failed due to unimplemented functionality. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_ERR\_BAD\_DECODE\_MODE@{ASTCENC\_ERR\_BAD\_DECODE\_MODE}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_ERR\_BAD\_DECODE\_MODE@{ASTCENC\_ERR\_BAD\_DECODE\_MODE}}}\Hypertarget{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2af27784c1b6c06f3eaf3e78041acbc2b7}\label{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2} 
+ASTCENC\+\_\+\+ERR\+\_\+\+BAD\+\_\+\+DECODE\+\_\+\+MODE&The call failed due to an out-\/of-\/spec decode mode flag set. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00195}{195}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2ac8d991baf44f9e033ae9c862886fdf29}{ASTCENC\_ERR\_OUT\_OF\_MEM}},}
+\DoxyCodeLine{00201\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2aab2edb79add12adad46569c53fb252c3}{ASTCENC\_ERR\_BAD\_CPU\_FLOAT}},}
+\DoxyCodeLine{00203\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a17b738af7aa5ad5c804065791b1264f2}{ASTCENC\_ERR\_BAD\_PARAM}},}
+\DoxyCodeLine{00205\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a7313412df8ff1c4f401514c965ba6b7c}{ASTCENC\_ERR\_BAD\_BLOCK\_SIZE}},}
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a6be8918de1d5cd96ee48e256c39f165b}{ASTCENC\_ERR\_BAD\_PROFILE}},}
+\DoxyCodeLine{00209\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a45b7153ebdc711a5928cd35efbac551b}{ASTCENC\_ERR\_BAD\_QUALITY}},}
+\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a8a2ec2ffa2c2362271a1999b38617c89}{ASTCENC\_ERR\_BAD\_SWIZZLE}},}
+\DoxyCodeLine{00213\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a2b1e8dc851e24bf609b575a7c06ca814}{ASTCENC\_ERR\_BAD\_FLAGS}},}
+\DoxyCodeLine{00215\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2af79664c3406260bd6fe9bd361cf1613d}{ASTCENC\_ERR\_BAD\_CONTEXT}},}
+\DoxyCodeLine{00217\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2af6c1281285dfbb534d29e957fcb7c7cb}{ASTCENC\_ERR\_NOT\_IMPLEMENTED}},}
+\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2af27784c1b6c06f3eaf3e78041acbc2b7}{ASTCENC\_ERR\_BAD\_DECODE\_MODE}},}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#if\ defined(ASTCENC\_DIAGNOSTICS)}}
+\DoxyCodeLine{00222\ \ \ \ \ ASTCENC\_ERR\_DTRACE\_FAILURE,}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00224\ \};}
+
+\end{DoxyCode}
+\Hypertarget{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}\index{astcenc.h@{astcenc.h}!astcenc\_profile@{astcenc\_profile}}
+\index{astcenc\_profile@{astcenc\_profile}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{astcenc\_profile}{astcenc\_profile}}
+{\footnotesize\ttfamily \label{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29} 
+enum \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}{astcenc\+\_\+profile}}}
+
+
+
+A codec color profile. 
+
+\begin{DoxyEnumFields}{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_PRF\_LDR\_SRGB@{ASTCENC\_PRF\_LDR\_SRGB}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_PRF\_LDR\_SRGB@{ASTCENC\_PRF\_LDR\_SRGB}}}\Hypertarget{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a331abc1d96b4fa991757e6ef8199f298}\label{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29} 
+ASTCENC\+\_\+\+PRF\+\_\+\+LDR\+\_\+\+SRGB&The LDR s\+RGB color profile. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_PRF\_LDR@{ASTCENC\_PRF\_LDR}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_PRF\_LDR@{ASTCENC\_PRF\_LDR}}}\Hypertarget{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a92cc31c9011e699ed4c41f9a4959c295}\label{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29} 
+ASTCENC\+\_\+\+PRF\+\_\+\+LDR&The LDR linear color profile. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_PRF\_HDR\_RGB\_LDR\_A@{ASTCENC\_PRF\_HDR\_RGB\_LDR\_A}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_PRF\_HDR\_RGB\_LDR\_A@{ASTCENC\_PRF\_HDR\_RGB\_LDR\_A}}}\Hypertarget{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a9043bc19a890aeff156f664ccbef677f}\label{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29} 
+ASTCENC\+\_\+\+PRF\+\_\+\+HDR\+\_\+\+RGB\+\_\+\+LDR\+\_\+A&The HDR RGB with LDR alpha color profile. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_PRF\_HDR@{ASTCENC\_PRF\_HDR}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_PRF\_HDR@{ASTCENC\_PRF\_HDR}}}\Hypertarget{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a4493639842d745d4bccd6a94836d2ca9}\label{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29} 
+ASTCENC\+\_\+\+PRF\+\_\+\+HDR&The HDR RGBA color profile. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00229}{229}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a331abc1d96b4fa991757e6ef8199f298}{ASTCENC\_PRF\_LDR\_SRGB}}\ =\ 0,}
+\DoxyCodeLine{00233\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a92cc31c9011e699ed4c41f9a4959c295}{ASTCENC\_PRF\_LDR}},}
+\DoxyCodeLine{00235\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a9043bc19a890aeff156f664ccbef677f}{ASTCENC\_PRF\_HDR\_RGB\_LDR\_A}},}
+\DoxyCodeLine{00237\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a4493639842d745d4bccd6a94836d2ca9}{ASTCENC\_PRF\_HDR}}}
+\DoxyCodeLine{00238\ \};}
+
+\end{DoxyCode}
+\Hypertarget{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687}\index{astcenc.h@{astcenc.h}!astcenc\_swz@{astcenc\_swz}}
+\index{astcenc\_swz@{astcenc\_swz}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{astcenc\_swz}{astcenc\_swz}}
+{\footnotesize\ttfamily \label{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687} 
+enum \mbox{\hyperlink{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687}{astcenc\+\_\+swz}}}
+
+
+
+A codec component swizzle selector. 
+
+\begin{DoxyEnumFields}{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_SWZ\_R@{ASTCENC\_SWZ\_R}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_SWZ\_R@{ASTCENC\_SWZ\_R}}}\Hypertarget{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687a2766a38ed1e99377723a4efb3510acd3}\label{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687} 
+ASTCENC\+\_\+\+SWZ\+\_\+R&Select the red component. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_SWZ\_G@{ASTCENC\_SWZ\_G}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_SWZ\_G@{ASTCENC\_SWZ\_G}}}\Hypertarget{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687ad07f821ba0081fbbfcc5b59ebb744b3d}\label{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687} 
+ASTCENC\+\_\+\+SWZ\+\_\+G&Select the green component. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_SWZ\_B@{ASTCENC\_SWZ\_B}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_SWZ\_B@{ASTCENC\_SWZ\_B}}}\Hypertarget{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687aa90469ed153f096e4db49d557b5ed3f0}\label{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687} 
+ASTCENC\+\_\+\+SWZ\+\_\+B&Select the blue component. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_SWZ\_A@{ASTCENC\_SWZ\_A}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_SWZ\_A@{ASTCENC\_SWZ\_A}}}\Hypertarget{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687a0fa7695144b4779ee0270c590765c713}\label{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687} 
+ASTCENC\+\_\+\+SWZ\+\_\+A&Select the alpha component. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_SWZ\_0@{ASTCENC\_SWZ\_0}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_SWZ\_0@{ASTCENC\_SWZ\_0}}}\Hypertarget{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687a57fb016aa14a558856f737b35d6a0c17}\label{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687} 
+ASTCENC\+\_\+\+SWZ\+\_\+0&Use a constant zero component. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_SWZ\_1@{ASTCENC\_SWZ\_1}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_SWZ\_1@{ASTCENC\_SWZ\_1}}}\Hypertarget{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687a6c62cc90aa131c1d547561c2833eb0d7}\label{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687} 
+ASTCENC\+\_\+\+SWZ\+\_\+1&Use a constant one component. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_SWZ\_Z@{ASTCENC\_SWZ\_Z}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_SWZ\_Z@{ASTCENC\_SWZ\_Z}}}\Hypertarget{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687a865a6b0c084162fcd67976b4c4c457d0}\label{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687} 
+ASTCENC\+\_\+\+SWZ\+\_\+Z&Use a reconstructed normal vector Z component. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00261}{261}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00262\ \{}
+\DoxyCodeLine{00264\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687a2766a38ed1e99377723a4efb3510acd3}{ASTCENC\_SWZ\_R}}\ =\ 0,}
+\DoxyCodeLine{00266\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687ad07f821ba0081fbbfcc5b59ebb744b3d}{ASTCENC\_SWZ\_G}}\ =\ 1,}
+\DoxyCodeLine{00268\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687aa90469ed153f096e4db49d557b5ed3f0}{ASTCENC\_SWZ\_B}}\ =\ 2,}
+\DoxyCodeLine{00270\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687a0fa7695144b4779ee0270c590765c713}{ASTCENC\_SWZ\_A}}\ =\ 3,}
+\DoxyCodeLine{00272\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687a57fb016aa14a558856f737b35d6a0c17}{ASTCENC\_SWZ\_0}}\ =\ 4,}
+\DoxyCodeLine{00274\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687a6c62cc90aa131c1d547561c2833eb0d7}{ASTCENC\_SWZ\_1}}\ =\ 5,}
+\DoxyCodeLine{00276\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_ade8fdcd2d40237f88e4bfe1230b9b687a865a6b0c084162fcd67976b4c4c457d0}{ASTCENC\_SWZ\_Z}}\ =\ 6}
+\DoxyCodeLine{00277\ \};}
+
+\end{DoxyCode}
+\Hypertarget{astcenc_8h_a7aeb732fb3426e390fa669957d7a109a}\index{astcenc.h@{astcenc.h}!astcenc\_type@{astcenc\_type}}
+\index{astcenc\_type@{astcenc\_type}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{astcenc\_type}{astcenc\_type}}
+{\footnotesize\ttfamily \label{astcenc_8h_a7aeb732fb3426e390fa669957d7a109a} 
+enum \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109a}{astcenc\+\_\+type}}}
+
+
+
+A texel component data format. 
+
+\begin{DoxyEnumFields}{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_TYPE\_U8@{ASTCENC\_TYPE\_U8}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_TYPE\_U8@{ASTCENC\_TYPE\_U8}}}\Hypertarget{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aa91ac7b6329d0a39c879dff7a1bcdf759}\label{astcenc_8h_a7aeb732fb3426e390fa669957d7a109a} 
+ASTCENC\+\_\+\+TYPE\+\_\+\+U8&Unorm 8-\/bit data per component. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_TYPE\_F16@{ASTCENC\_TYPE\_F16}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_TYPE\_F16@{ASTCENC\_TYPE\_F16}}}\Hypertarget{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aad39e16b7f2e55ed676ce400619f0759d}\label{astcenc_8h_a7aeb732fb3426e390fa669957d7a109a} 
+ASTCENC\+\_\+\+TYPE\+\_\+\+F16&16-\/bit float per component. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASTCENC\_TYPE\_F32@{ASTCENC\_TYPE\_F32}!astcenc.h@{astcenc.h}}\index{astcenc.h@{astcenc.h}!ASTCENC\_TYPE\_F32@{ASTCENC\_TYPE\_F32}}}\Hypertarget{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aaf996e38de0e0ac57175c09da275c6062}\label{astcenc_8h_a7aeb732fb3426e390fa669957d7a109a} 
+ASTCENC\+\_\+\+TYPE\+\_\+\+F32&32-\/bit float per component. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00297}{297}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00298\ \{}
+\DoxyCodeLine{00300\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aa91ac7b6329d0a39c879dff7a1bcdf759}{ASTCENC\_TYPE\_U8}}\ =\ 0,}
+\DoxyCodeLine{00302\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aad39e16b7f2e55ed676ce400619f0759d}{ASTCENC\_TYPE\_F16}}\ =\ 1,}
+\DoxyCodeLine{00304\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aaf996e38de0e0ac57175c09da275c6062}{ASTCENC\_TYPE\_F32}}\ =\ 2}
+\DoxyCodeLine{00305\ \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{함수 문서화}
+\Hypertarget{astcenc_8h_a3d9bc940f578f9d66c5339d7f7b4b069}\index{astcenc.h@{astcenc.h}!astcenc\_compress\_image@{astcenc\_compress\_image}}
+\index{astcenc\_compress\_image@{astcenc\_compress\_image}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{astcenc\_compress\_image()}{astcenc\_compress\_image()}}
+{\footnotesize\ttfamily \label{astcenc_8h_a3d9bc940f578f9d66c5339d7f7b4b069} 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}} astcenc\+\_\+compress\+\_\+image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structastcenc__context}{astcenc\+\_\+context}} \texorpdfstring{$\ast$}{*}}]{context}{, }\item[{\mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*}}]{image}{, }\item[{const \mbox{\hyperlink{structastcenc__swizzle}{astcenc\+\_\+swizzle}} \texorpdfstring{$\ast$}{*}}]{swizzle}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data\+\_\+out}{, }\item[{size\+\_\+t}]{data\+\_\+len}{, }\item[{unsigned int}]{thread\+\_\+index}{}\end{DoxyParamCaption})}
+
+
+
+Compress an image. 
+
+A single context can only compress or decompress a single image at a time.
+
+For a context configured for multi-\/threading, any set of the N threads can call this function. Work will be dynamically scheduled across the threads available. Each thread must have a unique {\ttfamily thread\+\_\+index}.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em context} & Codec context. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em image} & An input image, in 2D slices. \\
+\hline
+ & {\em swizzle} & Compression data swizzle, applied before compression. \\
+\hline
+\mbox{\texttt{ out}}  & {\em data\+\_\+out} & Pointer to output data array. \\
+\hline
+ & {\em data\+\_\+len} & Length of the output data array. \\
+\hline
+ & {\em thread\+\_\+index} & Thread index \mbox{[}0..N-\/1\mbox{]} of calling thread.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+{\ttfamily ASTCENC\+\_\+\+SUCCESS} on success, or an error if compression failed. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l01007}{1007}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01014\ \ \ \{}
+\DoxyCodeLine{01015\ \textcolor{preprocessor}{\#if\ defined(ASTCENC\_DECOMPRESS\_ONLY)}}
+\DoxyCodeLine{01016\ \ \ \ \ (void)ctxo;}
+\DoxyCodeLine{01017\ \ \ \ \ (void)imagep;}
+\DoxyCodeLine{01018\ \ \ \ \ (void)swizzle;}
+\DoxyCodeLine{01019\ \ \ \ \ (void)data\_out;}
+\DoxyCodeLine{01020\ \ \ \ \ (void)data\_len;}
+\DoxyCodeLine{01021\ \ \ \ \ (void)thread\_index;}
+\DoxyCodeLine{01022\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2af79664c3406260bd6fe9bd361cf1613d}{ASTCENC\_ERR\_BAD\_CONTEXT}};}
+\DoxyCodeLine{01023\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01024\ \ \ \ \ \mbox{\hyperlink{structastcenc__contexti}{astcenc\_contexti}}*\ ctx\ =\ \&ctxo-\/>context;}
+\DoxyCodeLine{01025\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\_error}}\ status;}
+\DoxyCodeLine{01026\ \ \ \ \ \mbox{\hyperlink{structastcenc__image}{astcenc\_image}}\&\ image\ =\ *imagep;}
+\DoxyCodeLine{01027\ }
+\DoxyCodeLine{01028\ \ \ \ \ \textcolor{keywordflow}{if}\ (ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a7175e94561eeb3b83f8bf4549306cf95}{flags}}\ \&\ \mbox{\hyperlink{astcenc_8h_af9772b0ac33e823a13096f43a22e0da4}{ASTCENC\_FLG\_DECOMPRESS\_ONLY}})}
+\DoxyCodeLine{01029\ \ \ \ \ \{}
+\DoxyCodeLine{01030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2af79664c3406260bd6fe9bd361cf1613d}{ASTCENC\_ERR\_BAD\_CONTEXT}};}
+\DoxyCodeLine{01031\ \ \ \ \ \}}
+\DoxyCodeLine{01032\ }
+\DoxyCodeLine{01033\ \ \ \ \ status\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_a6cf3c861fc7e2dcc766b5a18bc84c2de}{validate\_compression\_swizzle}}(*swizzle);}
+\DoxyCodeLine{01034\ \ \ \ \ \textcolor{keywordflow}{if}\ (status\ !=\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}})}
+\DoxyCodeLine{01035\ \ \ \ \ \{}
+\DoxyCodeLine{01036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{01037\ \ \ \ \ \}}
+\DoxyCodeLine{01038\ }
+\DoxyCodeLine{01039\ \ \ \ \ \textcolor{keywordflow}{if}\ (thread\_index\ >=\ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a031bf749d4e55c786a1b85cd5553add6}{thread\_count}})}
+\DoxyCodeLine{01040\ \ \ \ \ \{}
+\DoxyCodeLine{01041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a17b738af7aa5ad5c804065791b1264f2}{ASTCENC\_ERR\_BAD\_PARAM}};}
+\DoxyCodeLine{01042\ \ \ \ \ \}}
+\DoxyCodeLine{01043\ }
+\DoxyCodeLine{01044\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ block\_x\ =\ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a8c97a59f9605127f7ff9c055c1d18aba}{block\_x}};}
+\DoxyCodeLine{01045\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ block\_y\ =\ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_ada95d4600038d7798676667453684068}{block\_y}};}
+\DoxyCodeLine{01046\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ block\_z\ =\ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a2941ec9c7df3b211604c9cf7d8d1fe5e}{block\_z}};}
+\DoxyCodeLine{01047\ }
+\DoxyCodeLine{01048\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ xblocks\ =\ (image.\mbox{\hyperlink{structastcenc__image_a8bb8eebb59215778176674951c6da70a}{dim\_x}}\ +\ block\_x\ -\/\ 1)\ /\ block\_x;}
+\DoxyCodeLine{01049\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ yblocks\ =\ (image.\mbox{\hyperlink{structastcenc__image_a3a62fbbc3a16a390eca3b03b6e489750}{dim\_y}}\ +\ block\_y\ -\/\ 1)\ /\ block\_y;}
+\DoxyCodeLine{01050\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ zblocks\ =\ (image.\mbox{\hyperlink{structastcenc__image_a9c71edbb23f1cca0de775c508b6219ee}{dim\_z}}\ +\ block\_z\ -\/\ 1)\ /\ block\_z;}
+\DoxyCodeLine{01051\ }
+\DoxyCodeLine{01052\ \ \ \ \ \textcolor{comment}{//\ Check\ we\ have\ enough\ output\ space\ (16\ bytes\ per\ block)}}
+\DoxyCodeLine{01053\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\_needed\ =\ xblocks\ *\ yblocks\ *\ zblocks\ *\ 16;}
+\DoxyCodeLine{01054\ \ \ \ \ \textcolor{keywordflow}{if}\ (data\_len\ <\ size\_needed)}
+\DoxyCodeLine{01055\ \ \ \ \ \{}
+\DoxyCodeLine{01056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2ac8d991baf44f9e033ae9c862886fdf29}{ASTCENC\_ERR\_OUT\_OF\_MEM}};}
+\DoxyCodeLine{01057\ \ \ \ \ \}}
+\DoxyCodeLine{01058\ }
+\DoxyCodeLine{01059\ \ \ \ \ \textcolor{comment}{//\ If\ context\ thread\ count\ is\ one\ then\ implicitly\ reset}}
+\DoxyCodeLine{01060\ \ \ \ \ \textcolor{keywordflow}{if}\ (ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a031bf749d4e55c786a1b85cd5553add6}{thread\_count}}\ ==\ 1)}
+\DoxyCodeLine{01061\ \ \ \ \ \{}
+\DoxyCodeLine{01062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__entry_8cpp_a72c515300f4a4cf56c7bb41247960d72}{astcenc\_compress\_reset}}(ctxo);}
+\DoxyCodeLine{01063\ \ \ \ \ \}}
+\DoxyCodeLine{01064\ }
+\DoxyCodeLine{01065\ \ \ \ \ \textcolor{keywordflow}{if}\ (ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_af310c1840af0e5baf2cbc3f61ecc1485}{a\_scale\_radius}}\ !=\ 0)}
+\DoxyCodeLine{01066\ \ \ \ \ \{}
+\DoxyCodeLine{01067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ First\ thread\ to\ enter\ will\ do\ setup,\ other\ threads\ will\ subsequently}}
+\DoxyCodeLine{01068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ enter\ the\ critical\ section\ but\ simply\ skip\ over\ the\ initialization}}
+\DoxyCodeLine{01069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ init\_avg\ =\ [ctx,\ \&image,\ swizzle]()\ \{}
+\DoxyCodeLine{01070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Perform\ memory\ allocations\ for\ the\ destination\ buffers}}
+\DoxyCodeLine{01071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ texel\_count\ =\ image.dim\_x\ *\ image.dim\_y\ *\ image.dim\_z;}
+\DoxyCodeLine{01072\ \ \ \ \ \ \ \ \ \ \ \ \ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_af902f846866885cc9cd3bf1a76d2b2cf}{input\_alpha\_averages}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{float}[texel\_count];}
+\DoxyCodeLine{01073\ }
+\DoxyCodeLine{01074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__compute__variance_8cpp_a3f9cb247b3a6133147c430dfd81b3d96}{init\_compute\_averages}}(}
+\DoxyCodeLine{01075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ image,\ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_af310c1840af0e5baf2cbc3f61ecc1485}{a\_scale\_radius}},\ *swizzle,}
+\DoxyCodeLine{01076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_ac32f9dad71bba899845590e2c42bfe18}{avg\_preprocess\_args}});}
+\DoxyCodeLine{01077\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{01078\ }
+\DoxyCodeLine{01079\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Only\ the\ first\ thread\ actually\ runs\ the\ initializer}}
+\DoxyCodeLine{01080\ \ \ \ \ \ \ \ \ ctxo-\/>manage\_avg.init(init\_avg);}
+\DoxyCodeLine{01081\ }
+\DoxyCodeLine{01082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ All\ threads\ will\ enter\ this\ function\ and\ dynamically\ grab\ work}}
+\DoxyCodeLine{01083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__entry_8cpp_abb4b489d57171cfb1ebe0be7d24ef1d9}{compute\_averages}}(*ctxo,\ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_ac32f9dad71bba899845590e2c42bfe18}{avg\_preprocess\_args}});}
+\DoxyCodeLine{01084\ \ \ \ \ \}}
+\DoxyCodeLine{01085\ }
+\DoxyCodeLine{01086\ \ \ \ \ \textcolor{comment}{//\ Wait\ for\ compute\_averages\ to\ complete\ before\ compressing}}
+\DoxyCodeLine{01087\ \ \ \ \ ctxo-\/>manage\_avg.wait();}
+\DoxyCodeLine{01088\ }
+\DoxyCodeLine{01089\ \ \ \ \ \mbox{\hyperlink{astcenc__entry_8cpp_acbecfd32ce013d567cac16a877c20f42}{compress\_image}}(*ctxo,\ thread\_index,\ image,\ *swizzle,\ data\_out);}
+\DoxyCodeLine{01090\ }
+\DoxyCodeLine{01091\ \ \ \ \ \textcolor{comment}{//\ Wait\ for\ compress\ to\ complete\ before\ freeing\ memory}}
+\DoxyCodeLine{01092\ \ \ \ \ ctxo-\/>manage\_compress.wait();}
+\DoxyCodeLine{01093\ }
+\DoxyCodeLine{01094\ \ \ \ \ \textcolor{keyword}{auto}\ term\_compress\ =\ [ctx]()\ \{}
+\DoxyCodeLine{01095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_af902f846866885cc9cd3bf1a76d2b2cf}{input\_alpha\_averages}};}
+\DoxyCodeLine{01096\ \ \ \ \ \ \ \ \ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_af902f846866885cc9cd3bf1a76d2b2cf}{input\_alpha\_averages}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{01097\ \ \ \ \ \};}
+\DoxyCodeLine{01098\ }
+\DoxyCodeLine{01099\ \ \ \ \ \textcolor{comment}{//\ Only\ the\ first\ thread\ to\ arrive\ actually\ runs\ the\ term}}
+\DoxyCodeLine{01100\ \ \ \ \ ctxo-\/>manage\_compress.term(term\_compress);}
+\DoxyCodeLine{01101\ }
+\DoxyCodeLine{01102\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}};}
+\DoxyCodeLine{01103\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01104\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{astcenc_8h_a3d9bc940f578f9d66c5339d7f7b4b069_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc_8h_a3d9bc940f578f9d66c5339d7f7b4b069_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc_8h_a93d80ab0fdd1546df397476d773df545}\index{astcenc.h@{astcenc.h}!astcenc\_compress\_reset@{astcenc\_compress\_reset}}
+\index{astcenc\_compress\_reset@{astcenc\_compress\_reset}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{astcenc\_compress\_reset()}{astcenc\_compress\_reset()}}
+{\footnotesize\ttfamily \label{astcenc_8h_a93d80ab0fdd1546df397476d773df545} 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}} astcenc\+\_\+compress\+\_\+reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structastcenc__context}{astcenc\+\_\+context}} \texorpdfstring{$\ast$}{*}}]{context}{}\end{DoxyParamCaption})}
+
+
+
+Reset the codec state for a new compression. 
+
+The caller is responsible for synchronizing threads in the worker thread pool. This function must only be called when all threads have exited the {\ttfamily \doxylink{astcenc_8h_a3d9bc940f578f9d66c5339d7f7b4b069}{astcenc\+\_\+compress\+\_\+image()}} function for image N, but before any thread enters it for image N + 1.
+
+Calling this is not required (but won\textquotesingle{}t hurt), if the context is created for single threaded use.
+
+
+\begin{DoxyParams}{매개변수}
+{\em context} & Codec context.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+{\ttfamily ASTCENC\+\_\+\+SUCCESS} on success, or an error if reset failed. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l01107}{1107}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01109\ \ \ \{}
+\DoxyCodeLine{01110\ \textcolor{preprocessor}{\#if\ defined(ASTCENC\_DECOMPRESS\_ONLY)}}
+\DoxyCodeLine{01111\ \ \ \ \ (void)ctxo;}
+\DoxyCodeLine{01112\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2af79664c3406260bd6fe9bd361cf1613d}{ASTCENC\_ERR\_BAD\_CONTEXT}};}
+\DoxyCodeLine{01113\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01114\ \ \ \ \ \mbox{\hyperlink{structastcenc__contexti}{astcenc\_contexti}}*\ ctx\ =\ \&ctxo-\/>context;}
+\DoxyCodeLine{01115\ \ \ \ \ \textcolor{keywordflow}{if}\ (ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a7175e94561eeb3b83f8bf4549306cf95}{flags}}\ \&\ \mbox{\hyperlink{astcenc_8h_af9772b0ac33e823a13096f43a22e0da4}{ASTCENC\_FLG\_DECOMPRESS\_ONLY}})}
+\DoxyCodeLine{01116\ \ \ \ \ \{}
+\DoxyCodeLine{01117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2af79664c3406260bd6fe9bd361cf1613d}{ASTCENC\_ERR\_BAD\_CONTEXT}};}
+\DoxyCodeLine{01118\ \ \ \ \ \}}
+\DoxyCodeLine{01119\ }
+\DoxyCodeLine{01120\ \ \ \ \ ctxo-\/>manage\_avg.reset();}
+\DoxyCodeLine{01121\ \ \ \ \ ctxo-\/>manage\_compress.reset();}
+\DoxyCodeLine{01122\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}};}
+\DoxyCodeLine{01123\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01124\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc_8h_a93d80ab0fdd1546df397476d773df545_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc_8h_a93d80ab0fdd1546df397476d773df545_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc_8h_a7d841c47ab68c3705ddcf61fc651d422}\index{astcenc.h@{astcenc.h}!astcenc\_config\_init@{astcenc\_config\_init}}
+\index{astcenc\_config\_init@{astcenc\_config\_init}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{astcenc\_config\_init()}{astcenc\_config\_init()}}
+{\footnotesize\ttfamily \label{astcenc_8h_a7d841c47ab68c3705ddcf61fc651d422} 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}} astcenc\+\_\+config\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}{astcenc\+\_\+profile}}}]{profile}{, }\item[{unsigned int}]{block\+\_\+x}{, }\item[{unsigned int}]{block\+\_\+y}{, }\item[{unsigned int}]{block\+\_\+z}{, }\item[{float}]{quality}{, }\item[{unsigned int}]{flags}{, }\item[{\mbox{\hyperlink{structastcenc__config}{astcenc\+\_\+config}} \texorpdfstring{$\ast$}{*}}]{config}{}\end{DoxyParamCaption})}
+
+Populate a codec config based on default settings.
+
+Power users can edit the returned config struct to fine tune before allocating the context.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em profile} & Color profile. \\
+\hline
+ & {\em block\+\_\+x} & ASTC block size X dimension. \\
+\hline
+ & {\em block\+\_\+y} & ASTC block size Y dimension. \\
+\hline
+ & {\em block\+\_\+z} & ASTC block size Z dimension. \\
+\hline
+ & {\em quality} & Search quality preset / effort level. Either an {\ttfamily ASTCENC\+\_\+\+PRE\+\_\+\texorpdfstring{$\ast$}{*}} value, or a effort level between 0 and 100. Performance is not linear between 0 and 100.\\
+\hline
+ & {\em flags} & A valid set of {\ttfamily ASTCENC\+\_\+\+FLG\+\_\+\texorpdfstring{$\ast$}{*}} flag bits. \\
+\hline
+\mbox{\texttt{ out}}  & {\em config} & Output config struct to populate.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+{\ttfamily ASTCENC\+\_\+\+SUCCESS} on success, or an error if the inputs are invalid either individually, or in combination. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00436}{436}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00444\ \ \ \{}
+\DoxyCodeLine{00445\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\_error}}\ status;}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00447\ \ \ \ \ status\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_a6005193560626fcd9fd6d910d4233876}{validate\_cpu\_float}}();}
+\DoxyCodeLine{00448\ \ \ \ \ \textcolor{keywordflow}{if}\ (status\ !=\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}})}
+\DoxyCodeLine{00449\ \ \ \ \ \{}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{00451\ \ \ \ \ \}}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00453\ \ \ \ \ \textcolor{comment}{//\ Zero\ init\ all\ config\ fields;\ although\ most\ of\ will\ be\ over\ written}}
+\DoxyCodeLine{00454\ \ \ \ \ \mbox{\hyperlink{structastcenc__config}{astcenc\_config}}\&\ config\ =\ *configp;}
+\DoxyCodeLine{00455\ \ \ \ \ std::memset(\&config,\ 0,\ \textcolor{keyword}{sizeof}(config));}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ \ \ \ \ \textcolor{comment}{//\ Process\ the\ block\ size}}
+\DoxyCodeLine{00458\ \ \ \ \ block\_z\ =\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}(block\_z,\ 1u);\ \textcolor{comment}{//\ For\ 2D\ blocks\ Z==0\ is\ accepted,\ but\ convert\ to\ 1}}
+\DoxyCodeLine{00459\ \ \ \ \ status\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_acdcee8daab341db81c6cbe79f566ada0}{validate\_block\_size}}(block\_x,\ block\_y,\ block\_z);}
+\DoxyCodeLine{00460\ \ \ \ \ \textcolor{keywordflow}{if}\ (status\ !=\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}})}
+\DoxyCodeLine{00461\ \ \ \ \ \{}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{00463\ \ \ \ \ \}}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a8c97a59f9605127f7ff9c055c1d18aba}{block\_x}}\ =\ block\_x;}
+\DoxyCodeLine{00466\ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_ada95d4600038d7798676667453684068}{block\_y}}\ =\ block\_y;}
+\DoxyCodeLine{00467\ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a2941ec9c7df3b211604c9cf7d8d1fe5e}{block\_z}}\ =\ block\_z;}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00469\ \ \ \ \ \textcolor{keywordtype}{float}\ texels\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(block\_x\ *\ block\_y\ *\ block\_z);}
+\DoxyCodeLine{00470\ \ \ \ \ \textcolor{keywordtype}{float}\ ltexels\ =\ logf(texels)\ /\ logf(10.0f);}
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00472\ \ \ \ \ \textcolor{comment}{//\ Process\ the\ performance\ quality\ level\ or\ preset;\ note\ that\ this\ must\ be\ done\ before\ we}}
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{comment}{//\ process\ any\ additional\ settings,\ such\ as\ color\ profile\ and\ flags,\ which\ may\ replace\ some\ of}}
+\DoxyCodeLine{00474\ \ \ \ \ \textcolor{comment}{//\ these\ settings\ with\ more\ use\ case\ tuned\ values}}
+\DoxyCodeLine{00475\ \ \ \ \ \textcolor{keywordflow}{if}\ (quality\ <\ \mbox{\hyperlink{astcenc_8h_ad2b7499ede8d23218e06263ae971c6da}{ASTCENC\_PRE\_FASTEST}}\ ||}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ quality\ >\ \mbox{\hyperlink{astcenc_8h_a6bdd89709e4169c3a83b64793435b5e4}{ASTCENC\_PRE\_EXHAUSTIVE}})}
+\DoxyCodeLine{00477\ \ \ \ \ \{}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a45b7153ebdc711a5928cd35efbac551b}{ASTCENC\_ERR\_BAD\_QUALITY}};}
+\DoxyCodeLine{00479\ \ \ \ \ \}}
+\DoxyCodeLine{00480\ }
+\DoxyCodeLine{00481\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::array<astcenc\_preset\_config,\ 6>*\ preset\_configs;}
+\DoxyCodeLine{00482\ \ \ \ \ \textcolor{keywordtype}{int}\ texels\_int\ =\ block\_x\ *\ block\_y\ *\ block\_z;}
+\DoxyCodeLine{00483\ \ \ \ \ \textcolor{keywordflow}{if}\ (texels\_int\ <\ 25)}
+\DoxyCodeLine{00484\ \ \ \ \ \{}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ preset\_configs\ =\ \&\mbox{\hyperlink{astcenc__entry_8cpp_ae36b82f516ef4f0cf27f1b0b0513d006}{preset\_configs\_high}};}
+\DoxyCodeLine{00486\ \ \ \ \ \}}
+\DoxyCodeLine{00487\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (texels\_int\ <\ 64)}
+\DoxyCodeLine{00488\ \ \ \ \ \{}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ preset\_configs\ =\ \&\mbox{\hyperlink{astcenc__entry_8cpp_a5f0520cdb32dfed00ccd1cc2b33a82ec}{preset\_configs\_mid}};}
+\DoxyCodeLine{00490\ \ \ \ \ \}}
+\DoxyCodeLine{00491\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00492\ \ \ \ \ \{}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ preset\_configs\ =\ \&\mbox{\hyperlink{astcenc__entry_8cpp_a227ed004fe8118b15e20581a12dd2003}{preset\_configs\_low}};}
+\DoxyCodeLine{00494\ \ \ \ \ \}}
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00496\ \ \ \ \ \textcolor{comment}{//\ Determine\ which\ preset\ to\ use,\ or\ which\ pair\ to\ interpolate}}
+\DoxyCodeLine{00497\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ start;}
+\DoxyCodeLine{00498\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ end;}
+\DoxyCodeLine{00499\ \ \ \ \ \textcolor{keywordflow}{for}\ (end\ =\ 0;\ end\ <\ preset\_configs-\/>size();\ end++)}
+\DoxyCodeLine{00500\ \ \ \ \ \{}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*preset\_configs)[end].quality\ >=\ quality)}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00505\ \ \ \ \ \}}
+\DoxyCodeLine{00506\ }
+\DoxyCodeLine{00507\ \ \ \ \ start\ =\ end\ ==\ 0\ ?\ 0\ :\ end\ -\/\ 1;}
+\DoxyCodeLine{00508\ }
+\DoxyCodeLine{00509\ \ \ \ \ \textcolor{comment}{//\ Start\ and\ end\ node\ are\ the\ same\ -\/\ so\ just\ transfer\ the\ values.}}
+\DoxyCodeLine{00510\ \ \ \ \ \textcolor{keywordflow}{if}\ (start\ ==\ end)}
+\DoxyCodeLine{00511\ \ \ \ \ \{}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_aa7930792899cf0f4e06d0443e7c7c376}{tune\_partition\_count\_limit}}\ =\ (*preset\_configs)[start].tune\_partition\_count\_limit;}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a13172c9ee7823e27bcc760748bbca7ec}{tune\_2partition\_index\_limit}}\ =\ (*preset\_configs)[start].tune\_2partition\_index\_limit;}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a9f7de080850731a6ee84e3c8ec9c7084}{tune\_3partition\_index\_limit}}\ =\ (*preset\_configs)[start].tune\_3partition\_index\_limit;}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a378d1dd2bf306399c29a5f7883565c3c}{tune\_4partition\_index\_limit}}\ =\ (*preset\_configs)[start].tune\_4partition\_index\_limit;}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a68388fd9e07722288b73d63fb545532c}{tune\_block\_mode\_limit}}\ =\ (*preset\_configs)[start].tune\_block\_mode\_limit;}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_ae756e28f11bd615a23198c4ae2b1e90f}{tune\_refinement\_limit}}\ =\ (*preset\_configs)[start].tune\_refinement\_limit;}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a1985670205a89fcb92ba1995e6645c5e}{tune\_candidate\_limit}}\ =\ (*preset\_configs)[start].tune\_candidate\_limit;}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a841535a5913a073022ab7098a0f329ac}{tune\_2partitioning\_candidate\_limit}}\ =\ (*preset\_configs)[start].tune\_2partitioning\_candidate\_limit;}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a076f40134b7cefe41079e8a3aa8899f6}{tune\_3partitioning\_candidate\_limit}}\ =\ (*preset\_configs)[start].tune\_3partitioning\_candidate\_limit;}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_afc8d64039868048fef1e1a9749737528}{tune\_4partitioning\_candidate\_limit}}\ =\ (*preset\_configs)[start].tune\_4partitioning\_candidate\_limit;}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a2065412aaae88cff4e1f648946e13181}{tune\_db\_limit}}\ =\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}((*preset\_configs)[start].tune\_db\_limit\_a\_base\ -\/\ 35\ *\ ltexels,}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*preset\_configs)[start].tune\_db\_limit\_b\_base\ -\/\ 19\ *\ ltexels);}
+\DoxyCodeLine{00524\ }
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a1ca7ffa6cf39b0236c3ac07a81e41748}{tune\_mse\_overshoot}}\ =\ (*preset\_configs)[start].tune\_mse\_overshoot;}
+\DoxyCodeLine{00526\ }
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a428f0ba612186c229f66865dd615d567}{tune\_2partition\_early\_out\_limit\_factor}}\ =\ (*preset\_configs)[start].tune\_2partition\_early\_out\_limit\_factor;}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_adb6bf5fd3979c612e5c6b377c6aca281}{tune\_3partition\_early\_out\_limit\_factor}}\ =\ (*preset\_configs)[start].tune\_3partition\_early\_out\_limit\_factor;}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a01cfcdc6f3903a6b7fc96ebda9550102}{tune\_2plane\_early\_out\_limit\_correlation}}\ =\ (*preset\_configs)[start].tune\_2plane\_early\_out\_limit\_correlation;}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a00c34d7b516c391a763592497da58312}{tune\_search\_mode0\_enable}}\ =\ (*preset\_configs)[start].tune\_search\_mode0\_enable;}
+\DoxyCodeLine{00531\ \ \ \ \ \}}
+\DoxyCodeLine{00532\ \ \ \ \ \textcolor{comment}{//\ Start\ and\ end\ node\ are\ not\ the\ same\ -\/\ so\ interpolate\ between\ them}}
+\DoxyCodeLine{00533\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00534\ \ \ \ \ \{}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ node\_a\ =\ (*preset\_configs)[start];}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ node\_b\ =\ (*preset\_configs)[end];}
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ wt\_range\ =\ node\_b.quality\ -\/\ node\_a.quality;}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ assert(wt\_range\ >\ 0);}
+\DoxyCodeLine{00540\ }
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ interpolation\ factors}}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ wt\_node\_a\ =\ (node\_b.quality\ -\/\ quality)\ /\ wt\_range;}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ wt\_node\_b\ =\ (quality\ -\/\ node\_a.quality)\ /\ wt\_range;}
+\DoxyCodeLine{00544\ }
+\DoxyCodeLine{00545\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ LERP(param)\ ((node\_a.param\ *\ wt\_node\_a)\ +\ (node\_b.param\ *\ wt\_node\_b))}}
+\DoxyCodeLine{00546\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ LERPI(param)\ astc::flt2int\_rtn(\(\backslash\)}}
+\DoxyCodeLine{00547\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (static\_cast<float>(node\_a.param)\ *\ wt\_node\_a)\ +\ \(\backslash\)}}
+\DoxyCodeLine{00548\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (static\_cast<float>(node\_b.param)\ *\ wt\_node\_b))}}
+\DoxyCodeLine{00549\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ LERPUI(param)\ static\_cast<unsigned\ int>(LERPI(param))}}
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_aa7930792899cf0f4e06d0443e7c7c376}{tune\_partition\_count\_limit}}\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_ae3625c990ea1b71292e1c38f564bd496}{LERPI}}(tune\_partition\_count\_limit);}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a13172c9ee7823e27bcc760748bbca7ec}{tune\_2partition\_index\_limit}}\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_ae3625c990ea1b71292e1c38f564bd496}{LERPI}}(tune\_2partition\_index\_limit);}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a9f7de080850731a6ee84e3c8ec9c7084}{tune\_3partition\_index\_limit}}\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_ae3625c990ea1b71292e1c38f564bd496}{LERPI}}(tune\_3partition\_index\_limit);}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a378d1dd2bf306399c29a5f7883565c3c}{tune\_4partition\_index\_limit}}\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_ae3625c990ea1b71292e1c38f564bd496}{LERPI}}(tune\_4partition\_index\_limit);}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a68388fd9e07722288b73d63fb545532c}{tune\_block\_mode\_limit}}\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_ae3625c990ea1b71292e1c38f564bd496}{LERPI}}(tune\_block\_mode\_limit);}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_ae756e28f11bd615a23198c4ae2b1e90f}{tune\_refinement\_limit}}\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_ae3625c990ea1b71292e1c38f564bd496}{LERPI}}(tune\_refinement\_limit);}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a1985670205a89fcb92ba1995e6645c5e}{tune\_candidate\_limit}}\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_ab59447d8f71de3d8ef3362d78c3c6422}{LERPUI}}(tune\_candidate\_limit);}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a841535a5913a073022ab7098a0f329ac}{tune\_2partitioning\_candidate\_limit}}\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_ab59447d8f71de3d8ef3362d78c3c6422}{LERPUI}}(tune\_2partitioning\_candidate\_limit);}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a076f40134b7cefe41079e8a3aa8899f6}{tune\_3partitioning\_candidate\_limit}}\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_ab59447d8f71de3d8ef3362d78c3c6422}{LERPUI}}(tune\_3partitioning\_candidate\_limit);}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_afc8d64039868048fef1e1a9749737528}{tune\_4partitioning\_candidate\_limit}}\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_ab59447d8f71de3d8ef3362d78c3c6422}{LERPUI}}(tune\_4partitioning\_candidate\_limit);}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a2065412aaae88cff4e1f648946e13181}{tune\_db\_limit}}\ =\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}(\mbox{\hyperlink{astcenc__entry_8cpp_a7a90d16c4a26f7b42cff0df75799e86e}{LERP}}(tune\_db\_limit\_a\_base)\ -\/\ 35\ *\ ltexels,}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__entry_8cpp_a7a90d16c4a26f7b42cff0df75799e86e}{LERP}}(tune\_db\_limit\_b\_base)\ -\/\ 19\ *\ ltexels);}
+\DoxyCodeLine{00563\ }
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a1ca7ffa6cf39b0236c3ac07a81e41748}{tune\_mse\_overshoot}}\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_a7a90d16c4a26f7b42cff0df75799e86e}{LERP}}(tune\_mse\_overshoot);}
+\DoxyCodeLine{00565\ }
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a428f0ba612186c229f66865dd615d567}{tune\_2partition\_early\_out\_limit\_factor}}\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_a7a90d16c4a26f7b42cff0df75799e86e}{LERP}}(tune\_2partition\_early\_out\_limit\_factor);}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_adb6bf5fd3979c612e5c6b377c6aca281}{tune\_3partition\_early\_out\_limit\_factor}}\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_a7a90d16c4a26f7b42cff0df75799e86e}{LERP}}(tune\_3partition\_early\_out\_limit\_factor);}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a01cfcdc6f3903a6b7fc96ebda9550102}{tune\_2plane\_early\_out\_limit\_correlation}}\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_a7a90d16c4a26f7b42cff0df75799e86e}{LERP}}(tune\_2plane\_early\_out\_limit\_correlation);}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a00c34d7b516c391a763592497da58312}{tune\_search\_mode0\_enable}}\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_a7a90d16c4a26f7b42cff0df75799e86e}{LERP}}(tune\_search\_mode0\_enable);}
+\DoxyCodeLine{00570\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#undef\ LERP}}
+\DoxyCodeLine{00571\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#undef\ LERPI}}
+\DoxyCodeLine{00572\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#undef\ LERPUI}}
+\DoxyCodeLine{00573\ \ \ \ \ \}}
+\DoxyCodeLine{00574\ }
+\DoxyCodeLine{00575\ \ \ \ \ \textcolor{comment}{//\ Set\ heuristics\ to\ the\ defaults\ for\ each\ color\ profile}}
+\DoxyCodeLine{00576\ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a94850051a1dc753abf8d3148bd59d9cd}{cw\_r\_weight}}\ =\ 1.0f;}
+\DoxyCodeLine{00577\ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_ac1f865f94a531f5c52bf30696f88c172}{cw\_g\_weight}}\ =\ 1.0f;}
+\DoxyCodeLine{00578\ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_ae8b3c68b4b4890c75eaac694aa3588db}{cw\_b\_weight}}\ =\ 1.0f;}
+\DoxyCodeLine{00579\ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a15b13fe88b80a45ac0333519417a58af}{cw\_a\_weight}}\ =\ 1.0f;}
+\DoxyCodeLine{00580\ }
+\DoxyCodeLine{00581\ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_af310c1840af0e5baf2cbc3f61ecc1485}{a\_scale\_radius}}\ =\ 0;}
+\DoxyCodeLine{00582\ }
+\DoxyCodeLine{00583\ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199}{rgbm\_m\_scale}}\ =\ 0.0f;}
+\DoxyCodeLine{00584\ }
+\DoxyCodeLine{00585\ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}}\ =\ profile;}
+\DoxyCodeLine{00586\ }
+\DoxyCodeLine{00587\ \ \ \ \ \textcolor{comment}{//\ Values\ in\ this\ enum\ are\ from\ an\ external\ user,\ so\ not\ guaranteed\ to\ be}}
+\DoxyCodeLine{00588\ \ \ \ \ \textcolor{comment}{//\ bounded\ to\ the\ enum\ values}}
+\DoxyCodeLine{00589\ \ \ \ \ \textcolor{keywordflow}{switch}\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(profile))}
+\DoxyCodeLine{00590\ \ \ \ \ \{}
+\DoxyCodeLine{00591\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a92cc31c9011e699ed4c41f9a4959c295}{ASTCENC\_PRF\_LDR}}:}
+\DoxyCodeLine{00592\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a331abc1d96b4fa991757e6ef8199f298}{ASTCENC\_PRF\_LDR\_SRGB}}:}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00594\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a9043bc19a890aeff156f664ccbef677f}{ASTCENC\_PRF\_HDR\_RGB\_LDR\_A}}:}
+\DoxyCodeLine{00595\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a4493639842d745d4bccd6a94836d2ca9}{ASTCENC\_PRF\_HDR}}:}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a2065412aaae88cff4e1f648946e13181}{tune\_db\_limit}}\ =\ 999.0f;}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a00c34d7b516c391a763592497da58312}{tune\_search\_mode0\_enable}}\ =\ 0.0f;}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00599\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a6be8918de1d5cd96ee48e256c39f165b}{ASTCENC\_ERR\_BAD\_PROFILE}};}
+\DoxyCodeLine{00601\ \ \ \ \ \}}
+\DoxyCodeLine{00602\ }
+\DoxyCodeLine{00603\ \ \ \ \ \textcolor{comment}{//\ Flags\ field\ must\ not\ contain\ any\ unknown\ flag\ bits}}
+\DoxyCodeLine{00604\ \ \ \ \ status\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_a12c6fc921e035b653e128a1fed66a9ea}{validate\_flags}}(profile,\ flags);}
+\DoxyCodeLine{00605\ \ \ \ \ \textcolor{keywordflow}{if}\ (status\ !=\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}})}
+\DoxyCodeLine{00606\ \ \ \ \ \{}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{00608\ \ \ \ \ \}}
+\DoxyCodeLine{00609\ }
+\DoxyCodeLine{00610\ \ \ \ \ \textcolor{keywordflow}{if}\ (flags\ \&\ \mbox{\hyperlink{astcenc_8h_a4010dadc54cded4b9d1abdb6c62f5c03}{ASTCENC\_FLG\_MAP\_NORMAL}})}
+\DoxyCodeLine{00611\ \ \ \ \ \{}
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Normal\ map\ encoding\ uses\ L+A\ blocks,\ so\ allow\ one\ more\ partitioning}}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ than\ normal.\ We\ need\ need\ fewer\ bits\ for\ endpoints,\ so\ more\ likely}}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ to\ be\ able\ to\ use\ more\ partitions\ than\ an\ RGB/RGBA\ block}}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_aa7930792899cf0f4e06d0443e7c7c376}{tune\_partition\_count\_limit}}\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(config.\mbox{\hyperlink{structastcenc__config_aa7930792899cf0f4e06d0443e7c7c376}{tune\_partition\_count\_limit}}\ +\ 1u,\ 4u);}
+\DoxyCodeLine{00616\ }
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_ac1f865f94a531f5c52bf30696f88c172}{cw\_g\_weight}}\ =\ 0.0f;}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_ae8b3c68b4b4890c75eaac694aa3588db}{cw\_b\_weight}}\ =\ 0.0f;}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a428f0ba612186c229f66865dd615d567}{tune\_2partition\_early\_out\_limit\_factor}}\ *=\ 1.5f;}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_adb6bf5fd3979c612e5c6b377c6aca281}{tune\_3partition\_early\_out\_limit\_factor}}\ *=\ 1.5f;}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a01cfcdc6f3903a6b7fc96ebda9550102}{tune\_2plane\_early\_out\_limit\_correlation}}\ =\ 0.99f;}
+\DoxyCodeLine{00622\ }
+\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Normals\ are\ prone\ to\ blocking\ artifacts\ on\ smooth\ curves}}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ so\ force\ compressor\ to\ try\ harder\ here\ ...}}
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a2065412aaae88cff4e1f648946e13181}{tune\_db\_limit}}\ *=\ 1.03f;}
+\DoxyCodeLine{00626\ \ \ \ \ \}}
+\DoxyCodeLine{00627\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (flags\ \&\ \mbox{\hyperlink{astcenc_8h_a95967a4184547bc51b3f993c8a3b9643}{ASTCENC\_FLG\_MAP\_RGBM}})}
+\DoxyCodeLine{00628\ \ \ \ \ \{}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199}{rgbm\_m\_scale}}\ =\ 5.0f;}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a15b13fe88b80a45ac0333519417a58af}{cw\_a\_weight}}\ =\ 2.0f\ *\ config.\mbox{\hyperlink{structastcenc__config_ae5bdf46b1afda62ec18cf882e2dbf199}{rgbm\_m\_scale}};}
+\DoxyCodeLine{00631\ \ \ \ \ \}}
+\DoxyCodeLine{00632\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ (This\ is\ color\ data)}}
+\DoxyCodeLine{00633\ \ \ \ \ \{}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ a\ very\ basic\ perceptual\ metric\ for\ RGB\ color\ data,\ which\ weights\ error}}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ significance\ by\ the\ perceptual\ luminance\ contribution\ of\ each\ color\ channel.\ For}}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ luminance\ the\ usual\ weights\ to\ compute\ luminance\ from\ a\ linear\ RGB\ value\ are\ as}}
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ follows:}}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ l\ =\ r\ *\ 0.3\ +\ g\ *\ 0.59\ +\ b\ *\ 0.11}}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ...\ but\ we\ scale\ these\ up\ to\ keep\ a\ better\ balance\ between\ color\ and\ alpha.\ Note}}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ that\ if\ the\ content\ is\ using\ alpha\ we'd\ recommend\ using\ the\ -\/a\ option\ to\ weight}}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ color\ contribution\ by\ the\ alpha\ transparency.}}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (flags\ \&\ \mbox{\hyperlink{astcenc_8h_a9b9a216f5d2096aa82d2cafa92ef2971}{ASTCENC\_FLG\_USE\_PERCEPTUAL}})}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a94850051a1dc753abf8d3148bd59d9cd}{cw\_r\_weight}}\ =\ 0.30f\ *\ 2.25f;}
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_ac1f865f94a531f5c52bf30696f88c172}{cw\_g\_weight}}\ =\ 0.59f\ *\ 2.25f;}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_ae8b3c68b4b4890c75eaac694aa3588db}{cw\_b\_weight}}\ =\ 0.11f\ *\ 2.25f;}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00650\ \ \ \ \ \}}
+\DoxyCodeLine{00651\ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a7175e94561eeb3b83f8bf4549306cf95}{flags}}\ =\ flags;}
+\DoxyCodeLine{00652\ }
+\DoxyCodeLine{00653\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}};}
+\DoxyCodeLine{00654\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc_8h_a7d841c47ab68c3705ddcf61fc651d422_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc_8h_a7d841c47ab68c3705ddcf61fc651d422_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc_8h_a53428ef5ae3cc106c40f19a50cd5fc5d}\index{astcenc.h@{astcenc.h}!astcenc\_context\_alloc@{astcenc\_context\_alloc}}
+\index{astcenc\_context\_alloc@{astcenc\_context\_alloc}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{astcenc\_context\_alloc()}{astcenc\_context\_alloc()}}
+{\footnotesize\ttfamily \label{astcenc_8h_a53428ef5ae3cc106c40f19a50cd5fc5d} 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}} astcenc\+\_\+context\+\_\+alloc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structastcenc__config}{astcenc\+\_\+config}} \texorpdfstring{$\ast$}{*}}]{config}{, }\item[{unsigned int}]{thread\+\_\+count}{, }\item[{\mbox{\hyperlink{structastcenc__context}{astcenc\+\_\+context}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{context}{}\end{DoxyParamCaption})}
+
+
+
+Allocate a new codec context based on a config. 
+
+This function allocates all of the memory resources and threads needed by the codec. This can be slow, so it is recommended that contexts are reused to serially compress or decompress multiple images to amortize setup cost.
+
+Contexts can be allocated to support only decompression using the {\ttfamily ASTCENC\+\_\+\+FLG\+\_\+\+DECOMPRESS\+\_\+\+ONLY} flag when creating the configuration. The compression functions will fail if invoked. For a decompress-\/only library build the {\ttfamily ASTCENC\+\_\+\+FLG\+\_\+\+DECOMPRESS\+\_\+\+ONLY} flag must be set when creating any context.
+
+
+\begin{DoxyParams}[1]{매개변수}
+\mbox{\texttt{ in}}  & {\em config} & Codec config. \\
+\hline
+ & {\em thread\+\_\+count} & Thread count to configure for. \\
+\hline
+\mbox{\texttt{ out}}  & {\em context} & Location to store an opaque context pointer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+{\ttfamily ASTCENC\+\_\+\+SUCCESS} on success, or an error if context creation failed. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00657}{657}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00661\ \ \ \{}
+\DoxyCodeLine{00662\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\_error}}\ status;}
+\DoxyCodeLine{00663\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structastcenc__config}{astcenc\_config}}\&\ config\ =\ *configp;}
+\DoxyCodeLine{00664\ }
+\DoxyCodeLine{00665\ \ \ \ \ status\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_a6005193560626fcd9fd6d910d4233876}{validate\_cpu\_float}}();}
+\DoxyCodeLine{00666\ \ \ \ \ \textcolor{keywordflow}{if}\ (status\ !=\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}})}
+\DoxyCodeLine{00667\ \ \ \ \ \{}
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{00669\ \ \ \ \ \}}
+\DoxyCodeLine{00670\ }
+\DoxyCodeLine{00671\ \ \ \ \ \textcolor{keywordflow}{if}\ (thread\_count\ ==\ 0)}
+\DoxyCodeLine{00672\ \ \ \ \ \{}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a17b738af7aa5ad5c804065791b1264f2}{ASTCENC\_ERR\_BAD\_PARAM}};}
+\DoxyCodeLine{00674\ \ \ \ \ \}}
+\DoxyCodeLine{00675\ }
+\DoxyCodeLine{00676\ \textcolor{preprocessor}{\#if\ defined(ASTCENC\_DIAGNOSTICS)}}
+\DoxyCodeLine{00677\ \ \ \ \ \textcolor{comment}{//\ Force\ single\ threaded\ compressor\ use\ in\ diagnostic\ mode.}}
+\DoxyCodeLine{00678\ \ \ \ \ \textcolor{keywordflow}{if}\ (thread\_count\ !=\ 1)}
+\DoxyCodeLine{00679\ \ \ \ \ \{}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a17b738af7aa5ad5c804065791b1264f2}{ASTCENC\_ERR\_BAD\_PARAM}};}
+\DoxyCodeLine{00681\ \ \ \ \ \}}
+\DoxyCodeLine{00682\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00683\ }
+\DoxyCodeLine{00684\ \ \ \ \ \mbox{\hyperlink{structastcenc__context}{astcenc\_context}}*\ ctxo\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structastcenc__context}{astcenc\_context}};}
+\DoxyCodeLine{00685\ \ \ \ \ \mbox{\hyperlink{structastcenc__contexti}{astcenc\_contexti}}*\ ctx\ =\ \&ctxo-\/>\mbox{\hyperlink{structastcenc__context_a0663f3f5721836ebad5c00941cbc1055}{context}};}
+\DoxyCodeLine{00686\ \ \ \ \ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a031bf749d4e55c786a1b85cd5553add6}{thread\_count}}\ =\ thread\_count;}
+\DoxyCodeLine{00687\ \ \ \ \ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}\ =\ config;}
+\DoxyCodeLine{00688\ \ \ \ \ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a290537b315306e7fc97c5899bd478ea6}{working\_buffers}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00689\ }
+\DoxyCodeLine{00690\ \ \ \ \ \textcolor{comment}{//\ These\ are\ allocated\ per-\/compress,\ as\ they\ depend\ on\ image\ size}}
+\DoxyCodeLine{00691\ \ \ \ \ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_af902f846866885cc9cd3bf1a76d2b2cf}{input\_alpha\_averages}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00692\ }
+\DoxyCodeLine{00693\ \ \ \ \ \textcolor{comment}{//\ Copy\ the\ config\ first\ and\ validate\ the\ copy\ (we\ may\ modify\ it)}}
+\DoxyCodeLine{00694\ \ \ \ \ status\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_a58d9fd22e35089649b73eed6af336aeb}{validate\_config}}(ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}});}
+\DoxyCodeLine{00695\ \ \ \ \ \textcolor{keywordflow}{if}\ (status\ !=\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}})}
+\DoxyCodeLine{00696\ \ \ \ \ \{}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ ctxo;}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{00699\ \ \ \ \ \}}
+\DoxyCodeLine{00700\ }
+\DoxyCodeLine{00701\ \ \ \ \ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_ab1641619493f8b297d7442f5da7cd813}{bsd}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_a319cc507e110bedc1da79eeb325cb64c}{aligned\_malloc<block\_size\_descriptor>}}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structblock__size__descriptor}{block\_size\_descriptor}}),\ \mbox{\hyperlink{astcenc__mathlib_8h_a1bca7c38f3d8e2af697b16c6b9827ea6}{ASTCENC\_VECALIGN}});}
+\DoxyCodeLine{00702\ \ \ \ \ \textcolor{keywordflow}{if}\ (!ctx-\/>\mbox{\hyperlink{structastcenc__contexti_ab1641619493f8b297d7442f5da7cd813}{bsd}})}
+\DoxyCodeLine{00703\ \ \ \ \ \{}
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ ctxo;}
+\DoxyCodeLine{00705\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2ac8d991baf44f9e033ae9c862886fdf29}{ASTCENC\_ERR\_OUT\_OF\_MEM}};}
+\DoxyCodeLine{00706\ \ \ \ \ \}}
+\DoxyCodeLine{00707\ }
+\DoxyCodeLine{00708\ \ \ \ \ \textcolor{keywordtype}{bool}\ can\_omit\_modes\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool}\textcolor{keyword}{>}(config.\mbox{\hyperlink{structastcenc__config_a7175e94561eeb3b83f8bf4549306cf95}{flags}}\ \&\ \mbox{\hyperlink{astcenc_8h_a0fa6f44fa9b0cc85accae3857fb57068}{ASTCENC\_FLG\_SELF\_DECOMPRESS\_ONLY}});}
+\DoxyCodeLine{00709\ \ \ \ \ \mbox{\hyperlink{astcenc__block__sizes_8cpp_a5c46863585cc583c3deb49323dfb73d8}{init\_block\_size\_descriptor}}(config.\mbox{\hyperlink{structastcenc__config_a8c97a59f9605127f7ff9c055c1d18aba}{block\_x}},\ config.\mbox{\hyperlink{structastcenc__config_ada95d4600038d7798676667453684068}{block\_y}},\ config.\mbox{\hyperlink{structastcenc__config_a2941ec9c7df3b211604c9cf7d8d1fe5e}{block\_z}},}
+\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ can\_omit\_modes,}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_aa7930792899cf0f4e06d0443e7c7c376}{tune\_partition\_count\_limit}},}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(config.\mbox{\hyperlink{structastcenc__config_a68388fd9e07722288b73d63fb545532c}{tune\_block\_mode\_limit}})\ /\ 100.0f,}
+\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *ctx-\/>\mbox{\hyperlink{structastcenc__contexti_ab1641619493f8b297d7442f5da7cd813}{bsd}});}
+\DoxyCodeLine{00714\ }
+\DoxyCodeLine{00715\ \textcolor{preprocessor}{\#if\ !defined(ASTCENC\_DECOMPRESS\_ONLY)}}
+\DoxyCodeLine{00716\ \ \ \ \ \textcolor{comment}{//\ Do\ setup\ only\ needed\ by\ compression}}
+\DoxyCodeLine{00717\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a7175e94561eeb3b83f8bf4549306cf95}{flags}}\ \&\ \mbox{\hyperlink{astcenc_8h_af9772b0ac33e823a13096f43a22e0da4}{ASTCENC\_FLG\_DECOMPRESS\_ONLY}}))}
+\DoxyCodeLine{00718\ \ \ \ \ \{}
+\DoxyCodeLine{00719\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Turn\ a\ dB\ limit\ into\ a\ per-\/texel\ error\ for\ faster\ use\ later}}
+\DoxyCodeLine{00720\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}}\ ==\ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a92cc31c9011e699ed4c41f9a4959c295}{ASTCENC\_PRF\_LDR}})\ ||\ (ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}}\ ==\ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a331abc1d96b4fa991757e6ef8199f298}{ASTCENC\_PRF\_LDR\_SRGB}}))}
+\DoxyCodeLine{00721\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ \ \ \ \ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a2065412aaae88cff4e1f648946e13181}{tune\_db\_limit}}\ =\ \mbox{\hyperlink{namespaceastc_aaf1aa9ba997d9b4d505974e9f80d27c6}{astc::pow}}(0.1f,\ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a2065412aaae88cff4e1f648946e13181}{tune\_db\_limit}}\ *\ 0.1f)\ *\ 65535.0f\ *\ 65535.0f;}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ \ \ \ \ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a2065412aaae88cff4e1f648946e13181}{tune\_db\_limit}}\ =\ 0.0f;}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00728\ }
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ worksize\ =\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structcompression__working__buffers}{compression\_working\_buffers}})\ *\ thread\_count;}
+\DoxyCodeLine{00730\ \ \ \ \ \ \ \ \ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a290537b315306e7fc97c5899bd478ea6}{working\_buffers}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_a319cc507e110bedc1da79eeb325cb64c}{aligned\_malloc<compression\_working\_buffers>}}(worksize,\ \mbox{\hyperlink{astcenc__mathlib_8h_a1bca7c38f3d8e2af697b16c6b9827ea6}{ASTCENC\_VECALIGN}});}
+\DoxyCodeLine{00731\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}((\mbox{\hyperlink{astcenc__mathlib_8h_a1bca7c38f3d8e2af697b16c6b9827ea6}{ASTCENC\_VECALIGN}}\ ==\ 0)\ ||\ ((\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structcompression__working__buffers}{compression\_working\_buffers}})\ \%\ \mbox{\hyperlink{astcenc__mathlib_8h_a1bca7c38f3d8e2af697b16c6b9827ea6}{ASTCENC\_VECALIGN}})\ ==\ 0),}
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}compression\_working\_buffers\ size\ must\ be\ multiple\ of\ vector\ alignment"{}});}
+\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a290537b315306e7fc97c5899bd478ea6}{working\_buffers}})}
+\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2f1a3a41e28280d05df6b8d212d9c5c2}{aligned\_free<block\_size\_descriptor>}}(ctx-\/>\mbox{\hyperlink{structastcenc__contexti_ab1641619493f8b297d7442f5da7cd813}{bsd}});}
+\DoxyCodeLine{00736\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ ctxo;}
+\DoxyCodeLine{00737\ \ \ \ \ \ \ \ \ \ \ \ \ *context\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2ac8d991baf44f9e033ae9c862886fdf29}{ASTCENC\_ERR\_OUT\_OF\_MEM}};}
+\DoxyCodeLine{00739\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00740\ \ \ \ \ \}}
+\DoxyCodeLine{00741\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00742\ }
+\DoxyCodeLine{00743\ \textcolor{preprocessor}{\#if\ defined(ASTCENC\_DIAGNOSTICS)}}
+\DoxyCodeLine{00744\ \ \ \ \ ctx-\/>trace\_log\ =\ \textcolor{keyword}{new}\ TraceLog(ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.trace\_file\_path);}
+\DoxyCodeLine{00745\ \ \ \ \ \textcolor{keywordflow}{if}\ (!ctx-\/>trace\_log-\/>m\_file)}
+\DoxyCodeLine{00746\ \ \ \ \ \{}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ASTCENC\_ERR\_DTRACE\_FAILURE;}
+\DoxyCodeLine{00748\ \ \ \ \ \}}
+\DoxyCodeLine{00749\ }
+\DoxyCodeLine{00750\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}block\_x"{}},\ config.\mbox{\hyperlink{structastcenc__config_a8c97a59f9605127f7ff9c055c1d18aba}{block\_x}});}
+\DoxyCodeLine{00751\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}block\_y"{}},\ config.\mbox{\hyperlink{structastcenc__config_ada95d4600038d7798676667453684068}{block\_y}});}
+\DoxyCodeLine{00752\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}block\_z"{}},\ config.\mbox{\hyperlink{structastcenc__config_a2941ec9c7df3b211604c9cf7d8d1fe5e}{block\_z}});}
+\DoxyCodeLine{00753\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00754\ }
+\DoxyCodeLine{00755\ \ \ \ \ *context\ =\ ctxo;}
+\DoxyCodeLine{00756\ }
+\DoxyCodeLine{00757\ \textcolor{preprocessor}{\#if\ !defined(ASTCENC\_DECOMPRESS\_ONLY)}}
+\DoxyCodeLine{00758\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_acbcb48fd316ab1025cf7e456a5df014f}{prepare\_angular\_tables}}();}
+\DoxyCodeLine{00759\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00760\ }
+\DoxyCodeLine{00761\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}};}
+\DoxyCodeLine{00762\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc_8h_a53428ef5ae3cc106c40f19a50cd5fc5d_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc_8h_a53428ef5ae3cc106c40f19a50cd5fc5d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc_8h_ae8bcc4e15bfd67d13c59a629bd64767a}\index{astcenc.h@{astcenc.h}!astcenc\_context\_free@{astcenc\_context\_free}}
+\index{astcenc\_context\_free@{astcenc\_context\_free}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{astcenc\_context\_free()}{astcenc\_context\_free()}}
+{\footnotesize\ttfamily \label{astcenc_8h_ae8bcc4e15bfd67d13c59a629bd64767a} 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} void astcenc\+\_\+context\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structastcenc__context}{astcenc\+\_\+context}} \texorpdfstring{$\ast$}{*}}]{context}{}\end{DoxyParamCaption})}
+
+Free the compressor context.
+
+
+\begin{DoxyParams}{매개변수}
+{\em context} & The codec context. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00765}{765}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00767\ \ \ \{}
+\DoxyCodeLine{00768\ \ \ \ \ \textcolor{keywordflow}{if}\ (ctxo)}
+\DoxyCodeLine{00769\ \ \ \ \ \{}
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structastcenc__contexti}{astcenc\_contexti}}*\ ctx\ =\ \&ctxo-\/>context;}
+\DoxyCodeLine{00771\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2f1a3a41e28280d05df6b8d212d9c5c2}{aligned\_free<compression\_working\_buffers>}}(ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a290537b315306e7fc97c5899bd478ea6}{working\_buffers}});}
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2f1a3a41e28280d05df6b8d212d9c5c2}{aligned\_free<block\_size\_descriptor>}}(ctx-\/>\mbox{\hyperlink{structastcenc__contexti_ab1641619493f8b297d7442f5da7cd813}{bsd}});}
+\DoxyCodeLine{00773\ \textcolor{preprocessor}{\#if\ defined(ASTCENC\_DIAGNOSTICS)}}
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ ctx-\/>trace\_log;}
+\DoxyCodeLine{00775\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00776\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ ctxo;}
+\DoxyCodeLine{00777\ \ \ \ \ \}}
+\DoxyCodeLine{00778\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{astcenc_8h_ae8bcc4e15bfd67d13c59a629bd64767a_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc_8h_ae8bcc4e15bfd67d13c59a629bd64767a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc_8h_aabf20ebf7bc4f75c2ae12070a60f23c0}\index{astcenc.h@{astcenc.h}!astcenc\_decompress\_image@{astcenc\_decompress\_image}}
+\index{astcenc\_decompress\_image@{astcenc\_decompress\_image}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{astcenc\_decompress\_image()}{astcenc\_decompress\_image()}}
+{\footnotesize\ttfamily \label{astcenc_8h_aabf20ebf7bc4f75c2ae12070a60f23c0} 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}} astcenc\+\_\+decompress\+\_\+image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structastcenc__context}{astcenc\+\_\+context}} \texorpdfstring{$\ast$}{*}}]{context}{, }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{size\+\_\+t}]{data\+\_\+len}{, }\item[{\mbox{\hyperlink{structastcenc__image}{astcenc\+\_\+image}} \texorpdfstring{$\ast$}{*}}]{image\+\_\+out}{, }\item[{const \mbox{\hyperlink{structastcenc__swizzle}{astcenc\+\_\+swizzle}} \texorpdfstring{$\ast$}{*}}]{swizzle}{, }\item[{unsigned int}]{thread\+\_\+index}{}\end{DoxyParamCaption})}
+
+
+
+Decompress an image. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em context} & Codec context. \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & Pointer to compressed data. \\
+\hline
+ & {\em data\+\_\+len} & Length of the compressed data, in bytes. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em image\+\_\+out} & Output image. \\
+\hline
+ & {\em swizzle} & Decompression data swizzle, applied after decompression. \\
+\hline
+ & {\em thread\+\_\+index} & Thread index \mbox{[}0..N-\/1\mbox{]} of calling thread.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+{\ttfamily ASTCENC\+\_\+\+SUCCESS} on success, or an error if decompression failed. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l01127}{1127}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01134\ \ \ \{}
+\DoxyCodeLine{01135\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\_error}}\ status;}
+\DoxyCodeLine{01136\ \ \ \ \ \mbox{\hyperlink{structastcenc__image}{astcenc\_image}}\&\ image\_out\ =\ *image\_outp;}
+\DoxyCodeLine{01137\ \ \ \ \ \mbox{\hyperlink{structastcenc__contexti}{astcenc\_contexti}}*\ ctx\ =\ \&ctxo-\/>context;}
+\DoxyCodeLine{01138\ }
+\DoxyCodeLine{01139\ \ \ \ \ \textcolor{comment}{//\ Today\ this\ doesn't\ matter\ (working\ set\ on\ stack)\ but\ might\ in\ future\ ...}}
+\DoxyCodeLine{01140\ \ \ \ \ \textcolor{keywordflow}{if}\ (thread\_index\ >=\ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a031bf749d4e55c786a1b85cd5553add6}{thread\_count}})}
+\DoxyCodeLine{01141\ \ \ \ \ \{}
+\DoxyCodeLine{01142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a17b738af7aa5ad5c804065791b1264f2}{ASTCENC\_ERR\_BAD\_PARAM}};}
+\DoxyCodeLine{01143\ \ \ \ \ \}}
+\DoxyCodeLine{01144\ }
+\DoxyCodeLine{01145\ \ \ \ \ status\ =\ \mbox{\hyperlink{astcenc__entry_8cpp_ae5661d23b1b5377887d5fd9f7c7e8fae}{validate\_decompression\_swizzle}}(*swizzle);}
+\DoxyCodeLine{01146\ \ \ \ \ \textcolor{keywordflow}{if}\ (status\ !=\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}})}
+\DoxyCodeLine{01147\ \ \ \ \ \{}
+\DoxyCodeLine{01148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{01149\ \ \ \ \ \}}
+\DoxyCodeLine{01150\ }
+\DoxyCodeLine{01151\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ block\_x\ =\ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a8c97a59f9605127f7ff9c055c1d18aba}{block\_x}};}
+\DoxyCodeLine{01152\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ block\_y\ =\ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_ada95d4600038d7798676667453684068}{block\_y}};}
+\DoxyCodeLine{01153\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ block\_z\ =\ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a2941ec9c7df3b211604c9cf7d8d1fe5e}{block\_z}};}
+\DoxyCodeLine{01154\ }
+\DoxyCodeLine{01155\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ xblocks\ =\ (image\_out.\mbox{\hyperlink{structastcenc__image_a8bb8eebb59215778176674951c6da70a}{dim\_x}}\ +\ block\_x\ -\/\ 1)\ /\ block\_x;}
+\DoxyCodeLine{01156\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ yblocks\ =\ (image\_out.\mbox{\hyperlink{structastcenc__image_a3a62fbbc3a16a390eca3b03b6e489750}{dim\_y}}\ +\ block\_y\ -\/\ 1)\ /\ block\_y;}
+\DoxyCodeLine{01157\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ zblocks\ =\ (image\_out.\mbox{\hyperlink{structastcenc__image_a9c71edbb23f1cca0de775c508b6219ee}{dim\_z}}\ +\ block\_z\ -\/\ 1)\ /\ block\_z;}
+\DoxyCodeLine{01158\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ block\_count\ =\ zblocks\ *\ yblocks\ *\ xblocks;}
+\DoxyCodeLine{01159\ }
+\DoxyCodeLine{01160\ \ \ \ \ \textcolor{keywordtype}{int}\ row\_blocks\ =\ xblocks;}
+\DoxyCodeLine{01161\ \ \ \ \ \textcolor{keywordtype}{int}\ plane\_blocks\ =\ xblocks\ *\ yblocks;}
+\DoxyCodeLine{01162\ }
+\DoxyCodeLine{01163\ \ \ \ \ \textcolor{comment}{//\ Check\ we\ have\ enough\ output\ space\ (16\ bytes\ per\ block)}}
+\DoxyCodeLine{01164\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\_needed\ =\ xblocks\ *\ yblocks\ *\ zblocks\ *\ 16;}
+\DoxyCodeLine{01165\ \ \ \ \ \textcolor{keywordflow}{if}\ (data\_len\ <\ size\_needed)}
+\DoxyCodeLine{01166\ \ \ \ \ \{}
+\DoxyCodeLine{01167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2ac8d991baf44f9e033ae9c862886fdf29}{ASTCENC\_ERR\_OUT\_OF\_MEM}};}
+\DoxyCodeLine{01168\ \ \ \ \ \}}
+\DoxyCodeLine{01169\ }
+\DoxyCodeLine{01170\ \ \ \ \ \mbox{\hyperlink{structimage__block}{image\_block}}\ blk\ \{\};}
+\DoxyCodeLine{01171\ \ \ \ \ blk.\mbox{\hyperlink{structimage__block_a05174b1db0b9131ad61fc49f3aa74676}{texel\_count}}\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(block\_x\ *\ block\_y\ *\ block\_z);}
+\DoxyCodeLine{01172\ }
+\DoxyCodeLine{01173\ \ \ \ \ \textcolor{comment}{//\ Decode\ mode\ inferred\ from\ the\ output\ data\ type}}
+\DoxyCodeLine{01174\ \ \ \ \ blk.decode\_unorm8\ =\ image\_out.\mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\_type}}\ ==\ \mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109aa91ac7b6329d0a39c879dff7a1bcdf759}{ASTCENC\_TYPE\_U8}};}
+\DoxyCodeLine{01175\ }
+\DoxyCodeLine{01176\ \ \ \ \ \textcolor{comment}{//\ If\ context\ thread\ count\ is\ one\ then\ implicitly\ reset}}
+\DoxyCodeLine{01177\ \ \ \ \ \textcolor{keywordflow}{if}\ (ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a031bf749d4e55c786a1b85cd5553add6}{thread\_count}}\ ==\ 1)}
+\DoxyCodeLine{01178\ \ \ \ \ \{}
+\DoxyCodeLine{01179\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__entry_8cpp_a8bb4009be59101fe3004e39f9bd97d27}{astcenc\_decompress\_reset}}(ctxo);}
+\DoxyCodeLine{01180\ \ \ \ \ \}}
+\DoxyCodeLine{01181\ }
+\DoxyCodeLine{01182\ \ \ \ \ \textcolor{comment}{//\ Only\ the\ first\ thread\ actually\ runs\ the\ initializer}}
+\DoxyCodeLine{01183\ \ \ \ \ ctxo-\/>manage\_decompress.init(block\_count,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{01184\ }
+\DoxyCodeLine{01185\ \ \ \ \ \textcolor{comment}{//\ All\ threads\ run\ this\ processing\ loop\ until\ there\ is\ no\ work\ remaining}}
+\DoxyCodeLine{01186\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{01187\ \ \ \ \ \{}
+\DoxyCodeLine{01188\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ count;}
+\DoxyCodeLine{01189\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ base\ =\ ctxo-\/>manage\_decompress.get\_task\_assignment(128,\ count);}
+\DoxyCodeLine{01190\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!count)}
+\DoxyCodeLine{01191\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01194\ }
+\DoxyCodeLine{01195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ base;\ i\ <\ base\ +\ count;\ i++)}
+\DoxyCodeLine{01196\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Decode\ i\ into\ x,\ y,\ z\ block\ indices}}
+\DoxyCodeLine{01198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ z\ =\ i\ /\ plane\_blocks;}
+\DoxyCodeLine{01199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ rem\ =\ i\ -\/\ (z\ *\ plane\_blocks);}
+\DoxyCodeLine{01200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ y\ =\ rem\ /\ row\_blocks;}
+\DoxyCodeLine{01201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ x\ =\ rem\ -\/\ (y\ *\ row\_blocks);}
+\DoxyCodeLine{01202\ }
+\DoxyCodeLine{01203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ offset\ =\ (((z\ *\ yblocks\ +\ y)\ *\ xblocks)\ +\ x)\ *\ 16;}
+\DoxyCodeLine{01204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ bp\ =\ data\ +\ offset;}
+\DoxyCodeLine{01205\ }
+\DoxyCodeLine{01206\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\_compressed\_block}}\ scb;}
+\DoxyCodeLine{01207\ }
+\DoxyCodeLine{01208\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_acd6272d8cee006f73e936e16739c4cab}{physical\_to\_symbolic}}(*ctx-\/>\mbox{\hyperlink{structastcenc__contexti_ab1641619493f8b297d7442f5da7cd813}{bsd}},\ bp,\ scb);}
+\DoxyCodeLine{01209\ }
+\DoxyCodeLine{01210\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_a4a5f09c362972951a31e4d7ff918f89f}{decompress\_symbolic\_block}}(ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}},\ *ctx-\/>\mbox{\hyperlink{structastcenc__contexti_ab1641619493f8b297d7442f5da7cd813}{bsd}},}
+\DoxyCodeLine{01211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ *\ block\_x,\ y\ *\ block\_y,\ z\ *\ block\_z,}
+\DoxyCodeLine{01212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb,\ blk);}
+\DoxyCodeLine{01213\ }
+\DoxyCodeLine{01214\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__image_8cpp_a987bc85f97f6168e6c99aa60879622f5}{store\_image\_block}}(image\_out,\ blk,\ *ctx-\/>\mbox{\hyperlink{structastcenc__contexti_ab1641619493f8b297d7442f5da7cd813}{bsd}},}
+\DoxyCodeLine{01215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ *\ block\_x,\ y\ *\ block\_y,\ z\ *\ block\_z,\ *swizzle);}
+\DoxyCodeLine{01216\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01217\ }
+\DoxyCodeLine{01218\ \ \ \ \ \ \ \ \ ctxo-\/>manage\_decompress.complete\_task\_assignment(count);}
+\DoxyCodeLine{01219\ \ \ \ \ \}}
+\DoxyCodeLine{01220\ }
+\DoxyCodeLine{01221\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}};}
+\DoxyCodeLine{01222\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc_8h_aabf20ebf7bc4f75c2ae12070a60f23c0_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc_8h_aabf20ebf7bc4f75c2ae12070a60f23c0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc_8h_a0a92db919a1334c1d5844fdc081cba30}\index{astcenc.h@{astcenc.h}!astcenc\_decompress\_reset@{astcenc\_decompress\_reset}}
+\index{astcenc\_decompress\_reset@{astcenc\_decompress\_reset}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{astcenc\_decompress\_reset()}{astcenc\_decompress\_reset()}}
+{\footnotesize\ttfamily \label{astcenc_8h_a0a92db919a1334c1d5844fdc081cba30} 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}} astcenc\+\_\+decompress\+\_\+reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structastcenc__context}{astcenc\+\_\+context}} \texorpdfstring{$\ast$}{*}}]{context}{}\end{DoxyParamCaption})}
+
+
+
+Reset the codec state for a new decompression. 
+
+The caller is responsible for synchronizing threads in the worker thread pool. This function must only be called when all threads have exited the {\ttfamily \doxylink{astcenc_8h_aabf20ebf7bc4f75c2ae12070a60f23c0}{astcenc\+\_\+decompress\+\_\+image()}} function for image N, but before any thread enters it for image N + 1.
+
+Calling this is not required (but won\textquotesingle{}t hurt), if the context is created for single threaded use.
+
+
+\begin{DoxyParams}{매개변수}
+{\em context} & Codec context.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+{\ttfamily ASTCENC\+\_\+\+SUCCESS} on success, or an error if reset failed. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l01225}{1225}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01227\ \ \ \{}
+\DoxyCodeLine{01228\ \ \ \ \ ctxo-\/>manage\_decompress.reset();}
+\DoxyCodeLine{01229\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}};}
+\DoxyCodeLine{01230\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{astcenc_8h_a0a92db919a1334c1d5844fdc081cba30_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc_8h_a0a92db919a1334c1d5844fdc081cba30_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc_8h_a533ada8a24b9b13c4aa20c729f7915ce}\index{astcenc.h@{astcenc.h}!astcenc\_get\_block\_info@{astcenc\_get\_block\_info}}
+\index{astcenc\_get\_block\_info@{astcenc\_get\_block\_info}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{astcenc\_get\_block\_info()}{astcenc\_get\_block\_info()}}
+{\footnotesize\ttfamily \label{astcenc_8h_a533ada8a24b9b13c4aa20c729f7915ce} 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}} astcenc\+\_\+get\+\_\+block\+\_\+info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structastcenc__context}{astcenc\+\_\+context}} \texorpdfstring{$\ast$}{*}}]{context}{, }\item[{const uint8\+\_\+t}]{data}{\mbox{[}16\mbox{]}, }\item[{\mbox{\hyperlink{structastcenc__block__info}{astcenc\+\_\+block\+\_\+info}} \texorpdfstring{$\ast$}{*}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Provide a high level summary of a block\textquotesingle{}s encoding. 
+
+This feature is primarily useful for codec developers but may be useful for developers building advanced content packaging pipelines.
+
+
+\begin{DoxyParams}{매개변수}
+{\em context} & Codec context. \\
+\hline
+{\em data} & One block of compressed ASTC data. \\
+\hline
+{\em info} & The output info structure to populate.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+{\ttfamily ASTCENC\+\_\+\+SUCCESS} if the block was decoded, or an error otherwise. Note that this function will return success even if the block itself was an error block encoding, as the decode was correctly handled. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l01233}{1233}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01237\ \ \ \{}
+\DoxyCodeLine{01238\ \textcolor{preprocessor}{\#if\ defined(ASTCENC\_DECOMPRESS\_ONLY)}}
+\DoxyCodeLine{01239\ \ \ \ \ (void)ctxo;}
+\DoxyCodeLine{01240\ \ \ \ \ (void)data;}
+\DoxyCodeLine{01241\ \ \ \ \ (void)info;}
+\DoxyCodeLine{01242\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2af79664c3406260bd6fe9bd361cf1613d}{ASTCENC\_ERR\_BAD\_CONTEXT}};}
+\DoxyCodeLine{01243\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01244\ \ \ \ \ \mbox{\hyperlink{structastcenc__contexti}{astcenc\_contexti}}*\ ctx\ =\ \&ctxo-\/>context;}
+\DoxyCodeLine{01245\ }
+\DoxyCodeLine{01246\ \ \ \ \ \textcolor{comment}{//\ Decode\ the\ compressed\ data\ into\ a\ symbolic\ form}}
+\DoxyCodeLine{01247\ \ \ \ \ \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\_compressed\_block}}\ scb;}
+\DoxyCodeLine{01248\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_acd6272d8cee006f73e936e16739c4cab}{physical\_to\_symbolic}}(*ctx-\/>\mbox{\hyperlink{structastcenc__contexti_ab1641619493f8b297d7442f5da7cd813}{bsd}},\ data,\ scb);}
+\DoxyCodeLine{01249\ }
+\DoxyCodeLine{01250\ \ \ \ \ \textcolor{comment}{//\ Fetch\ the\ appropriate\ partition\ and\ decimation\ tables}}
+\DoxyCodeLine{01251\ \ \ \ \ \mbox{\hyperlink{structblock__size__descriptor}{block\_size\_descriptor}}\&\ bsd\ =\ *ctx-\/>\mbox{\hyperlink{structastcenc__contexti_ab1641619493f8b297d7442f5da7cd813}{bsd}};}
+\DoxyCodeLine{01252\ }
+\DoxyCodeLine{01253\ \ \ \ \ \textcolor{comment}{//\ Start\ from\ a\ clean\ slate}}
+\DoxyCodeLine{01254\ \ \ \ \ memset(info,\ 0,\ \textcolor{keyword}{sizeof}(*info));}
+\DoxyCodeLine{01255\ }
+\DoxyCodeLine{01256\ \ \ \ \ \textcolor{comment}{//\ Basic\ info\ we\ can\ always\ populate}}
+\DoxyCodeLine{01257\ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_ac114a0b6da361e3bacf2d10f603da012}{profile}}\ =\ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}};}
+\DoxyCodeLine{01258\ }
+\DoxyCodeLine{01259\ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_acaf94924e3b045106fdc09e5b56e3b22}{block\_x}}\ =\ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a8c97a59f9605127f7ff9c055c1d18aba}{block\_x}};}
+\DoxyCodeLine{01260\ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_a37deab7b53e3108e9ee41770cd4e9cd2}{block\_y}}\ =\ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_ada95d4600038d7798676667453684068}{block\_y}};}
+\DoxyCodeLine{01261\ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_a011c623bf0fcf552aabe5e9baa2e8e81}{block\_z}}\ =\ ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a2941ec9c7df3b211604c9cf7d8d1fe5e}{block\_z}};}
+\DoxyCodeLine{01262\ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_af286f5059188b512c97b1bc565add0c3}{texel\_count}}\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}};}
+\DoxyCodeLine{01263\ }
+\DoxyCodeLine{01264\ \ \ \ \ \textcolor{comment}{//\ Check\ for\ error\ blocks\ first}}
+\DoxyCodeLine{01265\ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_ae3092bdbe4c12a539bb446847621d9a4}{is\_error\_block}}\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ ==\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}};}
+\DoxyCodeLine{01266\ \ \ \ \ \textcolor{keywordflow}{if}\ (info-\/>\mbox{\hyperlink{structastcenc__block__info_ae3092bdbe4c12a539bb446847621d9a4}{is\_error\_block}})}
+\DoxyCodeLine{01267\ \ \ \ \ \{}
+\DoxyCodeLine{01268\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}};}
+\DoxyCodeLine{01269\ \ \ \ \ \}}
+\DoxyCodeLine{01270\ }
+\DoxyCodeLine{01271\ \ \ \ \ \textcolor{comment}{//\ Check\ for\ constant\ color\ blocks\ second}}
+\DoxyCodeLine{01272\ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_af49f46e1eb0dd622b20faa9bbac291cc}{is\_constant\_block}}\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ ==\ \mbox{\hyperlink{astcenc__internal_8h_aebc278aa5ca9c97969af61d9186f9172}{SYM\_BTYPE\_CONST\_F16}}\ ||}
+\DoxyCodeLine{01273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ ==\ \mbox{\hyperlink{astcenc__internal_8h_adb59df7fefb94a8c52948d49ce70b1f5}{SYM\_BTYPE\_CONST\_U16}};}
+\DoxyCodeLine{01274\ \ \ \ \ \textcolor{keywordflow}{if}\ (info-\/>\mbox{\hyperlink{structastcenc__block__info_af49f46e1eb0dd622b20faa9bbac291cc}{is\_constant\_block}})}
+\DoxyCodeLine{01275\ \ \ \ \ \{}
+\DoxyCodeLine{01276\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}};}
+\DoxyCodeLine{01277\ \ \ \ \ \}}
+\DoxyCodeLine{01278\ }
+\DoxyCodeLine{01279\ \ \ \ \ \textcolor{comment}{//\ Otherwise\ handle\ a\ full\ block\ ;\ known\ to\ be\ valid\ after\ conditions\ above\ have\ been\ checked}}
+\DoxyCodeLine{01280\ \ \ \ \ \textcolor{keywordtype}{int}\ partition\_count\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\_count}};}
+\DoxyCodeLine{01281\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pi\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_aa9dfc7b23c8b5e6c71e956e2e39fff74}{get\_partition\_info}}(partition\_count,\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a17d42e08747747b32c650a48fe1b5b6e}{partition\_index}});}
+\DoxyCodeLine{01282\ }
+\DoxyCodeLine{01283\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__mode}{block\_mode}}\&\ bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a13608eb55e48c96b6243f4830278ebf3}{get\_block\_mode}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}});}
+\DoxyCodeLine{01284\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdecimation__info}{decimation\_info}}\&\ di\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(bm.\mbox{\hyperlink{structblock__mode_aaf9846117d40406d5e84508f429cf949}{decimation\_mode}});}
+\DoxyCodeLine{01285\ }
+\DoxyCodeLine{01286\ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_ae3161ecab31af252946f51b1cfda381d}{weight\_x}}\ =\ di.\mbox{\hyperlink{structdecimation__info_a0b51669603759128ab6ab40458601461}{weight\_x}};}
+\DoxyCodeLine{01287\ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_a575d5c79f0bdd63f515c4e2a2376ddd3}{weight\_y}}\ =\ di.\mbox{\hyperlink{structdecimation__info_a1b0d75c94edac7ae7e5a53fea1757a2c}{weight\_y}};}
+\DoxyCodeLine{01288\ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_a87f45d11b423a56bfe85cbb978f8d1f1}{weight\_z}}\ =\ di.\mbox{\hyperlink{structdecimation__info_afc8c1ca38b0a7d5014343ca9028a0186}{weight\_z}};}
+\DoxyCodeLine{01289\ }
+\DoxyCodeLine{01290\ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_a9b8ab4d8cc6b6ba7372f71fef06dfd50}{is\_dual\_plane\_block}}\ =\ bm.\mbox{\hyperlink{structblock__mode_a78b282103d0a8bee2b07c0da075a3dc4}{is\_dual\_plane}}\ !=\ 0;}
+\DoxyCodeLine{01291\ }
+\DoxyCodeLine{01292\ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_a299c7fdbeb1159df28f49aed1f856598}{partition\_count}}\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\_count}};}
+\DoxyCodeLine{01293\ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_a01c2ca7c5f5d298177722dbb74b41501}{partition\_index}}\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a17d42e08747747b32c650a48fe1b5b6e}{partition\_index}};}
+\DoxyCodeLine{01294\ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_a21d8cd1b003665a88e494efce089424e}{dual\_plane\_component}}\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a49f36c368c0d976f230c76c33aed2b9d}{plane2\_component}};}
+\DoxyCodeLine{01295\ }
+\DoxyCodeLine{01296\ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_a7c0b03db68cbc0393e65edd9bd38df18}{color\_level\_count}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_aec456deb917676d5506d91947c6d5726}{get\_quant\_level}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_af290ce908b76242bc89e3eae4d948454}{get\_color\_quant\_mode}}());}
+\DoxyCodeLine{01297\ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_a0a82009e2c7ff591d8fcebe2f1c7c017}{weight\_level\_count}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_aec456deb917676d5506d91947c6d5726}{get\_quant\_level}}(bm.\mbox{\hyperlink{structblock__mode_a760578093fb16da4932bc26d2d5c1837}{get\_weight\_quant\_mode}}());}
+\DoxyCodeLine{01298\ }
+\DoxyCodeLine{01299\ \ \ \ \ \textcolor{comment}{//\ Unpack\ color\ endpoints\ for\ each\ active\ partition}}
+\DoxyCodeLine{01300\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\_count}};\ i++)}
+\DoxyCodeLine{01301\ \ \ \ \ \{}
+\DoxyCodeLine{01302\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ rgb\_hdr;}
+\DoxyCodeLine{01303\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ a\_hdr;}
+\DoxyCodeLine{01304\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ endpnt[2];}
+\DoxyCodeLine{01305\ }
+\DoxyCodeLine{01306\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ab9b659180fb522b05391892336dbc095}{unpack\_color\_endpoints}}(ctx-\/>\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}},}
+\DoxyCodeLine{01307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[i],}
+\DoxyCodeLine{01308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ad539bb907ce654690e8a89cf62196f9c}{color\_values}}[i],}
+\DoxyCodeLine{01309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_hdr,\ a\_hdr,}
+\DoxyCodeLine{01310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ endpnt[0],\ endpnt[1]);}
+\DoxyCodeLine{01311\ }
+\DoxyCodeLine{01312\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Store\ the\ color\ endpoint\ mode\ info}}
+\DoxyCodeLine{01313\ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_a2b46ba510161fcb2d9fffb951817635d}{color\_endpoint\_modes}}[i]\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[i];}
+\DoxyCodeLine{01314\ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_a63a31ae79677591001714c1af72f1d92}{is\_hdr\_block}}\ =\ info-\/>\mbox{\hyperlink{structastcenc__block__info_a63a31ae79677591001714c1af72f1d92}{is\_hdr\_block}}\ ||\ rgb\_hdr\ ||\ a\_hdr;}
+\DoxyCodeLine{01315\ }
+\DoxyCodeLine{01316\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Store\ the\ unpacked\ and\ decoded\ color\ endpoint}}
+\DoxyCodeLine{01317\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ hdr\_mask(rgb\_hdr,\ rgb\_hdr,\ rgb\_hdr,\ a\_hdr);}
+\DoxyCodeLine{01318\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 2;\ j++)}
+\DoxyCodeLine{01319\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01320\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ color\_lns\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aa1ab2044e5354115ee71324e30fba1ed}{lns\_to\_sf16}}(endpnt[j]);}
+\DoxyCodeLine{01321\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ color\_unorm\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a478b1f2bc7a3589bfbe32b398583c502}{unorm16\_to\_sf16}}(endpnt[j]);}
+\DoxyCodeLine{01322\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ datai\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(color\_unorm,\ color\_lns,\ hdr\_mask);}
+\DoxyCodeLine{01323\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a61add2970baac5cf6b04177472ae1ed1}{store}}(\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_afd7aa2069bdf377067c3abaca1256432}{float16\_to\_float}}(datai),\ info-\/>\mbox{\hyperlink{structastcenc__block__info_acf16c8776bb5795bdc4e31ca80a3f933}{color\_endpoints}}[i][j]);}
+\DoxyCodeLine{01324\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01325\ \ \ \ \ \}}
+\DoxyCodeLine{01326\ }
+\DoxyCodeLine{01327\ \ \ \ \ \textcolor{comment}{//\ Unpack\ weights\ for\ each\ texel}}
+\DoxyCodeLine{01328\ \ \ \ \ \textcolor{keywordtype}{int}\ weight\_plane1[\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\_MAX\_TEXELS}}];}
+\DoxyCodeLine{01329\ \ \ \ \ \textcolor{keywordtype}{int}\ weight\_plane2[\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\_MAX\_TEXELS}}];}
+\DoxyCodeLine{01330\ }
+\DoxyCodeLine{01331\ \ \ \ \ \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_aec197676ba4b10bf63a6523a775530d8}{unpack\_weights}}(bsd,\ scb,\ di,\ bm.\mbox{\hyperlink{structblock__mode_a78b282103d0a8bee2b07c0da075a3dc4}{is\_dual\_plane}},\ weight\_plane1,\ weight\_plane2);}
+\DoxyCodeLine{01332\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}};\ i++)}
+\DoxyCodeLine{01333\ \ \ \ \ \{}
+\DoxyCodeLine{01334\ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_aa1a4523fbf26b0efac442e538c228c5a}{weight\_values\_plane1}}[i]\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(weight\_plane1[i])\ *\ (1.0f\ /\ \mbox{\hyperlink{astcenc__internal_8h_a00c99c52668709ec2e60ec1eb401e55a}{WEIGHTS\_TEXEL\_SUM}});}
+\DoxyCodeLine{01335\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (info-\/>\mbox{\hyperlink{structastcenc__block__info_a9b8ab4d8cc6b6ba7372f71fef06dfd50}{is\_dual\_plane\_block}})}
+\DoxyCodeLine{01336\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01337\ \ \ \ \ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_a09f9a8cd3124ba43153bbcd433e11cf1}{weight\_values\_plane2}}[i]\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(weight\_plane2[i])\ *\ (1.0f\ /\ \mbox{\hyperlink{astcenc__internal_8h_a00c99c52668709ec2e60ec1eb401e55a}{WEIGHTS\_TEXEL\_SUM}});}
+\DoxyCodeLine{01338\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01339\ \ \ \ \ \}}
+\DoxyCodeLine{01340\ }
+\DoxyCodeLine{01341\ \ \ \ \ \textcolor{comment}{//\ Unpack\ partition\ assignments\ for\ each\ texel}}
+\DoxyCodeLine{01342\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}};\ i++)}
+\DoxyCodeLine{01343\ \ \ \ \ \{}
+\DoxyCodeLine{01344\ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structastcenc__block__info_aba56a138d8ba06a8aaa4dedeaa9263b3}{partition\_assignment}}[i]\ =\ pi.partition\_of\_texel[i];}
+\DoxyCodeLine{01345\ \ \ \ \ \}}
+\DoxyCodeLine{01346\ }
+\DoxyCodeLine{01347\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}};}
+\DoxyCodeLine{01348\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01349\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{astcenc_8h_a533ada8a24b9b13c4aa20c729f7915ce_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc_8h_a533ada8a24b9b13c4aa20c729f7915ce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc_8h_a5768699cf6bc52f54a21968bb480a1d2}\index{astcenc.h@{astcenc.h}!astcenc\_get\_error\_string@{astcenc\_get\_error\_string}}
+\index{astcenc\_get\_error\_string@{astcenc\_get\_error\_string}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{astcenc\_get\_error\_string()}{astcenc\_get\_error\_string()}}
+{\footnotesize\ttfamily \label{astcenc_8h_a5768699cf6bc52f54a21968bb480a1d2} 
+\mbox{\hyperlink{astcenc_8h_aa8a5ec38846136889daddea423155aab}{ASTCENC\+\_\+\+PUBLIC}} const char \texorpdfstring{$\ast$}{*} astcenc\+\_\+get\+\_\+error\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2}{astcenc\+\_\+error}}}]{status}{}\end{DoxyParamCaption})}
+
+
+
+Get a printable string for specific status code. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em status} & The status value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+A human readable nul-\/terminated string. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l01352}{1352}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01354\ \ \ \{}
+\DoxyCodeLine{01355\ \ \ \ \ \textcolor{comment}{//\ Values\ in\ this\ enum\ are\ from\ an\ external\ user,\ so\ not\ guaranteed\ to\ be}}
+\DoxyCodeLine{01356\ \ \ \ \ \textcolor{comment}{//\ bounded\ to\ the\ enum\ values}}
+\DoxyCodeLine{01357\ \ \ \ \ \textcolor{keywordflow}{switch}\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(status))}
+\DoxyCodeLine{01358\ \ \ \ \ \{}
+\DoxyCodeLine{01359\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1}{ASTCENC\_SUCCESS}}:}
+\DoxyCodeLine{01360\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ASTCENC\_SUCCESS"{}};}
+\DoxyCodeLine{01361\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2ac8d991baf44f9e033ae9c862886fdf29}{ASTCENC\_ERR\_OUT\_OF\_MEM}}:}
+\DoxyCodeLine{01362\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ASTCENC\_ERR\_OUT\_OF\_MEM"{}};}
+\DoxyCodeLine{01363\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2aab2edb79add12adad46569c53fb252c3}{ASTCENC\_ERR\_BAD\_CPU\_FLOAT}}:}
+\DoxyCodeLine{01364\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ASTCENC\_ERR\_BAD\_CPU\_FLOAT"{}};}
+\DoxyCodeLine{01365\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a17b738af7aa5ad5c804065791b1264f2}{ASTCENC\_ERR\_BAD\_PARAM}}:}
+\DoxyCodeLine{01366\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ASTCENC\_ERR\_BAD\_PARAM"{}};}
+\DoxyCodeLine{01367\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a7313412df8ff1c4f401514c965ba6b7c}{ASTCENC\_ERR\_BAD\_BLOCK\_SIZE}}:}
+\DoxyCodeLine{01368\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ASTCENC\_ERR\_BAD\_BLOCK\_SIZE"{}};}
+\DoxyCodeLine{01369\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a6be8918de1d5cd96ee48e256c39f165b}{ASTCENC\_ERR\_BAD\_PROFILE}}:}
+\DoxyCodeLine{01370\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ASTCENC\_ERR\_BAD\_PROFILE"{}};}
+\DoxyCodeLine{01371\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a45b7153ebdc711a5928cd35efbac551b}{ASTCENC\_ERR\_BAD\_QUALITY}}:}
+\DoxyCodeLine{01372\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ASTCENC\_ERR\_BAD\_QUALITY"{}};}
+\DoxyCodeLine{01373\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a2b1e8dc851e24bf609b575a7c06ca814}{ASTCENC\_ERR\_BAD\_FLAGS}}:}
+\DoxyCodeLine{01374\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ASTCENC\_ERR\_BAD\_FLAGS"{}};}
+\DoxyCodeLine{01375\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2a8a2ec2ffa2c2362271a1999b38617c89}{ASTCENC\_ERR\_BAD\_SWIZZLE}}:}
+\DoxyCodeLine{01376\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ASTCENC\_ERR\_BAD\_SWIZZLE"{}};}
+\DoxyCodeLine{01377\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2af79664c3406260bd6fe9bd361cf1613d}{ASTCENC\_ERR\_BAD\_CONTEXT}}:}
+\DoxyCodeLine{01378\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ASTCENC\_ERR\_BAD\_CONTEXT"{}};}
+\DoxyCodeLine{01379\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2af6c1281285dfbb534d29e957fcb7c7cb}{ASTCENC\_ERR\_NOT\_IMPLEMENTED}}:}
+\DoxyCodeLine{01380\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ASTCENC\_ERR\_NOT\_IMPLEMENTED"{}};}
+\DoxyCodeLine{01381\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc_8h_a6fc8b28b40fd67ba67e33624089aa4d2af27784c1b6c06f3eaf3e78041acbc2b7}{ASTCENC\_ERR\_BAD\_DECODE\_MODE}}:}
+\DoxyCodeLine{01382\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ASTCENC\_ERR\_BAD\_DECODE\_MODE"{}};}
+\DoxyCodeLine{01383\ \textcolor{preprocessor}{\#if\ defined(ASTCENC\_DIAGNOSTICS)}}
+\DoxyCodeLine{01384\ \ \ \ \ \textcolor{keywordflow}{case}\ ASTCENC\_ERR\_DTRACE\_FAILURE:}
+\DoxyCodeLine{01385\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ASTCENC\_ERR\_DTRACE\_FAILURE"{}};}
+\DoxyCodeLine{01386\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01387\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{01388\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{01389\ \ \ \ \ \}}
+\DoxyCodeLine{01390\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc_8h_a5768699cf6bc52f54a21968bb480a1d2_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{변수 문서화}
+\Hypertarget{astcenc_8h_ac659264ed3d41ad52f1c8d7459166e86}\index{astcenc.h@{astcenc.h}!ASTCENC\_ALL\_FLAGS@{ASTCENC\_ALL\_FLAGS}}
+\index{ASTCENC\_ALL\_FLAGS@{ASTCENC\_ALL\_FLAGS}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{ASTCENC\_ALL\_FLAGS}{ASTCENC\_ALL\_FLAGS}}
+{\footnotesize\ttfamily \label{astcenc_8h_ac659264ed3d41ad52f1c8d7459166e86} 
+const unsigned int ASTCENC\+\_\+\+ALL\+\_\+\+FLAGS\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a4010dadc54cded4b9d1abdb6c62f5c03}{ASTCENC\_FLG\_MAP\_NORMAL}}\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a95967a4184547bc51b3f993c8a3b9643}{ASTCENC\_FLG\_MAP\_RGBM}}\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc_8h_ade366f74dc79b01f55e646c72d886845}{ASTCENC\_FLG\_USE\_ALPHA\_WEIGHT}}\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a9b9a216f5d2096aa82d2cafa92ef2971}{ASTCENC\_FLG\_USE\_PERCEPTUAL}}\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a915298ea1a81ba542b20535c0f19a090}{ASTCENC\_FLG\_USE\_DECODE\_UNORM8}}\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc_8h_af9772b0ac33e823a13096f43a22e0da4}{ASTCENC\_FLG\_DECOMPRESS\_ONLY}}\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc_8h_a0fa6f44fa9b0cc85accae3857fb57068}{ASTCENC\_FLG\_SELF\_DECOMPRESS\_ONLY}}}
+
+\end{DoxyCode}
+
+
+The bit mask of all valid flags. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00396}{396}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenc_8h_af9772b0ac33e823a13096f43a22e0da4}\index{astcenc.h@{astcenc.h}!ASTCENC\_FLG\_DECOMPRESS\_ONLY@{ASTCENC\_FLG\_DECOMPRESS\_ONLY}}
+\index{ASTCENC\_FLG\_DECOMPRESS\_ONLY@{ASTCENC\_FLG\_DECOMPRESS\_ONLY}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{ASTCENC\_FLG\_DECOMPRESS\_ONLY}{ASTCENC\_FLG\_DECOMPRESS\_ONLY}}
+{\footnotesize\ttfamily \label{astcenc_8h_af9772b0ac33e823a13096f43a22e0da4} 
+const unsigned int ASTCENC\+\_\+\+FLG\+\_\+\+DECOMPRESS\+\_\+\+ONLY = 1 $<$$<$ 4\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a decompression-\/only context. 
+
+This mode disables support for compression. This enables context allocation to skip some transient buffer allocation, resulting in lower memory usage. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00358}{358}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenc_8h_a4010dadc54cded4b9d1abdb6c62f5c03}\index{astcenc.h@{astcenc.h}!ASTCENC\_FLG\_MAP\_NORMAL@{ASTCENC\_FLG\_MAP\_NORMAL}}
+\index{ASTCENC\_FLG\_MAP\_NORMAL@{ASTCENC\_FLG\_MAP\_NORMAL}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{ASTCENC\_FLG\_MAP\_NORMAL}{ASTCENC\_FLG\_MAP\_NORMAL}}
+{\footnotesize\ttfamily \label{astcenc_8h_a4010dadc54cded4b9d1abdb6c62f5c03} 
+const unsigned int ASTCENC\+\_\+\+FLG\+\_\+\+MAP\+\_\+\+NORMAL = 1 $<$$<$ 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Enable normal map compression. 
+
+Input data will be treated a two component normal map, storing X and Y, and the codec will optimize for angular error rather than simple linear PSNR. In this mode the input swizzle should be e.\+g. rrrg (the default ordering for ASTC normals on the command line) or gggr (the ordering used by BC5n). 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00320}{320}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenc_8h_a95967a4184547bc51b3f993c8a3b9643}\index{astcenc.h@{astcenc.h}!ASTCENC\_FLG\_MAP\_RGBM@{ASTCENC\_FLG\_MAP\_RGBM}}
+\index{ASTCENC\_FLG\_MAP\_RGBM@{ASTCENC\_FLG\_MAP\_RGBM}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{ASTCENC\_FLG\_MAP\_RGBM}{ASTCENC\_FLG\_MAP\_RGBM}}
+{\footnotesize\ttfamily \label{astcenc_8h_a95967a4184547bc51b3f993c8a3b9643} 
+const unsigned int ASTCENC\+\_\+\+FLG\+\_\+\+MAP\+\_\+\+RGBM = 1 $<$$<$ 6\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Enable RGBM map compression. 
+
+Input data will be treated as HDR data that has been stored in an LDR RGBM-\/encoded wrapper format. Data must be preprocessed by the user to be in LDR RGBM format before calling the compression function, this flag is only used to control the use of RGBM-\/specific heuristics and error metrics.
+
+IMPORTANT\+: The ASTC format is prone to bad failure modes with unconstrained RGBM data; very small M values can round to zero due to quantization and result in black or white pixels. It is highly recommended that the minimum value of M used in the encoding is kept above a lower threshold (try 16 or 32). Applying this threshold reduces the number of very dark colors that can be represented, but is still higher precision than 8-\/bit LDR.
+
+When this flag is set the value of {\ttfamily rgbm\+\_\+m\+\_\+scale} in the context must be set to the RGBM scale factor used during reconstruction. This defaults to 5 when in RGBM mode.
+
+It is recommended that the value of {\ttfamily cw\+\_\+a\+\_\+weight} is set to twice the value of the multiplier scale, ensuring that the M value is accurately encoded. This defaults to 10 when in RGBM mode, matching the default scale factor. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00391}{391}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenc_8h_a0fa6f44fa9b0cc85accae3857fb57068}\index{astcenc.h@{astcenc.h}!ASTCENC\_FLG\_SELF\_DECOMPRESS\_ONLY@{ASTCENC\_FLG\_SELF\_DECOMPRESS\_ONLY}}
+\index{ASTCENC\_FLG\_SELF\_DECOMPRESS\_ONLY@{ASTCENC\_FLG\_SELF\_DECOMPRESS\_ONLY}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{ASTCENC\_FLG\_SELF\_DECOMPRESS\_ONLY}{ASTCENC\_FLG\_SELF\_DECOMPRESS\_ONLY}}
+{\footnotesize\ttfamily \label{astcenc_8h_a0fa6f44fa9b0cc85accae3857fb57068} 
+const unsigned int ASTCENC\+\_\+\+FLG\+\_\+\+SELF\+\_\+\+DECOMPRESS\+\_\+\+ONLY = 1 $<$$<$ 5\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a self-\/decompression context. 
+
+This mode configures the compressor so that it is only guaranteed to be able to decompress images that were actually created using the current context. This is the common case for compression use cases, and setting this flag enables additional optimizations, but does mean that the context cannot reliably decompress arbitrary ASTC images. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00368}{368}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenc_8h_ade366f74dc79b01f55e646c72d886845}\index{astcenc.h@{astcenc.h}!ASTCENC\_FLG\_USE\_ALPHA\_WEIGHT@{ASTCENC\_FLG\_USE\_ALPHA\_WEIGHT}}
+\index{ASTCENC\_FLG\_USE\_ALPHA\_WEIGHT@{ASTCENC\_FLG\_USE\_ALPHA\_WEIGHT}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{ASTCENC\_FLG\_USE\_ALPHA\_WEIGHT}{ASTCENC\_FLG\_USE\_ALPHA\_WEIGHT}}
+{\footnotesize\ttfamily \label{astcenc_8h_ade366f74dc79b01f55e646c72d886845} 
+const unsigned int ASTCENC\+\_\+\+FLG\+\_\+\+USE\+\_\+\+ALPHA\+\_\+\+WEIGHT = 1 $<$$<$ 2\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Enable alpha weighting. 
+
+The input alpha value is used for transparency, so errors in the RGB components are weighted by the transparency level. This allows the codec to more accurately encode the alpha value in areas where the color value is less significant. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00342}{342}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenc_8h_a915298ea1a81ba542b20535c0f19a090}\index{astcenc.h@{astcenc.h}!ASTCENC\_FLG\_USE\_DECODE\_UNORM8@{ASTCENC\_FLG\_USE\_DECODE\_UNORM8}}
+\index{ASTCENC\_FLG\_USE\_DECODE\_UNORM8@{ASTCENC\_FLG\_USE\_DECODE\_UNORM8}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{ASTCENC\_FLG\_USE\_DECODE\_UNORM8}{ASTCENC\_FLG\_USE\_DECODE\_UNORM8}}
+{\footnotesize\ttfamily \label{astcenc_8h_a915298ea1a81ba542b20535c0f19a090} 
+const unsigned int ASTCENC\+\_\+\+FLG\+\_\+\+USE\+\_\+\+DECODE\+\_\+\+UNORM8 = 1 $<$$<$ 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Enable compression heuristics that assume use of decode\+\_\+unorm8 decode mode. 
+
+The decode\+\_\+unorm8 decode mode rounds differently to the decode\+\_\+fp16 decode mode, so enabling this flag during compression will allow the compressor to use the correct rounding when selecting encodings. This will improve the compressed image quality if your application is using the decode\+\_\+unorm8 decode mode, but will reduce image quality if using decode\+\_\+fp16.
+
+Note that LDR\+\_\+\+SRGB images will always use decode\+\_\+unorm8 for the RGB channels, irrespective of this setting. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00333}{333}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenc_8h_a9b9a216f5d2096aa82d2cafa92ef2971}\index{astcenc.h@{astcenc.h}!ASTCENC\_FLG\_USE\_PERCEPTUAL@{ASTCENC\_FLG\_USE\_PERCEPTUAL}}
+\index{ASTCENC\_FLG\_USE\_PERCEPTUAL@{ASTCENC\_FLG\_USE\_PERCEPTUAL}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{ASTCENC\_FLG\_USE\_PERCEPTUAL}{ASTCENC\_FLG\_USE\_PERCEPTUAL}}
+{\footnotesize\ttfamily \label{astcenc_8h_a9b9a216f5d2096aa82d2cafa92ef2971} 
+const unsigned int ASTCENC\+\_\+\+FLG\+\_\+\+USE\+\_\+\+PERCEPTUAL = 1 $<$$<$ 3\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Enable perceptual error metrics. 
+
+This mode enables perceptual compression mode, which will optimize for perceptual error rather than best PSNR. Only some input modes support perceptual error metrics. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00350}{350}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenc_8h_a6bdd89709e4169c3a83b64793435b5e4}\index{astcenc.h@{astcenc.h}!ASTCENC\_PRE\_EXHAUSTIVE@{ASTCENC\_PRE\_EXHAUSTIVE}}
+\index{ASTCENC\_PRE\_EXHAUSTIVE@{ASTCENC\_PRE\_EXHAUSTIVE}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{ASTCENC\_PRE\_EXHAUSTIVE}{ASTCENC\_PRE\_EXHAUSTIVE}}
+{\footnotesize\ttfamily \label{astcenc_8h_a6bdd89709e4169c3a83b64793435b5e4} 
+const float ASTCENC\+\_\+\+PRE\+\_\+\+EXHAUSTIVE = 100.\+0f\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The exhaustive, highest quality, search preset. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00256}{256}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenc_8h_ad62d291df9c09826409c2dc90c23c485}\index{astcenc.h@{astcenc.h}!ASTCENC\_PRE\_FAST@{ASTCENC\_PRE\_FAST}}
+\index{ASTCENC\_PRE\_FAST@{ASTCENC\_PRE\_FAST}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{ASTCENC\_PRE\_FAST}{ASTCENC\_PRE\_FAST}}
+{\footnotesize\ttfamily \label{astcenc_8h_ad62d291df9c09826409c2dc90c23c485} 
+const float ASTCENC\+\_\+\+PRE\+\_\+\+FAST = 10.\+0f\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The fast search preset. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00244}{244}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenc_8h_ad2b7499ede8d23218e06263ae971c6da}\index{astcenc.h@{astcenc.h}!ASTCENC\_PRE\_FASTEST@{ASTCENC\_PRE\_FASTEST}}
+\index{ASTCENC\_PRE\_FASTEST@{ASTCENC\_PRE\_FASTEST}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{ASTCENC\_PRE\_FASTEST}{ASTCENC\_PRE\_FASTEST}}
+{\footnotesize\ttfamily \label{astcenc_8h_ad2b7499ede8d23218e06263ae971c6da} 
+const float ASTCENC\+\_\+\+PRE\+\_\+\+FASTEST = 0.\+0f\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The fastest, lowest quality, search preset. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00241}{241}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenc_8h_ac0462be63a5417efd56d4c1aa8226d93}\index{astcenc.h@{astcenc.h}!ASTCENC\_PRE\_MEDIUM@{ASTCENC\_PRE\_MEDIUM}}
+\index{ASTCENC\_PRE\_MEDIUM@{ASTCENC\_PRE\_MEDIUM}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{ASTCENC\_PRE\_MEDIUM}{ASTCENC\_PRE\_MEDIUM}}
+{\footnotesize\ttfamily \label{astcenc_8h_ac0462be63a5417efd56d4c1aa8226d93} 
+const float ASTCENC\+\_\+\+PRE\+\_\+\+MEDIUM = 60.\+0f\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The medium quality search preset. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00247}{247}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenc_8h_a0c21c807b9ceedc4be7e0d4c00e04fcd}\index{astcenc.h@{astcenc.h}!ASTCENC\_PRE\_THOROUGH@{ASTCENC\_PRE\_THOROUGH}}
+\index{ASTCENC\_PRE\_THOROUGH@{ASTCENC\_PRE\_THOROUGH}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{ASTCENC\_PRE\_THOROUGH}{ASTCENC\_PRE\_THOROUGH}}
+{\footnotesize\ttfamily \label{astcenc_8h_a0c21c807b9ceedc4be7e0d4c00e04fcd} 
+const float ASTCENC\+\_\+\+PRE\+\_\+\+THOROUGH = 98.\+0f\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The thorough quality search preset. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00250}{250}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenc_8h_a4eacbb4f0297a5d7f2fbf20a66bce063}\index{astcenc.h@{astcenc.h}!ASTCENC\_PRE\_VERYTHOROUGH@{ASTCENC\_PRE\_VERYTHOROUGH}}
+\index{ASTCENC\_PRE\_VERYTHOROUGH@{ASTCENC\_PRE\_VERYTHOROUGH}!astcenc.h@{astcenc.h}}
+\doxysubsubsection{\texorpdfstring{ASTCENC\_PRE\_VERYTHOROUGH}{ASTCENC\_PRE\_VERYTHOROUGH}}
+{\footnotesize\ttfamily \label{astcenc_8h_a4eacbb4f0297a5d7f2fbf20a66bce063} 
+const float ASTCENC\+\_\+\+PRE\+\_\+\+VERYTHOROUGH = 99.\+0f\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The thorough quality search preset. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00253}{253}} 번째 라인에서 정의되었습니다.
+

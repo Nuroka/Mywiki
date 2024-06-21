@@ -1,0 +1,23 @@
+<map id="float_to_lns" name="float_to_lns">
+<area shape="rect" id="Node000001" title="Convert float to 16&#45;bit LNS." alt="" coords="5,153,93,179"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib_8h.html#ad68d7d1254a8a61d504c089db0418fe3" title="Extract mantissa and exponent of a float value." alt="" coords="161,55,212,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,151,97,121,140,89,148,84,151,89,143,94,100,126,67,155"/>
+<area shape="rect" id="Node000006" href="$astcenc__vecmathlib__avx2__8_8h.html#a3a2ce0fb403294db7fe126a6b3e87ab7" title="Return a float value for an integer vector." alt="" coords="144,104,229,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="84,151,137,132,138,137,86,156"/>
+<area shape="rect" id="Node000007" href="$astcenc__vecmathlib__avx2__8_8h.html#a844ab5b69b84569f033be33bf5fb9fbc" title="Return lanes from b if cond is set, else a." alt="" coords="158,153,215,179"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="94,163,145,163,145,169,94,169"/>
+<area shape="rect" id="Node000008" href="$structvfloat4.html#a04b5f338012dab6be0b2bd7910fcbcae" title="Factory that returns a vector of zeros." alt="" coords="141,203,232,228"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="86,176,138,195,137,200,84,181"/>
+<area shape="rect" id="Node000010" href="$structvint4.html#a9dfa1c40a3c4dbc0858567dc629a80b8" title="Factory that returns a vector of zeros." alt="" coords="146,252,227,277"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="67,177,143,237,152,243,149,247,140,241,63,181"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#a5c2db475754d8da42d9b685a45c48ab8" title="Return a float value as an integer bit pattern (i.e. no conversion)." alt="" coords="287,5,375,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="211,56,279,33,281,38,213,61"/>
+<area shape="rect" id="Node000004" href="$astcenc__vecmathlib__avx2__8_8h.html#ac584d4929db078403c58549bafd3c1cd" title="Return a integer value as a float bit pattern (i.e. no conversion)." alt="" coords="287,55,375,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="212,65,273,65,273,70,212,70"/>
+<area shape="rect" id="Node000005" href="$astcenc__vecmathlib__avx2__8_8h.html#a0a3a7d755cec1c73d0ce9c50b33bc207" title="Logical shift right." alt="" coords="312,104,351,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="213,73,300,103,298,108,211,78"/>
+<area shape="rect" id="Node000009" href="$structvfloat4.html#a9df51cb30b68d6d51ca607e64aa1ebf0" title="Construct from zero&#45;initialized value." alt="" coords="280,203,383,228"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="232,213,267,213,267,218,232,218"/>
+<area shape="rect" id="Node000011" href="$structvint4.html#a3315184e8bb4f0cf1ca8dcff1f57cdae" title="Construct from zero&#45;initialized value." alt="" coords="290,252,373,277"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="228,262,276,262,276,267,228,267"/>
+</map>

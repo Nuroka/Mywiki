@@ -1,0 +1,66 @@
+var astcenc_8h =
+[
+    [ "astcenc_swizzle", "structastcenc__swizzle.html", "structastcenc__swizzle" ],
+    [ "astcenc_config", "structastcenc__config.html", "structastcenc__config" ],
+    [ "astcenc_image", "structastcenc__image.html", "structastcenc__image" ],
+    [ "astcenc_block_info", "structastcenc__block__info.html", "structastcenc__block__info" ],
+    [ "ASTCENC_PUBLIC", "astcenc_8h.html#aa8a5ec38846136889daddea423155aab", null ],
+    [ "astcenc_progress_callback", "astcenc_8h.html#ac79f6173b76e98afecc86b24412e6427", null ],
+    [ "astcenc_error", "astcenc_8h.html#a6fc8b28b40fd67ba67e33624089aa4d2", [
+      [ "ASTCENC_SUCCESS", "astcenc_8h.html#a6fc8b28b40fd67ba67e33624089aa4d2a4870ce2b25146ebfb91a1c2021ed95e1", null ],
+      [ "ASTCENC_ERR_OUT_OF_MEM", "astcenc_8h.html#a6fc8b28b40fd67ba67e33624089aa4d2ac8d991baf44f9e033ae9c862886fdf29", null ],
+      [ "ASTCENC_ERR_BAD_CPU_FLOAT", "astcenc_8h.html#a6fc8b28b40fd67ba67e33624089aa4d2aab2edb79add12adad46569c53fb252c3", null ],
+      [ "ASTCENC_ERR_BAD_PARAM", "astcenc_8h.html#a6fc8b28b40fd67ba67e33624089aa4d2a17b738af7aa5ad5c804065791b1264f2", null ],
+      [ "ASTCENC_ERR_BAD_BLOCK_SIZE", "astcenc_8h.html#a6fc8b28b40fd67ba67e33624089aa4d2a7313412df8ff1c4f401514c965ba6b7c", null ],
+      [ "ASTCENC_ERR_BAD_PROFILE", "astcenc_8h.html#a6fc8b28b40fd67ba67e33624089aa4d2a6be8918de1d5cd96ee48e256c39f165b", null ],
+      [ "ASTCENC_ERR_BAD_QUALITY", "astcenc_8h.html#a6fc8b28b40fd67ba67e33624089aa4d2a45b7153ebdc711a5928cd35efbac551b", null ],
+      [ "ASTCENC_ERR_BAD_SWIZZLE", "astcenc_8h.html#a6fc8b28b40fd67ba67e33624089aa4d2a8a2ec2ffa2c2362271a1999b38617c89", null ],
+      [ "ASTCENC_ERR_BAD_FLAGS", "astcenc_8h.html#a6fc8b28b40fd67ba67e33624089aa4d2a2b1e8dc851e24bf609b575a7c06ca814", null ],
+      [ "ASTCENC_ERR_BAD_CONTEXT", "astcenc_8h.html#a6fc8b28b40fd67ba67e33624089aa4d2af79664c3406260bd6fe9bd361cf1613d", null ],
+      [ "ASTCENC_ERR_NOT_IMPLEMENTED", "astcenc_8h.html#a6fc8b28b40fd67ba67e33624089aa4d2af6c1281285dfbb534d29e957fcb7c7cb", null ],
+      [ "ASTCENC_ERR_BAD_DECODE_MODE", "astcenc_8h.html#a6fc8b28b40fd67ba67e33624089aa4d2af27784c1b6c06f3eaf3e78041acbc2b7", null ]
+    ] ],
+    [ "astcenc_profile", "astcenc_8h.html#adf71df2e9f79916ccc02886ba1bdeb29", [
+      [ "ASTCENC_PRF_LDR_SRGB", "astcenc_8h.html#adf71df2e9f79916ccc02886ba1bdeb29a331abc1d96b4fa991757e6ef8199f298", null ],
+      [ "ASTCENC_PRF_LDR", "astcenc_8h.html#adf71df2e9f79916ccc02886ba1bdeb29a92cc31c9011e699ed4c41f9a4959c295", null ],
+      [ "ASTCENC_PRF_HDR_RGB_LDR_A", "astcenc_8h.html#adf71df2e9f79916ccc02886ba1bdeb29a9043bc19a890aeff156f664ccbef677f", null ],
+      [ "ASTCENC_PRF_HDR", "astcenc_8h.html#adf71df2e9f79916ccc02886ba1bdeb29a4493639842d745d4bccd6a94836d2ca9", null ]
+    ] ],
+    [ "astcenc_swz", "astcenc_8h.html#ade8fdcd2d40237f88e4bfe1230b9b687", [
+      [ "ASTCENC_SWZ_R", "astcenc_8h.html#ade8fdcd2d40237f88e4bfe1230b9b687a2766a38ed1e99377723a4efb3510acd3", null ],
+      [ "ASTCENC_SWZ_G", "astcenc_8h.html#ade8fdcd2d40237f88e4bfe1230b9b687ad07f821ba0081fbbfcc5b59ebb744b3d", null ],
+      [ "ASTCENC_SWZ_B", "astcenc_8h.html#ade8fdcd2d40237f88e4bfe1230b9b687aa90469ed153f096e4db49d557b5ed3f0", null ],
+      [ "ASTCENC_SWZ_A", "astcenc_8h.html#ade8fdcd2d40237f88e4bfe1230b9b687a0fa7695144b4779ee0270c590765c713", null ],
+      [ "ASTCENC_SWZ_0", "astcenc_8h.html#ade8fdcd2d40237f88e4bfe1230b9b687a57fb016aa14a558856f737b35d6a0c17", null ],
+      [ "ASTCENC_SWZ_1", "astcenc_8h.html#ade8fdcd2d40237f88e4bfe1230b9b687a6c62cc90aa131c1d547561c2833eb0d7", null ],
+      [ "ASTCENC_SWZ_Z", "astcenc_8h.html#ade8fdcd2d40237f88e4bfe1230b9b687a865a6b0c084162fcd67976b4c4c457d0", null ]
+    ] ],
+    [ "astcenc_type", "astcenc_8h.html#a7aeb732fb3426e390fa669957d7a109a", [
+      [ "ASTCENC_TYPE_U8", "astcenc_8h.html#a7aeb732fb3426e390fa669957d7a109aa91ac7b6329d0a39c879dff7a1bcdf759", null ],
+      [ "ASTCENC_TYPE_F16", "astcenc_8h.html#a7aeb732fb3426e390fa669957d7a109aad39e16b7f2e55ed676ce400619f0759d", null ],
+      [ "ASTCENC_TYPE_F32", "astcenc_8h.html#a7aeb732fb3426e390fa669957d7a109aaf996e38de0e0ac57175c09da275c6062", null ]
+    ] ],
+    [ "astcenc_compress_image", "astcenc_8h.html#a3d9bc940f578f9d66c5339d7f7b4b069", null ],
+    [ "astcenc_compress_reset", "astcenc_8h.html#a93d80ab0fdd1546df397476d773df545", null ],
+    [ "astcenc_config_init", "astcenc_8h.html#a7d841c47ab68c3705ddcf61fc651d422", null ],
+    [ "astcenc_context_alloc", "astcenc_8h.html#a53428ef5ae3cc106c40f19a50cd5fc5d", null ],
+    [ "astcenc_context_free", "astcenc_8h.html#ae8bcc4e15bfd67d13c59a629bd64767a", null ],
+    [ "astcenc_decompress_image", "astcenc_8h.html#aabf20ebf7bc4f75c2ae12070a60f23c0", null ],
+    [ "astcenc_decompress_reset", "astcenc_8h.html#a0a92db919a1334c1d5844fdc081cba30", null ],
+    [ "astcenc_get_block_info", "astcenc_8h.html#a533ada8a24b9b13c4aa20c729f7915ce", null ],
+    [ "astcenc_get_error_string", "astcenc_8h.html#a5768699cf6bc52f54a21968bb480a1d2", null ],
+    [ "ASTCENC_ALL_FLAGS", "astcenc_8h.html#ac659264ed3d41ad52f1c8d7459166e86", null ],
+    [ "ASTCENC_FLG_DECOMPRESS_ONLY", "astcenc_8h.html#af9772b0ac33e823a13096f43a22e0da4", null ],
+    [ "ASTCENC_FLG_MAP_NORMAL", "astcenc_8h.html#a4010dadc54cded4b9d1abdb6c62f5c03", null ],
+    [ "ASTCENC_FLG_MAP_RGBM", "astcenc_8h.html#a95967a4184547bc51b3f993c8a3b9643", null ],
+    [ "ASTCENC_FLG_SELF_DECOMPRESS_ONLY", "astcenc_8h.html#a0fa6f44fa9b0cc85accae3857fb57068", null ],
+    [ "ASTCENC_FLG_USE_ALPHA_WEIGHT", "astcenc_8h.html#ade366f74dc79b01f55e646c72d886845", null ],
+    [ "ASTCENC_FLG_USE_DECODE_UNORM8", "astcenc_8h.html#a915298ea1a81ba542b20535c0f19a090", null ],
+    [ "ASTCENC_FLG_USE_PERCEPTUAL", "astcenc_8h.html#a9b9a216f5d2096aa82d2cafa92ef2971", null ],
+    [ "ASTCENC_PRE_EXHAUSTIVE", "astcenc_8h.html#a6bdd89709e4169c3a83b64793435b5e4", null ],
+    [ "ASTCENC_PRE_FAST", "astcenc_8h.html#ad62d291df9c09826409c2dc90c23c485", null ],
+    [ "ASTCENC_PRE_FASTEST", "astcenc_8h.html#ad2b7499ede8d23218e06263ae971c6da", null ],
+    [ "ASTCENC_PRE_MEDIUM", "astcenc_8h.html#ac0462be63a5417efd56d4c1aa8226d93", null ],
+    [ "ASTCENC_PRE_THOROUGH", "astcenc_8h.html#a0c21c807b9ceedc4be7e0d4c00e04fcd", null ],
+    [ "ASTCENC_PRE_VERYTHOROUGH", "astcenc_8h.html#a4eacbb4f0297a5d7f2fbf20a66bce063", null ]
+];

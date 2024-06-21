@@ -1,0 +1,17 @@
+digraph "construct_dt_entry_2d"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="construct_dt_entry_2d",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Allocate a single 2D decimation table entry."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="get_ise_sequence_bitcount",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__integer__sequence_8cpp.html#af46c9322b401332698e9cb93c968fe19",tooltip="Return the number of bits needed to encode an ISE sequence."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="init_decimation_info_2d",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__block__sizes_8cpp.html#ad8405c6d5685c364a91ff3ae3c5c4057",tooltip="Create a 2D decimation entry for a block-size and weight-decimation pair."];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="astc::max",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceastc.html#a83a55552d03399cdff6cf2fed8312c9f",tooltip="Return the maximum of two values."];
+  Node3 -> Node5 [id="edge4_Node000003_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="round_up_to_simd_multiple_vla",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__vecmathlib_8h.html#ae36622d837079b4899b971731c2dda37",tooltip="Round a count up to the largest multiple of the SIMD width."];
+}

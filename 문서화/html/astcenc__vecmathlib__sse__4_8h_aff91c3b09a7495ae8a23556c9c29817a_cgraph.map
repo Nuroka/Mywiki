@@ -1,0 +1,5 @@
+<map id="gatherf" name="gatherf">
+<area shape="rect" id="Node000001" title="Load a vector of gathered results from an array;" alt="" coords="5,5,67,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__sse__4_8h.html#a203ae30cc77a9374d87a040df90a541c" title="Store a vector to a 16B aligned memory address." alt="" coords="115,5,173,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,15,101,15,101,21,67,21"/>
+</map>

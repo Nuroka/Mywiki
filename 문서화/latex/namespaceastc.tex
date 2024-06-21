@@ -1,0 +1,941 @@
+\doxysection{astc 네임스페이스 참조}
+\hypertarget{namespaceastc}{}\label{namespaceastc}\index{astc@{astc}}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{namespaceastc_acac8447d6d93a5b371b791c6e15fba6b}{fabs}} (float v)
+\begin{DoxyCompactList}\small\item\em SP float absolute value. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{namespaceastc_aa80ae2eee0ffb5b754bdf0bb08b8759b}{isnan}} (float v)
+\begin{DoxyCompactList}\small\item\em Test if a float value is a nan. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static T \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{min}} (T p, T q)
+\begin{DoxyCompactList}\small\item\em Return the minimum of two values. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static T \mbox{\hyperlink{namespaceastc_ae6a0e03e6d3d62f82091604290a5a2fe}{min}} (T p, T q, T r)
+\begin{DoxyCompactList}\small\item\em Return the minimum of three values. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static T \mbox{\hyperlink{namespaceastc_affe4def63b7037742cee70bb11201fbd}{min}} (T p, T q, T r, T s)
+\begin{DoxyCompactList}\small\item\em Return the minimum of four values. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static T \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{max}} (T p, T q)
+\begin{DoxyCompactList}\small\item\em Return the maximum of two values. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static T \mbox{\hyperlink{namespaceastc_a91d7d57ac86f32500b30ac52961ad4ff}{max}} (T p, T q, T r)
+\begin{DoxyCompactList}\small\item\em Return the maximum of three values. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static T \mbox{\hyperlink{namespaceastc_a4462fcc378f7e27e2464501812d9d0fd}{max}} (T p, T q, T r, T s)
+\begin{DoxyCompactList}\small\item\em Return the maximum of four values. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b}{clamp}} (T v, T mn, T mx)
+\begin{DoxyCompactList}\small\item\em Clamp a value value between {\ttfamily mn} and {\ttfamily mx}. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{namespaceastc_ac60307af42a98d70a956170894e29e9e}{clamp1f}} (float v)
+\begin{DoxyCompactList}\small\item\em Clamp a float value between 0.\+0f and 1.\+0f. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{namespaceastc_a1861708487807ec08c172e2f7ff58978}{clamp255f}} (float v)
+\begin{DoxyCompactList}\small\item\em Clamp a float value between 0.\+0f and 255.\+0f. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{namespaceastc_a6f84a2ae8e217d7ea5a490b7ac34d03d}{flt\+\_\+rd}} (float v)
+\begin{DoxyCompactList}\small\item\em SP float round-\/down. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{namespaceastc_a455f4a304ea7dcdd8fd0de030cbdbfb4}{flt2int\+\_\+rtn}} (float v)
+\begin{DoxyCompactList}\small\item\em SP float round-\/to-\/nearest and convert to integer. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{namespaceastc_a66b6b0dcd7cbf1ade42d2657820f249f}{flt2int\+\_\+rd}} (float v)
+\begin{DoxyCompactList}\small\item\em SP float round down and convert to integer. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{namespaceastc_a515188b0c6818735536af2b546f06333}{float\+\_\+as\+\_\+int}} (float v)
+\begin{DoxyCompactList}\small\item\em SP float bit-\/interpreted as an integer. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{namespaceastc_a1d23dba10443bc9ffec344007f57251a}{int\+\_\+as\+\_\+float}} (int v)
+\begin{DoxyCompactList}\small\item\em Integer bit-\/interpreted as an SP float. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{namespaceastc_a5e60e4c749fe4fc5c746f481af9564f4}{rsqrt}} (float v)
+\begin{DoxyCompactList}\small\item\em Fast approximation of 1.\+0 / sqrt(val). \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{namespaceastc_a31e63d01af92a8a63ffdee93d6f342ae}{sqrt}} (float v)
+\begin{DoxyCompactList}\small\item\em Fast approximation of sqrt(val). \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{namespaceastc_a387cad5cd8373577fc089f5c65eb2657}{frexp}} (float v, int \texorpdfstring{$\ast$}{*}expo)
+\begin{DoxyCompactList}\small\item\em Extract mantissa and exponent of a float value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceastc_a3a0b157316c84b208b4195916b2593e1}{rand\+\_\+init}} (uint64\+\_\+t state\mbox{[}2\mbox{]})
+\begin{DoxyCompactList}\small\item\em Initialize the seed structure for a random number generator. \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{namespaceastc_acd6244a33d585dcaa70ceb08313115ff}{rand}} (uint64\+\_\+t state\mbox{[}2\mbox{]})
+\begin{DoxyCompactList}\small\item\em Return the next random number from the generator. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} float \mbox{\hyperlink{namespaceastc_aaf1aa9ba997d9b4d505974e9f80d27c6}{pow}} (float x, float y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+static const float \mbox{\hyperlink{namespaceastc_a7b7581e8dda9382d1d6effd9c4925065}{PI}} = 3.\+14159265358979323846f
+\item 
+static const float \mbox{\hyperlink{namespaceastc_a24a71ac075a8786d39f281397f77a278}{PI\+\_\+\+OVER\+\_\+\+TWO}} = 1.\+57079632679489661923f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\Hypertarget{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b}\index{astc@{astc}!clamp@{clamp}}
+\index{clamp@{clamp}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{clamp()}{clamp()}}
+{\footnotesize\ttfamily \label{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b} 
+template$<$typename T $>$ \\
+T astc\+::clamp (\begin{DoxyParamCaption}\item[{T}]{v}{, }\item[{T}]{mn}{, }\item[{T}]{mx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clamp a value value between {\ttfamily mn} and {\ttfamily mx}. 
+
+For floats, Na\+Ns are turned into {\ttfamily mn}.
+
+
+\begin{DoxyParams}{매개변수}
+{\em v} & The value to clamp. \\
+\hline
+{\em mn} & The min value (inclusive). \\
+\hline
+{\em mx} & The max value (inclusive).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The clamped value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00262}{262}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00263\ \{}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{comment}{//\ Do\ not\ reorder;\ correct\ NaN\ handling\ relies\ on\ the\ fact\ that\ comparison}}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{comment}{//\ with\ NaN\ returns\ false\ and\ will\ fall-\/though\ to\ the\ "{}min"{}\ value.}}
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keywordflow}{if}\ (v\ >\ mx)\ \textcolor{keywordflow}{return}\ mx;}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordflow}{if}\ (v\ >\ mn)\ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordflow}{return}\ mn;}
+\DoxyCodeLine{00269\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceastc_ac60307af42a98d70a956170894e29e9e}\index{astc@{astc}!clamp1f@{clamp1f}}
+\index{clamp1f@{clamp1f}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{clamp1f()}{clamp1f()}}
+{\footnotesize\ttfamily \label{namespaceastc_ac60307af42a98d70a956170894e29e9e} 
+static float astc\+::clamp1f (\begin{DoxyParamCaption}\item[{float}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Clamp a float value between 0.\+0f and 1.\+0f. 
+
+Na\+Ns are turned into 0.\+0f.
+
+
+\begin{DoxyParams}{매개변수}
+{\em v} & The value to clamp.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The clamped value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00280}{280}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00281\ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b}{astc::clamp}}(v,\ 0.0f,\ 1.0f);}
+\DoxyCodeLine{00283\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{namespaceastc_ac60307af42a98d70a956170894e29e9e_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceastc_ac60307af42a98d70a956170894e29e9e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceastc_a1861708487807ec08c172e2f7ff58978}\index{astc@{astc}!clamp255f@{clamp255f}}
+\index{clamp255f@{clamp255f}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{clamp255f()}{clamp255f()}}
+{\footnotesize\ttfamily \label{namespaceastc_a1861708487807ec08c172e2f7ff58978} 
+static float astc\+::clamp255f (\begin{DoxyParamCaption}\item[{float}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Clamp a float value between 0.\+0f and 255.\+0f. 
+
+Na\+Ns are turned into 0.\+0f.
+
+
+\begin{DoxyParams}{매개변수}
+{\em v} & The value to clamp.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The clamped value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00294}{294}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00295\ \{}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b}{astc::clamp}}(v,\ 0.0f,\ 255.0f);}
+\DoxyCodeLine{00297\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{namespaceastc_a1861708487807ec08c172e2f7ff58978_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceastc_a1861708487807ec08c172e2f7ff58978_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceastc_acac8447d6d93a5b371b791c6e15fba6b}\index{astc@{astc}!fabs@{fabs}}
+\index{fabs@{fabs}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{fabs()}{fabs()}}
+{\footnotesize\ttfamily \label{namespaceastc_acac8447d6d93a5b371b791c6e15fba6b} 
+static float astc\+::fabs (\begin{DoxyParamCaption}\item[{float}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+SP float absolute value. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em v} & The value to make absolute.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The absolute value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00131}{131}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00132\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordflow}{return}\ std::fabs(v);}
+\DoxyCodeLine{00134\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceastc_a515188b0c6818735536af2b546f06333}\index{astc@{astc}!float\_as\_int@{float\_as\_int}}
+\index{float\_as\_int@{float\_as\_int}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{float\_as\_int()}{float\_as\_int()}}
+{\footnotesize\ttfamily \label{namespaceastc_a515188b0c6818735536af2b546f06333} 
+static int astc\+::float\+\_\+as\+\_\+int (\begin{DoxyParamCaption}\item[{float}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+SP float bit-\/interpreted as an integer. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em v} & The value to bitcast.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The converted value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00343}{343}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00344\ \{}
+\DoxyCodeLine{00345\ \ \ \ \ \textcolor{keyword}{union\ }\{\ \textcolor{keywordtype}{int}\ a;\ \textcolor{keywordtype}{float}\ b;\ \}\ u;}
+\DoxyCodeLine{00346\ \ \ \ \ u.b\ =\ v;}
+\DoxyCodeLine{00347\ \ \ \ \ \textcolor{keywordflow}{return}\ u.a;}
+\DoxyCodeLine{00348\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceastc_a66b6b0dcd7cbf1ade42d2657820f249f}\index{astc@{astc}!flt2int\_rd@{flt2int\_rd}}
+\index{flt2int\_rd@{flt2int\_rd}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{flt2int\_rd()}{flt2int\_rd()}}
+{\footnotesize\ttfamily \label{namespaceastc_a66b6b0dcd7cbf1ade42d2657820f249f} 
+static int astc\+::flt2int\+\_\+rd (\begin{DoxyParamCaption}\item[{float}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+SP float round down and convert to integer. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em v} & The value to round.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The rounded value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00331}{331}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00332\ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(v);}
+\DoxyCodeLine{00334\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceastc_a455f4a304ea7dcdd8fd0de030cbdbfb4}\index{astc@{astc}!flt2int\_rtn@{flt2int\_rtn}}
+\index{flt2int\_rtn@{flt2int\_rtn}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{flt2int\_rtn()}{flt2int\_rtn()}}
+{\footnotesize\ttfamily \label{namespaceastc_a455f4a304ea7dcdd8fd0de030cbdbfb4} 
+static int astc\+::flt2int\+\_\+rtn (\begin{DoxyParamCaption}\item[{float}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+SP float round-\/to-\/nearest and convert to integer. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em v} & The value to round.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The rounded value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00318}{318}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00319\ \{}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(v\ +\ 0.5f);}
+\DoxyCodeLine{00322\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceastc_a455f4a304ea7dcdd8fd0de030cbdbfb4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceastc_a6f84a2ae8e217d7ea5a490b7ac34d03d}\index{astc@{astc}!flt\_rd@{flt\_rd}}
+\index{flt\_rd@{flt\_rd}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{flt\_rd()}{flt\_rd()}}
+{\footnotesize\ttfamily \label{namespaceastc_a6f84a2ae8e217d7ea5a490b7ac34d03d} 
+static float astc\+::flt\+\_\+rd (\begin{DoxyParamCaption}\item[{float}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+SP float round-\/down. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em v} & The value to round.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The rounded value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00306}{306}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00307\ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keywordflow}{return}\ std::floor(v);}
+\DoxyCodeLine{00309\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceastc_a387cad5cd8373577fc089f5c65eb2657}\index{astc@{astc}!frexp@{frexp}}
+\index{frexp@{frexp}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{frexp()}{frexp()}}
+{\footnotesize\ttfamily \label{namespaceastc_a387cad5cd8373577fc089f5c65eb2657} 
+static float astc\+::frexp (\begin{DoxyParamCaption}\item[{float}]{v}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{expo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Extract mantissa and exponent of a float value. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em v} & The input value. \\
+\hline
+\mbox{\texttt{ out}}  & {\em expo} & The output exponent.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The mantissa. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00396}{396}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00397\ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \mbox{\hyperlink{unionif32}{if32}}\ p;}
+\DoxyCodeLine{00399\ \ \ \ \ p.\mbox{\hyperlink{unionif32_a6ebdf3c35d5ebd30f1cbe751d8c9285e}{f}}\ =\ v;}
+\DoxyCodeLine{00400\ \ \ \ \ *expo\ =\ ((p.\mbox{\hyperlink{unionif32_ab2af01c7db8e7bce72271565ae1276bf}{u}}\ >>\ 23)\ \&\ 0xFF)\ -\/\ 126;}
+\DoxyCodeLine{00401\ \ \ \ \ p.\mbox{\hyperlink{unionif32_ab2af01c7db8e7bce72271565ae1276bf}{u}}\ =\ (p.\mbox{\hyperlink{unionif32_ab2af01c7db8e7bce72271565ae1276bf}{u}}\ \&\ 0x807fffff)\ |\ 0x3f000000;}
+\DoxyCodeLine{00402\ \ \ \ \ \textcolor{keywordflow}{return}\ p.\mbox{\hyperlink{unionif32_a6ebdf3c35d5ebd30f1cbe751d8c9285e}{f}};}
+\DoxyCodeLine{00403\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceastc_a1d23dba10443bc9ffec344007f57251a}\index{astc@{astc}!int\_as\_float@{int\_as\_float}}
+\index{int\_as\_float@{int\_as\_float}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{int\_as\_float()}{int\_as\_float()}}
+{\footnotesize\ttfamily \label{namespaceastc_a1d23dba10443bc9ffec344007f57251a} 
+static float astc\+::int\+\_\+as\+\_\+float (\begin{DoxyParamCaption}\item[{int}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Integer bit-\/interpreted as an SP float. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em v} & The value to bitcast.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The converted value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00357}{357}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00358\ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{keyword}{union\ }\{\ \textcolor{keywordtype}{int}\ a;\ \textcolor{keywordtype}{float}\ b;\ \}\ u;}
+\DoxyCodeLine{00360\ \ \ \ \ u.a\ =\ v;}
+\DoxyCodeLine{00361\ \ \ \ \ \textcolor{keywordflow}{return}\ u.b;}
+\DoxyCodeLine{00362\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceastc_aa80ae2eee0ffb5b754bdf0bb08b8759b}\index{astc@{astc}!isnan@{isnan}}
+\index{isnan@{isnan}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{isnan()}{isnan()}}
+{\footnotesize\ttfamily \label{namespaceastc_aa80ae2eee0ffb5b754bdf0bb08b8759b} 
+static bool astc\+::isnan (\begin{DoxyParamCaption}\item[{float}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Test if a float value is a nan. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em v} & The value test.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+Zero is not a NaN, non-\/zero otherwise. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00143}{143}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00144\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordflow}{return}\ v\ !=\ v;}
+\DoxyCodeLine{00146\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceastc_aa80ae2eee0ffb5b754bdf0bb08b8759b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}\index{astc@{astc}!max@{max}}
+\index{max@{max}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f} 
+template$<$typename T $>$ \\
+static T astc\+::max (\begin{DoxyParamCaption}\item[{T}]{p}{, }\item[{T}]{q}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return the maximum of two values. 
+
+For floats, Na\+Ns are turned into {\ttfamily q}.
+
+
+\begin{DoxyParams}{매개변수}
+{\em p} & The first value to compare. \\
+\hline
+{\em q} & The second value to compare.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The largest value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00210}{210}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00211\ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordflow}{return}\ p\ >\ q\ ?\ p\ :\ q;}
+\DoxyCodeLine{00213\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceastc_a91d7d57ac86f32500b30ac52961ad4ff}\index{astc@{astc}!max@{max}}
+\index{max@{max}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{namespaceastc_a91d7d57ac86f32500b30ac52961ad4ff} 
+template$<$typename T $>$ \\
+static T astc\+::max (\begin{DoxyParamCaption}\item[{T}]{p}{, }\item[{T}]{q}{, }\item[{T}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return the maximum of three values. 
+
+For floats, Na\+Ns are turned into {\ttfamily r}.
+
+
+\begin{DoxyParams}{매개변수}
+{\em p} & The first value to compare. \\
+\hline
+{\em q} & The second value to compare. \\
+\hline
+{\em r} & The third value to compare.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The largest value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00227}{227}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00228\ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}{max}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}{max}}(p,\ q),\ r);}
+\DoxyCodeLine{00230\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{namespaceastc_a91d7d57ac86f32500b30ac52961ad4ff_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceastc_a4462fcc378f7e27e2464501812d9d0fd}\index{astc@{astc}!max@{max}}
+\index{max@{max}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{namespaceastc_a4462fcc378f7e27e2464501812d9d0fd} 
+template$<$typename T $>$ \\
+static T astc\+::max (\begin{DoxyParamCaption}\item[{T}]{p}{, }\item[{T}]{q}{, }\item[{T}]{r}{, }\item[{T}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return the maximum of four values. 
+
+For floats, Na\+Ns are turned into {\ttfamily s}.
+
+
+\begin{DoxyParams}{매개변수}
+{\em p} & The first value to compare. \\
+\hline
+{\em q} & The second value to compare. \\
+\hline
+{\em r} & The third value to compare. \\
+\hline
+{\em s} & The fourth value to compare.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The largest value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00245}{245}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00246\ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}{max}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}{max}}(p,\ q),\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}{max}}(r,\ s));}
+\DoxyCodeLine{00248\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{namespaceastc_a4462fcc378f7e27e2464501812d9d0fd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}\index{astc@{astc}!min@{min}}
+\index{min@{min}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{namespaceastc_af78c0d31374aa9923633a3a2abf8d738} 
+template$<$typename T $>$ \\
+static T astc\+::min (\begin{DoxyParamCaption}\item[{T}]{p}{, }\item[{T}]{q}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return the minimum of two values. 
+
+For floats, Na\+Ns are turned into {\ttfamily q}.
+
+
+\begin{DoxyParams}{매개변수}
+{\em p} & The first value to compare. \\
+\hline
+{\em q} & The second value to compare.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The smallest value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00159}{159}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00160\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{return}\ p\ <\ q\ ?\ p\ :\ q;}
+\DoxyCodeLine{00162\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceastc_af78c0d31374aa9923633a3a2abf8d738_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceastc_ae6a0e03e6d3d62f82091604290a5a2fe}\index{astc@{astc}!min@{min}}
+\index{min@{min}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{namespaceastc_ae6a0e03e6d3d62f82091604290a5a2fe} 
+template$<$typename T $>$ \\
+static T astc\+::min (\begin{DoxyParamCaption}\item[{T}]{p}{, }\item[{T}]{q}{, }\item[{T}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return the minimum of three values. 
+
+For floats, Na\+Ns are turned into {\ttfamily r}.
+
+
+\begin{DoxyParams}{매개변수}
+{\em p} & The first value to compare. \\
+\hline
+{\em q} & The second value to compare. \\
+\hline
+{\em r} & The third value to compare.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The smallest value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00176}{176}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00177\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(p,\ q),\ r);}
+\DoxyCodeLine{00179\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{namespaceastc_ae6a0e03e6d3d62f82091604290a5a2fe_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceastc_affe4def63b7037742cee70bb11201fbd}\index{astc@{astc}!min@{min}}
+\index{min@{min}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{namespaceastc_affe4def63b7037742cee70bb11201fbd} 
+template$<$typename T $>$ \\
+static T astc\+::min (\begin{DoxyParamCaption}\item[{T}]{p}{, }\item[{T}]{q}{, }\item[{T}]{r}{, }\item[{T}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return the minimum of four values. 
+
+For floats, Na\+Ns are turned into {\ttfamily s}.
+
+
+\begin{DoxyParams}{매개변수}
+{\em p} & The first value to compare. \\
+\hline
+{\em q} & The second value to compare. \\
+\hline
+{\em r} & The third value to compare. \\
+\hline
+{\em s} & The fourth value to compare.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The smallest value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00194}{194}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00195\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(p,\ q),\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(r,\ s));}
+\DoxyCodeLine{00197\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{namespaceastc_affe4def63b7037742cee70bb11201fbd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceastc_aaf1aa9ba997d9b4d505974e9f80d27c6}\index{astc@{astc}!pow@{pow}}
+\index{pow@{pow}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{pow()}{pow()}}
+{\footnotesize\ttfamily \label{namespaceastc_aaf1aa9ba997d9b4d505974e9f80d27c6} 
+static \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} float astc\+::pow (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib_8h_source}{astcenc\+\_\+vecmathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib_8h_source_l00563}{563}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00564\ \{}
+\DoxyCodeLine{00565\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a4c1d7b228b3f79a7260ea87d535324cb}{pow}}(\mbox{\hyperlink{structvfloat4}{vfloat4}}(x),\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(y)).\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>();}
+\DoxyCodeLine{00566\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{namespaceastc_aaf1aa9ba997d9b4d505974e9f80d27c6_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceastc_aaf1aa9ba997d9b4d505974e9f80d27c6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceastc_acd6244a33d585dcaa70ceb08313115ff}\index{astc@{astc}!rand@{rand}}
+\index{rand@{rand}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{rand()}{rand()}}
+{\footnotesize\ttfamily \label{namespaceastc_acd6244a33d585dcaa70ceb08313115ff} 
+uint64\+\_\+t astc\+::rand (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{state}{\mbox{[}2\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Return the next random number from the generator. 
+
+This RNG is an implementation of the "{}xoroshoro-\/128+ 1.\+0"{} PRNG, based on the public-\/domain implementation given by David Blackman \& Sebastiano Vigna at \href{http://vigna.di.unimi.it/xorshift/xoroshiro128plus.c}{\texttt{ http\+://vigna.\+di.\+unimi.\+it/xorshift/xoroshiro128plus.\+c}}
+
+
+\begin{DoxyParams}{매개변수}
+{\em state} & The state structure to use/update. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8cpp_source}{astcenc\+\_\+mathlib.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8cpp_source_l00039}{39}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ uint64\_t\ s0\ =\ state[0];}
+\DoxyCodeLine{00042\ \ \ \ \ uint64\_t\ s1\ =\ state[1];}
+\DoxyCodeLine{00043\ \ \ \ \ uint64\_t\ res\ =\ s0\ +\ s1;}
+\DoxyCodeLine{00044\ \ \ \ \ s1\ \string^=\ s0;}
+\DoxyCodeLine{00045\ \ \ \ \ state[0]\ =\ \mbox{\hyperlink{astcenc__mathlib_8cpp_ada00fa3b97cd1f54329bc637fcba9ec6}{rotl}}(s0,\ 24)\ \string^\ s1\ \string^\ (s1\ <<\ 16);}
+\DoxyCodeLine{00046\ \ \ \ \ state[1]\ =\ \mbox{\hyperlink{astcenc__mathlib_8cpp_ada00fa3b97cd1f54329bc637fcba9ec6}{rotl}}(s1,\ 37);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{namespaceastc_acd6244a33d585dcaa70ceb08313115ff_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceastc_acd6244a33d585dcaa70ceb08313115ff_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceastc_a3a0b157316c84b208b4195916b2593e1}\index{astc@{astc}!rand\_init@{rand\_init}}
+\index{rand\_init@{rand\_init}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{rand\_init()}{rand\_init()}}
+{\footnotesize\ttfamily \label{namespaceastc_a3a0b157316c84b208b4195916b2593e1} 
+void astc\+::rand\+\_\+init (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{state}{\mbox{[}2\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Initialize the seed structure for a random number generator. 
+
+Important note\+: For the purposes of ASTC we want sets of random numbers to use the codec, but we want the same seed value across instances and threads to ensure that image output is stable across compressor runs and across platforms. Every PRNG created by this call will therefore return the same sequence of values ...
+
+
+\begin{DoxyParams}{매개변수}
+{\em state} & The state structure to initialize. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8cpp_source}{astcenc\+\_\+mathlib.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8cpp_source_l00032}{32}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ state[0]\ =\ 0xfaf9e171cea1ec6bULL;}
+\DoxyCodeLine{00035\ \ \ \ \ state[1]\ =\ 0xf1b318cc06af5d71ULL;}
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceastc_a3a0b157316c84b208b4195916b2593e1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceastc_a5e60e4c749fe4fc5c746f481af9564f4}\index{astc@{astc}!rsqrt@{rsqrt}}
+\index{rsqrt@{rsqrt}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{rsqrt()}{rsqrt()}}
+{\footnotesize\ttfamily \label{namespaceastc_a5e60e4c749fe4fc5c746f481af9564f4} 
+static float astc\+::rsqrt (\begin{DoxyParamCaption}\item[{float}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Fast approximation of 1.\+0 / sqrt(val). 
+
+
+\begin{DoxyParams}{매개변수}
+{\em v} & The input value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The approximated result. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00371}{371}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00372\ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keywordflow}{return}\ 1.0f\ /\ std::sqrt(v);}
+\DoxyCodeLine{00374\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceastc_a5e60e4c749fe4fc5c746f481af9564f4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceastc_a31e63d01af92a8a63ffdee93d6f342ae}\index{astc@{astc}!sqrt@{sqrt}}
+\index{sqrt@{sqrt}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{sqrt()}{sqrt()}}
+{\footnotesize\ttfamily \label{namespaceastc_a31e63d01af92a8a63ffdee93d6f342ae} 
+static float astc\+::sqrt (\begin{DoxyParamCaption}\item[{float}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Fast approximation of sqrt(val). 
+
+
+\begin{DoxyParams}{매개변수}
+{\em v} & The input value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The approximated result. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00383}{383}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00384\ \{}
+\DoxyCodeLine{00385\ \ \ \ \ \textcolor{keywordflow}{return}\ std::sqrt(v);}
+\DoxyCodeLine{00386\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceastc_a31e63d01af92a8a63ffdee93d6f342ae_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{변수 문서화}
+\Hypertarget{namespaceastc_a7b7581e8dda9382d1d6effd9c4925065}\index{astc@{astc}!PI@{PI}}
+\index{PI@{PI}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily \label{namespaceastc_a7b7581e8dda9382d1d6effd9c4925065} 
+const float astc\+::\+PI = 3.\+14159265358979323846f\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00121}{121}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{namespaceastc_a24a71ac075a8786d39f281397f77a278}\index{astc@{astc}!PI\_OVER\_TWO@{PI\_OVER\_TWO}}
+\index{PI\_OVER\_TWO@{PI\_OVER\_TWO}!astc@{astc}}
+\doxysubsubsection{\texorpdfstring{PI\_OVER\_TWO}{PI\_OVER\_TWO}}
+{\footnotesize\ttfamily \label{namespaceastc_a24a71ac075a8786d39f281397f77a278} 
+const float astc\+::\+PI\+\_\+\+OVER\+\_\+\+TWO = 1.\+57079632679489661923f\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{astcenc__mathlib_8h_source}{astcenc\+\_\+mathlib.\+h}} 파일의 \mbox{\hyperlink{astcenc__mathlib_8h_source_l00122}{122}} 번째 라인에서 정의되었습니다.
+

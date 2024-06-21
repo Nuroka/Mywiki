@@ -1,0 +1,460 @@
+\doxysection{vmask4 구조체 참조}
+\hypertarget{structvmask4}{}\label{structvmask4}\index{vmask4@{vmask4}}
+
+
+Data type for 4-\/wide control plane masks.  
+
+
+
+
+{\ttfamily \#include $<$astcenc\+\_\+vecmathlib\+\_\+neon\+\_\+4.\+h$>$}
+
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4_a4c655b46ecf33a50c4b12bbeccb6412f}{vmask4}} (uint32x4\+\_\+t a)
+\begin{DoxyCompactList}\small\item\em Construct from an existing SIMD register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4_af9b813f0004147ced490649d6ccb5833}{vmask4}} (int32x4\+\_\+t a)
+\begin{DoxyCompactList}\small\item\em Construct from an existing SIMD register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4_a05d56dd36e27892f46832a5d79a22742}{vmask4}} (bool a)
+\begin{DoxyCompactList}\small\item\em Construct from 1 scalar value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4_acd8d5491f8017b9e1af6703cf1ef8282}{vmask4}} (bool a, bool b, bool c, bool d)
+\begin{DoxyCompactList}\small\item\em Construct from 4 scalar values. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int32\+\_\+t l$>$ }\\\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} bool \mbox{\hyperlink{structvmask4_af30ce438df1c692bc8b479ceeae2f5d8}{lane}} () const
+\begin{DoxyCompactList}\small\item\em Get the scalar from a single lane. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4_a9950151ba097775839ea299ccfad1c46}{vmask4}} (int \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Construct from an existing mask value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4_a05d56dd36e27892f46832a5d79a22742}{vmask4}} (bool a)
+\begin{DoxyCompactList}\small\item\em Construct from 1 scalar value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4_acd8d5491f8017b9e1af6703cf1ef8282}{vmask4}} (bool a, bool b, bool c, bool d)
+\begin{DoxyCompactList}\small\item\em Construct from 4 scalar values. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int l$>$ }\\\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} float \mbox{\hyperlink{structvmask4_ac57d4c29c58d61e44839d546ceeff2e0}{lane}} () const
+\begin{DoxyCompactList}\small\item\em Get the scalar value of a single lane. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4_a5ba735329b1b2d8b35922029beeeadbb}{vmask4}} (\+\_\+\+\_\+m128 a)
+\begin{DoxyCompactList}\small\item\em Construct from an existing SIMD register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4_a0ad0dcf781dcc56c2b766386708498d2}{vmask4}} (\+\_\+\+\_\+m128i a)
+\begin{DoxyCompactList}\small\item\em Construct from an existing SIMD register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4_a05d56dd36e27892f46832a5d79a22742}{vmask4}} (bool a)
+\begin{DoxyCompactList}\small\item\em Construct from 1 scalar value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask4_acd8d5491f8017b9e1af6703cf1ef8282}{vmask4}} (bool a, bool b, bool c, bool d)
+\begin{DoxyCompactList}\small\item\em Construct from 4 scalar values. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int l$>$ }\\\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} bool \mbox{\hyperlink{structvmask4_af30ce438df1c692bc8b479ceeae2f5d8}{lane}} () const
+\begin{DoxyCompactList}\small\item\em Get the scalar value of a single lane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+uint32x4\+\_\+t \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}
+\begin{DoxyCompactList}\small\item\em The vector ... \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structvmask4_adc5a837b19ac1a9818c4ae77121f0012}{m}} \mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em The vector ... \end{DoxyCompactList}\item 
+\+\_\+\+\_\+m128 \mbox{\hyperlink{structvmask4_a83e51416e2e88a2a201ed20555d3423d}{m}}
+\begin{DoxyCompactList}\small\item\em The vector ... \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+Data type for 4-\/wide control plane masks. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+neon\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_source_l00313}{313}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{structvmask4_a4c655b46ecf33a50c4b12bbeccb6412f}\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\doxysubsubsection{\texorpdfstring{vmask4()}{vmask4()}\hspace{0.1cm}{\footnotesize\ttfamily [1/11]}}
+{\footnotesize\ttfamily \label{structvmask4_a4c655b46ecf33a50c4b12bbeccb6412f} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vmask4\+::vmask4 (\begin{DoxyParamCaption}\item[{uint32x4\+\_\+t}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from an existing SIMD register. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+neon\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_source_l00318}{318}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00319\ \ \ \ \ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}\ =\ a;}
+\DoxyCodeLine{00321\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structvmask4_af9b813f0004147ced490649d6ccb5833}\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\doxysubsubsection{\texorpdfstring{vmask4()}{vmask4()}\hspace{0.1cm}{\footnotesize\ttfamily [2/11]}}
+{\footnotesize\ttfamily \label{structvmask4_af9b813f0004147ced490649d6ccb5833} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vmask4\+::vmask4 (\begin{DoxyParamCaption}\item[{int32x4\+\_\+t}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from an existing SIMD register. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+neon\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_source_l00327}{327}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00328\ \ \ \ \ \{}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}\ =\ vreinterpretq\_u32\_s32(a);}
+\DoxyCodeLine{00330\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structvmask4_a05d56dd36e27892f46832a5d79a22742}\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\doxysubsubsection{\texorpdfstring{vmask4()}{vmask4()}\hspace{0.1cm}{\footnotesize\ttfamily [3/11]}}
+{\footnotesize\ttfamily \label{structvmask4_a05d56dd36e27892f46832a5d79a22742} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vmask4\+::vmask4 (\begin{DoxyParamCaption}\item[{bool}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from 1 scalar value. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+neon\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_source_l00336}{336}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00337\ \ \ \ \ \{}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}\ =\ vreinterpretq\_u32\_s32(vdupq\_n\_s32(a\ ==\ \textcolor{keyword}{true}\ ?\ -\/1\ :\ 0));}
+\DoxyCodeLine{00339\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structvmask4_acd8d5491f8017b9e1af6703cf1ef8282}\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\doxysubsubsection{\texorpdfstring{vmask4()}{vmask4()}\hspace{0.1cm}{\footnotesize\ttfamily [4/11]}}
+{\footnotesize\ttfamily \label{structvmask4_acd8d5491f8017b9e1af6703cf1ef8282} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vmask4\+::vmask4 (\begin{DoxyParamCaption}\item[{bool}]{a}{, }\item[{bool}]{b}{, }\item[{bool}]{c}{, }\item[{bool}]{d}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from 4 scalar values. 
+
+The value of {\ttfamily a} is stored to lane 0 (LSB) in the SIMD register. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+neon\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_source_l00346}{346}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00347\ \ \ \ \ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ v[4]\ \{}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ a\ ==\ \textcolor{keyword}{true}\ ?\ -\/1\ :\ 0,}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ b\ ==\ \textcolor{keyword}{true}\ ?\ -\/1\ :\ 0,}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ c\ ==\ \textcolor{keyword}{true}\ ?\ -\/1\ :\ 0,}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ d\ ==\ \textcolor{keyword}{true}\ ?\ -\/1\ :\ 0}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ int32x4\_t\ ms\ =\ vld1q\_s32(v);}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}\ =\ vreinterpretq\_u32\_s32(ms);}
+\DoxyCodeLine{00357\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structvmask4_a9950151ba097775839ea299ccfad1c46}\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\doxysubsubsection{\texorpdfstring{vmask4()}{vmask4()}\hspace{0.1cm}{\footnotesize\ttfamily [5/11]}}
+{\footnotesize\ttfamily \label{structvmask4_a9950151ba097775839ea299ccfad1c46} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vmask4\+::vmask4 (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from an existing mask value. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00322}{322}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00323\ \ \ \ \ \{}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[0]\ =\ p[0];}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[1]\ =\ p[1];}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[2]\ =\ p[2];}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[3]\ =\ p[3];}
+\DoxyCodeLine{00328\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structvmask4_a05d56dd36e27892f46832a5d79a22742}\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\doxysubsubsection{\texorpdfstring{vmask4()}{vmask4()}\hspace{0.1cm}{\footnotesize\ttfamily [6/11]}}
+{\footnotesize\ttfamily \label{structvmask4_a05d56dd36e27892f46832a5d79a22742} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vmask4\+::vmask4 (\begin{DoxyParamCaption}\item[{bool}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from 1 scalar value. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00333}{333}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00334\ \ \ \ \ \{}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[0]\ =\ a\ ==\ \textcolor{keyword}{false}\ ?\ 0\ :\ -\/1;}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[1]\ =\ a\ ==\ \textcolor{keyword}{false}\ ?\ 0\ :\ -\/1;}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[2]\ =\ a\ ==\ \textcolor{keyword}{false}\ ?\ 0\ :\ -\/1;}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[3]\ =\ a\ ==\ \textcolor{keyword}{false}\ ?\ 0\ :\ -\/1;}
+\DoxyCodeLine{00339\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structvmask4_acd8d5491f8017b9e1af6703cf1ef8282}\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\doxysubsubsection{\texorpdfstring{vmask4()}{vmask4()}\hspace{0.1cm}{\footnotesize\ttfamily [7/11]}}
+{\footnotesize\ttfamily \label{structvmask4_acd8d5491f8017b9e1af6703cf1ef8282} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vmask4\+::vmask4 (\begin{DoxyParamCaption}\item[{bool}]{a}{, }\item[{bool}]{b}{, }\item[{bool}]{c}{, }\item[{bool}]{d}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from 4 scalar values. 
+
+The value of {\ttfamily a} is stored to lane 0 (LSB) in the SIMD register. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00346}{346}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00347\ \ \ \ \ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[0]\ =\ a\ ==\ \textcolor{keyword}{false}\ ?\ 0\ :\ -\/1;}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[1]\ =\ b\ ==\ \textcolor{keyword}{false}\ ?\ 0\ :\ -\/1;}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[2]\ =\ c\ ==\ \textcolor{keyword}{false}\ ?\ 0\ :\ -\/1;}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[3]\ =\ d\ ==\ \textcolor{keyword}{false}\ ?\ 0\ :\ -\/1;}
+\DoxyCodeLine{00352\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structvmask4_a5ba735329b1b2d8b35922029beeeadbb}\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\doxysubsubsection{\texorpdfstring{vmask4()}{vmask4()}\hspace{0.1cm}{\footnotesize\ttfamily [8/11]}}
+{\footnotesize\ttfamily \label{structvmask4_a5ba735329b1b2d8b35922029beeeadbb} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vmask4\+::vmask4 (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+m128}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from an existing SIMD register. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__sse__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+sse\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__sse__4_8h_source_l00342}{342}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00343\ \ \ \ \ \{}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}\ =\ a;}
+\DoxyCodeLine{00345\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structvmask4_a0ad0dcf781dcc56c2b766386708498d2}\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\doxysubsubsection{\texorpdfstring{vmask4()}{vmask4()}\hspace{0.1cm}{\footnotesize\ttfamily [9/11]}}
+{\footnotesize\ttfamily \label{structvmask4_a0ad0dcf781dcc56c2b766386708498d2} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vmask4\+::vmask4 (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+m128i}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from an existing SIMD register. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__sse__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+sse\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__sse__4_8h_source_l00350}{350}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00351\ \ \ \ \ \{}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}\ =\ \_mm\_castsi128\_ps(a);}
+\DoxyCodeLine{00353\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structvmask4_a05d56dd36e27892f46832a5d79a22742}\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\doxysubsubsection{\texorpdfstring{vmask4()}{vmask4()}\hspace{0.1cm}{\footnotesize\ttfamily [10/11]}}
+{\footnotesize\ttfamily \label{structvmask4_a05d56dd36e27892f46832a5d79a22742} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vmask4\+::vmask4 (\begin{DoxyParamCaption}\item[{bool}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from 1 scalar value. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__sse__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+sse\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__sse__4_8h_source_l00358}{358}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00359\ \ \ \ \ \{}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__sse__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{mask}}(a\ ==\ \textcolor{keyword}{false}\ ?\ 0\ :\ -\/1);}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}\ =\ \_mm\_castsi128\_ps(\mbox{\hyperlink{astcenc__vecmathlib__sse__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{mask}}.m);}
+\DoxyCodeLine{00362\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{structvmask4_a05d56dd36e27892f46832a5d79a22742_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structvmask4_acd8d5491f8017b9e1af6703cf1ef8282}\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\index{vmask4@{vmask4}!vmask4@{vmask4}}
+\doxysubsubsection{\texorpdfstring{vmask4()}{vmask4()}\hspace{0.1cm}{\footnotesize\ttfamily [11/11]}}
+{\footnotesize\ttfamily \label{structvmask4_acd8d5491f8017b9e1af6703cf1ef8282} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vmask4\+::vmask4 (\begin{DoxyParamCaption}\item[{bool}]{a}{, }\item[{bool}]{b}{, }\item[{bool}]{c}{, }\item[{bool}]{d}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from 4 scalar values. 
+
+The value of {\ttfamily a} is stored to lane 0 (LSB) in the SIMD register. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__sse__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+sse\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__sse__4_8h_source_l00369}{369}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00370\ \ \ \ \ \{}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ \mbox{\hyperlink{astcenc__vecmathlib__sse__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{mask}}(a\ ==\ \textcolor{keyword}{false}\ ?\ 0\ :\ -\/1,}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ ==\ false\ ?\ 0\ :\ -\/1,}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c\ ==\ false\ ?\ 0\ :\ -\/1,}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d\ ==\ false\ ?\ 0\ :\ -\/1);}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}\ =\ \_mm\_castsi128\_ps(\mbox{\hyperlink{astcenc__vecmathlib__sse__4_8h_ad9df1f93677ac4d73ece1d22cc345045}{mask}}.m);}
+\DoxyCodeLine{00377\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{structvmask4_acd8d5491f8017b9e1af6703cf1ef8282_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{structvmask4_af30ce438df1c692bc8b479ceeae2f5d8}\index{vmask4@{vmask4}!lane@{lane}}
+\index{lane@{lane}!vmask4@{vmask4}}
+\doxysubsubsection{\texorpdfstring{lane()}{lane()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{structvmask4_af30ce438df1c692bc8b479ceeae2f5d8} 
+template$<$int32\+\_\+t l$>$ \\
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} bool vmask4\+::lane (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the scalar from a single lane. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+neon\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_source_l00362}{362}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00363\ \ \ \ \ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vgetq\_lane\_u32(\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}},\ l)\ !=\ 0;}
+\DoxyCodeLine{00365\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structvmask4_af30ce438df1c692bc8b479ceeae2f5d8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structvmask4_ac57d4c29c58d61e44839d546ceeff2e0}\index{vmask4@{vmask4}!lane@{lane}}
+\index{lane@{lane}!vmask4@{vmask4}}
+\doxysubsubsection{\texorpdfstring{lane()}{lane()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{structvmask4_ac57d4c29c58d61e44839d546ceeff2e0} 
+template$<$int l$>$ \\
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} float vmask4\+::lane (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the scalar value of a single lane. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00357}{357}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00358\ \ \ \ \ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}}[l]\ !=\ 0;}
+\DoxyCodeLine{00360\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structvmask4_af30ce438df1c692bc8b479ceeae2f5d8}\index{vmask4@{vmask4}!lane@{lane}}
+\index{lane@{lane}!vmask4@{vmask4}}
+\doxysubsubsection{\texorpdfstring{lane()}{lane()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{structvmask4_af30ce438df1c692bc8b479ceeae2f5d8} 
+template$<$int l$>$ \\
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} bool vmask4\+::lane (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the scalar value of a single lane. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__sse__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+sse\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__sse__4_8h_source_l00382}{382}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00383\ \ \ \ \ \{}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mm\_cvtss\_f32(\_mm\_shuffle\_ps(\mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}},\ \mbox{\hyperlink{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}{m}},\ l))\ !=\ 0.0f;}
+\DoxyCodeLine{00385\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structvmask4_aaf8a74756aee398a509b98aa81f70f0a}\index{vmask4@{vmask4}!m@{m}}
+\index{m@{m}!vmask4@{vmask4}}
+\doxysubsubsection{\texorpdfstring{m}{m}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{structvmask4_aaf8a74756aee398a509b98aa81f70f0a} 
+uint32x4\+\_\+t vmask4\+::m}
+
+
+
+The vector ... 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+neon\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_source_l00370}{370}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structvmask4_adc5a837b19ac1a9818c4ae77121f0012}\index{vmask4@{vmask4}!m@{m}}
+\index{m@{m}!vmask4@{vmask4}}
+\doxysubsubsection{\texorpdfstring{m}{m}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{structvmask4_adc5a837b19ac1a9818c4ae77121f0012} 
+int vmask4\+::m\mbox{[}4\mbox{]}}
+
+
+
+The vector ... 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__none__4_8h_source_l00365}{365}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structvmask4_a83e51416e2e88a2a201ed20555d3423d}\index{vmask4@{vmask4}!m@{m}}
+\index{m@{m}!vmask4@{vmask4}}
+\doxysubsubsection{\texorpdfstring{m}{m}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{structvmask4_a83e51416e2e88a2a201ed20555d3423d} 
+\+\_\+\+\_\+m128 vmask4\+::m}
+
+
+
+The vector ... 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__sse__4_8h_source}{astcenc\+\_\+vecmathlib\+\_\+sse\+\_\+4.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__sse__4_8h_source_l00390}{390}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h}{astcenc\+\_\+vecmathlib\+\_\+neon\+\_\+4.\+h}}\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__vecmathlib__none__4_8h}{astcenc\+\_\+vecmathlib\+\_\+none\+\_\+4.\+h}}\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__vecmathlib__sse__4_8h}{astcenc\+\_\+vecmathlib\+\_\+sse\+\_\+4.\+h}}\end{DoxyCompactItemize}

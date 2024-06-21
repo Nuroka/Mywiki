@@ -1,0 +1,20 @@
+digraph "error_color_nan"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="error_color_nan",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Return an FP32 NaN value for use in error colors."];
+  Node1 -> Node2 [id="edge7_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="decompress_symbolic\l_block",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__decompress__symbolic_8cpp.html#a4a5f09c362972951a31e4d7ff918f89f",tooltip="Decompress a symbolic block in to an image block."];
+  Node2 -> Node3 [id="edge8_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="astcenc_decompress\l_image",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__entry_8cpp.html#a062987fc41b9df7d34d8eb668f29eb21",tooltip="Decompress an image."];
+  Node3 -> Node4 [id="edge9_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="astcenc_main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e",tooltip="Application entry point."];
+  Node4 -> Node5 [id="edge10_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+  Node3 -> Node6 [id="edge11_Node000003_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="decompression_workload\l_runner",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__toplevel_8cpp.html#a02c55a799cc33b39f9d733b1a7e91281",tooltip="Runner callback function for a decompression worker thread."];
+  Node6 -> Node4 [id="edge12_Node000006_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

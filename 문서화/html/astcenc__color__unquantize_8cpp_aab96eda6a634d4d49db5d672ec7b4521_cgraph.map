@@ -1,0 +1,9 @@
+<map id="rgb_scale_alpha_unpack" name="rgb_scale_alpha_unpack">
+<area shape="rect" id="Node000001" title="Unpack an LDR RGBA color that uses scaled encoding." alt="" coords="5,55,171,80"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#aff39374b256d568d084ba4fd2fed7819" title="Arithmetic shift right." alt="" coords="251,5,291,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,52,237,24,239,29,137,57"/>
+<area shape="rect" id="Node000003" href="$structvint4.html#a01e3f7debf73dc6c757fa36d585c9d17" title="Get the scalar from a single lane." alt="" coords="231,55,311,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,65,218,65,218,70,171,70"/>
+<area shape="rect" id="Node000004" href="$structvint4.html#a1e438bb142ad09e372b0834acd0c0b68" title="Set the scalar value of a single lane." alt="" coords="219,104,324,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="137,77,211,98,209,103,135,83"/>
+</map>

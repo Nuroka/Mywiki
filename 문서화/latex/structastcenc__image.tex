@@ -1,0 +1,111 @@
+\doxysection{astcenc\+\_\+image 구조체 참조}
+\hypertarget{structastcenc__image}{}\label{structastcenc__image}\index{astcenc\_image@{astcenc\_image}}
+
+
+An uncompressed 2D or 3D image.  
+
+
+
+
+{\ttfamily \#include $<$astcenc.\+h$>$}
+
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{structastcenc__image_a8bb8eebb59215778176674951c6da70a}{dim\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em The X dimension of the image, in texels. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__image_a3a62fbbc3a16a390eca3b03b6e489750}{dim\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em The Y dimension of the image, in texels. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structastcenc__image_a9c71edbb23f1cca0de775c508b6219ee}{dim\+\_\+z}}
+\begin{DoxyCompactList}\small\item\em The Z dimension of the image, in texels. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109a}{astcenc\+\_\+type}} \mbox{\hyperlink{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}{data\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em The data type per component. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}{data}}
+\begin{DoxyCompactList}\small\item\em The array of 2D slices, of length {\ttfamily dim\+\_\+z}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+An uncompressed 2D or 3D image. 
+
+3D image are passed in as an array of 2D slices. Each slice has identical size and color format. 
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00601}{601}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2}\index{astcenc\_image@{astcenc\_image}!data@{data}}
+\index{data@{data}!astcenc\_image@{astcenc\_image}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \label{structastcenc__image_ac2487bc635b3c9eced65f2c551e759f2} 
+void\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} astcenc\+\_\+image\+::data}
+
+
+
+The array of 2D slices, of length {\ttfamily dim\+\_\+z}. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00616}{616}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16}\index{astcenc\_image@{astcenc\_image}!data\_type@{data\_type}}
+\index{data\_type@{data\_type}!astcenc\_image@{astcenc\_image}}
+\doxysubsubsection{\texorpdfstring{data\_type}{data\_type}}
+{\footnotesize\ttfamily \label{structastcenc__image_a5ce29ab112fff72151cbffcb3c8fdb16} 
+\mbox{\hyperlink{astcenc_8h_a7aeb732fb3426e390fa669957d7a109a}{astcenc\+\_\+type}} astcenc\+\_\+image\+::data\+\_\+type}
+
+
+
+The data type per component. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00613}{613}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__image_a8bb8eebb59215778176674951c6da70a}\index{astcenc\_image@{astcenc\_image}!dim\_x@{dim\_x}}
+\index{dim\_x@{dim\_x}!astcenc\_image@{astcenc\_image}}
+\doxysubsubsection{\texorpdfstring{dim\_x}{dim\_x}}
+{\footnotesize\ttfamily \label{structastcenc__image_a8bb8eebb59215778176674951c6da70a} 
+unsigned int astcenc\+\_\+image\+::dim\+\_\+x}
+
+
+
+The X dimension of the image, in texels. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00604}{604}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__image_a3a62fbbc3a16a390eca3b03b6e489750}\index{astcenc\_image@{astcenc\_image}!dim\_y@{dim\_y}}
+\index{dim\_y@{dim\_y}!astcenc\_image@{astcenc\_image}}
+\doxysubsubsection{\texorpdfstring{dim\_y}{dim\_y}}
+{\footnotesize\ttfamily \label{structastcenc__image_a3a62fbbc3a16a390eca3b03b6e489750} 
+unsigned int astcenc\+\_\+image\+::dim\+\_\+y}
+
+
+
+The Y dimension of the image, in texels. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00607}{607}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__image_a9c71edbb23f1cca0de775c508b6219ee}\index{astcenc\_image@{astcenc\_image}!dim\_z@{dim\_z}}
+\index{dim\_z@{dim\_z}!astcenc\_image@{astcenc\_image}}
+\doxysubsubsection{\texorpdfstring{dim\_z}{dim\_z}}
+{\footnotesize\ttfamily \label{structastcenc__image_a9c71edbb23f1cca0de775c508b6219ee} 
+unsigned int astcenc\+\_\+image\+::dim\+\_\+z}
+
+
+
+The Z dimension of the image, in texels. 
+
+
+
+\mbox{\hyperlink{astcenc_8h_source}{astcenc.\+h}} 파일의 \mbox{\hyperlink{astcenc_8h_source_l00610}{610}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc_8h}{astcenc.\+h}}\end{DoxyCompactItemize}

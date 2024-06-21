@@ -1,0 +1,387 @@
+\doxysection{vint8 구조체 참조}
+\hypertarget{structvint8}{}\label{structvint8}\index{vint8@{vint8}}
+
+
+Data type for 8-\/wide ints.  
+
+
+
+
+{\ttfamily \#include $<$astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h$>$}
+
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8_ad2b458c4b597d2cd8e61e7f5e9f86161}{vint8}} ()=default
+\begin{DoxyCompactList}\small\item\em Construct from zero-\/initialized value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8_af197dcbb75a5a26e62d2fc58844c5379}{vint8}} (const int \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Construct from 8 values loaded from an unaligned address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8_a92e4b9515c75931de96565d4d998622f}{vint8}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Construct from 8 uint8\+\_\+t loaded from an unaligned address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8_a27328373ee7e992a6dcaa26f2297c81a}{vint8}} (int a)
+\begin{DoxyCompactList}\small\item\em Construct from 1 scalar value replicated across all lanes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8_a0269cb947470930203bc0793b909a9e8}{vint8}} (int a, int b, int c, int d, int e, int f, int g, int h)
+\begin{DoxyCompactList}\small\item\em Construct from 8 scalar values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8_a64bff0041f6314a2c0fdb125377010e1}{vint8}} (\+\_\+\+\_\+m256i a)
+\begin{DoxyCompactList}\small\item\em Construct from an existing SIMD register. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int l$>$ }\\\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} int \mbox{\hyperlink{structvint8_a2e1f0c785f4899e1b7912f2580b9f77c}{lane}} () const
+\begin{DoxyCompactList}\small\item\em Get the scalar from a single lane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{정적 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{structvint8_af5b4dfb23d46500b4c9605969db5a9a1}{zero}} ()
+\begin{DoxyCompactList}\small\item\em Factory that returns a vector of zeros. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{structvint8_a6bb8e1dbdc1cafa65aaea8cf5b0c9607}{load1}} (const int \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Factory that returns a replicated scalar loaded from memory. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{structvint8_aded32c56d70f945f052838be670ef072}{load}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Factory that returns a vector loaded from unaligned memory. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{structvint8_a45ae46d70496e150a7564acf24b6e8ee}{loada}} (const int \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Factory that returns a vector loaded from 32B aligned memory. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{structvint8_ac039bb01378b472df484ac30e7f061ce}{lane\+\_\+id}} ()
+\begin{DoxyCompactList}\small\item\em Factory that returns a vector containing the lane IDs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+m256i \mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}
+\begin{DoxyCompactList}\small\item\em The vector ... \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+Data type for 8-\/wide ints. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00156}{156}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{structvint8_ad2b458c4b597d2cd8e61e7f5e9f86161}\index{vint8@{vint8}!vint8@{vint8}}
+\index{vint8@{vint8}!vint8@{vint8}}
+\doxysubsubsection{\texorpdfstring{vint8()}{vint8()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \label{structvint8_ad2b458c4b597d2cd8e61e7f5e9f86161} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vint8\+::vint8 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Construct from zero-\/initialized value. 
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{structvint8_ad2b458c4b597d2cd8e61e7f5e9f86161_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structvint8_af197dcbb75a5a26e62d2fc58844c5379}\index{vint8@{vint8}!vint8@{vint8}}
+\index{vint8@{vint8}!vint8@{vint8}}
+\doxysubsubsection{\texorpdfstring{vint8()}{vint8()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \label{structvint8_af197dcbb75a5a26e62d2fc58844c5379} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vint8\+::vint8 (\begin{DoxyParamCaption}\item[{const int \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from 8 values loaded from an unaligned address. 
+
+Consider using \doxylink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada()} which is better with vectors if data is aligned to vector length. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00169}{169}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00170\ \ \ \ \ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}\ =\ \_mm256\_loadu\_si256(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\_\_m256i*\textcolor{keyword}{>}(p));}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structvint8_a92e4b9515c75931de96565d4d998622f}\index{vint8@{vint8}!vint8@{vint8}}
+\index{vint8@{vint8}!vint8@{vint8}}
+\doxysubsubsection{\texorpdfstring{vint8()}{vint8()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \label{structvint8_a92e4b9515c75931de96565d4d998622f} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vint8\+::vint8 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from 8 uint8\+\_\+t loaded from an unaligned address. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00177}{177}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00178\ \ \ \ \ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \_mm\_loadu\_si64\ would\ be\ nicer\ syntax,\ but\ missing\ on\ older\ GCC}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}\ =\ \_mm256\_cvtepu8\_epi32(\_mm\_cvtsi64\_si128(*\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}*\textcolor{keyword}{>}(p)));}
+\DoxyCodeLine{00181\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structvint8_a27328373ee7e992a6dcaa26f2297c81a}\index{vint8@{vint8}!vint8@{vint8}}
+\index{vint8@{vint8}!vint8@{vint8}}
+\doxysubsubsection{\texorpdfstring{vint8()}{vint8()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \label{structvint8_a27328373ee7e992a6dcaa26f2297c81a} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vint8\+::vint8 (\begin{DoxyParamCaption}\item[{int}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from 1 scalar value replicated across all lanes. 
+
+Consider using \doxylink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4\+::zero()} for constexpr zeros. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00188}{188}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00189\ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}\ =\ \_mm256\_set1\_epi32(a);}
+\DoxyCodeLine{00191\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structvint8_a0269cb947470930203bc0793b909a9e8}\index{vint8@{vint8}!vint8@{vint8}}
+\index{vint8@{vint8}!vint8@{vint8}}
+\doxysubsubsection{\texorpdfstring{vint8()}{vint8()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \label{structvint8_a0269cb947470930203bc0793b909a9e8} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vint8\+::vint8 (\begin{DoxyParamCaption}\item[{int}]{a}{, }\item[{int}]{b}{, }\item[{int}]{c}{, }\item[{int}]{d}{, }\item[{int}]{e}{, }\item[{int}]{f}{, }\item[{int}]{g}{, }\item[{int}]{h}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from 8 scalar values. 
+
+The value of {\ttfamily a} is stored to lane 0 (LSB) in the SIMD register. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00198}{198}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00201\ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}\ =\ \_mm256\_set\_epi32(h,\ g,\ f,\ e,\ d,\ c,\ b,\ a);}
+\DoxyCodeLine{00203\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structvint8_a64bff0041f6314a2c0fdb125377010e1}\index{vint8@{vint8}!vint8@{vint8}}
+\index{vint8@{vint8}!vint8@{vint8}}
+\doxysubsubsection{\texorpdfstring{vint8()}{vint8()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \label{structvint8_a64bff0041f6314a2c0fdb125377010e1} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} vint8\+::vint8 (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+m256i}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from an existing SIMD register. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00208}{208}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00209\ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}\ =\ a;}
+\DoxyCodeLine{00211\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{structvint8_a2e1f0c785f4899e1b7912f2580b9f77c}\index{vint8@{vint8}!lane@{lane}}
+\index{lane@{lane}!vint8@{vint8}}
+\doxysubsubsection{\texorpdfstring{lane()}{lane()}}
+{\footnotesize\ttfamily \label{structvint8_a2e1f0c785f4899e1b7912f2580b9f77c} 
+template$<$int l$>$ \\
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} int vint8\+::lane (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the scalar from a single lane. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00216}{216}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00217\ \ \ \ \ \{}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\ \ \ \ \#if\ !defined(\_\_clang\_\_)\ \&\&\ defined(\_MSC\_VER)}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}.m256i\_i32[l];}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keyword}{union\ }\{\ \_\_m256i\ \mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}};\ \textcolor{keywordtype}{int}\ f[8];\ \}\ cvt;}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ cvt.m\ =\ \mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}};}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cvt.f[l];}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00225\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structvint8_a2e1f0c785f4899e1b7912f2580b9f77c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structvint8_ac039bb01378b472df484ac30e7f061ce}\index{vint8@{vint8}!lane\_id@{lane\_id}}
+\index{lane\_id@{lane\_id}!vint8@{vint8}}
+\doxysubsubsection{\texorpdfstring{lane\_id()}{lane\_id()}}
+{\footnotesize\ttfamily \label{structvint8_ac039bb01378b472df484ac30e7f061ce} 
+static \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} vint8\+::lane\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Factory that returns a vector containing the lane IDs. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00263}{263}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00264\ \ \ \ \ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8_ad2b458c4b597d2cd8e61e7f5e9f86161}{vint8}}(\_mm256\_set\_epi32(7,\ 6,\ 5,\ 4,\ 3,\ 2,\ 1,\ 0));}
+\DoxyCodeLine{00266\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{structvint8_ac039bb01378b472df484ac30e7f061ce_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structvint8_aded32c56d70f945f052838be670ef072}\index{vint8@{vint8}!load@{load}}
+\index{load@{load}!vint8@{vint8}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \label{structvint8_aded32c56d70f945f052838be670ef072} 
+static \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} vint8\+::load (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Factory that returns a vector loaded from unaligned memory. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00247}{247}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00248\ \ \ \ \ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8_ad2b458c4b597d2cd8e61e7f5e9f86161}{vint8}}(\_mm256\_lddqu\_si256(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\_\_m256i*\textcolor{keyword}{>}(p)));}
+\DoxyCodeLine{00250\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{structvint8_aded32c56d70f945f052838be670ef072_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structvint8_a6bb8e1dbdc1cafa65aaea8cf5b0c9607}\index{vint8@{vint8}!load1@{load1}}
+\index{load1@{load1}!vint8@{vint8}}
+\doxysubsubsection{\texorpdfstring{load1()}{load1()}}
+{\footnotesize\ttfamily \label{structvint8_a6bb8e1dbdc1cafa65aaea8cf5b0c9607} 
+static \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} vint8\+::load1 (\begin{DoxyParamCaption}\item[{const int \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Factory that returns a replicated scalar loaded from memory. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00238}{238}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00239\ \ \ \ \ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \_\_m128i\ a\ =\ \_mm\_set1\_epi32(*p);}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8_ad2b458c4b597d2cd8e61e7f5e9f86161}{vint8}}(\_mm256\_broadcastd\_epi32(a));}
+\DoxyCodeLine{00242\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{structvint8_a6bb8e1dbdc1cafa65aaea8cf5b0c9607_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structvint8_a45ae46d70496e150a7564acf24b6e8ee}\index{vint8@{vint8}!loada@{loada}}
+\index{loada@{loada}!vint8@{vint8}}
+\doxysubsubsection{\texorpdfstring{loada()}{loada()}}
+{\footnotesize\ttfamily \label{structvint8_a45ae46d70496e150a7564acf24b6e8ee} 
+static \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} vint8\+::loada (\begin{DoxyParamCaption}\item[{const int \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Factory that returns a vector loaded from 32B aligned memory. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00255}{255}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00256\ \ \ \ \ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8_ad2b458c4b597d2cd8e61e7f5e9f86161}{vint8}}(\_mm256\_load\_si256(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\_\_m256i*\textcolor{keyword}{>}(p)));}
+\DoxyCodeLine{00258\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{structvint8_a45ae46d70496e150a7564acf24b6e8ee_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structvint8_af5b4dfb23d46500b4c9605969db5a9a1}\index{vint8@{vint8}!zero@{zero}}
+\index{zero@{zero}!vint8@{vint8}}
+\doxysubsubsection{\texorpdfstring{zero()}{zero()}}
+{\footnotesize\ttfamily \label{structvint8_af5b4dfb23d46500b4c9605969db5a9a1} 
+static \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} vint8\+::zero (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Factory that returns a vector of zeros. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00230}{230}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00231\ \ \ \ \ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8_ad2b458c4b597d2cd8e61e7f5e9f86161}{vint8}}(\_mm256\_setzero\_si256());}
+\DoxyCodeLine{00233\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{structvint8_af5b4dfb23d46500b4c9605969db5a9a1_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}\index{vint8@{vint8}!m@{m}}
+\index{m@{m}!vint8@{vint8}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily \label{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1} 
+\+\_\+\+\_\+m256i vint8\+::m}
+
+
+
+The vector ... 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00271}{271}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}}\end{DoxyCompactItemize}

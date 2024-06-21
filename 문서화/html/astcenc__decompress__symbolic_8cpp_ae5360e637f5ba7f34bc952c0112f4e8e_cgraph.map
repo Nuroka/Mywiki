@@ -1,0 +1,7 @@
+<map id="lerp_color_int" name="lerp_color_int">
+<area shape="rect" id="Node000001" title="Functions to decompress a symbolic block." alt="" coords="5,31,104,56"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#aff39374b256d568d084ba4fd2fed7819" title="Arithmetic shift right." alt="" coords="161,5,201,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,31,147,22,148,27,105,36"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#a844ab5b69b84569f033be33bf5fb9fbc" title="Return lanes from b if cond is set, else a." alt="" coords="152,55,209,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,50,139,57,138,62,104,55"/>
+</map>

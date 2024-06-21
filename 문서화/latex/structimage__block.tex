@@ -1,0 +1,584 @@
+\doxysection{image\+\_\+block 구조체 참조}
+\hypertarget{structimage__block}{}\label{structimage__block}\index{image\_block@{image\_block}}
+
+
+The image data for a single block.  
+
+
+
+
+{\ttfamily \#include $<$astcenc\+\_\+internal.\+h$>$}
+
+
+
+image\+\_\+block에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{structimage__block__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{structimage__block_af99de7d75e1e380b31d70d131509caa9}{texel}} (unsigned int index) const
+\begin{DoxyCompactList}\small\item\em Get an RGBA texel value from the data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{structimage__block_a682b1ada02acb8369d6f6f30378b260e}{texel3}} (unsigned int index) const
+\begin{DoxyCompactList}\small\item\em Get an RGB texel value from the data. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structimage__block_ab5d7af0f7b40343941660350ac186fab}{get\+\_\+default\+\_\+alpha}} () const
+\begin{DoxyCompactList}\small\item\em Get the default alpha value for endpoints that don\textquotesingle{}t store it. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structimage__block_ae3c0735355d378591db6cb7a011e381a}{is\+\_\+constant\+\_\+channel}} (int channel) const
+\begin{DoxyCompactList}\small\item\em Test if a single color channel is constant across the block. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structimage__block_ac3e154e58086017c6e405b8cc7e52c9f}{is\+\_\+luminance}} () const
+\begin{DoxyCompactList}\small\item\em Test if this block is a luminance block with constant 1.\+0 alpha. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structimage__block_aa7f3d29c2f755e47a887d090c5997880}{is\+\_\+luminancealpha}} () const
+\begin{DoxyCompactList}\small\item\em Test if this block is a luminance block with variable alpha. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} float \mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\+\_\+r}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}+\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\+\_\+\+SIMD\+\_\+\+WIDTH}} -\/ 1\mbox{]}
+\begin{DoxyCompactList}\small\item\em The input (compress) or output (decompress) data for the red color component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} float \mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\+\_\+g}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}+\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\+\_\+\+SIMD\+\_\+\+WIDTH}} -\/ 1\mbox{]}
+\begin{DoxyCompactList}\small\item\em The input (compress) or output (decompress) data for the green color component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} float \mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\+\_\+b}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}+\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\+\_\+\+SIMD\+\_\+\+WIDTH}} -\/ 1\mbox{]}
+\begin{DoxyCompactList}\small\item\em The input (compress) or output (decompress) data for the blue color component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} float \mbox{\hyperlink{structimage__block_a602c8c88dc1ceef33e833f6d6cbc09ea}{data\+\_\+a}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}+\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\+\_\+\+SIMD\+\_\+\+WIDTH}} -\/ 1\mbox{]}
+\begin{DoxyCompactList}\small\item\em The input (compress) or output (decompress) data for the alpha color component. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structimage__block_a05174b1db0b9131ad61fc49f3aa74676}{texel\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em The number of texels in the block. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{structimage__block_a111c7f9821d5ebe6e9d0140f800c6bc2}{origin\+\_\+texel}}
+\begin{DoxyCompactList}\small\item\em The original data for texel 0 for constant color block encoding. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{structimage__block_a4222fc6e5a97194fd342700adff483db}{data\+\_\+min}}
+\begin{DoxyCompactList}\small\item\em The min component value of all texels in the block. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{structimage__block_ac6bd4890338be887b61f857e37d23459}{data\+\_\+mean}}
+\begin{DoxyCompactList}\small\item\em The mean component value of all texels in the block. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{structimage__block_af1b03600b295cf8dc02a333db04871fc}{data\+\_\+max}}
+\begin{DoxyCompactList}\small\item\em The max component value of all texels in the block. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvfloat4}{vfloat4}} \mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\+\_\+weight}}
+\begin{DoxyCompactList}\small\item\em The relative error significance of the color channels. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structimage__block_a3250483facfd20ef4d418bd5f3ef4acb}{grayscale}}
+\begin{DoxyCompactList}\small\item\em Is this grayscale block where R == G == B for all texels? \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structimage__block_af04bb4b721a6fb9f3993e2349a0df727}{decode\+\_\+unorm8}}
+\begin{DoxyCompactList}\small\item\em Is the eventual decode using decode\+\_\+unorm8 rounding? \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structimage__block_af1a9e601f3d03dc488993b81258058e0}{rgb\+\_\+lns}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Set to 1 if a texel is using HDR RGB endpoints (decompression only). \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structimage__block_ade6f78d73e016d4e9222cbe89f5b1eec}{alpha\+\_\+lns}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Set to 1 if a texel is using HDR alpha endpoints (decompression only). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structimage__block_a352aaf95790a294ff0b8b037b49def86}{xpos}}
+\begin{DoxyCompactList}\small\item\em The X position of this block in the input or output image. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structimage__block_a77a79aa3bc8909bb34673e86ee30584f}{ypos}}
+\begin{DoxyCompactList}\small\item\em The Y position of this block in the input or output image. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structimage__block_aef3e6199531833e9b855f7fde1d06593}{zpos}}
+\begin{DoxyCompactList}\small\item\em The Z position of this block in the input or output image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+The image data for a single block. 
+
+The {\ttfamily data\+\_\+}\mbox{[}rgba\mbox{]} fields store the image data in an encoded SoA float form designed for easy vectorization. Input data is converted to float and stored as values between 0 and 65535. LDR data is stored as direct UNORM data, HDR data is stored as LNS data. They are allocated SIMD elements over-\/size to allow vectorized stores of unaligned and partial SIMD lanes (e.\+g. in a 6x6x6 block the final row write will read elements 210-\/217 (vec8) or 214-\/217 (vec4), which is two elements above the last real data element). The overspill values are never written to memory, and would be benign, but the padding avoids hitting undefined behavior.
+
+The {\ttfamily rgb\+\_\+lns} and {\ttfamily alpha\+\_\+lns} fields that assigned a per-\/texel use of HDR are only used during decompression. The current compressor will always use HDR endpoint formats when in HDR mode. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00744}{744}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{structimage__block_ab5d7af0f7b40343941660350ac186fab}\index{image\_block@{image\_block}!get\_default\_alpha@{get\_default\_alpha}}
+\index{get\_default\_alpha@{get\_default\_alpha}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{get\_default\_alpha()}{get\_default\_alpha()}}
+{\footnotesize\ttfamily \label{structimage__block_ab5d7af0f7b40343941660350ac186fab} 
+float image\+\_\+block\+::get\+\_\+default\+\_\+alpha (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the default alpha value for endpoints that don\textquotesingle{}t store it. 
+
+The default depends on whether the alpha endpoint is LDR or HDR.
+
+\begin{DoxyReturn}{반환값}
+The alpha value in the scaled range used by the compressor. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00833}{833}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00834\ \ \ \ \ \{}
+\DoxyCodeLine{00835\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{structimage__block_ade6f78d73e016d4e9222cbe89f5b1eec}{alpha\_lns}}[0]\ ?\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(0x7800)\ :\ static\_cast<float>(0xFFFF);}
+\DoxyCodeLine{00836\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structimage__block_ab5d7af0f7b40343941660350ac186fab_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structimage__block_ae3c0735355d378591db6cb7a011e381a}\index{image\_block@{image\_block}!is\_constant\_channel@{is\_constant\_channel}}
+\index{is\_constant\_channel@{is\_constant\_channel}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{is\_constant\_channel()}{is\_constant\_channel()}}
+{\footnotesize\ttfamily \label{structimage__block_ae3c0735355d378591db6cb7a011e381a} 
+bool image\+\_\+block\+::is\+\_\+constant\+\_\+channel (\begin{DoxyParamCaption}\item[{int}]{channel}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Test if a single color channel is constant across the block. 
+
+Constant color channels are easier to compress as interpolating between two identical colors always returns the same value, irrespective of the weight used. They therefore can be ignored for the purposes of weight selection and use of a second weight plane.
+
+\begin{DoxyReturn}{반환값}
+{\ttfamily true} if the channel is constant across the block, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00847}{847}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00848\ \ \ \ \ \{}
+\DoxyCodeLine{00849\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ lane\_mask\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint4::lane\_id}}()\ ==\ \mbox{\hyperlink{structvint4}{vint4}}(channel);}
+\DoxyCodeLine{00850\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ color\_mask\ =\ this-\/>\mbox{\hyperlink{structimage__block_a4222fc6e5a97194fd342700adff483db}{data\_min}}\ ==\ this-\/>\mbox{\hyperlink{structimage__block_af1b03600b295cf8dc02a333db04871fc}{data\_max}};}
+\DoxyCodeLine{00851\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a1fcb81537a701f246e75fa622c2dd8ee}{any}}(lane\_mask\ \&\ color\_mask);}
+\DoxyCodeLine{00852\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structimage__block_ae3c0735355d378591db6cb7a011e381a_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structimage__block_ae3c0735355d378591db6cb7a011e381a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structimage__block_ac3e154e58086017c6e405b8cc7e52c9f}\index{image\_block@{image\_block}!is\_luminance@{is\_luminance}}
+\index{is\_luminance@{is\_luminance}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{is\_luminance()}{is\_luminance()}}
+{\footnotesize\ttfamily \label{structimage__block_ac3e154e58086017c6e405b8cc7e52c9f} 
+bool image\+\_\+block\+::is\+\_\+luminance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Test if this block is a luminance block with constant 1.\+0 alpha. 
+
+\begin{DoxyReturn}{반환값}
+{\ttfamily true} if the block is a luminance block , {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00859}{859}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00860\ \ \ \ \ \{}
+\DoxyCodeLine{00861\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ default\_alpha\ =\ this-\/>\mbox{\hyperlink{structimage__block_ab5d7af0f7b40343941660350ac186fab}{get\_default\_alpha}}();}
+\DoxyCodeLine{00862\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ alpha1\ =\ (this-\/>\mbox{\hyperlink{structimage__block_a4222fc6e5a97194fd342700adff483db}{data\_min}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ ==\ default\_alpha)\ \&\&}
+\DoxyCodeLine{00863\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (this-\/>\mbox{\hyperlink{structimage__block_af1b03600b295cf8dc02a333db04871fc}{data\_max}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ ==\ default\_alpha);}
+\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{structimage__block_a3250483facfd20ef4d418bd5f3ef4acb}{grayscale}}\ \&\&\ alpha1;}
+\DoxyCodeLine{00865\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structimage__block_ac3e154e58086017c6e405b8cc7e52c9f_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structimage__block_ac3e154e58086017c6e405b8cc7e52c9f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structimage__block_aa7f3d29c2f755e47a887d090c5997880}\index{image\_block@{image\_block}!is\_luminancealpha@{is\_luminancealpha}}
+\index{is\_luminancealpha@{is\_luminancealpha}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{is\_luminancealpha()}{is\_luminancealpha()}}
+{\footnotesize\ttfamily \label{structimage__block_aa7f3d29c2f755e47a887d090c5997880} 
+bool image\+\_\+block\+::is\+\_\+luminancealpha (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Test if this block is a luminance block with variable alpha. 
+
+\begin{DoxyReturn}{반환값}
+{\ttfamily true} if the block is a luminance + alpha block , {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00872}{872}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00873\ \ \ \ \ \{}
+\DoxyCodeLine{00874\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ default\_alpha\ =\ this-\/>\mbox{\hyperlink{structimage__block_ab5d7af0f7b40343941660350ac186fab}{get\_default\_alpha}}();}
+\DoxyCodeLine{00875\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ alpha1\ =\ (this-\/>\mbox{\hyperlink{structimage__block_a4222fc6e5a97194fd342700adff483db}{data\_min}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ ==\ default\_alpha)\ \&\&}
+\DoxyCodeLine{00876\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (this-\/>\mbox{\hyperlink{structimage__block_af1b03600b295cf8dc02a333db04871fc}{data\_max}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ ==\ default\_alpha);}
+\DoxyCodeLine{00877\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{structimage__block_a3250483facfd20ef4d418bd5f3ef4acb}{grayscale}}\ \&\&\ !alpha1;}
+\DoxyCodeLine{00878\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structimage__block_aa7f3d29c2f755e47a887d090c5997880_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structimage__block_aa7f3d29c2f755e47a887d090c5997880_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structimage__block_af99de7d75e1e380b31d70d131509caa9}\index{image\_block@{image\_block}!texel@{texel}}
+\index{texel@{texel}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{texel()}{texel()}}
+{\footnotesize\ttfamily \label{structimage__block_af99de7d75e1e380b31d70d131509caa9} 
+\mbox{\hyperlink{structvfloat4}{vfloat4}} image\+\_\+block\+::texel (\begin{DoxyParamCaption}\item[{unsigned int}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get an RGBA texel value from the data. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em index} & The texel index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The texel in RGBA component ordering. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00804}{804}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00805\ \ \ \ \ \{}
+\DoxyCodeLine{00806\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}}[index],}
+\DoxyCodeLine{00807\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}}[index],}
+\DoxyCodeLine{00808\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}}[index],}
+\DoxyCodeLine{00809\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structimage__block_a602c8c88dc1ceef33e833f6d6cbc09ea}{data\_a}}[index]);}
+\DoxyCodeLine{00810\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structimage__block_af99de7d75e1e380b31d70d131509caa9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structimage__block_a682b1ada02acb8369d6f6f30378b260e}\index{image\_block@{image\_block}!texel3@{texel3}}
+\index{texel3@{texel3}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{texel3()}{texel3()}}
+{\footnotesize\ttfamily \label{structimage__block_a682b1ada02acb8369d6f6f30378b260e} 
+\mbox{\hyperlink{structvfloat4}{vfloat4}} image\+\_\+block\+::texel3 (\begin{DoxyParamCaption}\item[{unsigned int}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get an RGB texel value from the data. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em index} & The texel index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The texel in RGB0 component ordering. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00819}{819}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00820\ \ \ \ \ \{}
+\DoxyCodeLine{00821\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1a2e12d78738b0b4b550f57b2dc05f07}{vfloat3}}(\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}}[index],}
+\DoxyCodeLine{00822\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}}[index],}
+\DoxyCodeLine{00823\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}}[index]);}
+\DoxyCodeLine{00824\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{structimage__block_a682b1ada02acb8369d6f6f30378b260e_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structimage__block_a682b1ada02acb8369d6f6f30378b260e_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structimage__block_ade6f78d73e016d4e9222cbe89f5b1eec}\index{image\_block@{image\_block}!alpha\_lns@{alpha\_lns}}
+\index{alpha\_lns@{alpha\_lns}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{alpha\_lns}{alpha\_lns}}
+{\footnotesize\ttfamily \label{structimage__block_ade6f78d73e016d4e9222cbe89f5b1eec} 
+uint8\+\_\+t image\+\_\+block\+::alpha\+\_\+lns\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}}
+
+
+
+Set to 1 if a texel is using HDR alpha endpoints (decompression only). 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00786}{786}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structimage__block_a6fd749c93e25e5e96748a10387c24a77}\index{image\_block@{image\_block}!channel\_weight@{channel\_weight}}
+\index{channel\_weight@{channel\_weight}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{channel\_weight}{channel\_weight}}
+{\footnotesize\ttfamily \label{structimage__block_a6fd749c93e25e5e96748a10387c24a77} 
+\mbox{\hyperlink{structvfloat4}{vfloat4}} image\+\_\+block\+::channel\+\_\+weight}
+
+
+
+The relative error significance of the color channels. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00774}{774}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structimage__block_a602c8c88dc1ceef33e833f6d6cbc09ea}\index{image\_block@{image\_block}!data\_a@{data\_a}}
+\index{data\_a@{data\_a}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{data\_a}{data\_a}}
+{\footnotesize\ttfamily \label{structimage__block_a602c8c88dc1ceef33e833f6d6cbc09ea} 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} float image\+\_\+block\+::data\+\_\+a\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}+\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\+\_\+\+SIMD\+\_\+\+WIDTH}} -\/ 1\mbox{]}}
+
+
+
+The input (compress) or output (decompress) data for the alpha color component. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00756}{756}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structimage__block_a298273079b0de525a0c12ced8bf98d13}\index{image\_block@{image\_block}!data\_b@{data\_b}}
+\index{data\_b@{data\_b}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{data\_b}{data\_b}}
+{\footnotesize\ttfamily \label{structimage__block_a298273079b0de525a0c12ced8bf98d13} 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} float image\+\_\+block\+::data\+\_\+b\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}+\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\+\_\+\+SIMD\+\_\+\+WIDTH}} -\/ 1\mbox{]}}
+
+
+
+The input (compress) or output (decompress) data for the blue color component. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00753}{753}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structimage__block_abc5bc97aed6bb644726f952818ec74b5}\index{image\_block@{image\_block}!data\_g@{data\_g}}
+\index{data\_g@{data\_g}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{data\_g}{data\_g}}
+{\footnotesize\ttfamily \label{structimage__block_abc5bc97aed6bb644726f952818ec74b5} 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} float image\+\_\+block\+::data\+\_\+g\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}+\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\+\_\+\+SIMD\+\_\+\+WIDTH}} -\/ 1\mbox{]}}
+
+
+
+The input (compress) or output (decompress) data for the green color component. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00750}{750}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structimage__block_af1b03600b295cf8dc02a333db04871fc}\index{image\_block@{image\_block}!data\_max@{data\_max}}
+\index{data\_max@{data\_max}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{data\_max}{data\_max}}
+{\footnotesize\ttfamily \label{structimage__block_af1b03600b295cf8dc02a333db04871fc} 
+\mbox{\hyperlink{structvfloat4}{vfloat4}} image\+\_\+block\+::data\+\_\+max}
+
+
+
+The max component value of all texels in the block. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00771}{771}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structimage__block_ac6bd4890338be887b61f857e37d23459}\index{image\_block@{image\_block}!data\_mean@{data\_mean}}
+\index{data\_mean@{data\_mean}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{data\_mean}{data\_mean}}
+{\footnotesize\ttfamily \label{structimage__block_ac6bd4890338be887b61f857e37d23459} 
+\mbox{\hyperlink{structvfloat4}{vfloat4}} image\+\_\+block\+::data\+\_\+mean}
+
+
+
+The mean component value of all texels in the block. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00768}{768}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structimage__block_a4222fc6e5a97194fd342700adff483db}\index{image\_block@{image\_block}!data\_min@{data\_min}}
+\index{data\_min@{data\_min}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{data\_min}{data\_min}}
+{\footnotesize\ttfamily \label{structimage__block_a4222fc6e5a97194fd342700adff483db} 
+\mbox{\hyperlink{structvfloat4}{vfloat4}} image\+\_\+block\+::data\+\_\+min}
+
+
+
+The min component value of all texels in the block. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00765}{765}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}\index{image\_block@{image\_block}!data\_r@{data\_r}}
+\index{data\_r@{data\_r}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{data\_r}{data\_r}}
+{\footnotesize\ttfamily \label{structimage__block_acd4ea54654959c7b325efe9d02aaeacc} 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} float image\+\_\+block\+::data\+\_\+r\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}+\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\+\_\+\+SIMD\+\_\+\+WIDTH}} -\/ 1\mbox{]}}
+
+
+
+The input (compress) or output (decompress) data for the red color component. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00747}{747}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structimage__block_af04bb4b721a6fb9f3993e2349a0df727}\index{image\_block@{image\_block}!decode\_unorm8@{decode\_unorm8}}
+\index{decode\_unorm8@{decode\_unorm8}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{decode\_unorm8}{decode\_unorm8}}
+{\footnotesize\ttfamily \label{structimage__block_af04bb4b721a6fb9f3993e2349a0df727} 
+bool image\+\_\+block\+::decode\+\_\+unorm8}
+
+
+
+Is the eventual decode using decode\+\_\+unorm8 rounding? 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00780}{780}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structimage__block_a3250483facfd20ef4d418bd5f3ef4acb}\index{image\_block@{image\_block}!grayscale@{grayscale}}
+\index{grayscale@{grayscale}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{grayscale}{grayscale}}
+{\footnotesize\ttfamily \label{structimage__block_a3250483facfd20ef4d418bd5f3ef4acb} 
+bool image\+\_\+block\+::grayscale}
+
+
+
+Is this grayscale block where R == G == B for all texels? 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00777}{777}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structimage__block_a111c7f9821d5ebe6e9d0140f800c6bc2}\index{image\_block@{image\_block}!origin\_texel@{origin\_texel}}
+\index{origin\_texel@{origin\_texel}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{origin\_texel}{origin\_texel}}
+{\footnotesize\ttfamily \label{structimage__block_a111c7f9821d5ebe6e9d0140f800c6bc2} 
+\mbox{\hyperlink{structvfloat4}{vfloat4}} image\+\_\+block\+::origin\+\_\+texel}
+
+
+
+The original data for texel 0 for constant color block encoding. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00762}{762}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structimage__block_af1a9e601f3d03dc488993b81258058e0}\index{image\_block@{image\_block}!rgb\_lns@{rgb\_lns}}
+\index{rgb\_lns@{rgb\_lns}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{rgb\_lns}{rgb\_lns}}
+{\footnotesize\ttfamily \label{structimage__block_af1a9e601f3d03dc488993b81258058e0} 
+uint8\+\_\+t image\+\_\+block\+::rgb\+\_\+lns\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}}
+
+
+
+Set to 1 if a texel is using HDR RGB endpoints (decompression only). 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00783}{783}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structimage__block_a05174b1db0b9131ad61fc49f3aa74676}\index{image\_block@{image\_block}!texel\_count@{texel\_count}}
+\index{texel\_count@{texel\_count}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{texel\_count}{texel\_count}}
+{\footnotesize\ttfamily \label{structimage__block_a05174b1db0b9131ad61fc49f3aa74676} 
+uint8\+\_\+t image\+\_\+block\+::texel\+\_\+count}
+
+
+
+The number of texels in the block. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00759}{759}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structimage__block_a352aaf95790a294ff0b8b037b49def86}\index{image\_block@{image\_block}!xpos@{xpos}}
+\index{xpos@{xpos}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{xpos}{xpos}}
+{\footnotesize\ttfamily \label{structimage__block_a352aaf95790a294ff0b8b037b49def86} 
+unsigned int image\+\_\+block\+::xpos}
+
+
+
+The X position of this block in the input or output image. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00789}{789}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structimage__block_a77a79aa3bc8909bb34673e86ee30584f}\index{image\_block@{image\_block}!ypos@{ypos}}
+\index{ypos@{ypos}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{ypos}{ypos}}
+{\footnotesize\ttfamily \label{structimage__block_a77a79aa3bc8909bb34673e86ee30584f} 
+unsigned int image\+\_\+block\+::ypos}
+
+
+
+The Y position of this block in the input or output image. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00792}{792}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structimage__block_aef3e6199531833e9b855f7fde1d06593}\index{image\_block@{image\_block}!zpos@{zpos}}
+\index{zpos@{zpos}!image\_block@{image\_block}}
+\doxysubsubsection{\texorpdfstring{zpos}{zpos}}
+{\footnotesize\ttfamily \label{structimage__block_aef3e6199531833e9b855f7fde1d06593} 
+unsigned int image\+\_\+block\+::zpos}
+
+
+
+The Z position of this block in the input or output image. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00795}{795}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__internal_8h}{astcenc\+\_\+internal.\+h}}\end{DoxyCompactItemize}

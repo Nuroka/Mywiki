@@ -1,0 +1,217 @@
+\doxysection{C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/astcenccli\+\_\+toplevel\+\_\+help.cpp 파일 참조}
+\hypertarget{astcenccli__toplevel__help_8cpp}{}\label{astcenccli__toplevel__help_8cpp}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_toplevel\_help.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenccli\_toplevel\_help.cpp}}
+{\ttfamily \#include "{}astcenccli\+\_\+internal.\+h"{}}\newline
+{\ttfamily \#include "{}astcenccli\+\_\+version.\+h"{}}\newline
+astcenccli\+\_\+toplevel\+\_\+help.\+cpp에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenccli__toplevel__help_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a3cf209b603114ef9a2c2c9e28697bbe7}{astcenc\+\_\+print\+\_\+header}} ()
+\begin{DoxyCompactList}\small\item\em Print the tool copyright and version header to stdout. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_af5bf7c6ac05f0f401cfde7d73ed2b852}{astcenc\+\_\+print\+\_\+shorthelp}} ()
+\begin{DoxyCompactList}\small\item\em Print the tool copyright, version, and short-\/form help to stdout. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a7377ad0be8285dd96c932d2744fc4641}{astcenc\+\_\+print\+\_\+longhelp}} ()
+\begin{DoxyCompactList}\small\item\em Print the tool copyright, version, and long-\/form help to stdout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_afb573e80aa8090f02b3424f167ff1ae1}{astcenc\+\_\+copyright\+\_\+string}}
+\begin{DoxyCompactList}\small\item\em Functions for printing build info and help messages. \end{DoxyCompactList}\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a1143e88ff4e7fd8c7b364556dd4a64f4}{astcenc\+\_\+short\+\_\+help}}
+\begin{DoxyCompactList}\small\item\em The short-\/form help text. \end{DoxyCompactList}\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a8f1389189daa58ba75bc5fafa8742739}{astcenc\+\_\+long\+\_\+help}}
+\begin{DoxyCompactList}\small\item\em The long-\/form help text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\Hypertarget{astcenccli__toplevel__help_8cpp_a3cf209b603114ef9a2c2c9e28697bbe7}\index{astcenccli\_toplevel\_help.cpp@{astcenccli\_toplevel\_help.cpp}!astcenc\_print\_header@{astcenc\_print\_header}}
+\index{astcenc\_print\_header@{astcenc\_print\_header}!astcenccli\_toplevel\_help.cpp@{astcenccli\_toplevel\_help.cpp}}
+\doxysubsubsection{\texorpdfstring{astcenc\_print\_header()}{astcenc\_print\_header()}}
+{\footnotesize\ttfamily \label{astcenccli__toplevel__help_8cpp_a3cf209b603114ef9a2c2c9e28697bbe7} 
+void astcenc\+\_\+print\+\_\+header (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Print the tool copyright and version header to stdout. 
+
+
+
+\mbox{\hyperlink{astcenccli__toplevel__help_8cpp_source}{astcenccli\+\_\+toplevel\+\_\+help.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_source_l00555}{555}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00556\ \{}
+\DoxyCodeLine{00557\ \textcolor{preprocessor}{\#if\ (ASTCENC\_AVX\ ==\ 2)}}
+\DoxyCodeLine{00558\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ simdtype\ =\ \textcolor{stringliteral}{"{}avx2"{}};}
+\DoxyCodeLine{00559\ \textcolor{preprocessor}{\#elif\ (ASTCENC\_SSE\ ==\ 41)}}
+\DoxyCodeLine{00560\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ simdtype\ =\ \textcolor{stringliteral}{"{}sse4.1"{}};}
+\DoxyCodeLine{00561\ \textcolor{preprocessor}{\#elif\ (ASTCENC\_SSE\ ==\ 20)}}
+\DoxyCodeLine{00562\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ simdtype\ =\ \textcolor{stringliteral}{"{}sse2"{}};}
+\DoxyCodeLine{00563\ \textcolor{preprocessor}{\#elif\ (ASTCENC\_NEON\ ==\ 1)}}
+\DoxyCodeLine{00564\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ simdtype\ =\ \textcolor{stringliteral}{"{}neon"{}};}
+\DoxyCodeLine{00565\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00566\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ simdtype\ =\ \textcolor{stringliteral}{"{}none"{}};}
+\DoxyCodeLine{00567\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00568\ }
+\DoxyCodeLine{00569\ \textcolor{preprocessor}{\#if\ (ASTCENC\_POPCNT\ ==\ 1)}}
+\DoxyCodeLine{00570\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ pcnttype\ =\ \textcolor{stringliteral}{"{}+popcnt"{}};}
+\DoxyCodeLine{00571\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00572\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ pcnttype\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00573\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00574\ }
+\DoxyCodeLine{00575\ \textcolor{preprocessor}{\#if\ (ASTCENC\_F16C\ ==\ 1)}}
+\DoxyCodeLine{00576\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ f16ctype\ =\ \textcolor{stringliteral}{"{}+f16c"{}};}
+\DoxyCodeLine{00577\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00578\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ f16ctype\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00579\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00580\ }
+\DoxyCodeLine{00581\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ bits\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void}*)\ *\ 8);}
+\DoxyCodeLine{00582\ \ \ \ \ printf(\mbox{\hyperlink{astcenccli__toplevel__help_8cpp_afb573e80aa8090f02b3424f167ff1ae1}{astcenc\_copyright\_string}},}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \ \ \ VERSION\_STRING,\ bits,\ simdtype,\ pcnttype,\ f16ctype,\ YEAR\_STRING);}
+\DoxyCodeLine{00584\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenccli__toplevel__help_8cpp_a3cf209b603114ef9a2c2c9e28697bbe7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenccli__toplevel__help_8cpp_a7377ad0be8285dd96c932d2744fc4641}\index{astcenccli\_toplevel\_help.cpp@{astcenccli\_toplevel\_help.cpp}!astcenc\_print\_longhelp@{astcenc\_print\_longhelp}}
+\index{astcenc\_print\_longhelp@{astcenc\_print\_longhelp}!astcenccli\_toplevel\_help.cpp@{astcenccli\_toplevel\_help.cpp}}
+\doxysubsubsection{\texorpdfstring{astcenc\_print\_longhelp()}{astcenc\_print\_longhelp()}}
+{\footnotesize\ttfamily \label{astcenccli__toplevel__help_8cpp_a7377ad0be8285dd96c932d2744fc4641} 
+void astcenc\+\_\+print\+\_\+longhelp (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Print the tool copyright, version, and long-\/form help to stdout. 
+
+
+
+\mbox{\hyperlink{astcenccli__toplevel__help_8cpp_source}{astcenccli\+\_\+toplevel\+\_\+help.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_source_l00594}{594}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00595\ \{}
+\DoxyCodeLine{00596\ \ \ \ \ \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a3cf209b603114ef9a2c2c9e28697bbe7}{astcenc\_print\_header}}();}
+\DoxyCodeLine{00597\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a8f1389189daa58ba75bc5fafa8742739}{astcenc\_long\_help}});}
+\DoxyCodeLine{00598\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{astcenccli__toplevel__help_8cpp_a7377ad0be8285dd96c932d2744fc4641_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenccli__toplevel__help_8cpp_a7377ad0be8285dd96c932d2744fc4641_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenccli__toplevel__help_8cpp_af5bf7c6ac05f0f401cfde7d73ed2b852}\index{astcenccli\_toplevel\_help.cpp@{astcenccli\_toplevel\_help.cpp}!astcenc\_print\_shorthelp@{astcenc\_print\_shorthelp}}
+\index{astcenc\_print\_shorthelp@{astcenc\_print\_shorthelp}!astcenccli\_toplevel\_help.cpp@{astcenccli\_toplevel\_help.cpp}}
+\doxysubsubsection{\texorpdfstring{astcenc\_print\_shorthelp()}{astcenc\_print\_shorthelp()}}
+{\footnotesize\ttfamily \label{astcenccli__toplevel__help_8cpp_af5bf7c6ac05f0f401cfde7d73ed2b852} 
+void astcenc\+\_\+print\+\_\+shorthelp (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Print the tool copyright, version, and short-\/form help to stdout. 
+
+
+
+\mbox{\hyperlink{astcenccli__toplevel__help_8cpp_source}{astcenccli\+\_\+toplevel\+\_\+help.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_source_l00587}{587}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00588\ \{}
+\DoxyCodeLine{00589\ \ \ \ \ \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a3cf209b603114ef9a2c2c9e28697bbe7}{astcenc\_print\_header}}();}
+\DoxyCodeLine{00590\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_a1143e88ff4e7fd8c7b364556dd4a64f4}{astcenc\_short\_help}});}
+\DoxyCodeLine{00591\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{astcenccli__toplevel__help_8cpp_af5bf7c6ac05f0f401cfde7d73ed2b852_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenccli__toplevel__help_8cpp_af5bf7c6ac05f0f401cfde7d73ed2b852_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{변수 문서화}
+\Hypertarget{astcenccli__toplevel__help_8cpp_afb573e80aa8090f02b3424f167ff1ae1}\index{astcenccli\_toplevel\_help.cpp@{astcenccli\_toplevel\_help.cpp}!astcenc\_copyright\_string@{astcenc\_copyright\_string}}
+\index{astcenc\_copyright\_string@{astcenc\_copyright\_string}!astcenccli\_toplevel\_help.cpp@{astcenccli\_toplevel\_help.cpp}}
+\doxysubsubsection{\texorpdfstring{astcenc\_copyright\_string}{astcenc\_copyright\_string}}
+{\footnotesize\ttfamily \label{astcenccli__toplevel__help_8cpp_afb573e80aa8090f02b3424f167ff1ae1} 
+const char\texorpdfstring{$\ast$}{*} astcenc\+\_\+copyright\+\_\+string\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{R\textcolor{stringliteral}{"{}(astcenc\ v\%s,\ \%u-\/bit\ \%s\%s\%s}}
+\DoxyCodeLine{\textcolor{stringliteral}{Copyright\ (c)\ 2011-\/\%s\ Arm\ Limited.\ All\ rights\ reserved.}}
+\DoxyCodeLine{\textcolor{stringliteral}{)"{}}}
+
+\end{DoxyCode}
+
+
+Functions for printing build info and help messages. 
+
+The version header. 
+
+\mbox{\hyperlink{astcenccli__toplevel__help_8cpp_source}{astcenccli\+\_\+toplevel\+\_\+help.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_source_l00026}{26}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__toplevel__help_8cpp_a8f1389189daa58ba75bc5fafa8742739}\index{astcenccli\_toplevel\_help.cpp@{astcenccli\_toplevel\_help.cpp}!astcenc\_long\_help@{astcenc\_long\_help}}
+\index{astcenc\_long\_help@{astcenc\_long\_help}!astcenccli\_toplevel\_help.cpp@{astcenccli\_toplevel\_help.cpp}}
+\doxysubsubsection{\texorpdfstring{astcenc\_long\_help}{astcenc\_long\_help}}
+{\footnotesize\ttfamily \label{astcenccli__toplevel__help_8cpp_a8f1389189daa58ba75bc5fafa8742739} 
+const char\texorpdfstring{$\ast$}{*} astcenc\+\_\+long\+\_\+help\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The long-\/form help text. 
+
+
+
+\mbox{\hyperlink{astcenccli__toplevel__help_8cpp_source}{astcenccli\+\_\+toplevel\+\_\+help.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_source_l00072}{72}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenccli__toplevel__help_8cpp_a1143e88ff4e7fd8c7b364556dd4a64f4}\index{astcenccli\_toplevel\_help.cpp@{astcenccli\_toplevel\_help.cpp}!astcenc\_short\_help@{astcenc\_short\_help}}
+\index{astcenc\_short\_help@{astcenc\_short\_help}!astcenccli\_toplevel\_help.cpp@{astcenccli\_toplevel\_help.cpp}}
+\doxysubsubsection{\texorpdfstring{astcenc\_short\_help}{astcenc\_short\_help}}
+{\footnotesize\ttfamily \label{astcenccli__toplevel__help_8cpp_a1143e88ff4e7fd8c7b364556dd4a64f4} 
+const char\texorpdfstring{$\ast$}{*} astcenc\+\_\+short\+\_\+help\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The short-\/form help text. 
+
+
+
+\mbox{\hyperlink{astcenccli__toplevel__help_8cpp_source}{astcenccli\+\_\+toplevel\+\_\+help.\+cpp}} 파일의 \mbox{\hyperlink{astcenccli__toplevel__help_8cpp_source_l00032}{32}} 번째 라인에서 정의되었습니다.
+

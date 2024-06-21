@@ -1,0 +1,5 @@
+<map id="min" name="min">
+<area shape="rect" id="Node000001" title="Return the min vector of a vector and a scalar." alt="" coords="5,5,48,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#a165b3db4e7ced1551e1880a01a01150b" title="Return the min vector of two vectors." alt="" coords="96,5,139,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="48,15,82,15,82,21,48,21"/>
+</map>

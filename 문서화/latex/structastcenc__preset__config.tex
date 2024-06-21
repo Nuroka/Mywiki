@@ -1,0 +1,247 @@
+\doxysection{astcenc\+\_\+preset\+\_\+config 구조체 참조}
+\hypertarget{structastcenc__preset__config}{}\label{structastcenc__preset__config}\index{astcenc\_preset\_config@{astcenc\_preset\_config}}
+
+
+Functions for the library entrypoint.  
+
+
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{structastcenc__preset__config_ad2c22e57a9bab30c69f2850e69a7ed54}{quality}}
+\item 
+unsigned int \mbox{\hyperlink{structastcenc__preset__config_acf5e41b7b256c873d9f09ec9fb121239}{tune\+\_\+partition\+\_\+count\+\_\+limit}}
+\item 
+unsigned int \mbox{\hyperlink{structastcenc__preset__config_a30c31c4f433ceb4bd5c84160bce17579}{tune\+\_\+2partition\+\_\+index\+\_\+limit}}
+\item 
+unsigned int \mbox{\hyperlink{structastcenc__preset__config_a4bf9522ca56778d84b3a0dff30d50661}{tune\+\_\+3partition\+\_\+index\+\_\+limit}}
+\item 
+unsigned int \mbox{\hyperlink{structastcenc__preset__config_afa6f33c97e7259187d2a5214edefa768}{tune\+\_\+4partition\+\_\+index\+\_\+limit}}
+\item 
+unsigned int \mbox{\hyperlink{structastcenc__preset__config_acbfde9444b6b52154aa02063bda1b540}{tune\+\_\+block\+\_\+mode\+\_\+limit}}
+\item 
+unsigned int \mbox{\hyperlink{structastcenc__preset__config_abecc424fda97b6cc1904ba0b3e696010}{tune\+\_\+refinement\+\_\+limit}}
+\item 
+unsigned int \mbox{\hyperlink{structastcenc__preset__config_a9069a960517babf360357af13bfd0068}{tune\+\_\+candidate\+\_\+limit}}
+\item 
+unsigned int \mbox{\hyperlink{structastcenc__preset__config_a5d05f24b5edf31758ab202b7c31ef101}{tune\+\_\+2partitioning\+\_\+candidate\+\_\+limit}}
+\item 
+unsigned int \mbox{\hyperlink{structastcenc__preset__config_a5b39972e278c1434041c7d2a502e0a5f}{tune\+\_\+3partitioning\+\_\+candidate\+\_\+limit}}
+\item 
+unsigned int \mbox{\hyperlink{structastcenc__preset__config_ad339f65364dc71f41c9bd46f76714c7d}{tune\+\_\+4partitioning\+\_\+candidate\+\_\+limit}}
+\item 
+float \mbox{\hyperlink{structastcenc__preset__config_ae5c376ae1d297c5964a2c0287eced93e}{tune\+\_\+db\+\_\+limit\+\_\+a\+\_\+base}}
+\item 
+float \mbox{\hyperlink{structastcenc__preset__config_aadcfa3ff8065aa55a872b228aa6ce25d}{tune\+\_\+db\+\_\+limit\+\_\+b\+\_\+base}}
+\item 
+float \mbox{\hyperlink{structastcenc__preset__config_a299e437d6cb85e33b82ebcbaa3b7499c}{tune\+\_\+mse\+\_\+overshoot}}
+\item 
+float \mbox{\hyperlink{structastcenc__preset__config_a05fd1d30e25cc9c8ce01c1f83fc112a0}{tune\+\_\+2partition\+\_\+early\+\_\+out\+\_\+limit\+\_\+factor}}
+\item 
+float \mbox{\hyperlink{structastcenc__preset__config_aa79cde2f41ccf52ba3deee0c45fb9acc}{tune\+\_\+3partition\+\_\+early\+\_\+out\+\_\+limit\+\_\+factor}}
+\item 
+float \mbox{\hyperlink{structastcenc__preset__config_aa04a8e1cbacb8567050d3fb0bc25a272}{tune\+\_\+2plane\+\_\+early\+\_\+out\+\_\+limit\+\_\+correlation}}
+\item 
+float \mbox{\hyperlink{structastcenc__preset__config_ae33a12c44e9ebbff5edd682ffb14f6fb}{tune\+\_\+search\+\_\+mode0\+\_\+enable}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+Functions for the library entrypoint. 
+
+Record of the quality tuning parameter values.
+
+See the {\ttfamily \doxylink{structastcenc__config}{astcenc\+\_\+config}} structure for detailed parameter documentation.
+
+Note that the mse\+\_\+overshoot entries are scaling factors relative to the base MSE to hit db\+\_\+limit. A 20\% overshoot is harder to hit for a higher base db\+\_\+limit, so we may actually use lower ratios for the more through search presets because the underlying db\+\_\+limit is so much higher. 
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00039}{39}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structastcenc__preset__config_ad2c22e57a9bab30c69f2850e69a7ed54}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!quality@{quality}}
+\index{quality@{quality}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{quality}{quality}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_ad2c22e57a9bab30c69f2850e69a7ed54} 
+float astcenc\+\_\+preset\+\_\+config\+::quality}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00041}{41}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__preset__config_a05fd1d30e25cc9c8ce01c1f83fc112a0}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!tune\_2partition\_early\_out\_limit\_factor@{tune\_2partition\_early\_out\_limit\_factor}}
+\index{tune\_2partition\_early\_out\_limit\_factor@{tune\_2partition\_early\_out\_limit\_factor}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_2partition\_early\_out\_limit\_factor}{tune\_2partition\_early\_out\_limit\_factor}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_a05fd1d30e25cc9c8ce01c1f83fc112a0} 
+float astcenc\+\_\+preset\+\_\+config\+::tune\+\_\+2partition\+\_\+early\+\_\+out\+\_\+limit\+\_\+factor}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00055}{55}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__preset__config_a30c31c4f433ceb4bd5c84160bce17579}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!tune\_2partition\_index\_limit@{tune\_2partition\_index\_limit}}
+\index{tune\_2partition\_index\_limit@{tune\_2partition\_index\_limit}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_2partition\_index\_limit}{tune\_2partition\_index\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_a30c31c4f433ceb4bd5c84160bce17579} 
+unsigned int astcenc\+\_\+preset\+\_\+config\+::tune\+\_\+2partition\+\_\+index\+\_\+limit}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00043}{43}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__preset__config_a5d05f24b5edf31758ab202b7c31ef101}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!tune\_2partitioning\_candidate\_limit@{tune\_2partitioning\_candidate\_limit}}
+\index{tune\_2partitioning\_candidate\_limit@{tune\_2partitioning\_candidate\_limit}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_2partitioning\_candidate\_limit}{tune\_2partitioning\_candidate\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_a5d05f24b5edf31758ab202b7c31ef101} 
+unsigned int astcenc\+\_\+preset\+\_\+config\+::tune\+\_\+2partitioning\+\_\+candidate\+\_\+limit}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00049}{49}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__preset__config_aa04a8e1cbacb8567050d3fb0bc25a272}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!tune\_2plane\_early\_out\_limit\_correlation@{tune\_2plane\_early\_out\_limit\_correlation}}
+\index{tune\_2plane\_early\_out\_limit\_correlation@{tune\_2plane\_early\_out\_limit\_correlation}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_2plane\_early\_out\_limit\_correlation}{tune\_2plane\_early\_out\_limit\_correlation}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_aa04a8e1cbacb8567050d3fb0bc25a272} 
+float astcenc\+\_\+preset\+\_\+config\+::tune\+\_\+2plane\+\_\+early\+\_\+out\+\_\+limit\+\_\+correlation}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00057}{57}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__preset__config_aa79cde2f41ccf52ba3deee0c45fb9acc}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!tune\_3partition\_early\_out\_limit\_factor@{tune\_3partition\_early\_out\_limit\_factor}}
+\index{tune\_3partition\_early\_out\_limit\_factor@{tune\_3partition\_early\_out\_limit\_factor}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_3partition\_early\_out\_limit\_factor}{tune\_3partition\_early\_out\_limit\_factor}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_aa79cde2f41ccf52ba3deee0c45fb9acc} 
+float astcenc\+\_\+preset\+\_\+config\+::tune\+\_\+3partition\+\_\+early\+\_\+out\+\_\+limit\+\_\+factor}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00056}{56}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__preset__config_a4bf9522ca56778d84b3a0dff30d50661}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!tune\_3partition\_index\_limit@{tune\_3partition\_index\_limit}}
+\index{tune\_3partition\_index\_limit@{tune\_3partition\_index\_limit}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_3partition\_index\_limit}{tune\_3partition\_index\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_a4bf9522ca56778d84b3a0dff30d50661} 
+unsigned int astcenc\+\_\+preset\+\_\+config\+::tune\+\_\+3partition\+\_\+index\+\_\+limit}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00044}{44}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__preset__config_a5b39972e278c1434041c7d2a502e0a5f}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!tune\_3partitioning\_candidate\_limit@{tune\_3partitioning\_candidate\_limit}}
+\index{tune\_3partitioning\_candidate\_limit@{tune\_3partitioning\_candidate\_limit}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_3partitioning\_candidate\_limit}{tune\_3partitioning\_candidate\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_a5b39972e278c1434041c7d2a502e0a5f} 
+unsigned int astcenc\+\_\+preset\+\_\+config\+::tune\+\_\+3partitioning\+\_\+candidate\+\_\+limit}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00050}{50}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__preset__config_afa6f33c97e7259187d2a5214edefa768}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!tune\_4partition\_index\_limit@{tune\_4partition\_index\_limit}}
+\index{tune\_4partition\_index\_limit@{tune\_4partition\_index\_limit}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_4partition\_index\_limit}{tune\_4partition\_index\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_afa6f33c97e7259187d2a5214edefa768} 
+unsigned int astcenc\+\_\+preset\+\_\+config\+::tune\+\_\+4partition\+\_\+index\+\_\+limit}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00045}{45}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__preset__config_ad339f65364dc71f41c9bd46f76714c7d}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!tune\_4partitioning\_candidate\_limit@{tune\_4partitioning\_candidate\_limit}}
+\index{tune\_4partitioning\_candidate\_limit@{tune\_4partitioning\_candidate\_limit}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_4partitioning\_candidate\_limit}{tune\_4partitioning\_candidate\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_ad339f65364dc71f41c9bd46f76714c7d} 
+unsigned int astcenc\+\_\+preset\+\_\+config\+::tune\+\_\+4partitioning\+\_\+candidate\+\_\+limit}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00051}{51}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__preset__config_acbfde9444b6b52154aa02063bda1b540}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!tune\_block\_mode\_limit@{tune\_block\_mode\_limit}}
+\index{tune\_block\_mode\_limit@{tune\_block\_mode\_limit}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_block\_mode\_limit}{tune\_block\_mode\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_acbfde9444b6b52154aa02063bda1b540} 
+unsigned int astcenc\+\_\+preset\+\_\+config\+::tune\+\_\+block\+\_\+mode\+\_\+limit}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00046}{46}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__preset__config_a9069a960517babf360357af13bfd0068}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!tune\_candidate\_limit@{tune\_candidate\_limit}}
+\index{tune\_candidate\_limit@{tune\_candidate\_limit}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_candidate\_limit}{tune\_candidate\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_a9069a960517babf360357af13bfd0068} 
+unsigned int astcenc\+\_\+preset\+\_\+config\+::tune\+\_\+candidate\+\_\+limit}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00048}{48}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__preset__config_ae5c376ae1d297c5964a2c0287eced93e}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!tune\_db\_limit\_a\_base@{tune\_db\_limit\_a\_base}}
+\index{tune\_db\_limit\_a\_base@{tune\_db\_limit\_a\_base}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_db\_limit\_a\_base}{tune\_db\_limit\_a\_base}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_ae5c376ae1d297c5964a2c0287eced93e} 
+float astcenc\+\_\+preset\+\_\+config\+::tune\+\_\+db\+\_\+limit\+\_\+a\+\_\+base}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00052}{52}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__preset__config_aadcfa3ff8065aa55a872b228aa6ce25d}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!tune\_db\_limit\_b\_base@{tune\_db\_limit\_b\_base}}
+\index{tune\_db\_limit\_b\_base@{tune\_db\_limit\_b\_base}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_db\_limit\_b\_base}{tune\_db\_limit\_b\_base}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_aadcfa3ff8065aa55a872b228aa6ce25d} 
+float astcenc\+\_\+preset\+\_\+config\+::tune\+\_\+db\+\_\+limit\+\_\+b\+\_\+base}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00053}{53}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__preset__config_a299e437d6cb85e33b82ebcbaa3b7499c}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!tune\_mse\_overshoot@{tune\_mse\_overshoot}}
+\index{tune\_mse\_overshoot@{tune\_mse\_overshoot}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_mse\_overshoot}{tune\_mse\_overshoot}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_a299e437d6cb85e33b82ebcbaa3b7499c} 
+float astcenc\+\_\+preset\+\_\+config\+::tune\+\_\+mse\+\_\+overshoot}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00054}{54}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__preset__config_acf5e41b7b256c873d9f09ec9fb121239}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!tune\_partition\_count\_limit@{tune\_partition\_count\_limit}}
+\index{tune\_partition\_count\_limit@{tune\_partition\_count\_limit}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_partition\_count\_limit}{tune\_partition\_count\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_acf5e41b7b256c873d9f09ec9fb121239} 
+unsigned int astcenc\+\_\+preset\+\_\+config\+::tune\+\_\+partition\+\_\+count\+\_\+limit}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00042}{42}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__preset__config_abecc424fda97b6cc1904ba0b3e696010}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!tune\_refinement\_limit@{tune\_refinement\_limit}}
+\index{tune\_refinement\_limit@{tune\_refinement\_limit}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_refinement\_limit}{tune\_refinement\_limit}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_abecc424fda97b6cc1904ba0b3e696010} 
+unsigned int astcenc\+\_\+preset\+\_\+config\+::tune\+\_\+refinement\+\_\+limit}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00047}{47}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structastcenc__preset__config_ae33a12c44e9ebbff5edd682ffb14f6fb}\index{astcenc\_preset\_config@{astcenc\_preset\_config}!tune\_search\_mode0\_enable@{tune\_search\_mode0\_enable}}
+\index{tune\_search\_mode0\_enable@{tune\_search\_mode0\_enable}!astcenc\_preset\_config@{astcenc\_preset\_config}}
+\doxysubsubsection{\texorpdfstring{tune\_search\_mode0\_enable}{tune\_search\_mode0\_enable}}
+{\footnotesize\ttfamily \label{structastcenc__preset__config_ae33a12c44e9ebbff5edd682ffb14f6fb} 
+float astcenc\+\_\+preset\+\_\+config\+::tune\+\_\+search\+\_\+mode0\+\_\+enable}
+
+
+
+\mbox{\hyperlink{astcenc__entry_8cpp_source}{astcenc\+\_\+entry.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__entry_8cpp_source_l00058}{58}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__entry_8cpp}{astcenc\+\_\+entry.\+cpp}}\end{DoxyCompactItemize}

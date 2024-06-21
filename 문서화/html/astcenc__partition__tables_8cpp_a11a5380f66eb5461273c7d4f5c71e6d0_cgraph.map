@@ -1,0 +1,11 @@
+<map id="generate_one_partition_info_entry" name="generate_one_partition_info_entry">
+<area shape="rect" id="Node000001" title="Generate a single partition info structure." alt="" coords="5,47,159,87"/>
+<area shape="rect" id="Node000002" href="$namespaceastc.html#af78c0d31374aa9923633a3a2abf8d738" title="Return the minimum of two values." alt="" coords="270,5,346,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,48,256,26,258,32,160,53"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib_8h.html#ae36622d837079b4899b971731c2dda37" title="Round a count up to the largest multiple of the SIMD width." alt="" coords="207,55,409,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="159,65,193,65,193,70,159,70"/>
+<area shape="rect" id="Node000004" href="$astcenc__partition__tables_8cpp.html#a57b1b10c9fc1e915dcf985ea37a8cbf6" title="Select texel assignment for a single coordinate." alt="" coords="253,104,363,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="160,81,240,99,239,104,158,87"/>
+<area shape="rect" id="Node000005" href="$astcenc__partition__tables_8cpp.html#a28958825dfb33d5371f54dae6d247f8a" title="Hash function used for procedural partition assignment." alt="" coords="457,104,521,129"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="363,114,443,114,443,119,363,119"/>
+</map>

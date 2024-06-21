@@ -1,0 +1,12 @@
+<map id="haccumulate" name="haccumulate">
+<area shape="rect" id="Node000001" title="Accumulate masked lane&#45;wise sums for a vector." alt="" coords="5,79,101,104"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#aaa291a197219a09a2e1103aec6945b3c" title="Accumulate lane&#45;wise sums for a vector, folded 4&#45;wide." alt="" coords="149,29,245,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,76,146,57,147,62,92,81"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#a844ab5b69b84569f033be33bf5fb9fbc" title="Return lanes from b if cond is set, else a." alt="" coords="169,79,226,104"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="101,89,155,89,155,94,101,94"/>
+<area shape="rect" id="Node000004" href="$structvfloat8.html#ad178ffd2ad80124776b5cafa60bba174" title="Factory that returns a vector of zeros." alt="" coords="152,128,243,153"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="92,102,147,121,146,126,90,107"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="173,30,168,21,170,11,181,5,197,3,217,6,226,15,222,18,215,11,197,8,182,10,175,15,173,20,177,28"/>
+<area shape="rect" id="Node000005" href="$structvfloat8.html#af6bb9e67c13460dbf072cafd6fdb5805" title="Construct from zero&#45;initialized value." alt="" coords="293,128,396,153"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="243,138,279,138,279,143,243,143"/>
+</map>

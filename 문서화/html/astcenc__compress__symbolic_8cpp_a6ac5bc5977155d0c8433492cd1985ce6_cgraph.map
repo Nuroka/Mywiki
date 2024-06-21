@@ -1,0 +1,16 @@
+<map id="prepare_block_statistics" name="prepare_block_statistics">
+<area shape="rect" id="Node000001" title="Determine the lowest cross&#45;channel correlation factor." alt="" coords="5,153,168,179"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#aacd26478e4fe1f97a5d47e8adaacc898" title="Return the horizontal sum of a vector." alt="" coords="229,29,293,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,151,150,111,215,64,222,59,224,64,217,68,154,115,104,155"/>
+<area shape="rect" id="Node000003" href="$namespaceastc.html#aa80ae2eee0ffb5b754bdf0bb08b8759b" title="Test if a float value is a nan." alt="" coords="218,79,305,104"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="117,151,217,107,219,112,119,156"/>
+<area shape="rect" id="Node000004" href="$structvfloat4.html#a04462a7815432c6bc3ce1b5e5d11e4fc" title="Get the scalar value of a single lane." alt="" coords="216,128,307,153"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="168,152,202,147,203,152,169,157"/>
+<area shape="rect" id="Node000005" href="$namespaceastc.html#a83a55552d03399cdff6cf2fed8312c9f" title="Return the maximum of two values." alt="" coords="221,177,301,203"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="169,175,208,180,207,185,168,180"/>
+<area shape="rect" id="Node000006" href="$namespaceastc.html#af78c0d31374aa9923633a3a2abf8d738" title="Return the minimum of two values." alt="" coords="223,227,299,252"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="119,176,218,219,216,224,117,181"/>
+<area shape="rect" id="Node000007" href="$namespaceastc.html#a5e60e4c749fe4fc5c746f481af9564f4" title="Fast approximation of 1.0 / sqrt(val)." alt="" coords="221,276,302,301"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="105,177,155,216,217,261,226,267,223,271,215,266,151,220,102,181"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="232,31,226,21,230,11,242,5,261,3,285,6,295,15,292,19,283,11,261,8,243,10,234,15,232,20,237,28"/>
+</map>

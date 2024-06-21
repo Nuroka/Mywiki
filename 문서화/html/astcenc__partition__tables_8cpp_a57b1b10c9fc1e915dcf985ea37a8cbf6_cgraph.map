@@ -1,0 +1,5 @@
+<map id="select_partition" name="select_partition">
+<area shape="rect" id="Node000001" title="Select texel assignment for a single coordinate." alt="" coords="5,5,116,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__partition__tables_8cpp.html#a28958825dfb33d5371f54dae6d247f8a" title="Hash function used for procedural partition assignment." alt="" coords="164,5,228,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,15,150,15,150,21,116,21"/>
+</map>

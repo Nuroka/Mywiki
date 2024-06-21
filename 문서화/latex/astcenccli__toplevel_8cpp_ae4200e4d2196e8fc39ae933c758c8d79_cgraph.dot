@@ -1,0 +1,24 @@
+digraph "image_preprocess_premultiply"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="image_preprocess_premultiply",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Create a copy of input with premultiplied color data."];
+  Node1 -> Node2 [id="edge9_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="image_get_pixel",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__toplevel_8cpp.html#adf36913bdb208f04c72d7ed274e4ef52",tooltip="Get the value of a single pixel in an image."];
+  Node2 -> Node3 [id="edge10_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="float16_to_float",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__vecmathlib__neon__4_8h.html#afd7aa2069bdf377067c3abaca1256432",tooltip="Return a float value for a float16 vector."];
+  Node1 -> Node4 [id="edge11_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="image_set_pixel",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__toplevel_8cpp.html#a24ace81209de87263b6b1a4e8c87a282",tooltip="Set the value of a single pixel in an image."];
+  Node4 -> Node5 [id="edge12_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="vfloat4::lane",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structvfloat4.html#a04462a7815432c6bc3ce1b5e5d11e4fc",tooltip="Get the scalar value of a single lane."];
+  Node1 -> Node5 [id="edge13_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node6 [id="edge14_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="linear_to_srgb",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__toplevel_8cpp.html#a031c882f3e87d1e9bfaca5cd3d767e28",tooltip="sRGB gamma-encode a linear value."];
+  Node1 -> Node7 [id="edge15_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="vfloat4::set_lane",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structvfloat4.html#a2168231efa1e514fd41b3603e57be297",tooltip="Set the scalar value of a single lane."];
+  Node1 -> Node8 [id="edge16_Node000001_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="srgb_to_linear",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__toplevel_8cpp.html#a171145cde4ebd098e31acd78c577502f",tooltip="Linearize an sRGB value."];
+}

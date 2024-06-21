@@ -1,0 +1,13 @@
+<map id="free_image" name="free_image">
+<area shape="rect" id="Node000001" title="Free an image." alt="" coords="465,25,551,51"/>
+<area shape="rect" id="Node000002" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,25,207,51"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="457,24,417,15,336,8,255,15,197,28,196,23,254,10,336,3,418,10,458,19"/>
+<area shape="rect" id="Node000004" href="$astcenccli__toplevel_8cpp.html#a3dd5258961a3c289c1e448b7807cf1fa" title="Load a non&#45;astc image file from memory." alt="" coords="275,25,397,51"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="452,41,398,41,398,35,452,35"/>
+<area shape="rect" id="Node000005" href="$astcenccli__toplevel_8cpp.html#a65c87ee1ff0ed0736cffa06692853479" title="Print a set of diagnostic images showing aspects of the encoding." alt="" coords="255,75,417,100"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="453,56,382,77,381,72,451,51"/>
+<area shape="rect" id="Node000003" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,25,56,51"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="90,41,57,41,57,35,90,35"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="261,41,207,41,207,35,261,35"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="275,73,202,53,204,48,276,68"/>
+</map>

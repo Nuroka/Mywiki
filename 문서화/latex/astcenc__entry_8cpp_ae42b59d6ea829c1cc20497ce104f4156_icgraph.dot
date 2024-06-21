@@ -1,0 +1,17 @@
+digraph "validate_profile"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="validate_profile",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Validate config profile."];
+  Node1 -> Node2 [id="edge5_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="validate_config",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__entry_8cpp.html#a58d9fd22e35089649b73eed6af336aeb",tooltip=" "];
+  Node2 -> Node3 [id="edge6_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="astcenc_context_alloc",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__entry_8cpp.html#a823234313a697f5b4cdbd2cd6caaef4a",tooltip="Allocate a new codec context based on a config."];
+  Node3 -> Node4 [id="edge7_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="astcenc_main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e",tooltip="Application entry point."];
+  Node4 -> Node5 [id="edge8_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+}

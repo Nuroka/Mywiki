@@ -1,0 +1,13 @@
+<map id="astcenc_decompress_reset" name="astcenc_decompress_reset">
+<area shape="rect" id="Node000001" title="Reset the codec state for a new decompression." alt="" coords="665,55,812,95"/>
+<area shape="rect" id="Node000002" href="$astcenc__entry_8cpp.html#a062987fc41b9df7d34d8eb668f29eb21" title="Decompress an image." alt="" coords="471,26,617,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="652,65,617,59,618,54,652,59"/>
+<area shape="rect" id="Node000003" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,33,207,58"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="652,86,568,92,468,95,361,92,254,80,219,72,187,61,188,56,220,67,255,75,361,86,468,89,568,87,651,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="466,25,422,16,339,8,255,16,220,24,188,35,187,30,219,19,254,11,339,3,423,11,467,20"/>
+<area shape="rect" id="Node000005" href="$astcenccli__toplevel_8cpp.html#a02c55a799cc33b39f9d733b1a7e91281" title="Runner callback function for a decompression worker thread." alt="" coords="255,26,423,66"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="457,48,423,48,423,43,457,43"/>
+<area shape="rect" id="Node000004" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,33,56,58"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="90,48,57,48,57,43,90,43"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="241,48,207,48,207,43,241,43"/>
+</map>

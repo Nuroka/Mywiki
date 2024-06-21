@@ -1,0 +1,9 @@
+<map id="wuffs_base__io_transformer__func_ptrs__struct" name="wuffs_base__io_transformer__func_ptrs__struct">
+<area shape="rect" id="Node000001" title=" " alt="" coords="339,69,521,109"/>
+<area shape="rect" id="Node000002" href="$structwuffs__base____empty__struct____struct.html" title=" " alt="" coords="5,5,181,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,42,339,69,338,75,194,47"/>
+<area shape="rect" id="Node000003" href="$structwuffs__base____status____struct.html" title=" " alt="" coords="25,69,161,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="175,87,339,87,339,92,175,92"/>
+<area shape="rect" id="Node000004" href="$structwuffs__base____range__ii__u64____struct.html" title=" " alt="" coords="21,133,166,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="179,134,338,104,339,109,180,140"/>
+</map>

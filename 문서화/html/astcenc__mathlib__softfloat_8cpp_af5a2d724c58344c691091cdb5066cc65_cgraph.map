@@ -1,0 +1,9 @@
+<map id="sf32_to_sf16" name="sf32_to_sf16">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,100,80"/>
+<area shape="rect" id="Node000002" href="$astcenc__mathlib__softfloat_8cpp.html#aa05edb8be377b6c2d1249ec0f4d77369" title=" " alt="" coords="148,5,237,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,52,142,33,144,38,90,57"/>
+<area shape="rect" id="Node000003" href="$astcenc__mathlib__softfloat_8cpp.html#a60b7d8902623ead0a8c64d615daeaef3" title=" " alt="" coords="148,55,237,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="100,65,134,65,134,70,100,70"/>
+<area shape="rect" id="Node000004" href="$astcenc__mathlib__softfloat_8cpp.html#a20381e3115c75ee2cd4bfec32b505c34" title=" " alt="" coords="148,104,237,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="90,78,144,97,142,102,88,83"/>
+</map>

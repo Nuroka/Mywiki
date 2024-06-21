@@ -1,0 +1,39 @@
+<map id="unit3" name="unit3">
+<area shape="rect" id="Node000001" title="Factory that returns a unit length 3 component vfloat4." alt="" coords="1711,97,1761,123"/>
+<area shape="rect" id="Node000002" href="$astcenc__pick__best__endpoint__format_8cpp.html#affc96d3eeffef962cd64307bf0b85590" title="For a given set of input colors and partitioning determine endpoint encode errors." alt="" coords="1487,58,1663,98"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1697,105,1662,98,1663,93,1698,100"/>
+<area shape="rect" id="Node000012" href="$astcenccli__error__metrics_8cpp.html#a478be461420681d7c83aa89569ea92c4" title="Compute error metrics comparing two images." alt="" coords="849,244,1004,269"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="1716,134,1693,156,1664,176,1605,205,1556,221,1439,241,1321,255,1202,261,1004,262,1004,257,1202,256,1320,249,1438,235,1554,216,1603,200,1661,172,1689,152,1713,130"/>
+<area shape="rect" id="Node000013" href="$astcenc__ideal__endpoints__and__weights_8cpp.html#a7ec20ff2556f6357cc0754c13e841262" title="Compute the ideal endpoints and weights for 3 color components." alt="" coords="1497,122,1652,162"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="1698,120,1653,129,1652,124,1697,115"/>
+<area shape="rect" id="Node000016" href="$astcenc__find__best__partitioning_8cpp.html#a7577b3047a3f9f0fe44fd579f5450630" title="Find the best set of partitions to trial for a given block." alt="" coords="1077,15,1203,55"/>
+<area shape="poly" id="edge20_Node000001_Node000016" title=" " alt="" coords="1714,89,1691,66,1662,48,1602,29,1539,17,1475,10,1412,8,1296,14,1204,26,1203,21,1295,8,1412,3,1476,5,1540,12,1603,24,1664,44,1694,62,1718,85"/>
+<area shape="rect" id="Node000003" href="$astcenc__pick__best__endpoint__format_8cpp.html#a81c7b68e8c7b82a5ff718f21bd4f3c35" title="Identify, for each mode, which set of color endpoint produces the best result." alt="" coords="1276,58,1439,98"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1473,81,1439,81,1439,75,1473,75"/>
+<area shape="rect" id="Node000004" href="$astcenc__compress__symbolic_8cpp.html#af5f518a15600c71922e69267dea2db99" title="Compress a block using a chosen partitioning and 1 plane of weights." alt="" coords="1052,171,1228,211"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1286,107,1278,112,1263,124,1254,136,1245,149,1229,162,1207,174,1205,169,1227,157,1241,145,1250,133,1259,121,1274,108,1284,102"/>
+<area shape="rect" id="Node000011" href="$astcenc__compress__symbolic_8cpp.html#af11a976c8ea386db054bef472ce0667c" title="Compress a block using a chosen partitioning and 2 planes of weights." alt="" coords="1052,107,1228,147"/>
+<area shape="poly" id="edge11_Node000003_Node000011" title=" " alt="" coords="1263,102,1229,110,1227,105,1262,97"/>
+<area shape="rect" id="Node000005" href="$astcenc__compress__symbolic_8cpp.html#a579b9a2ceeecda2fb3abe63b8311df1c" title="Compress an image block into a physical block." alt="" coords="868,131,985,156"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1038,171,983,159,985,153,1039,166"/>
+<area shape="rect" id="Node000006" href="$astcenc__entry_8cpp.html#acbecfd32ce013d567cac16a877c20f42" title="Compress an image, after any preflight has completed." alt="" coords="680,133,801,159"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="854,147,802,148,802,142,854,142"/>
+<area shape="rect" id="Node000007" href="$astcenc__entry_8cpp.html#ad762aa055eed75156c99309158a40e90" title="Compress an image." alt="" coords="457,135,632,160"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="666,149,632,149,632,144,666,144"/>
+<area shape="rect" id="Node000008" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,192,207,217"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="484,166,410,182,301,196,207,204,207,199,301,191,409,177,483,161"/>
+<area shape="rect" id="Node000010" href="$astcenccli__toplevel_8cpp.html#a57bafe66bbd689a53aad2d190fe7a3fa" title="Runner callback function for a compression worker thread." alt="" coords="255,127,409,167"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="444,150,409,150,409,145,444,145"/>
+<area shape="rect" id="Node000009" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,192,56,217"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="90,207,57,207,57,202,90,202"/>
+<area shape="poly" id="edge10_Node000010_Node000008" title=" " alt="" coords="258,174,196,194,195,189,256,169"/>
+<area shape="poly" id="edge12_Node000011_Node000005" title=" " alt="" coords="1038,138,986,142,986,136,1038,132"/>
+<area shape="poly" id="edge14_Node000012_Node000008" title=" " alt="" coords="835,253,207,211,207,205,836,248"/>
+<area shape="rect" id="Node000014" href="$astcenc__ideal__endpoints__and__weights_8cpp.html#afa8cab65d4b6f0cbece52eec38aed523" title="Compute ideal endpoint colors and weights for 1 plane of weights." alt="" coords="1283,186,1431,226"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="1494,168,1427,189,1425,183,1492,163"/>
+<area shape="rect" id="Node000015" href="$astcenc__ideal__endpoints__and__weights_8cpp.html#a52d3985007cfc83025661e0347bc00cc" title="Compute ideal endpoint colors and weights for 2 planes of weights." alt="" coords="1281,122,1434,162"/>
+<area shape="poly" id="edge18_Node000013_Node000015" title=" " alt="" coords="1483,145,1434,145,1434,139,1483,139"/>
+<area shape="poly" id="edge17_Node000014_Node000004" title=" " alt="" coords="1270,203,1228,200,1228,195,1270,197"/>
+<area shape="poly" id="edge19_Node000015_Node000011" title=" " alt="" coords="1266,139,1228,136,1228,131,1267,133"/>
+<area shape="poly" id="edge21_Node000016_Node000005" title=" " alt="" coords="1089,64,954,133,952,128,1086,59"/>
+</map>

@@ -1,0 +1,29 @@
+<map id="compute_quantized_weights_for_decimation" name="compute_quantized_weights_for_decimation">
+<area shape="rect" id="Node000001" title="Compute the optimal quantized weights for a decimation table." alt="" coords="5,294,192,334"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#a154fea8d8c99676fb5550ff40eed3d75" title="Return a clamped value between 0.0f and 1.0f." alt="" coords="262,5,333,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,293,119,243,146,176,185,104,210,70,238,40,248,32,252,37,242,44,214,74,190,107,151,178,124,245,108,294"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#afdaab5e0b4a39a5dd28fb5b40642e57d" title="Return a integer value for a float vector, using truncation." alt="" coords="255,55,340,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,293,124,251,152,197,191,140,238,89,244,85,247,89,242,93,195,143,157,200,128,254,110,295"/>
+<area shape="rect" id="Node000004" href="$astcenc__internal_8h.html#aec456deb917676d5506d91947c6d5726" title="The number of levels use by an ASTC quantization method." alt="" coords="242,104,353,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="110,292,160,219,196,176,238,139,245,134,248,138,242,143,200,180,164,222,114,295"/>
+<area shape="rect" id="Node000005" href="$astcenc__vecmathlib__avx2__8_8h.html#a3a2ce0fb403294db7fe126a6b3e87ab7" title="Return a float value for an integer vector." alt="" coords="255,153,340,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="117,292,169,241,239,188,248,182,250,187,241,192,173,245,121,296"/>
+<area shape="rect" id="Node000006" href="$structvint4.html#ab899bfb3323ffa799403172941113a7e" title="Factory that returns a vector loaded from unaligned memory." alt="" coords="257,203,337,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="135,291,239,237,251,231,254,236,241,242,137,296"/>
+<area shape="rect" id="Node000007" href="$astcenc__vecmathlib__avx2__8_8h.html#ad922a3ed6098767968916265154b6f82" title="Return a 8&#45;bit mask code indicating mask status." alt="" coords="270,252,325,277"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="179,291,256,272,257,277,180,297"/>
+<area shape="rect" id="Node000008" href="$astcenc__vecmathlib__avx2__8_8h.html#a165b3db4e7ced1551e1880a01a01150b" title="Return the min vector of two vectors." alt="" coords="276,301,319,327"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="192,311,262,311,262,317,192,317"/>
+<area shape="rect" id="Node000009" href="$astcenc__vecmathlib__avx2__8_8h.html#a98f7a50685f56b5c84d1c760fa037d6d" title="Pack low 8 bits of N (vector width) lanes into bottom of vector." alt="" coords="240,351,355,376"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="180,331,233,345,232,350,179,337"/>
+<area shape="rect" id="Node000010" href="$astcenc__vecmathlib__avx2__8_8h.html#a844ab5b69b84569f033be33bf5fb9fbc" title="Return lanes from b if cond is set, else a." alt="" coords="269,400,326,425"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="138,332,241,385,257,393,255,397,239,390,136,337"/>
+<area shape="rect" id="Node000011" href="$astcenc__vecmathlib__avx2__8_8h.html#ac55f9ffdc41bee5d274cb6433809fefc" title="Store lowest N (vector width) bytes into an unaligned address." alt="" coords="249,449,346,475"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="121,332,173,382,241,434,252,441,250,445,239,439,170,386,118,336"/>
+<area shape="rect" id="Node000012" href="$astcenc__vecmathlib__avx2__8_8h.html#ad4c0a7bde35d6fe9c54531e1e0652f4a" title="Store a vector to a 16B aligned memory address." alt="" coords="268,499,327,524"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="114,333,165,405,201,447,242,484,257,494,254,498,238,488,197,450,160,408,110,336"/>
+<area shape="rect" id="Node000013" href="$astcenc__vecmathlib__avx2__8_8h.html#a2778951898aea88de4dd7881e7cd817b" title="Perform an 8&#45;bit 16&#45;entry table lookup, with 32&#45;bit indexes." alt="" coords="242,548,353,573"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="111,333,129,374,158,427,195,483,242,533,249,539,246,543,238,537,191,487,153,430,124,377,106,336"/>
+<area shape="rect" id="Node000014" href="$astcenc__vecmathlib__avx2__8_8h.html#a38035a0e5616592fa235308dc60c476f" title="Prepare a vtable lookup table for use with the native SIMD size." alt="" coords="245,597,350,623"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="108,333,124,383,151,449,190,520,214,553,242,583,248,588,245,592,238,587,210,556,186,523,146,451,119,384,103,335"/>
+</map>

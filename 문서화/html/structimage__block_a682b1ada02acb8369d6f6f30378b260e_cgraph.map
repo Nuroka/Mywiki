@@ -1,0 +1,5 @@
+<map id="image_block::texel3" name="image_block::texel3">
+<area shape="rect" id="Node000001" title="Get an RGB texel value from the data." alt="" coords="5,5,144,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib_8h.html#a1a2e12d78738b0b4b550f57b2dc05f07" title="Factory that returns a 3 component vfloat4." alt="" coords="192,5,251,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,15,179,15,179,21,144,21"/>
+</map>

@@ -1,0 +1,709 @@
+\doxysection{C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/astcenc\+\_\+symbolic\+\_\+physical.cpp 파일 참조}
+\hypertarget{astcenc__symbolic__physical_8cpp}{}\label{astcenc__symbolic__physical_8cpp}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_symbolic\_physical.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_symbolic\_physical.cpp}}
+{\ttfamily \#include "{}astcenc\+\_\+internal.\+h"{}}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+astcenc\+\_\+symbolic\+\_\+physical.\+cpp에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__symbolic__physical_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_ac8ea7de26c1e90f79a9e315407ab04ff}{bitrev8}} (int p)
+\begin{DoxyCompactList}\small\item\em Functions for converting between symbolic and physical encodings. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\+\_\+bits}} (int bitcount, int bitoffset, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}ptr)
+\begin{DoxyCompactList}\small\item\em Read up to 8 bits at an arbitrary bit offset. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_ae8ca963a290faa03da1eed39553521ec}{write\+\_\+bits}} (int value, int bitcount, int bitoffset, uint8\+\_\+t \texorpdfstring{$\ast$}{*}ptr)
+\begin{DoxyCompactList}\small\item\em Write up to 8 bits at an arbitrary bit offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_af7b1f1696c0ee5cbfd6f2546fa400011}{symbolic\+\_\+to\+\_\+physical}} (const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&bsd, const \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&scb, uint8\+\_\+t pcb\mbox{[}16\mbox{]})
+\begin{DoxyCompactList}\small\item\em Convert a symbolic representation into a binary physical encoding. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_acd6272d8cee006f73e936e16739c4cab}{physical\+\_\+to\+\_\+symbolic}} (const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&bsd, const uint8\+\_\+t pcb\mbox{[}16\mbox{]}, \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&scb)
+\begin{DoxyCompactList}\small\item\em Convert a binary physical encoding into a symbolic representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\Hypertarget{astcenc__symbolic__physical_8cpp_ac8ea7de26c1e90f79a9e315407ab04ff}\index{astcenc\_symbolic\_physical.cpp@{astcenc\_symbolic\_physical.cpp}!bitrev8@{bitrev8}}
+\index{bitrev8@{bitrev8}!astcenc\_symbolic\_physical.cpp@{astcenc\_symbolic\_physical.cpp}}
+\doxysubsubsection{\texorpdfstring{bitrev8()}{bitrev8()}}
+{\footnotesize\ttfamily \label{astcenc__symbolic__physical_8cpp_ac8ea7de26c1e90f79a9e315407ab04ff} 
+static int bitrev8 (\begin{DoxyParamCaption}\item[{int}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Functions for converting between symbolic and physical encodings. 
+
+Reverse bits in a byte.
+
+
+\begin{DoxyParams}{매개변수}
+{\em p} & The value to reverse.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The reversed result. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__symbolic__physical_8cpp_source}{astcenc\+\_\+symbolic\+\_\+physical.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_source_l00033}{33}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ p\ =\ ((p\ \&\ 0x0F)\ <<\ 4)\ |\ ((p\ >>\ 4)\ \&\ 0x0F);}
+\DoxyCodeLine{00036\ \ \ \ \ p\ =\ ((p\ \&\ 0x33)\ <<\ 2)\ |\ ((p\ >>\ 2)\ \&\ 0x33);}
+\DoxyCodeLine{00037\ \ \ \ \ p\ =\ ((p\ \&\ 0x55)\ <<\ 1)\ |\ ((p\ >>\ 1)\ \&\ 0x55);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}\ p;}
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__symbolic__physical_8cpp_ac8ea7de26c1e90f79a9e315407ab04ff_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__symbolic__physical_8cpp_acd6272d8cee006f73e936e16739c4cab}\index{astcenc\_symbolic\_physical.cpp@{astcenc\_symbolic\_physical.cpp}!physical\_to\_symbolic@{physical\_to\_symbolic}}
+\index{physical\_to\_symbolic@{physical\_to\_symbolic}!astcenc\_symbolic\_physical.cpp@{astcenc\_symbolic\_physical.cpp}}
+\doxysubsubsection{\texorpdfstring{physical\_to\_symbolic()}{physical\_to\_symbolic()}}
+{\footnotesize\ttfamily \label{astcenc__symbolic__physical_8cpp_acd6272d8cee006f73e936e16739c4cab} 
+void physical\+\_\+to\+\_\+symbolic (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&}]{bsd}{, }\item[{const uint8\+\_\+t}]{pcb}{\mbox{[}16\mbox{]}, }\item[{\mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&}]{scb}{}\end{DoxyParamCaption})}
+
+
+
+Convert a binary physical encoding into a symbolic representation. 
+
+This function can cope with arbitrary input data; output blocks will be flagged as an error block if the encoding is invalid.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em bsd} & The block size information. \\
+\hline
+ & {\em pcb} & The physical compresesd block input. \\
+\hline
+\mbox{\texttt{ out}}  & {\em scb} & The output symbolic representation. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__symbolic__physical_8cpp_source}{astcenc\+\_\+symbolic\+\_\+physical.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_source_l00291}{291}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00295\ \ \ \{}
+\DoxyCodeLine{00296\ \ \ \ \ uint8\_t\ bswapped[16];}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_a62b894529f4eb2badc6656c94ca1c003}{SYM\_BTYPE\_NONCONST}};}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{comment}{//\ Extract\ header\ fields}}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structblock__mode}{block\_mode}}\ =\ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(11,\ 0,\ pcb);}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordflow}{if}\ ((\mbox{\hyperlink{structblock__mode}{block\_mode}}\ \&\ 0x1FF)\ ==\ 0x1FC)}
+\DoxyCodeLine{00303\ \ \ \ \ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Constant\ color\ block}}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ what\ format\ the\ data\ has}}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structblock__mode}{block\_mode}}\ \&\ 0x200)}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_aebc278aa5ca9c97969af61d9186f9172}{SYM\_BTYPE\_CONST\_F16}};}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_adb59df7fefb94a8c52948d49ce70b1f5}{SYM\_BTYPE\_CONST\_U16}};}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\_count}}\ =\ 0;}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_abb86a3a9a9bf54d5138c1883ed6159a5}{constant\_color}}[i]\ =\ pcb[2\ *\ i\ +\ 8]\ |\ (pcb[2\ *\ i\ +\ 9]\ <<\ 8);}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Additionally,\ check\ that\ the\ void-\/extent}}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bsd.\mbox{\hyperlink{structblock__size__descriptor_afc7428efe69cba2425ae335d9d266714}{zdim}}\ ==\ 1)}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2D\ void-\/extent}}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rsvbits\ =\ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(2,\ 10,\ pcb);}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rsvbits\ !=\ 3)}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}};}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Low\ values\ span\ 3\ bytes\ so\ need\ two\ read\_bits\ calls}}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vx\_low\_s\ =\ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(8,\ 12,\ pcb)\ |\ (\mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(5,\ 12\ +\ 8,\ pcb)\ <<\ 8);}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vx\_high\_s\ =\ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(13,\ 25,\ pcb);}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vx\_low\_t\ =\ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(8,\ 38,\ pcb)\ |\ (\mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(5,\ 38\ +\ 8,\ pcb)\ <<\ 8);}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vx\_high\_t\ =\ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(13,\ 51,\ pcb);}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ all\_ones\ =\ vx\_low\_s\ ==\ 0x1FFF\ \&\&\ vx\_high\_s\ ==\ 0x1FFF\ \&\&}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vx\_low\_t\ ==\ 0x1FFF\ \&\&\ vx\_high\_t\ ==\ 0x1FFF;}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((vx\_low\_s\ >=\ vx\_high\_s\ ||\ vx\_low\_t\ >=\ vx\_high\_t)\ \&\&\ !all\_ones)}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}};}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3D\ void-\/extent}}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vx\_low\_s\ =\ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(9,\ 10,\ pcb);}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vx\_high\_s\ =\ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(9,\ 19,\ pcb);}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vx\_low\_t\ =\ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(9,\ 28,\ pcb);}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vx\_high\_t\ =\ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(9,\ 37,\ pcb);}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vx\_low\_r\ =\ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(9,\ 46,\ pcb);}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vx\_high\_r\ =\ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(9,\ 55,\ pcb);}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ all\_ones\ =\ vx\_low\_s\ ==\ 0x1FF\ \&\&\ vx\_high\_s\ ==\ 0x1FF\ \&\&}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vx\_low\_t\ ==\ 0x1FF\ \&\&\ vx\_high\_t\ ==\ 0x1FF\ \&\&}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vx\_low\_r\ ==\ 0x1FF\ \&\&\ vx\_high\_r\ ==\ 0x1FF;}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((vx\_low\_s\ >=\ vx\_high\_s\ ||\ vx\_low\_t\ >=\ vx\_high\_t\ ||\ vx\_low\_r\ >=\ vx\_high\_r)\ \&\&\ !all\_ones)}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}};}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00370\ \ \ \ \ \}}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ packed\_index\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_ad2a7804c5aa2d87b691f9899d85c5bc6}{block\_mode\_packed\_index}}[\mbox{\hyperlink{structblock__mode}{block\_mode}}];}
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keywordflow}{if}\ (packed\_index\ ==\ \mbox{\hyperlink{astcenc__internal_8h_a9909bfb0b9a42a121838a9a145a8612f}{BLOCK\_BAD\_BLOCK\_MODE}})}
+\DoxyCodeLine{00374\ \ \ \ \ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}};}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00377\ \ \ \ \ \}}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a13608eb55e48c96b6243f4830278ebf3}{get\_block\_mode}}(\mbox{\hyperlink{structblock__mode}{block\_mode}});}
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ di\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(bm.decimation\_mode);}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ \ \ \ \ \textcolor{keywordtype}{int}\ weight\_count\ =\ di.\mbox{\hyperlink{structdecimation__info_af7d0c86be805995a20a6c09f6c3ab8ca}{weight\_count}};}
+\DoxyCodeLine{00383\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(weight\_count\ >\ 0);}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00385\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\ weight\_quant\_method\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\textcolor{keyword}{>}(bm.quant\_mode);}
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{keywordtype}{int}\ is\_dual\_plane\ =\ bm.is\_dual\_plane;}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keywordtype}{int}\ real\_weight\_count\ =\ is\_dual\_plane\ ?\ 2\ *\ weight\_count\ :\ weight\_count;}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \ \ \ \ \textcolor{keywordtype}{int}\ partition\_count\ =\ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(2,\ 11,\ pcb)\ +\ 1;}
+\DoxyCodeLine{00391\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partition\_count\ >\ 0);}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00393\ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}}\ =\ \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(\mbox{\hyperlink{structblock__mode}{block\_mode}});}
+\DoxyCodeLine{00394\ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\_count}}\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(partition\_count);}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 16;\ i++)}
+\DoxyCodeLine{00397\ \ \ \ \ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ bswapped[i]\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(\mbox{\hyperlink{astcenc__symbolic__physical_8cpp_ac8ea7de26c1e90f79a9e315407ab04ff}{bitrev8}}(pcb[15\ -\/\ i]));}
+\DoxyCodeLine{00399\ \ \ \ \ \}}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \ \ \ \ \textcolor{keywordtype}{int}\ bits\_for\_weights\ =\ \mbox{\hyperlink{astcenc__integer__sequence_8cpp_af46c9322b401332698e9cb93c968fe19}{get\_ise\_sequence\_bitcount}}(real\_weight\_count,\ weight\_quant\_method);}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \ \ \ \ \textcolor{keywordtype}{int}\ below\_weights\_pos\ =\ 128\ -\/\ bits\_for\_weights;}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \ \ \ \ uint8\_t\ indices[64];}
+\DoxyCodeLine{00406\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ qat\ =\ \mbox{\hyperlink{astcenc__internal_8h_a9d58fe49f85551cd8c9ccadb5aece318}{quant\_and\_xfer\_tables}}[weight\_quant\_method];}
+\DoxyCodeLine{00407\ }
+\DoxyCodeLine{00408\ \ \ \ \ \mbox{\hyperlink{astcenc__integer__sequence_8cpp_a1cc25f0a98b60ff2bc5fd65f6b4190fa}{decode\_ise}}(weight\_quant\_method,\ real\_weight\_count,\ bswapped,\ indices,\ 0);}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_dual\_plane)}
+\DoxyCodeLine{00411\ \ \ \ \ \{}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ weight\_count;\ i++)}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}[i]\ =\ qat.unscramble\_and\_unquant\_map[indices[2\ *\ i]];}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}[i\ +\ \mbox{\hyperlink{astcenc__internal_8h_a2dcf39b1f3c1e5f152abdf1f24e698da}{WEIGHTS\_PLANE2\_OFFSET}}]\ =\ qat.unscramble\_and\_unquant\_map[indices[2\ *\ i\ +\ 1]];}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00417\ \ \ \ \ \}}
+\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00419\ \ \ \ \ \{}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ weight\_count;\ i++)}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}[i]\ =\ qat.unscramble\_and\_unquant\_map[indices[i]];}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00424\ \ \ \ \ \}}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00426\ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_dual\_plane\ \&\&\ partition\_count\ ==\ 4)}
+\DoxyCodeLine{00427\ \ \ \ \ \{}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}};}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00430\ \ \ \ \ \}}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a2ad392432ebf011c42f7a72f49000d13}{color\_formats\_matched}}\ =\ 0;}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00434\ \ \ \ \ \textcolor{comment}{//\ Determine\ the\ format\ of\ each\ endpoint\ pair}}
+\DoxyCodeLine{00435\ \ \ \ \ \textcolor{keywordtype}{int}\ color\_formats[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00436\ \ \ \ \ \textcolor{keywordtype}{int}\ encoded\_type\_highpart\_size\ =\ 0;}
+\DoxyCodeLine{00437\ \ \ \ \ \textcolor{keywordflow}{if}\ (partition\_count\ ==\ 1)}
+\DoxyCodeLine{00438\ \ \ \ \ \{}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ color\_formats[0]\ =\ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(4,\ 13,\ pcb);}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a17d42e08747747b32c650a48fe1b5b6e}{partition\_index}}\ =\ 0;}
+\DoxyCodeLine{00441\ \ \ \ \ \}}
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00443\ \ \ \ \ \{}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ encoded\_type\_highpart\_size\ =\ (3\ *\ partition\_count)\ -\/\ 4;}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ below\_weights\_pos\ -\/=\ encoded\_type\_highpart\_size;}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ encoded\_type\ =\ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(6,\ 13\ +\ \mbox{\hyperlink{astcenc__internal_8h_a51d28e088618b740724c2dd2862fa1f7}{PARTITION\_INDEX\_BITS}},\ pcb)\ |}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(encoded\_type\_highpart\_size,\ below\_weights\_pos,\ pcb)\ <<\ 6);}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ baseclass\ =\ encoded\_type\ \&\ 0x3;}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (baseclass\ ==\ 0)}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color\_formats[i]\ =\ (encoded\_type\ >>\ 2)\ \&\ 0xF;}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00455\ }
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ below\_weights\_pos\ +=\ encoded\_type\_highpart\_size;}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a2ad392432ebf011c42f7a72f49000d13}{color\_formats\_matched}}\ =\ 1;}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ encoded\_type\_highpart\_size\ =\ 0;}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ bitpos\ =\ 2;}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ baseclass-\/-\/;}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color\_formats[i]\ =\ (((encoded\_type\ >>\ bitpos)\ \&\ 1)\ +\ baseclass)\ <<\ 2;}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bitpos++;}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color\_formats[i]\ |=\ (encoded\_type\ >>\ bitpos)\ \&\ 3;}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bitpos\ +=\ 2;}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a17d42e08747747b32c650a48fe1b5b6e}{partition\_index}}\ =\ \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(\mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(10,\ 13,\ pcb));}
+\DoxyCodeLine{00478\ \ \ \ \ \}}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{00481\ \ \ \ \ \{}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[i]\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(color\_formats[i]);}
+\DoxyCodeLine{00483\ \ \ \ \ \}}
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00485\ \ \ \ \ \textcolor{comment}{//\ Determine\ number\ of\ color\ endpoint\ integers}}
+\DoxyCodeLine{00486\ \ \ \ \ \textcolor{keywordtype}{int}\ color\_integer\_count\ =\ 0;}
+\DoxyCodeLine{00487\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{00488\ \ \ \ \ \{}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ endpoint\_class\ =\ color\_formats[i]\ >>\ 2;}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ color\_integer\_count\ +=\ (endpoint\_class\ +\ 1)\ *\ 2;}
+\DoxyCodeLine{00491\ \ \ \ \ \}}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00493\ \ \ \ \ \textcolor{keywordflow}{if}\ (color\_integer\_count\ >\ 18)}
+\DoxyCodeLine{00494\ \ \ \ \ \{}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}};}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00497\ \ \ \ \ \}}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00499\ \ \ \ \ \textcolor{comment}{//\ Determine\ the\ color\ endpoint\ format\ to\ use}}
+\DoxyCodeLine{00500\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ color\_bits\_arr[5]\ \{\ -\/1,\ 115\ -\/\ 4,\ 113\ -\/\ 4\ -\/\ \mbox{\hyperlink{astcenc__internal_8h_a51d28e088618b740724c2dd2862fa1f7}{PARTITION\_INDEX\_BITS}},\ 113\ -\/\ 4\ -\/\ \mbox{\hyperlink{astcenc__internal_8h_a51d28e088618b740724c2dd2862fa1f7}{PARTITION\_INDEX\_BITS}},\ 113\ -\/\ 4\ -\/\ \mbox{\hyperlink{astcenc__internal_8h_a51d28e088618b740724c2dd2862fa1f7}{PARTITION\_INDEX\_BITS}}\ \};}
+\DoxyCodeLine{00501\ \ \ \ \ \textcolor{keywordtype}{int}\ color\_bits\ =\ color\_bits\_arr[partition\_count]\ -\/\ bits\_for\_weights\ -\/\ encoded\_type\_highpart\_size;}
+\DoxyCodeLine{00502\ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_dual\_plane)}
+\DoxyCodeLine{00503\ \ \ \ \ \{}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ color\_bits\ -\/=\ 2;}
+\DoxyCodeLine{00505\ \ \ \ \ \}}
+\DoxyCodeLine{00506\ }
+\DoxyCodeLine{00507\ \ \ \ \ \textcolor{keywordflow}{if}\ (color\_bits\ <\ 0)}
+\DoxyCodeLine{00508\ \ \ \ \ \{}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ color\_bits\ =\ 0;}
+\DoxyCodeLine{00510\ \ \ \ \ \}}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00512\ \ \ \ \ \textcolor{keywordtype}{int}\ color\_quant\_level\ =\ \mbox{\hyperlink{astcenc__internal_8h_a67050b7e3e5e5c4ff2021c8f266dd903}{quant\_mode\_table}}[color\_integer\_count\ >>\ 1][color\_bits];}
+\DoxyCodeLine{00513\ \ \ \ \ \textcolor{keywordflow}{if}\ (color\_quant\_level\ <\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}})}
+\DoxyCodeLine{00514\ \ \ \ \ \{}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}};}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00517\ \ \ \ \ \}}
+\DoxyCodeLine{00518\ }
+\DoxyCodeLine{00519\ \ \ \ \ \textcolor{comment}{//\ Unpack\ the\ integer\ color\ values\ and\ assign\ to\ endpoints}}
+\DoxyCodeLine{00520\ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a449d8e3e4362348f1bd588eecaaa12c9}{quant\_mode}}\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\textcolor{keyword}{>}(color\_quant\_level);}
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00522\ \ \ \ \ uint8\_t\ values\_to\_decode[32];}
+\DoxyCodeLine{00523\ \ \ \ \ \mbox{\hyperlink{astcenc__integer__sequence_8cpp_a1cc25f0a98b60ff2bc5fd65f6b4190fa}{decode\_ise}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\textcolor{keyword}{>}(color\_quant\_level),\ color\_integer\_count,\ pcb,}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values\_to\_decode,\ (partition\_count\ ==\ 1\ ?\ 17\ :\ 19\ +\ \mbox{\hyperlink{astcenc__internal_8h_a51d28e088618b740724c2dd2862fa1f7}{PARTITION\_INDEX\_BITS}}));}
+\DoxyCodeLine{00525\ }
+\DoxyCodeLine{00526\ \ \ \ \ \textcolor{keywordtype}{int}\ valuecount\_to\_decode\ =\ 0;}
+\DoxyCodeLine{00527\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ unpack\_table\ =\ \mbox{\hyperlink{astcenc__internal_8h_af171dec074f8e2972c41a02ba04096d9}{color\_scrambled\_pquant\_to\_uquant\_tables}}[scb.\mbox{\hyperlink{structsymbolic__compressed__block_a449d8e3e4362348f1bd588eecaaa12c9}{quant\_mode}}\ -\/\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}}];}
+\DoxyCodeLine{00528\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{00529\ \ \ \ \ \{}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vals\ =\ 2\ *\ (color\_formats[i]\ >>\ 2)\ +\ 2;}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ vals;\ j++)}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ad539bb907ce654690e8a89cf62196f9c}{color\_values}}[i][j]\ =\ unpack\_table[values\_to\_decode[j\ +\ valuecount\_to\_decode]];}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ valuecount\_to\_decode\ +=\ vals;}
+\DoxyCodeLine{00536\ \ \ \ \ \}}
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00538\ \ \ \ \ \textcolor{comment}{//\ Fetch\ component\ for\ second-\/plane\ in\ the\ case\ of\ dual\ plane\ of\ weights.}}
+\DoxyCodeLine{00539\ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a49f36c368c0d976f230c76c33aed2b9d}{plane2\_component}}\ =\ -\/1;}
+\DoxyCodeLine{00540\ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_dual\_plane)}
+\DoxyCodeLine{00541\ \ \ \ \ \{}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a49f36c368c0d976f230c76c33aed2b9d}{plane2\_component}}\ =\ \textcolor{keyword}{static\_cast<}int8\_t\textcolor{keyword}{>}(\mbox{\hyperlink{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}{read\_bits}}(2,\ below\_weights\_pos\ -\/\ 2,\ pcb));}
+\DoxyCodeLine{00543\ \ \ \ \ \}}
+\DoxyCodeLine{00544\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__symbolic__physical_8cpp_acd6272d8cee006f73e936e16739c4cab_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__symbolic__physical_8cpp_acd6272d8cee006f73e936e16739c4cab_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1}\index{astcenc\_symbolic\_physical.cpp@{astcenc\_symbolic\_physical.cpp}!read\_bits@{read\_bits}}
+\index{read\_bits@{read\_bits}!astcenc\_symbolic\_physical.cpp@{astcenc\_symbolic\_physical.cpp}}
+\doxysubsubsection{\texorpdfstring{read\_bits()}{read\_bits()}}
+{\footnotesize\ttfamily \label{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1} 
+static int read\+\_\+bits (\begin{DoxyParamCaption}\item[{int}]{bitcount}{, }\item[{int}]{bitoffset}{, }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{ptr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Read up to 8 bits at an arbitrary bit offset. 
+
+The stored value is at most 8 bits, but can be stored at an offset of between 0 and 7 bits so may span two separate bytes in memory.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em bitcount} & The number of bits to read. \\
+\hline
+ & {\em bitoffset} & The bit offset to read from, between 0 and 7. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em ptr} & The data pointer to read from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The read value. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__symbolic__physical_8cpp_source}{astcenc\+\_\+symbolic\+\_\+physical.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_source_l00054}{54}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ (1\ <<\ bitcount)\ -\/\ 1;}
+\DoxyCodeLine{00060\ \ \ \ \ ptr\ +=\ bitoffset\ >>\ 3;}
+\DoxyCodeLine{00061\ \ \ \ \ bitoffset\ \&=\ 7;}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ value\ =\ ptr[0]\ |\ (ptr[1]\ <<\ 8);}
+\DoxyCodeLine{00063\ \ \ \ \ value\ >>=\ bitoffset;}
+\DoxyCodeLine{00064\ \ \ \ \ value\ \&=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}};}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{00066\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__symbolic__physical_8cpp_a6062008b44453960d62c54f571cccfe1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__symbolic__physical_8cpp_af7b1f1696c0ee5cbfd6f2546fa400011}\index{astcenc\_symbolic\_physical.cpp@{astcenc\_symbolic\_physical.cpp}!symbolic\_to\_physical@{symbolic\_to\_physical}}
+\index{symbolic\_to\_physical@{symbolic\_to\_physical}!astcenc\_symbolic\_physical.cpp@{astcenc\_symbolic\_physical.cpp}}
+\doxysubsubsection{\texorpdfstring{symbolic\_to\_physical()}{symbolic\_to\_physical()}}
+{\footnotesize\ttfamily \label{astcenc__symbolic__physical_8cpp_af7b1f1696c0ee5cbfd6f2546fa400011} 
+void symbolic\+\_\+to\+\_\+physical (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&}]{bsd}{, }\item[{const \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&}]{scb}{, }\item[{uint8\+\_\+t}]{pcb}{\mbox{[}16\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Convert a symbolic representation into a binary physical encoding. 
+
+It is assumed that the symbolic encoding is valid and encodable, or previously flagged as an error block if an error color it to be encoded.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em bsd} & The block size information. \\
+\hline
+ & {\em scb} & The symbolic representation. \\
+\hline
+\mbox{\texttt{ out}}  & {\em pcb} & The physical compressed block output. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__symbolic__physical_8cpp_source}{astcenc\+\_\+symbolic\+\_\+physical.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_source_l00102}{102}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00106\ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ assert(scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ !=\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}});}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{comment}{//\ Constant\ color\ block\ using\ UNORM16\ colors}}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{if}\ (scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ ==\ \mbox{\hyperlink{astcenc__internal_8h_adb59df7fefb94a8c52948d49ce70b1f5}{SYM\_BTYPE\_CONST\_U16}})}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ There\ is\ currently\ no\ attempt\ to\ coalesce\ larger\ void-\/extents}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint8\_t\ cbytes[8]\ \{\ 0xFC,\ 0xFD,\ 0xFF,\ 0xFF,\ 0xFF,\ 0xFF,\ 0xFF,\ 0xFF\ \};}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 8;\ i++)}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ pcb[i]\ =\ cbytes[i];}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{astcenc__internal_8h_acfaa28ad6768cb0ebe7f535fc8a9e6df}{BLOCK\_MAX\_COMPONENTS}};\ i++)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ pcb[2\ *\ i\ +\ 8]\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_abb86a3a9a9bf54d5138c1883ed6159a5}{constant\_color}}[i]\ \&\ 0xFF;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ pcb[2\ *\ i\ +\ 9]\ =\ (scb.\mbox{\hyperlink{structsymbolic__compressed__block_abb86a3a9a9bf54d5138c1883ed6159a5}{constant\_color}}[i]\ >>\ 8)\ \&\ 0xFF;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{//\ Constant\ color\ block\ using\ FP16\ colors}}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{if}\ (scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ ==\ \mbox{\hyperlink{astcenc__internal_8h_aebc278aa5ca9c97969af61d9186f9172}{SYM\_BTYPE\_CONST\_F16}})}
+\DoxyCodeLine{00130\ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ There\ is\ currently\ no\ attempt\ to\ coalesce\ larger\ void-\/extents}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint8\_t\ cbytes[8]\ \ \{\ 0xFC,\ 0xFF,\ 0xFF,\ 0xFF,\ 0xFF,\ 0xFF,\ 0xFF,\ 0xFF\ \};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 8;\ i++)}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ pcb[i]\ =\ cbytes[i];}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{astcenc__internal_8h_acfaa28ad6768cb0ebe7f535fc8a9e6df}{BLOCK\_MAX\_COMPONENTS}};\ i++)}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ pcb[2\ *\ i\ +\ 8]\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_abb86a3a9a9bf54d5138c1883ed6159a5}{constant\_color}}[i]\ \&\ 0xFF;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ pcb[2\ *\ i\ +\ 9]\ =\ (scb.\mbox{\hyperlink{structsymbolic__compressed__block_abb86a3a9a9bf54d5138c1883ed6159a5}{constant\_color}}[i]\ >>\ 8)\ \&\ 0xFF;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\_count}};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{comment}{//\ Compress\ the\ weights.}}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{comment}{//\ They\ are\ encoded\ as\ an\ ordinary\ integer-\/sequence,\ then\ bit-\/reversed}}
+\DoxyCodeLine{00151\ \ \ \ \ uint8\_t\ weightbuf[16]\ \{\ 0\ \};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a13608eb55e48c96b6243f4830278ebf3}{get\_block\_mode}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}});}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ di\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(bm.decimation\_mode);}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{int}\ weight\_count\ =\ di.\mbox{\hyperlink{structdecimation__info_af7d0c86be805995a20a6c09f6c3ab8ca}{weight\_count}};}
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\ weight\_quant\_method\ =\ bm.get\_weight\_quant\_mode();}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{float}\ weight\_quant\_levels\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\mbox{\hyperlink{astcenc__internal_8h_aec456deb917676d5506d91947c6d5726}{get\_quant\_level}}(weight\_quant\_method));}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{int}\ is\_dual\_plane\ =\ bm.is\_dual\_plane;}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ qat\ =\ \mbox{\hyperlink{astcenc__internal_8h_a9d58fe49f85551cd8c9ccadb5aece318}{quant\_and\_xfer\_tables}}[weight\_quant\_method];}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{int}\ real\_weight\_count\ =\ is\_dual\_plane\ ?\ 2\ *\ weight\_count\ :\ weight\_count;}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{int}\ bits\_for\_weights\ =\ \mbox{\hyperlink{astcenc__integer__sequence_8cpp_af46c9322b401332698e9cb93c968fe19}{get\_ise\_sequence\_bitcount}}(real\_weight\_count,\ weight\_quant\_method);}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ uint8\_t\ weights[64];}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_dual\_plane)}
+\DoxyCodeLine{00168\ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ weight\_count;\ i++)}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ uqw\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}[i]);}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ qw\ =\ (uqw\ /\ 64.0f)\ *\ (weight\_quant\_levels\ -\/\ 1.0f);}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ qwi\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(qw\ +\ 0.5f);}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ weights[2\ *\ i]\ =\ qat.scramble\_map[qwi];}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ uqw\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}[i\ +\ \mbox{\hyperlink{astcenc__internal_8h_a2dcf39b1f3c1e5f152abdf1f24e698da}{WEIGHTS\_PLANE2\_OFFSET}}]);}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ qw\ =\ (uqw\ /\ 64.0f)\ *\ (weight\_quant\_levels\ -\/\ 1.0f);}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ qwi\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(qw\ +\ 0.5f);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ weights[2\ *\ i\ +\ 1]\ =\ qat.scramble\_map[qwi];}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00181\ \ \ \ \ \}}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00183\ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ weight\_count;\ i++)}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ uqw\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}[i]);}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ qw\ =\ (uqw\ /\ 64.0f)\ *\ (weight\_quant\_levels\ -\/\ 1.0f);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ qwi\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(qw\ +\ 0.5f);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ weights[i]\ =\ qat.scramble\_map[qwi];}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \mbox{\hyperlink{astcenc__integer__sequence_8cpp_a1e3b68510a3fa2766d2decf242132f2f}{encode\_ise}}(weight\_quant\_method,\ real\_weight\_count,\ weights,\ weightbuf,\ 0);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 16;\ i++)}
+\DoxyCodeLine{00196\ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ pcb[i]\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(\mbox{\hyperlink{astcenc__symbolic__physical_8cpp_ac8ea7de26c1e90f79a9e315407ab04ff}{bitrev8}}(weightbuf[15\ -\/\ i]));}
+\DoxyCodeLine{00198\ \ \ \ \ \}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_ae8ca963a290faa03da1eed39553521ec}{write\_bits}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}},\ 11,\ 0,\ pcb);}
+\DoxyCodeLine{00201\ \ \ \ \ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_ae8ca963a290faa03da1eed39553521ec}{write\_bits}}(partition\_count\ -\/\ 1,\ 2,\ 11,\ pcb);}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{int}\ below\_weights\_pos\ =\ 128\ -\/\ bits\_for\_weights;}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{comment}{//\ Encode\ partition\ index\ and\ color\ endpoint\ types\ for\ blocks\ with\ 2+\ partitions}}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordflow}{if}\ (partition\_count\ >\ 1)}
+\DoxyCodeLine{00207\ \ \ \ \ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_ae8ca963a290faa03da1eed39553521ec}{write\_bits}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a17d42e08747747b32c650a48fe1b5b6e}{partition\_index}},\ 6,\ 13,\ pcb);}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_ae8ca963a290faa03da1eed39553521ec}{write\_bits}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a17d42e08747747b32c650a48fe1b5b6e}{partition\_index}}\ >>\ 6,\ \mbox{\hyperlink{astcenc__internal_8h_a51d28e088618b740724c2dd2862fa1f7}{PARTITION\_INDEX\_BITS}}\ -\/\ 6,\ 19,\ pcb);}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scb.\mbox{\hyperlink{structsymbolic__compressed__block_a2ad392432ebf011c42f7a72f49000d13}{color\_formats\_matched}})}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_ae8ca963a290faa03da1eed39553521ec}{write\_bits}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[0]\ <<\ 2,\ 6,\ 13\ +\ \mbox{\hyperlink{astcenc__internal_8h_a51d28e088618b740724c2dd2862fa1f7}{PARTITION\_INDEX\_BITS}},\ pcb);}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ endpoint\ types\ for\ each\ partition\ to\ determine\ the\ lowest\ class\ present}}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ low\_class\ =\ 4;}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ class\_of\_format\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[i]\ >>\ 2;}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ low\_class\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(class\_of\_format,\ low\_class);}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (low\_class\ ==\ 3)}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ low\_class\ =\ 2;}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ encoded\_type\ =\ low\_class\ +\ 1;}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ bitpos\ =\ 2;}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ classbit\_of\_format\ =\ (scb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[i]\ >>\ 2)\ -\/\ low\_class;}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ encoded\_type\ |=\ classbit\_of\_format\ <<\ bitpos;}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bitpos++;}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ lowbits\_of\_format\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[i]\ \&\ 3;}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ encoded\_type\ |=\ lowbits\_of\_format\ <<\ bitpos;}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bitpos\ +=\ 2;}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ encoded\_type\_lowpart\ =\ encoded\_type\ \&\ 0x3F;}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ encoded\_type\_highpart\ =\ encoded\_type\ >>\ 6;}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ encoded\_type\_highpart\_size\ =\ (3\ *\ partition\_count)\ -\/\ 4;}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ encoded\_type\_highpart\_pos\ =\ 128\ -\/\ bits\_for\_weights\ -\/\ encoded\_type\_highpart\_size;}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_ae8ca963a290faa03da1eed39553521ec}{write\_bits}}(encoded\_type\_lowpart,\ 6,\ 13\ +\ \mbox{\hyperlink{astcenc__internal_8h_a51d28e088618b740724c2dd2862fa1f7}{PARTITION\_INDEX\_BITS}},\ pcb);}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_ae8ca963a290faa03da1eed39553521ec}{write\_bits}}(encoded\_type\_highpart,\ encoded\_type\_highpart\_size,\ encoded\_type\_highpart\_pos,\ pcb);}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ below\_weights\_pos\ -\/=\ encoded\_type\_highpart\_size;}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00256\ \ \ \ \ \}}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00258\ \ \ \ \ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_ae8ca963a290faa03da1eed39553521ec}{write\_bits}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[0],\ 4,\ 13,\ pcb);}
+\DoxyCodeLine{00260\ \ \ \ \ \}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{comment}{//\ In\ dual-\/plane\ mode,\ encode\ the\ color\ component\ of\ the\ second\ plane\ of\ weights}}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_dual\_plane)}
+\DoxyCodeLine{00264\ \ \ \ \ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_ae8ca963a290faa03da1eed39553521ec}{write\_bits}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a49f36c368c0d976f230c76c33aed2b9d}{plane2\_component}},\ 2,\ below\_weights\_pos\ -\/\ 2,\ pcb);}
+\DoxyCodeLine{00266\ \ \ \ \ \}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{comment}{//\ Encode\ the\ color\ components}}
+\DoxyCodeLine{00269\ \ \ \ \ uint8\_t\ values\_to\_encode[32];}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordtype}{int}\ valuecount\_to\_encode\ =\ 0;}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ pack\_table\ =\ \mbox{\hyperlink{astcenc__internal_8h_a834f3531350f3a55d6271b4dc18a223d}{color\_uquant\_to\_scrambled\_pquant\_tables}}[scb.\mbox{\hyperlink{structsymbolic__compressed__block_a449d8e3e4362348f1bd588eecaaa12c9}{quant\_mode}}\ -\/\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}}];}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\_count}};\ i++)}
+\DoxyCodeLine{00274\ \ \ \ \ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vals\ =\ 2\ *\ (scb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[i]\ >>\ 2)\ +\ 2;}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ assert(vals\ <=\ 8);}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ vals;\ j++)}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ values\_to\_encode[j\ +\ valuecount\_to\_encode]\ =\ pack\_table[scb.\mbox{\hyperlink{structsymbolic__compressed__block_ad539bb907ce654690e8a89cf62196f9c}{color\_values}}[i][j]];}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ valuecount\_to\_encode\ +=\ vals;}
+\DoxyCodeLine{00282\ \ \ \ \ \}}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ \mbox{\hyperlink{astcenc__integer__sequence_8cpp_a1e3b68510a3fa2766d2decf242132f2f}{encode\_ise}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_af290ce908b76242bc89e3eae4d948454}{get\_color\_quant\_mode}}(),\ valuecount\_to\_encode,\ values\_to\_encode,\ pcb,}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\_count}}\ ==\ 1\ ?\ 17\ :\ 19\ +\ \mbox{\hyperlink{astcenc__internal_8h_a51d28e088618b740724c2dd2862fa1f7}{PARTITION\_INDEX\_BITS}});}
+\DoxyCodeLine{00286\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__symbolic__physical_8cpp_af7b1f1696c0ee5cbfd6f2546fa400011_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__symbolic__physical_8cpp_af7b1f1696c0ee5cbfd6f2546fa400011_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__symbolic__physical_8cpp_ae8ca963a290faa03da1eed39553521ec}\index{astcenc\_symbolic\_physical.cpp@{astcenc\_symbolic\_physical.cpp}!write\_bits@{write\_bits}}
+\index{write\_bits@{write\_bits}!astcenc\_symbolic\_physical.cpp@{astcenc\_symbolic\_physical.cpp}}
+\doxysubsubsection{\texorpdfstring{write\_bits()}{write\_bits()}}
+{\footnotesize\ttfamily \label{astcenc__symbolic__physical_8cpp_ae8ca963a290faa03da1eed39553521ec} 
+static void write\+\_\+bits (\begin{DoxyParamCaption}\item[{int}]{value}{, }\item[{int}]{bitcount}{, }\item[{int}]{bitoffset}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{ptr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Write up to 8 bits at an arbitrary bit offset. 
+
+The stored value is at most 8 bits, but can be stored at an offset of between 0 and 7 bits so may span two separate bytes in memory.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em value} & The value to write. \\
+\hline
+ & {\em bitcount} & The number of bits to write, starting from LSB. \\
+\hline
+ & {\em bitoffset} & The bit offset to store at, between 0 and 7. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em ptr} & The data pointer to write to. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__symbolic__physical_8cpp_source}{astcenc\+\_\+symbolic\+\_\+physical.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__symbolic__physical_8cpp_source_l00081}{81}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ (1\ <<\ bitcount)\ -\/\ 1;}
+\DoxyCodeLine{00088\ \ \ \ \ value\ \&=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}};}
+\DoxyCodeLine{00089\ \ \ \ \ ptr\ +=\ bitoffset\ >>\ 3;}
+\DoxyCodeLine{00090\ \ \ \ \ bitoffset\ \&=\ 7;}
+\DoxyCodeLine{00091\ \ \ \ \ value\ <<=\ bitoffset;}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ <<=\ bitoffset;}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ \string~mask;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ ptr[0]\ \&=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}};}
+\DoxyCodeLine{00096\ \ \ \ \ ptr[0]\ |=\ value;}
+\DoxyCodeLine{00097\ \ \ \ \ ptr[1]\ \&=\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ >>\ 8;}
+\DoxyCodeLine{00098\ \ \ \ \ ptr[1]\ |=\ value\ >>\ 8;}
+\DoxyCodeLine{00099\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{astcenc__symbolic__physical_8cpp_ae8ca963a290faa03da1eed39553521ec_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__symbolic__physical_8cpp_ae8ca963a290faa03da1eed39553521ec_icgraph}
+\end{center}
+\end{figure}

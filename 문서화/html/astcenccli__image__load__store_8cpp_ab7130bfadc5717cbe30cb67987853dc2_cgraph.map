@@ -1,0 +1,5 @@
+<map id="store_png_image_with_stb" name="store_png_image_with_stb">
+<area shape="rect" id="Node000001" title="Save a PNG image using STBImageWrite to provide the store routine." alt="" coords="5,5,181,31"/>
+<area shape="rect" id="Node000002" href="$astcenccli__image__load__store_8cpp.html#a317fd3791349a6509f4eda9eeacc1800" title="Functions for loading/storing uncompressed and compressed images." alt="" coords="229,5,368,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,15,216,15,216,21,182,21"/>
+</map>

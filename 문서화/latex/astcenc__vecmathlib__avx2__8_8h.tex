@@ -1,0 +1,2648 @@
+\doxysection{C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.h 파일 참조}
+\hypertarget{astcenc__vecmathlib__avx2__8_8h}{}\label{astcenc__vecmathlib__avx2__8_8h}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_vecmathlib\_avx2\_8.h@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_vecmathlib\_avx2\_8.h}}
+{\ttfamily \#include $<$cstdio$>$}\newline
+astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{astcenc__vecmathlib__avx2__8_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structvfloat8}{vfloat8}}
+\begin{DoxyCompactList}\small\item\em Data type for 8-\/wide floats. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structvint8}{vint8}}
+\begin{DoxyCompactList}\small\item\em Data type for 8-\/wide ints. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structvmask8}{vmask8}}
+\begin{DoxyCompactList}\small\item\em Data type for 8-\/wide control plane masks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a680bba70fe88413f5ce26be2b8d41571}{astcenc\+\_\+mm256\+\_\+set\+\_\+m128i}}(m,  n)~\+\_\+mm256\+\_\+insertf128\+\_\+si256(\+\_\+mm256\+\_\+castsi128\+\_\+si256((n)), (m), 1)
+\begin{DoxyCompactList}\small\item\em 8x32-\/bit vectors, implemented using AVX2. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa852ea062f5ad5b16d2cc462d6205903}{operator\texorpdfstring{$\vert$}{|}}} (\mbox{\hyperlink{structvmask8}{vmask8}} a, \mbox{\hyperlink{structvmask8}{vmask8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: mask union (or). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a27bcc98ea79c3aac26f12c7940a3db2f}{operator\&}} (\mbox{\hyperlink{structvmask8}{vmask8}} a, \mbox{\hyperlink{structvmask8}{vmask8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: mask intersect (and). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_af459261f12d615fd6ae1f79b2823d12e}{operator\texorpdfstring{$^\wedge$}{\string^}}} (\mbox{\hyperlink{structvmask8}{vmask8}} a, \mbox{\hyperlink{structvmask8}{vmask8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: mask difference (xor). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a4a5841990a807162ceaa266687fb12c5}{operator\texorpdfstring{$\sim$}{\string~}}} (\mbox{\hyperlink{structvmask8}{vmask8}} a)
+\begin{DoxyCompactList}\small\item\em Overload\+: mask invert (not). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} unsigned int \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}} (\mbox{\hyperlink{structvmask8}{vmask8}} a)
+\begin{DoxyCompactList}\small\item\em Return a 8-\/bit mask code indicating mask status. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} bool \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a1fcb81537a701f246e75fa622c2dd8ee}{any}} (\mbox{\hyperlink{structvmask8}{vmask8}} a)
+\begin{DoxyCompactList}\small\item\em True if any lanes are enabled, false otherwise. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} bool \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad93dff3341cbbeed568d4bd6dc4ef87c}{all}} (\mbox{\hyperlink{structvmask8}{vmask8}} a)
+\begin{DoxyCompactList}\small\item\em True if all lanes are enabled, false otherwise. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ac61cce61fdd5d03b9a783a00a756095e}{operator+}} (\mbox{\hyperlink{structvint8}{vint8}} a, \mbox{\hyperlink{structvint8}{vint8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector addition. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \& \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ae13b8961ad82d3335db798487b4aa825}{operator+=}} (\mbox{\hyperlink{structvint8}{vint8}} \&a, const \mbox{\hyperlink{structvint8}{vint8}} \&b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector incremental addition. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a39fda84e324eebc80b8311a3c666d2ab}{operator-\/}} (\mbox{\hyperlink{structvint8}{vint8}} a, \mbox{\hyperlink{structvint8}{vint8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector subtraction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a661e6c55c378f29bf3a06c6ab82f34cf}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{structvint8}{vint8}} a, \mbox{\hyperlink{structvint8}{vint8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector multiplication. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a962e41ed8c66b995972ade40e69ecf3c}{operator\texorpdfstring{$\sim$}{\string~}}} (\mbox{\hyperlink{structvint8}{vint8}} a)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector bit invert. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ab618ad88af8ff0a75126c969cb8bb713}{operator\texorpdfstring{$\vert$}{|}}} (\mbox{\hyperlink{structvint8}{vint8}} a, \mbox{\hyperlink{structvint8}{vint8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector bitwise or. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a851917a83cdf11fe69241d9085905294}{operator\&}} (\mbox{\hyperlink{structvint8}{vint8}} a, \mbox{\hyperlink{structvint8}{vint8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector bitwise and. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a7ff868894bd6c095ee188b896b26e69f}{operator\texorpdfstring{$^\wedge$}{\string^}}} (\mbox{\hyperlink{structvint8}{vint8}} a, \mbox{\hyperlink{structvint8}{vint8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector bitwise xor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad80fe3a8c472ffcd06b32cd10dd55b51}{operator==}} (\mbox{\hyperlink{structvint8}{vint8}} a, \mbox{\hyperlink{structvint8}{vint8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector equality. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_af3e02d6d10149581549db98c614697b7}{operator!=}} (\mbox{\hyperlink{structvint8}{vint8}} a, \mbox{\hyperlink{structvint8}{vint8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector inequality. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa8401a6989bd771e008111e49e471998}{operator$<$}} (\mbox{\hyperlink{structvint8}{vint8}} a, \mbox{\hyperlink{structvint8}{vint8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector less than. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a623c065f95a86c16a38350ded0be3f51}{operator$>$}} (\mbox{\hyperlink{structvint8}{vint8}} a, \mbox{\hyperlink{structvint8}{vint8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector greater than. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int s$>$ }\\\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a86240f0fb5745ded88afe10d524c960f}{lsl}} (\mbox{\hyperlink{structvint8}{vint8}} a)
+\begin{DoxyCompactList}\small\item\em Logical shift left. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int s$>$ }\\\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819}{asr}} (\mbox{\hyperlink{structvint8}{vint8}} a)
+\begin{DoxyCompactList}\small\item\em Arithmetic shift right. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int s$>$ }\\\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a0a3a7d755cec1c73d0ce9c50b33bc207}{lsr}} (\mbox{\hyperlink{structvint8}{vint8}} a)
+\begin{DoxyCompactList}\small\item\em Logical shift right. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}} (\mbox{\hyperlink{structvint8}{vint8}} a, \mbox{\hyperlink{structvint8}{vint8}} b)
+\begin{DoxyCompactList}\small\item\em Return the min vector of two vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}{max}} (\mbox{\hyperlink{structvint8}{vint8}} a, \mbox{\hyperlink{structvint8}{vint8}} b)
+\begin{DoxyCompactList}\small\item\em Return the max vector of two vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ae7ff255b24f24f8d2a31e6849f4b1250}{hmin}} (\mbox{\hyperlink{structvint8}{vint8}} a)
+\begin{DoxyCompactList}\small\item\em Return the horizontal minimum of a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a516a2f0d872381b8c7c047845a90c9a3}{hmax}} (\mbox{\hyperlink{structvint8}{vint8}} a)
+\begin{DoxyCompactList}\small\item\em Return the horizontal maximum of a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}} (\mbox{\hyperlink{structvint8}{vint8}} a, int \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Store a vector to a 16B aligned memory address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a61add2970baac5cf6b04177472ae1ed1}{store}} (\mbox{\hyperlink{structvint8}{vint8}} a, int \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Store a vector to an unaligned memory address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ac55f9ffdc41bee5d274cb6433809fefc}{store\+\_\+nbytes}} (\mbox{\hyperlink{structvint8}{vint8}} a, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Store lowest N (vector width) bytes into an unaligned address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a2315248edd9497a2f36543443939d840}{gatheri}} (const int \texorpdfstring{$\ast$}{*}base, \mbox{\hyperlink{structvint8}{vint8}} indices)
+\begin{DoxyCompactList}\small\item\em Gather N (vector width) indices from the array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a98f7a50685f56b5c84d1c760fa037d6d}{pack\+\_\+low\+\_\+bytes}} (\mbox{\hyperlink{structvint8}{vint8}} v)
+\begin{DoxyCompactList}\small\item\em Pack low 8 bits of N (vector width) lanes into bottom of vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}} (\mbox{\hyperlink{structvint8}{vint8}} a, \mbox{\hyperlink{structvint8}{vint8}} b, \mbox{\hyperlink{structvmask8}{vmask8}} cond)
+\begin{DoxyCompactList}\small\item\em Return lanes from {\ttfamily b} if {\ttfamily cond} is set, else {\ttfamily a}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a8ba53b441ac873ae3115fac172ab8544}{operator+}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, \mbox{\hyperlink{structvfloat8}{vfloat8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector addition. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \& \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa2ce647a168f328895dd9bf3819a9dbb}{operator+=}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} \&a, const \mbox{\hyperlink{structvfloat8}{vfloat8}} \&b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector incremental addition. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ab20b170e216cfa1504a71f141af9b638}{operator-\/}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, \mbox{\hyperlink{structvfloat8}{vfloat8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector subtraction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a259a1c20382aa196e9f546a449b28f75}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, \mbox{\hyperlink{structvfloat8}{vfloat8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector multiplication. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a34c6df0802df736ead9c4f85322a750a}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, float b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by scalar multiplication. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ac5075c8a58fcad0df82672603646fb33}{operator\texorpdfstring{$\ast$}{*}}} (float a, \mbox{\hyperlink{structvfloat8}{vfloat8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: scalar by vector multiplication. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_af36a1274f0279ee7672332044513ea91}{operator/}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, \mbox{\hyperlink{structvfloat8}{vfloat8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector division. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ab4d94669e63fcb5323184e1d63e3de9e}{operator/}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, float b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by scalar division. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a53cc31c054d10388352cca9276e0ef74}{operator/}} (float a, \mbox{\hyperlink{structvfloat8}{vfloat8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: scalar by vector division. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad38056387459274964052febbe138aac}{operator==}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, \mbox{\hyperlink{structvfloat8}{vfloat8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector equality. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a18033ced2b024ff813c063cba1299eb3}{operator!=}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, \mbox{\hyperlink{structvfloat8}{vfloat8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector inequality. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a66a7efbf5a85e420b4a886d169f02c2f}{operator$<$}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, \mbox{\hyperlink{structvfloat8}{vfloat8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector less than. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad2fffdb3008cf0aee90349e4b50ca1ad}{operator$>$}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, \mbox{\hyperlink{structvfloat8}{vfloat8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector greater than. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a9ef689563e6544335de0955b43195b43}{operator$<$=}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, \mbox{\hyperlink{structvfloat8}{vfloat8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector less than or equal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a1f8e22e58d5a70d9ee14e801005397b6}{operator$>$=}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, \mbox{\hyperlink{structvfloat8}{vfloat8}} b)
+\begin{DoxyCompactList}\small\item\em Overload\+: vector by vector greater than or equal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a634a5a405235f58a7cbf7b65f7c3b6be}{min}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, \mbox{\hyperlink{structvfloat8}{vfloat8}} b)
+\begin{DoxyCompactList}\small\item\em Return the min vector of two vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a03b4112aa21ae623f3f79b2a378f5f17}{min}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, float b)
+\begin{DoxyCompactList}\small\item\em Return the min vector of a vector and a scalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a2e6a96efa51e592e9c7fa5734d451fb5}{max}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, \mbox{\hyperlink{structvfloat8}{vfloat8}} b)
+\begin{DoxyCompactList}\small\item\em Return the max vector of two vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ac95dbdb3ba714b06a5d827e58b8dd9f7}{max}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, float b)
+\begin{DoxyCompactList}\small\item\em Return the max vector of a vector and a scalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ae91c0bb0ebd82ed2a7fa7aa915f6e76e}{clamp}} (float \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}, float \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}{max}}, \mbox{\hyperlink{structvfloat8}{vfloat8}} a)
+\begin{DoxyCompactList}\small\item\em Return the clamped value between min and max. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a706e38b804f7a6a8678929963dbe3804}{clampz}} (float \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}{max}}, \mbox{\hyperlink{structvfloat8}{vfloat8}} a)
+\begin{DoxyCompactList}\small\item\em Return a clamped value between 0.\+0f and max. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a154fea8d8c99676fb5550ff40eed3d75}{clampzo}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a)
+\begin{DoxyCompactList}\small\item\em Return a clamped value between 0.\+0f and 1.\+0f. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aeac50750508168aeab5115733d3ee63c}{abs}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a)
+\begin{DoxyCompactList}\small\item\em Return the absolute value of the float vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a0cc9d8a88b3c39b3ea66e52d515ac661}{round}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a)
+\begin{DoxyCompactList}\small\item\em Return a float rounded to the nearest integer value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a3d897f61a0db6b4f05650766cb58f105}{hmin}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a)
+\begin{DoxyCompactList}\small\item\em Return the horizontal minimum of a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} float \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a5618d81f875c0158284ccc9923d83dab}{hmin\+\_\+s}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a)
+\begin{DoxyCompactList}\small\item\em Return the horizontal minimum of a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a70e7af68da777dcb240d3ee30e825bb3}{hmax}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a)
+\begin{DoxyCompactList}\small\item\em Return the horizontal maximum of a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} float \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a5d1b09f64af83d5171e4b9580f62ac71}{hmax\+\_\+s}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a)
+\begin{DoxyCompactList}\small\item\em Return the horizontal maximum of a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} float \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\+\_\+s}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a)
+\begin{DoxyCompactList}\small\item\em Return the horizontal sum of a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a9601c811d18ec273457e41987c661cb3}{select}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, \mbox{\hyperlink{structvfloat8}{vfloat8}} b, \mbox{\hyperlink{structvmask8}{vmask8}} cond)
+\begin{DoxyCompactList}\small\item\em Return lanes from {\ttfamily b} if {\ttfamily cond} is set, else {\ttfamily a}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a0c89452ffbab98a181c44460db41cae8}{select\+\_\+msb}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, \mbox{\hyperlink{structvfloat8}{vfloat8}} b, \mbox{\hyperlink{structvmask8}{vmask8}} cond)
+\begin{DoxyCompactList}\small\item\em Return lanes from {\ttfamily b} if MSB of {\ttfamily cond} is set, else {\ttfamily a}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} \&accum, \mbox{\hyperlink{structvfloat8}{vfloat8}} a)
+\begin{DoxyCompactList}\small\item\em Accumulate lane-\/wise sums for a vector, folded 4-\/wide. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a8d36b117b5eece9dfc2b6853b3d3b5ec}{haccumulate}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} \&accum, \mbox{\hyperlink{structvfloat8}{vfloat8}} a)
+\begin{DoxyCompactList}\small\item\em Accumulate lane-\/wise sums for a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ab468787d1c874f7e604b73b083de661f}{haccumulate}} (\mbox{\hyperlink{structvfloat4}{vfloat4}} \&accum, \mbox{\hyperlink{structvfloat8}{vfloat8}} a, \mbox{\hyperlink{structvmask8}{vmask8}} m)
+\begin{DoxyCompactList}\small\item\em Accumulate masked lane-\/wise sums for a vector, folded 4-\/wide. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aff255c60741626dbc4c36b9aa78f89cd}{haccumulate}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} \&accum, \mbox{\hyperlink{structvfloat8}{vfloat8}} a, \mbox{\hyperlink{structvmask8}{vmask8}} m)
+\begin{DoxyCompactList}\small\item\em Accumulate masked lane-\/wise sums for a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a46b31b19ff13c14adb023db4b5df8e52}{sqrt}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a)
+\begin{DoxyCompactList}\small\item\em Return the sqrt of the lanes in the vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aae2f99eb48f3cde0f4739b894e8ca29f}{gatherf}} (const float \texorpdfstring{$\ast$}{*}base, \mbox{\hyperlink{structvint8}{vint8}} indices)
+\begin{DoxyCompactList}\small\item\em Load a vector of gathered results from an array; \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad2e42649483caec7076aa7db7d21168e}{store}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, float \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Store a vector to an unaligned memory address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a91e4f51a909ec78065c2bfa5e24b8f87}{storea}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a, float \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Store a vector to a 32B aligned memory address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_afdaab5e0b4a39a5dd28fb5b40642e57d}{float\+\_\+to\+\_\+int}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a)
+\begin{DoxyCompactList}\small\item\em Return a integer value for a float vector, using truncation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a598d6ea3ba27a788b12341a5263c7881}{float\+\_\+to\+\_\+int\+\_\+rtn}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a)
+\begin{DoxyCompactList}\small\item\em Return a integer value for a float vector, using round-\/to-\/nearest. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a3a2ce0fb403294db7fe126a6b3e87ab7}{int\+\_\+to\+\_\+float}} (\mbox{\hyperlink{structvint8}{vint8}} a)
+\begin{DoxyCompactList}\small\item\em Return a float value for an integer vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a5c2db475754d8da42d9b685a45c48ab8}{float\+\_\+as\+\_\+int}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a)
+\begin{DoxyCompactList}\small\item\em Return a float value as an integer bit pattern (i.\+e. no conversion). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ac584d4929db078403c58549bafd3c1cd}{int\+\_\+as\+\_\+float}} (\mbox{\hyperlink{structvint8}{vint8}} a)
+\begin{DoxyCompactList}\small\item\em Return a integer value as a float bit pattern (i.\+e. no conversion). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a38035a0e5616592fa235308dc60c476f}{vtable\+\_\+prepare}} (\mbox{\hyperlink{structvint4}{vint4}} t0, \mbox{\hyperlink{structvint8}{vint8}} \&t0p)
+\begin{DoxyCompactList}\small\item\em Prepare a vtable lookup table for use with the native SIMD size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_acc7650eba141d417200bd47b8cb68ce6}{vtable\+\_\+prepare}} (\mbox{\hyperlink{structvint4}{vint4}} t0, \mbox{\hyperlink{structvint4}{vint4}} t1, \mbox{\hyperlink{structvint8}{vint8}} \&t0p, \mbox{\hyperlink{structvint8}{vint8}} \&t1p)
+\begin{DoxyCompactList}\small\item\em Prepare a vtable lookup table for use with the native SIMD size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a7873e60913a611e01e79ad12f2768ddb}{vtable\+\_\+prepare}} (\mbox{\hyperlink{structvint4}{vint4}} t0, \mbox{\hyperlink{structvint4}{vint4}} t1, \mbox{\hyperlink{structvint4}{vint4}} t2, \mbox{\hyperlink{structvint4}{vint4}} t3, \mbox{\hyperlink{structvint8}{vint8}} \&t0p, \mbox{\hyperlink{structvint8}{vint8}} \&t1p, \mbox{\hyperlink{structvint8}{vint8}} \&t2p, \mbox{\hyperlink{structvint8}{vint8}} \&t3p)
+\begin{DoxyCompactList}\small\item\em Prepare a vtable lookup table for use with the native SIMD size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a2778951898aea88de4dd7881e7cd817b}{vtable\+\_\+8bt\+\_\+32bi}} (\mbox{\hyperlink{structvint8}{vint8}} t0, \mbox{\hyperlink{structvint8}{vint8}} idx)
+\begin{DoxyCompactList}\small\item\em Perform an 8-\/bit 16-\/entry table lookup, with 32-\/bit indexes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ab6ac52ac75682b1da64b9ff9c53985ee}{vtable\+\_\+8bt\+\_\+32bi}} (\mbox{\hyperlink{structvint8}{vint8}} t0, \mbox{\hyperlink{structvint8}{vint8}} t1, \mbox{\hyperlink{structvint8}{vint8}} idx)
+\begin{DoxyCompactList}\small\item\em Perform an 8-\/bit 32-\/entry table lookup, with 32-\/bit indexes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ab5885cd3310d98a60d372861f6c9e567}{vtable\+\_\+8bt\+\_\+32bi}} (\mbox{\hyperlink{structvint8}{vint8}} t0, \mbox{\hyperlink{structvint8}{vint8}} t1, \mbox{\hyperlink{structvint8}{vint8}} t2, \mbox{\hyperlink{structvint8}{vint8}} t3, \mbox{\hyperlink{structvint8}{vint8}} idx)
+\begin{DoxyCompactList}\small\item\em Perform an 8-\/bit 64-\/entry table lookup, with 32-\/bit indexes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a635c0c8b5f0ea77a88ccc25f53eab588}{interleave\+\_\+rgba8}} (\mbox{\hyperlink{structvint8}{vint8}} r, \mbox{\hyperlink{structvint8}{vint8}} g, \mbox{\hyperlink{structvint8}{vint8}} b, \mbox{\hyperlink{structvint8}{vint8}} a)
+\begin{DoxyCompactList}\small\item\em Return a vector of interleaved RGBA data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a2766c60947c6dea0a84cd8d86806c6eb}{store\+\_\+lanes\+\_\+masked}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}base, \mbox{\hyperlink{structvint8}{vint8}} data, \mbox{\hyperlink{structvmask8}{vmask8}} \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}})
+\begin{DoxyCompactList}\small\item\em Store a vector, skipping masked lanes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a8b1292c260733f79ce44ad0092b7704f}{print}} (\mbox{\hyperlink{structvint8}{vint8}} a)
+\begin{DoxyCompactList}\small\item\em Debug function to print a vector of ints. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ade2b55f0202d5fa92daf3c282b24ad95}{printx}} (\mbox{\hyperlink{structvint8}{vint8}} a)
+\begin{DoxyCompactList}\small\item\em Debug function to print a vector of ints. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa6031a6471bf39b91b25a47c585917a2}{print}} (\mbox{\hyperlink{structvfloat8}{vfloat8}} a)
+\begin{DoxyCompactList}\small\item\em Debug function to print a vector of floats. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a13d56ecd4a955ba3f7dfcd7cec979177}{print}} (\mbox{\hyperlink{structvmask8}{vmask8}} a)
+\begin{DoxyCompactList}\small\item\em Debug function to print a vector of masks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{매크로 문서화}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a680bba70fe88413f5ce26be2b8d41571}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!astcenc\_mm256\_set\_m128i@{astcenc\_mm256\_set\_m128i}}
+\index{astcenc\_mm256\_set\_m128i@{astcenc\_mm256\_set\_m128i}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{astcenc\_mm256\_set\_m128i}{astcenc\_mm256\_set\_m128i}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a680bba70fe88413f5ce26be2b8d41571} 
+\#define astcenc\+\_\+mm256\+\_\+set\+\_\+m128i(\begin{DoxyParamCaption}\item[{}]{m}{, }\item[{}]{n}{}\end{DoxyParamCaption})~\+\_\+mm256\+\_\+insertf128\+\_\+si256(\+\_\+mm256\+\_\+castsi128\+\_\+si256((n)), (m), 1)}
+
+
+
+8x32-\/bit vectors, implemented using AVX2. 
+
+This module implements 8-\/wide 32-\/bit float, int, and mask vectors for x86 AVX2.
+
+There is a baseline level of functionality provided by all vector widths and implementations. This is implemented using identical function signatures, modulo data type, so we can use them as substitutable implementations in VLA code. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00040}{40}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{함수 문서화}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_aeac50750508168aeab5115733d3ee63c}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!abs@{abs}}
+\index{abs@{abs}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{abs()}{abs()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_aeac50750508168aeab5115733d3ee63c} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} abs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the absolute value of the float vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00817}{817}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00818\ \{}
+\DoxyCodeLine{00819\ \ \ \ \ \_\_m256\ msk\ =\ \_mm256\_castsi256\_ps(\_mm256\_set1\_epi32(0x7fffffff));}
+\DoxyCodeLine{00820\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_and\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ msk));}
+\DoxyCodeLine{00821\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_aeac50750508168aeab5115733d3ee63c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ad93dff3341cbbeed568d4bd6dc4ef87c}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!all@{all}}
+\index{all@{all}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{all()}{all()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ad93dff3341cbbeed568d4bd6dc4ef87c} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} bool all (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvmask8}{vmask8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+True if all lanes are enabled, false otherwise. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00371}{371}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00372\ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}(a)\ ==\ 0xFF;}
+\DoxyCodeLine{00374\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{astcenc__vecmathlib__avx2__8_8h_ad93dff3341cbbeed568d4bd6dc4ef87c_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_ad93dff3341cbbeed568d4bd6dc4ef87c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a1fcb81537a701f246e75fa622c2dd8ee}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!any@{any}}
+\index{any@{any}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{any()}{any()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a1fcb81537a701f246e75fa622c2dd8ee} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} bool any (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvmask8}{vmask8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+True if any lanes are enabled, false otherwise. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00363}{363}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00364\ \{}
+\DoxyCodeLine{00365\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}(a)\ !=\ 0;}
+\DoxyCodeLine{00366\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{astcenc__vecmathlib__avx2__8_8h_a1fcb81537a701f246e75fa622c2dd8ee_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a1fcb81537a701f246e75fa622c2dd8ee_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!asr@{asr}}
+\index{asr@{asr}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{asr()}{asr()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819} 
+template$<$int s$>$ \\
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} asr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Arithmetic shift right. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00487}{487}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00488\ \{}
+\DoxyCodeLine{00489\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(\_mm256\_srai\_epi32(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ s));}
+\DoxyCodeLine{00490\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ae91c0bb0ebd82ed2a7fa7aa915f6e76e}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!clamp@{clamp}}
+\index{clamp@{clamp}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{clamp()}{clamp()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ae91c0bb0ebd82ed2a7fa7aa915f6e76e} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} clamp (\begin{DoxyParamCaption}\item[{float}]{min}{, }\item[{float}]{max}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the clamped value between min and max. 
+
+It is assumed that neither {\ttfamily min} nor {\ttfamily max} are NaN values. If {\ttfamily a} is NaN then {\ttfamily min} will be returned for that lane. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00781}{781}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00782\ \{}
+\DoxyCodeLine{00783\ \ \ \ \ \textcolor{comment}{//\ Do\ not\ reorder\ -\/\ second\ operand\ will\ return\ if\ either\ is\ NaN}}
+\DoxyCodeLine{00784\ \ \ \ \ a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}\ =\ \_mm256\_max\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ \_mm256\_set1\_ps(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}));}
+\DoxyCodeLine{00785\ \ \ \ \ a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}\ =\ \_mm256\_min\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ \_mm256\_set1\_ps(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}{max}}));}
+\DoxyCodeLine{00786\ \ \ \ \ \textcolor{keywordflow}{return}\ a;}
+\DoxyCodeLine{00787\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{astcenc__vecmathlib__avx2__8_8h_ae91c0bb0ebd82ed2a7fa7aa915f6e76e_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_ae91c0bb0ebd82ed2a7fa7aa915f6e76e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a706e38b804f7a6a8678929963dbe3804}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!clampz@{clampz}}
+\index{clampz@{clampz}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{clampz()}{clampz()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a706e38b804f7a6a8678929963dbe3804} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} clampz (\begin{DoxyParamCaption}\item[{float}]{max}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a clamped value between 0.\+0f and max. 
+
+It is assumed that {\ttfamily max} is not a NaN value. If {\ttfamily a} is NaN then zero will be returned for that lane. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00795}{795}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00796\ \{}
+\DoxyCodeLine{00797\ \ \ \ \ a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}\ =\ \_mm256\_max\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ \_mm256\_setzero\_ps());}
+\DoxyCodeLine{00798\ \ \ \ \ a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}\ =\ \_mm256\_min\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ \_mm256\_set1\_ps(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}{max}}));}
+\DoxyCodeLine{00799\ \ \ \ \ \textcolor{keywordflow}{return}\ a;}
+\DoxyCodeLine{00800\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{astcenc__vecmathlib__avx2__8_8h_a706e38b804f7a6a8678929963dbe3804_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a154fea8d8c99676fb5550ff40eed3d75}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!clampzo@{clampzo}}
+\index{clampzo@{clampzo}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{clampzo()}{clampzo()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a154fea8d8c99676fb5550ff40eed3d75} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} clampzo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a clamped value between 0.\+0f and 1.\+0f. 
+
+If {\ttfamily a} is NaN then zero will be returned for that lane. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00807}{807}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00808\ \{}
+\DoxyCodeLine{00809\ \ \ \ \ a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}\ =\ \_mm256\_max\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ \_mm256\_setzero\_ps());}
+\DoxyCodeLine{00810\ \ \ \ \ a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}\ =\ \_mm256\_min\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ \_mm256\_set1\_ps(1.0f));}
+\DoxyCodeLine{00811\ \ \ \ \ \textcolor{keywordflow}{return}\ a;}
+\DoxyCodeLine{00812\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a154fea8d8c99676fb5550ff40eed3d75_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a5c2db475754d8da42d9b685a45c48ab8}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!float\_as\_int@{float\_as\_int}}
+\index{float\_as\_int@{float\_as\_int}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{float\_as\_int()}{float\_as\_int()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a5c2db475754d8da42d9b685a45c48ab8} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} float\+\_\+as\+\_\+int (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a float value as an integer bit pattern (i.\+e. no conversion). 
+
+It is a common trick to convert floats into integer bit patterns, perform some bit hackery based on knowledge they are IEEE 754 layout, and then convert them back again. This is the first half of that flip. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l01031}{1031}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01032\ \{}
+\DoxyCodeLine{01033\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(\_mm256\_castps\_si256(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}));}
+\DoxyCodeLine{01034\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a5c2db475754d8da42d9b685a45c48ab8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_afdaab5e0b4a39a5dd28fb5b40642e57d}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!float\_to\_int@{float\_to\_int}}
+\index{float\_to\_int@{float\_to\_int}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{float\_to\_int()}{float\_to\_int()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_afdaab5e0b4a39a5dd28fb5b40642e57d} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} float\+\_\+to\+\_\+int (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a integer value for a float vector, using truncation. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l01001}{1001}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01002\ \{}
+\DoxyCodeLine{01003\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(\_mm256\_cvttps\_epi32(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}));}
+\DoxyCodeLine{01004\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_afdaab5e0b4a39a5dd28fb5b40642e57d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a598d6ea3ba27a788b12341a5263c7881}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!float\_to\_int\_rtn@{float\_to\_int\_rtn}}
+\index{float\_to\_int\_rtn@{float\_to\_int\_rtn}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{float\_to\_int\_rtn()}{float\_to\_int\_rtn()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a598d6ea3ba27a788b12341a5263c7881} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} float\+\_\+to\+\_\+int\+\_\+rtn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a integer value for a float vector, using round-\/to-\/nearest. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l01009}{1009}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01010\ \{}
+\DoxyCodeLine{01011\ \ \ \ \ a\ =\ a\ +\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(0.5f);}
+\DoxyCodeLine{01012\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(\_mm256\_cvttps\_epi32(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}));}
+\DoxyCodeLine{01013\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a598d6ea3ba27a788b12341a5263c7881_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_aae2f99eb48f3cde0f4739b894e8ca29f}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!gatherf@{gatherf}}
+\index{gatherf@{gatherf}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{gatherf()}{gatherf()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_aae2f99eb48f3cde0f4739b894e8ca29f} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} gatherf (\begin{DoxyParamCaption}\item[{const float \texorpdfstring{$\ast$}{*}}]{base}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{indices}{}\end{DoxyParamCaption})}
+
+
+
+Load a vector of gathered results from an array; 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00977}{977}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00978\ \{}
+\DoxyCodeLine{00979\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_i32gather\_ps(base,\ indices.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ 4));}
+\DoxyCodeLine{00980\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_aae2f99eb48f3cde0f4739b894e8ca29f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a2315248edd9497a2f36543443939d840}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!gatheri@{gatheri}}
+\index{gatheri@{gatheri}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{gatheri()}{gatheri()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a2315248edd9497a2f36543443939d840} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} gatheri (\begin{DoxyParamCaption}\item[{const int \texorpdfstring{$\ast$}{*}}]{base}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{indices}{}\end{DoxyParamCaption})}
+
+
+
+Gather N (vector width) indices from the array. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00576}{576}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00577\ \{}
+\DoxyCodeLine{00578\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(\_mm256\_i32gather\_epi32(base,\ indices.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ 4));}
+\DoxyCodeLine{00579\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!haccumulate@{haccumulate}}
+\index{haccumulate@{haccumulate}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{haccumulate()}{haccumulate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void haccumulate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}} \&}]{accum}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Accumulate lane-\/wise sums for a vector, folded 4-\/wide. 
+
+This is invariant with 4-\/wide implementations. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00925}{925}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00926\ \{}
+\DoxyCodeLine{00927\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ lo(\_mm256\_extractf128\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ 0));}
+\DoxyCodeLine{00928\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(accum,\ lo);}
+\DoxyCodeLine{00929\ }
+\DoxyCodeLine{00930\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ hi(\_mm256\_extractf128\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ 1));}
+\DoxyCodeLine{00931\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(accum,\ hi);}
+\DoxyCodeLine{00932\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ab468787d1c874f7e604b73b083de661f}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!haccumulate@{haccumulate}}
+\index{haccumulate@{haccumulate}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{haccumulate()}{haccumulate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ab468787d1c874f7e604b73b083de661f} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void haccumulate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}} \&}]{accum}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{\mbox{\hyperlink{structvmask8}{vmask8}}}]{m}{}\end{DoxyParamCaption})}
+
+
+
+Accumulate masked lane-\/wise sums for a vector, folded 4-\/wide. 
+
+This is invariant with 4-\/wide implementations. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00949}{949}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00950\ \{}
+\DoxyCodeLine{00951\ \ \ \ \ a\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(\mbox{\hyperlink{structvfloat8_ad178ffd2ad80124776b5cafa60bba174}{vfloat8::zero}}(),\ a,\ m);}
+\DoxyCodeLine{00952\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(accum,\ a);}
+\DoxyCodeLine{00953\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_ab468787d1c874f7e604b73b083de661f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a8d36b117b5eece9dfc2b6853b3d3b5ec}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!haccumulate@{haccumulate}}
+\index{haccumulate@{haccumulate}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{haccumulate()}{haccumulate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a8d36b117b5eece9dfc2b6853b3d3b5ec} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void haccumulate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}} \&}]{accum}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Accumulate lane-\/wise sums for a vector. 
+
+This is NOT invariant with 4-\/wide implementations. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00939}{939}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00940\ \{}
+\DoxyCodeLine{00941\ \ \ \ \ accum\ +=\ a;}
+\DoxyCodeLine{00942\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_aff255c60741626dbc4c36b9aa78f89cd}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!haccumulate@{haccumulate}}
+\index{haccumulate@{haccumulate}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{haccumulate()}{haccumulate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_aff255c60741626dbc4c36b9aa78f89cd} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void haccumulate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}} \&}]{accum}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{\mbox{\hyperlink{structvmask8}{vmask8}}}]{m}{}\end{DoxyParamCaption})}
+
+
+
+Accumulate masked lane-\/wise sums for a vector. 
+
+This is NOT invariant with 4-\/wide implementations. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00960}{960}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00961\ \{}
+\DoxyCodeLine{00962\ \ \ \ \ a\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(\mbox{\hyperlink{structvfloat8_ad178ffd2ad80124776b5cafa60bba174}{vfloat8::zero}}(),\ a,\ m);}
+\DoxyCodeLine{00963\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(accum,\ a);}
+\DoxyCodeLine{00964\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_aff255c60741626dbc4c36b9aa78f89cd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!hadd\_s@{hadd\_s}}
+\index{hadd\_s@{hadd\_s}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{hadd\_s()}{hadd\_s()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} float hadd\+\_\+s (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the horizontal sum of a vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00896}{896}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00897\ \{}
+\DoxyCodeLine{00898\ \ \ \ \ \textcolor{comment}{//\ Two\ sequential\ 4-\/wide\ adds\ gives\ invariance\ with\ 4-\/wide\ code}}
+\DoxyCodeLine{00899\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ lo(\_mm256\_extractf128\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ 0));}
+\DoxyCodeLine{00900\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ hi(\_mm256\_extractf128\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ 1));}
+\DoxyCodeLine{00901\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(lo)\ +\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(hi);}
+\DoxyCodeLine{00902\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=128pt]{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a70e7af68da777dcb240d3ee30e825bb3}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!hmax@{hmax}}
+\index{hmax@{hmax}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{hmax()}{hmax()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a70e7af68da777dcb240d3ee30e825bb3} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} hmax (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the horizontal maximum of a vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00866}{866}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00867\ \{}
+\DoxyCodeLine{00868\ \ \ \ \ \_\_m128\ vlow\ =\ \_mm256\_castps256\_ps128(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}});}
+\DoxyCodeLine{00869\ \ \ \ \ \_\_m128\ vhigh\ =\ \_mm256\_extractf128\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ 1);}
+\DoxyCodeLine{00870\ \ \ \ \ vhigh\ =\ \_mm\_max\_ps(vlow,\ vhigh);}
+\DoxyCodeLine{00871\ }
+\DoxyCodeLine{00872\ \ \ \ \ \textcolor{comment}{//\ First\ do\ an\ horizontal\ reduction.}}
+\DoxyCodeLine{00873\ \ \ \ \ \_\_m128\ shuf\ =\ \_mm\_shuffle\_ps(vhigh,\ vhigh,\ \_MM\_SHUFFLE(2,\ 3,\ 0,\ 1));}
+\DoxyCodeLine{00874\ \ \ \ \ \_\_m128\ maxs\ =\ \_mm\_max\_ps(vhigh,\ shuf);}
+\DoxyCodeLine{00875\ \ \ \ \ shuf\ =\ \_mm\_movehl\_ps(shuf,maxs);}
+\DoxyCodeLine{00876\ \ \ \ \ maxs\ =\ \_mm\_max\_ss(maxs,\ shuf);}
+\DoxyCodeLine{00877\ }
+\DoxyCodeLine{00878\ \ \ \ \ \textcolor{comment}{//\ This\ is\ the\ most\ logical\ implementation,\ but\ the\ convenience\ intrinsic}}
+\DoxyCodeLine{00879\ \ \ \ \ \textcolor{comment}{//\ is\ missing\ on\ older\ compilers\ (supported\ in\ g++\ 9\ and\ clang++\ 9).}}
+\DoxyCodeLine{00880\ \ \ \ \ \textcolor{comment}{//\_\_m256i\ r\ =\ \_mm256\_set\_m128(m,\ m)}}
+\DoxyCodeLine{00881\ \ \ \ \ \_\_m256\ r\ =\ \_mm256\_insertf128\_ps(\_mm256\_castps128\_ps256(maxs),\ maxs,\ 1);}
+\DoxyCodeLine{00882\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_permute\_ps(r,\ 0));}
+\DoxyCodeLine{00883\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a516a2f0d872381b8c7c047845a90c9a3}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!hmax@{hmax}}
+\index{hmax@{hmax}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{hmax()}{hmax()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a516a2f0d872381b8c7c047845a90c9a3} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} hmax (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the horizontal maximum of a vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00534}{534}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00535\ \{}
+\DoxyCodeLine{00536\ \ \ \ \ \_\_m128i\ m\ =\ \_mm\_max\_epi32(\_mm256\_extracti128\_si256(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ 0),\ \_mm256\_extracti128\_si256(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ 1));}
+\DoxyCodeLine{00537\ \ \ \ \ m\ =\ \_mm\_max\_epi32(m,\ \_mm\_shuffle\_epi32(m,\ \_MM\_SHUFFLE(0,0,3,2)));}
+\DoxyCodeLine{00538\ \ \ \ \ m\ =\ \_mm\_max\_epi32(m,\ \_mm\_shuffle\_epi32(m,\ \_MM\_SHUFFLE(0,0,0,1)));}
+\DoxyCodeLine{00539\ \ \ \ \ m\ =\ \_mm\_shuffle\_epi32(m,\ \_MM\_SHUFFLE(0,0,0,0));}
+\DoxyCodeLine{00540\ }
+\DoxyCodeLine{00541\ \ \ \ \ \_\_m256i\ r\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a680bba70fe88413f5ce26be2b8d41571}{astcenc\_mm256\_set\_m128i}}(m,\ m);}
+\DoxyCodeLine{00542\ \ \ \ \ \mbox{\hyperlink{structvint8}{vint8}}\ vmax(r);}
+\DoxyCodeLine{00543\ \ \ \ \ \textcolor{keywordflow}{return}\ vmax;}
+\DoxyCodeLine{00544\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a516a2f0d872381b8c7c047845a90c9a3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a5d1b09f64af83d5171e4b9580f62ac71}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!hmax\_s@{hmax\_s}}
+\index{hmax\_s@{hmax\_s}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{hmax\_s()}{hmax\_s()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a5d1b09f64af83d5171e4b9580f62ac71} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} float hmax\+\_\+s (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the horizontal maximum of a vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00888}{888}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00889\ \{}
+\DoxyCodeLine{00890\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a516a2f0d872381b8c7c047845a90c9a3}{hmax}}(a).\mbox{\hyperlink{structvint8_a2e1f0c785f4899e1b7912f2580b9f77c}{lane}}<0>();}
+\DoxyCodeLine{00891\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{astcenc__vecmathlib__avx2__8_8h_a5d1b09f64af83d5171e4b9580f62ac71_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a5d1b09f64af83d5171e4b9580f62ac71_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a3d897f61a0db6b4f05650766cb58f105}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!hmin@{hmin}}
+\index{hmin@{hmin}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{hmin()}{hmin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a3d897f61a0db6b4f05650766cb58f105} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} hmin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the horizontal minimum of a vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00835}{835}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00836\ \{}
+\DoxyCodeLine{00837\ \ \ \ \ \_\_m128\ vlow\ =\ \_mm256\_castps256\_ps128(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}});}
+\DoxyCodeLine{00838\ \ \ \ \ \_\_m128\ vhigh\ =\ \_mm256\_extractf128\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ 1);}
+\DoxyCodeLine{00839\ \ \ \ \ vlow\ =\ \_mm\_min\_ps(vlow,\ vhigh);}
+\DoxyCodeLine{00840\ }
+\DoxyCodeLine{00841\ \ \ \ \ \textcolor{comment}{//\ First\ do\ an\ horizontal\ reduction.}}
+\DoxyCodeLine{00842\ \ \ \ \ \_\_m128\ shuf\ =\ \_mm\_shuffle\_ps(vlow,\ vlow,\ \_MM\_SHUFFLE(2,\ 3,\ 0,\ 1));}
+\DoxyCodeLine{00843\ \ \ \ \ \_\_m128\ mins\ =\ \_mm\_min\_ps(vlow,\ shuf);}
+\DoxyCodeLine{00844\ \ \ \ \ shuf\ =\ \_mm\_movehl\_ps(shuf,\ mins);}
+\DoxyCodeLine{00845\ \ \ \ \ mins\ =\ \_mm\_min\_ss(mins,\ shuf);}
+\DoxyCodeLine{00846\ }
+\DoxyCodeLine{00847\ \ \ \ \ \textcolor{comment}{//\ This\ is\ the\ most\ logical\ implementation,\ but\ the\ convenience\ intrinsic}}
+\DoxyCodeLine{00848\ \ \ \ \ \textcolor{comment}{//\ is\ missing\ on\ older\ compilers\ (supported\ in\ g++\ 9\ and\ clang++\ 9).}}
+\DoxyCodeLine{00849\ \ \ \ \ \textcolor{comment}{//\_\_m256i\ r\ =\ \_mm256\_set\_m128(m,\ m)}}
+\DoxyCodeLine{00850\ \ \ \ \ \_\_m256\ r\ =\ \_mm256\_insertf128\_ps(\_mm256\_castps128\_ps256(mins),\ mins,\ 1);}
+\DoxyCodeLine{00851\ }
+\DoxyCodeLine{00852\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_permute\_ps(r,\ 0));}
+\DoxyCodeLine{00853\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ae7ff255b24f24f8d2a31e6849f4b1250}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!hmin@{hmin}}
+\index{hmin@{hmin}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{hmin()}{hmin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ae7ff255b24f24f8d2a31e6849f4b1250} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} hmin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the horizontal minimum of a vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00519}{519}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00520\ \{}
+\DoxyCodeLine{00521\ \ \ \ \ \_\_m128i\ m\ =\ \_mm\_min\_epi32(\_mm256\_extracti128\_si256(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ 0),\ \_mm256\_extracti128\_si256(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ 1));}
+\DoxyCodeLine{00522\ \ \ \ \ m\ =\ \_mm\_min\_epi32(m,\ \_mm\_shuffle\_epi32(m,\ \_MM\_SHUFFLE(0,0,3,2)));}
+\DoxyCodeLine{00523\ \ \ \ \ m\ =\ \_mm\_min\_epi32(m,\ \_mm\_shuffle\_epi32(m,\ \_MM\_SHUFFLE(0,0,0,1)));}
+\DoxyCodeLine{00524\ \ \ \ \ m\ =\ \_mm\_shuffle\_epi32(m,\ \_MM\_SHUFFLE(0,0,0,0));}
+\DoxyCodeLine{00525\ }
+\DoxyCodeLine{00526\ \ \ \ \ \_\_m256i\ r\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a680bba70fe88413f5ce26be2b8d41571}{astcenc\_mm256\_set\_m128i}}(m,\ m);}
+\DoxyCodeLine{00527\ \ \ \ \ \mbox{\hyperlink{structvint8}{vint8}}\ vmin(r);}
+\DoxyCodeLine{00528\ \ \ \ \ \textcolor{keywordflow}{return}\ vmin;}
+\DoxyCodeLine{00529\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_ae7ff255b24f24f8d2a31e6849f4b1250_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a5618d81f875c0158284ccc9923d83dab}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!hmin\_s@{hmin\_s}}
+\index{hmin\_s@{hmin\_s}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{hmin\_s()}{hmin\_s()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a5618d81f875c0158284ccc9923d83dab} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} float hmin\+\_\+s (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the horizontal minimum of a vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00858}{858}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00859\ \{}
+\DoxyCodeLine{00860\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ae7ff255b24f24f8d2a31e6849f4b1250}{hmin}}(a).\mbox{\hyperlink{structvint8_a2e1f0c785f4899e1b7912f2580b9f77c}{lane}}<0>();}
+\DoxyCodeLine{00861\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{astcenc__vecmathlib__avx2__8_8h_a5618d81f875c0158284ccc9923d83dab_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a5618d81f875c0158284ccc9923d83dab_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ac584d4929db078403c58549bafd3c1cd}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!int\_as\_float@{int\_as\_float}}
+\index{int\_as\_float@{int\_as\_float}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{int\_as\_float()}{int\_as\_float()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ac584d4929db078403c58549bafd3c1cd} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} int\+\_\+as\+\_\+float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a integer value as a float bit pattern (i.\+e. no conversion). 
+
+It is a common trick to convert floats into integer bit patterns, perform some bit hackery based on knowledge they are IEEE 754 layout, and then convert them back again. This is the second half of that flip. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l01043}{1043}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01044\ \{}
+\DoxyCodeLine{01045\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_castsi256\_ps(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}));}
+\DoxyCodeLine{01046\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_ac584d4929db078403c58549bafd3c1cd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a3a2ce0fb403294db7fe126a6b3e87ab7}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!int\_to\_float@{int\_to\_float}}
+\index{int\_to\_float@{int\_to\_float}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{int\_to\_float()}{int\_to\_float()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a3a2ce0fb403294db7fe126a6b3e87ab7} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} int\+\_\+to\+\_\+float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a float value for an integer vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l01019}{1019}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01020\ \{}
+\DoxyCodeLine{01021\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_cvtepi32\_ps(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}));}
+\DoxyCodeLine{01022\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a3a2ce0fb403294db7fe126a6b3e87ab7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a635c0c8b5f0ea77a88ccc25f53eab588}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!interleave\_rgba8@{interleave\_rgba8}}
+\index{interleave\_rgba8@{interleave\_rgba8}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{interleave\_rgba8()}{interleave\_rgba8()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a635c0c8b5f0ea77a88ccc25f53eab588} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} interleave\+\_\+rgba8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{r}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{g}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{b}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a vector of interleaved RGBA data. 
+
+Input vectors have the value stored in the bottom 8 bits of each lane, with high bits set to zero.
+
+Output vector stores a single RGBA texel packed in each lane. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l01153}{1153}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01154\ \{}
+\DoxyCodeLine{01155\ \ \ \ \ \textcolor{keywordflow}{return}\ r\ +\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a86240f0fb5745ded88afe10d524c960f}{lsl<8>}}(g)\ +\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a86240f0fb5745ded88afe10d524c960f}{lsl<16>}}(b)\ +\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a86240f0fb5745ded88afe10d524c960f}{lsl<24>}}(a);}
+\DoxyCodeLine{01156\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{astcenc__vecmathlib__avx2__8_8h_a635c0c8b5f0ea77a88ccc25f53eab588_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a635c0c8b5f0ea77a88ccc25f53eab588_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a86240f0fb5745ded88afe10d524c960f}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!lsl@{lsl}}
+\index{lsl@{lsl}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{lsl()}{lsl()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a86240f0fb5745ded88afe10d524c960f} 
+template$<$int s$>$ \\
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} lsl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Logical shift left. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00479}{479}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00480\ \{}
+\DoxyCodeLine{00481\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(\_mm256\_slli\_epi32(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ s));}
+\DoxyCodeLine{00482\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a86240f0fb5745ded88afe10d524c960f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a0a3a7d755cec1c73d0ce9c50b33bc207}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!lsr@{lsr}}
+\index{lsr@{lsr}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{lsr()}{lsr()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a0a3a7d755cec1c73d0ce9c50b33bc207} 
+template$<$int s$>$ \\
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} lsr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Logical shift right. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00495}{495}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00496\ \{}
+\DoxyCodeLine{00497\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(\_mm256\_srli\_epi32(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ s));}
+\DoxyCodeLine{00498\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a0a3a7d755cec1c73d0ce9c50b33bc207_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!mask@{mask}}
+\index{mask@{mask}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{mask()}{mask()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} unsigned int mask (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvmask8}{vmask8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a 8-\/bit mask code indicating mask status. 
+
+bit0 = lane 0 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00355}{355}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00356\ \{}
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(\_mm256\_movemask\_ps(a.\mbox{\hyperlink{structvmask8_a4f9d3849e610eba5bc5590ffd6557064}{m}}));}
+\DoxyCodeLine{00358\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ac95dbdb3ba714b06a5d827e58b8dd9f7}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!max@{max}}
+\index{max@{max}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ac95dbdb3ba714b06a5d827e58b8dd9f7} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} max (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{float}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Return the max vector of a vector and a scalar. 
+
+If either lane value is NaN, {\ttfamily b} will be returned for that lane. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00770}{770}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00771\ \{}
+\DoxyCodeLine{00772\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}{max}}(a,\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(b));}
+\DoxyCodeLine{00773\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{astcenc__vecmathlib__avx2__8_8h_ac95dbdb3ba714b06a5d827e58b8dd9f7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a2e6a96efa51e592e9c7fa5734d451fb5}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!max@{max}}
+\index{max@{max}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a2e6a96efa51e592e9c7fa5734d451fb5} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} max (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Return the max vector of two vectors. 
+
+If either lane value is NaN, {\ttfamily b} will be returned for that lane. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00760}{760}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00761\ \{}
+\DoxyCodeLine{00762\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_max\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ b.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}));}
+\DoxyCodeLine{00763\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!max@{max}}
+\index{max@{max}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} max (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Return the max vector of two vectors. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00511}{511}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00512\ \{}
+\DoxyCodeLine{00513\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(\_mm256\_max\_epi32(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ b.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}));}
+\DoxyCodeLine{00514\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a03b4112aa21ae623f3f79b2a378f5f17}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!min@{min}}
+\index{min@{min}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a03b4112aa21ae623f3f79b2a378f5f17} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} min (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{float}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Return the min vector of a vector and a scalar. 
+
+If either lane value is NaN, {\ttfamily b} will be returned for that lane. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00750}{750}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00751\ \{}
+\DoxyCodeLine{00752\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(a,\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(b));}
+\DoxyCodeLine{00753\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{astcenc__vecmathlib__avx2__8_8h_a03b4112aa21ae623f3f79b2a378f5f17_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a634a5a405235f58a7cbf7b65f7c3b6be}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!min@{min}}
+\index{min@{min}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a634a5a405235f58a7cbf7b65f7c3b6be} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} min (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Return the min vector of two vectors. 
+
+If either lane value is NaN, {\ttfamily b} will be returned for that lane. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00740}{740}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00741\ \{}
+\DoxyCodeLine{00742\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_min\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ b.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}));}
+\DoxyCodeLine{00743\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!min@{min}}
+\index{min@{min}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} min (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Return the min vector of two vectors. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00503}{503}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00504\ \{}
+\DoxyCodeLine{00505\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(\_mm256\_min\_epi32(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ b.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}));}
+\DoxyCodeLine{00506\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a18033ced2b024ff813c063cba1299eb3}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a18033ced2b024ff813c063cba1299eb3} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector inequality. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00698}{698}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00699\ \{}
+\DoxyCodeLine{00700\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask8}{vmask8}}(\_mm256\_cmp\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ b.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ \_CMP\_NEQ\_OQ));}
+\DoxyCodeLine{00701\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_af3e02d6d10149581549db98c614697b7}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_af3e02d6d10149581549db98c614697b7} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector inequality. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00455}{455}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00456\ \{}
+\DoxyCodeLine{00457\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask8}{\string~vmask8}}(\_mm256\_cmpeq\_epi32(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ b.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}));}
+\DoxyCodeLine{00458\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a851917a83cdf11fe69241d9085905294}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator\&()}{operator\&()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a851917a83cdf11fe69241d9085905294} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} operator\& (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector bitwise and. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00431}{431}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00432\ \{}
+\DoxyCodeLine{00433\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(\_mm256\_and\_si256(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ b.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}));}
+\DoxyCodeLine{00434\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a27bcc98ea79c3aac26f12c7940a3db2f}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator\&()}{operator\&()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a27bcc98ea79c3aac26f12c7940a3db2f} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} operator\& (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvmask8}{vmask8}}}]{a}{, }\item[{\mbox{\hyperlink{structvmask8}{vmask8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: mask intersect (and). 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00329}{329}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00330\ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask8}{vmask8}}(\_mm256\_and\_ps(a.\mbox{\hyperlink{structvmask8_a4f9d3849e610eba5bc5590ffd6557064}{m}},\ b.\mbox{\hyperlink{structvmask8_a4f9d3849e610eba5bc5590ffd6557064}{m}}));}
+\DoxyCodeLine{00332\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ac5075c8a58fcad0df82672603646fb33}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ac5075c8a58fcad0df82672603646fb33} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{float}]{a}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: scalar by vector multiplication. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00656}{656}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00657\ \{}
+\DoxyCodeLine{00658\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_mul\_ps(\_mm256\_set1\_ps(a),\ b.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}));}
+\DoxyCodeLine{00659\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a34c6df0802df736ead9c4f85322a750a}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a34c6df0802df736ead9c4f85322a750a} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{float}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by scalar multiplication. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00648}{648}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00649\ \{}
+\DoxyCodeLine{00650\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_mul\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ \_mm256\_set1\_ps(b)));}
+\DoxyCodeLine{00651\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a259a1c20382aa196e9f546a449b28f75}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a259a1c20382aa196e9f546a449b28f75} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector multiplication. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00640}{640}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00641\ \{}
+\DoxyCodeLine{00642\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_mul\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ b.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}));}
+\DoxyCodeLine{00643\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a661e6c55c378f29bf3a06c6ab82f34cf}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a661e6c55c378f29bf3a06c6ab82f34cf} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector multiplication. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00407}{407}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00408\ \{}
+\DoxyCodeLine{00409\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(\_mm256\_mullo\_epi32(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ b.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}));}
+\DoxyCodeLine{00410\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a8ba53b441ac873ae3115fac172ab8544}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator+@{operator+}}
+\index{operator+@{operator+}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a8ba53b441ac873ae3115fac172ab8544} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector addition. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00615}{615}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00616\ \{}
+\DoxyCodeLine{00617\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_add\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ b.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}));}
+\DoxyCodeLine{00618\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ac61cce61fdd5d03b9a783a00a756095e}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator+@{operator+}}
+\index{operator+@{operator+}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ac61cce61fdd5d03b9a783a00a756095e} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector addition. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00382}{382}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00383\ \{}
+\DoxyCodeLine{00384\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(\_mm256\_add\_epi32(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ b.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}));}
+\DoxyCodeLine{00385\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_aa2ce647a168f328895dd9bf3819a9dbb}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_aa2ce647a168f328895dd9bf3819a9dbb} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} \& operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}} \&}]{a}{, }\item[{const \mbox{\hyperlink{structvfloat8}{vfloat8}} \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector incremental addition. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00623}{623}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00624\ \{}
+\DoxyCodeLine{00625\ \ \ \ \ a\ =\ a\ +\ b;}
+\DoxyCodeLine{00626\ \ \ \ \ \textcolor{keywordflow}{return}\ a;}
+\DoxyCodeLine{00627\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ae13b8961ad82d3335db798487b4aa825}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ae13b8961ad82d3335db798487b4aa825} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} \& operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}} \&}]{a}{, }\item[{const \mbox{\hyperlink{structvint8}{vint8}} \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector incremental addition. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00390}{390}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00391\ \{}
+\DoxyCodeLine{00392\ \ \ \ \ a\ =\ a\ +\ b;}
+\DoxyCodeLine{00393\ \ \ \ \ \textcolor{keywordflow}{return}\ a;}
+\DoxyCodeLine{00394\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ab20b170e216cfa1504a71f141af9b638}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ab20b170e216cfa1504a71f141af9b638} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector subtraction. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00632}{632}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00633\ \{}
+\DoxyCodeLine{00634\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_sub\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ b.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}));}
+\DoxyCodeLine{00635\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a39fda84e324eebc80b8311a3c666d2ab}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a39fda84e324eebc80b8311a3c666d2ab} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector subtraction. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00399}{399}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00400\ \{}
+\DoxyCodeLine{00401\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(\_mm256\_sub\_epi32(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ b.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}));}
+\DoxyCodeLine{00402\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a53cc31c054d10388352cca9276e0ef74}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator/@{operator/}}
+\index{operator/@{operator/}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a53cc31c054d10388352cca9276e0ef74} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} operator/ (\begin{DoxyParamCaption}\item[{float}]{a}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: scalar by vector division. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00681}{681}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00682\ \{}
+\DoxyCodeLine{00683\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_div\_ps(\_mm256\_set1\_ps(a),\ b.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}));}
+\DoxyCodeLine{00684\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ab4d94669e63fcb5323184e1d63e3de9e}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator/@{operator/}}
+\index{operator/@{operator/}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ab4d94669e63fcb5323184e1d63e3de9e} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} operator/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{float}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by scalar division. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00672}{672}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00673\ \{}
+\DoxyCodeLine{00674\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_div\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ \_mm256\_set1\_ps(b)));}
+\DoxyCodeLine{00675\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_af36a1274f0279ee7672332044513ea91}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator/@{operator/}}
+\index{operator/@{operator/}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_af36a1274f0279ee7672332044513ea91} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} operator/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector division. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00664}{664}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00665\ \{}
+\DoxyCodeLine{00666\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_div\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ b.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}));}
+\DoxyCodeLine{00667\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a66a7efbf5a85e420b4a886d169f02c2f}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a66a7efbf5a85e420b4a886d169f02c2f} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector less than. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00706}{706}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00707\ \{}
+\DoxyCodeLine{00708\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask8}{vmask8}}(\_mm256\_cmp\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ b.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ \_CMP\_LT\_OQ));}
+\DoxyCodeLine{00709\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_aa8401a6989bd771e008111e49e471998}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_aa8401a6989bd771e008111e49e471998} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector less than. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00463}{463}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00464\ \{}
+\DoxyCodeLine{00465\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask8}{vmask8}}(\_mm256\_cmpgt\_epi32(b.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}));}
+\DoxyCodeLine{00466\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a9ef689563e6544335de0955b43195b43}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a9ef689563e6544335de0955b43195b43} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} operator$<$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector less than or equal. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00722}{722}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00723\ \{}
+\DoxyCodeLine{00724\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask8}{vmask8}}(\_mm256\_cmp\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ b.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ \_CMP\_LE\_OQ));}
+\DoxyCodeLine{00725\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ad38056387459274964052febbe138aac}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator==@{operator==}}
+\index{operator==@{operator==}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ad38056387459274964052febbe138aac} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector equality. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00690}{690}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00691\ \{}
+\DoxyCodeLine{00692\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask8}{vmask8}}(\_mm256\_cmp\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ b.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ \_CMP\_EQ\_OQ));}
+\DoxyCodeLine{00693\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ad80fe3a8c472ffcd06b32cd10dd55b51}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator==@{operator==}}
+\index{operator==@{operator==}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ad80fe3a8c472ffcd06b32cd10dd55b51} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector equality. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00447}{447}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00448\ \{}
+\DoxyCodeLine{00449\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask8}{vmask8}}(\_mm256\_cmpeq\_epi32(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ b.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}));}
+\DoxyCodeLine{00450\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ad2fffdb3008cf0aee90349e4b50ca1ad}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ad2fffdb3008cf0aee90349e4b50ca1ad} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} operator$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector greater than. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00714}{714}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00715\ \{}
+\DoxyCodeLine{00716\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask8}{vmask8}}(\_mm256\_cmp\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ b.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ \_CMP\_GT\_OQ));}
+\DoxyCodeLine{00717\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a623c065f95a86c16a38350ded0be3f51}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a623c065f95a86c16a38350ded0be3f51} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} operator$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector greater than. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00471}{471}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00472\ \{}
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask8}{vmask8}}(\_mm256\_cmpgt\_epi32(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ b.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}));}
+\DoxyCodeLine{00474\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a1f8e22e58d5a70d9ee14e801005397b6}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a1f8e22e58d5a70d9ee14e801005397b6} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} operator$>$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector greater than or equal. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00730}{730}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00731\ \{}
+\DoxyCodeLine{00732\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask8}{vmask8}}(\_mm256\_cmp\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ b.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ \_CMP\_GE\_OQ));}
+\DoxyCodeLine{00733\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a7ff868894bd6c095ee188b896b26e69f}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}}
+\index{operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}()}{operator\string^()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a7ff868894bd6c095ee188b896b26e69f} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} operator\texorpdfstring{$^\wedge$}{\string^} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector bitwise xor. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00439}{439}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00440\ \{}
+\DoxyCodeLine{00441\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(\_mm256\_xor\_si256(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ b.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}));}
+\DoxyCodeLine{00442\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_af459261f12d615fd6ae1f79b2823d12e}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}}
+\index{operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}()}{operator\string^()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_af459261f12d615fd6ae1f79b2823d12e} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} operator\texorpdfstring{$^\wedge$}{\string^} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvmask8}{vmask8}}}]{a}{, }\item[{\mbox{\hyperlink{structvmask8}{vmask8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: mask difference (xor). 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00337}{337}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00338\ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask8}{vmask8}}(\_mm256\_xor\_ps(a.\mbox{\hyperlink{structvmask8_a4f9d3849e610eba5bc5590ffd6557064}{m}},\ b.\mbox{\hyperlink{structvmask8_a4f9d3849e610eba5bc5590ffd6557064}{m}}));}
+\DoxyCodeLine{00340\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ab618ad88af8ff0a75126c969cb8bb713}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}()}{operator|()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ab618ad88af8ff0a75126c969cb8bb713} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} operator\texorpdfstring{$\vert$}{|} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector by vector bitwise or. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00423}{423}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00424\ \{}
+\DoxyCodeLine{00425\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(\_mm256\_or\_si256(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ b.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}}));}
+\DoxyCodeLine{00426\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_aa852ea062f5ad5b16d2cc462d6205903}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}()}{operator|()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_aa852ea062f5ad5b16d2cc462d6205903} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} operator\texorpdfstring{$\vert$}{|} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvmask8}{vmask8}}}]{a}{, }\item[{\mbox{\hyperlink{structvmask8}{vmask8}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: mask union (or). 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00321}{321}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00322\ \{}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask8}{vmask8}}(\_mm256\_or\_ps(a.\mbox{\hyperlink{structvmask8_a4f9d3849e610eba5bc5590ffd6557064}{m}},\ b.\mbox{\hyperlink{structvmask8_a4f9d3849e610eba5bc5590ffd6557064}{m}}));}
+\DoxyCodeLine{00324\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a962e41ed8c66b995972ade40e69ecf3c}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator\texorpdfstring{$\sim$}{\string~}@{operator\texorpdfstring{$\sim$}{\string~}}}
+\index{operator\texorpdfstring{$\sim$}{\string~}@{operator\texorpdfstring{$\sim$}{\string~}}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\sim$}{\string~}()}{operator\string~()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a962e41ed8c66b995972ade40e69ecf3c} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} operator\texorpdfstring{$\sim$}{\string~} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: vector bit invert. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00415}{415}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00416\ \{}
+\DoxyCodeLine{00417\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(\_mm256\_xor\_si256(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ \_mm256\_set1\_epi32(-\/1)));}
+\DoxyCodeLine{00418\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a4a5841990a807162ceaa266687fb12c5}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!operator\texorpdfstring{$\sim$}{\string~}@{operator\texorpdfstring{$\sim$}{\string~}}}
+\index{operator\texorpdfstring{$\sim$}{\string~}@{operator\texorpdfstring{$\sim$}{\string~}}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\sim$}{\string~}()}{operator\string~()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a4a5841990a807162ceaa266687fb12c5} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvmask8}{vmask8}} operator\texorpdfstring{$\sim$}{\string~} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvmask8}{vmask8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Overload\+: mask invert (not). 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00345}{345}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00346\ \{}
+\DoxyCodeLine{00347\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvmask8}{vmask8}}(\_mm256\_xor\_si256(\_mm256\_castps\_si256(a.\mbox{\hyperlink{structvmask8_a4f9d3849e610eba5bc5590ffd6557064}{m}}),\ \_mm256\_set1\_epi32(-\/1)));}
+\DoxyCodeLine{00348\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a98f7a50685f56b5c84d1c760fa037d6d}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!pack\_low\_bytes@{pack\_low\_bytes}}
+\index{pack\_low\_bytes@{pack\_low\_bytes}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{pack\_low\_bytes()}{pack\_low\_bytes()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a98f7a50685f56b5c84d1c760fa037d6d} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} pack\+\_\+low\+\_\+bytes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{v}{}\end{DoxyParamCaption})}
+
+
+
+Pack low 8 bits of N (vector width) lanes into bottom of vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00584}{584}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00585\ \{}
+\DoxyCodeLine{00586\ \ \ \ \ \_\_m256i\ shuf\ =\ \_mm256\_set\_epi8(0,\ 0,\ 0,\ 0,\ \ 0,\ \ 0,\ \ 0,\ \ 0,}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 28,\ 24,\ 20,\ 16,}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ \ 0,\ \ 0,\ \ 0,\ \ 0,}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 12,\ \ 8,\ \ 4,\ \ 0);}
+\DoxyCodeLine{00590\ \ \ \ \ \_\_m256i\ a\ =\ \_mm256\_shuffle\_epi8(v.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ shuf);}
+\DoxyCodeLine{00591\ \ \ \ \ \_\_m128i\ a0\ =\ \_mm256\_extracti128\_si256(a,\ 0);}
+\DoxyCodeLine{00592\ \ \ \ \ \_\_m128i\ a1\ =\ \_mm256\_extracti128\_si256(a,\ 1);}
+\DoxyCodeLine{00593\ \ \ \ \ \_\_m128i\ b\ =\ \_mm\_unpacklo\_epi32(a0,\ a1);}
+\DoxyCodeLine{00594\ }
+\DoxyCodeLine{00595\ \ \ \ \ \_\_m256i\ r\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a680bba70fe88413f5ce26be2b8d41571}{astcenc\_mm256\_set\_m128i}}(b,\ b);}
+\DoxyCodeLine{00596\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(r);}
+\DoxyCodeLine{00597\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a98f7a50685f56b5c84d1c760fa037d6d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_aa6031a6471bf39b91b25a47c585917a2}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!print@{print}}
+\index{print@{print}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_aa6031a6471bf39b91b25a47c585917a2} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Debug function to print a vector of floats. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l01193}{1193}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01194\ \{}
+\DoxyCodeLine{01195\ \ \ \ \ \textcolor{keyword}{alignas}(32)\ \textcolor{keywordtype}{float}\ v[8];}
+\DoxyCodeLine{01196\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(a,\ v);}
+\DoxyCodeLine{01197\ \ \ \ \ printf(\textcolor{stringliteral}{"{}v8\_f32:\(\backslash\)n\ \ \%0.4f\ \%0.4f\ \%0.4f\ \%0.4f\ \%0.4f\ \%0.4f\ \%0.4f\ \%0.4f\(\backslash\)n"{}},}
+\DoxyCodeLine{01198\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(v[0]),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(v[1]),}
+\DoxyCodeLine{01199\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(v[2]),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(v[3]),}
+\DoxyCodeLine{01200\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(v[4]),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(v[5]),}
+\DoxyCodeLine{01201\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(v[6]),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(v[7]));}
+\DoxyCodeLine{01202\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{astcenc__vecmathlib__avx2__8_8h_aa6031a6471bf39b91b25a47c585917a2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a8b1292c260733f79ce44ad0092b7704f}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!print@{print}}
+\index{print@{print}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a8b1292c260733f79ce44ad0092b7704f} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Debug function to print a vector of ints. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l01171}{1171}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01172\ \{}
+\DoxyCodeLine{01173\ \ \ \ \ \textcolor{keyword}{alignas}(32)\ \textcolor{keywordtype}{int}\ v[8];}
+\DoxyCodeLine{01174\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(a,\ v);}
+\DoxyCodeLine{01175\ \ \ \ \ printf(\textcolor{stringliteral}{"{}v8\_i32:\(\backslash\)n\ \ \%8d\ \%8d\ \%8d\ \%8d\ \%8d\ \%8d\ \%8d\ \%8d\(\backslash\)n"{}},}
+\DoxyCodeLine{01176\ \ \ \ \ \ \ \ \ \ \ \ v[0],\ v[1],\ v[2],\ v[3],\ v[4],\ v[5],\ v[6],\ v[7]);}
+\DoxyCodeLine{01177\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{astcenc__vecmathlib__avx2__8_8h_a8b1292c260733f79ce44ad0092b7704f_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{astcenc__vecmathlib__avx2__8_8h_a8b1292c260733f79ce44ad0092b7704f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a13d56ecd4a955ba3f7dfcd7cec979177}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!print@{print}}
+\index{print@{print}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a13d56ecd4a955ba3f7dfcd7cec979177} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvmask8}{vmask8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Debug function to print a vector of masks. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l01207}{1207}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01208\ \{}
+\DoxyCodeLine{01209\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a8b1292c260733f79ce44ad0092b7704f}{print}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(\mbox{\hyperlink{structvint8}{vint8}}(0),\ \mbox{\hyperlink{structvint8}{vint8}}(1),\ a));}
+\DoxyCodeLine{01210\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{astcenc__vecmathlib__avx2__8_8h_a13d56ecd4a955ba3f7dfcd7cec979177_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ade2b55f0202d5fa92daf3c282b24ad95}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!printx@{printx}}
+\index{printx@{printx}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{printx()}{printx()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ade2b55f0202d5fa92daf3c282b24ad95} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void printx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Debug function to print a vector of ints. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l01182}{1182}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01183\ \{}
+\DoxyCodeLine{01184\ \ \ \ \ \textcolor{keyword}{alignas}(32)\ \textcolor{keywordtype}{int}\ v[8];}
+\DoxyCodeLine{01185\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(a,\ v);}
+\DoxyCodeLine{01186\ \ \ \ \ printf(\textcolor{stringliteral}{"{}v8\_i32:\(\backslash\)n\ \ \%08x\ \%08x\ \%08x\ \%08x\ \%08x\ \%08x\ \%08x\ \%08x\(\backslash\)n"{}},}
+\DoxyCodeLine{01187\ \ \ \ \ \ \ \ \ \ \ \ v[0],\ v[1],\ v[2],\ v[3],\ v[4],\ v[5],\ v[6],\ v[7]);}
+\DoxyCodeLine{01188\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{astcenc__vecmathlib__avx2__8_8h_ade2b55f0202d5fa92daf3c282b24ad95_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a0cc9d8a88b3c39b3ea66e52d515ac661}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!round@{round}}
+\index{round@{round}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{round()}{round()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a0cc9d8a88b3c39b3ea66e52d515ac661} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} round (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return a float rounded to the nearest integer value. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00826}{826}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00827\ \{}
+\DoxyCodeLine{00828\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ flags\ =\ \_MM\_FROUND\_TO\_NEAREST\_INT\ |\ \_MM\_FROUND\_NO\_EXC;}
+\DoxyCodeLine{00829\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_round\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ flags));}
+\DoxyCodeLine{00830\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a0cc9d8a88b3c39b3ea66e52d515ac661_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a9601c811d18ec273457e41987c661cb3}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!select@{select}}
+\index{select@{select}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{select()}{select()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a9601c811d18ec273457e41987c661cb3} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} select (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{b}{, }\item[{\mbox{\hyperlink{structvmask8}{vmask8}}}]{cond}{}\end{DoxyParamCaption})}
+
+
+
+Return lanes from {\ttfamily b} if {\ttfamily cond} is set, else {\ttfamily a}. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00907}{907}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00908\ \{}
+\DoxyCodeLine{00909\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_blendv\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ b.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ cond.\mbox{\hyperlink{structvmask8_a4f9d3849e610eba5bc5590ffd6557064}{m}}));}
+\DoxyCodeLine{00910\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!select@{select}}
+\index{select@{select}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{select()}{select()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} select (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{b}{, }\item[{\mbox{\hyperlink{structvmask8}{vmask8}}}]{cond}{}\end{DoxyParamCaption})}
+
+
+
+Return lanes from {\ttfamily b} if {\ttfamily cond} is set, else {\ttfamily a}. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00602}{602}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00603\ \{}
+\DoxyCodeLine{00604\ \ \ \ \ \_\_m256i\ condi\ =\ \_mm256\_castps\_si256(cond.\mbox{\hyperlink{structvmask8_a4f9d3849e610eba5bc5590ffd6557064}{m}});}
+\DoxyCodeLine{00605\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(\_mm256\_blendv\_epi8(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ b.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ condi));}
+\DoxyCodeLine{00606\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a0c89452ffbab98a181c44460db41cae8}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!select\_msb@{select\_msb}}
+\index{select\_msb@{select\_msb}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{select\_msb()}{select\_msb()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a0c89452ffbab98a181c44460db41cae8} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} select\+\_\+msb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{b}{, }\item[{\mbox{\hyperlink{structvmask8}{vmask8}}}]{cond}{}\end{DoxyParamCaption})}
+
+
+
+Return lanes from {\ttfamily b} if MSB of {\ttfamily cond} is set, else {\ttfamily a}. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00915}{915}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00916\ \{}
+\DoxyCodeLine{00917\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_blendv\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ b.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}},\ cond.\mbox{\hyperlink{structvmask8_a4f9d3849e610eba5bc5590ffd6557064}{m}}));}
+\DoxyCodeLine{00918\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a0c89452ffbab98a181c44460db41cae8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a46b31b19ff13c14adb023db4b5df8e52}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!sqrt@{sqrt}}
+\index{sqrt@{sqrt}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{sqrt()}{sqrt()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a46b31b19ff13c14adb023db4b5df8e52} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvfloat8}{vfloat8}} sqrt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Return the sqrt of the lanes in the vector. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00969}{969}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00970\ \{}
+\DoxyCodeLine{00971\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvfloat8}{vfloat8}}(\_mm256\_sqrt\_ps(a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}}));}
+\DoxyCodeLine{00972\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a46b31b19ff13c14adb023db4b5df8e52_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ad2e42649483caec7076aa7db7d21168e}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!store@{store}}
+\index{store@{store}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{store()}{store()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ad2e42649483caec7076aa7db7d21168e} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void store (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Store a vector to an unaligned memory address. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00985}{985}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00986\ \{}
+\DoxyCodeLine{00987\ \ \ \ \ \_mm256\_storeu\_ps(p,\ a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}});}
+\DoxyCodeLine{00988\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a61add2970baac5cf6b04177472ae1ed1}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!store@{store}}
+\index{store@{store}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{store()}{store()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a61add2970baac5cf6b04177472ae1ed1} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void store (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Store a vector to an unaligned memory address. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00557}{557}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00558\ \{}
+\DoxyCodeLine{00559\ \ \ \ \ \_mm256\_storeu\_si256(\textcolor{keyword}{reinterpret\_cast<}\_\_m256i*\textcolor{keyword}{>}(p),\ a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}});}
+\DoxyCodeLine{00560\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a61add2970baac5cf6b04177472ae1ed1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a2766c60947c6dea0a84cd8d86806c6eb}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!store\_lanes\_masked@{store\_lanes\_masked}}
+\index{store\_lanes\_masked@{store\_lanes\_masked}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{store\_lanes\_masked()}{store\_lanes\_masked()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a2766c60947c6dea0a84cd8d86806c6eb} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void store\+\_\+lanes\+\_\+masked (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{base}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{data}{, }\item[{\mbox{\hyperlink{structvmask8}{vmask8}}}]{mask}{}\end{DoxyParamCaption})}
+
+
+
+Store a vector, skipping masked lanes. 
+
+All masked lanes must be at the end of vector, after all non-\/masked lanes. 
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l01163}{1163}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01164\ \{}
+\DoxyCodeLine{01165\ \ \ \ \ \_mm256\_maskstore\_epi32(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{int}*\textcolor{keyword}{>}(base),\ \_mm256\_castps\_si256(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}.m),\ data.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}});}
+\DoxyCodeLine{01166\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{astcenc__vecmathlib__avx2__8_8h_a2766c60947c6dea0a84cd8d86806c6eb_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a2766c60947c6dea0a84cd8d86806c6eb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ac55f9ffdc41bee5d274cb6433809fefc}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!store\_nbytes@{store\_nbytes}}
+\index{store\_nbytes@{store\_nbytes}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{store\_nbytes()}{store\_nbytes()}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ac55f9ffdc41bee5d274cb6433809fefc} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void store\+\_\+nbytes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Store lowest N (vector width) bytes into an unaligned address. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00565}{565}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00566\ \{}
+\DoxyCodeLine{00567\ \ \ \ \ \textcolor{comment}{//\ This\ is\ the\ most\ logical\ implementation,\ but\ the\ convenience\ intrinsic}}
+\DoxyCodeLine{00568\ \ \ \ \ \textcolor{comment}{//\ is\ missing\ on\ older\ compilers\ (supported\ in\ g++\ 9\ and\ clang++\ 9).}}
+\DoxyCodeLine{00569\ \ \ \ \ \textcolor{comment}{//\ \_mm\_storeu\_si64(ptr,\ \_mm256\_extracti128\_si256(v.m,\ 0))}}
+\DoxyCodeLine{00570\ \ \ \ \ \_mm\_storel\_epi64(\textcolor{keyword}{reinterpret\_cast<}\_\_m128i*\textcolor{keyword}{>}(p),\ \_mm256\_extracti128\_si256(a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ 0));}
+\DoxyCodeLine{00571\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_ac55f9ffdc41bee5d274cb6433809fefc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a91e4f51a909ec78065c2bfa5e24b8f87}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!storea@{storea}}
+\index{storea@{storea}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{storea()}{storea()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a91e4f51a909ec78065c2bfa5e24b8f87} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void storea (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvfloat8}{vfloat8}}}]{a}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Store a vector to a 32B aligned memory address. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00993}{993}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00994\ \{}
+\DoxyCodeLine{00995\ \ \ \ \ \_mm256\_store\_ps(p,\ a.\mbox{\hyperlink{structvfloat8_ae6e7cf7cc8cec8c2445e28ed51f5b6fe}{m}});}
+\DoxyCodeLine{00996\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!storea@{storea}}
+\index{storea@{storea}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{storea()}{storea()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void storea (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{a}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Store a vector to a 16B aligned memory address. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l00549}{549}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00550\ \{}
+\DoxyCodeLine{00551\ \ \ \ \ \_mm256\_store\_si256(\textcolor{keyword}{reinterpret\_cast<}\_\_m256i*\textcolor{keyword}{>}(p),\ a.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}});}
+\DoxyCodeLine{00552\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a2778951898aea88de4dd7881e7cd817b}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!vtable\_8bt\_32bi@{vtable\_8bt\_32bi}}
+\index{vtable\_8bt\_32bi@{vtable\_8bt\_32bi}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{vtable\_8bt\_32bi()}{vtable\_8bt\_32bi()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a2778951898aea88de4dd7881e7cd817b} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} vtable\+\_\+8bt\+\_\+32bi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{t0}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{idx}{}\end{DoxyParamCaption})}
+
+
+
+Perform an 8-\/bit 16-\/entry table lookup, with 32-\/bit indexes. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l01095}{1095}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01096\ \{}
+\DoxyCodeLine{01097\ \ \ \ \ \textcolor{comment}{//\ Set\ index\ byte\ MSB\ to\ 1\ for\ unused\ bytes\ so\ shuffle\ returns\ zero}}
+\DoxyCodeLine{01098\ \ \ \ \ \_\_m256i\ idxx\ =\ \_mm256\_or\_si256(idx.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ \_mm256\_set1\_epi32(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(0xFFFFFF00)));}
+\DoxyCodeLine{01099\ }
+\DoxyCodeLine{01100\ \ \ \ \ \_\_m256i\ result\ =\ \_mm256\_shuffle\_epi8(t0.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ idxx);}
+\DoxyCodeLine{01101\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(result);}
+\DoxyCodeLine{01102\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a2778951898aea88de4dd7881e7cd817b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ab6ac52ac75682b1da64b9ff9c53985ee}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!vtable\_8bt\_32bi@{vtable\_8bt\_32bi}}
+\index{vtable\_8bt\_32bi@{vtable\_8bt\_32bi}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{vtable\_8bt\_32bi()}{vtable\_8bt\_32bi()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ab6ac52ac75682b1da64b9ff9c53985ee} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} vtable\+\_\+8bt\+\_\+32bi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{t0}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{t1}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{idx}{}\end{DoxyParamCaption})}
+
+
+
+Perform an 8-\/bit 32-\/entry table lookup, with 32-\/bit indexes. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l01107}{1107}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01108\ \{}
+\DoxyCodeLine{01109\ \ \ \ \ \textcolor{comment}{//\ Set\ index\ byte\ MSB\ to\ 1\ for\ unused\ bytes\ so\ shuffle\ returns\ zero}}
+\DoxyCodeLine{01110\ \ \ \ \ \_\_m256i\ idxx\ =\ \_mm256\_or\_si256(idx.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ \_mm256\_set1\_epi32(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(0xFFFFFF00)));}
+\DoxyCodeLine{01111\ }
+\DoxyCodeLine{01112\ \ \ \ \ \_\_m256i\ result\ =\ \_mm256\_shuffle\_epi8(t0.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ idxx);}
+\DoxyCodeLine{01113\ \ \ \ \ idxx\ =\ \_mm256\_sub\_epi8(idxx,\ \_mm256\_set1\_epi8(16));}
+\DoxyCodeLine{01114\ }
+\DoxyCodeLine{01115\ \ \ \ \ \_\_m256i\ result2\ =\ \_mm256\_shuffle\_epi8(t1.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ idxx);}
+\DoxyCodeLine{01116\ \ \ \ \ result\ =\ \_mm256\_xor\_si256(result,\ result2);}
+\DoxyCodeLine{01117\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(result);}
+\DoxyCodeLine{01118\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_ab5885cd3310d98a60d372861f6c9e567}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!vtable\_8bt\_32bi@{vtable\_8bt\_32bi}}
+\index{vtable\_8bt\_32bi@{vtable\_8bt\_32bi}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{vtable\_8bt\_32bi()}{vtable\_8bt\_32bi()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_ab5885cd3310d98a60d372861f6c9e567} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint8}{vint8}} vtable\+\_\+8bt\+\_\+32bi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{t0}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{t1}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{t2}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{t3}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}}}]{idx}{}\end{DoxyParamCaption})}
+
+
+
+Perform an 8-\/bit 64-\/entry table lookup, with 32-\/bit indexes. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l01123}{1123}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01124\ \{}
+\DoxyCodeLine{01125\ \ \ \ \ \textcolor{comment}{//\ Set\ index\ byte\ MSB\ to\ 1\ for\ unused\ bytes\ so\ shuffle\ returns\ zero}}
+\DoxyCodeLine{01126\ \ \ \ \ \_\_m256i\ idxx\ =\ \_mm256\_or\_si256(idx.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ \_mm256\_set1\_epi32(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(0xFFFFFF00)));}
+\DoxyCodeLine{01127\ }
+\DoxyCodeLine{01128\ \ \ \ \ \_\_m256i\ result\ =\ \_mm256\_shuffle\_epi8(t0.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ idxx);}
+\DoxyCodeLine{01129\ \ \ \ \ idxx\ =\ \_mm256\_sub\_epi8(idxx,\ \_mm256\_set1\_epi8(16));}
+\DoxyCodeLine{01130\ }
+\DoxyCodeLine{01131\ \ \ \ \ \_\_m256i\ result2\ =\ \_mm256\_shuffle\_epi8(t1.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ idxx);}
+\DoxyCodeLine{01132\ \ \ \ \ result\ =\ \_mm256\_xor\_si256(result,\ result2);}
+\DoxyCodeLine{01133\ \ \ \ \ idxx\ =\ \_mm256\_sub\_epi8(idxx,\ \_mm256\_set1\_epi8(16));}
+\DoxyCodeLine{01134\ }
+\DoxyCodeLine{01135\ \ \ \ \ result2\ =\ \_mm256\_shuffle\_epi8(t2.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ idxx);}
+\DoxyCodeLine{01136\ \ \ \ \ result\ =\ \_mm256\_xor\_si256(result,\ result2);}
+\DoxyCodeLine{01137\ \ \ \ \ idxx\ =\ \_mm256\_sub\_epi8(idxx,\ \_mm256\_set1\_epi8(16));}
+\DoxyCodeLine{01138\ }
+\DoxyCodeLine{01139\ \ \ \ \ result2\ =\ \_mm256\_shuffle\_epi8(t3.\mbox{\hyperlink{structvint8_a4b28eeb7fd263ece1d2f015c8f9b88b1}{m}},\ idxx);}
+\DoxyCodeLine{01140\ \ \ \ \ result\ =\ \_mm256\_xor\_si256(result,\ result2);}
+\DoxyCodeLine{01141\ }
+\DoxyCodeLine{01142\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structvint8}{vint8}}(result);}
+\DoxyCodeLine{01143\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a7873e60913a611e01e79ad12f2768ddb}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!vtable\_prepare@{vtable\_prepare}}
+\index{vtable\_prepare@{vtable\_prepare}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{vtable\_prepare()}{vtable\_prepare()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a7873e60913a611e01e79ad12f2768ddb} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void vtable\+\_\+prepare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t1}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t2}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t3}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}} \&}]{t0p}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}} \&}]{t1p}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}} \&}]{t2p}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}} \&}]{t3p}{}\end{DoxyParamCaption})}
+
+
+
+Prepare a vtable lookup table for use with the native SIMD size. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l01074}{1074}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01077\ \{}
+\DoxyCodeLine{01078\ \ \ \ \ \textcolor{comment}{//\ AVX2\ duplicates\ the\ table\ within\ each\ 128-\/bit\ lane}}
+\DoxyCodeLine{01079\ \ \ \ \ \_\_m128i\ t0n\ =\ t0.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}};}
+\DoxyCodeLine{01080\ \ \ \ \ t0p\ =\ \mbox{\hyperlink{structvint8}{vint8}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a680bba70fe88413f5ce26be2b8d41571}{astcenc\_mm256\_set\_m128i}}(t0n,\ t0n));}
+\DoxyCodeLine{01081\ }
+\DoxyCodeLine{01082\ \ \ \ \ \_\_m128i\ t1n\ =\ \_mm\_xor\_si128(t0.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ t1.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}});}
+\DoxyCodeLine{01083\ \ \ \ \ t1p\ =\ \mbox{\hyperlink{structvint8}{vint8}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a680bba70fe88413f5ce26be2b8d41571}{astcenc\_mm256\_set\_m128i}}(t1n,\ t1n));}
+\DoxyCodeLine{01084\ }
+\DoxyCodeLine{01085\ \ \ \ \ \_\_m128i\ t2n\ =\ \_mm\_xor\_si128(t1.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ t2.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}});}
+\DoxyCodeLine{01086\ \ \ \ \ t2p\ =\ \mbox{\hyperlink{structvint8}{vint8}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a680bba70fe88413f5ce26be2b8d41571}{astcenc\_mm256\_set\_m128i}}(t2n,\ t2n));}
+\DoxyCodeLine{01087\ }
+\DoxyCodeLine{01088\ \ \ \ \ \_\_m128i\ t3n\ =\ \_mm\_xor\_si128(t2.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ t3.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}});}
+\DoxyCodeLine{01089\ \ \ \ \ t3p\ =\ \mbox{\hyperlink{structvint8}{vint8}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a680bba70fe88413f5ce26be2b8d41571}{astcenc\_mm256\_set\_m128i}}(t3n,\ t3n));}
+\DoxyCodeLine{01090\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_acc7650eba141d417200bd47b8cb68ce6}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!vtable\_prepare@{vtable\_prepare}}
+\index{vtable\_prepare@{vtable\_prepare}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{vtable\_prepare()}{vtable\_prepare()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_acc7650eba141d417200bd47b8cb68ce6} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void vtable\+\_\+prepare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t1}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}} \&}]{t0p}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}} \&}]{t1p}{}\end{DoxyParamCaption})}
+
+
+
+Prepare a vtable lookup table for use with the native SIMD size. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l01061}{1061}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01062\ \{}
+\DoxyCodeLine{01063\ \ \ \ \ \textcolor{comment}{//\ AVX2\ duplicates\ the\ table\ within\ each\ 128-\/bit\ lane}}
+\DoxyCodeLine{01064\ \ \ \ \ \_\_m128i\ t0n\ =\ t0.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}};}
+\DoxyCodeLine{01065\ \ \ \ \ t0p\ =\ \mbox{\hyperlink{structvint8}{vint8}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a680bba70fe88413f5ce26be2b8d41571}{astcenc\_mm256\_set\_m128i}}(t0n,\ t0n));}
+\DoxyCodeLine{01066\ }
+\DoxyCodeLine{01067\ \ \ \ \ \_\_m128i\ t1n\ =\ \_mm\_xor\_si128(t0.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}},\ t1.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}});}
+\DoxyCodeLine{01068\ \ \ \ \ t1p\ =\ \mbox{\hyperlink{structvint8}{vint8}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a680bba70fe88413f5ce26be2b8d41571}{astcenc\_mm256\_set\_m128i}}(t1n,\ t1n));}
+\DoxyCodeLine{01069\ \}}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__vecmathlib__avx2__8_8h_a38035a0e5616592fa235308dc60c476f}\index{astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}!vtable\_prepare@{vtable\_prepare}}
+\index{vtable\_prepare@{vtable\_prepare}!astcenc\_vecmathlib\_avx2\_8.h@{astcenc\_vecmathlib\_avx2\_8.h}}
+\doxysubsubsection{\texorpdfstring{vtable\_prepare()}{vtable\_prepare()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{astcenc__vecmathlib__avx2__8_8h_a38035a0e5616592fa235308dc60c476f} 
+\mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} void vtable\+\_\+prepare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{t0}{, }\item[{\mbox{\hyperlink{structvint8}{vint8}} \&}]{t0p}{}\end{DoxyParamCaption})}
+
+
+
+Prepare a vtable lookup table for use with the native SIMD size. 
+
+
+
+\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source}{astcenc\+\_\+vecmathlib\+\_\+avx2\+\_\+8.\+h}} 파일의 \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_source_l01051}{1051}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01052\ \{}
+\DoxyCodeLine{01053\ \ \ \ \ \textcolor{comment}{//\ AVX2\ duplicates\ the\ table\ within\ each\ 128-\/bit\ lane}}
+\DoxyCodeLine{01054\ \ \ \ \ \_\_m128i\ t0n\ =\ t0.\mbox{\hyperlink{structvint4_ad9830e2f320616e5550b68b32d448e7e}{m}};}
+\DoxyCodeLine{01055\ \ \ \ \ t0p\ =\ \mbox{\hyperlink{structvint8}{vint8}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a680bba70fe88413f5ce26be2b8d41571}{astcenc\_mm256\_set\_m128i}}(t0n,\ t0n));}
+\DoxyCodeLine{01056\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__vecmathlib__avx2__8_8h_a38035a0e5616592fa235308dc60c476f_icgraph}
+\end{center}
+\end{figure}

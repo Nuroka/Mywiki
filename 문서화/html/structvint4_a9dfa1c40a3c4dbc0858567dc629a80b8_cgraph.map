@@ -1,0 +1,5 @@
+<map id="vint4::zero" name="vint4::zero">
+<area shape="rect" id="Node000001" title="Factory that returns a vector of zeros." alt="" coords="5,5,87,31"/>
+<area shape="rect" id="Node000002" href="$structvint4.html#a3315184e8bb4f0cf1ca8dcff1f57cdae" title="Construct from zero&#45;initialized value." alt="" coords="135,5,217,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,15,121,15,121,21,87,21"/>
+</map>

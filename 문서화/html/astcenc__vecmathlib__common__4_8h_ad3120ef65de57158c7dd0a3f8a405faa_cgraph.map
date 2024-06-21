@@ -1,0 +1,13 @@
+<map id="clampzo" name="clampzo">
+<area shape="rect" id="Node000001" title="Return the clamped value between 0.0f and 1.0f." alt="" coords="5,103,76,128"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__common__4_8h.html#af86427a432d5d76734813825a1603411" title="Return the max vector of a vector and a scalar." alt="" coords="146,29,193,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,100,123,64,133,58,135,63,125,68,64,105"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__common__4_8h.html#af309247a31161ead526e965c1b0e4980" title="Return the min vector of a vector and a scalar." alt="" coords="148,103,191,128"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="76,113,134,113,134,118,76,118"/>
+<area shape="rect" id="Node000004" href="$structvfloat4.html#a04b5f338012dab6be0b2bd7910fcbcae" title="Factory that returns a vector of zeros." alt="" coords="124,152,215,177"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="75,126,123,144,121,149,73,131"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="147,30,143,21,145,11,154,5,169,3,187,6,195,14,191,18,184,11,169,8,156,10,150,14,148,20,152,28"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="147,104,143,94,145,85,154,78,169,76,187,79,195,88,191,91,184,84,169,81,156,83,150,88,148,94,152,101"/>
+<area shape="rect" id="Node000005" href="$structvfloat4.html#a9df51cb30b68d6d51ca607e64aa1ebf0" title="Construct from zero&#45;initialized value." alt="" coords="263,152,365,177"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="215,162,249,162,249,167,215,167"/>
+</map>

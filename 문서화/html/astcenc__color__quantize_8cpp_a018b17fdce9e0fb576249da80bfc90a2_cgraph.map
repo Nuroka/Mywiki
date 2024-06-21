@@ -1,0 +1,30 @@
+<map id="quantize_hdr_rgb" name="quantize_hdr_rgb">
+<area shape="rect" id="Node000001" title="Quantize a HDR RGB color using direct RGB encoding." alt="" coords="5,204,127,229"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib__avx2__8_8h.html#aeac50750508168aeab5115733d3ee63c" title="Return the absolute value of the float vector." alt="" coords="238,5,281,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,203,82,170,103,126,134,80,173,40,198,27,224,19,225,24,200,32,176,44,138,83,108,129,87,172,74,205"/>
+<area shape="rect" id="Node000003" href="$namespaceastc.html#a8f8b2ad23b04a389f6785bc80b61349b" title="Clamp a value value between mn and mx." alt="" coords="214,55,305,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="73,202,111,148,140,116,173,89,200,77,202,81,176,94,143,120,115,151,77,205"/>
+<area shape="rect" id="Node000004" href="$astcenc__vecmathlib__avx2__8_8h.html#ae91c0bb0ebd82ed2a7fa7aa915f6e76e" title="Return the clamped value between min and max." alt="" coords="231,104,288,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="80,202,121,170,174,138,216,123,218,128,176,143,124,175,84,206"/>
+<area shape="rect" id="Node000007" href="$namespaceastc.html#a455f4a304ea7dcdd8fd0de030cbdbfb4" title="SP float round&#45;to&#45;nearest and convert to integer." alt="" coords="205,153,313,179"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="115,201,196,180,198,185,116,206"/>
+<area shape="rect" id="Node000008" href="$structvfloat4.html#a04462a7815432c6bc3ce1b5e5d11e4fc" title="Get the scalar value of a single lane." alt="" coords="398,384,489,409"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="74,228,87,258,109,297,138,336,176,368,227,389,283,400,337,403,384,401,384,407,337,409,282,406,226,394,173,372,134,340,104,300,82,261,69,230"/>
+<area shape="rect" id="Node000009" href="$astcenc__color__quantize_8cpp.html#a0af2fba0ed6cbe9e279c808e540eb74e" title="Determine the quantized value given a quantization level." alt="" coords="399,261,488,287"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="127,216,229,223,345,239,397,254,396,259,343,245,229,228,127,221"/>
+<area shape="rect" id="Node000010" href="$astcenc__color__quantize_8cpp.html#ab9e83c316e8b6c63580e0a17a9ddc857" title="Quantize and unquantize a value ensuring top four bits are the same." alt="" coords="175,254,344,294"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="110,227,179,248,178,253,109,232"/>
+<area shape="rect" id="Node000011" href="$astcenc__color__quantize_8cpp.html#ae0e7daa2cc696baa52756e0c35d63138" title="Quantize and unquantize a value ensuring top two bits are the same." alt="" coords="175,318,344,358"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="82,228,122,265,176,304,188,310,185,315,173,308,119,269,78,232"/>
+<area shape="rect" id="Node000012" href="$structvfloat4.html#a0a3e390831722cc8e54f29155699f3a5" title="Return a swizzled float 2." alt="" coords="215,433,304,459"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="73,229,85,265,106,314,137,366,155,390,176,412,203,429,201,433,173,416,151,394,132,369,102,316,80,267,68,231"/>
+<area shape="rect" id="Node000005" href="$astcenc__vecmathlib__avx2__8_8h.html#aa162915c044e97cc1f6d630338761fd3" title="Return the max vector of two vectors." alt="" coords="420,129,467,155"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="289,118,407,134,406,140,288,123"/>
+<area shape="rect" id="Node000006" href="$astcenc__vecmathlib__avx2__8_8h.html#a165b3db4e7ced1551e1880a01a01150b" title="Return the min vector of two vectors." alt="" coords="422,80,465,105"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="288,110,408,95,408,100,289,116"/>
+<area shape="poly" id="edge10_Node000010_Node000009" title=" " alt="" coords="344,271,385,271,385,277,344,277"/>
+<area shape="poly" id="edge12_Node000011_Node000009" title=" " alt="" coords="317,315,392,289,394,294,318,320"/>
+<area shape="poly" id="edge14_Node000012_Node000008" title=" " alt="" coords="303,432,384,410,385,415,305,437"/>
+<area shape="rect" id="Node000013" href="$structvfloat4.html#a9df51cb30b68d6d51ca607e64aa1ebf0" title="Construct from zero&#45;initialized value." alt="" coords="392,433,495,459"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="304,443,378,443,378,449,304,449"/>
+</map>

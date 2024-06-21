@@ -1,0 +1,23 @@
+<map id="quantize_rgba" name="quantize_rgba">
+<area shape="rect" id="Node000001" title="Quantize an LDR RGBA color." alt="" coords="1435,45,1537,70"/>
+<area shape="rect" id="Node000002" href="$astcenc__color__quantize_8cpp.html#ab9f9b564c57688af1f8fc1d9e000af81" title="Pack a single pair of color endpoints as effectively as possible." alt="" coords="1239,45,1387,70"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1421,60,1387,60,1387,55,1421,55"/>
+<area shape="rect" id="Node000003" href="$astcenc__compress__symbolic_8cpp.html#af5f518a15600c71922e69267dea2db99" title="Compress a block using a chosen partitioning and 1 plane of weights." alt="" coords="1015,5,1191,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1224,47,1191,41,1191,36,1225,41"/>
+<area shape="rect" id="Node000010" href="$astcenc__compress__symbolic_8cpp.html#af11a976c8ea386db054bef472ce0667c" title="Compress a block using a chosen partitioning and 2 planes of weights." alt="" coords="1015,69,1191,109"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="1225,73,1191,79,1191,73,1224,68"/>
+<area shape="rect" id="Node000004" href="$astcenc__compress__symbolic_8cpp.html#a579b9a2ceeecda2fb3abe63b8311df1c" title="Compress an image block into a physical block." alt="" coords="849,45,967,70"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1002,45,967,50,966,45,1001,39"/>
+<area shape="rect" id="Node000005" href="$astcenc__entry_8cpp.html#acbecfd32ce013d567cac16a877c20f42" title="Compress an image, after any preflight has completed." alt="" coords="680,45,801,70"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="835,60,802,60,802,55,835,55"/>
+<area shape="rect" id="Node000006" href="$astcenc__entry_8cpp.html#ad762aa055eed75156c99309158a40e90" title="Compress an image." alt="" coords="457,45,632,70"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="666,60,632,60,632,55,666,55"/>
+<area shape="rect" id="Node000007" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,45,207,70"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="444,57,409,56,255,56,207,58,207,52,255,51,409,51,444,51"/>
+<area shape="rect" id="Node000009" href="$astcenccli__toplevel_8cpp.html#a57bafe66bbd689a53aad2d190fe7a3fa" title="Runner callback function for a compression worker thread." alt="" coords="255,65,409,105"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="444,73,410,78,409,73,443,68"/>
+<area shape="rect" id="Node000008" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,45,56,70"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="90,60,57,60,57,55,90,55"/>
+<area shape="poly" id="edge9_Node000009_Node000007" title=" " alt="" coords="241,74,206,68,207,63,242,68"/>
+<area shape="poly" id="edge11_Node000010_Node000004" title=" " alt="" coords="1001,75,966,70,967,64,1002,70"/>
+</map>

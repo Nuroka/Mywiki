@@ -1,0 +1,5 @@
+<map id="vint4::load1" name="vint4::load1">
+<area shape="rect" id="Node000001" title="Factory that returns a replicated scalar loaded from memory." alt="" coords="5,5,92,31"/>
+<area shape="rect" id="Node000002" href="$structvint4.html#a3315184e8bb4f0cf1ca8dcff1f57cdae" title="Construct from zero&#45;initialized value." alt="" coords="140,5,223,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,15,126,15,126,21,92,21"/>
+</map>

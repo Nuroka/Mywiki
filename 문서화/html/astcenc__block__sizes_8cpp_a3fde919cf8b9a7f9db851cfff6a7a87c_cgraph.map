@@ -1,0 +1,22 @@
+<map id="construct_block_size_descriptor_3d" name="construct_block_size_descriptor_3d">
+<area shape="rect" id="Node000001" title="Allocate block modes and decimation tables for a single 3D block size." alt="" coords="5,115,151,155"/>
+<area shape="rect" id="Node000002" href="$astcenc__block__sizes_8cpp.html#a20c3e73541fd2727c8b79cc8c19919b2" title="Assign the texels to use for kmeans clustering." alt="" coords="203,48,357,73"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,113,198,84,222,75,224,80,200,88,126,118"/>
+<area shape="rect" id="Node000006" href="$astcenc__block__sizes_8cpp.html#a0eadba499223d475df0afa41228a7d30" title="Decode the properties of an encoded 3D block mode." alt="" coords="199,97,361,123"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="150,124,185,119,185,125,151,129"/>
+<area shape="rect" id="Node000007" href="$astcenc__integer__sequence_8cpp.html#af46c9322b401332698e9cb93c968fe19" title="Return the number of bits needed to encode an ISE sequence." alt="" coords="421,111,601,136"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="151,134,361,133,407,130,407,135,361,138,151,140"/>
+<area shape="rect" id="Node000008" href="$astcenc__block__sizes_8cpp.html#a2baafb8e792da4735cef4849633739ac" title="Create a 3D decimation entry for a block&#45;size and weight&#45;decimation pair." alt="" coords="201,199,359,224"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="133,153,233,191,231,196,131,158"/>
+<area shape="rect" id="Node000003" href="$namespaceastc.html#acd6244a33d585dcaa70ceb08313115ff" title="Return the next random number from the generator." alt="" coords="471,5,551,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="349,45,457,25,458,30,350,51"/>
+<area shape="rect" id="Node000005" href="$namespaceastc.html#a3a0b157316c84b208b4195916b2593e1" title="Initialize the seed structure for a random number generator." alt="" coords="459,55,563,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="358,60,445,63,445,68,358,66"/>
+<area shape="rect" id="Node000004" href="$astcenc__mathlib_8cpp.html#ada00fa3b97cd1f54329bc637fcba9ec6" title="64&#45;bit rotate left." alt="" coords="660,5,700,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="551,15,646,15,646,21,551,21"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="362,112,407,115,406,120,362,117"/>
+<area shape="rect" id="Node000009" href="$namespaceastc.html#a83a55552d03399cdff6cf2fed8312c9f" title="Return the maximum of two values." alt="" coords="471,172,551,197"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="359,200,456,188,457,193,359,205"/>
+<area shape="rect" id="Node000010" href="$astcenc__vecmathlib_8h.html#ae36622d837079b4899b971731c2dda37" title="Round a count up to the largest multiple of the SIMD width." alt="" coords="409,221,612,247"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="359,216,396,220,396,225,359,222"/>
+</map>

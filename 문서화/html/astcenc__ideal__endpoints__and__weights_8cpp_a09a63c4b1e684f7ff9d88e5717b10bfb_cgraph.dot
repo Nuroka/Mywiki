@@ -1,0 +1,26 @@
+digraph "compute_error_of_weight_set_2planes"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="compute_error_of_weight\l_set_2planes",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Compute the error of a decimated weight set for 2 planes."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="bilinear_infill_vla",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__ideal__endpoints__and__weights_8cpp.html#a617a8dec1d2168023a84f5c0fa1c20ca",tooltip="Functions for computing color endpoints and texel weights."];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="gatherf",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__vecmathlib__avx2__8_8h.html#aae2f99eb48f3cde0f4739b894e8ca29f",tooltip="Load a vector of gathered results from an array;"];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="bilinear_infill_vla_2",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__ideal__endpoints__and__weights_8cpp.html#a84286bd889620da3be77539ddfdf3b45",tooltip="Compute the infilled weight for N texel indices in a decimated grid."];
+  Node4 -> Node3 [id="edge4_Node000004_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node5 [id="edge5_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="haccumulate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__vecmathlib__avx2__8_8h.html#aaa291a197219a09a2e1103aec6945b3c",tooltip="Accumulate lane-wise sums for a vector, folded 4-wide."];
+  Node5 -> Node5 [id="edge6_Node000005_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node6 [id="edge7_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="hadd_s",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__vecmathlib__avx2__8_8h.html#aacd26478e4fe1f97a5d47e8adaacc898",tooltip="Return the horizontal sum of a vector."];
+  Node6 -> Node6 [id="edge8_Node000006_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node7 [id="edge9_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="vfloat4::zero",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structvfloat4.html#a04b5f338012dab6be0b2bd7910fcbcae",tooltip="Factory that returns a vector of zeros."];
+  Node7 -> Node8 [id="edge10_Node000007_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="vfloat4::vfloat4",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structvfloat4.html#a9df51cb30b68d6d51ca607e64aa1ebf0",tooltip="Construct from zero-initialized value."];
+}

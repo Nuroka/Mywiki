@@ -1,0 +1,741 @@
+\doxysection{C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/astcenc\+\_\+weight\+\_\+align.cpp 파일 참조}
+\hypertarget{astcenc__weight__align_8cpp}{}\label{astcenc__weight__align_8cpp}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_weight\_align.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_weight\_align.cpp}}
+{\ttfamily \#include "{}astcenc\+\_\+internal.\+h"{}}\newline
+{\ttfamily \#include "{}astcenc\+\_\+vecmathlib.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+astcenc\+\_\+weight\+\_\+align.\+cpp에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__weight__align_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{astcenc__weight__align_8cpp_acbcb48fd316ab1025cf7e456a5df014f}{prepare\+\_\+angular\+\_\+tables}} ()
+\begin{DoxyCompactList}\small\item\em Expand the angular tables needed for the alternative to PCA that we use. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__weight__align_8cpp_a54fb7b3aab0c6f60a65ce3dd07b088da}{compute\+\_\+angular\+\_\+offsets}} (unsigned int weight\+\_\+count, const float \texorpdfstring{$\ast$}{*}dec\+\_\+weight\+\_\+ideal\+\_\+value, unsigned int max\+\_\+angular\+\_\+steps, float \texorpdfstring{$\ast$}{*}offsets)
+\begin{DoxyCompactList}\small\item\em Compute the angular alignment factors and offsets. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__weight__align_8cpp_a32b24429143eb7c5b7050885943aad1b}{compute\+\_\+lowest\+\_\+and\+\_\+highest\+\_\+weight}} (unsigned int weight\+\_\+count, const float \texorpdfstring{$\ast$}{*}dec\+\_\+weight\+\_\+ideal\+\_\+value, unsigned int max\+\_\+angular\+\_\+steps, unsigned int max\+\_\+quant\+\_\+steps, const float \texorpdfstring{$\ast$}{*}offsets, float \texorpdfstring{$\ast$}{*}lowest\+\_\+weight, int \texorpdfstring{$\ast$}{*}weight\+\_\+span, float \texorpdfstring{$\ast$}{*}error, float \texorpdfstring{$\ast$}{*}cut\+\_\+low\+\_\+weight\+\_\+error, float \texorpdfstring{$\ast$}{*}cut\+\_\+high\+\_\+weight\+\_\+error)
+\begin{DoxyCompactList}\small\item\em For a given step size compute the lowest and highest weight. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__weight__align_8cpp_a52f057b7da5fc35adac361b3696ac963}{compute\+\_\+angular\+\_\+endpoints\+\_\+for\+\_\+quant\+\_\+levels}} (unsigned int weight\+\_\+count, const float \texorpdfstring{$\ast$}{*}dec\+\_\+weight\+\_\+ideal\+\_\+value, unsigned int max\+\_\+quant\+\_\+level, float low\+\_\+value\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\+\_\+\+MAX\+\_\+\+ANGULAR\+\_\+\+QUANT}}+1\mbox{]}, float high\+\_\+value\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\+\_\+\+MAX\+\_\+\+ANGULAR\+\_\+\+QUANT}}+1\mbox{]})
+\begin{DoxyCompactList}\small\item\em The main function for the angular algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenc__weight__align_8cpp_af1b151d02c3af92eb002dc7172111233}{compute\+\_\+angular\+\_\+endpoints\+\_\+1plane}} (bool only\+\_\+always, const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&bsd, const float \texorpdfstring{$\ast$}{*}dec\+\_\+weight\+\_\+ideal\+\_\+value, unsigned int max\+\_\+weight\+\_\+quant, \mbox{\hyperlink{structcompression__working__buffers}{compression\+\_\+working\+\_\+buffers}} \&tmpbuf)
+\begin{DoxyCompactList}\small\item\em Compute the angular endpoints for one plane for each block mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenc__weight__align_8cpp_a571d7379fd52446338ef4fa7e700cb42}{compute\+\_\+angular\+\_\+endpoints\+\_\+2planes}} (const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&bsd, const float \texorpdfstring{$\ast$}{*}dec\+\_\+weight\+\_\+ideal\+\_\+value, unsigned int max\+\_\+weight\+\_\+quant, \mbox{\hyperlink{structcompression__working__buffers}{compression\+\_\+working\+\_\+buffers}} \&tmpbuf)
+\begin{DoxyCompactList}\small\item\em Compute the angular endpoints for two planes for each block mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr unsigned int \mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\+\_\+\+STEPS}} \{ 32 \}
+\begin{DoxyCompactList}\small\item\em Functions for angular-\/sum algorithm for weight alignment. \end{DoxyCompactList}\item 
+static constexpr unsigned int \mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\+\_\+\+STEPS}} \{ 64 \}
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{astcenc__weight__align_8cpp_a03594d799b3a246b0005c6bbe4f5cd48}{steps\+\_\+for\+\_\+quant\+\_\+level}} \mbox{[}12\mbox{]}
+\item 
+static \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} float \mbox{\hyperlink{astcenc__weight__align_8cpp_a2300d1e0bcd154e01c2376d89ea3a91c}{sin\+\_\+table}} \mbox{[}\mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\+\_\+\+STEPS}}\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\+\_\+\+STEPS}}\mbox{]}
+\item 
+static \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} float \mbox{\hyperlink{astcenc__weight__align_8cpp_a3a16cc5209c93b9b81783d37a7566553}{cos\+\_\+table}} \mbox{[}\mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\+\_\+\+STEPS}}\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\+\_\+\+STEPS}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\Hypertarget{astcenc__weight__align_8cpp_af1b151d02c3af92eb002dc7172111233}\index{astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}!compute\_angular\_endpoints\_1plane@{compute\_angular\_endpoints\_1plane}}
+\index{compute\_angular\_endpoints\_1plane@{compute\_angular\_endpoints\_1plane}!astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_angular\_endpoints\_1plane()}{compute\_angular\_endpoints\_1plane()}}
+{\footnotesize\ttfamily \label{astcenc__weight__align_8cpp_af1b151d02c3af92eb002dc7172111233} 
+void compute\+\_\+angular\+\_\+endpoints\+\_\+1plane (\begin{DoxyParamCaption}\item[{bool}]{only\+\_\+always}{, }\item[{const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&}]{bsd}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{dec\+\_\+weight\+\_\+ideal\+\_\+value}{, }\item[{unsigned int}]{max\+\_\+weight\+\_\+quant}{, }\item[{\mbox{\hyperlink{structcompression__working__buffers}{compression\+\_\+working\+\_\+buffers}} \&}]{tmpbuf}{}\end{DoxyParamCaption})}
+
+
+
+Compute the angular endpoints for one plane for each block mode. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em only\+\_\+always} & Only consider block modes that are always enabled. \\
+\hline
+ & {\em bsd} & The block size descriptor for the current trial. \\
+\hline
+ & {\em dec\+\_\+weight\+\_\+ideal\+\_\+value} & The ideal decimated unquantized weight values. \\
+\hline
+ & {\em max\+\_\+weight\+\_\+quant} & The maximum block mode weight quantization allowed. \\
+\hline
+\mbox{\texttt{ out}}  & {\em tmpbuf} & Preallocated scratch buffers for the compressor. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__weight__align_8cpp_source}{astcenc\+\_\+weight\+\_\+align.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__weight__align_8cpp_source_l00337}{337}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00343\ \ \ \{}
+\DoxyCodeLine{00344\ \ \ \ \ float\ (\&low\_value)[\mbox{\hyperlink{astcenc__internal_8h_ac446d816e6883587f7cd6fd115d9a40c}{WEIGHTS\_MAX\_BLOCK\_MODES}}]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a504af2e4e5a146cd80b52c1b6c93b782}{weight\_low\_value1}};}
+\DoxyCodeLine{00345\ \ \ \ \ float\ (\&high\_value)[\mbox{\hyperlink{astcenc__internal_8h_ac446d816e6883587f7cd6fd115d9a40c}{WEIGHTS\_MAX\_BLOCK\_MODES}}]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_adebd00f87afd06131aa6e22e12effae2}{weight\_high\_value1}};}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00347\ \ \ \ \ float\ (\&low\_values)[\mbox{\hyperlink{astcenc__internal_8h_a803b1633e5a45c902bc513ef4c333327}{WEIGHTS\_MAX\_DECIMATION\_MODES}}][\mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}}\ +\ 1]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a13570ddf604795f219b4bb30f3a7b40f}{weight\_low\_values1}};}
+\DoxyCodeLine{00348\ \ \ \ \ float\ (\&high\_values)[\mbox{\hyperlink{astcenc__internal_8h_a803b1633e5a45c902bc513ef4c333327}{WEIGHTS\_MAX\_DECIMATION\_MODES}}][\mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}}\ +\ 1]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a85b21c3ce2a327c89fdac870dce07cba}{weight\_high\_values1}};}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_decimation\_modes\ =\ only\_always\ ?\ bsd.\mbox{\hyperlink{structblock__size__descriptor_ab9f7c875237ad395d3795506d934dba1}{decimation\_mode\_count\_always}}}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a5344a8e95df2fe4fe2b396b669993140}{decimation\_mode\_count\_selected}};}
+\DoxyCodeLine{00352\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(max\_decimation\_modes\ >\ 0);}
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ max\_decimation\_modes;\ i++)}
+\DoxyCodeLine{00354\ \ \ \ \ \{}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdecimation__mode}{decimation\_mode}}\&\ dm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_acfb1b28b22c740a1c8262587f5a6364f}{decimation\_modes}}[i];}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!dm.\mbox{\hyperlink{structdecimation__mode_ad3899521e22d446efacfceb12f264d4f}{is\_ref\_1plane}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\textcolor{keyword}{>}(max\_weight\_quant)))}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ weight\_count\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(i).\mbox{\hyperlink{structdecimation__info_af7d0c86be805995a20a6c09f6c3ab8ca}{weight\_count}};}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_precision\ =\ dm.\mbox{\hyperlink{structdecimation__mode_a469a9f9e5df5748e571801cd921b7b9b}{maxprec\_1plane}};}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (max\_precision\ >\ \mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}})}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ max\_precision\ =\ \mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}};}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (max\_precision\ >\ max\_weight\_quant)}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ max\_precision\ =\ max\_weight\_quant;}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__weight__align_8cpp_a52f057b7da5fc35adac361b3696ac963}{compute\_angular\_endpoints\_for\_quant\_levels}}(}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ weight\_count,}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weight\_ideal\_value\ +\ i\ *\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}},}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ max\_precision,\ low\_values[i],\ high\_values[i]);}
+\DoxyCodeLine{00378\ \ \ \ \ \}}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_block\_modes\ =\ only\_always\ ?\ bsd.\mbox{\hyperlink{structblock__size__descriptor_ae2f4cd561ea1618e1c44f9afbead038f}{block\_mode\_count\_1plane\_always}}}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a2f96c6e4d1e35b4bac8778c474c69bb1}{block\_mode\_count\_1plane\_selected}};}
+\DoxyCodeLine{00382\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(max\_block\_modes\ >\ 0);}
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ max\_block\_modes;\ i++)}
+\DoxyCodeLine{00384\ \ \ \ \ \{}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__mode}{block\_mode}}\&\ bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a82d0bf7e49df4683f0823b4951fb77f8}{block\_modes}}[i];}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ assert(!bm.\mbox{\hyperlink{structblock__mode_a78b282103d0a8bee2b07c0da075a3dc4}{is\_dual\_plane}});}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ quant\_mode\ =\ bm.\mbox{\hyperlink{structblock__mode_a57910e5bd3d21447cdea6c7789723a86}{quant\_mode}};}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ decim\_mode\ =\ bm.\mbox{\hyperlink{structblock__mode_aaf9846117d40406d5e84508f429cf949}{decimation\_mode}};}
+\DoxyCodeLine{00390\ }
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (quant\_mode\ <=\ \mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}})}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ low\_value[i]\ =\ low\_values[decim\_mode][quant\_mode];}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ high\_value[i]\ =\ high\_values[decim\_mode][quant\_mode];}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ low\_value[i]\ =\ 0.0f;}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ high\_value[i]\ =\ 1.0f;}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00401\ \ \ \ \ \}}
+\DoxyCodeLine{00402\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__weight__align_8cpp_af1b151d02c3af92eb002dc7172111233_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__weight__align_8cpp_af1b151d02c3af92eb002dc7172111233_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__weight__align_8cpp_a571d7379fd52446338ef4fa7e700cb42}\index{astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}!compute\_angular\_endpoints\_2planes@{compute\_angular\_endpoints\_2planes}}
+\index{compute\_angular\_endpoints\_2planes@{compute\_angular\_endpoints\_2planes}!astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_angular\_endpoints\_2planes()}{compute\_angular\_endpoints\_2planes()}}
+{\footnotesize\ttfamily \label{astcenc__weight__align_8cpp_a571d7379fd52446338ef4fa7e700cb42} 
+void compute\+\_\+angular\+\_\+endpoints\+\_\+2planes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&}]{bsd}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{dec\+\_\+weight\+\_\+ideal\+\_\+value}{, }\item[{unsigned int}]{max\+\_\+weight\+\_\+quant}{, }\item[{\mbox{\hyperlink{structcompression__working__buffers}{compression\+\_\+working\+\_\+buffers}} \&}]{tmpbuf}{}\end{DoxyParamCaption})}
+
+
+
+Compute the angular endpoints for two planes for each block mode. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em bsd} & The block size descriptor for the current trial. \\
+\hline
+ & {\em dec\+\_\+weight\+\_\+ideal\+\_\+value} & The ideal decimated unquantized weight values. \\
+\hline
+ & {\em max\+\_\+weight\+\_\+quant} & The maximum block mode weight quantization allowed. \\
+\hline
+\mbox{\texttt{ out}}  & {\em tmpbuf} & Preallocated scratch buffers for the compressor. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__weight__align_8cpp_source}{astcenc\+\_\+weight\+\_\+align.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__weight__align_8cpp_source_l00405}{405}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00410\ \ \ \{}
+\DoxyCodeLine{00411\ \ \ \ \ float\ (\&low\_value1)[\mbox{\hyperlink{astcenc__internal_8h_ac446d816e6883587f7cd6fd115d9a40c}{WEIGHTS\_MAX\_BLOCK\_MODES}}]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a504af2e4e5a146cd80b52c1b6c93b782}{weight\_low\_value1}};}
+\DoxyCodeLine{00412\ \ \ \ \ float\ (\&high\_value1)[\mbox{\hyperlink{astcenc__internal_8h_ac446d816e6883587f7cd6fd115d9a40c}{WEIGHTS\_MAX\_BLOCK\_MODES}}]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_adebd00f87afd06131aa6e22e12effae2}{weight\_high\_value1}};}
+\DoxyCodeLine{00413\ \ \ \ \ float\ (\&low\_value2)[\mbox{\hyperlink{astcenc__internal_8h_ac446d816e6883587f7cd6fd115d9a40c}{WEIGHTS\_MAX\_BLOCK\_MODES}}]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a6b3f7da41bb370993657d209bbb95d03}{weight\_low\_value2}};}
+\DoxyCodeLine{00414\ \ \ \ \ float\ (\&high\_value2)[\mbox{\hyperlink{astcenc__internal_8h_ac446d816e6883587f7cd6fd115d9a40c}{WEIGHTS\_MAX\_BLOCK\_MODES}}]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a72e3ac47a49cfb6ed8b4933699014858}{weight\_high\_value2}};}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00416\ \ \ \ \ float\ (\&low\_values1)[\mbox{\hyperlink{astcenc__internal_8h_a803b1633e5a45c902bc513ef4c333327}{WEIGHTS\_MAX\_DECIMATION\_MODES}}][\mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}}\ +\ 1]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a13570ddf604795f219b4bb30f3a7b40f}{weight\_low\_values1}};}
+\DoxyCodeLine{00417\ \ \ \ \ float\ (\&high\_values1)[\mbox{\hyperlink{astcenc__internal_8h_a803b1633e5a45c902bc513ef4c333327}{WEIGHTS\_MAX\_DECIMATION\_MODES}}][\mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}}\ +\ 1]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a85b21c3ce2a327c89fdac870dce07cba}{weight\_high\_values1}};}
+\DoxyCodeLine{00418\ \ \ \ \ float\ (\&low\_values2)[\mbox{\hyperlink{astcenc__internal_8h_a803b1633e5a45c902bc513ef4c333327}{WEIGHTS\_MAX\_DECIMATION\_MODES}}][\mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}}\ +\ 1]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_aeff8a7659105845e54015919ccb4b856}{weight\_low\_values2}};}
+\DoxyCodeLine{00419\ \ \ \ \ float\ (\&high\_values2)[\mbox{\hyperlink{astcenc__internal_8h_a803b1633e5a45c902bc513ef4c333327}{WEIGHTS\_MAX\_DECIMATION\_MODES}}][\mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}}\ +\ 1]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_aa9a374a18f80c58cdcd780ab70ced8b0}{weight\_high\_values2}};}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00421\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(bsd.\mbox{\hyperlink{structblock__size__descriptor_a5344a8e95df2fe4fe2b396b669993140}{decimation\_mode\_count\_selected}}\ >\ 0);}
+\DoxyCodeLine{00422\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a5344a8e95df2fe4fe2b396b669993140}{decimation\_mode\_count\_selected}};\ i++)}
+\DoxyCodeLine{00423\ \ \ \ \ \{}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdecimation__mode}{decimation\_mode}}\&\ dm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_acfb1b28b22c740a1c8262587f5a6364f}{decimation\_modes}}[i];}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!dm.\mbox{\hyperlink{structdecimation__mode_aa2fe4a73b6781930c375b1810a03f73b}{is\_ref\_2plane}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\textcolor{keyword}{>}(max\_weight\_quant)))}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00429\ }
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ weight\_count\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(i).\mbox{\hyperlink{structdecimation__info_af7d0c86be805995a20a6c09f6c3ab8ca}{weight\_count}};}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_precision\ =\ dm.\mbox{\hyperlink{structdecimation__mode_a6cc1d777d75001f629a2a0661894a334}{maxprec\_2planes}};}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (max\_precision\ >\ \mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}})}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ max\_precision\ =\ \mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}};}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (max\_precision\ >\ max\_weight\_quant)}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ max\_precision\ =\ max\_weight\_quant;}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__weight__align_8cpp_a52f057b7da5fc35adac361b3696ac963}{compute\_angular\_endpoints\_for\_quant\_levels}}(}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ weight\_count,}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weight\_ideal\_value\ +\ i\ *\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}},}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ max\_precision,\ low\_values1[i],\ high\_values1[i]);}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__weight__align_8cpp_a52f057b7da5fc35adac361b3696ac963}{compute\_angular\_endpoints\_for\_quant\_levels}}(}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ weight\_count,}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weight\_ideal\_value\ +\ i\ *\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}}\ +\ \mbox{\hyperlink{astcenc__internal_8h_a2dcf39b1f3c1e5f152abdf1f24e698da}{WEIGHTS\_PLANE2\_OFFSET}},}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ max\_precision,\ low\_values2[i],\ high\_values2[i]);}
+\DoxyCodeLine{00452\ \ \ \ \ \}}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00454\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ start\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a2f96c6e4d1e35b4bac8778c474c69bb1}{block\_mode\_count\_1plane\_selected}};}
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ end\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a796557a9c78ee86175f67ed504731ac5}{block\_mode\_count\_1plane\_2plane\_selected}};}
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ start;\ i\ <\ end;\ i++)}
+\DoxyCodeLine{00457\ \ \ \ \ \{}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__mode}{block\_mode}}\&\ bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a82d0bf7e49df4683f0823b4951fb77f8}{block\_modes}}[i];}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ quant\_mode\ =\ bm.\mbox{\hyperlink{structblock__mode_a57910e5bd3d21447cdea6c7789723a86}{quant\_mode}};}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ decim\_mode\ =\ bm.\mbox{\hyperlink{structblock__mode_aaf9846117d40406d5e84508f429cf949}{decimation\_mode}};}
+\DoxyCodeLine{00461\ }
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (quant\_mode\ <=\ \mbox{\hyperlink{astcenc__internal_8h_ab2ec26aaf33ca112e7c7d098ef3e7dc9}{TUNE\_MAX\_ANGULAR\_QUANT}})}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ low\_value1[i]\ =\ low\_values1[decim\_mode][quant\_mode];}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ high\_value1[i]\ =\ high\_values1[decim\_mode][quant\_mode];}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ low\_value2[i]\ =\ low\_values2[decim\_mode][quant\_mode];}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ high\_value2[i]\ =\ high\_values2[decim\_mode][quant\_mode];}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ low\_value1[i]\ =\ 0.0f;}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ high\_value1[i]\ =\ 1.0f;}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ low\_value2[i]\ =\ 0.0f;}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ high\_value2[i]\ =\ 1.0f;}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00476\ \ \ \ \ \}}
+\DoxyCodeLine{00477\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__weight__align_8cpp_a571d7379fd52446338ef4fa7e700cb42_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__weight__align_8cpp_a571d7379fd52446338ef4fa7e700cb42_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__weight__align_8cpp_a52f057b7da5fc35adac361b3696ac963}\index{astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}!compute\_angular\_endpoints\_for\_quant\_levels@{compute\_angular\_endpoints\_for\_quant\_levels}}
+\index{compute\_angular\_endpoints\_for\_quant\_levels@{compute\_angular\_endpoints\_for\_quant\_levels}!astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_angular\_endpoints\_for\_quant\_levels()}{compute\_angular\_endpoints\_for\_quant\_levels()}}
+{\footnotesize\ttfamily \label{astcenc__weight__align_8cpp_a52f057b7da5fc35adac361b3696ac963} 
+static void compute\+\_\+angular\+\_\+endpoints\+\_\+for\+\_\+quant\+\_\+levels (\begin{DoxyParamCaption}\item[{unsigned int}]{weight\+\_\+count}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{dec\+\_\+weight\+\_\+ideal\+\_\+value}{, }\item[{unsigned int}]{max\+\_\+quant\+\_\+level}{, }\item[{float}]{low\+\_\+value}{\mbox{[}\+TUNE\+\_\+\+MAX\+\_\+\+ANGULAR\+\_\+\+QUANT+1\mbox{]}, }\item[{float}]{high\+\_\+value}{\mbox{[}\+TUNE\+\_\+\+MAX\+\_\+\+ANGULAR\+\_\+\+QUANT+1\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The main function for the angular algorithm. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em weight\+\_\+count} & The number of (decimated) weights. \\
+\hline
+ & {\em dec\+\_\+weight\+\_\+ideal\+\_\+value} & The ideal decimated unquantized weight values. \\
+\hline
+ & {\em max\+\_\+quant\+\_\+level} & The maximum quantization level to be tested. \\
+\hline
+\mbox{\texttt{ out}}  & {\em low\+\_\+value} & Per angular step, the lowest weight value. \\
+\hline
+\mbox{\texttt{ out}}  & {\em high\+\_\+value} & Per angular step, the highest weight value. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__weight__align_8cpp_source}{astcenc\+\_\+weight\+\_\+align.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__weight__align_8cpp_source_l00235}{235}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00241\ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_quant\_steps\ =\ \mbox{\hyperlink{astcenc__weight__align_8cpp_a03594d799b3a246b0005c6bbe4f5cd48}{steps\_for\_quant\_level}}[max\_quant\_level];}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_angular\_steps\ =\ \mbox{\hyperlink{astcenc__weight__align_8cpp_a03594d799b3a246b0005c6bbe4f5cd48}{steps\_for\_quant\_level}}[max\_quant\_level];}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keywordtype}{float}\ angular\_offsets[\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}}];}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \mbox{\hyperlink{astcenc__weight__align_8cpp_a54fb7b3aab0c6f60a65ce3dd07b088da}{compute\_angular\_offsets}}(weight\_count,\ dec\_weight\_ideal\_value,}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ max\_angular\_steps,\ angular\_offsets);}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keywordtype}{float}\ lowest\_weight[\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}}];}
+\DoxyCodeLine{00251\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ int32\_t\ weight\_span[\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}}];}
+\DoxyCodeLine{00252\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keywordtype}{float}\ error[\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}}];}
+\DoxyCodeLine{00253\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keywordtype}{float}\ cut\_low\_weight\_error[\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}}];}
+\DoxyCodeLine{00254\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keywordtype}{float}\ cut\_high\_weight\_error[\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}}];}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ \mbox{\hyperlink{astcenc__weight__align_8cpp_a32b24429143eb7c5b7050885943aad1b}{compute\_lowest\_and\_highest\_weight}}(weight\_count,\ dec\_weight\_ideal\_value,}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ max\_angular\_steps,\ max\_quant\_steps,}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ angular\_offsets,\ lowest\_weight,\ weight\_span,\ error,}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cut\_low\_weight\_error,\ cut\_high\_weight\_error);}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{comment}{//\ For\ each\ quantization\ level,\ find\ the\ best\ error\ terms.\ Use\ packed\ vectors\ so\ data-\/dependent}}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{comment}{//\ branches\ can\ become\ selects.\ This\ involves\ some\ integer\ to\ float\ casts,\ but\ the\ values\ are}}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{comment}{//\ small\ enough\ so\ they\ never\ round\ the\ wrong\ way.}}
+\DoxyCodeLine{00264\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ best\_results[36];}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{comment}{//\ Initialize\ the\ array\ to\ some\ safe\ defaults}}
+\DoxyCodeLine{00267\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(max\_quant\_steps\ >\ 0);}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (max\_quant\_steps\ +\ 4);\ i++)}
+\DoxyCodeLine{00269\ \ \ \ \ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lane<0>\ =\ Best\ error}}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lane<1>\ =\ Best\ scale;\ -\/1\ indicates\ no\ solution\ found}}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lane<2>\ =\ Cut\ low\ weight}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ best\_results[i]\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(\mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}},\ -\/1.0f,\ 0.0f,\ 0.0f);}
+\DoxyCodeLine{00274\ \ \ \ \ \}}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(max\_angular\_steps\ >\ 0);}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ max\_angular\_steps;\ i++)}
+\DoxyCodeLine{00278\ \ \ \ \ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ i\_flt\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(i);}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx\_span\ =\ weight\_span[i];}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_cut\_low\ =\ error[i]\ +\ cut\_low\_weight\_error[i];}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_cut\_high\ =\ error[i]\ +\ cut\_high\_weight\_error[i];}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_cut\_low\_high\ =\ error[i]\ +\ cut\_low\_weight\_error[i]\ +\ cut\_high\_weight\_error[i];}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ best\ error\ against\ record\ N}}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ best\_result\ =\ best\_results[idx\_span];}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ new\_result\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(error[i],\ i\_flt,\ 0.0f,\ 0.0f);}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(best\_result.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>())\ >\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(error[i]);}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ best\_results[idx\_span]\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_result,\ new\_result,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ best\ error\ against\ record\ N-\/1\ with\ either\ cut\ low\ or\ cut\ high}}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ best\_result\ =\ best\_results[idx\_span\ -\/\ 1];}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ new\_result\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(error\_cut\_low,\ i\_flt,\ 1.0f,\ 0.0f);}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(best\_result.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>())\ >\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(error\_cut\_low);}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ best\_result\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_result,\ new\_result,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ new\_result\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(error\_cut\_high,\ i\_flt,\ 0.0f,\ 0.0f);}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(best\_result.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>())\ >\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(error\_cut\_high);}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ best\_results[idx\_span\ -\/\ 1]\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_result,\ new\_result,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ best\ error\ against\ record\ N-\/2\ with\ both\ cut\ low\ and\ high}}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ best\_result\ =\ best\_results[idx\_span\ -\/\ 2];}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ new\_result\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(error\_cut\_low\_high,\ i\_flt,\ 1.0f,\ 0.0f);}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(best\_result.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>())\ >\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(error\_cut\_low\_high);}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ best\_results[idx\_span\ -\/\ 2]\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(best\_result,\ new\_result,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00309\ \ \ \ \ \}}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <=\ max\_quant\_level;\ i++)}
+\DoxyCodeLine{00312\ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ q\ =\ \mbox{\hyperlink{astcenc__weight__align_8cpp_a03594d799b3a246b0005c6bbe4f5cd48}{steps\_for\_quant\_level}}[i];}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ bsi\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(best\_results[q].\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Did\ we\ find\ anything?}}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\#if\ defined(ASTCENC\_DIAGNOSTICS)}}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((bsi\ <\ 0)\ \&\&\ print\_once)}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ print\_once\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}INFO:\ Unable\ to\ find\ full\ encoding\ within\ search\ error\ limit.\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ bsi\ =\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}(0,\ bsi);}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lwi\ =\ lowest\_weight[bsi]\ +\ best\_results[q].\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>();}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ hwi\ =\ lwi\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(q)\ -\/\ 1.0f;}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ stepsize\ =\ 1.0f\ /\ (1.0f\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(bsi));}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ low\_value[i]\ \ =\ (angular\_offsets[bsi]\ +\ lwi)\ *\ stepsize;}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ high\_value[i]\ =\ (angular\_offsets[bsi]\ +\ hwi)\ *\ stepsize;}
+\DoxyCodeLine{00333\ \ \ \ \ \}}
+\DoxyCodeLine{00334\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__weight__align_8cpp_a52f057b7da5fc35adac361b3696ac963_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__weight__align_8cpp_a52f057b7da5fc35adac361b3696ac963_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__weight__align_8cpp_a54fb7b3aab0c6f60a65ce3dd07b088da}\index{astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}!compute\_angular\_offsets@{compute\_angular\_offsets}}
+\index{compute\_angular\_offsets@{compute\_angular\_offsets}!astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_angular\_offsets()}{compute\_angular\_offsets()}}
+{\footnotesize\ttfamily \label{astcenc__weight__align_8cpp_a54fb7b3aab0c6f60a65ce3dd07b088da} 
+static void compute\+\_\+angular\+\_\+offsets (\begin{DoxyParamCaption}\item[{unsigned int}]{weight\+\_\+count}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{dec\+\_\+weight\+\_\+ideal\+\_\+value}{, }\item[{unsigned int}]{max\+\_\+angular\+\_\+steps}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{offsets}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compute the angular alignment factors and offsets. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em weight\+\_\+count} & The number of (decimated) weights. \\
+\hline
+ & {\em dec\+\_\+weight\+\_\+ideal\+\_\+value} & The ideal decimated unquantized weight values. \\
+\hline
+ & {\em max\+\_\+angular\+\_\+steps} & The maximum number of steps to be tested. \\
+\hline
+\mbox{\texttt{ out}}  & {\em offsets} & The output angular offsets array. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__weight__align_8cpp_source}{astcenc\+\_\+weight\+\_\+align.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__weight__align_8cpp_source_l00093}{93}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098\ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(weight\_count\ >\ 0);}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(max\_angular\_steps\ >\ 0);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keywordtype}{int}\ isamplev[\mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}}];}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//\ Precompute\ isample;\ arrays\ are\ always\ allocated\ 64\ elements\ long}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ weight\_count;\ i\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{00106\ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ 2\string^23\ and\ interpreting\ bits\ extracts\ round-\/to-\/nearest\ int}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ sample\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(dec\_weight\_ideal\_value\ +\ i)\ *\ (\mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\_STEPS}}\ -\/\ 1.0f)\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(12582912.0f);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ isample\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a5c2db475754d8da42d9b685a45c48ab8}{float\_as\_int}}(sample)\ \&\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}((\mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\_STEPS}}\ -\/\ 1));}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(isample,\ isamplev\ +\ i);}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{comment}{//\ Arrays\ are\ multiple\ of\ SIMD\ width\ (ANGULAR\_STEPS),\ safe\ to\ overshoot\ max}}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ mult\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(1.0f\ /\ (2.0f\ *\ \mbox{\hyperlink{namespaceastc_a7b7581e8dda9382d1d6effd9c4925065}{astc::PI}}));}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ max\_angular\_steps;\ i\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{00117\ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ anglesum\_x\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat::zero}}();}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ anglesum\_y\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat::zero}}();}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ weight\_count;\ j++)}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ isample\ =\ isamplev[j];}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ anglesum\_x\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(\mbox{\hyperlink{astcenc__weight__align_8cpp_a3a16cc5209c93b9b81783d37a7566553}{cos\_table}}[isample]\ +\ i);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ anglesum\_y\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(\mbox{\hyperlink{astcenc__weight__align_8cpp_a2300d1e0bcd154e01c2376d89ea3a91c}{sin\_table}}[isample]\ +\ i);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ angle\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a0d4a4b324b23d5b82c16b03e83a2d056}{atan2}}(anglesum\_y,\ anglesum\_x);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ ofs\ =\ angle\ *\ mult;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(ofs,\ offsets\ +\ i);}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__weight__align_8cpp_a54fb7b3aab0c6f60a65ce3dd07b088da_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__weight__align_8cpp_a54fb7b3aab0c6f60a65ce3dd07b088da_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__weight__align_8cpp_a32b24429143eb7c5b7050885943aad1b}\index{astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}!compute\_lowest\_and\_highest\_weight@{compute\_lowest\_and\_highest\_weight}}
+\index{compute\_lowest\_and\_highest\_weight@{compute\_lowest\_and\_highest\_weight}!astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_lowest\_and\_highest\_weight()}{compute\_lowest\_and\_highest\_weight()}}
+{\footnotesize\ttfamily \label{astcenc__weight__align_8cpp_a32b24429143eb7c5b7050885943aad1b} 
+static void compute\+\_\+lowest\+\_\+and\+\_\+highest\+\_\+weight (\begin{DoxyParamCaption}\item[{unsigned int}]{weight\+\_\+count}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{dec\+\_\+weight\+\_\+ideal\+\_\+value}{, }\item[{unsigned int}]{max\+\_\+angular\+\_\+steps}{, }\item[{unsigned int}]{max\+\_\+quant\+\_\+steps}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{offsets}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{lowest\+\_\+weight}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{weight\+\_\+span}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{error}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{cut\+\_\+low\+\_\+weight\+\_\+error}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{cut\+\_\+high\+\_\+weight\+\_\+error}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+For a given step size compute the lowest and highest weight. 
+
+Compute the lowest and highest weight that results from quantizing using the given stepsize and offset, and then compute the resulting error. The cut errors indicate the error that results from forcing samples that should have had one weight value one step up or down.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em weight\+\_\+count} & The number of (decimated) weights. \\
+\hline
+ & {\em dec\+\_\+weight\+\_\+ideal\+\_\+value} & The ideal decimated unquantized weight values. \\
+\hline
+ & {\em max\+\_\+angular\+\_\+steps} & The maximum number of steps to be tested. \\
+\hline
+ & {\em max\+\_\+quant\+\_\+steps} & The maximum quantization level to be tested. \\
+\hline
+ & {\em offsets} & The angular offsets array. \\
+\hline
+\mbox{\texttt{ out}}  & {\em lowest\+\_\+weight} & Per angular step, the lowest weight. \\
+\hline
+\mbox{\texttt{ out}}  & {\em weight\+\_\+span} & Per angular step, the span between lowest and highest weight. \\
+\hline
+\mbox{\texttt{ out}}  & {\em error} & Per angular step, the error. \\
+\hline
+\mbox{\texttt{ out}}  & {\em cut\+\_\+low\+\_\+weight\+\_\+error} & Per angular step, the low weight cut error. \\
+\hline
+\mbox{\texttt{ out}}  & {\em cut\+\_\+high\+\_\+weight\+\_\+error} & Per angular step, the high weight cut error. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__weight__align_8cpp_source}{astcenc\+\_\+weight\+\_\+align.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__weight__align_8cpp_source_l00152}{152}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00163\ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(weight\_count\ >\ 0);}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(max\_angular\_steps\ >\ 0);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ rcp\_stepsize\ =\ \mbox{\hyperlink{structvfloat4_a13edfd5bac159c8a65e10a3bd9355b4d}{vfloat::lane\_id}}()\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(1.0f);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{comment}{//\ Arrays\ are\ ANGULAR\_STEPS\ long,\ so\ always\ safe\ to\ run\ full\ vectors}}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ sp\ =\ 0;\ sp\ <\ max\_angular\_steps;\ sp\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{00171\ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ minidx(128.0f);}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ maxidx(-\/128.0f);}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ errval\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat::zero}}();}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ cut\_low\_weight\_err\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat::zero}}();}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ cut\_high\_weight\_err\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat::zero}}();}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ offset\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a535908f39a759651e1adb70d750a96f7}{loada}}(offsets\ +\ sp);}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ weight\_count;\ j++)}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ sval\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_ac9c9ecce219189fd272c1a9d6cb9c4d2}{load1}}(dec\_weight\_ideal\_value\ +\ j)\ *\ rcp\_stepsize\ -\/\ offset;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ svalrte\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a0cc9d8a88b3c39b3ea66e52d515ac661}{round}}(sval);}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ diff\ =\ sval\ -\/\ svalrte;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ errval\ +=\ diff\ *\ diff;}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ tracker\ on\ min\ hit}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ svalrte\ <\ minidx;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ minidx\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(minidx,\ svalrte,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ cut\_low\_weight\_err\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(cut\_low\_weight\_err,\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat::zero}}(),\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Accumulate\ on\ min\ hit}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ svalrte\ ==\ minidx;}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ accum\ =\ cut\_low\_weight\_err\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(1.0f)\ -\/\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(2.0f)\ *\ diff;}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ cut\_low\_weight\_err\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(cut\_low\_weight\_err,\ accum,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ tracker\ on\ max\ hit}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ svalrte\ >\ maxidx;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ maxidx\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(maxidx,\ svalrte,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ cut\_high\_weight\_err\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(cut\_high\_weight\_err,\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat::zero}}(),\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Accumulate\ on\ max\ hit}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ svalrte\ ==\ maxidx;}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ accum\ =\ cut\_high\_weight\_err\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(1.0f)\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(2.0f)\ *\ diff;}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ cut\_high\_weight\_err\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(cut\_high\_weight\_err,\ accum,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ out\ min\ weight\ and\ weight\ span;\ clamp\ span\ to\ a\ usable\ range}}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ span\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_afdaab5e0b4a39a5dd28fb5b40642e57d}{float\_to\_int}}(maxidx\ -\/\ minidx\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(1));}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ span\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(span,\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(max\_quant\_steps\ +\ 3));}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ span\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}{max}}(span,\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(2));}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(minidx,\ lowest\_weight\ +\ sp);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(span,\ weight\_span\ +\ sp);}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ cut\_(lowest/highest)\_weight\_error\ indicate\ the\ error\ that\ results\ from\ \ forcing}}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ samples\ that\ should\ have\ had\ the\ weight\ value\ one\ step\ (up/down).}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ ssize\ =\ 1.0f\ /\ rcp\_stepsize;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ errscale\ =\ ssize\ *\ ssize;}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(errval\ *\ errscale,\ error\ +\ sp);}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(cut\_low\_weight\_err\ *\ errscale,\ cut\_low\_weight\_error\ +\ sp);}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(cut\_high\_weight\_err\ *\ errscale,\ cut\_high\_weight\_error\ +\ sp);}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ rcp\_stepsize\ =\ rcp\_stepsize\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}});}
+\DoxyCodeLine{00223\ \ \ \ \ \}}
+\DoxyCodeLine{00224\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__weight__align_8cpp_a32b24429143eb7c5b7050885943aad1b_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__weight__align_8cpp_a32b24429143eb7c5b7050885943aad1b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__weight__align_8cpp_acbcb48fd316ab1025cf7e456a5df014f}\index{astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}!prepare\_angular\_tables@{prepare\_angular\_tables}}
+\index{prepare\_angular\_tables@{prepare\_angular\_tables}!astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}}
+\doxysubsubsection{\texorpdfstring{prepare\_angular\_tables()}{prepare\_angular\_tables()}}
+{\footnotesize\ttfamily \label{astcenc__weight__align_8cpp_acbcb48fd316ab1025cf7e456a5df014f} 
+void prepare\+\_\+angular\+\_\+tables (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Expand the angular tables needed for the alternative to PCA that we use. 
+
+
+
+\mbox{\hyperlink{astcenc__weight__align_8cpp_source}{astcenc\+\_\+weight\+\_\+align.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__weight__align_8cpp_source_l00071}{71}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\_STEPS}};\ i++)}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ angle\_step\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(i\ +\ 1);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\_STEPS}};\ j++)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__weight__align_8cpp_a2300d1e0bcd154e01c2376d89ea3a91c}{sin\_table}}[j][i]\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(sinf((2.0f\ *\ \mbox{\hyperlink{namespaceastc_a7b7581e8dda9382d1d6effd9c4925065}{astc::PI}}\ /\ (\mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\_STEPS}}\ -\/\ 1.0f))\ *\ angle\_step\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(j)));}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__weight__align_8cpp_a3a16cc5209c93b9b81783d37a7566553}{cos\_table}}[j][i]\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(cosf((2.0f\ *\ \mbox{\hyperlink{namespaceastc_a7b7581e8dda9382d1d6effd9c4925065}{astc::PI}}\ /\ (\mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\_STEPS}}\ -\/\ 1.0f))\ *\ angle\_step\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(j)));}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__weight__align_8cpp_acbcb48fd316ab1025cf7e456a5df014f_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{변수 문서화}
+\Hypertarget{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}\index{astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}!ANGULAR\_STEPS@{ANGULAR\_STEPS}}
+\index{ANGULAR\_STEPS@{ANGULAR\_STEPS}!astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}}
+\doxysubsubsection{\texorpdfstring{ANGULAR\_STEPS}{ANGULAR\_STEPS}}
+{\footnotesize\ttfamily \label{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f} 
+unsigned int ANGULAR\+\_\+\+STEPS \{ 32 \}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Functions for angular-\/sum algorithm for weight alignment. 
+
+This algorithm works as follows\+:
+\begin{DoxyItemize}
+\item we compute a complex number P as (cos s\texorpdfstring{$\ast$}{*}i, sin s\texorpdfstring{$\ast$}{*}i) for each weight, where i is the input value and s is a scaling factor based on the spacing between the weights.
+\item we then add together complex numbers for all the weights.
+\item we then compute the length and angle of the resulting sum.
+\end{DoxyItemize}
+
+This should produce the following results\+:
+\begin{DoxyItemize}
+\item perfect alignment results in a vector whose length is equal to the sum of lengths of all inputs
+\item even distribution results in a vector of length 0.
+\item all samples identical results in perfect alignment for every scaling.
+\end{DoxyItemize}
+
+For each scaling factor within a given set, we compute an alignment factor from 0 to 1. This should then result in some scalings standing out as having particularly good alignment factors; we can use this to produce a set of candidate scale/shift values for various quantization levels; we should then actually try them and see what happens. 
+
+\mbox{\hyperlink{astcenc__weight__align_8cpp_source}{astcenc\+\_\+weight\+\_\+align.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__weight__align_8cpp_source_l00047}{47}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \{\ 32\ \};}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__weight__align_8cpp_a3a16cc5209c93b9b81783d37a7566553}\index{astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}!cos\_table@{cos\_table}}
+\index{cos\_table@{cos\_table}!astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}}
+\doxysubsubsection{\texorpdfstring{cos\_table}{cos\_table}}
+{\footnotesize\ttfamily \label{astcenc__weight__align_8cpp_a3a16cc5209c93b9b81783d37a7566553} 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} float cos\+\_\+table\mbox{[}\mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\+\_\+\+STEPS}}\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\+\_\+\+STEPS}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{astcenc__weight__align_8cpp_source}{astcenc\+\_\+weight\+\_\+align.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__weight__align_8cpp_source_l00064}{64}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenc__weight__align_8cpp_a2300d1e0bcd154e01c2376d89ea3a91c}\index{astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}!sin\_table@{sin\_table}}
+\index{sin\_table@{sin\_table}!astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}}
+\doxysubsubsection{\texorpdfstring{sin\_table}{sin\_table}}
+{\footnotesize\ttfamily \label{astcenc__weight__align_8cpp_a2300d1e0bcd154e01c2376d89ea3a91c} 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} float sin\+\_\+table\mbox{[}\mbox{\hyperlink{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}{SINCOS\+\_\+\+STEPS}}\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__weight__align_8cpp_a0c47d820ffe2fa4159024202df47767f}{ANGULAR\+\_\+\+STEPS}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{astcenc__weight__align_8cpp_source}{astcenc\+\_\+weight\+\_\+align.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__weight__align_8cpp_source_l00063}{63}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e}\index{astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}!SINCOS\_STEPS@{SINCOS\_STEPS}}
+\index{SINCOS\_STEPS@{SINCOS\_STEPS}!astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}}
+\doxysubsubsection{\texorpdfstring{SINCOS\_STEPS}{SINCOS\_STEPS}}
+{\footnotesize\ttfamily \label{astcenc__weight__align_8cpp_ac88e8350ec82ce924a219860a9ac558e} 
+unsigned int SINCOS\+\_\+\+STEPS \{ 64 \}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+\mbox{\hyperlink{astcenc__weight__align_8cpp_source}{astcenc\+\_\+weight\+\_\+align.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__weight__align_8cpp_source_l00057}{57}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \{\ 64\ \};}
+
+\end{DoxyCode}
+\Hypertarget{astcenc__weight__align_8cpp_a03594d799b3a246b0005c6bbe4f5cd48}\index{astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}!steps\_for\_quant\_level@{steps\_for\_quant\_level}}
+\index{steps\_for\_quant\_level@{steps\_for\_quant\_level}!astcenc\_weight\_align.cpp@{astcenc\_weight\_align.cpp}}
+\doxysubsubsection{\texorpdfstring{steps\_for\_quant\_level}{steps\_for\_quant\_level}}
+{\footnotesize\ttfamily \label{astcenc__weight__align_8cpp_a03594d799b3a246b0005c6bbe4f5cd48} 
+const uint8\+\_\+t steps\+\_\+for\+\_\+quant\+\_\+level\mbox{[}12\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ 2,\ 3,\ 4,\ 5,\ 6,\ 8,\ 10,\ 12,\ 16,\ 20,\ 24,\ 32}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\mbox{\hyperlink{astcenc__weight__align_8cpp_source}{astcenc\+\_\+weight\+\_\+align.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__weight__align_8cpp_source_l00059}{59}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ 2,\ 3,\ 4,\ 5,\ 6,\ 8,\ 10,\ 12,\ 16,\ 20,\ 24,\ 32}
+\DoxyCodeLine{00061\ \};}
+
+\end{DoxyCode}

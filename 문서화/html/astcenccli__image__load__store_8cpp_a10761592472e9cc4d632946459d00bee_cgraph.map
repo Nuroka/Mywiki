@@ -1,0 +1,9 @@
+<map id="load_ktx_compressed_image" name="load_ktx_compressed_image">
+<area shape="rect" id="Node000001" title="Load a KTX compressed image using the local custom loader." alt="" coords="5,47,155,87"/>
+<area shape="rect" id="Node000002" href="$astcenccli__image__load__store_8cpp.html#a25de668f2135ef9b77dd0c86b5d36b27" title=" " alt="" coords="263,5,345,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,48,248,27,249,33,156,54"/>
+<area shape="rect" id="Node000003" href="$astcenccli__image__load__store_8cpp.html#a7271fdd9dae7875cb69b75377840f1b6" title=" " alt="" coords="203,55,405,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="155,65,189,65,189,70,155,70"/>
+<area shape="rect" id="Node000004" href="$astcenccli__image__load__store_8cpp.html#a834ad2434a131242dc4fa6f1856222cb" title="Swap endianness of a u32 value." alt="" coords="259,104,349,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="156,81,246,101,244,106,154,86"/>
+</map>

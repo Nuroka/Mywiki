@@ -1,0 +1,134 @@
+<map id="astc::clamp" name="astc::clamp">
+<area shape="rect" id="Node000001" title="Clamp a value value between mn and mx." alt="" coords="1393,701,1484,726"/>
+<area shape="rect" id="Node000002" href="$namespaceastc.html#ac60307af42a98d70a956170894e29e9e" title="Clamp a float value between 0.0f and 1.0f." alt="" coords="1218,262,1318,287"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1428,688,1394,576,1343,432,1305,350,1274,289,1279,286,1310,347,1348,430,1399,574,1433,687"/>
+<area shape="rect" id="Node000017" href="$astcenc__color__quantize_8cpp.html#a9a0a7e003d1ea68f9b48c28e406ad1ad" title="Quantize an LDR RGB color using scale encoding." alt="" coords="1003,434,1105,459"/>
+<area shape="poly" id="edge77_Node000001_Node000017" title=" " alt="" coords="1433,688,1426,642,1411,585,1385,529,1366,503,1344,482,1316,465,1287,453,1223,439,1160,437,1106,441,1105,435,1160,431,1223,434,1288,447,1319,460,1347,478,1370,500,1389,526,1416,584,1431,641,1438,687"/>
+<area shape="rect" id="Node000023" href="$namespaceastc.html#a1861708487807ec08c172e2f7ff58978" title="Clamp a float value between 0.0f and 255.0f." alt="" coords="1211,491,1325,517"/>
+<area shape="poly" id="edge26_Node000001_Node000023" title=" " alt="" coords="1427,688,1398,615,1374,575,1344,539,1310,519,1313,515,1347,535,1378,572,1402,613,1432,686"/>
+<area shape="rect" id="Node000025" href="$astcenc__compute__variance_8cpp.html#a8cd8e456dcff495dba9b6666be024007" title="Compute averages for a pixel region." alt="" coords="1194,1001,1342,1041"/>
+<area shape="poly" id="edge30_Node000001_Node000025" title=" " alt="" coords="1436,740,1426,787,1409,847,1384,911,1347,971,1330,989,1310,1004,1307,999,1326,985,1343,968,1379,909,1404,845,1421,786,1431,739"/>
+<area shape="rect" id="Node000027" href="$astcenc__color__unquantize_8cpp.html#ade2461b695d17d056a56c091736a9cc9" title="Unpack an HDR RGB direct encoding." alt="" coords="1211,871,1325,897"/>
+<area shape="poly" id="edge37_Node000001_Node000027" title=" " alt="" coords="1429,740,1397,797,1374,828,1347,856,1315,874,1312,869,1344,851,1370,825,1393,794,1424,737"/>
+<area shape="rect" id="Node000042" href="$astcenc__color__unquantize_8cpp.html#a3b8032ce212a167d91be041c0226cb3a" title="Unpack an LDR LA color that uses delta encoding." alt="" coords="1191,801,1345,841"/>
+<area shape="poly" id="edge60_Node000001_Node000042" title=" " alt="" coords="1412,738,1347,785,1314,804,1311,799,1344,781,1409,733"/>
+<area shape="rect" id="Node000043" href="$astcenccli__error__metrics_8cpp.html#a4504544fb13100fa0507716d5c7708c8" title="mPSNR tone&#45;mapping operator for HDR images." alt="" coords="1212,1107,1324,1133"/>
+<area shape="poly" id="edge62_Node000001_Node000043" title=" " alt="" coords="1438,740,1431,800,1415,881,1389,970,1370,1014,1348,1055,1321,1086,1291,1109,1288,1105,1317,1082,1343,1052,1365,1011,1383,968,1410,879,1425,799,1433,739"/>
+<area shape="rect" id="Node000046" href="$astcenc__color__quantize_8cpp.html#a4c475fce8f14e7437cc348b0319a1365" title="Quantize a HDR A color using either delta or direct RGBA encoding." alt="" coords="1201,599,1335,625"/>
+<area shape="poly" id="edge66_Node000001_Node000046" title=" " alt="" coords="1410,694,1379,670,1344,646,1303,627,1306,622,1347,642,1382,665,1414,689"/>
+<area shape="rect" id="Node000048" href="$astcenc__color__quantize_8cpp.html#ad5fb9a4bf5ae21916bc6c634c7f789f8" title="Quantize a HDR L color using the large range encoding." alt="" coords="744,649,907,689"/>
+<area shape="poly" id="edge69_Node000001_Node000048" title=" " alt="" coords="1379,705,1345,700,1106,681,907,674,907,668,1107,676,1346,695,1380,700"/>
+<area shape="rect" id="Node000049" href="$astcenc__color__quantize_8cpp.html#a018b17fdce9e0fb576249da80bfc90a2" title="Quantize a HDR RGB color using direct RGB encoding." alt="" coords="1207,549,1329,574"/>
+<area shape="poly" id="edge71_Node000001_Node000049" title=" " alt="" coords="1423,690,1391,639,1369,613,1344,590,1318,577,1321,572,1347,586,1373,609,1395,636,1427,687"/>
+<area shape="rect" id="Node000050" href="$astcenc__color__quantize_8cpp.html#a8c60d84b27b5bf6a95eafa1b86497235" title="Quantize a HDR RGB color using RGB + offset." alt="" coords="761,714,889,739"/>
+<area shape="poly" id="edge75_Node000001_Node000050" title=" " alt="" coords="1379,717,890,728,890,723,1379,712"/>
+<area shape="rect" id="Node000051" href="$astcenc__color__quantize_8cpp.html#a105c509260a154870ee3d34d1a336c60" title="Quantize a HDR L color using the small range encoding." alt="" coords="733,764,917,804"/>
+<area shape="poly" id="edge78_Node000001_Node000051" title=" " alt="" coords="1380,723,918,776,918,771,1379,718"/>
+<area shape="rect" id="Node000052" href="$astcenc__entry_8cpp.html#a58d9fd22e35089649b73eed6af336aeb" title=" " alt="" coords="1215,931,1321,957"/>
+<area shape="poly" id="edge80_Node000001_Node000052" title=" " alt="" coords="1434,740,1423,777,1405,823,1380,870,1347,911,1331,924,1312,934,1310,929,1328,920,1343,908,1376,867,1400,820,1418,776,1429,739"/>
+<area shape="rect" id="Node000003" href="$astcenc__ideal__endpoints__and__weights_8cpp.html#a3e9812129972c73914841ecc0f6a7e71" title="Compute the ideal endpoints and weights for 1 color component." alt="" coords="977,127,1131,167"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1241,255,1196,218,1141,181,1116,169,1119,164,1144,176,1199,213,1244,251"/>
+<area shape="rect" id="Node000012" href="$astcenc__ideal__endpoints__and__weights_8cpp.html#ad96c399a873ddd142d4779b6aeb74b87" title="Compute the ideal endpoints and weights for 2 color components." alt="" coords="977,63,1131,103"/>
+<area shape="poly" id="edge6_Node000002_Node000012" title=" " alt="" coords="1251,252,1208,185,1177,149,1141,117,1121,105,1124,101,1144,113,1181,145,1212,182,1256,249"/>
+<area shape="rect" id="Node000013" href="$astcenc__ideal__endpoints__and__weights_8cpp.html#a7ec20ff2556f6357cc0754c13e841262" title="Compute the ideal endpoints and weights for 3 color components." alt="" coords="977,255,1131,295"/>
+<area shape="poly" id="edge8_Node000002_Node000013" title=" " alt="" coords="1204,277,1131,277,1131,272,1204,272"/>
+<area shape="rect" id="Node000016" href="$astcenc__ideal__endpoints__and__weights_8cpp.html#a08aebec57ada3441207dce6a7a02797e" title="Compute the ideal endpoints and weights for 4 color components." alt="" coords="977,319,1131,359"/>
+<area shape="poly" id="edge13_Node000002_Node000016" title=" " alt="" coords="1212,294,1122,321,1121,316,1211,289"/>
+<area shape="poly" id="edge15_Node000002_Node000017" title=" " alt="" coords="1253,301,1208,358,1178,390,1144,417,1104,436,1102,432,1141,413,1175,386,1204,355,1249,297"/>
+<area shape="rect" id="Node000020" href="$astcenc__ideal__endpoints__and__weights_8cpp.html#a02bcad94240678ee727ccf2f0fbfb5d3" title="For a given 1 plane weight set recompute the endpoint colors." alt="" coords="746,332,905,372"/>
+<area shape="poly" id="edge21_Node000002_Node000020" title=" " alt="" coords="1248,300,1204,340,1175,359,1144,373,1081,387,1017,390,955,384,901,375,902,370,956,379,1017,384,1081,382,1142,368,1172,354,1200,335,1245,296"/>
+<area shape="rect" id="Node000021" href="$astcenc__ideal__endpoints__and__weights_8cpp.html#afb3c455470bef24f48d7815bb78bb569" title="For a given 2 plane weight set recompute the endpoint colors." alt="" coords="510,81,669,121"/>
+<area shape="poly" id="edge23_Node000002_Node000021" title=" " alt="" coords="1259,249,1246,204,1223,149,1189,95,1167,72,1141,53,1110,37,1076,25,1007,11,935,9,863,16,795,30,733,48,635,84,633,79,731,43,794,25,863,11,935,4,1007,6,1078,20,1112,32,1144,49,1170,68,1193,92,1228,146,1251,202,1264,248"/>
+<area shape="rect" id="Node000022" href="$astcenccli__image_8cpp.html#a9706acc840e996830702a831d846559c" title="Create a flattened RGBA UNORM8 data array from an image structure." alt="" coords="981,191,1127,231"/>
+<area shape="poly" id="edge25_Node000002_Node000022" title=" " alt="" coords="1211,261,1121,233,1122,228,1212,256"/>
+<area shape="rect" id="Node000004" href="$astcenc__ideal__endpoints__and__weights_8cpp.html#a52d3985007cfc83025661e0347bc00cc" title="Compute ideal endpoint colors and weights for 2 planes of weights." alt="" coords="749,165,902,205"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="963,165,903,175,902,170,962,160"/>
+<area shape="rect" id="Node000005" href="$astcenc__compress__symbolic_8cpp.html#af11a976c8ea386db054bef472ce0667c" title="Compress a block using a chosen partitioning and 2 planes of weights." alt="" coords="269,588,445,628"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="756,213,696,240,627,275,558,319,495,371,450,427,413,488,386,545,368,589,363,587,381,543,408,486,445,424,491,368,555,315,624,270,693,235,754,208"/>
+<area shape="rect" id="Node000006" href="$astcenc__compress__symbolic_8cpp.html#a579b9a2ceeecda2fb3abe63b8311df1c" title="Compress an image block into a physical block." alt="" coords="104,627,221,653"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="256,627,222,633,221,628,255,622"/>
+<area shape="poly" id="edge7_Node000012_Node000004" title=" " alt="" coords="983,110,966,117,864,168,862,163,964,112,981,105"/>
+<area shape="poly" id="edge12_Node000013_Node000004" title=" " alt="" coords="983,252,964,245,873,208,875,203,966,240,985,247"/>
+<area shape="rect" id="Node000014" href="$astcenc__ideal__endpoints__and__weights_8cpp.html#afa8cab65d4b6f0cbece52eec38aed523" title="Compute ideal endpoint colors and weights for 1 plane of weights." alt="" coords="751,268,899,308"/>
+<area shape="poly" id="edge9_Node000013_Node000014" title=" " alt="" coords="963,283,900,286,900,281,962,277"/>
+<area shape="rect" id="Node000015" href="$astcenc__compress__symbolic_8cpp.html#af5f518a15600c71922e69267dea2db99" title="Compress a block using a chosen partitioning and 1 plane of weights." alt="" coords="269,652,445,692"/>
+<area shape="poly" id="edge10_Node000014_Node000015" title=" " alt="" coords="739,310,677,331,611,360,548,401,520,425,495,452,481,477,474,501,474,547,472,593,464,617,447,642,433,654,430,650,443,638,460,615,467,592,468,547,469,500,476,475,491,449,516,421,545,396,609,356,676,326,737,305"/>
+<area shape="poly" id="edge11_Node000015_Node000006" title=" " alt="" coords="255,658,221,652,222,647,256,653"/>
+<area shape="poly" id="edge14_Node000016_Node000014" title=" " alt="" coords="962,321,899,307,900,302,963,316"/>
+<area shape="rect" id="Node000018" href="$astcenc__color__quantize_8cpp.html#ab9f9b564c57688af1f8fc1d9e000af81" title="Pack a single pair of color endpoints as effectively as possible." alt="" coords="515,545,663,570"/>
+<area shape="poly" id="edge16_Node000017_Node000018" title=" " alt="" coords="990,460,870,482,734,513,626,547,625,542,733,508,869,477,989,455"/>
+<area shape="rect" id="Node000019" href="$astcenc__color__quantize_8cpp.html#a2d4a8db93c0ebf03b3b6dc23b292428f" title="Quantize an LDR RGBA color using scale encoding." alt="" coords="755,397,896,422"/>
+<area shape="poly" id="edge19_Node000017_Node000019" title=" " alt="" coords="989,439,896,424,897,418,990,434"/>
+<area shape="poly" id="edge18_Node000018_Node000005" title=" " alt="" coords="517,576,446,592,445,586,516,571"/>
+<area shape="poly" id="edge17_Node000018_Node000015" title=" " alt="" coords="509,578,495,585,480,598,471,612,462,627,447,642,426,654,423,650,444,638,458,624,467,610,476,595,492,581,506,573"/>
+<area shape="poly" id="edge20_Node000019_Node000018" title=" " alt="" coords="767,429,735,444,695,469,659,497,605,547,602,543,656,493,692,465,732,439,765,424"/>
+<area shape="poly" id="edge22_Node000020_Node000015" title=" " alt="" coords="753,380,734,388,603,447,552,480,495,535,479,563,473,589,466,615,447,642,430,654,427,650,443,638,462,613,468,588,474,561,491,532,548,476,601,442,732,383,750,375"/>
+<area shape="poly" id="edge24_Node000021_Node000005" title=" " alt="" coords="560,133,527,172,496,217,446,323,408,430,381,524,365,589,360,587,376,523,403,428,441,321,491,215,522,169,556,130"/>
+<area shape="poly" id="edge29_Node000023_Node000017" title=" " alt="" coords="1206,490,1101,462,1103,457,1207,485"/>
+<area shape="rect" id="Node000024" href="$astcenc__color__quantize_8cpp.html#acc5fc16efff8422faf77e47bc55ab0ad" title="Quantize a HDR RGB + LDR A color using direct RGBA encoding." alt="" coords="983,484,1125,524"/>
+<area shape="poly" id="edge27_Node000023_Node000024" title=" " alt="" coords="1197,507,1126,507,1126,501,1197,501"/>
+<area shape="poly" id="edge28_Node000024_Node000018" title=" " alt="" coords="969,516,664,552,663,546,969,511"/>
+<area shape="rect" id="Node000026" href="$astcenc__entry_8cpp.html#abb4b489d57171cfb1ebe0be7d24ef1d9" title="Compute regional averages in an image." alt="" coords="760,1054,891,1079"/>
+<area shape="poly" id="edge31_Node000025_Node000026" title=" " alt="" coords="1181,1033,1143,1037,891,1063,891,1058,1142,1032,1180,1028"/>
+<area shape="rect" id="Node000008" href="$astcenc__entry_8cpp.html#ad762aa055eed75156c99309158a40e90" title="Compress an image." alt="" coords="502,1054,677,1079"/>
+<area shape="poly" id="edge32_Node000026_Node000008" title=" " alt="" coords="746,1069,677,1069,677,1064,746,1064"/>
+<area shape="rect" id="Node000009" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="111,1051,214,1077"/>
+<area shape="poly" id="edge33_Node000008_Node000009" title=" " alt="" coords="488,1069,214,1067,214,1062,488,1064"/>
+<area shape="rect" id="Node000011" href="$astcenccli__toplevel_8cpp.html#a57bafe66bbd689a53aad2d190fe7a3fa" title="Runner callback function for a compression worker thread." alt="" coords="280,1101,435,1141"/>
+<area shape="poly" id="edge35_Node000008_Node000011" title=" " alt="" coords="522,1085,436,1106,434,1101,521,1080"/>
+<area shape="rect" id="Node000010" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,1051,56,1077"/>
+<area shape="poly" id="edge34_Node000009_Node000010" title=" " alt="" coords="98,1067,56,1067,56,1061,98,1061"/>
+<area shape="poly" id="edge36_Node000011_Node000009" title=" " alt="" coords="275,1100,206,1079,208,1074,277,1095"/>
+<area shape="rect" id="Node000028" href="$astcenc__color__unquantize_8cpp.html#aded0cdfa2613a96d69299785784bfa7e" title="Unpack an HDR RGBA direct encoding." alt="" coords="965,902,1143,927"/>
+<area shape="poly" id="edge38_Node000027_Node000028" title=" " alt="" coords="1197,897,1143,905,1142,899,1197,892"/>
+<area shape="rect" id="Node000029" href="$astcenc__color__unquantize_8cpp.html#ab9b659180fb522b05391892336dbc095" title="Unpack a single pair of encoded endpoints." alt="" coords="744,830,907,855"/>
+<area shape="poly" id="edge59_Node000027_Node000029" title=" " alt="" coords="1228,905,1143,943,1093,953,1053,958,1013,955,964,943,925,925,889,902,837,858,841,853,892,898,928,921,966,938,1014,950,1053,953,1093,948,1142,938,1226,900"/>
+<area shape="rect" id="Node000041" href="$astcenc__color__unquantize_8cpp.html#aa7a2e2f7b578cb97b5ade543c8db2614" title="Unpack an HDR RGB + LDR A direct encoding." alt="" coords="967,853,1141,878"/>
+<area shape="poly" id="edge57_Node000027_Node000041" title=" " alt="" coords="1197,881,1141,876,1141,870,1197,875"/>
+<area shape="poly" id="edge39_Node000028_Node000029" title=" " alt="" coords="990,901,965,893,861,858,863,853,966,888,991,896"/>
+<area shape="rect" id="Node000030" href="$astcenc__entry_8cpp.html#a4138a9fb500526b5bfd98ea53a3ecec7" title="Provide a high level summary of a block&#39;s encoding." alt="" coords="510,951,669,977"/>
+<area shape="poly" id="edge40_Node000029_Node000030" title=" " alt="" coords="801,866,750,904,686,941,652,954,650,949,684,936,747,900,797,862"/>
+<area shape="rect" id="Node000033" href="$astcenc__decompress__symbolic_8cpp.html#a0541138e65930f39f6caba517e76dfe4" title="Compute the error between a symbolic block and the original input data." alt="" coords="505,823,674,863"/>
+<area shape="poly" id="edge42_Node000029_Node000033" title=" " alt="" coords="730,845,674,845,674,840,730,840"/>
+<area shape="rect" id="Node000034" href="$astcenc__decompress__symbolic_8cpp.html#aff8e27acd948a9cc5631d99c80906b2f" title="Compute the error between a symbolic block and the original input data." alt="" coords="495,759,684,799"/>
+<area shape="poly" id="edge44_Node000029_Node000034" title=" " alt="" coords="764,829,663,801,665,796,765,824"/>
+<area shape="rect" id="Node000035" href="$astcenc__decompress__symbolic_8cpp.html#a9c23f8373c9f5e708650b7c8e038b182" title="Compute the error between a symbolic block and the original input data." alt="" coords="505,595,674,635"/>
+<area shape="poly" id="edge46_Node000029_Node000035" title=" " alt="" coords="740,825,731,818,715,797,708,775,706,733,705,691,698,671,683,650,667,637,670,633,687,646,703,668,710,690,711,733,713,774,720,794,735,814,743,821"/>
+<area shape="rect" id="Node000036" href="$astcenc__decompress__symbolic_8cpp.html#a4a5f09c362972951a31e4d7ff918f89f" title="Decompress a symbolic block in to an image block." alt="" coords="513,887,665,927"/>
+<area shape="poly" id="edge48_Node000029_Node000036" title=" " alt="" coords="765,862,665,889,663,884,764,857"/>
+<area shape="rect" id="Node000039" href="$astcenc__compress__symbolic_8cpp.html#af80747ee43aa6fda579161376205c294" title="Attempt to improve weights given a chosen configuration." alt="" coords="500,659,679,685"/>
+<area shape="poly" id="edge51_Node000029_Node000039" title=" " alt="" coords="742,826,732,818,719,803,711,788,707,757,702,727,696,713,684,699,664,687,667,683,687,695,700,710,707,726,712,756,717,786,723,800,735,814,745,822"/>
+<area shape="rect" id="Node000040" href="$astcenc__compress__symbolic_8cpp.html#a91e5fa530ba0e492b85132e416a5ddf4" title="Attempt to improve weights given a chosen configuration." alt="" coords="493,709,685,734"/>
+<area shape="poly" id="edge54_Node000029_Node000040" title=" " alt="" coords="746,827,732,818,715,801,707,782,699,765,684,749,660,737,662,732,687,745,704,762,712,780,720,798,735,814,749,822"/>
+<area shape="rect" id="Node000031" href="$astcenccli__toplevel_8cpp.html#ac1760850c83dafab500f7cf8ab789246" title="Populate a single diagnostic image showing aspects of the encoding." alt="" coords="280,951,435,977"/>
+<area shape="poly" id="edge41_Node000030_Node000031" title=" " alt="" coords="496,967,435,967,435,961,496,961"/>
+<area shape="poly" id="edge43_Node000033_Node000015" title=" " alt="" coords="503,819,492,813,454,785,421,753,371,694,375,691,424,749,458,781,495,809,506,815"/>
+<area shape="poly" id="edge45_Node000034_Node000015" title=" " alt="" coords="509,756,492,749,437,722,390,695,392,690,440,717,494,744,511,751"/>
+<area shape="poly" id="edge47_Node000035_Node000005" title=" " alt="" coords="491,615,445,613,446,608,491,609"/>
+<area shape="rect" id="Node000037" href="$astcenc__entry_8cpp.html#a062987fc41b9df7d34d8eb668f29eb21" title="Decompress an image." alt="" coords="284,887,431,927"/>
+<area shape="poly" id="edge49_Node000036_Node000037" title=" " alt="" coords="499,909,431,909,431,904,499,904"/>
+<area shape="poly" id="edge50_Node000037_Node000009" title=" " alt="" coords="282,935,271,942,239,969,212,1000,174,1053,170,1050,207,997,236,966,268,938,279,931"/>
+<area shape="poly" id="edge53_Node000039_Node000005" title=" " alt="" coords="526,659,493,649,427,631,428,626,494,644,528,653"/>
+<area shape="poly" id="edge52_Node000039_Node000015" title=" " alt="" coords="486,675,446,675,446,669,486,669"/>
+<area shape="poly" id="edge56_Node000040_Node000005" title=" " alt="" coords="503,706,492,700,476,685,467,671,458,656,444,642,423,631,426,626,447,638,462,653,471,668,480,682,495,695,506,701"/>
+<area shape="poly" id="edge55_Node000040_Node000015" title=" " alt="" coords="515,708,445,693,446,688,516,703"/>
+<area shape="poly" id="edge58_Node000041_Node000029" title=" " alt="" coords="953,858,907,854,907,848,954,853"/>
+<area shape="poly" id="edge61_Node000042_Node000029" title=" " alt="" coords="1177,828,907,842,907,836,1177,823"/>
+<area shape="rect" id="Node000044" href="$astcenccli__error__metrics_8cpp.html#a9e0a98a390f6b1399d67fe4005866da8" title="mPSNR difference between two values." alt="" coords="772,1127,879,1153"/>
+<area shape="poly" id="edge63_Node000043_Node000044" title=" " alt="" coords="1198,1126,879,1140,879,1135,1198,1121"/>
+<area shape="rect" id="Node000045" href="$astcenccli__error__metrics_8cpp.html#a478be461420681d7c83aa89569ea92c4" title="Compute error metrics comparing two images." alt="" coords="280,1166,435,1191"/>
+<area shape="poly" id="edge64_Node000044_Node000045" title=" " alt="" coords="759,1148,435,1175,435,1170,758,1143"/>
+<area shape="poly" id="edge65_Node000045_Node000009" title=" " alt="" coords="286,1164,268,1156,240,1138,213,1117,174,1079,178,1075,217,1113,243,1133,271,1151,288,1159"/>
+<area shape="rect" id="Node000047" href="$astcenc__color__quantize_8cpp.html#a968dafc89b796ea5218a690b22c39911" title="Quantize a HDR RGBA color using either delta or direct RGBA encoding." alt="" coords="975,599,1133,625"/>
+<area shape="poly" id="edge67_Node000046_Node000047" title=" " alt="" coords="1187,615,1134,615,1134,609,1187,609"/>
+<area shape="poly" id="edge68_Node000047_Node000018" title=" " alt="" coords="960,607,733,583,663,573,664,567,734,577,961,602"/>
+<area shape="poly" id="edge70_Node000048_Node000018" title=" " alt="" coords="754,646,732,633,717,620,708,608,698,596,684,585,655,573,657,568,687,581,702,592,712,604,721,616,735,629,757,641"/>
+<area shape="poly" id="edge72_Node000049_Node000018" title=" " alt="" coords="1194,564,664,561,664,555,1194,558"/>
+<area shape="poly" id="edge74_Node000049_Node000024" title=" " alt="" coords="1206,548,1125,526,1126,521,1207,543"/>
+<area shape="poly" id="edge73_Node000049_Node000047" title=" " alt="" coords="1201,580,1109,602,1108,597,1199,575"/>
+<area shape="poly" id="edge76_Node000050_Node000018" title=" " alt="" coords="747,714,732,703,719,688,711,673,707,642,702,613,696,599,684,585,662,572,665,567,687,581,700,596,707,611,712,642,716,671,723,686,735,699,750,710"/>
+<area shape="poly" id="edge79_Node000051_Node000018" title=" " alt="" coords="735,758,731,754,716,732,708,710,707,667,706,625,699,605,684,585,662,571,665,566,687,581,704,602,711,624,713,667,714,709,721,730,735,750,739,754"/>
+<area shape="rect" id="Node000053" href="$astcenc__entry_8cpp.html#a823234313a697f5b4cdbd2cd6caaef4a" title="Allocate a new codec context based on a config." alt="" coords="281,1001,433,1026"/>
+<area shape="poly" id="edge81_Node000052_Node000053" title=" " alt="" coords="1201,956,1143,963,743,995,434,1013,433,1007,743,989,1142,957,1201,951"/>
+<area shape="poly" id="edge82_Node000053_Node000009" title=" " alt="" coords="295,1032,213,1054,211,1049,294,1027"/>
+</map>

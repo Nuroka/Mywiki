@@ -1,0 +1,7 @@
+<map id="image_block::is_luminancealpha" name="image_block::is_luminancealpha">
+<area shape="rect" id="Node000001" title="Test if this block is a luminance block with variable alpha." alt="" coords="5,42,216,67"/>
+<area shape="rect" id="Node000002" href="$structimage__block.html#ab5d7af0f7b40343941660350ac186fab" title="Get the default alpha value for endpoints that don&#39;t store it." alt="" coords="264,5,431,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,39,250,35,251,40,214,45"/>
+<area shape="rect" id="Node000003" href="$structvfloat4.html#a04462a7815432c6bc3ce1b5e5d11e4fc" title="Get the scalar value of a single lane." alt="" coords="302,70,393,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,65,288,73,288,78,216,70"/>
+</map>

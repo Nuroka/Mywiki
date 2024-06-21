@@ -1,0 +1,253 @@
+\doxysection{decimation\+\_\+mode 구조체 참조}
+\hypertarget{structdecimation__mode}{}\label{structdecimation__mode}\index{decimation\_mode@{decimation\_mode}}
+
+
+Metadata for single decimation mode for a specific block size.  
+
+
+
+
+{\ttfamily \#include $<$astcenc\+\_\+internal.\+h$>$}
+
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structdecimation__mode_a93e9264ce31363ddaa12a46b7b9b7769}{set\+\_\+ref\+\_\+1plane}} (\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}} weight\+\_\+quant)
+\begin{DoxyCompactList}\small\item\em Set a 1 plane weight quant as active. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structdecimation__mode_ad3899521e22d446efacfceb12f264d4f}{is\+\_\+ref\+\_\+1plane}} (\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}} max\+\_\+weight\+\_\+quant) const
+\begin{DoxyCompactList}\small\item\em Test if this mode is active below a given 1 plane weight quant (inclusive). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structdecimation__mode_a84c78b671414b48738ddb97937c66ddf}{set\+\_\+ref\+\_\+2plane}} (\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}} weight\+\_\+quant)
+\begin{DoxyCompactList}\small\item\em Set a 2 plane weight quant as active. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structdecimation__mode_aa2fe4a73b6781930c375b1810a03f73b}{is\+\_\+ref\+\_\+2plane}} (\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}} max\+\_\+weight\+\_\+quant) const
+\begin{DoxyCompactList}\small\item\em Test if this mode is active below a given 2 plane weight quant (inclusive). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+int8\+\_\+t \mbox{\hyperlink{structdecimation__mode_a469a9f9e5df5748e571801cd921b7b9b}{maxprec\+\_\+1plane}}
+\begin{DoxyCompactList}\small\item\em The max weight precision for 1 plane, or -\/1 if not supported. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{structdecimation__mode_a6cc1d777d75001f629a2a0661894a334}{maxprec\+\_\+2planes}}
+\begin{DoxyCompactList}\small\item\em The max weight precision for 2 planes, or -\/1 if not supported. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{structdecimation__mode_af7821f4c585e26acef567aca653879c1}{refprec\+\_\+1plane}}
+\begin{DoxyCompactList}\small\item\em Bitvector indicating weight quant modes used by active 1 plane block modes. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{structdecimation__mode_a3f0254c125ad2fab3716af8cc856b77a}{refprec\+\_\+2planes}}
+\begin{DoxyCompactList}\small\item\em Bitvector indicating weight quant methods used by active 2 plane block modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+Metadata for single decimation mode for a specific block size. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00446}{446}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{structdecimation__mode_ad3899521e22d446efacfceb12f264d4f}\index{decimation\_mode@{decimation\_mode}!is\_ref\_1plane@{is\_ref\_1plane}}
+\index{is\_ref\_1plane@{is\_ref\_1plane}!decimation\_mode@{decimation\_mode}}
+\doxysubsubsection{\texorpdfstring{is\_ref\_1plane()}{is\_ref\_1plane()}}
+{\footnotesize\ttfamily \label{structdecimation__mode_ad3899521e22d446efacfceb12f264d4f} 
+bool decimation\+\_\+mode\+::is\+\_\+ref\+\_\+1plane (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}}}]{max\+\_\+weight\+\_\+quant}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Test if this mode is active below a given 1 plane weight quant (inclusive). 
+
+
+\begin{DoxyParams}{매개변수}
+{\em max\+\_\+weight\+\_\+quant} & The max quant method to test. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00483}{483}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00484\ \ \ \ \ \{}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}((1\ <<\ (max\_weight\_quant\ +\ 1))\ -\/\ 1);}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{structdecimation__mode_af7821f4c585e26acef567aca653879c1}{refprec\_1plane}}\ \&\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}})\ !=\ 0;}
+\DoxyCodeLine{00487\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{structdecimation__mode_ad3899521e22d446efacfceb12f264d4f_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structdecimation__mode_ad3899521e22d446efacfceb12f264d4f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structdecimation__mode_aa2fe4a73b6781930c375b1810a03f73b}\index{decimation\_mode@{decimation\_mode}!is\_ref\_2plane@{is\_ref\_2plane}}
+\index{is\_ref\_2plane@{is\_ref\_2plane}!decimation\_mode@{decimation\_mode}}
+\doxysubsubsection{\texorpdfstring{is\_ref\_2plane()}{is\_ref\_2plane()}}
+{\footnotesize\ttfamily \label{structdecimation__mode_aa2fe4a73b6781930c375b1810a03f73b} 
+bool decimation\+\_\+mode\+::is\+\_\+ref\+\_\+2plane (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}}}]{max\+\_\+weight\+\_\+quant}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Test if this mode is active below a given 2 plane weight quant (inclusive). 
+
+
+\begin{DoxyParams}{매개변수}
+{\em max\+\_\+weight\+\_\+quant} & The max quant method to test. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00504}{504}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00505\ \ \ \ \ \{}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}((1\ <<\ (max\_weight\_quant\ +\ 1))\ -\/\ 1);}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{structdecimation__mode_a3f0254c125ad2fab3716af8cc856b77a}{refprec\_2planes}}\ \&\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}})\ !=\ 0;}
+\DoxyCodeLine{00508\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{structdecimation__mode_aa2fe4a73b6781930c375b1810a03f73b_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structdecimation__mode_aa2fe4a73b6781930c375b1810a03f73b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structdecimation__mode_a93e9264ce31363ddaa12a46b7b9b7769}\index{decimation\_mode@{decimation\_mode}!set\_ref\_1plane@{set\_ref\_1plane}}
+\index{set\_ref\_1plane@{set\_ref\_1plane}!decimation\_mode@{decimation\_mode}}
+\doxysubsubsection{\texorpdfstring{set\_ref\_1plane()}{set\_ref\_1plane()}}
+{\footnotesize\ttfamily \label{structdecimation__mode_a93e9264ce31363ddaa12a46b7b9b7769} 
+void decimation\+\_\+mode\+::set\+\_\+ref\+\_\+1plane (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}}}]{weight\+\_\+quant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set a 1 plane weight quant as active. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em weight\+\_\+quant} & The quant method to set. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00473}{473}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00474\ \ \ \ \ \{}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structdecimation__mode_af7821f4c585e26acef567aca653879c1}{refprec\_1plane}}\ |=\ (1\ <<\ weight\_quant);}
+\DoxyCodeLine{00476\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structdecimation__mode_a84c78b671414b48738ddb97937c66ddf}\index{decimation\_mode@{decimation\_mode}!set\_ref\_2plane@{set\_ref\_2plane}}
+\index{set\_ref\_2plane@{set\_ref\_2plane}!decimation\_mode@{decimation\_mode}}
+\doxysubsubsection{\texorpdfstring{set\_ref\_2plane()}{set\_ref\_2plane()}}
+{\footnotesize\ttfamily \label{structdecimation__mode_a84c78b671414b48738ddb97937c66ddf} 
+void decimation\+\_\+mode\+::set\+\_\+ref\+\_\+2plane (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}}}]{weight\+\_\+quant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set a 2 plane weight quant as active. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em weight\+\_\+quant} & The quant method to set. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00494}{494}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00495\ \ \ \ \ \{}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structdecimation__mode_a3f0254c125ad2fab3716af8cc856b77a}{refprec\_2planes}}\ |=\ \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(1\ <<\ weight\_quant);}
+\DoxyCodeLine{00497\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structdecimation__mode_a84c78b671414b48738ddb97937c66ddf_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structdecimation__mode_a469a9f9e5df5748e571801cd921b7b9b}\index{decimation\_mode@{decimation\_mode}!maxprec\_1plane@{maxprec\_1plane}}
+\index{maxprec\_1plane@{maxprec\_1plane}!decimation\_mode@{decimation\_mode}}
+\doxysubsubsection{\texorpdfstring{maxprec\_1plane}{maxprec\_1plane}}
+{\footnotesize\ttfamily \label{structdecimation__mode_a469a9f9e5df5748e571801cd921b7b9b} 
+int8\+\_\+t decimation\+\_\+mode\+::maxprec\+\_\+1plane}
+
+
+
+The max weight precision for 1 plane, or -\/1 if not supported. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00449}{449}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structdecimation__mode_a6cc1d777d75001f629a2a0661894a334}\index{decimation\_mode@{decimation\_mode}!maxprec\_2planes@{maxprec\_2planes}}
+\index{maxprec\_2planes@{maxprec\_2planes}!decimation\_mode@{decimation\_mode}}
+\doxysubsubsection{\texorpdfstring{maxprec\_2planes}{maxprec\_2planes}}
+{\footnotesize\ttfamily \label{structdecimation__mode_a6cc1d777d75001f629a2a0661894a334} 
+int8\+\_\+t decimation\+\_\+mode\+::maxprec\+\_\+2planes}
+
+
+
+The max weight precision for 2 planes, or -\/1 if not supported. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00452}{452}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structdecimation__mode_af7821f4c585e26acef567aca653879c1}\index{decimation\_mode@{decimation\_mode}!refprec\_1plane@{refprec\_1plane}}
+\index{refprec\_1plane@{refprec\_1plane}!decimation\_mode@{decimation\_mode}}
+\doxysubsubsection{\texorpdfstring{refprec\_1plane}{refprec\_1plane}}
+{\footnotesize\ttfamily \label{structdecimation__mode_af7821f4c585e26acef567aca653879c1} 
+uint16\+\_\+t decimation\+\_\+mode\+::refprec\+\_\+1plane}
+
+
+
+Bitvector indicating weight quant modes used by active 1 plane block modes. 
+
+Bit 0 = QUANT\+\_\+2, Bit 1 = QUANT\+\_\+3, etc. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00459}{459}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structdecimation__mode_a3f0254c125ad2fab3716af8cc856b77a}\index{decimation\_mode@{decimation\_mode}!refprec\_2planes@{refprec\_2planes}}
+\index{refprec\_2planes@{refprec\_2planes}!decimation\_mode@{decimation\_mode}}
+\doxysubsubsection{\texorpdfstring{refprec\_2planes}{refprec\_2planes}}
+{\footnotesize\ttfamily \label{structdecimation__mode_a3f0254c125ad2fab3716af8cc856b77a} 
+uint16\+\_\+t decimation\+\_\+mode\+::refprec\+\_\+2planes}
+
+
+
+Bitvector indicating weight quant methods used by active 2 plane block modes. 
+
+Bit 0 = QUANT\+\_\+2, Bit 1 = QUANT\+\_\+3, etc. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00466}{466}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__internal_8h}{astcenc\+\_\+internal.\+h}}\end{DoxyCompactItemize}

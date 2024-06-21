@@ -1,0 +1,36 @@
+<map id="astcenc_context" name="astcenc_context">
+<area shape="rect" id="Node000001" title="The astcenc compression context." alt="" coords="1353,181,1472,207"/>
+<area shape="rect" id="Node000002" href="$structastcenc__contexti.html" title="The astcenc compression context." alt="" coords="1059,144,1180,169"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1194,163,1353,184,1353,189,1193,169"/>
+<area shape="rect" id="Node000003" href="$structastcenc__config.html" title="The config structure." alt="" coords="789,60,898,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="912,80,973,93,1036,112,1098,141,1096,146,1034,116,971,98,911,85"/>
+<area shape="rect" id="Node000004" href="$structblock__size__descriptor.html" title="Data tables for a single block size." alt="" coords="769,109,917,135"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="931,130,1059,146,1058,152,930,136"/>
+<area shape="rect" id="Node000005" href="$structdecimation__mode.html" title="Metadata for single decimation mode for a specific block size." alt="" coords="467,5,591,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="605,15,677,27,713,39,747,57,756,67,760,77,764,87,771,96,790,107,787,112,768,100,759,90,755,79,752,70,744,61,711,44,676,32,605,20"/>
+<area shape="rect" id="Node000006" href="$structdecimation__info.html" title="The weight grid information for a single decimation pattern." alt="" coords="473,55,585,80"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="599,73,746,95,796,107,794,112,745,101,598,78"/>
+<area shape="rect" id="Node000007" href="$structblock__mode.html" title="Metadata for single block mode for a specific block size." alt="" coords="483,104,575,129"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="590,115,769,118,769,123,590,120"/>
+<area shape="rect" id="Node000008" href="$structpartition__info.html" title="The partition information for a single partition." alt="" coords="482,153,577,179"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="590,157,745,137,774,132,774,137,746,142,591,162"/>
+<area shape="rect" id="Node000009" href="$structcompression__working__buffers.html" title="Preallocated working buffers, allocated per thread during context creation." alt="" coords="770,167,917,207"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="930,179,1034,169,1058,165,1059,170,1035,174,931,184"/>
+<area shape="rect" id="Node000010" href="$structendpoints__and__weights.html" title="Data structure storing the color endpoints and weights." alt="" coords="451,205,608,231"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="622,224,683,224,745,218,793,205,795,210,746,223,683,229,622,229"/>
+<area shape="rect" id="Node000011" href="$structendpoints.html" title="Data structure storing the color endpoints for a block." alt="" coords="279,191,358,216"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="372,204,451,210,450,215,371,210"/>
+<area shape="rect" id="Node000012" href="$structvfloat4.html" title="4x32&#45;bit vectors, implemented using Armv8&#45;A NEON." alt="" coords="35,211,94,236"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="108,217,279,204,279,209,108,223"/>
+<area shape="rect" id="Node000014" href="$structpixel__region__args.html" title="Parameter structure for compute_pixel_region_variance()." alt="" coords="257,279,380,304"/>
+<area shape="poly" id="edge16_Node000014_Node000012" title=" " alt="" coords="108,232,271,276,270,281,107,237"/>
+<area shape="rect" id="Node000013" href="$structavg__args.html" title="Parameter structure for compute_averages_proc()." alt="" coords="652,253,725,279"/>
+<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="739,260,823,250,917,231,1013,200,1090,167,1092,172,1015,205,918,237,823,255,739,265"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="394,284,651,266,652,271,394,289"/>
+<area shape="rect" id="Node000015" href="$structastcenc__image.html" title="An uncompressed 2D or 3D image." alt="" coords="9,280,120,305"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="134,290,257,289,257,294,134,295"/>
+<area shape="rect" id="Node000016" href="$structastcenc__swizzle.html" title="A texel component swizzle." alt="" coords="5,329,124,355"/>
+<area shape="poly" id="edge15_Node000014_Node000016" title=" " alt="" coords="137,327,233,309,265,301,266,307,234,314,138,332"/>
+<area shape="rect" id="Node000017" href="$class_parallel_manager.html" title="Functions and data declarations for the outer context." alt="" coords="1062,219,1177,244"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="1190,236,1258,237,1329,229,1361,218,1389,204,1391,209,1363,223,1330,234,1258,242,1190,241"/>
+</map>

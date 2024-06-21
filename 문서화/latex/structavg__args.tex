@@ -1,0 +1,151 @@
+\doxysection{avg\+\_\+args 구조체 참조}
+\hypertarget{structavg__args}{}\label{structavg__args}\index{avg\_args@{avg\_args}}
+
+
+Parameter structure for {\ttfamily compute\+\_\+averages\+\_\+proc()}.  
+
+
+
+
+{\ttfamily \#include $<$astcenc\+\_\+internal.\+h$>$}
+
+
+
+avg\+\_\+args에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{structavg__args__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structpixel__region__args}{pixel\+\_\+region\+\_\+args}} \mbox{\hyperlink{structavg__args_ad953b67bdc2722d0cff3d99b4aa27b68}{arg}}
+\begin{DoxyCompactList}\small\item\em The arguments for the nested variance computation. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structavg__args_a50501736215a165ef2d8ca4a86e6950f}{img\+\_\+size\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em The image X dimensions. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structavg__args_a3641de71f3d20658cee5edc2661a7b13}{img\+\_\+size\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em The image Y dimensions. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structavg__args_a97ac91020845ae5946ee158b9aebd982}{img\+\_\+size\+\_\+z}}
+\begin{DoxyCompactList}\small\item\em The image Z dimensions. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structavg__args_a09957e4d8574f765fa33c96d40381dee}{blk\+\_\+size\+\_\+xy}}
+\begin{DoxyCompactList}\small\item\em The maximum working block dimensions in X and Y dimensions. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structavg__args_adb3e3c8a3c522d240da395f2b21b40c3}{blk\+\_\+size\+\_\+z}}
+\begin{DoxyCompactList}\small\item\em The maximum working block dimensions in Z dimensions. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structavg__args_a5203bcb68ded937de59a46c9de815e75}{work\+\_\+memory\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em The working block memory size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+Parameter structure for {\ttfamily compute\+\_\+averages\+\_\+proc()}. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01176}{1176}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structavg__args_ad953b67bdc2722d0cff3d99b4aa27b68}\index{avg\_args@{avg\_args}!arg@{arg}}
+\index{arg@{arg}!avg\_args@{avg\_args}}
+\doxysubsubsection{\texorpdfstring{arg}{arg}}
+{\footnotesize\ttfamily \label{structavg__args_ad953b67bdc2722d0cff3d99b4aa27b68} 
+\mbox{\hyperlink{structpixel__region__args}{pixel\+\_\+region\+\_\+args}} avg\+\_\+args\+::arg}
+
+
+
+The arguments for the nested variance computation. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01179}{1179}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structavg__args_a09957e4d8574f765fa33c96d40381dee}\index{avg\_args@{avg\_args}!blk\_size\_xy@{blk\_size\_xy}}
+\index{blk\_size\_xy@{blk\_size\_xy}!avg\_args@{avg\_args}}
+\doxysubsubsection{\texorpdfstring{blk\_size\_xy}{blk\_size\_xy}}
+{\footnotesize\ttfamily \label{structavg__args_a09957e4d8574f765fa33c96d40381dee} 
+unsigned int avg\+\_\+args\+::blk\+\_\+size\+\_\+xy}
+
+
+
+The maximum working block dimensions in X and Y dimensions. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01191}{1191}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structavg__args_adb3e3c8a3c522d240da395f2b21b40c3}\index{avg\_args@{avg\_args}!blk\_size\_z@{blk\_size\_z}}
+\index{blk\_size\_z@{blk\_size\_z}!avg\_args@{avg\_args}}
+\doxysubsubsection{\texorpdfstring{blk\_size\_z}{blk\_size\_z}}
+{\footnotesize\ttfamily \label{structavg__args_adb3e3c8a3c522d240da395f2b21b40c3} 
+unsigned int avg\+\_\+args\+::blk\+\_\+size\+\_\+z}
+
+
+
+The maximum working block dimensions in Z dimensions. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01194}{1194}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structavg__args_a50501736215a165ef2d8ca4a86e6950f}\index{avg\_args@{avg\_args}!img\_size\_x@{img\_size\_x}}
+\index{img\_size\_x@{img\_size\_x}!avg\_args@{avg\_args}}
+\doxysubsubsection{\texorpdfstring{img\_size\_x}{img\_size\_x}}
+{\footnotesize\ttfamily \label{structavg__args_a50501736215a165ef2d8ca4a86e6950f} 
+unsigned int avg\+\_\+args\+::img\+\_\+size\+\_\+x}
+
+
+
+The image X dimensions. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01182}{1182}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structavg__args_a3641de71f3d20658cee5edc2661a7b13}\index{avg\_args@{avg\_args}!img\_size\_y@{img\_size\_y}}
+\index{img\_size\_y@{img\_size\_y}!avg\_args@{avg\_args}}
+\doxysubsubsection{\texorpdfstring{img\_size\_y}{img\_size\_y}}
+{\footnotesize\ttfamily \label{structavg__args_a3641de71f3d20658cee5edc2661a7b13} 
+unsigned int avg\+\_\+args\+::img\+\_\+size\+\_\+y}
+
+
+
+The image Y dimensions. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01185}{1185}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structavg__args_a97ac91020845ae5946ee158b9aebd982}\index{avg\_args@{avg\_args}!img\_size\_z@{img\_size\_z}}
+\index{img\_size\_z@{img\_size\_z}!avg\_args@{avg\_args}}
+\doxysubsubsection{\texorpdfstring{img\_size\_z}{img\_size\_z}}
+{\footnotesize\ttfamily \label{structavg__args_a97ac91020845ae5946ee158b9aebd982} 
+unsigned int avg\+\_\+args\+::img\+\_\+size\+\_\+z}
+
+
+
+The image Z dimensions. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01188}{1188}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structavg__args_a5203bcb68ded937de59a46c9de815e75}\index{avg\_args@{avg\_args}!work\_memory\_size@{work\_memory\_size}}
+\index{work\_memory\_size@{work\_memory\_size}!avg\_args@{avg\_args}}
+\doxysubsubsection{\texorpdfstring{work\_memory\_size}{work\_memory\_size}}
+{\footnotesize\ttfamily \label{structavg__args_a5203bcb68ded937de59a46c9de815e75} 
+unsigned int avg\+\_\+args\+::work\+\_\+memory\+\_\+size}
+
+
+
+The working block memory size. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l01197}{1197}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__internal_8h}{astcenc\+\_\+internal.\+h}}\end{DoxyCompactItemize}

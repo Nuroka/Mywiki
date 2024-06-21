@@ -1,0 +1,19 @@
+<map id="wuffs_base__ieee_754_bit_representation__from_u16_to_f64" name="wuffs_base__ieee_754_bit_representation__from_u16_to_f64">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,117,157,172"/>
+<area shape="rect" id="Node000002" href="$astcenc__vecmathlib_8h.html#ac4a249bd7ee357fb775d7f8ad8e22d91" title="Count the leading zeros for each lane in a." alt="" coords="276,103,315,128"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,132,262,117,263,122,158,137"/>
+<area shape="rect" id="Node000009" href="$wuffs-v0_83_8c.html#a632f8bbbe307ca3af62303e9ba10c4f7" title=" " alt="" coords="205,153,385,193"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="158,152,192,156,191,162,157,157"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#ae91c0bb0ebd82ed2a7fa7aa915f6e76e" title="Return the clamped value between min and max." alt="" coords="449,29,506,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="314,105,435,56,437,61,316,110"/>
+<area shape="rect" id="Node000006" href="$astcenc__vecmathlib__avx2__8_8h.html#a5c2db475754d8da42d9b685a45c48ab8" title="Return a float value as an integer bit pattern (i.e. no conversion)." alt="" coords="433,79,521,104"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="315,110,420,96,420,101,316,115"/>
+<area shape="rect" id="Node000007" href="$astcenc__vecmathlib__avx2__8_8h.html#a3a2ce0fb403294db7fe126a6b3e87ab7" title="Return a float value for an integer vector." alt="" coords="435,128,520,153"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="316,115,421,130,421,136,315,121"/>
+<area shape="rect" id="Node000008" href="$astcenc__vecmathlib__avx2__8_8h.html#a0a3a7d755cec1c73d0ce9c50b33bc207" title="Logical shift right." alt="" coords="458,177,497,203"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="315,117,386,138,447,171,445,176,384,143,314,122"/>
+<area shape="rect" id="Node000004" href="$astcenc__vecmathlib__avx2__8_8h.html#aa162915c044e97cc1f6d630338761fd3" title="Return the max vector of two vectors." alt="" coords="569,5,616,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="506,33,555,23,556,28,507,39"/>
+<area shape="rect" id="Node000005" href="$astcenc__vecmathlib__avx2__8_8h.html#a165b3db4e7ced1551e1880a01a01150b" title="Return the min vector of two vectors." alt="" coords="571,55,614,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="507,46,558,57,557,62,506,51"/>
+</map>

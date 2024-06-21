@@ -1,0 +1,11 @@
+<map id="astcenc_get_block_info" name="astcenc_get_block_info">
+<area shape="rect" id="Node000001" title="Provide a high level summary of a block&#39;s encoding." alt="" coords="668,5,827,31"/>
+<area shape="rect" id="Node000002" href="$astcenccli__toplevel_8cpp.html#ac1760850c83dafab500f7cf8ab789246" title="Populate a single diagnostic image showing aspects of the encoding." alt="" coords="465,5,620,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="654,21,621,21,621,15,654,15"/>
+<area shape="rect" id="Node000003" href="$astcenccli__toplevel_8cpp.html#a65c87ee1ff0ed0736cffa06692853479" title="Print a set of diagnostic images showing aspects of the encoding." alt="" coords="255,5,417,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="451,21,417,21,417,15,451,15"/>
+<area shape="rect" id="Node000004" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,5,207,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="241,21,207,21,207,15,241,15"/>
+<area shape="rect" id="Node000005" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="90,21,57,21,57,15,90,15"/>
+</map>

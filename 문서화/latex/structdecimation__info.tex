@@ -1,0 +1,257 @@
+\doxysection{decimation\+\_\+info 구조체 참조}
+\hypertarget{structdecimation__info}{}\label{structdecimation__info}\index{decimation\_info@{decimation\_info}}
+
+
+The weight grid information for a single decimation pattern.  
+
+
+
+
+{\ttfamily \#include $<$astcenc\+\_\+internal.\+h$>$}
+
+\doxysubsubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structdecimation__info_a2f6c6f84342c82092324c05035b3c9c1}{texel\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em The total number of texels in the block. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structdecimation__info_a1419dcd0f618164042315f80527d3f4f}{max\+\_\+texel\+\_\+weight\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em The maximum number of stored weights that contribute to each texel, between 1 and 4. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structdecimation__info_af7d0c86be805995a20a6c09f6c3ab8ca}{weight\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em The total number of weights stored. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structdecimation__info_a0b51669603759128ab6ab40458601461}{weight\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em The number of stored weights in the X dimension. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structdecimation__info_a1b0d75c94edac7ae7e5a53fea1757a2c}{weight\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em The number of stored weights in the Y dimension. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structdecimation__info_afc8c1ca38b0a7d5014343ca9028a0186}{weight\+\_\+z}}
+\begin{DoxyCompactList}\small\item\em The number of stored weights in the Z dimension. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} uint8\+\_\+t \mbox{\hyperlink{structdecimation__info_a3bb3777eb8526788c915e582b10d6d27}{texel\+\_\+weight\+\_\+count}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The number of weights that contribute to each texel. Value is between 1 and 4. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} uint8\+\_\+t \mbox{\hyperlink{structdecimation__info_adcee6ed79e4c94e1bcb305d429e3cff5}{texel\+\_\+weights\+\_\+tr}} \mbox{[}4\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The weight index of the N weights that are interpolated for each texel. Stored transposed to improve vectorization. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} uint8\+\_\+t \mbox{\hyperlink{structdecimation__info_ab27eb4b71fcc9d8b7827ce5abbf43d4a}{texel\+\_\+weight\+\_\+contribs\+\_\+int\+\_\+tr}} \mbox{[}4\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The bilinear contribution of the N weights that are interpolated for each texel. Value is between 0 and 16, stored transposed to improve vectorization. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} float \mbox{\hyperlink{structdecimation__info_a4d05a42b1764a046f86d4a5220cb5365}{texel\+\_\+weight\+\_\+contribs\+\_\+float\+\_\+tr}} \mbox{[}4\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The bilinear contribution of the N weights that are interpolated for each texel. Value is between 0 and 1, stored transposed to improve vectorization. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} uint8\+\_\+t \mbox{\hyperlink{structdecimation__info_af8cbdbb54638ad694f845fb0bd96d007}{weight\+\_\+texel\+\_\+count}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\+\_\+\+MAX\+\_\+\+WEIGHTS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The number of texels that each stored weight contributes to. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} uint8\+\_\+t \mbox{\hyperlink{structdecimation__info_a312c1244893e84561d7d01bb43493d2e}{weight\+\_\+texels\+\_\+tr}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\+\_\+\+MAX\+\_\+\+WEIGHTS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The list of texels that use a specific weight index. Stored transposed to improve vectorization. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} float \mbox{\hyperlink{structdecimation__info_a8938034ba8a3eeb122662bf5d90df522}{weights\+\_\+texel\+\_\+contribs\+\_\+tr}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\+\_\+\+MAX\+\_\+\+WEIGHTS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The bilinear contribution to the N texels that use each weight. Value is between 0 and 1, stored transposed to improve vectorization. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structdecimation__info_a512f049d754ab5546758122dc0f5efcc}{texel\+\_\+contrib\+\_\+for\+\_\+weight}} \mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\+\_\+\+MAX\+\_\+\+WEIGHTS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The bilinear contribution to the Nth texel that uses each weight. Value is between 0 and 1, stored transposed to improve vectorization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+The weight grid information for a single decimation pattern. 
+
+ASTC can store one weight per texel, but is also capable of storing lower resolution weight grids that are interpolated during decompression to assign a with to a texel. Storing fewer weights can free up a substantial amount of bits that we can then spend on more useful things, such as more accurate endpoints and weights, or additional partitions.
+
+This data structure is used to store information about a single weight grid decimation pattern, for a single block size. 
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00346}{346}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{structdecimation__info_a1419dcd0f618164042315f80527d3f4f}\index{decimation\_info@{decimation\_info}!max\_texel\_weight\_count@{max\_texel\_weight\_count}}
+\index{max\_texel\_weight\_count@{max\_texel\_weight\_count}!decimation\_info@{decimation\_info}}
+\doxysubsubsection{\texorpdfstring{max\_texel\_weight\_count}{max\_texel\_weight\_count}}
+{\footnotesize\ttfamily \label{structdecimation__info_a1419dcd0f618164042315f80527d3f4f} 
+uint8\+\_\+t decimation\+\_\+info\+::max\+\_\+texel\+\_\+weight\+\_\+count}
+
+
+
+The maximum number of stored weights that contribute to each texel, between 1 and 4. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00352}{352}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structdecimation__info_a512f049d754ab5546758122dc0f5efcc}\index{decimation\_info@{decimation\_info}!texel\_contrib\_for\_weight@{texel\_contrib\_for\_weight}}
+\index{texel\_contrib\_for\_weight@{texel\_contrib\_for\_weight}!decimation\_info@{decimation\_info}}
+\doxysubsubsection{\texorpdfstring{texel\_contrib\_for\_weight}{texel\_contrib\_for\_weight}}
+{\footnotesize\ttfamily \label{structdecimation__info_a512f049d754ab5546758122dc0f5efcc} 
+float decimation\+\_\+info\+::texel\+\_\+contrib\+\_\+for\+\_\+weight\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\+\_\+\+MAX\+\_\+\+WEIGHTS}}\mbox{]}}
+
+
+
+The bilinear contribution to the Nth texel that uses each weight. Value is between 0 and 1, stored transposed to improve vectorization. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00409}{409}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structdecimation__info_a2f6c6f84342c82092324c05035b3c9c1}\index{decimation\_info@{decimation\_info}!texel\_count@{texel\_count}}
+\index{texel\_count@{texel\_count}!decimation\_info@{decimation\_info}}
+\doxysubsubsection{\texorpdfstring{texel\_count}{texel\_count}}
+{\footnotesize\ttfamily \label{structdecimation__info_a2f6c6f84342c82092324c05035b3c9c1} 
+uint8\+\_\+t decimation\+\_\+info\+::texel\+\_\+count}
+
+
+
+The total number of texels in the block. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00349}{349}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structdecimation__info_a4d05a42b1764a046f86d4a5220cb5365}\index{decimation\_info@{decimation\_info}!texel\_weight\_contribs\_float\_tr@{texel\_weight\_contribs\_float\_tr}}
+\index{texel\_weight\_contribs\_float\_tr@{texel\_weight\_contribs\_float\_tr}!decimation\_info@{decimation\_info}}
+\doxysubsubsection{\texorpdfstring{texel\_weight\_contribs\_float\_tr}{texel\_weight\_contribs\_float\_tr}}
+{\footnotesize\ttfamily \label{structdecimation__info_a4d05a42b1764a046f86d4a5220cb5365} 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} float decimation\+\_\+info\+::texel\+\_\+weight\+\_\+contribs\+\_\+float\+\_\+tr\mbox{[}4\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}}
+
+
+
+The bilinear contribution of the N weights that are interpolated for each texel. Value is between 0 and 1, stored transposed to improve vectorization. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00388}{388}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structdecimation__info_ab27eb4b71fcc9d8b7827ce5abbf43d4a}\index{decimation\_info@{decimation\_info}!texel\_weight\_contribs\_int\_tr@{texel\_weight\_contribs\_int\_tr}}
+\index{texel\_weight\_contribs\_int\_tr@{texel\_weight\_contribs\_int\_tr}!decimation\_info@{decimation\_info}}
+\doxysubsubsection{\texorpdfstring{texel\_weight\_contribs\_int\_tr}{texel\_weight\_contribs\_int\_tr}}
+{\footnotesize\ttfamily \label{structdecimation__info_ab27eb4b71fcc9d8b7827ce5abbf43d4a} 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} uint8\+\_\+t decimation\+\_\+info\+::texel\+\_\+weight\+\_\+contribs\+\_\+int\+\_\+tr\mbox{[}4\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}}
+
+
+
+The bilinear contribution of the N weights that are interpolated for each texel. Value is between 0 and 16, stored transposed to improve vectorization. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00382}{382}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structdecimation__info_a3bb3777eb8526788c915e582b10d6d27}\index{decimation\_info@{decimation\_info}!texel\_weight\_count@{texel\_weight\_count}}
+\index{texel\_weight\_count@{texel\_weight\_count}!decimation\_info@{decimation\_info}}
+\doxysubsubsection{\texorpdfstring{texel\_weight\_count}{texel\_weight\_count}}
+{\footnotesize\ttfamily \label{structdecimation__info_a3bb3777eb8526788c915e582b10d6d27} 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} uint8\+\_\+t decimation\+\_\+info\+::texel\+\_\+weight\+\_\+count\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}}
+
+
+
+The number of weights that contribute to each texel. Value is between 1 and 4. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00370}{370}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structdecimation__info_adcee6ed79e4c94e1bcb305d429e3cff5}\index{decimation\_info@{decimation\_info}!texel\_weights\_tr@{texel\_weights\_tr}}
+\index{texel\_weights\_tr@{texel\_weights\_tr}!decimation\_info@{decimation\_info}}
+\doxysubsubsection{\texorpdfstring{texel\_weights\_tr}{texel\_weights\_tr}}
+{\footnotesize\ttfamily \label{structdecimation__info_adcee6ed79e4c94e1bcb305d429e3cff5} 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} uint8\+\_\+t decimation\+\_\+info\+::texel\+\_\+weights\+\_\+tr\mbox{[}4\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}}
+
+
+
+The weight index of the N weights that are interpolated for each texel. Stored transposed to improve vectorization. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00376}{376}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structdecimation__info_af7d0c86be805995a20a6c09f6c3ab8ca}\index{decimation\_info@{decimation\_info}!weight\_count@{weight\_count}}
+\index{weight\_count@{weight\_count}!decimation\_info@{decimation\_info}}
+\doxysubsubsection{\texorpdfstring{weight\_count}{weight\_count}}
+{\footnotesize\ttfamily \label{structdecimation__info_af7d0c86be805995a20a6c09f6c3ab8ca} 
+uint8\+\_\+t decimation\+\_\+info\+::weight\+\_\+count}
+
+
+
+The total number of weights stored. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00355}{355}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structdecimation__info_af8cbdbb54638ad694f845fb0bd96d007}\index{decimation\_info@{decimation\_info}!weight\_texel\_count@{weight\_texel\_count}}
+\index{weight\_texel\_count@{weight\_texel\_count}!decimation\_info@{decimation\_info}}
+\doxysubsubsection{\texorpdfstring{weight\_texel\_count}{weight\_texel\_count}}
+{\footnotesize\ttfamily \label{structdecimation__info_af8cbdbb54638ad694f845fb0bd96d007} 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} uint8\+\_\+t decimation\+\_\+info\+::weight\+\_\+texel\+\_\+count\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\+\_\+\+MAX\+\_\+\+WEIGHTS}}\mbox{]}}
+
+
+
+The number of texels that each stored weight contributes to. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00391}{391}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structdecimation__info_a312c1244893e84561d7d01bb43493d2e}\index{decimation\_info@{decimation\_info}!weight\_texels\_tr@{weight\_texels\_tr}}
+\index{weight\_texels\_tr@{weight\_texels\_tr}!decimation\_info@{decimation\_info}}
+\doxysubsubsection{\texorpdfstring{weight\_texels\_tr}{weight\_texels\_tr}}
+{\footnotesize\ttfamily \label{structdecimation__info_a312c1244893e84561d7d01bb43493d2e} 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} uint8\+\_\+t decimation\+\_\+info\+::weight\+\_\+texels\+\_\+tr\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\+\_\+\+MAX\+\_\+\+WEIGHTS}}\mbox{]}}
+
+
+
+The list of texels that use a specific weight index. Stored transposed to improve vectorization. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00397}{397}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structdecimation__info_a0b51669603759128ab6ab40458601461}\index{decimation\_info@{decimation\_info}!weight\_x@{weight\_x}}
+\index{weight\_x@{weight\_x}!decimation\_info@{decimation\_info}}
+\doxysubsubsection{\texorpdfstring{weight\_x}{weight\_x}}
+{\footnotesize\ttfamily \label{structdecimation__info_a0b51669603759128ab6ab40458601461} 
+uint8\+\_\+t decimation\+\_\+info\+::weight\+\_\+x}
+
+
+
+The number of stored weights in the X dimension. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00358}{358}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structdecimation__info_a1b0d75c94edac7ae7e5a53fea1757a2c}\index{decimation\_info@{decimation\_info}!weight\_y@{weight\_y}}
+\index{weight\_y@{weight\_y}!decimation\_info@{decimation\_info}}
+\doxysubsubsection{\texorpdfstring{weight\_y}{weight\_y}}
+{\footnotesize\ttfamily \label{structdecimation__info_a1b0d75c94edac7ae7e5a53fea1757a2c} 
+uint8\+\_\+t decimation\+\_\+info\+::weight\+\_\+y}
+
+
+
+The number of stored weights in the Y dimension. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00361}{361}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structdecimation__info_afc8c1ca38b0a7d5014343ca9028a0186}\index{decimation\_info@{decimation\_info}!weight\_z@{weight\_z}}
+\index{weight\_z@{weight\_z}!decimation\_info@{decimation\_info}}
+\doxysubsubsection{\texorpdfstring{weight\_z}{weight\_z}}
+{\footnotesize\ttfamily \label{structdecimation__info_afc8c1ca38b0a7d5014343ca9028a0186} 
+uint8\+\_\+t decimation\+\_\+info\+::weight\+\_\+z}
+
+
+
+The number of stored weights in the Z dimension. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00364}{364}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{structdecimation__info_a8938034ba8a3eeb122662bf5d90df522}\index{decimation\_info@{decimation\_info}!weights\_texel\_contribs\_tr@{weights\_texel\_contribs\_tr}}
+\index{weights\_texel\_contribs\_tr@{weights\_texel\_contribs\_tr}!decimation\_info@{decimation\_info}}
+\doxysubsubsection{\texorpdfstring{weights\_texel\_contribs\_tr}{weights\_texel\_contribs\_tr}}
+{\footnotesize\ttfamily \label{structdecimation__info_a8938034ba8a3eeb122662bf5d90df522} 
+\mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\+\_\+\+ALIGNAS}} float decimation\+\_\+info\+::weights\+\_\+texel\+\_\+contribs\+\_\+tr\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_ad694a8ff82a68a50b11bac439531241e}{BLOCK\+\_\+\+MAX\+\_\+\+TEXELS}}\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\+\_\+\+MAX\+\_\+\+WEIGHTS}}\mbox{]}}
+
+
+
+The bilinear contribution to the N texels that use each weight. Value is between 0 and 1, stored transposed to improve vectorization. 
+
+
+
+\mbox{\hyperlink{astcenc__internal_8h_source}{astcenc\+\_\+internal.\+h}} 파일의 \mbox{\hyperlink{astcenc__internal_8h_source_l00403}{403}} 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/\mbox{\hyperlink{astcenc__internal_8h}{astcenc\+\_\+internal.\+h}}\end{DoxyCompactItemize}

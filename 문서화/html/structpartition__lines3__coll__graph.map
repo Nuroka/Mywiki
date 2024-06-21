@@ -1,0 +1,10 @@
+<map id="partition_lines3" name="partition_lines3">
+<area shape="rect" id="Node000001" title="Computed lines for a a three component analysis." alt="" coords="27,211,137,236"/>
+<area shape="rect" id="Node000002" href="$structline3.html" title=" " alt="" coords="5,108,55,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="30,147,31,167,38,185,48,198,61,208,58,213,44,202,33,188,26,168,25,148"/>
+<area shape="rect" id="Node000003" href="$structvfloat4.html" title="4x32&#45;bit vectors, implemented using Armv8&#45;A NEON." alt="" coords="62,5,121,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="80,44,39,109,35,107,75,41"/>
+<area shape="rect" id="Node000004" href="$structprocessed__line3.html" title=" " alt="" coords="79,108,195,133"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="105,42,134,107,129,109,100,45"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="129,147,108,188,93,212,88,209,104,185,124,145"/>
+</map>

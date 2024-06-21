@@ -1,0 +1,17 @@
+<map id="wuffs_base__pixel_format__is_indexed" name="wuffs_base__pixel_format__is_indexed">
+<area shape="rect" id="Node000001" title=" " alt="" coords="409,165,580,205"/>
+<area shape="rect" id="Node000002" href="$wuffs-v0_83_8c.html#a41a03ab176776d8339fc8a41a01a6d16" title=" " alt="" coords="195,5,360,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="466,157,420,107,391,82,360,60,338,48,340,43,363,55,394,78,423,104,470,153"/>
+<area shape="rect" id="Node000003" href="$wuffs-v0_83_8c.html#a99b08b3389b98cffbad5cdb60445f613" title=" " alt="" coords="195,69,360,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="441,162,360,124,331,112,333,107,362,119,443,157"/>
+<area shape="rect" id="Node000004" href="$wuffs-v0_83_8c.html#a6dbfe45a4cad9cea69bdcf64aec9fb8d" title=" " alt="" coords="195,133,360,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="395,173,360,168,361,163,396,168"/>
+<area shape="rect" id="Node000006" href="$wuffs-v0_83_8c.html#a8aa1216f535e6f4142c62ca099c5689d" title=" " alt="" coords="195,197,360,237"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="396,203,361,208,360,203,395,197"/>
+<area shape="rect" id="Node000007" href="$wuffs-v0_83_8c.html#a9f8d4002e48359f13c5e47776af0be26" title=" " alt="" coords="195,261,360,301"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="443,214,362,252,333,264,331,259,360,247,441,209"/>
+<area shape="rect" id="Node000008" href="$wuffs-v0_83_8c.html#a86231f06d698bc28567f8a1f579e3c6d" title=" " alt="" coords="193,325,361,365"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="470,218,423,267,394,293,363,316,340,328,338,323,360,311,391,289,420,263,466,214"/>
+<area shape="rect" id="Node000005" href="$astcenccli__image__external_8cpp.html#a9920dcae3265967744c9b31e9ac8a999" title="Load an image using Wuffs to provide the loader." alt="" coords="5,141,145,166"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="181,156,146,156,146,151,181,151"/>
+</map>

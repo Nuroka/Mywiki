@@ -1,0 +1,7 @@
+<map id="decode_ise" name="decode_ise">
+<area shape="rect" id="Node000001" title="Decode a packed string using BISE." alt="" coords="5,5,93,31"/>
+<area shape="rect" id="Node000002" href="$astcenc__integer__sequence_8cpp.html#a203e1098560cd6c7b9b9004d9704123e" title="Read up to 16 bits from two bytes." alt="" coords="141,5,216,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,15,128,15,128,21,94,21"/>
+<area shape="rect" id="Node000003" href="$astcenc__vecmathlib__avx2__8_8h.html#ad922a3ed6098767968916265154b6f82" title="Return a 8&#45;bit mask code indicating mask status." alt="" coords="264,5,319,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="216,15,250,15,250,21,216,21"/>
+</map>

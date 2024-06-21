@@ -1,0 +1,7 @@
+<map id="load_ktx_compressed_image" name="load_ktx_compressed_image">
+<area shape="rect" id="Node000001" title="Load a KTX compressed image using the local custom loader." alt="" coords="255,5,404,45"/>
+<area shape="rect" id="Node000002" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,13,207,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,28,207,28,207,23,241,23"/>
+<area shape="rect" id="Node000003" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,56,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="90,28,57,28,57,23,90,23"/>
+</map>

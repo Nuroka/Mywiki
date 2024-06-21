@@ -1,0 +1,5 @@
+<map id="astcenc_print_shorthelp" name="astcenc_print_shorthelp">
+<area shape="rect" id="Node000001" title="Print the tool copyright, version, and short&#45;form help to stdout." alt="" coords="5,5,165,31"/>
+<area shape="rect" id="Node000002" href="$astcenccli__toplevel__help_8cpp.html#a3cf209b603114ef9a2c2c9e28697bbe7" title="Print the tool copyright and version header to stdout." alt="" coords="213,5,360,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,15,199,15,199,21,166,21"/>
+</map>

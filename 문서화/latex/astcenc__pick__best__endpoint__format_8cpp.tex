@@ -1,0 +1,1697 @@
+\doxysection{C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/astcenc\+\_\+pick\+\_\+best\+\_\+endpoint\+\_\+format.cpp 파일 참조}
+\hypertarget{astcenc__pick__best__endpoint__format_8cpp}{}\label{astcenc__pick__best__endpoint__format_8cpp}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_pick\_best\_endpoint\_format.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_pick\_best\_endpoint\_format.cpp}}
+{\ttfamily \#include "{}astcenc\+\_\+internal.\+h"{}}\newline
+{\ttfamily \#include "{}astcenc\+\_\+vecmathlib.\+h"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+astcenc\+\_\+pick\+\_\+best\+\_\+endpoint\+\_\+format.\+cpp에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__pick__best__endpoint__format_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_a118e8a2374bfd56b522a03f938b0f367}{compute\+\_\+error\+\_\+squared\+\_\+rgb\+\_\+single\+\_\+partition}} (const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&pi, int partition\+\_\+index, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk, const \mbox{\hyperlink{structprocessed__line3}{processed\+\_\+line3}} \&uncor\+\_\+pline, float \&uncor\+\_\+err, const \mbox{\hyperlink{structprocessed__line3}{processed\+\_\+line3}} \&samec\+\_\+pline, float \&samec\+\_\+err, const \mbox{\hyperlink{structprocessed__line3}{processed\+\_\+line3}} \&rgbl\+\_\+pline, float \&rgbl\+\_\+err, const \mbox{\hyperlink{structprocessed__line3}{processed\+\_\+line3}} \&l\+\_\+pline, float \&l\+\_\+err, float \&a\+\_\+drop\+\_\+err)
+\begin{DoxyCompactList}\small\item\em Functions for finding best endpoint format. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_affc96d3eeffef962cd64307bf0b85590}{compute\+\_\+encoding\+\_\+choice\+\_\+errors}} (const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk, const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&pi, const \mbox{\hyperlink{structendpoints}{endpoints}} \&ep, \mbox{\hyperlink{structencoding__choice__errors}{encoding\+\_\+choice\+\_\+errors}} eci\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em For a given set of input colors and partitioning determine endpoint encode errors. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_a163a7d0cf020b6f86049745807912ec1}{compute\+\_\+color\+\_\+error\+\_\+for\+\_\+every\+\_\+integer\+\_\+count\+\_\+and\+\_\+quant\+\_\+level}} (bool encode\+\_\+hdr\+\_\+rgb, bool encode\+\_\+hdr\+\_\+alpha, int partition\+\_\+index, const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&pi, const \mbox{\hyperlink{structencoding__choice__errors}{encoding\+\_\+choice\+\_\+errors}} \&eci, const \mbox{\hyperlink{structendpoints}{endpoints}} \&ep, \mbox{\hyperlink{structvfloat4}{vfloat4}} error\+\_\+weight, float best\+\_\+error\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, uint8\+\_\+t format\+\_\+of\+\_\+choice\mbox{[}21\mbox{]}\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em For a given partition compute the error for every endpoint integer count and quant level. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_a4a0bf4253790d6b09132c02f57fcbe32}{one\+\_\+partition\+\_\+find\+\_\+best\+\_\+combination\+\_\+for\+\_\+bitcount}} (const float best\+\_\+combined\+\_\+error\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, const uint8\+\_\+t best\+\_\+combined\+\_\+format\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, int bits\+\_\+available, uint8\+\_\+t \&best\+\_\+quant\+\_\+level, uint8\+\_\+t \&best\+\_\+format)
+\begin{DoxyCompactList}\small\item\em For one partition compute the best format and quantization for a given bit count. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_ac317754d4bbd795d6f29b331883e8eb3}{two\+\_\+partitions\+\_\+find\+\_\+best\+\_\+combination\+\_\+for\+\_\+every\+\_\+quantization\+\_\+and\+\_\+integer\+\_\+count}} (const float best\+\_\+error\mbox{[}2\mbox{]}\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, const uint8\+\_\+t best\+\_\+format\mbox{[}2\mbox{]}\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, float best\+\_\+combined\+\_\+error\mbox{[}21\mbox{]}\mbox{[}7\mbox{]}, uint8\+\_\+t best\+\_\+combined\+\_\+format\mbox{[}21\mbox{]}\mbox{[}7\mbox{]}\mbox{[}2\mbox{]})
+\begin{DoxyCompactList}\small\item\em For 2 partitions compute the best format combinations for every pair of quant mode and integer count. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_a5c74518d7a68796ba962179901f805ae}{two\+\_\+partitions\+\_\+find\+\_\+best\+\_\+combination\+\_\+for\+\_\+bitcount}} (float best\+\_\+combined\+\_\+error\mbox{[}21\mbox{]}\mbox{[}7\mbox{]}, uint8\+\_\+t best\+\_\+combined\+\_\+format\mbox{[}21\mbox{]}\mbox{[}7\mbox{]}\mbox{[}2\mbox{]}, int bits\+\_\+available, uint8\+\_\+t \&best\+\_\+quant\+\_\+level, uint8\+\_\+t \&best\+\_\+quant\+\_\+level\+\_\+mod, uint8\+\_\+t \texorpdfstring{$\ast$}{*}best\+\_\+formats)
+\begin{DoxyCompactList}\small\item\em For 2 partitions compute the best format and quantization for a given bit count. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_ab08ff5ed53a05a876dc8e90c05aeef72}{three\+\_\+partitions\+\_\+find\+\_\+best\+\_\+combination\+\_\+for\+\_\+every\+\_\+quantization\+\_\+and\+\_\+integer\+\_\+count}} (const float best\+\_\+error\mbox{[}3\mbox{]}\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, const uint8\+\_\+t best\+\_\+format\mbox{[}3\mbox{]}\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, float best\+\_\+combined\+\_\+error\mbox{[}21\mbox{]}\mbox{[}10\mbox{]}, uint8\+\_\+t best\+\_\+combined\+\_\+format\mbox{[}21\mbox{]}\mbox{[}10\mbox{]}\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em For 3 partitions compute the best format combinations for every pair of quant mode and integer count. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_a7681b157ce5786accf05034e1facbdbe}{three\+\_\+partitions\+\_\+find\+\_\+best\+\_\+combination\+\_\+for\+\_\+bitcount}} (const float best\+\_\+combined\+\_\+error\mbox{[}21\mbox{]}\mbox{[}10\mbox{]}, const uint8\+\_\+t best\+\_\+combined\+\_\+format\mbox{[}21\mbox{]}\mbox{[}10\mbox{]}\mbox{[}3\mbox{]}, int bits\+\_\+available, uint8\+\_\+t \&best\+\_\+quant\+\_\+level, uint8\+\_\+t \&best\+\_\+quant\+\_\+level\+\_\+mod, uint8\+\_\+t \texorpdfstring{$\ast$}{*}best\+\_\+formats)
+\begin{DoxyCompactList}\small\item\em For 3 partitions compute the best format and quantization for a given bit count. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_a806d3ce88e28226224c6b929b69f2fda}{four\+\_\+partitions\+\_\+find\+\_\+best\+\_\+combination\+\_\+for\+\_\+every\+\_\+quantization\+\_\+and\+\_\+integer\+\_\+count}} (const float best\+\_\+error\mbox{[}4\mbox{]}\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, const uint8\+\_\+t best\+\_\+format\mbox{[}4\mbox{]}\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, float best\+\_\+combined\+\_\+error\mbox{[}21\mbox{]}\mbox{[}13\mbox{]}, uint8\+\_\+t best\+\_\+combined\+\_\+format\mbox{[}21\mbox{]}\mbox{[}13\mbox{]}\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em For 4 partitions compute the best format combinations for every pair of quant mode and integer count. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_aa54b7e3566c1445d292b8ff7cf6f5e28}{four\+\_\+partitions\+\_\+find\+\_\+best\+\_\+combination\+\_\+for\+\_\+bitcount}} (const float best\+\_\+combined\+\_\+error\mbox{[}21\mbox{]}\mbox{[}13\mbox{]}, const uint8\+\_\+t best\+\_\+combined\+\_\+format\mbox{[}21\mbox{]}\mbox{[}13\mbox{]}\mbox{[}4\mbox{]}, int bits\+\_\+available, uint8\+\_\+t \&best\+\_\+quant\+\_\+level, uint8\+\_\+t \&best\+\_\+quant\+\_\+level\+\_\+mod, uint8\+\_\+t \texorpdfstring{$\ast$}{*}best\+\_\+formats)
+\begin{DoxyCompactList}\small\item\em For 4 partitions compute the best format and quantization for a given bit count. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_a81c7b68e8c7b82a5ff718f21bd4f3c35}{compute\+\_\+ideal\+\_\+endpoint\+\_\+formats}} (const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&pi, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk, const \mbox{\hyperlink{structendpoints}{endpoints}} \&ep, const int8\+\_\+t \texorpdfstring{$\ast$}{*}qwt\+\_\+bitcounts, const float \texorpdfstring{$\ast$}{*}qwt\+\_\+errors, unsigned int tune\+\_\+candidate\+\_\+limit, unsigned int start\+\_\+block\+\_\+mode, unsigned int end\+\_\+block\+\_\+mode, uint8\+\_\+t partition\+\_\+format\+\_\+specifiers\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a0f2aba262e65e945037f4ed5dda3f2f9}{TUNE\+\_\+\+MAX\+\_\+\+TRIAL\+\_\+\+CANDIDATES}}\mbox{]}\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS}}\mbox{]}, int \mbox{\hyperlink{structblock__mode}{block\+\_\+mode}}\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a0f2aba262e65e945037f4ed5dda3f2f9}{TUNE\+\_\+\+MAX\+\_\+\+TRIAL\+\_\+\+CANDIDATES}}\mbox{]}, \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}} quant\+\_\+level\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a0f2aba262e65e945037f4ed5dda3f2f9}{TUNE\+\_\+\+MAX\+\_\+\+TRIAL\+\_\+\+CANDIDATES}}\mbox{]}, \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}} quant\+\_\+level\+\_\+mod\mbox{[}\mbox{\hyperlink{astcenc__internal_8h_a0f2aba262e65e945037f4ed5dda3f2f9}{TUNE\+\_\+\+MAX\+\_\+\+TRIAL\+\_\+\+CANDIDATES}}\mbox{]}, \mbox{\hyperlink{structcompression__working__buffers}{compression\+\_\+working\+\_\+buffers}} \&tmpbuf)
+\begin{DoxyCompactList}\small\item\em Identify, for each mode, which set of color endpoint produces the best result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\Hypertarget{astcenc__pick__best__endpoint__format_8cpp_a163a7d0cf020b6f86049745807912ec1}\index{astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}!compute\_color\_error\_for\_every\_integer\_count\_and\_quant\_level@{compute\_color\_error\_for\_every\_integer\_count\_and\_quant\_level}}
+\index{compute\_color\_error\_for\_every\_integer\_count\_and\_quant\_level@{compute\_color\_error\_for\_every\_integer\_count\_and\_quant\_level}!astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_color\_error\_for\_every\_integer\_count\_and\_quant\_level()}{compute\_color\_error\_for\_every\_integer\_count\_and\_quant\_level()}}
+{\footnotesize\ttfamily \label{astcenc__pick__best__endpoint__format_8cpp_a163a7d0cf020b6f86049745807912ec1} 
+static void compute\+\_\+color\+\_\+error\+\_\+for\+\_\+every\+\_\+integer\+\_\+count\+\_\+and\+\_\+quant\+\_\+level (\begin{DoxyParamCaption}\item[{bool}]{encode\+\_\+hdr\+\_\+rgb}{, }\item[{bool}]{encode\+\_\+hdr\+\_\+alpha}{, }\item[{int}]{partition\+\_\+index}{, }\item[{const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&}]{pi}{, }\item[{const \mbox{\hyperlink{structencoding__choice__errors}{encoding\+\_\+choice\+\_\+errors}} \&}]{eci}{, }\item[{const \mbox{\hyperlink{structendpoints}{endpoints}} \&}]{ep}{, }\item[{\mbox{\hyperlink{structvfloat4}{vfloat4}}}]{error\+\_\+weight}{, }\item[{float}]{best\+\_\+error}{\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, }\item[{uint8\+\_\+t}]{format\+\_\+of\+\_\+choice}{\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+For a given partition compute the error for every endpoint integer count and quant level. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em encode\+\_\+hdr\+\_\+rgb} & {\ttfamily true} if using HDR for RGB, {\ttfamily false} for LDR. \\
+\hline
+ & {\em encode\+\_\+hdr\+\_\+alpha} & {\ttfamily true} if using HDR for alpha, {\ttfamily false} for LDR. \\
+\hline
+ & {\em partition\+\_\+index} & The partition index. \\
+\hline
+ & {\em pi} & The partition info. \\
+\hline
+ & {\em eci} & The encoding choice error metrics. \\
+\hline
+ & {\em ep} & The idealized endpoints. \\
+\hline
+ & {\em error\+\_\+weight} & The resulting encoding choice error metrics. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+error} & The best error for each integer count and quant level. \\
+\hline
+\mbox{\texttt{ out}}  & {\em format\+\_\+of\+\_\+choice} & The preferred endpoint format for each integer count and quant level. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source}{astcenc\+\_\+pick\+\_\+best\+\_\+endpoint\+\_\+format.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source_l00315}{315}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00325\ \ \ \{}
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keywordtype}{int}\ partition\_size\ =\ pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[partition\_index];}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ baseline\_quant\_error[21\ -\/\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}}]\ \{}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ (65536.0f\ *\ 65536.0f\ /\ 18.0f)\ /\ (5\ *\ 5),}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ (65536.0f\ *\ 65536.0f\ /\ 18.0f)\ /\ (7\ *\ 7),}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ (65536.0f\ *\ 65536.0f\ /\ 18.0f)\ /\ (9\ *\ 9),}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ (65536.0f\ *\ 65536.0f\ /\ 18.0f)\ /\ (11\ *\ 11),}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ (65536.0f\ *\ 65536.0f\ /\ 18.0f)\ /\ (15\ *\ 15),}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ (65536.0f\ *\ 65536.0f\ /\ 18.0f)\ /\ (19\ *\ 19),}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ (65536.0f\ *\ 65536.0f\ /\ 18.0f)\ /\ (23\ *\ 23),}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ (65536.0f\ *\ 65536.0f\ /\ 18.0f)\ /\ (31\ *\ 31),}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ (65536.0f\ *\ 65536.0f\ /\ 18.0f)\ /\ (39\ *\ 39),}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ (65536.0f\ *\ 65536.0f\ /\ 18.0f)\ /\ (47\ *\ 47),}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ (65536.0f\ *\ 65536.0f\ /\ 18.0f)\ /\ (63\ *\ 63),}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ (65536.0f\ *\ 65536.0f\ /\ 18.0f)\ /\ (79\ *\ 79),}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ (65536.0f\ *\ 65536.0f\ /\ 18.0f)\ /\ (95\ *\ 95),}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ (65536.0f\ *\ 65536.0f\ /\ 18.0f)\ /\ (127\ *\ 127),}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ (65536.0f\ *\ 65536.0f\ /\ 18.0f)\ /\ (159\ *\ 159),}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ (65536.0f\ *\ 65536.0f\ /\ 18.0f)\ /\ (191\ *\ 191),}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ (65536.0f\ *\ 65536.0f\ /\ 18.0f)\ /\ (255\ *\ 255)}
+\DoxyCodeLine{00346\ \ \ \ \ \};}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ ep0\ =\ ep.\mbox{\hyperlink{structendpoints_a2a084800ec101a03de2b8deb0d926263}{endpt0}}[partition\_index];}
+\DoxyCodeLine{00349\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ ep1\ =\ ep.\mbox{\hyperlink{structendpoints_a89660f637b681eaea32e7db6b9d9def2}{endpt1}}[partition\_index];}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ \ \ \ \ \textcolor{keywordtype}{float}\ ep1\_min\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_ac8652a0d90b3378db8fa8a8d2c4a434c}{hmin\_rgb\_s}}(ep1);}
+\DoxyCodeLine{00352\ \ \ \ \ ep1\_min\ =\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}(ep1\_min,\ 0.0f);}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keywordtype}{float}\ error\_weight\_rgbsum\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a48e833d0cfdf950b6bc3431fce00507e}{hadd\_rgb\_s}}(error\_weight);}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keywordtype}{float}\ range\_upper\_limit\_rgb\ =\ encode\_hdr\_rgb\ ?\ 61440.0f\ :\ 65535.0f;}
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keywordtype}{float}\ range\_upper\_limit\_alpha\ =\ encode\_hdr\_alpha\ ?\ 61440.0f\ :\ 65535.0f;}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{comment}{//\ It\ is\ possible\ to\ get\ endpoint\ colors\ significantly\ outside\ [0,upper-\/limit]\ even\ if\ the}}
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{comment}{//\ input\ data\ are\ safely\ contained\ in\ [0,upper-\/limit];\ we\ need\ to\ add\ an\ error\ term\ for\ this}}
+\DoxyCodeLine{00361\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ offset(range\_upper\_limit\_rgb,\ range\_upper\_limit\_rgb,\ range\_upper\_limit\_rgb,\ range\_upper\_limit\_alpha);}
+\DoxyCodeLine{00362\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ ep0\_range\_error\_high\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}{max}}(ep0\ -\/\ offset,\ 0.0f);}
+\DoxyCodeLine{00363\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ ep1\_range\_error\_high\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aa162915c044e97cc1f6d630338761fd3}{max}}(ep1\ -\/\ offset,\ 0.0f);}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00365\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ ep0\_range\_error\_low\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(ep0,\ 0.0f);}
+\DoxyCodeLine{00366\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ ep1\_range\_error\_low\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a165b3db4e7ced1551e1880a01a01150b}{min}}(ep1,\ 0.0f);}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ sum\_range\_error\ =}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ (ep0\_range\_error\_low\ *\ ep0\_range\_error\_low)\ +}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ (ep1\_range\_error\_low\ *\ ep1\_range\_error\_low)\ +}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ (ep0\_range\_error\_high\ *\ ep0\_range\_error\_high)\ +}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ (ep1\_range\_error\_high\ *\ ep1\_range\_error\_high);}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \textcolor{keywordtype}{float}\ rgb\_range\_error\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a377cafdb98d3ee38a2999ed00504f477}{dot3\_s}}(sum\_range\_error,\ error\_weight)}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ 0.5f\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(partition\_size);}
+\DoxyCodeLine{00376\ \ \ \ \ \textcolor{keywordtype}{float}\ alpha\_range\_error\ =\ sum\_range\_error.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ *\ error\_weight.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ 0.5f\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(partition\_size);}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \ \ \ \ \textcolor{keywordflow}{if}\ (encode\_hdr\_rgb)}
+\DoxyCodeLine{00380\ \ \ \ \ \{}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Collect\ some\ statistics}}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ af,\ cf;}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ep1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>()\ >\ ep1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>()\ \&\&\ ep1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>()\ >\ ep1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>())}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ af\ =\ ep1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>();}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ cf\ =\ ep1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>()\ -\/\ ep0.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>();}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (ep1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>()\ >\ ep1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>())}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ af\ =\ ep1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>();}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ cf\ =\ ep1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>()\ -\/\ ep0.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>();}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ af\ =\ ep1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>();}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ cf\ =\ ep1.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>()\ -\/\ ep0.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>();}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Estimate\ of\ color-\/component\ spread\ in\ high\ endpoint\ color}}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ bf\ =\ af\ -\/\ ep1\_min;}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ prd\ =\ (ep1\ -\/\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(cf)).swz<0,\ 1,\ 2>();}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ pdif\ =\ prd\ -\/\ ep0.\mbox{\hyperlink{structvfloat4_a0a3e390831722cc8e54f29155699f3a5}{swz}}<0,\ 1,\ 2>();}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Estimate\ of\ color-\/component\ spread\ in\ low\ endpoint\ color}}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ df\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a5d1b09f64af83d5171e4b9580f62ac71}{hmax\_s}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aeac50750508168aeab5115733d3ee63c}{abs}}(pdif));}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ b\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(bf);}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(cf);}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ d\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(df);}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Determine\ which\ one\ of\ the\ 6\ submodes\ is\ likely\ to\ be\ used\ in\ case\ of\ an\ RGBO-\/mode}}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rgbo\_mode\ =\ 5;\ \ \ \ \ \ \textcolor{comment}{//\ 7\ bits\ per\ component}}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mode\ 4:\ 8\ 7\ 6}}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ <\ 32768\ \&\&\ c\ <\ 16384)}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ rgbo\_mode\ =\ 4;}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mode\ 3:\ 9\ 6\ 7}}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ <\ 8192\ \&\&\ c\ <\ 16384)}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ rgbo\_mode\ =\ 3;}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mode\ 2:\ 10\ 5\ 8}}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ <\ 2048\ \&\&\ c\ <\ 16384)}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ rgbo\_mode\ =\ 2;}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mode\ 1:\ 11\ 6\ 5}}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ <\ 2048\ \&\&\ c\ <\ 1024)}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ rgbo\_mode\ =\ 1;}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00436\ }
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mode\ 0:\ 11\ 5\ 7}}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ <\ 1024\ \&\&\ c\ <\ 4096)}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ rgbo\_mode\ =\ 0;}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Determine\ which\ one\ of\ the\ 9\ submodes\ is\ likely\ to\ be\ used\ in\ case\ of\ an\ RGB-\/mode.}}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rgb\_mode\ =\ 8;\ \ \ \ \ \ \ \textcolor{comment}{//\ 8\ bits\ per\ component,\ except\ 7\ bits\ for\ blue}}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mode\ 0:\ 9\ 7\ 6\ 7}}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ <\ 16384\ \&\&\ c\ <\ 8192\ \&\&\ d\ <\ 8192)}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_mode\ =\ 0;}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mode\ 1:\ 9\ 8\ 6\ 6}}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ <\ 32768\ \&\&\ c\ <\ 8192\ \&\&\ d\ <\ 4096)}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_mode\ =\ 1;}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mode\ 2:\ 10\ 6\ 7\ 7}}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ <\ 4096\ \&\&\ c\ <\ 8192\ \&\&\ d\ <\ 4096)}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_mode\ =\ 2;}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00463\ }
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mode\ 3:\ 10\ 7\ 7\ 6}}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ <\ 8192\ \&\&\ c\ <\ 8192\ \&\&\ d\ <\ 2048)}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_mode\ =\ 3;}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mode\ 4:\ 11\ 8\ 6\ 5}}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ <\ 8192\ \&\&\ c\ <\ 2048\ \&\&\ d\ <\ 512)}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_mode\ =\ 4;}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00475\ }
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mode\ 5:\ 11\ 6\ 8\ 6}}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ <\ 2048\ \&\&\ c\ <\ 8192\ \&\&\ d\ <\ 1024)}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_mode\ =\ 5;}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mode\ 6:\ 12\ 7\ 7\ 5}}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ <\ 2048\ \&\&\ c\ <\ 2048\ \&\&\ d\ <\ 256)}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_mode\ =\ 6;}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mode\ 7:\ 12\ 6\ 7\ 6}}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ <\ 1024\ \&\&\ c\ <\ 2048\ \&\&\ d\ <\ 512)}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_mode\ =\ 7;}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00493\ }
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ rgbo\_error\_scales[6]\ \{\ 4.0f,\ 4.0f,\ 16.0f,\ 64.0f,\ 256.0f,\ 1024.0f\ \};}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ rgb\_error\_scales[9]\ \{\ 64.0f,\ 64.0f,\ 16.0f,\ 16.0f,\ 4.0f,\ 4.0f,\ 1.0f,\ 1.0f,\ 384.0f\ \};}
+\DoxyCodeLine{00496\ }
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ mode7mult\ =\ rgbo\_error\_scales[rgbo\_mode]\ *\ 0.0015f;\ \ \textcolor{comment}{//\ Empirically\ determined\ ....}}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ mode11mult\ =\ rgb\_error\_scales[rgb\_mode]\ *\ 0.010f;\ \ \ \ \textcolor{comment}{//\ Empirically\ determined\ ....}}
+\DoxyCodeLine{00499\ }
+\DoxyCodeLine{00500\ }
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lum\_high\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a48e833d0cfdf950b6bc3431fce00507e}{hadd\_rgb\_s}}(ep1)\ *\ (1.0f\ /\ 3.0f);}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lum\_low\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a48e833d0cfdf950b6bc3431fce00507e}{hadd\_rgb\_s}}(ep0)\ *\ (1.0f\ /\ 3.0f);}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lumdif\ =\ lum\_high\ -\/\ lum\_low;}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ mode23mult\ =\ lumdif\ <\ 960\ ?\ 4.0f\ :\ lumdif\ <\ 3968\ ?\ 16.0f\ :\ 128.0f;}
+\DoxyCodeLine{00505\ }
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ mode23mult\ *=\ 0.0005f;\ \ \textcolor{comment}{//\ Empirically\ determined\ ....}}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pick\ among\ the\ available\ HDR\ endpoint\ modes}}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75aad7b37039e6f1b7dc45712dac09dd8f7}{QUANT\_2}};\ i\ <\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75af823c34e4b97aef67fa3e347a3e987d9}{QUANT\_16}};\ i++)}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][3]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][2]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][1]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][0]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00515\ }
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][3]\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(encode\_hdr\_alpha\ ?\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba2eedd102b26e73b95994d07cb26d9602}{FMT\_HDR\_RGBA}}\ :\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4bab4f3b7d71ebdba2ff3cf00ddde4f40b2}{FMT\_HDR\_RGB\_LDR\_ALPHA}});}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][2]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4baf476d1d6ba5e210a3565182063c3d5a7}{FMT\_HDR\_RGB}};}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][1]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba39d39129318d58a44698af7789887045}{FMT\_HDR\_RGB\_SCALE}};}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][0]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba47ede19ba8704c3c0494b1c8143d8db0}{FMT\_HDR\_LUMINANCE\_LARGE\_RANGE}};}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75af823c34e4b97aef67fa3e347a3e987d9}{QUANT\_16}};\ i\ <=\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a190d92e6d064f52082c798be06b2850f}{QUANT\_256}};\ i++)}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ base\_quant\_error\ should\ depend\ on\ the\ scale-\/factor\ that\ would\ be\ used\ during}}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ actual\ encode\ of\ the\ color\ value}}
+\DoxyCodeLine{00526\ }
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ base\_quant\_error\ =\ baseline\_quant\_error[i\ -\/\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}}]\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(partition\_size);}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rgb\_quantization\_error\ =\ error\_weight\_rgbsum\ *\ base\_quant\_error\ *\ 2.0f;}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ alpha\_quantization\_error\ =\ error\_weight.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ *\ base\_quant\_error\ *\ 2.0f;}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rgba\_quantization\_error\ =\ rgb\_quantization\_error\ +\ alpha\_quantization\_error;}
+\DoxyCodeLine{00531\ }
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ 8\ integers,\ we\ have\ two\ encodings:\ one\ with\ HDR\ A\ and\ another\ one\ with\ LDR\ A}}
+\DoxyCodeLine{00533\ }
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ full\_hdr\_rgba\_error\ =\ rgba\_quantization\_error\ +\ rgb\_range\_error\ +\ alpha\_range\_error;}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][3]\ =\ full\_hdr\_rgba\_error;}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][3]\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(encode\_hdr\_alpha\ ?\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba2eedd102b26e73b95994d07cb26d9602}{FMT\_HDR\_RGBA}}\ :\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4bab4f3b7d71ebdba2ff3cf00ddde4f40b2}{FMT\_HDR\_RGB\_LDR\_ALPHA}});}
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ 6\ integers,\ we\ have\ one\ HDR-\/RGB\ encoding}}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ full\_hdr\_rgb\_error\ =\ (rgb\_quantization\_error\ *\ mode11mult)\ +\ rgb\_range\_error\ +\ eci.\mbox{\hyperlink{structencoding__choice__errors_a9f732b537213a9c5caddca5af4d0c15c}{alpha\_drop\_error}};}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][2]\ =\ full\_hdr\_rgb\_error;}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][2]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4baf476d1d6ba5e210a3565182063c3d5a7}{FMT\_HDR\_RGB}};}
+\DoxyCodeLine{00542\ }
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ 4\ integers,\ we\ have\ one\ HDR-\/RGB-\/Scale\ encoding}}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ hdr\_rgb\_scale\_error\ =\ (rgb\_quantization\_error\ *\ mode7mult)\ +\ rgb\_range\_error\ +\ eci.\mbox{\hyperlink{structencoding__choice__errors_a9f732b537213a9c5caddca5af4d0c15c}{alpha\_drop\_error}}\ +\ eci.\mbox{\hyperlink{structencoding__choice__errors_a5db32b77467b23beb70562840f173a54}{rgb\_luma\_error}};}
+\DoxyCodeLine{00545\ }
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][1]\ =\ hdr\_rgb\_scale\_error;}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][1]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba39d39129318d58a44698af7789887045}{FMT\_HDR\_RGB\_SCALE}};}
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ 2\ integers,\ we\ assume\ luminance-\/with-\/large-\/range}}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ hdr\_luminance\_error\ =\ (rgb\_quantization\_error\ *\ mode23mult)\ +\ rgb\_range\_error\ +\ eci.\mbox{\hyperlink{structencoding__choice__errors_a9f732b537213a9c5caddca5af4d0c15c}{alpha\_drop\_error}}\ +\ eci.\mbox{\hyperlink{structencoding__choice__errors_ad6cf09c5032d45a8e61b750969ff4c27}{luminance\_error}};}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][0]\ =\ hdr\_luminance\_error;}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][0]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba47ede19ba8704c3c0494b1c8143d8db0}{FMT\_HDR\_LUMINANCE\_LARGE\_RANGE}};}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00554\ \ \ \ \ \}}
+\DoxyCodeLine{00555\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00556\ \ \ \ \ \{}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75aad7b37039e6f1b7dc45712dac09dd8f7}{QUANT\_2}};\ i\ <\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}};\ i++)}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][3]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][2]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][1]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][0]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00563\ }
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][3]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4baeba2a33f74db0bf71dccc86a6f50b509}{FMT\_RGBA}};}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][2]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba13dd2b80554659b29a91a1749a1d90a9}{FMT\_RGB}};}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][1]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba878884827236165e75e7989a8e6f7757}{FMT\_RGB\_SCALE}};}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][0]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4baf29afed4fcc815780d85789b8a095a22}{FMT\_LUMINANCE}};}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00569\ }
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ base\_quant\_error\_rgb\ =\ error\_weight\_rgbsum\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(partition\_size);}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ base\_quant\_error\_a\ =\ error\_weight.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>()\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(partition\_size);}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ base\_quant\_error\_rgba\ =\ base\_quant\_error\_rgb\ +\ base\_quant\_error\_a;}
+\DoxyCodeLine{00573\ }
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_scale\_bc\_rgba\ =\ eci.\mbox{\hyperlink{structencoding__choice__errors_a296ff4def93117aadb093f02532b5244}{can\_blue\_contract}}\ ?\ 0.625f\ :\ 1.0f;}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_scale\_oe\_rgba\ =\ eci.\mbox{\hyperlink{structencoding__choice__errors_a4ed3d3a0fa3f83ac3a48067030ac49fd}{can\_offset\_encode}}\ ?\ 0.5f\ :\ 1.0f;}
+\DoxyCodeLine{00576\ }
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_scale\_bc\_rgb\ =\ eci.\mbox{\hyperlink{structencoding__choice__errors_a296ff4def93117aadb093f02532b5244}{can\_blue\_contract}}\ ?\ 0.5f\ :\ 1.0f;}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_scale\_oe\_rgb\ =\ eci.\mbox{\hyperlink{structencoding__choice__errors_a4ed3d3a0fa3f83ac3a48067030ac49fd}{can\_offset\_encode}}\ ?\ 0.25f\ :\ 1.0f;}
+\DoxyCodeLine{00579\ }
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pick\ among\ the\ available\ LDR\ endpoint\ modes}}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}};\ i\ <=\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a190d92e6d064f52082c798be06b2850f}{QUANT\_256}};\ i++)}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Offset\ encoding\ not\ possible\ at\ higher\ quant\ levels}}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75adc290425933beb9aee88043c00969b58}{QUANT\_192}})}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ error\_scale\_oe\_rgba\ =\ 1.0f;}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ error\_scale\_oe\_rgb\ =\ 1.0f;}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00589\ }
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ base\_quant\_error\ =\ baseline\_quant\_error[i\ -\/\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}}];}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ quant\_error\_rgb\ \ =\ base\_quant\_error\_rgb\ *\ base\_quant\_error;}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ quant\_error\_rgba\ =\ base\_quant\_error\_rgba\ *\ base\_quant\_error;}
+\DoxyCodeLine{00593\ }
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 8\ integers\ can\ encode\ as\ RGBA+RGBA}}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ full\_ldr\_rgba\_error\ =\ quant\_error\_rgba}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ error\_scale\_bc\_rgba}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ error\_scale\_oe\_rgba}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ rgb\_range\_error}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ alpha\_range\_error;}
+\DoxyCodeLine{00600\ }
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][3]\ =\ full\_ldr\_rgba\_error;}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][3]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4baeba2a33f74db0bf71dccc86a6f50b509}{FMT\_RGBA}};}
+\DoxyCodeLine{00603\ }
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 6\ integers\ can\ encode\ as\ RGB+RGB\ or\ RGBS+AA}}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ full\_ldr\_rgb\_error\ =\ quant\_error\_rgb}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ error\_scale\_bc\_rgb}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ error\_scale\_oe\_rgb}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ rgb\_range\_error}
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ eci.\mbox{\hyperlink{structencoding__choice__errors_a9f732b537213a9c5caddca5af4d0c15c}{alpha\_drop\_error}};}
+\DoxyCodeLine{00610\ }
+\DoxyCodeLine{00611\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rgbs\_alpha\_error\ =\ quant\_error\_rgba}
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ eci.\mbox{\hyperlink{structencoding__choice__errors_a7833d66ba6360569a3cbad8a9d4c743f}{rgb\_scale\_error}}}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ rgb\_range\_error}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ alpha\_range\_error;}
+\DoxyCodeLine{00615\ }
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rgbs\_alpha\_error\ <\ full\_ldr\_rgb\_error)}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][2]\ =\ rgbs\_alpha\_error;}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][2]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba0fad0c63bb0dafc3f4146915dcff64ba}{FMT\_RGB\_SCALE\_ALPHA}};}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00622\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][2]\ =\ full\_ldr\_rgb\_error;}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][2]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba13dd2b80554659b29a91a1749a1d90a9}{FMT\_RGB}};}
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00626\ }
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 4\ integers\ can\ encode\ as\ RGBS\ or\ LA+LA}}
+\DoxyCodeLine{00628\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ldr\_rgbs\_error\ =\ quant\_error\_rgb}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ rgb\_range\_error}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ eci.\mbox{\hyperlink{structencoding__choice__errors_a9f732b537213a9c5caddca5af4d0c15c}{alpha\_drop\_error}}}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ eci.\mbox{\hyperlink{structencoding__choice__errors_a7833d66ba6360569a3cbad8a9d4c743f}{rgb\_scale\_error}};}
+\DoxyCodeLine{00632\ }
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lum\_alpha\_error\ =\ quant\_error\_rgba}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ rgb\_range\_error}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ alpha\_range\_error}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ eci.\mbox{\hyperlink{structencoding__choice__errors_ad6cf09c5032d45a8e61b750969ff4c27}{luminance\_error}};}
+\DoxyCodeLine{00637\ }
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ldr\_rgbs\_error\ <\ lum\_alpha\_error)}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][1]\ =\ ldr\_rgbs\_error;}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][1]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba878884827236165e75e7989a8e6f7757}{FMT\_RGB\_SCALE}};}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][1]\ =\ lum\_alpha\_error;}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][1]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba6aa2cddee1e7329a888c3fa729cb66f1}{FMT\_LUMINANCE\_ALPHA}};}
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00648\ }
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2\ integers\ can\ encode\ as\ L+L}}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ luminance\_error\ =\ quant\_error\_rgb}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ rgb\_range\_error}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ eci.\mbox{\hyperlink{structencoding__choice__errors_a9f732b537213a9c5caddca5af4d0c15c}{alpha\_drop\_error}}}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ eci.\mbox{\hyperlink{structencoding__choice__errors_ad6cf09c5032d45a8e61b750969ff4c27}{luminance\_error}};}
+\DoxyCodeLine{00654\ }
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[i][0]\ =\ luminance\_error;}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i][0]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4baf29afed4fcc815780d85789b8a095a22}{FMT\_LUMINANCE}};}
+\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00658\ \ \ \ \ \}}
+\DoxyCodeLine{00659\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__pick__best__endpoint__format_8cpp_a163a7d0cf020b6f86049745807912ec1_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__pick__best__endpoint__format_8cpp_a163a7d0cf020b6f86049745807912ec1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__pick__best__endpoint__format_8cpp_affc96d3eeffef962cd64307bf0b85590}\index{astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}!compute\_encoding\_choice\_errors@{compute\_encoding\_choice\_errors}}
+\index{compute\_encoding\_choice\_errors@{compute\_encoding\_choice\_errors}!astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_encoding\_choice\_errors()}{compute\_encoding\_choice\_errors()}}
+{\footnotesize\ttfamily \label{astcenc__pick__best__endpoint__format_8cpp_affc96d3eeffef962cd64307bf0b85590} 
+static void compute\+\_\+encoding\+\_\+choice\+\_\+errors (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{, }\item[{const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&}]{pi}{, }\item[{const \mbox{\hyperlink{structendpoints}{endpoints}} \&}]{ep}{, }\item[{\mbox{\hyperlink{structencoding__choice__errors}{encoding\+\_\+choice\+\_\+errors}}}]{eci}{\mbox{[}\+BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+For a given set of input colors and partitioning determine endpoint encode errors. 
+
+This function determines the color error that results from RGB-\/scale encoding (LDR only), RGB-\/lumashift encoding (HDR only), luminance-\/encoding, and alpha drop. Also determines whether the endpoints are eligible for offset encoding or blue-\/contraction
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em blk} & The image block. \\
+\hline
+ & {\em pi} & The partition info data. \\
+\hline
+ & {\em ep} & The idealized endpoints. \\
+\hline
+\mbox{\texttt{ out}}  & {\em eci} & The resulting encoding choice error metrics. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source}{astcenc\+\_\+pick\+\_\+best\+\_\+endpoint\+\_\+format.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source_l00222}{222}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00227\ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordtype}{int}\ partition\_count\ =\ pi.\mbox{\hyperlink{structpartition__info_a1ffb0fdd4d560f536d6118f032fba4f3}{partition\_count}};}
+\DoxyCodeLine{00229\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partition\_count\ >\ 0);}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \mbox{\hyperlink{structpartition__metrics}{partition\_metrics}}\ pms[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \mbox{\hyperlink{astcenc__averages__and__directions_8cpp_a73936e5cf41b74f2b8d9b137a9d64253}{compute\_avgs\_and\_dirs\_3\_comp\_rgb}}(pi,\ blk,\ pms);}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{00236\ \ \ \ \ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structpartition__metrics}{partition\_metrics}}\&\ pm\ =\ pms[i];}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structline3}{line3}}\ uncor\_rgb\_lines;}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structline3}{line3}}\ samec\_rgb\_lines;\ \ \textcolor{comment}{//\ for\ LDR-\/RGB-\/scale}}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structline3}{line3}}\ rgb\_luma\_lines;\ \ \ \textcolor{comment}{//\ for\ HDR-\/RGB-\/scale}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structprocessed__line3}{processed\_line3}}\ uncor\_rgb\_plines;}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structprocessed__line3}{processed\_line3}}\ samec\_rgb\_plines;}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structprocessed__line3}{processed\_line3}}\ rgb\_luma\_plines;}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structprocessed__line3}{processed\_line3}}\ luminance\_plines;}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ uncorr\_rgb\_error;}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ samechroma\_rgb\_error;}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rgb\_luma\_error;}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ luminance\_rgb\_error;}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ alpha\_drop\_error;}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ uncor\_rgb\_lines.\mbox{\hyperlink{structline3_a9f31b902a534755efedc7f07672353c3}{a}}\ =\ pm.\mbox{\hyperlink{structpartition__metrics_a81851ed35dd9dc3ce09a74b8167f5846}{avg}};}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ uncor\_rgb\_lines.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}}\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3b0e8ae23a514219217b72164a7909a4}{normalize\_safe}}(pm.\mbox{\hyperlink{structpartition__metrics_a5a05f959255774e848e83001f9b7bd37}{dir}},\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3cf3e0218d808e69f31668dbc458dc08}{unit3}}());}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ samec\_rgb\_lines.\mbox{\hyperlink{structline3_a9f31b902a534755efedc7f07672353c3}{a}}\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ samec\_rgb\_lines.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}}\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3b0e8ae23a514219217b72164a7909a4}{normalize\_safe}}(pm.\mbox{\hyperlink{structpartition__metrics_a81851ed35dd9dc3ce09a74b8167f5846}{avg}},\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3cf3e0218d808e69f31668dbc458dc08}{unit3}}());}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ rgb\_luma\_lines.\mbox{\hyperlink{structline3_a9f31b902a534755efedc7f07672353c3}{a}}\ =\ pm.\mbox{\hyperlink{structpartition__metrics_a81851ed35dd9dc3ce09a74b8167f5846}{avg}};}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ rgb\_luma\_lines.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}}\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3cf3e0218d808e69f31668dbc458dc08}{unit3}}();}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ uncor\_rgb\_plines.\mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{amod}}\ =\ uncor\_rgb\_lines.\mbox{\hyperlink{structline3_a9f31b902a534755efedc7f07672353c3}{a}}\ -\/\ uncor\_rgb\_lines.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}}\ *\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_ae36c7167bc89ff2bf984c1a912526dcb}{dot3}}(uncor\_rgb\_lines.\mbox{\hyperlink{structline3_a9f31b902a534755efedc7f07672353c3}{a}},\ uncor\_rgb\_lines.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}});}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ uncor\_rgb\_plines.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}\ \ \ =\ uncor\_rgb\_lines.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}};}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Same\ chroma\ always\ goes\ though\ zero,\ so\ this\ is\ simpler\ than\ the\ others}}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ samec\_rgb\_plines.\mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{amod}}\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ samec\_rgb\_plines.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}\ \ \ =\ samec\_rgb\_lines.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}};}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ rgb\_luma\_plines.\mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{amod}}\ =\ rgb\_luma\_lines.\mbox{\hyperlink{structline3_a9f31b902a534755efedc7f07672353c3}{a}}\ -\/\ rgb\_luma\_lines.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}}\ *\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_ae36c7167bc89ff2bf984c1a912526dcb}{dot3}}(rgb\_luma\_lines.\mbox{\hyperlink{structline3_a9f31b902a534755efedc7f07672353c3}{a}},\ rgb\_luma\_lines.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}});}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ rgb\_luma\_plines.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}\ \ \ =\ rgb\_luma\_lines.\mbox{\hyperlink{structline3_a38cf244ed3886bcb8bbee41ce48a8758}{b}};}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Luminance\ always\ goes\ though\ zero,\ so\ this\ is\ simpler\ than\ the\ others}}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ luminance\_plines.\mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{amod}}\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ luminance\_plines.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}\ \ \ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3cf3e0218d808e69f31668dbc458dc08}{unit3}}();}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_a118e8a2374bfd56b522a03f938b0f367}{compute\_error\_squared\_rgb\_single\_partition}}(}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ pi,\ i,\ blk,}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ uncor\_rgb\_plines,\ uncorr\_rgb\_error,}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ samec\_rgb\_plines,\ samechroma\_rgb\_error,}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_luma\_plines,\ \ rgb\_luma\_error,}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ luminance\_plines,\ luminance\_rgb\_error,}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ alpha\_drop\_error);}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Determine\ if\ we\ can\ offset\ encode\ RGB\ lanes}}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ endpt0\ =\ ep.\mbox{\hyperlink{structendpoints_a2a084800ec101a03de2b8deb0d926263}{endpt0}}[i];}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ endpt1\ =\ ep.\mbox{\hyperlink{structendpoints_a89660f637b681eaea32e7db6b9d9def2}{endpt1}}[i];}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ endpt\_diff\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aeac50750508168aeab5115733d3ee63c}{abs}}(endpt1\ -\/\ endpt0);}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ endpt\_can\_offset\ =\ endpt\_diff\ <\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(0.12f\ *\ 65535.0f);}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ can\_offset\_encode\ =\ (\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}(endpt\_can\_offset)\ \&\ 0x7)\ ==\ 0x7;}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Store\ out\ the\ settings}}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ eci[i].\mbox{\hyperlink{structencoding__choice__errors_a7833d66ba6360569a3cbad8a9d4c743f}{rgb\_scale\_error}}\ =\ (samechroma\_rgb\_error\ -\/\ uncorr\_rgb\_error)\ *\ 0.7f;\ \ \textcolor{comment}{//\ empirical}}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ eci[i].\mbox{\hyperlink{structencoding__choice__errors_a5db32b77467b23beb70562840f173a54}{rgb\_luma\_error}}\ \ =\ (rgb\_luma\_error\ -\/\ uncorr\_rgb\_error)\ *\ 1.5f;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ wild\ guess}}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ eci[i].\mbox{\hyperlink{structencoding__choice__errors_ad6cf09c5032d45a8e61b750969ff4c27}{luminance\_error}}\ =\ (luminance\_rgb\_error\ -\/\ uncorr\_rgb\_error)\ *\ 3.0f;\ \ \ \textcolor{comment}{//\ empirical}}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ eci[i].\mbox{\hyperlink{structencoding__choice__errors_a9f732b537213a9c5caddca5af4d0c15c}{alpha\_drop\_error}}\ =\ alpha\_drop\_error\ *\ 3.0f;}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ eci[i].\mbox{\hyperlink{structencoding__choice__errors_a4ed3d3a0fa3f83ac3a48067030ac49fd}{can\_offset\_encode}}\ =\ can\_offset\_encode;}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ eci[i].\mbox{\hyperlink{structencoding__choice__errors_a296ff4def93117aadb093f02532b5244}{can\_blue\_contract}}\ =\ !blk.\mbox{\hyperlink{structimage__block_ac3e154e58086017c6e405b8cc7e52c9f}{is\_luminance}}();}
+\DoxyCodeLine{00299\ \ \ \ \ \}}
+\DoxyCodeLine{00300\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__pick__best__endpoint__format_8cpp_affc96d3eeffef962cd64307bf0b85590_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__pick__best__endpoint__format_8cpp_affc96d3eeffef962cd64307bf0b85590_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__pick__best__endpoint__format_8cpp_a118e8a2374bfd56b522a03f938b0f367}\index{astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}!compute\_error\_squared\_rgb\_single\_partition@{compute\_error\_squared\_rgb\_single\_partition}}
+\index{compute\_error\_squared\_rgb\_single\_partition@{compute\_error\_squared\_rgb\_single\_partition}!astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_error\_squared\_rgb\_single\_partition()}{compute\_error\_squared\_rgb\_single\_partition()}}
+{\footnotesize\ttfamily \label{astcenc__pick__best__endpoint__format_8cpp_a118e8a2374bfd56b522a03f938b0f367} 
+static void compute\+\_\+error\+\_\+squared\+\_\+rgb\+\_\+single\+\_\+partition (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&}]{pi}{, }\item[{int}]{partition\+\_\+index}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{, }\item[{const \mbox{\hyperlink{structprocessed__line3}{processed\+\_\+line3}} \&}]{uncor\+\_\+pline}{, }\item[{float \&}]{uncor\+\_\+err}{, }\item[{const \mbox{\hyperlink{structprocessed__line3}{processed\+\_\+line3}} \&}]{samec\+\_\+pline}{, }\item[{float \&}]{samec\+\_\+err}{, }\item[{const \mbox{\hyperlink{structprocessed__line3}{processed\+\_\+line3}} \&}]{rgbl\+\_\+pline}{, }\item[{float \&}]{rgbl\+\_\+err}{, }\item[{const \mbox{\hyperlink{structprocessed__line3}{processed\+\_\+line3}} \&}]{l\+\_\+pline}{, }\item[{float \&}]{l\+\_\+err}{, }\item[{float \&}]{a\+\_\+drop\+\_\+err}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Functions for finding best endpoint format. 
+
+We assume there are two independent sources of error in any given partition\+:
+
+
+\begin{DoxyItemize}
+\item Encoding choice errors
+\item Quantization errors
+\end{DoxyItemize}
+
+Encoding choice errors are caused by encoder decisions. For example\+:
+
+
+\begin{DoxyItemize}
+\item Using luminance instead of separate RGB components.
+\item Using a constant 1.\+0 alpha instead of storing an alpha component.
+\item Using RGB+scale instead of storing two full RGB endpoints.
+\end{DoxyItemize}
+
+Quantization errors occur due to the limited precision we use for storage. These errors generally scale with quantization level, but are not actually independent of color encoding. In particular\+:
+
+
+\begin{DoxyItemize}
+\item If we can use offset encoding then quantization error is halved.
+\item If we can use blue-\/contraction then quantization error for RG is halved.
+\item If we use HDR endpoints the quantization error is higher.
+\end{DoxyItemize}
+
+Apart from these effects, we assume the error is proportional to the quantization step size.
+
+Compute the errors of the endpoint line options for one partition.
+
+Uncorrelated data assumes storing completely independent RGBA channels for each endpoint. Same chroma data assumes storing RGBA endpoints which pass though the origin (LDR only). RGBL data assumes storing RGB + lumashift (HDR only). Luminance error assumes storing RGB channels as a single value.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em pi} & The partition info data. \\
+\hline
+ & {\em partition\+\_\+index} & The partition index to compule the error for. \\
+\hline
+ & {\em blk} & The image block. \\
+\hline
+ & {\em uncor\+\_\+pline} & The endpoint line assuming uncorrelated endpoints. \\
+\hline
+\mbox{\texttt{ out}}  & {\em uncor\+\_\+err} & The computed error for the uncorrelated endpoint line. \\
+\hline
+ & {\em samec\+\_\+pline} & The endpoint line assuming the same chroma for both endpoints. \\
+\hline
+\mbox{\texttt{ out}}  & {\em samec\+\_\+err} & The computed error for the uncorrelated endpoint line. \\
+\hline
+ & {\em rgbl\+\_\+pline} & The endpoint line assuming RGB + lumashift data. \\
+\hline
+\mbox{\texttt{ out}}  & {\em rgbl\+\_\+err} & The computed error for the RGB + lumashift endpoint line. \\
+\hline
+ & {\em l\+\_\+pline} & The endpoint line assuming luminance data. \\
+\hline
+\mbox{\texttt{ out}}  & {\em l\+\_\+err} & The computed error for the luminance endpoint line. \\
+\hline
+\mbox{\texttt{ out}}  & {\em a\+\_\+drop\+\_\+err} & The computed error for dropping the alpha component. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source}{astcenc\+\_\+pick\+\_\+best\+\_\+endpoint\+\_\+format.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source_l00072}{72}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00085\ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ ews\ =\ blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\_count\ =\ pi.\mbox{\hyperlink{structpartition__info_a92b324c921407ee30e6052426e00e0f6}{partition\_texel\_count}}[partition\_index];}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ texel\_indexes\ =\ pi.\mbox{\hyperlink{structpartition__info_af0987713fff05a82c3230d9400c6e1e7}{texels\_of\_partition}}[partition\_index];}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(texel\_count\ >\ 0);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloatacc}}\ a\_drop\_errv\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloatacc::zero}}();}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ default\_a(blk.\mbox{\hyperlink{structimage__block_ab5d7af0f7b40343941660350ac186fab}{get\_default\_alpha}}());}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloatacc}}\ uncor\_errv\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloatacc::zero}}();}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_bs0(uncor\_pline.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>());}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_bs1(uncor\_pline.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_bs2(uncor\_pline.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>());}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_amod0(uncor\_pline.\mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{amod}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>());}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_amod1(uncor\_pline.\mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{amod}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ uncor\_amod2(uncor\_pline.\mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{amod}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>());}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloatacc}}\ samec\_errv\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloatacc::zero}}();}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ samec\_bs0(samec\_pline.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>());}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ samec\_bs1(samec\_pline.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ samec\_bs2(samec\_pline.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>());}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloatacc}}\ rgbl\_errv\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloatacc::zero}}();}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ rgbl\_bs0(rgbl\_pline.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>());}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ rgbl\_bs1(rgbl\_pline.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ rgbl\_bs2(rgbl\_pline.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>());}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ rgbl\_amod0(rgbl\_pline.\mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{amod}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>());}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ rgbl\_amod1(rgbl\_pline.\mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{amod}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ rgbl\_amod2(rgbl\_pline.\mbox{\hyperlink{structprocessed__line3_ab2637ed29af1632d3181cd1bc7d7cef0}{amod}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>());}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloatacc}}\ l\_errv\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloatacc::zero}}();}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_bs0(l\_pline.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>());}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_bs1(l\_pline.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ l\_bs2(l\_pline.\mbox{\hyperlink{structprocessed__line3_aa87031817df0c101f16e5e0a7687f10d}{bs}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>());}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ lane\_ids\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint::lane\_id}}();}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texel\_count;\ i\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{00125\ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ tix(texel\_indexes\ +\ i);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ lane\_ids\ <\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(texel\_count);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ lane\_ids\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}});}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ error\ that\ arises\ from\ just\ ditching\ alpha}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_a\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aae2f99eb48f3cde0f4739b894e8ca29f}{gatherf}}(blk.\mbox{\hyperlink{structimage__block_a602c8c88dc1ceef33e833f6d6cbc09ea}{data\_a}},\ tix);}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ alpha\_diff\ =\ data\_a\ -\/\ default\_a;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ alpha\_diff\ =\ alpha\_diff\ *\ alpha\_diff;}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(a\_drop\_errv,\ alpha\_diff,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_r\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aae2f99eb48f3cde0f4739b894e8ca29f}{gatherf}}(blk.\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}},\ tix);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_g\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aae2f99eb48f3cde0f4739b894e8ca29f}{gatherf}}(blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}},\ tix);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ data\_b\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aae2f99eb48f3cde0f4739b894e8ca29f}{gatherf}}(blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}},\ tix);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ uncorrelated\ error}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ param\ =\ data\_r\ *\ uncor\_bs0}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ data\_g\ *\ uncor\_bs1}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ data\_b\ *\ uncor\_bs2;}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ dist0\ =\ (uncor\_amod0\ +\ param\ *\ uncor\_bs0)\ -\/\ data\_r;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ dist1\ =\ (uncor\_amod1\ +\ param\ *\ uncor\_bs1)\ -\/\ data\_g;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ dist2\ =\ (uncor\_amod2\ +\ param\ *\ uncor\_bs2)\ -\/\ data\_b;}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ error\ =\ dist0\ *\ dist0\ *\ ews.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>()}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ dist1\ *\ dist1\ *\ ews.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>()}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ dist2\ *\ dist2\ *\ ews.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>();}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(uncor\_errv,\ error,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ same\ chroma\ error\ -\/\ no\ "{}amod"{},\ its\ always\ zero}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ param\ =\ data\_r\ *\ samec\_bs0}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ data\_g\ *\ samec\_bs1}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ data\_b\ *\ samec\_bs2;}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ dist0\ =\ (param\ *\ samec\_bs0)\ -\/\ data\_r;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ dist1\ =\ (param\ *\ samec\_bs1)\ -\/\ data\_g;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ dist2\ =\ (param\ *\ samec\_bs2)\ -\/\ data\_b;}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ error\ =\ dist0\ *\ dist0\ *\ ews.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>()}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ dist1\ *\ dist1\ *\ ews.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>()}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ dist2\ *\ dist2\ *\ ews.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>();}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(samec\_errv,\ error,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ rgbl\ error}}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ param\ =\ data\_r\ *\ rgbl\_bs0}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ data\_g\ *\ rgbl\_bs1}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ data\_b\ *\ rgbl\_bs2;}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ dist0\ =\ (rgbl\_amod0\ +\ param\ *\ rgbl\_bs0)\ -\/\ data\_r;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ dist1\ =\ (rgbl\_amod1\ +\ param\ *\ rgbl\_bs1)\ -\/\ data\_g;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ dist2\ =\ (rgbl\_amod2\ +\ param\ *\ rgbl\_bs2)\ -\/\ data\_b;}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ error\ =\ dist0\ *\ dist0\ *\ ews.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>()}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ dist1\ *\ dist1\ *\ ews.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>()}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ dist2\ *\ dist2\ *\ ews.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>();}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(rgbl\_errv,\ error,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ luma\ error\ -\/\ no\ "{}amod"{},\ its\ always\ zero}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ param\ =\ data\_r\ *\ l\_bs0}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ data\_g\ *\ l\_bs1}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ data\_b\ *\ l\_bs2;}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ dist0\ =\ (param\ *\ l\_bs0)\ -\/\ data\_r;}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ dist1\ =\ (param\ *\ l\_bs1)\ -\/\ data\_g;}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ dist2\ =\ (param\ *\ l\_bs2)\ -\/\ data\_b;}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ error\ =\ dist0\ *\ dist0\ *\ ews.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>()}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ dist1\ *\ dist1\ *\ ews.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>()}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ dist2\ *\ dist2\ *\ ews.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>();}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aaa291a197219a09a2e1103aec6945b3c}{haccumulate}}(l\_errv,\ error,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00201\ \ \ \ \ \}}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ a\_drop\_err\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(a\_drop\_errv)\ *\ ews.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>();}
+\DoxyCodeLine{00204\ \ \ \ \ uncor\_err\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(uncor\_errv);}
+\DoxyCodeLine{00205\ \ \ \ \ samec\_err\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(samec\_errv);}
+\DoxyCodeLine{00206\ \ \ \ \ rgbl\_err\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(rgbl\_errv);}
+\DoxyCodeLine{00207\ \ \ \ \ l\_err\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(l\_errv);}
+\DoxyCodeLine{00208\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__pick__best__endpoint__format_8cpp_a118e8a2374bfd56b522a03f938b0f367_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__pick__best__endpoint__format_8cpp_a118e8a2374bfd56b522a03f938b0f367_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__pick__best__endpoint__format_8cpp_a81c7b68e8c7b82a5ff718f21bd4f3c35}\index{astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}!compute\_ideal\_endpoint\_formats@{compute\_ideal\_endpoint\_formats}}
+\index{compute\_ideal\_endpoint\_formats@{compute\_ideal\_endpoint\_formats}!astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_ideal\_endpoint\_formats()}{compute\_ideal\_endpoint\_formats()}}
+{\footnotesize\ttfamily \label{astcenc__pick__best__endpoint__format_8cpp_a81c7b68e8c7b82a5ff718f21bd4f3c35} 
+unsigned int compute\+\_\+ideal\+\_\+endpoint\+\_\+formats (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structpartition__info}{partition\+\_\+info}} \&}]{pi}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{, }\item[{const \mbox{\hyperlink{structendpoints}{endpoints}} \&}]{ep}{, }\item[{const int8\+\_\+t \texorpdfstring{$\ast$}{*}}]{qwt\+\_\+bitcounts}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{qwt\+\_\+errors}{, }\item[{unsigned int}]{tune\+\_\+candidate\+\_\+limit}{, }\item[{unsigned int}]{start\+\_\+block\+\_\+mode}{, }\item[{unsigned int}]{end\+\_\+block\+\_\+mode}{, }\item[{uint8\+\_\+t}]{partition\+\_\+format\+\_\+specifiers}{\mbox{[}\+TUNE\+\_\+\+MAX\+\_\+\+TRIAL\+\_\+\+CANDIDATES\mbox{]}\mbox{[}\+BLOCK\+\_\+\+MAX\+\_\+\+PARTITIONS\mbox{]}, }\item[{int}]{block\+\_\+mode}{\mbox{[}\+TUNE\+\_\+\+MAX\+\_\+\+TRIAL\+\_\+\+CANDIDATES\mbox{]}, }\item[{\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}}}]{quant\+\_\+level}{\mbox{[}\+TUNE\+\_\+\+MAX\+\_\+\+TRIAL\+\_\+\+CANDIDATES\mbox{]}, }\item[{\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\+\_\+method}}}]{quant\+\_\+level\+\_\+mod}{\mbox{[}\+TUNE\+\_\+\+MAX\+\_\+\+TRIAL\+\_\+\+CANDIDATES\mbox{]}, }\item[{\mbox{\hyperlink{structcompression__working__buffers}{compression\+\_\+working\+\_\+buffers}} \&}]{tmpbuf}{}\end{DoxyParamCaption})}
+
+
+
+Identify, for each mode, which set of color endpoint produces the best result. 
+
+Returns the best {\ttfamily tune\+\_\+candidate\+\_\+limit} best looking modes, along with the ideal color encoding combination for each. The modified quantization level can be used when all formats are the same, as this frees up two additional bits of storage.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em pi} & The partition info for the current trial. \\
+\hline
+ & {\em blk} & The image block color data to compress. \\
+\hline
+ & {\em ep} & The ideal endpoints. \\
+\hline
+ & {\em qwt\+\_\+bitcounts} & Bit counts for different quantization methods. \\
+\hline
+ & {\em qwt\+\_\+errors} & Errors for different quantization methods. \\
+\hline
+ & {\em tune\+\_\+candidate\+\_\+limit} & The max number of candidates to return, may be less. \\
+\hline
+ & {\em start\+\_\+block\+\_\+mode} & The first block mode to inspect. \\
+\hline
+ & {\em end\+\_\+block\+\_\+mode} & The last block mode to inspect. \\
+\hline
+\mbox{\texttt{ out}}  & {\em partition\+\_\+format\+\_\+specifiers} & The best formats per partition. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \doxylink{structblock__mode}{block\+\_\+mode}} & The best packed block mode indexes. \\
+\hline
+\mbox{\texttt{ out}}  & {\em quant\+\_\+level} & The best color quant level. \\
+\hline
+\mbox{\texttt{ out}}  & {\em quant\+\_\+level\+\_\+mod} & The best color quant level if endpoints are the same. \\
+\hline
+\mbox{\texttt{ out}}  & {\em tmpbuf} & Preallocated scratch buffers for the compressor.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The actual number of candidate matches returned. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source}{astcenc\+\_\+pick\+\_\+best\+\_\+endpoint\+\_\+format.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source_l01090}{1090}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01106\ \ \ \{}
+\DoxyCodeLine{01107\ \ \ \ \ \textcolor{keywordtype}{int}\ partition\_count\ =\ pi.\mbox{\hyperlink{structpartition__info_a1ffb0fdd4d560f536d6118f032fba4f3}{partition\_count}};}
+\DoxyCodeLine{01108\ }
+\DoxyCodeLine{01109\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partition\_count\ >\ 0);}
+\DoxyCodeLine{01110\ }
+\DoxyCodeLine{01111\ \ \ \ \ \textcolor{keywordtype}{bool}\ encode\_hdr\_rgb\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool}\textcolor{keyword}{>}(blk.\mbox{\hyperlink{structimage__block_af1a9e601f3d03dc488993b81258058e0}{rgb\_lns}}[0]);}
+\DoxyCodeLine{01112\ \ \ \ \ \textcolor{keywordtype}{bool}\ encode\_hdr\_alpha\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool}\textcolor{keyword}{>}(blk.\mbox{\hyperlink{structimage__block_ade6f78d73e016d4e9222cbe89f5b1eec}{alpha\_lns}}[0]);}
+\DoxyCodeLine{01113\ }
+\DoxyCodeLine{01114\ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ errors\ that\ result\ from\ various\ encoding\ choices\ (such\ as\ using\ luminance\ instead}}
+\DoxyCodeLine{01115\ \ \ \ \ \textcolor{comment}{//\ of\ RGB,\ discarding\ Alpha,\ using\ RGB-\/scale\ in\ place\ of\ two\ separate\ RGB\ endpoints\ and\ so\ on)}}
+\DoxyCodeLine{01116\ \ \ \ \ \mbox{\hyperlink{structencoding__choice__errors}{encoding\_choice\_errors}}\ eci[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{01117\ \ \ \ \ \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_affc96d3eeffef962cd64307bf0b85590}{compute\_encoding\_choice\_errors}}(blk,\ pi,\ ep,\ eci);}
+\DoxyCodeLine{01118\ }
+\DoxyCodeLine{01119\ \ \ \ \ \textcolor{keywordtype}{float}\ best\_error[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}][21][4];}
+\DoxyCodeLine{01120\ \ \ \ \ uint8\_t\ format\_of\_choice[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}][21][4];}
+\DoxyCodeLine{01121\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{01122\ \ \ \ \ \{}
+\DoxyCodeLine{01123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_a163a7d0cf020b6f86049745807912ec1}{compute\_color\_error\_for\_every\_integer\_count\_and\_quant\_level}}(}
+\DoxyCodeLine{01124\ \ \ \ \ \ \ \ \ \ \ \ \ encode\_hdr\_rgb,\ encode\_hdr\_alpha,\ i,}
+\DoxyCodeLine{01125\ \ \ \ \ \ \ \ \ \ \ \ \ pi,\ eci[i],\ ep,\ blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}},\ best\_error[i],}
+\DoxyCodeLine{01126\ \ \ \ \ \ \ \ \ \ \ \ \ format\_of\_choice[i]);}
+\DoxyCodeLine{01127\ \ \ \ \ \}}
+\DoxyCodeLine{01128\ }
+\DoxyCodeLine{01129\ \ \ \ \ \textcolor{keywordtype}{float}*\ errors\_of\_best\_combination\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_afb2e61360f7ae7d2145168f6b58dda79}{errors\_of\_best\_combination}};}
+\DoxyCodeLine{01130\ \ \ \ \ uint8\_t*\ best\_quant\_levels\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a7044bbc3a97268556df665be7e95d8ec}{best\_quant\_levels}};}
+\DoxyCodeLine{01131\ \ \ \ \ uint8\_t*\ best\_quant\_levels\_mod\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a7f6a376666f482cda23ec44a6b607dc7}{best\_quant\_levels\_mod}};}
+\DoxyCodeLine{01132\ \ \ \ \ uint8\_t\ (\&best\_ep\_formats)[\mbox{\hyperlink{astcenc__internal_8h_ac446d816e6883587f7cd6fd115d9a40c}{WEIGHTS\_MAX\_BLOCK\_MODES}}][\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}]\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a928d9ac0c422719cae52a322fcd7f08e}{best\_ep\_formats}};}
+\DoxyCodeLine{01133\ }
+\DoxyCodeLine{01134\ \ \ \ \ \textcolor{comment}{//\ Ensure\ that\ the\ first\ iteration\ understep\ contains\ data\ that\ will\ never\ be\ picked}}
+\DoxyCodeLine{01135\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ clear\_error(\mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}});}
+\DoxyCodeLine{01136\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ clear\_quant(0);}
+\DoxyCodeLine{01137\ }
+\DoxyCodeLine{01138\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ packed\_start\_block\_mode\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a63b1ecd0244123ff734e6791e33bf9ca}{round\_down\_to\_simd\_multiple\_vla}}(start\_block\_mode);}
+\DoxyCodeLine{01139\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(clear\_error,\ errors\_of\_best\_combination\ +\ packed\_start\_block\_mode);}
+\DoxyCodeLine{01140\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ac55f9ffdc41bee5d274cb6433809fefc}{store\_nbytes}}(clear\_quant,\ best\_quant\_levels\ +\ packed\_start\_block\_mode);}
+\DoxyCodeLine{01141\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ac55f9ffdc41bee5d274cb6433809fefc}{store\_nbytes}}(clear\_quant,\ best\_quant\_levels\_mod\ +\ packed\_start\_block\_mode);}
+\DoxyCodeLine{01142\ }
+\DoxyCodeLine{01143\ \ \ \ \ \textcolor{comment}{//\ Ensure\ that\ last\ iteration\ overstep\ contains\ data\ that\ will\ never\ be\ picked}}
+\DoxyCodeLine{01144\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ packed\_end\_block\_mode\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a63b1ecd0244123ff734e6791e33bf9ca}{round\_down\_to\_simd\_multiple\_vla}}(end\_block\_mode\ -\/\ 1);}
+\DoxyCodeLine{01145\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(clear\_error,\ errors\_of\_best\_combination\ +\ packed\_end\_block\_mode);}
+\DoxyCodeLine{01146\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ac55f9ffdc41bee5d274cb6433809fefc}{store\_nbytes}}(clear\_quant,\ best\_quant\_levels\ +\ packed\_end\_block\_mode);}
+\DoxyCodeLine{01147\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ac55f9ffdc41bee5d274cb6433809fefc}{store\_nbytes}}(clear\_quant,\ best\_quant\_levels\_mod\ +\ packed\_end\_block\_mode);}
+\DoxyCodeLine{01148\ }
+\DoxyCodeLine{01149\ \ \ \ \ \textcolor{comment}{//\ Track\ a\ scalar\ best\ to\ avoid\ expensive\ search\ at\ least\ once\ ...}}
+\DoxyCodeLine{01150\ \ \ \ \ \textcolor{keywordtype}{float}\ error\_of\_best\_combination\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{01151\ \ \ \ \ \textcolor{keywordtype}{int}\ index\_of\_best\_combination\ =\ -\/1;}
+\DoxyCodeLine{01152\ }
+\DoxyCodeLine{01153\ \ \ \ \ \textcolor{comment}{//\ The\ block\ contains\ 1\ partition}}
+\DoxyCodeLine{01154\ \ \ \ \ \textcolor{keywordflow}{if}\ (partition\_count\ ==\ 1)}
+\DoxyCodeLine{01155\ \ \ \ \ \{}
+\DoxyCodeLine{01156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ start\_block\_mode;\ i\ <\ end\_block\_mode;\ i++)}
+\DoxyCodeLine{01157\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (qwt\_errors[i]\ >=\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}})}
+\DoxyCodeLine{01159\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ errors\_of\_best\_combination[i]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{01161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{01162\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01163\ }
+\DoxyCodeLine{01164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_of\_best\ =\ \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_a4a0bf4253790d6b09132c02f57fcbe32}{one\_partition\_find\_best\_combination\_for\_bitcount}}(}
+\DoxyCodeLine{01165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_error[0],\ format\_of\_choice[0],\ qwt\_bitcounts[i],}
+\DoxyCodeLine{01166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_quant\_levels[i],\ best\_ep\_formats[i][0]);}
+\DoxyCodeLine{01167\ }
+\DoxyCodeLine{01168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ total\_error\ =\ error\_of\_best\ +\ qwt\_errors[i];}
+\DoxyCodeLine{01169\ \ \ \ \ \ \ \ \ \ \ \ \ errors\_of\_best\_combination[i]\ =\ total\_error;}
+\DoxyCodeLine{01170\ \ \ \ \ \ \ \ \ \ \ \ \ best\_quant\_levels\_mod[i]\ =\ best\_quant\_levels[i];}
+\DoxyCodeLine{01171\ }
+\DoxyCodeLine{01172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (total\_error\ <\ error\_of\_best\_combination)}
+\DoxyCodeLine{01173\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ error\_of\_best\_combination\ =\ total\_error;}
+\DoxyCodeLine{01175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index\_of\_best\_combination\ =\ i;}
+\DoxyCodeLine{01176\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01177\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01178\ \ \ \ \ \}}
+\DoxyCodeLine{01179\ \ \ \ \ \textcolor{comment}{//\ The\ block\ contains\ 2\ partitions}}
+\DoxyCodeLine{01180\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (partition\_count\ ==\ 2)}
+\DoxyCodeLine{01181\ \ \ \ \ \{}
+\DoxyCodeLine{01182\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ combined\_best\_error[21][7];}
+\DoxyCodeLine{01183\ \ \ \ \ \ \ \ \ uint8\_t\ formats\_of\_choice[21][7][2];}
+\DoxyCodeLine{01184\ }
+\DoxyCodeLine{01185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_ac317754d4bbd795d6f29b331883e8eb3}{two\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count}}(}
+\DoxyCodeLine{01186\ \ \ \ \ \ \ \ \ \ \ \ \ best\_error,\ format\_of\_choice,\ combined\_best\_error,\ formats\_of\_choice);}
+\DoxyCodeLine{01187\ }
+\DoxyCodeLine{01188\ \ \ \ \ \ \ \ \ assert(start\_block\_mode\ ==\ 0);}
+\DoxyCodeLine{01189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ end\_block\_mode;\ i++)}
+\DoxyCodeLine{01190\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (qwt\_errors[i]\ >=\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}})}
+\DoxyCodeLine{01192\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ errors\_of\_best\_combination[i]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{01194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{01195\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01196\ }
+\DoxyCodeLine{01197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_of\_best\ =\ \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_a5c74518d7a68796ba962179901f805ae}{two\_partitions\_find\_best\_combination\_for\_bitcount}}(}
+\DoxyCodeLine{01198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ combined\_best\_error,\ formats\_of\_choice,\ qwt\_bitcounts[i],}
+\DoxyCodeLine{01199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_quant\_levels[i],\ best\_quant\_levels\_mod[i],}
+\DoxyCodeLine{01200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_ep\_formats[i]);}
+\DoxyCodeLine{01201\ }
+\DoxyCodeLine{01202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ total\_error\ =\ error\_of\_best\ +\ qwt\_errors[i];}
+\DoxyCodeLine{01203\ \ \ \ \ \ \ \ \ \ \ \ \ errors\_of\_best\_combination[i]\ =\ total\_error;}
+\DoxyCodeLine{01204\ }
+\DoxyCodeLine{01205\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (total\_error\ <\ error\_of\_best\_combination)}
+\DoxyCodeLine{01206\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ error\_of\_best\_combination\ =\ total\_error;}
+\DoxyCodeLine{01208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index\_of\_best\_combination\ =\ i;}
+\DoxyCodeLine{01209\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01210\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01211\ \ \ \ \ \}}
+\DoxyCodeLine{01212\ \ \ \ \ \textcolor{comment}{//\ The\ block\ contains\ 3\ partitions}}
+\DoxyCodeLine{01213\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (partition\_count\ ==\ 3)}
+\DoxyCodeLine{01214\ \ \ \ \ \{}
+\DoxyCodeLine{01215\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ combined\_best\_error[21][10];}
+\DoxyCodeLine{01216\ \ \ \ \ \ \ \ \ uint8\_t\ formats\_of\_choice[21][10][3];}
+\DoxyCodeLine{01217\ }
+\DoxyCodeLine{01218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_ab08ff5ed53a05a876dc8e90c05aeef72}{three\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count}}(}
+\DoxyCodeLine{01219\ \ \ \ \ \ \ \ \ \ \ \ \ best\_error,\ format\_of\_choice,\ combined\_best\_error,\ formats\_of\_choice);}
+\DoxyCodeLine{01220\ }
+\DoxyCodeLine{01221\ \ \ \ \ \ \ \ \ assert(start\_block\_mode\ ==\ 0);}
+\DoxyCodeLine{01222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ end\_block\_mode;\ i++)}
+\DoxyCodeLine{01223\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (qwt\_errors[i]\ >=\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}})}
+\DoxyCodeLine{01225\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ errors\_of\_best\_combination[i]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{01227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{01228\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01229\ }
+\DoxyCodeLine{01230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_of\_best\ =\ \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_a7681b157ce5786accf05034e1facbdbe}{three\_partitions\_find\_best\_combination\_for\_bitcount}}(}
+\DoxyCodeLine{01231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ combined\_best\_error,\ formats\_of\_choice,\ qwt\_bitcounts[i],}
+\DoxyCodeLine{01232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_quant\_levels[i],\ best\_quant\_levels\_mod[i],}
+\DoxyCodeLine{01233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_ep\_formats[i]);}
+\DoxyCodeLine{01234\ }
+\DoxyCodeLine{01235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ total\_error\ =\ error\_of\_best\ +\ qwt\_errors[i];}
+\DoxyCodeLine{01236\ \ \ \ \ \ \ \ \ \ \ \ \ errors\_of\_best\_combination[i]\ =\ total\_error;}
+\DoxyCodeLine{01237\ }
+\DoxyCodeLine{01238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (total\_error\ <\ error\_of\_best\_combination)}
+\DoxyCodeLine{01239\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ error\_of\_best\_combination\ =\ total\_error;}
+\DoxyCodeLine{01241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index\_of\_best\_combination\ =\ i;}
+\DoxyCodeLine{01242\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01243\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01244\ \ \ \ \ \}}
+\DoxyCodeLine{01245\ \ \ \ \ \textcolor{comment}{//\ The\ block\ contains\ 4\ partitions}}
+\DoxyCodeLine{01246\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ if\ (partition\_count\ ==\ 4)}}
+\DoxyCodeLine{01247\ \ \ \ \ \{}
+\DoxyCodeLine{01248\ \ \ \ \ \ \ \ \ assert(partition\_count\ ==\ 4);}
+\DoxyCodeLine{01249\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ combined\_best\_error[21][13];}
+\DoxyCodeLine{01250\ \ \ \ \ \ \ \ \ uint8\_t\ formats\_of\_choice[21][13][4];}
+\DoxyCodeLine{01251\ }
+\DoxyCodeLine{01252\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_a806d3ce88e28226224c6b929b69f2fda}{four\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count}}(}
+\DoxyCodeLine{01253\ \ \ \ \ \ \ \ \ \ \ \ \ best\_error,\ format\_of\_choice,\ combined\_best\_error,\ formats\_of\_choice);}
+\DoxyCodeLine{01254\ }
+\DoxyCodeLine{01255\ \ \ \ \ \ \ \ \ assert(start\_block\_mode\ ==\ 0);}
+\DoxyCodeLine{01256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ end\_block\_mode;\ i++)}
+\DoxyCodeLine{01257\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (qwt\_errors[i]\ >=\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}})}
+\DoxyCodeLine{01259\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ errors\_of\_best\_combination[i]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{01261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{01262\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01263\ }
+\DoxyCodeLine{01264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_of\_best\ =\ \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_aa54b7e3566c1445d292b8ff7cf6f5e28}{four\_partitions\_find\_best\_combination\_for\_bitcount}}(}
+\DoxyCodeLine{01265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ combined\_best\_error,\ formats\_of\_choice,\ qwt\_bitcounts[i],}
+\DoxyCodeLine{01266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_quant\_levels[i],\ best\_quant\_levels\_mod[i],}
+\DoxyCodeLine{01267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_ep\_formats[i]);}
+\DoxyCodeLine{01268\ }
+\DoxyCodeLine{01269\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ total\_error\ =\ error\_of\_best\ +\ qwt\_errors[i];}
+\DoxyCodeLine{01270\ \ \ \ \ \ \ \ \ \ \ \ \ errors\_of\_best\_combination[i]\ =\ total\_error;}
+\DoxyCodeLine{01271\ }
+\DoxyCodeLine{01272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (total\_error\ <\ error\_of\_best\_combination)}
+\DoxyCodeLine{01273\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ error\_of\_best\_combination\ =\ total\_error;}
+\DoxyCodeLine{01275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index\_of\_best\_combination\ =\ i;}
+\DoxyCodeLine{01276\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01277\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01278\ \ \ \ \ \}}
+\DoxyCodeLine{01279\ }
+\DoxyCodeLine{01280\ \ \ \ \ \textcolor{keywordtype}{int}\ best\_error\_weights[\mbox{\hyperlink{astcenc__internal_8h_a0f2aba262e65e945037f4ed5dda3f2f9}{TUNE\_MAX\_TRIAL\_CANDIDATES}}];}
+\DoxyCodeLine{01281\ }
+\DoxyCodeLine{01282\ \ \ \ \ \textcolor{comment}{//\ Fast\ path\ the\ first\ result\ and\ avoid\ the\ list\ search\ for\ trial\ 0}}
+\DoxyCodeLine{01283\ \ \ \ \ best\_error\_weights[0]\ =\ index\_of\_best\_combination;}
+\DoxyCodeLine{01284\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\_of\_best\_combination\ >=\ 0)}
+\DoxyCodeLine{01285\ \ \ \ \ \{}
+\DoxyCodeLine{01286\ \ \ \ \ \ \ \ \ errors\_of\_best\_combination[index\_of\_best\_combination]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{01287\ \ \ \ \ \}}
+\DoxyCodeLine{01288\ }
+\DoxyCodeLine{01289\ \ \ \ \ \textcolor{comment}{//\ Search\ the\ remaining\ results\ and\ pick\ the\ best\ candidate\ modes\ for\ trial\ 1+}}
+\DoxyCodeLine{01290\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ tune\_candidate\_limit;\ i++)}
+\DoxyCodeLine{01291\ \ \ \ \ \{}
+\DoxyCodeLine{01292\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ vbest\_error\_index(-\/1);}
+\DoxyCodeLine{01293\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ vbest\_ep\_error(\mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}});}
+\DoxyCodeLine{01294\ }
+\DoxyCodeLine{01295\ \ \ \ \ \ \ \ \ start\_block\_mode\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a63b1ecd0244123ff734e6791e33bf9ca}{round\_down\_to\_simd\_multiple\_vla}}(start\_block\_mode);}
+\DoxyCodeLine{01296\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ lane\_ids\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint::lane\_id}}()\ +\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(start\_block\_mode);}
+\DoxyCodeLine{01297\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ start\_block\_mode;\ j\ <\ end\_block\_mode;\ j\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{01298\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01299\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ err\ =\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a3a29c3b15144cf0836ca0f4740b73d00}{vfloat}}(errors\_of\_best\_combination\ +\ j);}
+\DoxyCodeLine{01300\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}\ =\ err\ <\ vbest\_ep\_error;}
+\DoxyCodeLine{01301\ \ \ \ \ \ \ \ \ \ \ \ \ vbest\_ep\_error\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(vbest\_ep\_error,\ err,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{01302\ \ \ \ \ \ \ \ \ \ \ \ \ vbest\_error\_index\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(vbest\_error\_index,\ lane\_ids,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{01303\ \ \ \ \ \ \ \ \ \ \ \ \ lane\_ids\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(\mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}});}
+\DoxyCodeLine{01304\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01305\ }
+\DoxyCodeLine{01306\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pick\ best\ mode\ from\ the\ SIMD\ result,\ using\ lowest\ matching\ index\ to\ ensure\ invariance}}
+\DoxyCodeLine{01307\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask}}\ lanes\_min\_error\ =\ vbest\_ep\_error\ ==\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ae7ff255b24f24f8d2a31e6849f4b1250}{hmin}}(vbest\_ep\_error);}
+\DoxyCodeLine{01308\ \ \ \ \ \ \ \ \ vbest\_error\_index\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(\mbox{\hyperlink{astcenc__vecmathlib_8h_a1d994704cca1a088c460bd5a3058e3bc}{vint}}(0x7FFFFFFF),\ vbest\_error\_index,\ lanes\_min\_error);}
+\DoxyCodeLine{01309\ \ \ \ \ \ \ \ \ vbest\_error\_index\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ae7ff255b24f24f8d2a31e6849f4b1250}{hmin}}(vbest\_error\_index);}
+\DoxyCodeLine{01310\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ best\_error\_index\ =\ vbest\_error\_index.lane<0>();}
+\DoxyCodeLine{01311\ }
+\DoxyCodeLine{01312\ \ \ \ \ \ \ \ \ best\_error\_weights[i]\ =\ best\_error\_index;}
+\DoxyCodeLine{01313\ }
+\DoxyCodeLine{01314\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Max\ the\ error\ for\ this\ candidate\ so\ we\ don't\ pick\ it\ again}}
+\DoxyCodeLine{01315\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (best\_error\_index\ >=\ 0)}
+\DoxyCodeLine{01316\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01317\ \ \ \ \ \ \ \ \ \ \ \ \ errors\_of\_best\_combination[best\_error\_index]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{01318\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01319\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Early-\/out\ if\ no\ more\ candidates\ are\ valid}}
+\DoxyCodeLine{01320\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{01321\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01322\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01323\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01324\ \ \ \ \ \}}
+\DoxyCodeLine{01325\ }
+\DoxyCodeLine{01326\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ tune\_candidate\_limit;\ i++)}
+\DoxyCodeLine{01327\ \ \ \ \ \{}
+\DoxyCodeLine{01328\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (best\_error\_weights[i]\ <\ 0)}
+\DoxyCodeLine{01329\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01330\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i;}
+\DoxyCodeLine{01331\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01332\ }
+\DoxyCodeLine{01333\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structblock__mode}{block\_mode}}[i]\ =\ best\_error\_weights[i];}
+\DoxyCodeLine{01334\ }
+\DoxyCodeLine{01335\ \ \ \ \ \ \ \ \ quant\_level[i]\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\textcolor{keyword}{>}(best\_quant\_levels[best\_error\_weights[i]]);}
+\DoxyCodeLine{01336\ \ \ \ \ \ \ \ \ quant\_level\_mod[i]\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\textcolor{keyword}{>}(best\_quant\_levels\_mod[best\_error\_weights[i]]);}
+\DoxyCodeLine{01337\ }
+\DoxyCodeLine{01338\ \ \ \ \ \ \ \ \ assert(quant\_level[i]\ >=\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}}\ \&\&\ quant\_level[i]\ <=\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a190d92e6d064f52082c798be06b2850f}{QUANT\_256}});}
+\DoxyCodeLine{01339\ \ \ \ \ \ \ \ \ assert(quant\_level\_mod[i]\ >=\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}}\ \&\&\ quant\_level\_mod[i]\ <=\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a190d92e6d064f52082c798be06b2850f}{QUANT\_256}});}
+\DoxyCodeLine{01340\ }
+\DoxyCodeLine{01341\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ partition\_count;\ j++)}
+\DoxyCodeLine{01342\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01343\ \ \ \ \ \ \ \ \ \ \ \ \ partition\_format\_specifiers[i][j]\ =\ best\_ep\_formats[best\_error\_weights[i]][j];}
+\DoxyCodeLine{01344\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01345\ \ \ \ \ \}}
+\DoxyCodeLine{01346\ }
+\DoxyCodeLine{01347\ \ \ \ \ \textcolor{keywordflow}{return}\ tune\_candidate\_limit;}
+\DoxyCodeLine{01348\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{astcenc__pick__best__endpoint__format_8cpp_a81c7b68e8c7b82a5ff718f21bd4f3c35_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__pick__best__endpoint__format_8cpp_a81c7b68e8c7b82a5ff718f21bd4f3c35_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__pick__best__endpoint__format_8cpp_aa54b7e3566c1445d292b8ff7cf6f5e28}\index{astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}!four\_partitions\_find\_best\_combination\_for\_bitcount@{four\_partitions\_find\_best\_combination\_for\_bitcount}}
+\index{four\_partitions\_find\_best\_combination\_for\_bitcount@{four\_partitions\_find\_best\_combination\_for\_bitcount}!astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}}
+\doxysubsubsection{\texorpdfstring{four\_partitions\_find\_best\_combination\_for\_bitcount()}{four\_partitions\_find\_best\_combination\_for\_bitcount()}}
+{\footnotesize\ttfamily \label{astcenc__pick__best__endpoint__format_8cpp_aa54b7e3566c1445d292b8ff7cf6f5e28} 
+static float four\+\_\+partitions\+\_\+find\+\_\+best\+\_\+combination\+\_\+for\+\_\+bitcount (\begin{DoxyParamCaption}\item[{const float}]{best\+\_\+combined\+\_\+error}{\mbox{[}21\mbox{]}\mbox{[}13\mbox{]}, }\item[{const uint8\+\_\+t}]{best\+\_\+combined\+\_\+format}{\mbox{[}21\mbox{]}\mbox{[}13\mbox{]}\mbox{[}4\mbox{]}, }\item[{int}]{bits\+\_\+available}{, }\item[{uint8\+\_\+t \&}]{best\+\_\+quant\+\_\+level}{, }\item[{uint8\+\_\+t \&}]{best\+\_\+quant\+\_\+level\+\_\+mod}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{best\+\_\+formats}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+For 4 partitions compute the best format and quantization for a given bit count. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em best\+\_\+combined\+\_\+error} & The best error for each quant level and integer count. \\
+\hline
+ & {\em best\+\_\+combined\+\_\+format} & The best format for each quant level and integer count. \\
+\hline
+ & {\em bits\+\_\+available} & The number of bits available for encoding. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+quant\+\_\+level} & The output best color quant level. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+quant\+\_\+level\+\_\+mod} & The output best color quant level assuming two more bits are available. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+formats} & The output best color formats.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+best\+\_\+error The output error for the best pairing. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source}{astcenc\+\_\+pick\+\_\+best\+\_\+endpoint\+\_\+format.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source_l01035}{1035}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01042\ \ \ \{}
+\DoxyCodeLine{01043\ \ \ \ \ \textcolor{keywordtype}{int}\ best\_integer\_count\ =\ 0;}
+\DoxyCodeLine{01044\ \ \ \ \ \textcolor{keywordtype}{float}\ best\_integer\_count\_error\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{01045\ }
+\DoxyCodeLine{01046\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ integer\_count\ =\ 4;\ integer\_count\ <=\ 9;\ integer\_count++)}
+\DoxyCodeLine{01047\ \ \ \ \ \{}
+\DoxyCodeLine{01048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ quantization\ level\ for\ a\ given\ number\ of\ integers\ and\ a\ given\ number\ of\ bits}}
+\DoxyCodeLine{01049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ quant\_level\ =\ \mbox{\hyperlink{astcenc__internal_8h_a67050b7e3e5e5c4ff2021c8f266dd903}{quant\_mode\_table}}[integer\_count][bits\_available];}
+\DoxyCodeLine{01050\ }
+\DoxyCodeLine{01051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Don't\ have\ enough\ bits\ to\ represent\ a\ given\ endpoint\ format\ at\ all!}}
+\DoxyCodeLine{01052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (quant\_level\ <\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}})}
+\DoxyCodeLine{01053\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01056\ }
+\DoxyCodeLine{01057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ integer\_count\_error\ =\ best\_combined\_error[quant\_level][integer\_count\ -\/\ 4];}
+\DoxyCodeLine{01058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (integer\_count\_error\ <\ best\_integer\_count\_error)}
+\DoxyCodeLine{01059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01060\ \ \ \ \ \ \ \ \ \ \ \ \ best\_integer\_count\_error\ =\ integer\_count\_error;}
+\DoxyCodeLine{01061\ \ \ \ \ \ \ \ \ \ \ \ \ best\_integer\_count\ =\ integer\_count;}
+\DoxyCodeLine{01062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01063\ \ \ \ \ \}}
+\DoxyCodeLine{01064\ }
+\DoxyCodeLine{01065\ \ \ \ \ \textcolor{keywordtype}{int}\ ql\ =\ \mbox{\hyperlink{astcenc__internal_8h_a67050b7e3e5e5c4ff2021c8f266dd903}{quant\_mode\_table}}[best\_integer\_count][bits\_available];}
+\DoxyCodeLine{01066\ \ \ \ \ \textcolor{keywordtype}{int}\ ql\_mod\ =\ \mbox{\hyperlink{astcenc__internal_8h_a67050b7e3e5e5c4ff2021c8f266dd903}{quant\_mode\_table}}[best\_integer\_count][bits\_available\ +\ 8];}
+\DoxyCodeLine{01067\ }
+\DoxyCodeLine{01068\ \ \ \ \ best\_quant\_level\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(ql);}
+\DoxyCodeLine{01069\ \ \ \ \ best\_quant\_level\_mod\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(ql\_mod);}
+\DoxyCodeLine{01070\ }
+\DoxyCodeLine{01071\ \ \ \ \ \textcolor{keywordflow}{if}\ (ql\ >=\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}})}
+\DoxyCodeLine{01072\ \ \ \ \ \{}
+\DoxyCodeLine{01073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)}
+\DoxyCodeLine{01074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01075\ \ \ \ \ \ \ \ \ \ \ \ \ best\_formats[i]\ =\ best\_combined\_format[ql][best\_integer\_count\ -\/\ 4][i];}
+\DoxyCodeLine{01076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01077\ \ \ \ \ \}}
+\DoxyCodeLine{01078\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{01079\ \ \ \ \ \{}
+\DoxyCodeLine{01080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)}
+\DoxyCodeLine{01081\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01082\ \ \ \ \ \ \ \ \ \ \ \ \ best\_formats[i]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4baf29afed4fcc815780d85789b8a095a22}{FMT\_LUMINANCE}};}
+\DoxyCodeLine{01083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01084\ \ \ \ \ \}}
+\DoxyCodeLine{01085\ }
+\DoxyCodeLine{01086\ \ \ \ \ \textcolor{keywordflow}{return}\ best\_integer\_count\_error;}
+\DoxyCodeLine{01087\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__pick__best__endpoint__format_8cpp_aa54b7e3566c1445d292b8ff7cf6f5e28_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__pick__best__endpoint__format_8cpp_a806d3ce88e28226224c6b929b69f2fda}\index{astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}!four\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count@{four\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count}}
+\index{four\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count@{four\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count}!astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}}
+\doxysubsubsection{\texorpdfstring{four\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count()}{four\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count()}}
+{\footnotesize\ttfamily \label{astcenc__pick__best__endpoint__format_8cpp_a806d3ce88e28226224c6b929b69f2fda} 
+static void four\+\_\+partitions\+\_\+find\+\_\+best\+\_\+combination\+\_\+for\+\_\+every\+\_\+quantization\+\_\+and\+\_\+integer\+\_\+count (\begin{DoxyParamCaption}\item[{const float}]{best\+\_\+error}{\mbox{[}4\mbox{]}\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, }\item[{const uint8\+\_\+t}]{best\+\_\+format}{\mbox{[}4\mbox{]}\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, }\item[{float}]{best\+\_\+combined\+\_\+error}{\mbox{[}21\mbox{]}\mbox{[}13\mbox{]}, }\item[{uint8\+\_\+t}]{best\+\_\+combined\+\_\+format}{\mbox{[}21\mbox{]}\mbox{[}13\mbox{]}\mbox{[}4\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+For 4 partitions compute the best format combinations for every pair of quant mode and integer count. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em best\+\_\+error} & The best error for a single endpoint quant level and integer count. \\
+\hline
+ & {\em best\+\_\+format} & The best format for a single endpoint quant level and integer count. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+combined\+\_\+error} & The best combined error pairings for the 4 partitions. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+combined\+\_\+format} & The best combined format pairings for the 4 partitions. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source}{astcenc\+\_\+pick\+\_\+best\+\_\+endpoint\+\_\+format.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source_l00961}{961}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00966\ \ \ \{}
+\DoxyCodeLine{00967\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75aad7b37039e6f1b7dc45712dac09dd8f7}{QUANT\_2}};\ i\ <=\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a190d92e6d064f52082c798be06b2850f}{QUANT\_256}};\ i++)}
+\DoxyCodeLine{00968\ \ \ \ \ \{}
+\DoxyCodeLine{00969\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 13;\ j++)}
+\DoxyCodeLine{00970\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00971\ \ \ \ \ \ \ \ \ \ \ \ \ best\_combined\_error[i][j]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00972\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00973\ \ \ \ \ \}}
+\DoxyCodeLine{00974\ }
+\DoxyCodeLine{00975\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ quant\ =\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}};\ quant\ <=\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a190d92e6d064f52082c798be06b2850f}{QUANT\_256}};\ quant++)}
+\DoxyCodeLine{00976\ \ \ \ \ \{}
+\DoxyCodeLine{00977\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)\ \textcolor{comment}{//\ integer-\/count\ for\ first\ endpoint-\/pair}}
+\DoxyCodeLine{00978\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00979\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 4;\ j++)\ \textcolor{comment}{//\ integer-\/count\ for\ second\ endpoint-\/pair}}
+\DoxyCodeLine{00980\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00981\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ low2\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(i,\ j);}
+\DoxyCodeLine{00982\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ high2\ =\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}(i,\ j);}
+\DoxyCodeLine{00983\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((high2\ -\/\ low2)\ >\ 1)}
+\DoxyCodeLine{00984\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00985\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00986\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00987\ }
+\DoxyCodeLine{00988\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ 4;\ k++)\ \textcolor{comment}{//\ integer-\/count\ for\ third\ endpoint-\/pair}}
+\DoxyCodeLine{00989\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00990\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ low3\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(k,\ low2);}
+\DoxyCodeLine{00991\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ high3\ =\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}(k,\ high2);}
+\DoxyCodeLine{00992\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((high3\ -\/\ low3)\ >\ 1)}
+\DoxyCodeLine{00993\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00994\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00995\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00996\ }
+\DoxyCodeLine{00997\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ l\ =\ 0;\ l\ <\ 4;\ l++)\ \textcolor{comment}{//\ integer-\/count\ for\ fourth\ endpoint-\/pair}}
+\DoxyCodeLine{00998\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00999\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ low4\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(l,\ low3);}
+\DoxyCodeLine{01000\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ high4\ =\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}(l,\ high3);}
+\DoxyCodeLine{01001\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((high4\ -\/\ low4)\ >\ 1)}
+\DoxyCodeLine{01002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{01004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01005\ }
+\DoxyCodeLine{01006\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ intcnt\ =\ i\ +\ j\ +\ k\ +\ l;}
+\DoxyCodeLine{01007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ errorterm\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(best\_error[0][quant][i]\ +\ best\_error[1][quant][j]\ +\ best\_error[2][quant][k]\ +\ best\_error[3][quant][l],\ 1e10f);}
+\DoxyCodeLine{01008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorterm\ <=\ best\_combined\_error[quant][intcnt])}
+\DoxyCodeLine{01009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_combined\_error[quant][intcnt]\ =\ errorterm;}
+\DoxyCodeLine{01011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_combined\_format[quant][intcnt][0]\ =\ best\_format[0][quant][i];}
+\DoxyCodeLine{01012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_combined\_format[quant][intcnt][1]\ =\ best\_format[1][quant][j];}
+\DoxyCodeLine{01013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_combined\_format[quant][intcnt][2]\ =\ best\_format[2][quant][k];}
+\DoxyCodeLine{01014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_combined\_format[quant][intcnt][3]\ =\ best\_format[3][quant][l];}
+\DoxyCodeLine{01015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01018\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01020\ \ \ \ \ \}}
+\DoxyCodeLine{01021\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{astcenc__pick__best__endpoint__format_8cpp_a806d3ce88e28226224c6b929b69f2fda_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__pick__best__endpoint__format_8cpp_a806d3ce88e28226224c6b929b69f2fda_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__pick__best__endpoint__format_8cpp_a4a0bf4253790d6b09132c02f57fcbe32}\index{astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}!one\_partition\_find\_best\_combination\_for\_bitcount@{one\_partition\_find\_best\_combination\_for\_bitcount}}
+\index{one\_partition\_find\_best\_combination\_for\_bitcount@{one\_partition\_find\_best\_combination\_for\_bitcount}!astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}}
+\doxysubsubsection{\texorpdfstring{one\_partition\_find\_best\_combination\_for\_bitcount()}{one\_partition\_find\_best\_combination\_for\_bitcount()}}
+{\footnotesize\ttfamily \label{astcenc__pick__best__endpoint__format_8cpp_a4a0bf4253790d6b09132c02f57fcbe32} 
+static float one\+\_\+partition\+\_\+find\+\_\+best\+\_\+combination\+\_\+for\+\_\+bitcount (\begin{DoxyParamCaption}\item[{const float}]{best\+\_\+combined\+\_\+error}{\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, }\item[{const uint8\+\_\+t}]{best\+\_\+combined\+\_\+format}{\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, }\item[{int}]{bits\+\_\+available}{, }\item[{uint8\+\_\+t \&}]{best\+\_\+quant\+\_\+level}{, }\item[{uint8\+\_\+t \&}]{best\+\_\+format}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+For one partition compute the best format and quantization for a given bit count. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em best\+\_\+combined\+\_\+error} & The best error for each quant level and integer count. \\
+\hline
+ & {\em best\+\_\+combined\+\_\+format} & The best format for each quant level and integer count. \\
+\hline
+ & {\em bits\+\_\+available} & The number of bits available for encoding. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+quant\+\_\+level} & The output best color quant level. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+format} & The output best color format.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The output error for the best pairing. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source}{astcenc\+\_\+pick\+\_\+best\+\_\+endpoint\+\_\+format.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source_l00672}{672}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00678\ \ \ \{}
+\DoxyCodeLine{00679\ \ \ \ \ \textcolor{keywordtype}{int}\ best\_integer\_count\ =\ 0;}
+\DoxyCodeLine{00680\ \ \ \ \ \textcolor{keywordtype}{float}\ best\_integer\_count\_error\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00681\ }
+\DoxyCodeLine{00682\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ integer\_count\ =\ 1;\ integer\_count\ <=\ 4;\ \ integer\_count++)}
+\DoxyCodeLine{00683\ \ \ \ \ \{}
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ quantization\ level\ for\ a\ given\ number\ of\ integers\ and\ a\ given\ number\ of\ bits}}
+\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ quant\_level\ =\ \mbox{\hyperlink{astcenc__internal_8h_a67050b7e3e5e5c4ff2021c8f266dd903}{quant\_mode\_table}}[integer\_count][bits\_available];}
+\DoxyCodeLine{00686\ }
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Don't\ have\ enough\ bits\ to\ represent\ a\ given\ endpoint\ format\ at\ all!}}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (quant\_level\ <\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}})}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00692\ }
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ integer\_count\_error\ =\ best\_combined\_error[quant\_level][integer\_count\ -\/\ 1];}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (integer\_count\_error\ <\ best\_integer\_count\_error)}
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \ \ \ \ best\_integer\_count\_error\ =\ integer\_count\_error;}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \ \ \ \ best\_integer\_count\ =\ integer\_count\ -\/\ 1;}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00699\ \ \ \ \ \}}
+\DoxyCodeLine{00700\ }
+\DoxyCodeLine{00701\ \ \ \ \ \textcolor{keywordtype}{int}\ ql\ =\ \mbox{\hyperlink{astcenc__internal_8h_a67050b7e3e5e5c4ff2021c8f266dd903}{quant\_mode\_table}}[best\_integer\_count\ +\ 1][bits\_available];}
+\DoxyCodeLine{00702\ }
+\DoxyCodeLine{00703\ \ \ \ \ best\_quant\_level\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(ql);}
+\DoxyCodeLine{00704\ \ \ \ \ best\_format\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4baf29afed4fcc815780d85789b8a095a22}{FMT\_LUMINANCE}};}
+\DoxyCodeLine{00705\ }
+\DoxyCodeLine{00706\ \ \ \ \ \textcolor{keywordflow}{if}\ (ql\ >=\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}})}
+\DoxyCodeLine{00707\ \ \ \ \ \{}
+\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ best\_format\ =\ best\_combined\_format[ql][best\_integer\_count];}
+\DoxyCodeLine{00709\ \ \ \ \ \}}
+\DoxyCodeLine{00710\ }
+\DoxyCodeLine{00711\ \ \ \ \ \textcolor{keywordflow}{return}\ best\_integer\_count\_error;}
+\DoxyCodeLine{00712\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__pick__best__endpoint__format_8cpp_a4a0bf4253790d6b09132c02f57fcbe32_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__pick__best__endpoint__format_8cpp_a7681b157ce5786accf05034e1facbdbe}\index{astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}!three\_partitions\_find\_best\_combination\_for\_bitcount@{three\_partitions\_find\_best\_combination\_for\_bitcount}}
+\index{three\_partitions\_find\_best\_combination\_for\_bitcount@{three\_partitions\_find\_best\_combination\_for\_bitcount}!astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}}
+\doxysubsubsection{\texorpdfstring{three\_partitions\_find\_best\_combination\_for\_bitcount()}{three\_partitions\_find\_best\_combination\_for\_bitcount()}}
+{\footnotesize\ttfamily \label{astcenc__pick__best__endpoint__format_8cpp_a7681b157ce5786accf05034e1facbdbe} 
+static float three\+\_\+partitions\+\_\+find\+\_\+best\+\_\+combination\+\_\+for\+\_\+bitcount (\begin{DoxyParamCaption}\item[{const float}]{best\+\_\+combined\+\_\+error}{\mbox{[}21\mbox{]}\mbox{[}10\mbox{]}, }\item[{const uint8\+\_\+t}]{best\+\_\+combined\+\_\+format}{\mbox{[}21\mbox{]}\mbox{[}10\mbox{]}\mbox{[}3\mbox{]}, }\item[{int}]{bits\+\_\+available}{, }\item[{uint8\+\_\+t \&}]{best\+\_\+quant\+\_\+level}{, }\item[{uint8\+\_\+t \&}]{best\+\_\+quant\+\_\+level\+\_\+mod}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{best\+\_\+formats}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+For 3 partitions compute the best format and quantization for a given bit count. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em best\+\_\+combined\+\_\+error} & The best error for each quant level and integer count. \\
+\hline
+ & {\em best\+\_\+combined\+\_\+format} & The best format for each quant level and integer count. \\
+\hline
+ & {\em bits\+\_\+available} & The number of bits available for encoding. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+quant\+\_\+level} & The output best color quant level. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+quant\+\_\+level\+\_\+mod} & The output best color quant level assuming two more bits are available. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+formats} & The output best color formats.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The output error for the best pairing. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source}{astcenc\+\_\+pick\+\_\+best\+\_\+endpoint\+\_\+format.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source_l00899}{899}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00906\ \ \ \{}
+\DoxyCodeLine{00907\ \ \ \ \ \textcolor{keywordtype}{int}\ best\_integer\_count\ =\ 0;}
+\DoxyCodeLine{00908\ \ \ \ \ \textcolor{keywordtype}{float}\ best\_integer\_count\_error\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00909\ }
+\DoxyCodeLine{00910\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ integer\_count\ =\ 3;\ integer\_count\ <=\ 9;\ integer\_count++)}
+\DoxyCodeLine{00911\ \ \ \ \ \{}
+\DoxyCodeLine{00912\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ quantization\ level\ for\ a\ given\ number\ of\ integers\ and\ a\ given\ number\ of\ bits}}
+\DoxyCodeLine{00913\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ quant\_level\ =\ \mbox{\hyperlink{astcenc__internal_8h_a67050b7e3e5e5c4ff2021c8f266dd903}{quant\_mode\_table}}[integer\_count][bits\_available];}
+\DoxyCodeLine{00914\ }
+\DoxyCodeLine{00915\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Don't\ have\ enough\ bits\ to\ represent\ a\ given\ endpoint\ format\ at\ all!}}
+\DoxyCodeLine{00916\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (quant\_level\ <\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}})}
+\DoxyCodeLine{00917\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00918\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00919\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00920\ }
+\DoxyCodeLine{00921\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ integer\_count\_error\ =\ best\_combined\_error[quant\_level][integer\_count\ -\/\ 3];}
+\DoxyCodeLine{00922\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (integer\_count\_error\ <\ best\_integer\_count\_error)}
+\DoxyCodeLine{00923\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00924\ \ \ \ \ \ \ \ \ \ \ \ \ best\_integer\_count\_error\ =\ integer\_count\_error;}
+\DoxyCodeLine{00925\ \ \ \ \ \ \ \ \ \ \ \ \ best\_integer\_count\ =\ integer\_count;}
+\DoxyCodeLine{00926\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00927\ \ \ \ \ \}}
+\DoxyCodeLine{00928\ }
+\DoxyCodeLine{00929\ \ \ \ \ \textcolor{keywordtype}{int}\ ql\ =\ \mbox{\hyperlink{astcenc__internal_8h_a67050b7e3e5e5c4ff2021c8f266dd903}{quant\_mode\_table}}[best\_integer\_count][bits\_available];}
+\DoxyCodeLine{00930\ \ \ \ \ \textcolor{keywordtype}{int}\ ql\_mod\ =\ \mbox{\hyperlink{astcenc__internal_8h_a67050b7e3e5e5c4ff2021c8f266dd903}{quant\_mode\_table}}[best\_integer\_count][bits\_available\ +\ 5];}
+\DoxyCodeLine{00931\ }
+\DoxyCodeLine{00932\ \ \ \ \ best\_quant\_level\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(ql);}
+\DoxyCodeLine{00933\ \ \ \ \ best\_quant\_level\_mod\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(ql\_mod);}
+\DoxyCodeLine{00934\ }
+\DoxyCodeLine{00935\ \ \ \ \ \textcolor{keywordflow}{if}\ (ql\ >=\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}})}
+\DoxyCodeLine{00936\ \ \ \ \ \{}
+\DoxyCodeLine{00937\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{00938\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00939\ \ \ \ \ \ \ \ \ \ \ \ \ best\_formats[i]\ =\ best\_combined\_format[ql][best\_integer\_count\ -\/\ 3][i];}
+\DoxyCodeLine{00940\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00941\ \ \ \ \ \}}
+\DoxyCodeLine{00942\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00943\ \ \ \ \ \{}
+\DoxyCodeLine{00944\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{00945\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00946\ \ \ \ \ \ \ \ \ \ \ \ \ best\_formats[i]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4baf29afed4fcc815780d85789b8a095a22}{FMT\_LUMINANCE}};}
+\DoxyCodeLine{00947\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00948\ \ \ \ \ \}}
+\DoxyCodeLine{00949\ }
+\DoxyCodeLine{00950\ \ \ \ \ \textcolor{keywordflow}{return}\ best\_integer\_count\_error;}
+\DoxyCodeLine{00951\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__pick__best__endpoint__format_8cpp_a7681b157ce5786accf05034e1facbdbe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__pick__best__endpoint__format_8cpp_ab08ff5ed53a05a876dc8e90c05aeef72}\index{astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}!three\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count@{three\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count}}
+\index{three\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count@{three\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count}!astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}}
+\doxysubsubsection{\texorpdfstring{three\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count()}{three\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count()}}
+{\footnotesize\ttfamily \label{astcenc__pick__best__endpoint__format_8cpp_ab08ff5ed53a05a876dc8e90c05aeef72} 
+static void three\+\_\+partitions\+\_\+find\+\_\+best\+\_\+combination\+\_\+for\+\_\+every\+\_\+quantization\+\_\+and\+\_\+integer\+\_\+count (\begin{DoxyParamCaption}\item[{const float}]{best\+\_\+error}{\mbox{[}3\mbox{]}\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, }\item[{const uint8\+\_\+t}]{best\+\_\+format}{\mbox{[}3\mbox{]}\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, }\item[{float}]{best\+\_\+combined\+\_\+error}{\mbox{[}21\mbox{]}\mbox{[}10\mbox{]}, }\item[{uint8\+\_\+t}]{best\+\_\+combined\+\_\+format}{\mbox{[}21\mbox{]}\mbox{[}10\mbox{]}\mbox{[}3\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+For 3 partitions compute the best format combinations for every pair of quant mode and integer count. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em best\+\_\+error} & The best error for a single endpoint quant level and integer count. \\
+\hline
+ & {\em best\+\_\+format} & The best format for a single endpoint quant level and integer count. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+combined\+\_\+error} & The best combined error pairings for the 3 partitions. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+combined\+\_\+format} & The best combined format pairings for the 3 partitions. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source}{astcenc\+\_\+pick\+\_\+best\+\_\+endpoint\+\_\+format.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source_l00836}{836}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00841\ \ \ \{}
+\DoxyCodeLine{00842\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75aad7b37039e6f1b7dc45712dac09dd8f7}{QUANT\_2}};\ i\ <=\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a190d92e6d064f52082c798be06b2850f}{QUANT\_256}};\ i++)}
+\DoxyCodeLine{00843\ \ \ \ \ \{}
+\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 10;\ j++)}
+\DoxyCodeLine{00845\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00846\ \ \ \ \ \ \ \ \ \ \ \ \ best\_combined\_error[i][j]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00847\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00848\ \ \ \ \ \}}
+\DoxyCodeLine{00849\ }
+\DoxyCodeLine{00850\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ quant\ =\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}};\ quant\ <=\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a190d92e6d064f52082c798be06b2850f}{QUANT\_256}};\ quant++)}
+\DoxyCodeLine{00851\ \ \ \ \ \{}
+\DoxyCodeLine{00852\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)\ \textcolor{comment}{//\ integer-\/count\ for\ first\ endpoint-\/pair}}
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 4;\ j++)\ \textcolor{comment}{//\ integer-\/count\ for\ second\ endpoint-\/pair}}
+\DoxyCodeLine{00855\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00856\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ low2\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(i,\ j);}
+\DoxyCodeLine{00857\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ high2\ =\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}(i,\ j);}
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((high2\ -\/\ low2)\ >\ 1)}
+\DoxyCodeLine{00859\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00861\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00862\ }
+\DoxyCodeLine{00863\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ 4;\ k++)\ \textcolor{comment}{//\ integer-\/count\ for\ third\ endpoint-\/pair}}
+\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00865\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ low3\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(k,\ low2);}
+\DoxyCodeLine{00866\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ high3\ =\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}(k,\ high2);}
+\DoxyCodeLine{00867\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((high3\ -\/\ low3)\ >\ 1)}
+\DoxyCodeLine{00868\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00869\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00871\ }
+\DoxyCodeLine{00872\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ intcnt\ =\ i\ +\ j\ +\ k;}
+\DoxyCodeLine{00873\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ errorterm\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(best\_error[0][quant][i]\ +\ best\_error[1][quant][j]\ +\ best\_error[2][quant][k],\ 1e10f);}
+\DoxyCodeLine{00874\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorterm\ <=\ best\_combined\_error[quant][intcnt])}
+\DoxyCodeLine{00875\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00876\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_combined\_error[quant][intcnt]\ =\ errorterm;}
+\DoxyCodeLine{00877\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_combined\_format[quant][intcnt][0]\ =\ best\_format[0][quant][i];}
+\DoxyCodeLine{00878\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_combined\_format[quant][intcnt][1]\ =\ best\_format[1][quant][j];}
+\DoxyCodeLine{00879\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_combined\_format[quant][intcnt][2]\ =\ best\_format[2][quant][k];}
+\DoxyCodeLine{00880\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00881\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00882\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00883\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00884\ \ \ \ \ \}}
+\DoxyCodeLine{00885\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{astcenc__pick__best__endpoint__format_8cpp_ab08ff5ed53a05a876dc8e90c05aeef72_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__pick__best__endpoint__format_8cpp_ab08ff5ed53a05a876dc8e90c05aeef72_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__pick__best__endpoint__format_8cpp_a5c74518d7a68796ba962179901f805ae}\index{astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}!two\_partitions\_find\_best\_combination\_for\_bitcount@{two\_partitions\_find\_best\_combination\_for\_bitcount}}
+\index{two\_partitions\_find\_best\_combination\_for\_bitcount@{two\_partitions\_find\_best\_combination\_for\_bitcount}!astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}}
+\doxysubsubsection{\texorpdfstring{two\_partitions\_find\_best\_combination\_for\_bitcount()}{two\_partitions\_find\_best\_combination\_for\_bitcount()}}
+{\footnotesize\ttfamily \label{astcenc__pick__best__endpoint__format_8cpp_a5c74518d7a68796ba962179901f805ae} 
+static float two\+\_\+partitions\+\_\+find\+\_\+best\+\_\+combination\+\_\+for\+\_\+bitcount (\begin{DoxyParamCaption}\item[{float}]{best\+\_\+combined\+\_\+error}{\mbox{[}21\mbox{]}\mbox{[}7\mbox{]}, }\item[{uint8\+\_\+t}]{best\+\_\+combined\+\_\+format}{\mbox{[}21\mbox{]}\mbox{[}7\mbox{]}\mbox{[}2\mbox{]}, }\item[{int}]{bits\+\_\+available}{, }\item[{uint8\+\_\+t \&}]{best\+\_\+quant\+\_\+level}{, }\item[{uint8\+\_\+t \&}]{best\+\_\+quant\+\_\+level\+\_\+mod}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{best\+\_\+formats}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+For 2 partitions compute the best format and quantization for a given bit count. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em best\+\_\+combined\+\_\+error} & The best error for each quant level and integer count. \\
+\hline
+ & {\em best\+\_\+combined\+\_\+format} & The best format for each quant level and integer count. \\
+\hline
+ & {\em bits\+\_\+available} & The number of bits available for encoding. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+quant\+\_\+level} & The output best color quant level. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+quant\+\_\+level\+\_\+mod} & The output best color quant level assuming two more bits are available. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+formats} & The output best color formats.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The output error for the best pairing. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source}{astcenc\+\_\+pick\+\_\+best\+\_\+endpoint\+\_\+format.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source_l00774}{774}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00781\ \ \ \{}
+\DoxyCodeLine{00782\ \ \ \ \ \textcolor{keywordtype}{int}\ best\_integer\_count\ =\ 0;}
+\DoxyCodeLine{00783\ \ \ \ \ \textcolor{keywordtype}{float}\ best\_integer\_count\_error\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00784\ }
+\DoxyCodeLine{00785\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ integer\_count\ =\ 2;\ integer\_count\ <=\ 8;\ integer\_count++)}
+\DoxyCodeLine{00786\ \ \ \ \ \{}
+\DoxyCodeLine{00787\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ quantization\ level\ for\ a\ given\ number\ of\ integers\ and\ a\ given\ number\ of\ bits}}
+\DoxyCodeLine{00788\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ quant\_level\ =\ \mbox{\hyperlink{astcenc__internal_8h_a67050b7e3e5e5c4ff2021c8f266dd903}{quant\_mode\_table}}[integer\_count][bits\_available];}
+\DoxyCodeLine{00789\ }
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Don't\ have\ enough\ bits\ to\ represent\ a\ given\ endpoint\ format\ at\ all!}}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (quant\_level\ <\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}})}
+\DoxyCodeLine{00792\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00793\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00795\ }
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ integer\_count\_error\ =\ best\_combined\_error[quant\_level][integer\_count\ -\/\ 2];}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (integer\_count\_error\ <\ best\_integer\_count\_error)}
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00799\ \ \ \ \ \ \ \ \ \ \ \ \ best\_integer\_count\_error\ =\ integer\_count\_error;}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ \ \ \ \ best\_integer\_count\ =\ integer\_count;}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00802\ \ \ \ \ \}}
+\DoxyCodeLine{00803\ }
+\DoxyCodeLine{00804\ \ \ \ \ \textcolor{keywordtype}{int}\ ql\ =\ \mbox{\hyperlink{astcenc__internal_8h_a67050b7e3e5e5c4ff2021c8f266dd903}{quant\_mode\_table}}[best\_integer\_count][bits\_available];}
+\DoxyCodeLine{00805\ \ \ \ \ \textcolor{keywordtype}{int}\ ql\_mod\ =\ \mbox{\hyperlink{astcenc__internal_8h_a67050b7e3e5e5c4ff2021c8f266dd903}{quant\_mode\_table}}[best\_integer\_count][bits\_available\ +\ 2];}
+\DoxyCodeLine{00806\ }
+\DoxyCodeLine{00807\ \ \ \ \ best\_quant\_level\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(ql);}
+\DoxyCodeLine{00808\ \ \ \ \ best\_quant\_level\_mod\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(ql\_mod);}
+\DoxyCodeLine{00809\ }
+\DoxyCodeLine{00810\ \ \ \ \ \textcolor{keywordflow}{if}\ (ql\ >=\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}})}
+\DoxyCodeLine{00811\ \ \ \ \ \{}
+\DoxyCodeLine{00812\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 2;\ i++)}
+\DoxyCodeLine{00813\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00814\ \ \ \ \ \ \ \ \ \ \ \ \ best\_formats[i]\ =\ best\_combined\_format[ql][best\_integer\_count\ -\/\ 2][i];}
+\DoxyCodeLine{00815\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00816\ \ \ \ \ \}}
+\DoxyCodeLine{00817\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00818\ \ \ \ \ \{}
+\DoxyCodeLine{00819\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 2;\ i++)}
+\DoxyCodeLine{00820\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00821\ \ \ \ \ \ \ \ \ \ \ \ \ best\_formats[i]\ =\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4baf29afed4fcc815780d85789b8a095a22}{FMT\_LUMINANCE}};}
+\DoxyCodeLine{00822\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00823\ \ \ \ \ \}}
+\DoxyCodeLine{00824\ }
+\DoxyCodeLine{00825\ \ \ \ \ \textcolor{keywordflow}{return}\ best\_integer\_count\_error;}
+\DoxyCodeLine{00826\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__pick__best__endpoint__format_8cpp_a5c74518d7a68796ba962179901f805ae_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__pick__best__endpoint__format_8cpp_ac317754d4bbd795d6f29b331883e8eb3}\index{astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}!two\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count@{two\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count}}
+\index{two\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count@{two\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count}!astcenc\_pick\_best\_endpoint\_format.cpp@{astcenc\_pick\_best\_endpoint\_format.cpp}}
+\doxysubsubsection{\texorpdfstring{two\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count()}{two\_partitions\_find\_best\_combination\_for\_every\_quantization\_and\_integer\_count()}}
+{\footnotesize\ttfamily \label{astcenc__pick__best__endpoint__format_8cpp_ac317754d4bbd795d6f29b331883e8eb3} 
+static void two\+\_\+partitions\+\_\+find\+\_\+best\+\_\+combination\+\_\+for\+\_\+every\+\_\+quantization\+\_\+and\+\_\+integer\+\_\+count (\begin{DoxyParamCaption}\item[{const float}]{best\+\_\+error}{\mbox{[}2\mbox{]}\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, }\item[{const uint8\+\_\+t}]{best\+\_\+format}{\mbox{[}2\mbox{]}\mbox{[}21\mbox{]}\mbox{[}4\mbox{]}, }\item[{float}]{best\+\_\+combined\+\_\+error}{\mbox{[}21\mbox{]}\mbox{[}7\mbox{]}, }\item[{uint8\+\_\+t}]{best\+\_\+combined\+\_\+format}{\mbox{[}21\mbox{]}\mbox{[}7\mbox{]}\mbox{[}2\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+For 2 partitions compute the best format combinations for every pair of quant mode and integer count. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em best\+\_\+error} & The best error for a single endpoint quant level and integer count. \\
+\hline
+ & {\em best\+\_\+format} & The best format for a single endpoint quant level and integer count. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+combined\+\_\+error} & The best combined error pairings for the 2 partitions. \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+combined\+\_\+format} & The best combined format pairings for the 2 partitions. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source}{astcenc\+\_\+pick\+\_\+best\+\_\+endpoint\+\_\+format.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__pick__best__endpoint__format_8cpp_source_l00722}{722}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00727\ \ \ \{}
+\DoxyCodeLine{00728\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75aad7b37039e6f1b7dc45712dac09dd8f7}{QUANT\_2}};\ i\ <=\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a190d92e6d064f52082c798be06b2850f}{QUANT\_256}};\ i++)}
+\DoxyCodeLine{00729\ \ \ \ \ \{}
+\DoxyCodeLine{00730\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 7;\ j++)}
+\DoxyCodeLine{00731\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ \ \ \ \ best\_combined\_error[i][j]\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00734\ \ \ \ \ \}}
+\DoxyCodeLine{00735\ }
+\DoxyCodeLine{00736\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ quant\ =\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a39d85e9e6cd35a99788a893bef840f1a}{QUANT\_6}};\ quant\ <=\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a190d92e6d064f52082c798be06b2850f}{QUANT\_256}};\ quant++)}
+\DoxyCodeLine{00737\ \ \ \ \ \{}
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)\ \textcolor{comment}{//\ integer-\/count\ for\ first\ endpoint-\/pair}}
+\DoxyCodeLine{00739\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00740\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 4;\ j++)\ \textcolor{comment}{//\ integer-\/count\ for\ second\ endpoint-\/pair}}
+\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ low2\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(i,\ j);}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ high2\ =\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}(i,\ j);}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((high2\ -\/\ low2)\ >\ 1)}
+\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00748\ }
+\DoxyCodeLine{00749\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ intcnt\ =\ i\ +\ j;}
+\DoxyCodeLine{00750\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ errorterm\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(best\_error[0][quant][i]\ +\ best\_error[1][quant][j],\ 1e10f);}
+\DoxyCodeLine{00751\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorterm\ <=\ best\_combined\_error[quant][intcnt])}
+\DoxyCodeLine{00752\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_combined\_error[quant][intcnt]\ =\ errorterm;}
+\DoxyCodeLine{00754\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_combined\_format[quant][intcnt][0]\ =\ best\_format[0][quant][i];}
+\DoxyCodeLine{00755\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_combined\_format[quant][intcnt][1]\ =\ best\_format[1][quant][j];}
+\DoxyCodeLine{00756\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00757\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00758\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00759\ \ \ \ \ \}}
+\DoxyCodeLine{00760\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{astcenc__pick__best__endpoint__format_8cpp_ac317754d4bbd795d6f29b331883e8eb3_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__pick__best__endpoint__format_8cpp_ac317754d4bbd795d6f29b331883e8eb3_icgraph}
+\end{center}
+\end{figure}

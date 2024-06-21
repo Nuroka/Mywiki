@@ -1,0 +1,18 @@
+<map id="astc::rand_init" name="astc::rand_init">
+<area shape="rect" id="Node000001" title="Initialize the seed structure for a random number generator." alt="" coords="1071,45,1175,70"/>
+<area shape="rect" id="Node000002" href="$astcenc__block__sizes_8cpp.html#a20c3e73541fd2727c8b79cc8c19919b2" title="Assign the texels to use for kmeans clustering." alt="" coords="868,45,1023,70"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1057,60,1023,60,1023,55,1057,55"/>
+<area shape="rect" id="Node000003" href="$astcenc__block__sizes_8cpp.html#ae2e6657689fff66c3d8729b63d6ae7c5" title="Allocate block modes and decimation tables for a single 2D block size." alt="" coords="675,5,820,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="854,45,820,40,821,34,855,40"/>
+<area shape="rect" id="Node000008" href="$astcenc__block__sizes_8cpp.html#a3fde919cf8b9a7f9db851cfff6a7a87c" title="Allocate block modes and decimation tables for a single 3D block size." alt="" coords="675,69,820,109"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="855,75,821,80,820,75,854,69"/>
+<area shape="rect" id="Node000004" href="$astcenc__block__sizes_8cpp.html#a5c46863585cc583c3deb49323dfb73d8" title="Populate the block size descriptor for the target block size." alt="" coords="455,45,627,70"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="662,41,623,47,623,42,661,36"/>
+<area shape="rect" id="Node000005" href="$astcenc__entry_8cpp.html#a823234313a697f5b4cdbd2cd6caaef4a" title="Allocate a new codec context based on a config." alt="" coords="255,45,407,70"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="441,60,407,60,407,55,441,55"/>
+<area shape="rect" id="Node000006" href="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e" title="Application entry point." alt="" coords="104,45,207,70"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="241,60,207,60,207,55,241,55"/>
+<area shape="rect" id="Node000007" href="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,45,56,70"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="90,60,57,60,57,55,90,55"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="661,79,623,73,623,67,662,73"/>
+</map>

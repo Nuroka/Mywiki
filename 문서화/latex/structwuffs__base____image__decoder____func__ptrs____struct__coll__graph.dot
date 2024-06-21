@@ -1,0 +1,17 @@
+digraph "wuffs_base__image_decoder__func_ptrs__struct"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="wuffs_base__image_decoder\l__func_ptrs__struct",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [id="edge5_Node000001_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" decode_frame\ndecode_frame_config\ndecode_image_config\nrestart_frame\ntell_me_more",fontcolor="grey" ];
+  Node2 [id="Node000002",label="wuffs_base__status\l__struct",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structwuffs__base____status____struct.html",tooltip=" "];
+  Node3 -> Node1 [id="edge6_Node000001_Node000003",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" frame_dirty_rect",fontcolor="grey" ];
+  Node3 [id="Node000003",label="wuffs_base__rect_ie\l_u32__struct",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structwuffs__base____rect__ie__u32____struct.html",tooltip=" "];
+  Node4 -> Node1 [id="edge7_Node000001_Node000004",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" set_quirk_enabled\nset_report_metadata",fontcolor="grey" ];
+  Node4 [id="Node000004",label="wuffs_base__empty_struct\l__struct",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structwuffs__base____empty__struct____struct.html",tooltip=" "];
+  Node5 -> Node1 [id="edge8_Node000001_Node000005",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" workbuf_len",fontcolor="grey" ];
+  Node5 [id="Node000005",label="wuffs_base__range_ii\l_u64__struct",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structwuffs__base____range__ii__u64____struct.html",tooltip=" "];
+}

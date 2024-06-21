@@ -1,0 +1,5 @@
+<map id="quantize_and_unquantize_retain_top_four_bits" name="quantize_and_unquantize_retain_top_four_bits">
+<area shape="rect" id="Node000001" title="Quantize and unquantize a value ensuring top four bits are the same." alt="" coords="5,5,175,45"/>
+<area shape="rect" id="Node000002" href="$astcenc__color__quantize_8cpp.html#a0af2fba0ed6cbe9e279c808e540eb74e" title="Determine the quantized value given a quantization level." alt="" coords="223,13,312,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,23,209,23,209,28,175,28"/>
+</map>

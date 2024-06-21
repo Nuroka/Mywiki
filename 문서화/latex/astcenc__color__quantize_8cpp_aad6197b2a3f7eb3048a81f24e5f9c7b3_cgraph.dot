@@ -1,0 +1,22 @@
+digraph "quantize_rgb"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="quantize_rgb",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Quantize an LDR RGB color."];
+  Node1 -> Node2 [id="edge8_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="float_to_int_rtn",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__vecmathlib__avx2__8_8h.html#a598d6ea3ba27a788b12341a5263c7881",tooltip="Return a integer value for a float vector, using round-to-nearest."];
+  Node1 -> Node3 [id="edge9_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="hadd_rgb_s",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__vecmathlib__common__4_8h.html#a48e833d0cfdf950b6bc3431fce00507e",tooltip="Return the horizontal sum of RGB vector lanes as a scalar."];
+  Node3 -> Node4 [id="edge10_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="vint4::lane",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structvint4.html#a01e3f7debf73dc6c757fa36d585c9d17",tooltip="Get the scalar from a single lane."];
+  Node1 -> Node5 [id="edge11_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="max",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__vecmathlib__avx2__8_8h.html#aa162915c044e97cc1f6d630338761fd3",tooltip="Return the max vector of two vectors."];
+  Node1 -> Node6 [id="edge12_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="min",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__vecmathlib__avx2__8_8h.html#a165b3db4e7ced1551e1880a01a01150b",tooltip="Return the min vector of two vectors."];
+  Node1 -> Node7 [id="edge13_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="quant_color3",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__color__quantize_8cpp.html#adae1b4db9a1942106e86b3f5ff358092",tooltip="Determine the quantized value given a quantization level."];
+  Node7 -> Node4 [id="edge14_Node000007_Node000004",color="steelblue1",style="solid",tooltip=" "];
+}

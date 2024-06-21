@@ -1,0 +1,1679 @@
+\doxysection{C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/astcenc\+\_\+compress\+\_\+symbolic.cpp 파일 참조}
+\hypertarget{astcenc__compress__symbolic_8cpp}{}\label{astcenc__compress__symbolic_8cpp}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_compress\_symbolic.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_compress\_symbolic.cpp}}
+{\ttfamily \#include "{}astcenc\+\_\+internal.\+h"{}}\newline
+{\ttfamily \#include "{}astcenc\+\_\+diagnostic\+\_\+trace.\+h"{}}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+astcenc\+\_\+compress\+\_\+symbolic.\+cpp에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__compress__symbolic_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_a7a73021370668773ad84b7a2f6285023}{merge\+\_\+endpoints}} (const \mbox{\hyperlink{structendpoints}{endpoints}} \&ep\+\_\+plane1, const \mbox{\hyperlink{structendpoints}{endpoints}} \&ep\+\_\+plane2, unsigned int component\+\_\+plane2, \mbox{\hyperlink{structendpoints}{endpoints}} \&result)
+\begin{DoxyCompactList}\small\item\em Functions to compress a symbolic block. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_a91e5fa530ba0e492b85132e416a5ddf4}{realign\+\_\+weights\+\_\+undecimated}} (\mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}{astcenc\+\_\+profile}} decode\+\_\+mode, const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&bsd, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk, \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&scb)
+\begin{DoxyCompactList}\small\item\em Attempt to improve weights given a chosen configuration. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_af80747ee43aa6fda579161376205c294}{realign\+\_\+weights\+\_\+decimated}} (\mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}{astcenc\+\_\+profile}} decode\+\_\+mode, const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&bsd, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk, \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&scb)
+\begin{DoxyCompactList}\small\item\em Attempt to improve weights given a chosen configuration. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_af5f518a15600c71922e69267dea2db99}{compress\+\_\+symbolic\+\_\+block\+\_\+for\+\_\+partition\+\_\+1plane}} (const \mbox{\hyperlink{structastcenc__config}{astcenc\+\_\+config}} \&config, const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&bsd, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk, bool only\+\_\+always, float tune\+\_\+errorval\+\_\+threshold, unsigned int partition\+\_\+count, unsigned int partition\+\_\+index, \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&scb, \mbox{\hyperlink{structcompression__working__buffers}{compression\+\_\+working\+\_\+buffers}} \&tmpbuf, int quant\+\_\+limit)
+\begin{DoxyCompactList}\small\item\em Compress a block using a chosen partitioning and 1 plane of weights. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_af11a976c8ea386db054bef472ce0667c}{compress\+\_\+symbolic\+\_\+block\+\_\+for\+\_\+partition\+\_\+2planes}} (const \mbox{\hyperlink{structastcenc__config}{astcenc\+\_\+config}} \&config, const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&bsd, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk, float tune\+\_\+errorval\+\_\+threshold, unsigned int plane2\+\_\+component, \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&scb, \mbox{\hyperlink{structcompression__working__buffers}{compression\+\_\+working\+\_\+buffers}} \&tmpbuf, int quant\+\_\+limit)
+\begin{DoxyCompactList}\small\item\em Compress a block using a chosen partitioning and 2 planes of weights. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_a6ac5bc5977155d0c8433492cd1985ce6}{prepare\+\_\+block\+\_\+statistics}} (int texels\+\_\+per\+\_\+block, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk)
+\begin{DoxyCompactList}\small\item\em Determine the lowest cross-\/channel correlation factor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_a579b9a2ceeecda2fb3abe63b8311df1c}{compress\+\_\+block}} (const \mbox{\hyperlink{structastcenc__contexti}{astcenc\+\_\+contexti}} \&ctx, const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&blk, uint8\+\_\+t pcb\mbox{[}16\mbox{]}, \mbox{\hyperlink{structcompression__working__buffers}{compression\+\_\+working\+\_\+buffers}} \&tmpbuf)
+\begin{DoxyCompactList}\small\item\em Compress an image block into a physical block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\Hypertarget{astcenc__compress__symbolic_8cpp_a579b9a2ceeecda2fb3abe63b8311df1c}\index{astcenc\_compress\_symbolic.cpp@{astcenc\_compress\_symbolic.cpp}!compress\_block@{compress\_block}}
+\index{compress\_block@{compress\_block}!astcenc\_compress\_symbolic.cpp@{astcenc\_compress\_symbolic.cpp}}
+\doxysubsubsection{\texorpdfstring{compress\_block()}{compress\_block()}}
+{\footnotesize\ttfamily \label{astcenc__compress__symbolic_8cpp_a579b9a2ceeecda2fb3abe63b8311df1c} 
+void compress\+\_\+block (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structastcenc__contexti}{astcenc\+\_\+contexti}} \&}]{ctx}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{, }\item[{uint8\+\_\+t}]{pcb}{\mbox{[}16\mbox{]}, }\item[{\mbox{\hyperlink{structcompression__working__buffers}{compression\+\_\+working\+\_\+buffers}} \&}]{tmpbuf}{}\end{DoxyParamCaption})}
+
+
+
+Compress an image block into a physical block. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em ctx} & The compressor context and configuration. \\
+\hline
+ & {\em blk} & The image block color data to compress. \\
+\hline
+\mbox{\texttt{ out}}  & {\em pcb} & The physical compressed block output. \\
+\hline
+\mbox{\texttt{ out}}  & {\em tmpbuf} & Preallocated scratch buffers for the compressor. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__compress__symbolic_8cpp_source}{astcenc\+\_\+compress\+\_\+symbolic.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_source_l01163}{1163}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01168\ \{}
+\DoxyCodeLine{01169\ \ \ \ \ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}{astcenc\_profile}}\ decode\_mode\ =\ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}};}
+\DoxyCodeLine{01170\ \ \ \ \ \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\_compressed\_block}}\ scb;}
+\DoxyCodeLine{01171\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__size__descriptor}{block\_size\_descriptor}}\&\ bsd\ =\ *ctx.\mbox{\hyperlink{structastcenc__contexti_ab1641619493f8b297d7442f5da7cd813}{bsd}};}
+\DoxyCodeLine{01172\ \ \ \ \ \textcolor{keywordtype}{float}\ lowest\_correl;}
+\DoxyCodeLine{01173\ }
+\DoxyCodeLine{01174\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_ae040957570ced46496efbca3b734cffa}{TRACE\_NODE}}(node0,\ \textcolor{stringliteral}{"{}block"{}});}
+\DoxyCodeLine{01175\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}pos\_x"{}},\ blk.\mbox{\hyperlink{structimage__block_a352aaf95790a294ff0b8b037b49def86}{xpos}});}
+\DoxyCodeLine{01176\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}pos\_y"{}},\ blk.\mbox{\hyperlink{structimage__block_a77a79aa3bc8909bb34673e86ee30584f}{ypos}});}
+\DoxyCodeLine{01177\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}pos\_z"{}},\ blk.\mbox{\hyperlink{structimage__block_aef3e6199531833e9b855f7fde1d06593}{zpos}});}
+\DoxyCodeLine{01178\ }
+\DoxyCodeLine{01179\ \ \ \ \ \textcolor{comment}{//\ Set\ stricter\ block\ targets\ for\ luminance\ data\ as\ we\ have\ more\ bits\ to\ play\ with}}
+\DoxyCodeLine{01180\ \ \ \ \ \textcolor{keywordtype}{bool}\ block\_is\_l\ =\ blk.\mbox{\hyperlink{structimage__block_ac3e154e58086017c6e405b8cc7e52c9f}{is\_luminance}}();}
+\DoxyCodeLine{01181\ \ \ \ \ \textcolor{keywordtype}{float}\ block\_is\_l\_scale\ =\ block\_is\_l\ ?\ 1.0f\ /\ 1.5f\ :\ 1.0f;}
+\DoxyCodeLine{01182\ }
+\DoxyCodeLine{01183\ \ \ \ \ \textcolor{comment}{//\ Set\ slightly\ stricter\ block\ targets\ for\ lumalpha\ data\ as\ we\ have\ more\ bits\ to\ play\ with}}
+\DoxyCodeLine{01184\ \ \ \ \ \textcolor{keywordtype}{bool}\ block\_is\_la\ =\ blk.\mbox{\hyperlink{structimage__block_aa7f3d29c2f755e47a887d090c5997880}{is\_luminancealpha}}();}
+\DoxyCodeLine{01185\ \ \ \ \ \textcolor{keywordtype}{float}\ block\_is\_la\_scale\ =\ block\_is\_la\ ?\ 1.0f\ /\ 1.05f\ :\ 1.0f;}
+\DoxyCodeLine{01186\ }
+\DoxyCodeLine{01187\ \ \ \ \ \textcolor{keywordtype}{bool}\ block\_skip\_two\_plane\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{01188\ \ \ \ \ \textcolor{keywordtype}{int}\ max\_partitions\ =\ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_aa7930792899cf0f4e06d0443e7c7c376}{tune\_partition\_count\_limit}};}
+\DoxyCodeLine{01189\ }
+\DoxyCodeLine{01190\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ requested\_partition\_indices[3]\ \{}
+\DoxyCodeLine{01191\ \ \ \ \ \ \ \ \ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a13172c9ee7823e27bcc760748bbca7ec}{tune\_2partition\_index\_limit}},}
+\DoxyCodeLine{01192\ \ \ \ \ \ \ \ \ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a9f7de080850731a6ee84e3c8ec9c7084}{tune\_3partition\_index\_limit}},}
+\DoxyCodeLine{01193\ \ \ \ \ \ \ \ \ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a378d1dd2bf306399c29a5f7883565c3c}{tune\_4partition\_index\_limit}}}
+\DoxyCodeLine{01194\ \ \ \ \ \};}
+\DoxyCodeLine{01195\ }
+\DoxyCodeLine{01196\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ requested\_partition\_trials[3]\ \{}
+\DoxyCodeLine{01197\ \ \ \ \ \ \ \ \ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a841535a5913a073022ab7098a0f329ac}{tune\_2partitioning\_candidate\_limit}},}
+\DoxyCodeLine{01198\ \ \ \ \ \ \ \ \ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a076f40134b7cefe41079e8a3aa8899f6}{tune\_3partitioning\_candidate\_limit}},}
+\DoxyCodeLine{01199\ \ \ \ \ \ \ \ \ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_afc8d64039868048fef1e1a9749737528}{tune\_4partitioning\_candidate\_limit}}}
+\DoxyCodeLine{01200\ \ \ \ \ \};}
+\DoxyCodeLine{01201\ }
+\DoxyCodeLine{01202\ \textcolor{preprocessor}{\#if\ defined(ASTCENC\_DIAGNOSTICS)}}
+\DoxyCodeLine{01203\ \ \ \ \ \textcolor{comment}{//\ Do\ this\ early\ in\ diagnostic\ builds\ so\ we\ can\ dump\ uniform\ metrics}}
+\DoxyCodeLine{01204\ \ \ \ \ \textcolor{comment}{//\ for\ every\ block.\ Do\ it\ later\ in\ release\ builds\ to\ avoid\ redundant\ work!}}
+\DoxyCodeLine{01205\ \ \ \ \ \textcolor{keywordtype}{float}\ error\_weight\_sum\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}})\ *\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}};}
+\DoxyCodeLine{01206\ \ \ \ \ \textcolor{keywordtype}{float}\ error\_threshold\ =\ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a2065412aaae88cff4e1f648946e13181}{tune\_db\_limit}}}
+\DoxyCodeLine{01207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ error\_weight\_sum}
+\DoxyCodeLine{01208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ block\_is\_l\_scale}
+\DoxyCodeLine{01209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ block\_is\_la\_scale;}
+\DoxyCodeLine{01210\ }
+\DoxyCodeLine{01211\ \ \ \ \ lowest\_correl\ =\ \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_a6ac5bc5977155d0c8433492cd1985ce6}{prepare\_block\_statistics}}(bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}},\ blk);}
+\DoxyCodeLine{01212\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}lowest\_correl"{}},\ lowest\_correl);}
+\DoxyCodeLine{01213\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}tune\_error\_threshold"{}},\ error\_threshold);}
+\DoxyCodeLine{01214\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01215\ }
+\DoxyCodeLine{01216\ \ \ \ \ \textcolor{comment}{//\ Detected\ a\ constant-\/color\ block}}
+\DoxyCodeLine{01217\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad93dff3341cbbeed568d4bd6dc4ef87c}{all}}(blk.\mbox{\hyperlink{structimage__block_a4222fc6e5a97194fd342700adff483db}{data\_min}}\ ==\ blk.\mbox{\hyperlink{structimage__block_af1b03600b295cf8dc02a333db04871fc}{data\_max}}))}
+\DoxyCodeLine{01218\ \ \ \ \ \{}
+\DoxyCodeLine{01219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_ae040957570ced46496efbca3b734cffa}{TRACE\_NODE}}(node1,\ \textcolor{stringliteral}{"{}pass"{}});}
+\DoxyCodeLine{01220\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}partition\_count"{}},\ 0);}
+\DoxyCodeLine{01221\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}plane\_count"{}},\ 1);}
+\DoxyCodeLine{01222\ }
+\DoxyCodeLine{01223\ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\_count}}\ =\ 0;}
+\DoxyCodeLine{01224\ }
+\DoxyCodeLine{01225\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Encode\ as\ FP16\ if\ using\ HDR}}
+\DoxyCodeLine{01226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((decode\_mode\ ==\ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a4493639842d745d4bccd6a94836d2ca9}{ASTCENC\_PRF\_HDR}})\ ||}
+\DoxyCodeLine{01227\ \ \ \ \ \ \ \ \ \ \ \ \ (decode\_mode\ ==\ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a9043bc19a890aeff156f664ccbef677f}{ASTCENC\_PRF\_HDR\_RGB\_LDR\_A}}))}
+\DoxyCodeLine{01228\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01229\ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_aebc278aa5ca9c97969af61d9186f9172}{SYM\_BTYPE\_CONST\_F16}};}
+\DoxyCodeLine{01230\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ color\_f16\ =\ \mbox{\hyperlink{astcenc__vecmathlib__neon__4_8h_ae8701a3f44d7b99016d54c3d6ee27581}{float\_to\_float16}}(blk.\mbox{\hyperlink{structimage__block_a111c7f9821d5ebe6e9d0140f800c6bc2}{origin\_texel}});}
+\DoxyCodeLine{01231\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a61add2970baac5cf6b04177472ae1ed1}{store}}(color\_f16,\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_abb86a3a9a9bf54d5138c1883ed6159a5}{constant\_color}});}
+\DoxyCodeLine{01232\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01233\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Encode\ as\ UNORM16\ if\ NOT\ using\ HDR}}
+\DoxyCodeLine{01234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{01235\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01236\ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_adb59df7fefb94a8c52948d49ce70b1f5}{SYM\_BTYPE\_CONST\_U16}};}
+\DoxyCodeLine{01237\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\_f32\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ae91c0bb0ebd82ed2a7fa7aa915f6e76e}{clamp}}(0.0f,\ 1.0f,\ blk.\mbox{\hyperlink{structimage__block_a111c7f9821d5ebe6e9d0140f800c6bc2}{origin\_texel}})\ *\ 65535.0f;}
+\DoxyCodeLine{01238\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ color\_u16\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a598d6ea3ba27a788b12341a5263c7881}{float\_to\_int\_rtn}}(color\_f32);}
+\DoxyCodeLine{01239\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a61add2970baac5cf6b04177472ae1ed1}{store}}(color\_u16,\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_abb86a3a9a9bf54d5138c1883ed6159a5}{constant\_color}});}
+\DoxyCodeLine{01240\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01241\ }
+\DoxyCodeLine{01242\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}exit"{}},\ \textcolor{stringliteral}{"{}quality\ hit"{}});}
+\DoxyCodeLine{01243\ }
+\DoxyCodeLine{01244\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_af7b1f1696c0ee5cbfd6f2546fa400011}{symbolic\_to\_physical}}(bsd,\ scb,\ pcb);}
+\DoxyCodeLine{01245\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{01246\ \ \ \ \ \}}
+\DoxyCodeLine{01247\ }
+\DoxyCodeLine{01248\ \textcolor{preprocessor}{\#if\ !defined(ASTCENC\_DIAGNOSTICS)}}
+\DoxyCodeLine{01249\ \ \ \ \ \textcolor{keywordtype}{float}\ error\_weight\_sum\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}})\ *\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}};}
+\DoxyCodeLine{01250\ \ \ \ \ \textcolor{keywordtype}{float}\ error\_threshold\ =\ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a2065412aaae88cff4e1f648946e13181}{tune\_db\_limit}}}
+\DoxyCodeLine{01251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ error\_weight\_sum}
+\DoxyCodeLine{01252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ block\_is\_l\_scale}
+\DoxyCodeLine{01253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ block\_is\_la\_scale;}
+\DoxyCodeLine{01254\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01255\ }
+\DoxyCodeLine{01256\ \ \ \ \ \textcolor{comment}{//\ Set\ SCB\ and\ mode\ errors\ to\ a\ very\ high\ error\ value}}
+\DoxyCodeLine{01257\ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4ed0a59a081d379e15d29e29f761d105}{errorval}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{01258\ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}};}
+\DoxyCodeLine{01259\ }
+\DoxyCodeLine{01260\ \ \ \ \ \textcolor{keywordtype}{float}\ best\_errorvals\_for\_pcount[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}]\ \{}
+\DoxyCodeLine{01261\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}},\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}},\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}},\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}}}
+\DoxyCodeLine{01262\ \ \ \ \ \};}
+\DoxyCodeLine{01263\ }
+\DoxyCodeLine{01264\ \ \ \ \ \textcolor{keywordtype}{float}\ exit\_thresholds\_for\_pcount[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}]\ \{}
+\DoxyCodeLine{01265\ \ \ \ \ \ \ \ \ 0.0f,}
+\DoxyCodeLine{01266\ \ \ \ \ \ \ \ \ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a428f0ba612186c229f66865dd615d567}{tune\_2partition\_early\_out\_limit\_factor}},}
+\DoxyCodeLine{01267\ \ \ \ \ \ \ \ \ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_adb6bf5fd3979c612e5c6b377c6aca281}{tune\_3partition\_early\_out\_limit\_factor}},}
+\DoxyCodeLine{01268\ \ \ \ \ \ \ \ \ 0.0f}
+\DoxyCodeLine{01269\ \ \ \ \ \};}
+\DoxyCodeLine{01270\ }
+\DoxyCodeLine{01271\ \ \ \ \ \textcolor{comment}{//\ Trial\ using\ 1\ plane\ of\ weights\ and\ 1\ partition.}}
+\DoxyCodeLine{01272\ }
+\DoxyCodeLine{01273\ \ \ \ \ \textcolor{comment}{//\ Most\ of\ the\ time\ we\ test\ it\ twice,\ first\ with\ a\ mode\ cutoff\ of\ 0\ and\ then\ with\ the\ specified}}
+\DoxyCodeLine{01274\ \ \ \ \ \textcolor{comment}{//\ mode\ cutoff.\ This\ causes\ an\ early-\/out\ that\ speeds\ up\ encoding\ of\ easy\ blocks.\ However,\ this}}
+\DoxyCodeLine{01275\ \ \ \ \ \textcolor{comment}{//\ optimization\ is\ disabled\ for\ 4x4\ and\ 5x4\ blocks\ where\ it\ nearly\ always\ slows\ down\ the}}
+\DoxyCodeLine{01276\ \ \ \ \ \textcolor{comment}{//\ compression\ and\ slightly\ reduces\ image\ quality.}}
+\DoxyCodeLine{01277\ }
+\DoxyCodeLine{01278\ \ \ \ \ \textcolor{keywordtype}{float}\ errorval\_mult[2]\ \{}
+\DoxyCodeLine{01279\ \ \ \ \ \ \ \ \ 1.0f\ /\ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a1ca7ffa6cf39b0236c3ac07a81e41748}{tune\_mse\_overshoot}},}
+\DoxyCodeLine{01280\ \ \ \ \ \ \ \ \ 1.0f}
+\DoxyCodeLine{01281\ \ \ \ \ \};}
+\DoxyCodeLine{01282\ }
+\DoxyCodeLine{01283\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ errorval\_overshoot\ =\ 1.0f\ /\ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a1ca7ffa6cf39b0236c3ac07a81e41748}{tune\_mse\_overshoot}};}
+\DoxyCodeLine{01284\ }
+\DoxyCodeLine{01285\ \ \ \ \ \textcolor{comment}{//\ Only\ enable\ MODE0\ fast\ path\ if\ enabled}}
+\DoxyCodeLine{01286\ \ \ \ \ \textcolor{comment}{//\ Never\ enable\ for\ 3D\ blocks\ as\ no\ "{}always"{}\ block\ modes\ are\ available}}
+\DoxyCodeLine{01287\ \ \ \ \ \textcolor{keywordtype}{int}\ start\_trial\ =\ 1;}
+\DoxyCodeLine{01288\ \ \ \ \ \textcolor{keywordflow}{if}\ ((ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a00c34d7b516c391a763592497da58312}{tune\_search\_mode0\_enable}}\ >=\ \mbox{\hyperlink{astcenc__internal_8h_a77719561fe7247229ad508e772123418}{TUNE\_MIN\_SEARCH\_MODE0}})\ \&\&\ (bsd.\mbox{\hyperlink{structblock__size__descriptor_afc7428efe69cba2425ae335d9d266714}{zdim}}\ ==\ 1))}
+\DoxyCodeLine{01289\ \ \ \ \ \{}
+\DoxyCodeLine{01290\ \ \ \ \ \ \ \ \ start\_trial\ =\ 0;}
+\DoxyCodeLine{01291\ \ \ \ \ \}}
+\DoxyCodeLine{01292\ }
+\DoxyCodeLine{01293\ \ \ \ \ \textcolor{keywordtype}{int}\ quant\_limit\ =\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a740abcbb2f534ff0c4cf49053e7f507b}{QUANT\_32}};}
+\DoxyCodeLine{01294\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ start\_trial;\ i\ <\ 2;\ i++)}
+\DoxyCodeLine{01295\ \ \ \ \ \{}
+\DoxyCodeLine{01296\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_ae040957570ced46496efbca3b734cffa}{TRACE\_NODE}}(node1,\ \textcolor{stringliteral}{"{}pass"{}});}
+\DoxyCodeLine{01297\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}partition\_count"{}},\ 1);}
+\DoxyCodeLine{01298\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}plane\_count"{}},\ 1);}
+\DoxyCodeLine{01299\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}search\_mode"{}},\ i);}
+\DoxyCodeLine{01300\ }
+\DoxyCodeLine{01301\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ errorval\ =\ \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_af5f518a15600c71922e69267dea2db99}{compress\_symbolic\_block\_for\_partition\_1plane}}(}
+\DoxyCodeLine{01302\ \ \ \ \ \ \ \ \ \ \ \ \ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}},\ bsd,\ blk,\ i\ ==\ 0,}
+\DoxyCodeLine{01303\ \ \ \ \ \ \ \ \ \ \ \ \ error\_threshold\ *\ errorval\_mult[i]\ *\ errorval\_overshoot,}
+\DoxyCodeLine{01304\ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 0,\ \ scb,\ tmpbuf,\ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a740abcbb2f534ff0c4cf49053e7f507b}{QUANT\_32}});}
+\DoxyCodeLine{01305\ }
+\DoxyCodeLine{01306\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Record\ the\ quant\ level\ so\ we\ can\ use\ the\ filter\ later\ searches}}
+\DoxyCodeLine{01307\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a13608eb55e48c96b6243f4830278ebf3}{get\_block\_mode}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}});}
+\DoxyCodeLine{01308\ \ \ \ \ \ \ \ \ quant\_limit\ =\ bm.\mbox{\hyperlink{structblock__mode_a760578093fb16da4932bc26d2d5c1837}{get\_weight\_quant\_mode}}();}
+\DoxyCodeLine{01309\ }
+\DoxyCodeLine{01310\ \ \ \ \ \ \ \ \ best\_errorvals\_for\_pcount[0]\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(best\_errorvals\_for\_pcount[0],\ errorval);}
+\DoxyCodeLine{01311\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ <\ (error\_threshold\ *\ errorval\_mult[i]))}
+\DoxyCodeLine{01312\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01313\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}exit"{}},\ \textcolor{stringliteral}{"{}quality\ hit"{}});}
+\DoxyCodeLine{01314\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ END\_OF\_TESTS;}
+\DoxyCodeLine{01315\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01316\ \ \ \ \ \}}
+\DoxyCodeLine{01317\ }
+\DoxyCodeLine{01318\ \textcolor{preprocessor}{\#if\ !defined(ASTCENC\_DIAGNOSTICS)}}
+\DoxyCodeLine{01319\ \ \ \ \ lowest\_correl\ =\ \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_a6ac5bc5977155d0c8433492cd1985ce6}{prepare\_block\_statistics}}(bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}},\ blk);}
+\DoxyCodeLine{01320\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01321\ }
+\DoxyCodeLine{01322\ \ \ \ \ block\_skip\_two\_plane\ =\ lowest\_correl\ >\ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}}.\mbox{\hyperlink{structastcenc__config_a01cfcdc6f3903a6b7fc96ebda9550102}{tune\_2plane\_early\_out\_limit\_correlation}};}
+\DoxyCodeLine{01323\ }
+\DoxyCodeLine{01324\ \ \ \ \ \textcolor{comment}{//\ Test\ the\ four\ possible\ 1-\/partition,\ 2-\/planes\ modes.\ Do\ this\ in\ reverse,\ as}}
+\DoxyCodeLine{01325\ \ \ \ \ \textcolor{comment}{//\ alpha\ is\ the\ most\ likely\ to\ be\ non-\/correlated\ if\ it\ is\ present\ in\ the\ data.}}
+\DoxyCodeLine{01326\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{astcenc__internal_8h_acfaa28ad6768cb0ebe7f535fc8a9e6df}{BLOCK\_MAX\_COMPONENTS}}\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{01327\ \ \ \ \ \{}
+\DoxyCodeLine{01328\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_ae040957570ced46496efbca3b734cffa}{TRACE\_NODE}}(node1,\ \textcolor{stringliteral}{"{}pass"{}});}
+\DoxyCodeLine{01329\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}partition\_count"{}},\ 1);}
+\DoxyCodeLine{01330\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}plane\_count"{}},\ 2);}
+\DoxyCodeLine{01331\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}plane\_component"{}},\ i);}
+\DoxyCodeLine{01332\ }
+\DoxyCodeLine{01333\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (block\_skip\_two\_plane)}
+\DoxyCodeLine{01334\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01335\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}skip"{}},\ \textcolor{stringliteral}{"{}tune\_2plane\_early\_out\_limit\_correlation"{}});}
+\DoxyCodeLine{01336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{01337\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01338\ }
+\DoxyCodeLine{01339\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (blk.\mbox{\hyperlink{structimage__block_a3250483facfd20ef4d418bd5f3ef4acb}{grayscale}}\ \&\&\ i\ !=\ 3)}
+\DoxyCodeLine{01340\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01341\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}skip"{}},\ \textcolor{stringliteral}{"{}grayscale\ block"{}});}
+\DoxyCodeLine{01342\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{01343\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01344\ }
+\DoxyCodeLine{01345\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (blk.\mbox{\hyperlink{structimage__block_ae3c0735355d378591db6cb7a011e381a}{is\_constant\_channel}}(i))}
+\DoxyCodeLine{01346\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01347\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}skip"{}},\ \textcolor{stringliteral}{"{}constant\ component"{}});}
+\DoxyCodeLine{01348\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{01349\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01350\ }
+\DoxyCodeLine{01351\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ errorval\ =\ \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_af11a976c8ea386db054bef472ce0667c}{compress\_symbolic\_block\_for\_partition\_2planes}}(}
+\DoxyCodeLine{01352\ \ \ \ \ \ \ \ \ \ \ \ \ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}},\ bsd,\ blk,\ error\_threshold\ *\ errorval\_overshoot,}
+\DoxyCodeLine{01353\ \ \ \ \ \ \ \ \ \ \ \ \ i,\ scb,\ tmpbuf,\ quant\_limit);}
+\DoxyCodeLine{01354\ }
+\DoxyCodeLine{01355\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ attempting\ two\ planes\ is\ much\ worse\ than\ the\ best\ one\ plane\ result}}
+\DoxyCodeLine{01356\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ then\ further\ two\ plane\ searches\ are\ unlikely\ to\ help\ so\ move\ on\ ...}}
+\DoxyCodeLine{01357\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ >\ (best\_errorvals\_for\_pcount[0]\ *\ 1.85f))}
+\DoxyCodeLine{01358\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01359\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01360\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01361\ }
+\DoxyCodeLine{01362\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ <\ error\_threshold)}
+\DoxyCodeLine{01363\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01364\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}exit"{}},\ \textcolor{stringliteral}{"{}quality\ hit"{}});}
+\DoxyCodeLine{01365\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ END\_OF\_TESTS;}
+\DoxyCodeLine{01366\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01367\ \ \ \ \ \}}
+\DoxyCodeLine{01368\ }
+\DoxyCodeLine{01369\ \ \ \ \ \textcolor{comment}{//\ Find\ best\ blocks\ for\ 2,\ 3\ and\ 4\ partitions}}
+\DoxyCodeLine{01370\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ partition\_count\ =\ 2;\ partition\_count\ <=\ max\_partitions;\ partition\_count++)}
+\DoxyCodeLine{01371\ \ \ \ \ \{}
+\DoxyCodeLine{01372\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_indices[\mbox{\hyperlink{astcenc__internal_8h_a5ac3c00190d37f2011afffd4fe1f95b2}{TUNE\_MAX\_PARTITIONING\_CANDIDATES}}];}
+\DoxyCodeLine{01373\ }
+\DoxyCodeLine{01374\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ requested\_indices\ =\ requested\_partition\_indices[partition\_count\ -\/\ 2];}
+\DoxyCodeLine{01375\ }
+\DoxyCodeLine{01376\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ requested\_trials\ =\ requested\_partition\_trials[partition\_count\ -\/\ 2];}
+\DoxyCodeLine{01377\ \ \ \ \ \ \ \ \ requested\_trials\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(requested\_trials,\ requested\_indices);}
+\DoxyCodeLine{01378\ }
+\DoxyCodeLine{01379\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ actual\_trials\ =\ \mbox{\hyperlink{astcenc__find__best__partitioning_8cpp_a7577b3047a3f9f0fe44fd579f5450630}{find\_best\_partition\_candidates}}(}
+\DoxyCodeLine{01380\ \ \ \ \ \ \ \ \ \ \ \ \ bsd,\ blk,\ partition\_count,\ requested\_indices,\ partition\_indices,\ requested\_trials);}
+\DoxyCodeLine{01381\ }
+\DoxyCodeLine{01382\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ best\_error\_in\_prev\ =\ best\_errorvals\_for\_pcount[partition\_count\ -\/\ 2];}
+\DoxyCodeLine{01383\ }
+\DoxyCodeLine{01384\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ actual\_trials;\ i++)}
+\DoxyCodeLine{01385\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01386\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_ae040957570ced46496efbca3b734cffa}{TRACE\_NODE}}(node1,\ \textcolor{stringliteral}{"{}pass"{}});}
+\DoxyCodeLine{01387\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}partition\_count"{}},\ partition\_count);}
+\DoxyCodeLine{01388\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}partition\_index"{}},\ partition\_indices[i]);}
+\DoxyCodeLine{01389\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}plane\_count"{}},\ 1);}
+\DoxyCodeLine{01390\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}search\_mode"{}},\ i);}
+\DoxyCodeLine{01391\ }
+\DoxyCodeLine{01392\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ errorval\ =\ \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_af5f518a15600c71922e69267dea2db99}{compress\_symbolic\_block\_for\_partition\_1plane}}(}
+\DoxyCodeLine{01393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ctx.\mbox{\hyperlink{structastcenc__contexti_a169469c116fecc2371f4a5621d649f30}{config}},\ bsd,\ blk,\ \textcolor{keyword}{false},}
+\DoxyCodeLine{01394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ error\_threshold\ *\ errorval\_overshoot,}
+\DoxyCodeLine{01395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ partition\_count,\ partition\_indices[i],}
+\DoxyCodeLine{01396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb,\ tmpbuf,\ quant\_limit);}
+\DoxyCodeLine{01397\ }
+\DoxyCodeLine{01398\ \ \ \ \ \ \ \ \ \ \ \ \ best\_errorvals\_for\_pcount[partition\_count\ -\/\ 1]\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(best\_errorvals\_for\_pcount[partition\_count\ -\/\ 1],\ errorval);}
+\DoxyCodeLine{01399\ }
+\DoxyCodeLine{01400\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ using\ N\ partitions\ doesn't\ improve\ much\ over\ using\ N-\/1\ partitions\ then\ skip\ trying}}
+\DoxyCodeLine{01401\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ N+1.\ Error\ can\ dramatically\ improve\ if\ the\ data\ is\ correlated\ or\ non-\/correlated\ and}}
+\DoxyCodeLine{01402\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ aligns\ with\ a\ partitioning\ that\ suits\ that\ encoding,\ so\ for\ this\ inner\ loop\ check\ add}}
+\DoxyCodeLine{01403\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ a\ large\ error\ scale\ because\ the\ "{}other"{}\ trial\ could\ be\ a\ lot\ better.}}
+\DoxyCodeLine{01404\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ best\_error\ =\ best\_errorvals\_for\_pcount[partition\_count\ -\/\ 1];}
+\DoxyCodeLine{01405\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ best\_error\_scale\ =\ exit\_thresholds\_for\_pcount[partition\_count\ -\/\ 1]\ *\ 1.85f;}
+\DoxyCodeLine{01406\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (best\_error\ >\ (best\_error\_in\_prev\ *\ best\_error\_scale))}
+\DoxyCodeLine{01407\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}skip"{}},\ \textcolor{stringliteral}{"{}tune\_partition\_early\_out\_limit\_factor"{}});}
+\DoxyCodeLine{01409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ END\_OF\_TESTS;}
+\DoxyCodeLine{01410\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01411\ }
+\DoxyCodeLine{01412\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ <\ error\_threshold)}
+\DoxyCodeLine{01413\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}exit"{}},\ \textcolor{stringliteral}{"{}quality\ hit"{}});}
+\DoxyCodeLine{01415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ END\_OF\_TESTS;}
+\DoxyCodeLine{01416\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01417\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01418\ }
+\DoxyCodeLine{01419\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ using\ N\ partitions\ doesn't\ improve\ much\ over\ using\ N-\/1\ partitions\ then\ skip\ trying\ N+1}}
+\DoxyCodeLine{01420\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ best\_error\ =\ best\_errorvals\_for\_pcount[partition\_count\ -\/\ 1];}
+\DoxyCodeLine{01421\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ best\_error\_scale\ =\ exit\_thresholds\_for\_pcount[partition\_count\ -\/\ 1];}
+\DoxyCodeLine{01422\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (best\_error\ >\ (best\_error\_in\_prev\ *\ best\_error\_scale))}
+\DoxyCodeLine{01423\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01424\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}skip"{}},\ \textcolor{stringliteral}{"{}tune\_partition\_early\_out\_limit\_factor"{}});}
+\DoxyCodeLine{01425\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ END\_OF\_TESTS;}
+\DoxyCodeLine{01426\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01427\ \ \ \ \ \}}
+\DoxyCodeLine{01428\ }
+\DoxyCodeLine{01429\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}exit"{}},\ \textcolor{stringliteral}{"{}quality\ not\ hit"{}});}
+\DoxyCodeLine{01430\ }
+\DoxyCodeLine{01431\ END\_OF\_TESTS:}
+\DoxyCodeLine{01432\ \ \ \ \ \textcolor{comment}{//\ If\ we\ still\ have\ an\ error\ block\ then\ convert\ to\ something\ we\ can\ encode}}
+\DoxyCodeLine{01433\ \ \ \ \ \textcolor{comment}{//\ TODO:\ Do\ something\ more\ sensible\ here,\ such\ as\ average\ color\ block}}
+\DoxyCodeLine{01434\ \ \ \ \ \textcolor{keywordflow}{if}\ (scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ ==\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}})}
+\DoxyCodeLine{01435\ \ \ \ \ \{}
+\DoxyCodeLine{01436\ \textcolor{preprocessor}{\#if\ defined(ASTCENC\_DIAGNOSTICS)}}
+\DoxyCodeLine{01437\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ printed\_once\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{01438\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!printed\_once)}
+\DoxyCodeLine{01439\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01440\ \ \ \ \ \ \ \ \ \ \ \ \ printed\_once\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01441\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}WARN:\ At\ least\ one\ block\ failed\ to\ find\ a\ valid\ encoding.\(\backslash\)n"{}}}
+\DoxyCodeLine{01442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ \ \ Try\ increasing\ compression\ quality\ settings.\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{01443\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01444\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01445\ }
+\DoxyCodeLine{01446\ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_adb59df7fefb94a8c52948d49ce70b1f5}{SYM\_BTYPE\_CONST\_U16}};}
+\DoxyCodeLine{01447\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\_f32\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ae91c0bb0ebd82ed2a7fa7aa915f6e76e}{clamp}}(0.0f,\ 1.0f,\ blk.\mbox{\hyperlink{structimage__block_a111c7f9821d5ebe6e9d0140f800c6bc2}{origin\_texel}})\ *\ 65535.0f;}
+\DoxyCodeLine{01448\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ color\_u16\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a598d6ea3ba27a788b12341a5263c7881}{float\_to\_int\_rtn}}(color\_f32);}
+\DoxyCodeLine{01449\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a61add2970baac5cf6b04177472ae1ed1}{store}}(color\_u16,\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_abb86a3a9a9bf54d5138c1883ed6159a5}{constant\_color}});}
+\DoxyCodeLine{01450\ \ \ \ \ \}}
+\DoxyCodeLine{01451\ }
+\DoxyCodeLine{01452\ \ \ \ \ \textcolor{comment}{//\ Compress\ to\ a\ physical\ block}}
+\DoxyCodeLine{01453\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_af7b1f1696c0ee5cbfd6f2546fa400011}{symbolic\_to\_physical}}(bsd,\ scb,\ pcb);}
+\DoxyCodeLine{01454\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{astcenc__compress__symbolic_8cpp_a579b9a2ceeecda2fb3abe63b8311df1c_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__compress__symbolic_8cpp_a579b9a2ceeecda2fb3abe63b8311df1c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__compress__symbolic_8cpp_af5f518a15600c71922e69267dea2db99}\index{astcenc\_compress\_symbolic.cpp@{astcenc\_compress\_symbolic.cpp}!compress\_symbolic\_block\_for\_partition\_1plane@{compress\_symbolic\_block\_for\_partition\_1plane}}
+\index{compress\_symbolic\_block\_for\_partition\_1plane@{compress\_symbolic\_block\_for\_partition\_1plane}!astcenc\_compress\_symbolic.cpp@{astcenc\_compress\_symbolic.cpp}}
+\doxysubsubsection{\texorpdfstring{compress\_symbolic\_block\_for\_partition\_1plane()}{compress\_symbolic\_block\_for\_partition\_1plane()}}
+{\footnotesize\ttfamily \label{astcenc__compress__symbolic_8cpp_af5f518a15600c71922e69267dea2db99} 
+static float compress\+\_\+symbolic\+\_\+block\+\_\+for\+\_\+partition\+\_\+1plane (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structastcenc__config}{astcenc\+\_\+config}} \&}]{config}{, }\item[{const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&}]{bsd}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{, }\item[{bool}]{only\+\_\+always}{, }\item[{float}]{tune\+\_\+errorval\+\_\+threshold}{, }\item[{unsigned int}]{partition\+\_\+count}{, }\item[{unsigned int}]{partition\+\_\+index}{, }\item[{\mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&}]{scb}{, }\item[{\mbox{\hyperlink{structcompression__working__buffers}{compression\+\_\+working\+\_\+buffers}} \&}]{tmpbuf}{, }\item[{int}]{quant\+\_\+limit}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compress a block using a chosen partitioning and 1 plane of weights. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em config} & The compressor configuration. \\
+\hline
+ & {\em bsd} & The block size information. \\
+\hline
+ & {\em blk} & The image block color data to compress. \\
+\hline
+ & {\em only\+\_\+always} & True if we only use "{}always"{} percentile block modes. \\
+\hline
+ & {\em tune\+\_\+errorval\+\_\+threshold} & The error value threshold. \\
+\hline
+ & {\em partition\+\_\+count} & The partition count. \\
+\hline
+ & {\em partition\+\_\+index} & The partition index if {\ttfamily partition\+\_\+count} is 2-\/4. \\
+\hline
+\mbox{\texttt{ out}}  & {\em scb} & The symbolic compressed block output. \\
+\hline
+\mbox{\texttt{ out}}  & {\em tmpbuf} & The quantized weights for plane 1. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__compress__symbolic_8cpp_source}{astcenc\+\_\+compress\+\_\+symbolic.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_source_l00353}{353}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00364\ \ \ \{}
+\DoxyCodeLine{00365\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partition\_count\ >\ 0);}
+\DoxyCodeLine{00366\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(config.\mbox{\hyperlink{structastcenc__config_a1985670205a89fcb92ba1995e6645c5e}{tune\_candidate\_limit}}\ >\ 0);}
+\DoxyCodeLine{00367\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(config.\mbox{\hyperlink{structastcenc__config_ae756e28f11bd615a23198c4ae2b1e90f}{tune\_refinement\_limit}}\ >\ 0);}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keywordtype}{int}\ max\_weight\_quant\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a740abcbb2f534ff0c4cf49053e7f507b}{QUANT\_32}}),\ quant\_limit);}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keyword}{auto}\ compute\_difference\ =\ \&\mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_a0541138e65930f39f6caba517e76dfe4}{compute\_symbolic\_block\_difference\_1plane}};}
+\DoxyCodeLine{00372\ \ \ \ \ \textcolor{keywordflow}{if}\ ((partition\_count\ ==\ 1)\ \&\&\ !(config.\mbox{\hyperlink{structastcenc__config_a7175e94561eeb3b83f8bf4549306cf95}{flags}}\ \&\ \mbox{\hyperlink{astcenc_8h_a95967a4184547bc51b3f993c8a3b9643}{ASTCENC\_FLG\_MAP\_RGBM}}))}
+\DoxyCodeLine{00373\ \ \ \ \ \{}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ compute\_difference\ =\ \&\mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_aff8e27acd948a9cc5631d99c80906b2f}{compute\_symbolic\_block\_difference\_1plane\_1partition}};}
+\DoxyCodeLine{00375\ \ \ \ \ \}}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pi\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_aa9dfc7b23c8b5e6c71e956e2e39fff74}{get\_partition\_info}}(partition\_count,\ partition\_index);}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \ \ \ \ \textcolor{comment}{//\ Compute\ ideal\ weights\ and\ endpoint\ colors,\ with\ no\ quantization\ or\ decimation}}
+\DoxyCodeLine{00380\ \ \ \ \ \mbox{\hyperlink{structendpoints__and__weights}{endpoints\_and\_weights}}\&\ ei\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a070cf57364cb941b7561a4e1e1822d2e}{ei1}};}
+\DoxyCodeLine{00381\ \ \ \ \ \mbox{\hyperlink{astcenc__ideal__endpoints__and__weights_8cpp_afa8cab65d4b6f0cbece52eec38aed523}{compute\_ideal\_colors\_and\_weights\_1plane}}(blk,\ pi,\ ei);}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{comment}{//\ Compute\ ideal\ weights\ and\ endpoint\ colors\ for\ every\ decimation}}
+\DoxyCodeLine{00384\ \ \ \ \ \textcolor{keywordtype}{float}*\ dec\_weights\_ideal\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a6278293acd8d45aa6f45dcfe9e4be422}{dec\_weights\_ideal}};}
+\DoxyCodeLine{00385\ \ \ \ \ uint8\_t*\ dec\_weights\_uquant\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a33ad8f5749b317b98c354041cacbc403}{dec\_weights\_uquant}};}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \ \ \ \ \textcolor{comment}{//\ For\ each\ decimation\ mode,\ compute\ an\ ideal\ set\ of\ weights\ with\ no\ quantization}}
+\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_decimation\_modes\ =\ only\_always\ ?\ bsd.\mbox{\hyperlink{structblock__size__descriptor_ab9f7c875237ad395d3795506d934dba1}{decimation\_mode\_count\_always}}}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a5344a8e95df2fe4fe2b396b669993140}{decimation\_mode\_count\_selected}};}
+\DoxyCodeLine{00390\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(max\_decimation\_modes\ >\ 0);}
+\DoxyCodeLine{00391\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ max\_decimation\_modes;\ i++)}
+\DoxyCodeLine{00392\ \ \ \ \ \{}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ dm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_aef601af82748a14a8826e94f5e1b4184}{get\_decimation\_mode}}(i);}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!dm.is\_ref\_1plane(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\textcolor{keyword}{>}(max\_weight\_quant)))}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ di\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(i);}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__ideal__endpoints__and__weights_8cpp_ae1b4e922c67d5349fc849709ca08178f}{compute\_ideal\_weights\_for\_decimation}}(}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ ei,}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ di,}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_ideal\ +\ i\ *\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}});}
+\DoxyCodeLine{00405\ \ \ \ \ \}}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00407\ \ \ \ \ \textcolor{comment}{//\ Compute\ maximum\ colors\ for\ the\ endpoints\ and\ ideal\ weights,\ then\ for\ each\ endpoint\ and\ ideal}}
+\DoxyCodeLine{00408\ \ \ \ \ \textcolor{comment}{//\ weight\ pair,\ compute\ the\ smallest\ weight\ that\ will\ result\ in\ a\ color\ value\ greater\ than\ 1}}
+\DoxyCodeLine{00409\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ min\_ep(10.0f);}
+\DoxyCodeLine{00410\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ partition\_count;\ i++)}
+\DoxyCodeLine{00411\ \ \ \ \ \{}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ ep\ =\ (\mbox{\hyperlink{structvfloat4}{vfloat4}}(1.0f)\ -\/\ ei.\mbox{\hyperlink{structendpoints__and__weights_a9b5a8f6a4d2bdbf5993eeba5593228c4}{ep}}.\mbox{\hyperlink{structendpoints_a2a084800ec101a03de2b8deb0d926263}{endpt0}}[i])\ /\ (ei.\mbox{\hyperlink{structendpoints__and__weights_a9b5a8f6a4d2bdbf5993eeba5593228c4}{ep}}.\mbox{\hyperlink{structendpoints_a89660f637b681eaea32e7db6b9d9def2}{endpt1}}[i]\ -\/\ ei.\mbox{\hyperlink{structendpoints__and__weights_a9b5a8f6a4d2bdbf5993eeba5593228c4}{ep}}.\mbox{\hyperlink{structendpoints_a2a084800ec101a03de2b8deb0d926263}{endpt0}}[i]);}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ use\_ep\ =\ (ep\ >\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(0.5f))\ \&\ (ep\ <\ min\_ep);}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ min\_ep\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(min\_ep,\ ep,\ use\_ep);}
+\DoxyCodeLine{00416\ \ \ \ \ \}}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keywordtype}{float}\ min\_wt\_cutoff\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a5618d81f875c0158284ccc9923d83dab}{hmin\_s}}(min\_ep);}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00420\ \ \ \ \ \textcolor{comment}{//\ For\ each\ mode,\ use\ the\ angular\ method\ to\ compute\ a\ shift}}
+\DoxyCodeLine{00421\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_af1b151d02c3af92eb002dc7172111233}{compute\_angular\_endpoints\_1plane}}(}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ only\_always,\ bsd,\ dec\_weights\_ideal,\ max\_weight\_quant,\ tmpbuf);}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00424\ \ \ \ \ \textcolor{keywordtype}{float}*\ weight\_low\_value\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a504af2e4e5a146cd80b52c1b6c93b782}{weight\_low\_value1}};}
+\DoxyCodeLine{00425\ \ \ \ \ \textcolor{keywordtype}{float}*\ weight\_high\_value\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_adebd00f87afd06131aa6e22e12effae2}{weight\_high\_value1}};}
+\DoxyCodeLine{00426\ \ \ \ \ int8\_t*\ qwt\_bitcounts\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a755d631272dfdaeff4f628360595e323}{qwt\_bitcounts}};}
+\DoxyCodeLine{00427\ \ \ \ \ \textcolor{keywordtype}{float}*\ qwt\_errors\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a2b2c71dd6e70f03c1ce362589cf1ffda}{qwt\_errors}};}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \ \ \ \ \textcolor{comment}{//\ For\ each\ mode\ (which\ specifies\ a\ decimation\ and\ a\ quantization):}}
+\DoxyCodeLine{00430\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ *\ Compute\ number\ of\ bits\ needed\ for\ the\ quantized\ weights}}
+\DoxyCodeLine{00431\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ *\ Generate\ an\ optimized\ set\ of\ quantized\ weights}}
+\DoxyCodeLine{00432\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ *\ Compute\ quantization\ errors\ for\ the\ mode}}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00435\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ int8\_t\ free\_bits\_for\_partition\_count[4]\ \{}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ 115\ -\/\ 4,\ 111\ -\/\ 4\ -\/\ \mbox{\hyperlink{astcenc__internal_8h_a51d28e088618b740724c2dd2862fa1f7}{PARTITION\_INDEX\_BITS}},\ 108\ -\/\ 4\ -\/\ \mbox{\hyperlink{astcenc__internal_8h_a51d28e088618b740724c2dd2862fa1f7}{PARTITION\_INDEX\_BITS}},\ 105\ -\/\ 4\ -\/\ \mbox{\hyperlink{astcenc__internal_8h_a51d28e088618b740724c2dd2862fa1f7}{PARTITION\_INDEX\_BITS}}}
+\DoxyCodeLine{00437\ \ \ \ \ \};}
+\DoxyCodeLine{00438\ }
+\DoxyCodeLine{00439\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_block\_modes\ =\ only\_always\ ?\ bsd.\mbox{\hyperlink{structblock__size__descriptor_ae2f4cd561ea1618e1c44f9afbead038f}{block\_mode\_count\_1plane\_always}}}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a2f96c6e4d1e35b4bac8778c474c69bb1}{block\_mode\_count\_1plane\_selected}};}
+\DoxyCodeLine{00441\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(max\_block\_modes\ >\ 0);}
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ max\_block\_modes;\ i++)}
+\DoxyCodeLine{00443\ \ \ \ \ \{}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__mode}{block\_mode}}\&\ bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a82d0bf7e49df4683f0823b4951fb77f8}{block\_modes}}[i];}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bm.\mbox{\hyperlink{structblock__mode_a57910e5bd3d21447cdea6c7789723a86}{quant\_mode}}\ >\ max\_weight\_quant)}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ qwt\_errors[i]\ =\ 1e38f;}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ assert(!bm.\mbox{\hyperlink{structblock__mode_a78b282103d0a8bee2b07c0da075a3dc4}{is\_dual\_plane}});}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ bitcount\ =\ free\_bits\_for\_partition\_count[partition\_count\ -\/\ 1]\ -\/\ bm.\mbox{\hyperlink{structblock__mode_a22f24a51f0c67cad40998833545e675e}{weight\_bits}};}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bitcount\ <=\ 0)}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ qwt\_errors[i]\ =\ 1e38f;}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (weight\_high\_value[i]\ >\ 1.02f\ *\ min\_wt\_cutoff)}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ weight\_high\_value[i]\ =\ 1.0f;}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structdecimation__mode}{decimation\_mode}}\ =\ bm.\mbox{\hyperlink{structblock__mode_aaf9846117d40406d5e84508f429cf949}{decimation\_mode}};}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ di\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(\mbox{\hyperlink{structdecimation__mode}{decimation\_mode}});}
+\DoxyCodeLine{00467\ }
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ qwt\_bitcounts[i]\ =\ \textcolor{keyword}{static\_cast<}int8\_t\textcolor{keyword}{>}(bitcount);}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keywordtype}{float}\ dec\_weights\_uquantf[\mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}}];}
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ the\ optimized\ set\ of\ weights\ for\ the\ weight\ mode}}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__ideal__endpoints__and__weights_8cpp_af42cf444db5f16e2ed4fb642acf81f4a}{compute\_quantized\_weights\_for\_decimation}}(}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ di,}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ weight\_low\_value[i],\ weight\_high\_value[i],}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_ideal\ +\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}}\ *\ \mbox{\hyperlink{structdecimation__mode}{decimation\_mode}},}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_uquantf,}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_uquant\ +\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}}\ *\ i,}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ bm.\mbox{\hyperlink{structblock__mode_a760578093fb16da4932bc26d2d5c1837}{get\_weight\_quant\_mode}}());}
+\DoxyCodeLine{00480\ }
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ weight\ quantization\ errors\ for\ the\ block\ mode}}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ qwt\_errors[i]\ =\ \mbox{\hyperlink{astcenc__ideal__endpoints__and__weights_8cpp_aa4077e6408620eefddd42b7e159dc93c}{compute\_error\_of\_weight\_set\_1plane}}(}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ ei,}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ di,}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_uquantf);}
+\DoxyCodeLine{00486\ \ \ \ \ \}}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00488\ \ \ \ \ \textcolor{comment}{//\ Decide\ the\ optimal\ combination\ of\ color\ endpoint\ encodings\ and\ weight\ encodings}}
+\DoxyCodeLine{00489\ \ \ \ \ uint8\_t\ partition\_format\_specifiers[\mbox{\hyperlink{astcenc__internal_8h_a0f2aba262e65e945037f4ed5dda3f2f9}{TUNE\_MAX\_TRIAL\_CANDIDATES}}][\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00490\ \ \ \ \ \textcolor{keywordtype}{int}\ block\_mode\_index[\mbox{\hyperlink{astcenc__internal_8h_a0f2aba262e65e945037f4ed5dda3f2f9}{TUNE\_MAX\_TRIAL\_CANDIDATES}}];}
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00492\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\ color\_quant\_level[\mbox{\hyperlink{astcenc__internal_8h_a0f2aba262e65e945037f4ed5dda3f2f9}{TUNE\_MAX\_TRIAL\_CANDIDATES}}];}
+\DoxyCodeLine{00493\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\ color\_quant\_level\_mod[\mbox{\hyperlink{astcenc__internal_8h_a0f2aba262e65e945037f4ed5dda3f2f9}{TUNE\_MAX\_TRIAL\_CANDIDATES}}];}
+\DoxyCodeLine{00494\ }
+\DoxyCodeLine{00495\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ candidate\_count\ =\ \mbox{\hyperlink{astcenc__internal_8h_a81c7b68e8c7b82a5ff718f21bd4f3c35}{compute\_ideal\_endpoint\_formats}}(}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ pi,\ blk,\ ei.\mbox{\hyperlink{structendpoints__and__weights_a9b5a8f6a4d2bdbf5993eeba5593228c4}{ep}},\ qwt\_bitcounts,\ qwt\_errors,}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a1985670205a89fcb92ba1995e6645c5e}{tune\_candidate\_limit}},\ 0,\ max\_block\_modes,}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ partition\_format\_specifiers,\ block\_mode\_index,}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ color\_quant\_level,\ color\_quant\_level\_mod,\ tmpbuf);}
+\DoxyCodeLine{00500\ }
+\DoxyCodeLine{00501\ \ \ \ \ \textcolor{comment}{//\ Iterate\ over\ the\ N\ believed-\/to-\/be-\/best\ modes\ to\ find\ out\ which\ one\ is\ actually\ best}}
+\DoxyCodeLine{00502\ \ \ \ \ \textcolor{keywordtype}{float}\ best\_errorval\_in\_mode\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00503\ \ \ \ \ \textcolor{keywordtype}{float}\ best\_errorval\_in\_scb\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4ed0a59a081d379e15d29e29f761d105}{errorval}};}
+\DoxyCodeLine{00504\ }
+\DoxyCodeLine{00505\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ candidate\_count;\ i++)}
+\DoxyCodeLine{00506\ \ \ \ \ \{}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_ae040957570ced46496efbca3b734cffa}{TRACE\_NODE}}(node0,\ \textcolor{stringliteral}{"{}candidate"{}});}
+\DoxyCodeLine{00508\ }
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ bm\_packed\_index\ =\ block\_mode\_index[i];}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ assert(bm\_packed\_index\ >=\ 0\ \&\&\ bm\_packed\_index\ <\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(bsd.\mbox{\hyperlink{structblock__size__descriptor_a2f96c6e4d1e35b4bac8778c474c69bb1}{block\_mode\_count\_1plane\_selected}}));}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__mode}{block\_mode}}\&\ qw\_bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a82d0bf7e49df4683f0823b4951fb77f8}{block\_modes}}[bm\_packed\_index];}
+\DoxyCodeLine{00512\ }
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structdecimation__mode}{decimation\_mode}}\ =\ qw\_bm.\mbox{\hyperlink{structblock__mode_aaf9846117d40406d5e84508f429cf949}{decimation\_mode}};}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ di\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(\mbox{\hyperlink{structdecimation__mode}{decimation\_mode}});}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(di.weight\_count\ >\ 0);}
+\DoxyCodeLine{00516\ }
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}weight\_x"{}},\ di.weight\_x);}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}weight\_y"{}},\ di.weight\_y);}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}weight\_z"{}},\ di.weight\_z);}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}weight\_quant"{}},\ qw\_bm.\mbox{\hyperlink{structblock__mode_a57910e5bd3d21447cdea6c7789723a86}{quant\_mode}});}
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Recompute\ the\ ideal\ color\ endpoints\ before\ storing\ them}}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ rgbs\_colors[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ rgbo\_colors[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00525\ }
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\_compressed\_block}}\ workscb;}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structendpoints}{endpoints}}\ workep\ =\ ei.\mbox{\hyperlink{structendpoints__and__weights_a9b5a8f6a4d2bdbf5993eeba5593228c4}{ep}};}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ uint8\_t*\ u8\_weight\_src\ =\ dec\_weights\_uquant\ +\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}}\ *\ bm\_packed\_index;}
+\DoxyCodeLine{00530\ }
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ di.weight\_count;\ j++)}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}[j]\ =\ u8\_weight\_src[j];}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00535\ }
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ l\ =\ 0;\ l\ <\ config.\mbox{\hyperlink{structastcenc__config_ae756e28f11bd615a23198c4ae2b1e90f}{tune\_refinement\_limit}};\ l++)}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__ideal__endpoints__and__weights_8cpp_a02bcad94240678ee727ccf2f0fbfb5d3}{recompute\_ideal\_colors\_1plane}}(}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ blk,\ pi,\ di,\ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}},}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workep,\ rgbs\_colors,\ rgbo\_colors);}
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Quantize\ the\ chosen\ color,\ tracking\ if\ worth\ trying\ the\ mod\ value}}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ all\_same\ =\ color\_quant\_level[i]\ !=\ color\_quant\_level\_mod[i];}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ partition\_count;\ j++)}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[j]\ =\ \mbox{\hyperlink{astcenc__color__quantize_8cpp_ab9f9b564c57688af1f8fc1d9e000af81}{pack\_color\_endpoints}}(}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workep.\mbox{\hyperlink{structendpoints_a2a084800ec101a03de2b8deb0d926263}{endpt0}}[j],}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workep.\mbox{\hyperlink{structendpoints_a89660f637b681eaea32e7db6b9d9def2}{endpt1}}[j],}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rgbs\_colors[j],}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rgbo\_colors[j],}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ partition\_format\_specifiers[i][j],}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_ad539bb907ce654690e8a89cf62196f9c}{color\_values}}[j],}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color\_quant\_level[i]);}
+\DoxyCodeLine{00554\ }
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ all\_same\ =\ all\_same\ \&\&\ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[j]\ ==\ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[0];}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00557\ }
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ all\ the\ color\ endpoint\ modes\ are\ the\ same,\ we\ get\ a\ few\ more\ bits\ to\ store\ colors;}}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ let's\ see\ if\ we\ can\ take\ advantage\ of\ this:\ requantize\ all\ the\ colors\ and\ see\ if\ the}}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ endpoint\ modes\ remain\ the\ same.}}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a2ad392432ebf011c42f7a72f49000d13}{color\_formats\_matched}}\ =\ 0;}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (partition\_count\ >=\ 2\ \&\&\ all\_same)}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ colorvals[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}][8];}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ color\_formats\_mod[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}]\ \{\ 0\ \};}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ all\_same\_mod\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ partition\_count;\ j++)}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color\_formats\_mod[j]\ =\ \mbox{\hyperlink{astcenc__color__quantize_8cpp_ab9f9b564c57688af1f8fc1d9e000af81}{pack\_color\_endpoints}}(}
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workep.\mbox{\hyperlink{structendpoints_a2a084800ec101a03de2b8deb0d926263}{endpt0}}[j],}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workep.\mbox{\hyperlink{structendpoints_a89660f637b681eaea32e7db6b9d9def2}{endpt1}}[j],}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rgbs\_colors[j],}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rgbo\_colors[j],}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ partition\_format\_specifiers[i][j],}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colorvals[j],}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color\_quant\_level\_mod[i]);}
+\DoxyCodeLine{00577\ }
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Early\ out\ as\ soon\ as\ it's\ no\ longer\ possible\ to\ use\ mod}}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (color\_formats\_mod[j]\ !=\ color\_formats\_mod[0])}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ all\_same\_mod\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00585\ }
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (all\_same\_mod)}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a2ad392432ebf011c42f7a72f49000d13}{color\_formats\_matched}}\ =\ 1;}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}};\ j++)}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ 8;\ k++)}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_ad539bb907ce654690e8a89cf62196f9c}{color\_values}}[j][k]\ =\ colorvals[j][k];}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00595\ }
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[j]\ =\ color\_formats\_mod[j];}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00600\ }
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Store\ header\ fields}}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\_count}}\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(partition\_count);}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a17d42e08747747b32c650a48fe1b5b6e}{partition\_index}}\ =\ \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(partition\_index);}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a49f36c368c0d976f230c76c33aed2b9d}{plane2\_component}}\ =\ -\/1;}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a449d8e3e4362348f1bd588eecaaa12c9}{quant\_mode}}\ =\ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a2ad392432ebf011c42f7a72f49000d13}{color\_formats\_matched}}\ ?\ color\_quant\_level\_mod[i]\ :\ color\_quant\_level[i];}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}}\ =\ qw\_bm.\mbox{\hyperlink{structblock__mode_a045cae1a970db63e55e66df097c84863}{mode\_index}};}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_a62b894529f4eb2badc6656c94ca1c003}{SYM\_BTYPE\_NONCONST}};}
+\DoxyCodeLine{00608\ }
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pre-\/realign\ test}}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (l\ ==\ 0)}
+\DoxyCodeLine{00611\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ errorval\ =\ compute\_difference(config,\ bsd,\ workscb,\ blk);}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ ==\ -\/\mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}})}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ errorval\ =\ -\/errorval;}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}};}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00618\ }
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}error\_prerealign"{}},\ errorval);}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_errorval\_in\_mode\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(errorval,\ best\_errorval\_in\_mode);}
+\DoxyCodeLine{00621\ }
+\DoxyCodeLine{00622\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Average\ refinement\ improvement\ is\ 3.5\%\ per\ iteration\ (allow\ 4.5\%),\ but\ the\ first}}
+\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ iteration\ can\ help\ more\ so\ we\ give\ it\ a\ extra\ 8\%\ leeway.\ Use\ this\ knowledge\ to}}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ drive\ a\ heuristic\ to\ skip\ blocks\ that\ are\ unlikely\ to\ catch\ up\ with\ the\ best}}
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ block\ we\ have\ already.}}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iters\_remaining\ =\ config.\mbox{\hyperlink{structastcenc__config_ae756e28f11bd615a23198c4ae2b1e90f}{tune\_refinement\_limit}}\ -\/\ l;}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ threshold\ =\ (0.045f\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(iters\_remaining))\ +\ 1.08f;}
+\DoxyCodeLine{00628\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ >\ (threshold\ *\ best\_errorval\_in\_scb))}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00632\ }
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ <\ best\_errorval\_in\_scb)}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_errorval\_in\_scb\ =\ errorval;}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a4ed0a59a081d379e15d29e29f761d105}{errorval}}\ =\ errorval;}
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb\ =\ workscb;}
+\DoxyCodeLine{00638\ }
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ <\ tune\_errorval\_threshold)}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Skip\ remaining\ candidates\ -\/\ this\ is\ "{}good\ enough"{}}}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ candidate\_count;}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00647\ }
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ adjustments;}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (di.weight\_count\ !=\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}})}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjustments\ =\ \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_af80747ee43aa6fda579161376205c294}{realign\_weights\_decimated}}(}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}},\ bsd,\ blk,\ workscb);}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjustments\ =\ \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_a91e5fa530ba0e492b85132e416a5ddf4}{realign\_weights\_undecimated}}(}
+\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}},\ bsd,\ blk,\ workscb);}
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00659\ }
+\DoxyCodeLine{00660\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Post-\/realign\ test}}
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ errorval\ =\ compute\_difference(config,\ bsd,\ workscb,\ blk);}
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ ==\ -\/\mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}})}
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ errorval\ =\ -\/errorval;}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}};}
+\DoxyCodeLine{00666\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00667\ }
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}error\_postrealign"{}},\ errorval);}
+\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ \ \ \ \ best\_errorval\_in\_mode\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(errorval,\ best\_errorval\_in\_mode);}
+\DoxyCodeLine{00670\ }
+\DoxyCodeLine{00671\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Average\ refinement\ improvement\ is\ 3.5\%\ per\ iteration,\ so\ skip\ blocks\ that\ are}}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ unlikely\ to\ catch\ up\ with\ the\ best\ block\ we\ have\ already.\ Assume\ a\ 4.5\%\ per\ step\ to}}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ give\ benefit\ of\ the\ doubt\ ...}}
+\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iters\_remaining\ =\ config.\mbox{\hyperlink{structastcenc__config_ae756e28f11bd615a23198c4ae2b1e90f}{tune\_refinement\_limit}}\ -\/\ 1\ -\/\ l;}
+\DoxyCodeLine{00675\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ threshold\ =\ (0.045f\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(iters\_remaining))\ +\ 1.0f;}
+\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ >\ (threshold\ *\ best\_errorval\_in\_scb))}
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00680\ }
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ <\ best\_errorval\_in\_scb)}
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_errorval\_in\_scb\ =\ errorval;}
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a4ed0a59a081d379e15d29e29f761d105}{errorval}}\ =\ errorval;}
+\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb\ =\ workscb;}
+\DoxyCodeLine{00686\ }
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ <\ tune\_errorval\_threshold)}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Skip\ remaining\ candidates\ -\/\ this\ is\ "{}good\ enough"{}}}
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ candidate\_count;}
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00694\ }
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!adjustments)}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00700\ \ \ \ \ \}}
+\DoxyCodeLine{00701\ }
+\DoxyCodeLine{00702\ \ \ \ \ \textcolor{keywordflow}{return}\ best\_errorval\_in\_mode;}
+\DoxyCodeLine{00703\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{astcenc__compress__symbolic_8cpp_af5f518a15600c71922e69267dea2db99_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__compress__symbolic_8cpp_af5f518a15600c71922e69267dea2db99_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__compress__symbolic_8cpp_af11a976c8ea386db054bef472ce0667c}\index{astcenc\_compress\_symbolic.cpp@{astcenc\_compress\_symbolic.cpp}!compress\_symbolic\_block\_for\_partition\_2planes@{compress\_symbolic\_block\_for\_partition\_2planes}}
+\index{compress\_symbolic\_block\_for\_partition\_2planes@{compress\_symbolic\_block\_for\_partition\_2planes}!astcenc\_compress\_symbolic.cpp@{astcenc\_compress\_symbolic.cpp}}
+\doxysubsubsection{\texorpdfstring{compress\_symbolic\_block\_for\_partition\_2planes()}{compress\_symbolic\_block\_for\_partition\_2planes()}}
+{\footnotesize\ttfamily \label{astcenc__compress__symbolic_8cpp_af11a976c8ea386db054bef472ce0667c} 
+static float compress\+\_\+symbolic\+\_\+block\+\_\+for\+\_\+partition\+\_\+2planes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structastcenc__config}{astcenc\+\_\+config}} \&}]{config}{, }\item[{const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&}]{bsd}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{, }\item[{float}]{tune\+\_\+errorval\+\_\+threshold}{, }\item[{unsigned int}]{plane2\+\_\+component}{, }\item[{\mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&}]{scb}{, }\item[{\mbox{\hyperlink{structcompression__working__buffers}{compression\+\_\+working\+\_\+buffers}} \&}]{tmpbuf}{, }\item[{int}]{quant\+\_\+limit}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compress a block using a chosen partitioning and 2 planes of weights. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em config} & The compressor configuration. \\
+\hline
+ & {\em bsd} & The block size information. \\
+\hline
+ & {\em blk} & The image block color data to compress. \\
+\hline
+ & {\em tune\+\_\+errorval\+\_\+threshold} & The error value threshold. \\
+\hline
+ & {\em plane2\+\_\+component} & The component index for the second plane of weights. \\
+\hline
+\mbox{\texttt{ out}}  & {\em scb} & The symbolic compressed block output. \\
+\hline
+\mbox{\texttt{ out}}  & {\em tmpbuf} & The quantized weights for plane 1. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__compress__symbolic_8cpp_source}{astcenc\+\_\+compress\+\_\+symbolic.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_source_l00716}{716}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00725\ \ \ \{}
+\DoxyCodeLine{00726\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(config.\mbox{\hyperlink{structastcenc__config_a1985670205a89fcb92ba1995e6645c5e}{tune\_candidate\_limit}}\ >\ 0);}
+\DoxyCodeLine{00727\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(config.\mbox{\hyperlink{structastcenc__config_ae756e28f11bd615a23198c4ae2b1e90f}{tune\_refinement\_limit}}\ >\ 0);}
+\DoxyCodeLine{00728\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(bsd.\mbox{\hyperlink{structblock__size__descriptor_a5344a8e95df2fe4fe2b396b669993140}{decimation\_mode\_count\_selected}}\ >\ 0);}
+\DoxyCodeLine{00729\ }
+\DoxyCodeLine{00730\ \ \ \ \ \textcolor{keywordtype}{int}\ max\_weight\_quant\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75a740abcbb2f534ff0c4cf49053e7f507b}{QUANT\_32}}),\ quant\_limit);}
+\DoxyCodeLine{00731\ }
+\DoxyCodeLine{00732\ \ \ \ \ \textcolor{comment}{//\ Compute\ ideal\ weights\ and\ endpoint\ colors,\ with\ no\ quantization\ or\ decimation}}
+\DoxyCodeLine{00733\ \ \ \ \ \mbox{\hyperlink{structendpoints__and__weights}{endpoints\_and\_weights}}\&\ ei1\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a070cf57364cb941b7561a4e1e1822d2e}{ei1}};}
+\DoxyCodeLine{00734\ \ \ \ \ \mbox{\hyperlink{structendpoints__and__weights}{endpoints\_and\_weights}}\&\ ei2\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_aea66967939a847f55562ba3049b53964}{ei2}};}
+\DoxyCodeLine{00735\ }
+\DoxyCodeLine{00736\ \ \ \ \ \mbox{\hyperlink{astcenc__ideal__endpoints__and__weights_8cpp_a52d3985007cfc83025661e0347bc00cc}{compute\_ideal\_colors\_and\_weights\_2planes}}(bsd,\ blk,\ plane2\_component,\ ei1,\ ei2);}
+\DoxyCodeLine{00737\ }
+\DoxyCodeLine{00738\ \ \ \ \ \textcolor{comment}{//\ Compute\ ideal\ weights\ and\ endpoint\ colors\ for\ every\ decimation}}
+\DoxyCodeLine{00739\ \ \ \ \ \textcolor{keywordtype}{float}*\ dec\_weights\_ideal\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a6278293acd8d45aa6f45dcfe9e4be422}{dec\_weights\_ideal}};}
+\DoxyCodeLine{00740\ \ \ \ \ uint8\_t*\ dec\_weights\_uquant\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a33ad8f5749b317b98c354041cacbc403}{dec\_weights\_uquant}};}
+\DoxyCodeLine{00741\ }
+\DoxyCodeLine{00742\ \ \ \ \ \textcolor{comment}{//\ For\ each\ decimation\ mode,\ compute\ an\ ideal\ set\ of\ weights\ with\ no\ quantization}}
+\DoxyCodeLine{00743\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a5344a8e95df2fe4fe2b396b669993140}{decimation\_mode\_count\_selected}};\ i++)}
+\DoxyCodeLine{00744\ \ \ \ \ \{}
+\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ dm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_aef601af82748a14a8826e94f5e1b4184}{get\_decimation\_mode}}(i);}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!dm.is\_ref\_2plane(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\textcolor{keyword}{>}(max\_weight\_quant)))}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00749\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00750\ }
+\DoxyCodeLine{00751\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ di\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(i);}
+\DoxyCodeLine{00752\ }
+\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__ideal__endpoints__and__weights_8cpp_ae1b4e922c67d5349fc849709ca08178f}{compute\_ideal\_weights\_for\_decimation}}(}
+\DoxyCodeLine{00754\ \ \ \ \ \ \ \ \ \ \ \ \ ei1,}
+\DoxyCodeLine{00755\ \ \ \ \ \ \ \ \ \ \ \ \ di,}
+\DoxyCodeLine{00756\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_ideal\ +\ i\ *\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}});}
+\DoxyCodeLine{00757\ }
+\DoxyCodeLine{00758\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__ideal__endpoints__and__weights_8cpp_ae1b4e922c67d5349fc849709ca08178f}{compute\_ideal\_weights\_for\_decimation}}(}
+\DoxyCodeLine{00759\ \ \ \ \ \ \ \ \ \ \ \ \ ei2,}
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \ \ \ \ \ \ di,}
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_ideal\ +\ i\ *\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}}\ +\ \mbox{\hyperlink{astcenc__internal_8h_a2dcf39b1f3c1e5f152abdf1f24e698da}{WEIGHTS\_PLANE2\_OFFSET}});}
+\DoxyCodeLine{00762\ \ \ \ \ \}}
+\DoxyCodeLine{00763\ }
+\DoxyCodeLine{00764\ \ \ \ \ \textcolor{comment}{//\ Compute\ maximum\ colors\ for\ the\ endpoints\ and\ ideal\ weights,\ then\ for\ each\ endpoint\ and\ ideal}}
+\DoxyCodeLine{00765\ \ \ \ \ \textcolor{comment}{//\ weight\ pair,\ compute\ the\ smallest\ weight\ that\ will\ result\ in\ a\ color\ value\ greater\ than\ 1}}
+\DoxyCodeLine{00766\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ min\_ep1(10.0f);}
+\DoxyCodeLine{00767\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ min\_ep2(10.0f);}
+\DoxyCodeLine{00768\ }
+\DoxyCodeLine{00769\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ ep1\ =\ (\mbox{\hyperlink{structvfloat4}{vfloat4}}(1.0f)\ -\/\ ei1.\mbox{\hyperlink{structendpoints__and__weights_a9b5a8f6a4d2bdbf5993eeba5593228c4}{ep}}.\mbox{\hyperlink{structendpoints_a2a084800ec101a03de2b8deb0d926263}{endpt0}}[0])\ /\ (ei1.\mbox{\hyperlink{structendpoints__and__weights_a9b5a8f6a4d2bdbf5993eeba5593228c4}{ep}}.\mbox{\hyperlink{structendpoints_a89660f637b681eaea32e7db6b9d9def2}{endpt1}}[0]\ -\/\ ei1.\mbox{\hyperlink{structendpoints__and__weights_a9b5a8f6a4d2bdbf5993eeba5593228c4}{ep}}.\mbox{\hyperlink{structendpoints_a2a084800ec101a03de2b8deb0d926263}{endpt0}}[0]);}
+\DoxyCodeLine{00770\ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ use\_ep1\ =\ (ep1\ >\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(0.5f))\ \&\ (ep1\ <\ min\_ep1);}
+\DoxyCodeLine{00771\ \ \ \ \ min\_ep1\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(min\_ep1,\ ep1,\ use\_ep1);}
+\DoxyCodeLine{00772\ }
+\DoxyCodeLine{00773\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ ep2\ =\ (\mbox{\hyperlink{structvfloat4}{vfloat4}}(1.0f)\ -\/\ ei2.\mbox{\hyperlink{structendpoints__and__weights_a9b5a8f6a4d2bdbf5993eeba5593228c4}{ep}}.\mbox{\hyperlink{structendpoints_a2a084800ec101a03de2b8deb0d926263}{endpt0}}[0])\ /\ (ei2.\mbox{\hyperlink{structendpoints__and__weights_a9b5a8f6a4d2bdbf5993eeba5593228c4}{ep}}.\mbox{\hyperlink{structendpoints_a89660f637b681eaea32e7db6b9d9def2}{endpt1}}[0]\ -\/\ ei2.\mbox{\hyperlink{structendpoints__and__weights_a9b5a8f6a4d2bdbf5993eeba5593228c4}{ep}}.\mbox{\hyperlink{structendpoints_a2a084800ec101a03de2b8deb0d926263}{endpt0}}[0]);}
+\DoxyCodeLine{00774\ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ use\_ep2\ =\ (ep2\ >\ \mbox{\hyperlink{structvfloat4}{vfloat4}}(0.5f))\ \&\ (ep2\ <\ min\_ep2);}
+\DoxyCodeLine{00775\ \ \ \ \ min\_ep2\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(min\_ep2,\ ep2,\ use\_ep2);}
+\DoxyCodeLine{00776\ }
+\DoxyCodeLine{00777\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ err\_max(\mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}});}
+\DoxyCodeLine{00778\ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ err\_mask\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint4::lane\_id}}()\ ==\ \mbox{\hyperlink{structvint4}{vint4}}(plane2\_component);}
+\DoxyCodeLine{00779\ }
+\DoxyCodeLine{00780\ \ \ \ \ \textcolor{comment}{//\ Set\ the\ plane2\ component\ to\ max\ error\ in\ ep1}}
+\DoxyCodeLine{00781\ \ \ \ \ min\_ep1\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(min\_ep1,\ err\_max,\ err\_mask);}
+\DoxyCodeLine{00782\ }
+\DoxyCodeLine{00783\ \ \ \ \ \textcolor{keywordtype}{float}\ min\_wt\_cutoff1\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a5618d81f875c0158284ccc9923d83dab}{hmin\_s}}(min\_ep1);}
+\DoxyCodeLine{00784\ }
+\DoxyCodeLine{00785\ \ \ \ \ \textcolor{comment}{//\ Set\ the\ minwt2\ to\ the\ plane2\ component\ min\ in\ ep2}}
+\DoxyCodeLine{00786\ \ \ \ \ \textcolor{keywordtype}{float}\ min\_wt\_cutoff2\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a5618d81f875c0158284ccc9923d83dab}{hmin\_s}}(\mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(err\_max,\ min\_ep2,\ err\_mask));}
+\DoxyCodeLine{00787\ }
+\DoxyCodeLine{00788\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a571d7379fd52446338ef4fa7e700cb42}{compute\_angular\_endpoints\_2planes}}(}
+\DoxyCodeLine{00789\ \ \ \ \ \ \ \ \ bsd,\ dec\_weights\_ideal,\ max\_weight\_quant,\ tmpbuf);}
+\DoxyCodeLine{00790\ }
+\DoxyCodeLine{00791\ \ \ \ \ \textcolor{comment}{//\ For\ each\ mode\ (which\ specifies\ a\ decimation\ and\ a\ quantization):}}
+\DoxyCodeLine{00792\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ *\ Compute\ number\ of\ bits\ needed\ for\ the\ quantized\ weights}}
+\DoxyCodeLine{00793\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ *\ Generate\ an\ optimized\ set\ of\ quantized\ weights}}
+\DoxyCodeLine{00794\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ *\ Compute\ quantization\ errors\ for\ the\ mode}}
+\DoxyCodeLine{00795\ }
+\DoxyCodeLine{00796\ \ \ \ \ \textcolor{keywordtype}{float}*\ weight\_low\_value1\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a504af2e4e5a146cd80b52c1b6c93b782}{weight\_low\_value1}};}
+\DoxyCodeLine{00797\ \ \ \ \ \textcolor{keywordtype}{float}*\ weight\_high\_value1\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_adebd00f87afd06131aa6e22e12effae2}{weight\_high\_value1}};}
+\DoxyCodeLine{00798\ \ \ \ \ \textcolor{keywordtype}{float}*\ weight\_low\_value2\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a6b3f7da41bb370993657d209bbb95d03}{weight\_low\_value2}};}
+\DoxyCodeLine{00799\ \ \ \ \ \textcolor{keywordtype}{float}*\ weight\_high\_value2\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a72e3ac47a49cfb6ed8b4933699014858}{weight\_high\_value2}};}
+\DoxyCodeLine{00800\ }
+\DoxyCodeLine{00801\ \ \ \ \ int8\_t*\ qwt\_bitcounts\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a755d631272dfdaeff4f628360595e323}{qwt\_bitcounts}};}
+\DoxyCodeLine{00802\ \ \ \ \ \textcolor{keywordtype}{float}*\ qwt\_errors\ =\ tmpbuf.\mbox{\hyperlink{structcompression__working__buffers_a2b2c71dd6e70f03c1ce362589cf1ffda}{qwt\_errors}};}
+\DoxyCodeLine{00803\ }
+\DoxyCodeLine{00804\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ start\_2plane\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a2f96c6e4d1e35b4bac8778c474c69bb1}{block\_mode\_count\_1plane\_selected}};}
+\DoxyCodeLine{00805\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ end\_2plane\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a796557a9c78ee86175f67ed504731ac5}{block\_mode\_count\_1plane\_2plane\_selected}};}
+\DoxyCodeLine{00806\ }
+\DoxyCodeLine{00807\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ start\_2plane;\ i\ <\ end\_2plane;\ i++)}
+\DoxyCodeLine{00808\ \ \ \ \ \{}
+\DoxyCodeLine{00809\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__mode}{block\_mode}}\&\ bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a82d0bf7e49df4683f0823b4951fb77f8}{block\_modes}}[i];}
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \ \ assert(bm.\mbox{\hyperlink{structblock__mode_a78b282103d0a8bee2b07c0da075a3dc4}{is\_dual\_plane}});}
+\DoxyCodeLine{00811\ }
+\DoxyCodeLine{00812\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bm.\mbox{\hyperlink{structblock__mode_a57910e5bd3d21447cdea6c7789723a86}{quant\_mode}}\ >\ max\_weight\_quant)}
+\DoxyCodeLine{00813\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00814\ \ \ \ \ \ \ \ \ \ \ \ \ qwt\_errors[i]\ =\ 1e38f;}
+\DoxyCodeLine{00815\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00816\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00817\ }
+\DoxyCodeLine{00818\ \ \ \ \ \ \ \ \ qwt\_bitcounts[i]\ =\ \textcolor{keyword}{static\_cast<}int8\_t\textcolor{keyword}{>}(109\ -\/\ bm.\mbox{\hyperlink{structblock__mode_a22f24a51f0c67cad40998833545e675e}{weight\_bits}});}
+\DoxyCodeLine{00819\ }
+\DoxyCodeLine{00820\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (weight\_high\_value1[i]\ >\ 1.02f\ *\ min\_wt\_cutoff1)}
+\DoxyCodeLine{00821\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00822\ \ \ \ \ \ \ \ \ \ \ \ \ weight\_high\_value1[i]\ =\ 1.0f;}
+\DoxyCodeLine{00823\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00824\ }
+\DoxyCodeLine{00825\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (weight\_high\_value2[i]\ >\ 1.02f\ *\ min\_wt\_cutoff2)}
+\DoxyCodeLine{00826\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00827\ \ \ \ \ \ \ \ \ \ \ \ \ weight\_high\_value2[i]\ =\ 1.0f;}
+\DoxyCodeLine{00828\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00829\ }
+\DoxyCodeLine{00830\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structdecimation__mode}{decimation\_mode}}\ =\ bm.\mbox{\hyperlink{structblock__mode_aaf9846117d40406d5e84508f429cf949}{decimation\_mode}};}
+\DoxyCodeLine{00831\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ di\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(\mbox{\hyperlink{structdecimation__mode}{decimation\_mode}});}
+\DoxyCodeLine{00832\ }
+\DoxyCodeLine{00833\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keywordtype}{float}\ dec\_weights\_uquantf[\mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}}];}
+\DoxyCodeLine{00834\ }
+\DoxyCodeLine{00835\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ the\ optimized\ set\ of\ weights\ for\ the\ mode}}
+\DoxyCodeLine{00836\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__ideal__endpoints__and__weights_8cpp_af42cf444db5f16e2ed4fb642acf81f4a}{compute\_quantized\_weights\_for\_decimation}}(}
+\DoxyCodeLine{00837\ \ \ \ \ \ \ \ \ \ \ \ \ di,}
+\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ \ \ \ \ weight\_low\_value1[i],}
+\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ \ \ \ \ weight\_high\_value1[i],}
+\DoxyCodeLine{00840\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_ideal\ +\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}}\ *\ \mbox{\hyperlink{structdecimation__mode}{decimation\_mode}},}
+\DoxyCodeLine{00841\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_uquantf,}
+\DoxyCodeLine{00842\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_uquant\ +\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}}\ *\ i,}
+\DoxyCodeLine{00843\ \ \ \ \ \ \ \ \ \ \ \ \ bm.\mbox{\hyperlink{structblock__mode_a760578093fb16da4932bc26d2d5c1837}{get\_weight\_quant\_mode}}());}
+\DoxyCodeLine{00844\ }
+\DoxyCodeLine{00845\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__ideal__endpoints__and__weights_8cpp_af42cf444db5f16e2ed4fb642acf81f4a}{compute\_quantized\_weights\_for\_decimation}}(}
+\DoxyCodeLine{00846\ \ \ \ \ \ \ \ \ \ \ \ \ di,}
+\DoxyCodeLine{00847\ \ \ \ \ \ \ \ \ \ \ \ \ weight\_low\_value2[i],}
+\DoxyCodeLine{00848\ \ \ \ \ \ \ \ \ \ \ \ \ weight\_high\_value2[i],}
+\DoxyCodeLine{00849\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_ideal\ +\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}}\ *\ \mbox{\hyperlink{structdecimation__mode}{decimation\_mode}}\ +\ \mbox{\hyperlink{astcenc__internal_8h_a2dcf39b1f3c1e5f152abdf1f24e698da}{WEIGHTS\_PLANE2\_OFFSET}},}
+\DoxyCodeLine{00850\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_uquantf\ +\ \mbox{\hyperlink{astcenc__internal_8h_a2dcf39b1f3c1e5f152abdf1f24e698da}{WEIGHTS\_PLANE2\_OFFSET}},}
+\DoxyCodeLine{00851\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_uquant\ +\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}}\ *\ i\ +\ \mbox{\hyperlink{astcenc__internal_8h_a2dcf39b1f3c1e5f152abdf1f24e698da}{WEIGHTS\_PLANE2\_OFFSET}},}
+\DoxyCodeLine{00852\ \ \ \ \ \ \ \ \ \ \ \ \ bm.\mbox{\hyperlink{structblock__mode_a760578093fb16da4932bc26d2d5c1837}{get\_weight\_quant\_mode}}());}
+\DoxyCodeLine{00853\ }
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ weight\ quantization\ errors\ for\ the\ block\ mode}}
+\DoxyCodeLine{00855\ \ \ \ \ \ \ \ \ qwt\_errors[i]\ =\ \mbox{\hyperlink{astcenc__ideal__endpoints__and__weights_8cpp_a09a63c4b1e684f7ff9d88e5717b10bfb}{compute\_error\_of\_weight\_set\_2planes}}(}
+\DoxyCodeLine{00856\ \ \ \ \ \ \ \ \ \ \ \ \ ei1,}
+\DoxyCodeLine{00857\ \ \ \ \ \ \ \ \ \ \ \ \ ei2,}
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \ \ \ \ \ \ di,}
+\DoxyCodeLine{00859\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_uquantf,}
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_uquantf\ +\ \mbox{\hyperlink{astcenc__internal_8h_a2dcf39b1f3c1e5f152abdf1f24e698da}{WEIGHTS\_PLANE2\_OFFSET}});}
+\DoxyCodeLine{00861\ \ \ \ \ \}}
+\DoxyCodeLine{00862\ }
+\DoxyCodeLine{00863\ \ \ \ \ \textcolor{comment}{//\ Decide\ the\ optimal\ combination\ of\ color\ endpoint\ encodings\ and\ weight\ encodings}}
+\DoxyCodeLine{00864\ \ \ \ \ uint8\_t\ partition\_format\_specifiers[\mbox{\hyperlink{astcenc__internal_8h_a0f2aba262e65e945037f4ed5dda3f2f9}{TUNE\_MAX\_TRIAL\_CANDIDATES}}][\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00865\ \ \ \ \ \textcolor{keywordtype}{int}\ block\_mode\_index[\mbox{\hyperlink{astcenc__internal_8h_a0f2aba262e65e945037f4ed5dda3f2f9}{TUNE\_MAX\_TRIAL\_CANDIDATES}}];}
+\DoxyCodeLine{00866\ }
+\DoxyCodeLine{00867\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\ color\_quant\_level[\mbox{\hyperlink{astcenc__internal_8h_a0f2aba262e65e945037f4ed5dda3f2f9}{TUNE\_MAX\_TRIAL\_CANDIDATES}}];}
+\DoxyCodeLine{00868\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a806a5b8001942a6fa06d788ffec45a75}{quant\_method}}\ color\_quant\_level\_mod[\mbox{\hyperlink{astcenc__internal_8h_a0f2aba262e65e945037f4ed5dda3f2f9}{TUNE\_MAX\_TRIAL\_CANDIDATES}}];}
+\DoxyCodeLine{00869\ }
+\DoxyCodeLine{00870\ \ \ \ \ \mbox{\hyperlink{structendpoints}{endpoints}}\ epm;}
+\DoxyCodeLine{00871\ \ \ \ \ \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_a7a73021370668773ad84b7a2f6285023}{merge\_endpoints}}(ei1.\mbox{\hyperlink{structendpoints__and__weights_a9b5a8f6a4d2bdbf5993eeba5593228c4}{ep}},\ ei2.\mbox{\hyperlink{structendpoints__and__weights_a9b5a8f6a4d2bdbf5993eeba5593228c4}{ep}},\ plane2\_component,\ epm);}
+\DoxyCodeLine{00872\ }
+\DoxyCodeLine{00873\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pi\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_aa9dfc7b23c8b5e6c71e956e2e39fff74}{get\_partition\_info}}(1,\ 0);}
+\DoxyCodeLine{00874\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ candidate\_count\ =\ \mbox{\hyperlink{astcenc__internal_8h_a81c7b68e8c7b82a5ff718f21bd4f3c35}{compute\_ideal\_endpoint\_formats}}(}
+\DoxyCodeLine{00875\ \ \ \ \ \ \ \ \ pi,\ blk,\ epm,\ qwt\_bitcounts,\ qwt\_errors,}
+\DoxyCodeLine{00876\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_a1985670205a89fcb92ba1995e6645c5e}{tune\_candidate\_limit}},}
+\DoxyCodeLine{00877\ \ \ \ \ \ \ \ \ bsd.\mbox{\hyperlink{structblock__size__descriptor_a2f96c6e4d1e35b4bac8778c474c69bb1}{block\_mode\_count\_1plane\_selected}},\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a796557a9c78ee86175f67ed504731ac5}{block\_mode\_count\_1plane\_2plane\_selected}},}
+\DoxyCodeLine{00878\ \ \ \ \ \ \ \ \ partition\_format\_specifiers,\ block\_mode\_index,}
+\DoxyCodeLine{00879\ \ \ \ \ \ \ \ \ color\_quant\_level,\ color\_quant\_level\_mod,\ tmpbuf);}
+\DoxyCodeLine{00880\ }
+\DoxyCodeLine{00881\ \ \ \ \ \textcolor{comment}{//\ Iterate\ over\ the\ N\ believed-\/to-\/be-\/best\ modes\ to\ find\ out\ which\ one\ is\ actually\ best}}
+\DoxyCodeLine{00882\ \ \ \ \ \textcolor{keywordtype}{float}\ best\_errorval\_in\_mode\ =\ \mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}};}
+\DoxyCodeLine{00883\ \ \ \ \ \textcolor{keywordtype}{float}\ best\_errorval\_in\_scb\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4ed0a59a081d379e15d29e29f761d105}{errorval}};}
+\DoxyCodeLine{00884\ }
+\DoxyCodeLine{00885\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ candidate\_count;\ i++)}
+\DoxyCodeLine{00886\ \ \ \ \ \{}
+\DoxyCodeLine{00887\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_ae040957570ced46496efbca3b734cffa}{TRACE\_NODE}}(node0,\ \textcolor{stringliteral}{"{}candidate"{}});}
+\DoxyCodeLine{00888\ }
+\DoxyCodeLine{00889\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ bm\_packed\_index\ =\ block\_mode\_index[i];}
+\DoxyCodeLine{00890\ \ \ \ \ \ \ \ \ assert(bm\_packed\_index\ >=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(bsd.\mbox{\hyperlink{structblock__size__descriptor_a2f96c6e4d1e35b4bac8778c474c69bb1}{block\_mode\_count\_1plane\_selected}})\ \&\&}
+\DoxyCodeLine{00891\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bm\_packed\_index\ <\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(bsd.\mbox{\hyperlink{structblock__size__descriptor_a796557a9c78ee86175f67ed504731ac5}{block\_mode\_count\_1plane\_2plane\_selected}}));}
+\DoxyCodeLine{00892\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__mode}{block\_mode}}\&\ qw\_bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a82d0bf7e49df4683f0823b4951fb77f8}{block\_modes}}[bm\_packed\_index];}
+\DoxyCodeLine{00893\ }
+\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structdecimation__mode}{decimation\_mode}}\ =\ qw\_bm.\mbox{\hyperlink{structblock__mode_aaf9846117d40406d5e84508f429cf949}{decimation\_mode}};}
+\DoxyCodeLine{00895\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ di\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(\mbox{\hyperlink{structdecimation__mode}{decimation\_mode}});}
+\DoxyCodeLine{00896\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(di.weight\_count\ >\ 0);}
+\DoxyCodeLine{00897\ }
+\DoxyCodeLine{00898\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}weight\_x"{}},\ di.weight\_x);}
+\DoxyCodeLine{00899\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}weight\_y"{}},\ di.weight\_y);}
+\DoxyCodeLine{00900\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}weight\_z"{}},\ di.weight\_z);}
+\DoxyCodeLine{00901\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}weight\_quant"{}},\ qw\_bm.\mbox{\hyperlink{structblock__mode_a57910e5bd3d21447cdea6c7789723a86}{quant\_mode}});}
+\DoxyCodeLine{00902\ }
+\DoxyCodeLine{00903\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ rgbs\_color;}
+\DoxyCodeLine{00904\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ rgbo\_color;}
+\DoxyCodeLine{00905\ }
+\DoxyCodeLine{00906\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\_compressed\_block}}\ workscb;}
+\DoxyCodeLine{00907\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structendpoints}{endpoints}}\ workep\ =\ epm;}
+\DoxyCodeLine{00908\ }
+\DoxyCodeLine{00909\ \ \ \ \ \ \ \ \ uint8\_t*\ u8\_weight1\_src\ =\ dec\_weights\_uquant\ +\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}}\ *\ bm\_packed\_index;}
+\DoxyCodeLine{00910\ \ \ \ \ \ \ \ \ uint8\_t*\ u8\_weight2\_src\ =\ dec\_weights\_uquant\ +\ \mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}}\ *\ bm\_packed\_index\ +\ \mbox{\hyperlink{astcenc__internal_8h_a2dcf39b1f3c1e5f152abdf1f24e698da}{WEIGHTS\_PLANE2\_OFFSET}};}
+\DoxyCodeLine{00911\ }
+\DoxyCodeLine{00912\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ di.weight\_count;\ j++)}
+\DoxyCodeLine{00913\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00914\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}[j]\ =\ u8\_weight1\_src[j];}
+\DoxyCodeLine{00915\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}[j\ +\ \mbox{\hyperlink{astcenc__internal_8h_a2dcf39b1f3c1e5f152abdf1f24e698da}{WEIGHTS\_PLANE2\_OFFSET}}]\ =\ u8\_weight2\_src[j];}
+\DoxyCodeLine{00916\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00917\ }
+\DoxyCodeLine{00918\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ l\ =\ 0;\ l\ <\ config.\mbox{\hyperlink{structastcenc__config_ae756e28f11bd615a23198c4ae2b1e90f}{tune\_refinement\_limit}};\ l++)}
+\DoxyCodeLine{00919\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00920\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__ideal__endpoints__and__weights_8cpp_afb3c455470bef24f48d7815bb78bb569}{recompute\_ideal\_colors\_2planes}}(}
+\DoxyCodeLine{00921\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ blk,\ bsd,\ di,}
+\DoxyCodeLine{00922\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}},\ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}}\ +\ \mbox{\hyperlink{astcenc__internal_8h_a2dcf39b1f3c1e5f152abdf1f24e698da}{WEIGHTS\_PLANE2\_OFFSET}},}
+\DoxyCodeLine{00923\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workep,\ rgbs\_color,\ rgbo\_color,\ plane2\_component);}
+\DoxyCodeLine{00924\ }
+\DoxyCodeLine{00925\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Quantize\ the\ chosen\ color}}
+\DoxyCodeLine{00926\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[0]\ =\ \mbox{\hyperlink{astcenc__color__quantize_8cpp_ab9f9b564c57688af1f8fc1d9e000af81}{pack\_color\_endpoints}}(}
+\DoxyCodeLine{00927\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workep.\mbox{\hyperlink{structendpoints_a2a084800ec101a03de2b8deb0d926263}{endpt0}}[0],}
+\DoxyCodeLine{00928\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workep.\mbox{\hyperlink{structendpoints_a89660f637b681eaea32e7db6b9d9def2}{endpt1}}[0],}
+\DoxyCodeLine{00929\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rgbs\_color,\ rgbo\_color,}
+\DoxyCodeLine{00930\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ partition\_format\_specifiers[i][0],}
+\DoxyCodeLine{00931\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_ad539bb907ce654690e8a89cf62196f9c}{color\_values}}[0],}
+\DoxyCodeLine{00932\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color\_quant\_level[i]);}
+\DoxyCodeLine{00933\ }
+\DoxyCodeLine{00934\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Store\ header\ fields}}
+\DoxyCodeLine{00935\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\_count}}\ =\ 1;}
+\DoxyCodeLine{00936\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a17d42e08747747b32c650a48fe1b5b6e}{partition\_index}}\ =\ 0;}
+\DoxyCodeLine{00937\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a449d8e3e4362348f1bd588eecaaa12c9}{quant\_mode}}\ =\ color\_quant\_level[i];}
+\DoxyCodeLine{00938\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a2ad392432ebf011c42f7a72f49000d13}{color\_formats\_matched}}\ =\ 0;}
+\DoxyCodeLine{00939\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}}\ =\ qw\_bm.\mbox{\hyperlink{structblock__mode_a045cae1a970db63e55e66df097c84863}{mode\_index}};}
+\DoxyCodeLine{00940\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a49f36c368c0d976f230c76c33aed2b9d}{plane2\_component}}\ =\ \textcolor{keyword}{static\_cast<}int8\_t\textcolor{keyword}{>}(plane2\_component);}
+\DoxyCodeLine{00941\ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_a62b894529f4eb2badc6656c94ca1c003}{SYM\_BTYPE\_NONCONST}};}
+\DoxyCodeLine{00942\ }
+\DoxyCodeLine{00943\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pre-\/realign\ test}}
+\DoxyCodeLine{00944\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (l\ ==\ 0)}
+\DoxyCodeLine{00945\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00946\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ errorval\ =\ \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_a9c23f8373c9f5e708650b7c8e038b182}{compute\_symbolic\_block\_difference\_2plane}}(config,\ bsd,\ workscb,\ blk);}
+\DoxyCodeLine{00947\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ ==\ -\/\mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}})}
+\DoxyCodeLine{00948\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00949\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ errorval\ =\ -\/errorval;}
+\DoxyCodeLine{00950\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}};}
+\DoxyCodeLine{00951\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00952\ }
+\DoxyCodeLine{00953\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}error\_prerealign"{}},\ errorval);}
+\DoxyCodeLine{00954\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_errorval\_in\_mode\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(errorval,\ best\_errorval\_in\_mode);}
+\DoxyCodeLine{00955\ }
+\DoxyCodeLine{00956\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Average\ refinement\ improvement\ is\ 3.5\%\ per\ iteration\ (allow\ 4.5\%),\ but\ the\ first}}
+\DoxyCodeLine{00957\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ iteration\ can\ help\ more\ so\ we\ give\ it\ a\ extra\ 8\%\ leeway.\ Use\ this\ knowledge\ to}}
+\DoxyCodeLine{00958\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ drive\ a\ heuristic\ to\ skip\ blocks\ that\ are\ unlikely\ to\ catch\ up\ with\ the\ best}}
+\DoxyCodeLine{00959\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ block\ we\ have\ already.}}
+\DoxyCodeLine{00960\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iters\_remaining\ =\ config.\mbox{\hyperlink{structastcenc__config_ae756e28f11bd615a23198c4ae2b1e90f}{tune\_refinement\_limit}}\ -\/\ l;}
+\DoxyCodeLine{00961\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ threshold\ =\ (0.045f\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(iters\_remaining))\ +\ 1.08f;}
+\DoxyCodeLine{00962\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ >\ (threshold\ *\ best\_errorval\_in\_scb))}
+\DoxyCodeLine{00963\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00964\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00965\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00966\ }
+\DoxyCodeLine{00967\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ <\ best\_errorval\_in\_scb)}
+\DoxyCodeLine{00968\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00969\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_errorval\_in\_scb\ =\ errorval;}
+\DoxyCodeLine{00970\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a4ed0a59a081d379e15d29e29f761d105}{errorval}}\ =\ errorval;}
+\DoxyCodeLine{00971\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb\ =\ workscb;}
+\DoxyCodeLine{00972\ }
+\DoxyCodeLine{00973\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ <\ tune\_errorval\_threshold)}
+\DoxyCodeLine{00974\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00975\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Skip\ remaining\ candidates\ -\/\ this\ is\ "{}good\ enough"{}}}
+\DoxyCodeLine{00976\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ candidate\_count;}
+\DoxyCodeLine{00977\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00978\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00979\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00980\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00981\ }
+\DoxyCodeLine{00982\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Perform\ a\ final\ pass\ over\ the\ weights\ to\ try\ to\ improve\ them.}}
+\DoxyCodeLine{00983\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ adjustments;}
+\DoxyCodeLine{00984\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (di.weight\_count\ !=\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}})}
+\DoxyCodeLine{00985\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00986\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjustments\ =\ \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_af80747ee43aa6fda579161376205c294}{realign\_weights\_decimated}}(}
+\DoxyCodeLine{00987\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}},\ bsd,\ blk,\ workscb);}
+\DoxyCodeLine{00988\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00989\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00990\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00991\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjustments\ =\ \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_a91e5fa530ba0e492b85132e416a5ddf4}{realign\_weights\_undecimated}}(}
+\DoxyCodeLine{00992\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structastcenc__config_ada0c6b7d066d933aa09a0c5e189a7856}{profile}},\ bsd,\ blk,\ workscb);}
+\DoxyCodeLine{00993\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00994\ }
+\DoxyCodeLine{00995\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Post-\/realign\ test}}
+\DoxyCodeLine{00996\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ errorval\ =\ \mbox{\hyperlink{astcenc__decompress__symbolic_8cpp_a9c23f8373c9f5e708650b7c8e038b182}{compute\_symbolic\_block\_difference\_2plane}}(config,\ bsd,\ workscb,\ blk);}
+\DoxyCodeLine{00997\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ ==\ -\/\mbox{\hyperlink{astcenc__internal_8h_aaa341023bf98401423daebc6795e2c83}{ERROR\_CALC\_DEFAULT}})}
+\DoxyCodeLine{00998\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00999\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ errorval\ =\ -\/errorval;}
+\DoxyCodeLine{01000\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_ac4c50ed170ee1fdbf19d288af74a8909}{block\_type}}\ =\ \mbox{\hyperlink{astcenc__internal_8h_abbaedf878cfb7c16b1d10b72128b5ee7}{SYM\_BTYPE\_ERROR}};}
+\DoxyCodeLine{01001\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01002\ }
+\DoxyCodeLine{01003\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}error\_postrealign"{}},\ errorval);}
+\DoxyCodeLine{01004\ \ \ \ \ \ \ \ \ \ \ \ \ best\_errorval\_in\_mode\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(errorval,\ best\_errorval\_in\_mode);}
+\DoxyCodeLine{01005\ }
+\DoxyCodeLine{01006\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Average\ refinement\ improvement\ is\ 3.5\%\ per\ iteration,\ so\ skip\ blocks\ that\ are}}
+\DoxyCodeLine{01007\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ unlikely\ to\ catch\ up\ with\ the\ best\ block\ we\ have\ already.\ Assume\ a\ 4.5\%\ per\ step\ to}}
+\DoxyCodeLine{01008\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ give\ benefit\ of\ the\ doubt\ ...}}
+\DoxyCodeLine{01009\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iters\_remaining\ =\ config.\mbox{\hyperlink{structastcenc__config_ae756e28f11bd615a23198c4ae2b1e90f}{tune\_refinement\_limit}}\ -\/\ 1\ -\/\ l;}
+\DoxyCodeLine{01010\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ threshold\ =\ (0.045f\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(iters\_remaining))\ +\ 1.0f;}
+\DoxyCodeLine{01011\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ >\ (threshold\ *\ best\_errorval\_in\_scb))}
+\DoxyCodeLine{01012\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01014\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01015\ }
+\DoxyCodeLine{01016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ <\ best\_errorval\_in\_scb)}
+\DoxyCodeLine{01017\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\_errorval\_in\_scb\ =\ errorval;}
+\DoxyCodeLine{01019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ workscb.\mbox{\hyperlink{structsymbolic__compressed__block_a4ed0a59a081d379e15d29e29f761d105}{errorval}}\ =\ errorval;}
+\DoxyCodeLine{01020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb\ =\ workscb;}
+\DoxyCodeLine{01021\ }
+\DoxyCodeLine{01022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorval\ <\ tune\_errorval\_threshold)}
+\DoxyCodeLine{01023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Skip\ remaining\ candidates\ -\/\ this\ is\ "{}good\ enough"{}}}
+\DoxyCodeLine{01025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ candidate\_count;}
+\DoxyCodeLine{01026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01028\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01029\ }
+\DoxyCodeLine{01030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!adjustments)}
+\DoxyCodeLine{01031\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01033\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01035\ \ \ \ \ \}}
+\DoxyCodeLine{01036\ }
+\DoxyCodeLine{01037\ \ \ \ \ \textcolor{keywordflow}{return}\ best\_errorval\_in\_mode;}
+\DoxyCodeLine{01038\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{astcenc__compress__symbolic_8cpp_af11a976c8ea386db054bef472ce0667c_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__compress__symbolic_8cpp_af11a976c8ea386db054bef472ce0667c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__compress__symbolic_8cpp_a7a73021370668773ad84b7a2f6285023}\index{astcenc\_compress\_symbolic.cpp@{astcenc\_compress\_symbolic.cpp}!merge\_endpoints@{merge\_endpoints}}
+\index{merge\_endpoints@{merge\_endpoints}!astcenc\_compress\_symbolic.cpp@{astcenc\_compress\_symbolic.cpp}}
+\doxysubsubsection{\texorpdfstring{merge\_endpoints()}{merge\_endpoints()}}
+{\footnotesize\ttfamily \label{astcenc__compress__symbolic_8cpp_a7a73021370668773ad84b7a2f6285023} 
+static void merge\+\_\+endpoints (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structendpoints}{endpoints}} \&}]{ep\+\_\+plane1}{, }\item[{const \mbox{\hyperlink{structendpoints}{endpoints}} \&}]{ep\+\_\+plane2}{, }\item[{unsigned int}]{component\+\_\+plane2}{, }\item[{\mbox{\hyperlink{structendpoints}{endpoints}} \&}]{result}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Functions to compress a symbolic block. 
+
+Merge two planes of endpoints into a single vector.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em ep\+\_\+plane1} & The endpoints for plane 1. \\
+\hline
+ & {\em ep\+\_\+plane2} & The endpoints for plane 2. \\
+\hline
+ & {\em component\+\_\+plane2} & The color component for plane 2. \\
+\hline
+\mbox{\texttt{ out}}  & {\em result} & The merged output. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__compress__symbolic_8cpp_source}{astcenc\+\_\+compress\+\_\+symbolic.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_source_l00037}{37}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count\ =\ ep\_plane1.\mbox{\hyperlink{structendpoints_a6815660d1584ae9e1fc4faebddf91658}{partition\_count}};}
+\DoxyCodeLine{00044\ \ \ \ \ assert(partition\_count\ ==\ 1);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ sep\_mask\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint4::lane\_id}}()\ ==\ \mbox{\hyperlink{structvint4}{vint4}}(component\_plane2);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ result.\mbox{\hyperlink{structendpoints_a6815660d1584ae9e1fc4faebddf91658}{partition\_count}}\ =\ partition\_count;}
+\DoxyCodeLine{00049\ \ \ \ \ result.\mbox{\hyperlink{structendpoints_a2a084800ec101a03de2b8deb0d926263}{endpt0}}[0]\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(ep\_plane1.\mbox{\hyperlink{structendpoints_a2a084800ec101a03de2b8deb0d926263}{endpt0}}[0],\ ep\_plane2.\mbox{\hyperlink{structendpoints_a2a084800ec101a03de2b8deb0d926263}{endpt0}}[0],\ sep\_mask);}
+\DoxyCodeLine{00050\ \ \ \ \ result.\mbox{\hyperlink{structendpoints_a89660f637b681eaea32e7db6b9d9def2}{endpt1}}[0]\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(ep\_plane1.\mbox{\hyperlink{structendpoints_a89660f637b681eaea32e7db6b9d9def2}{endpt1}}[0],\ ep\_plane2.\mbox{\hyperlink{structendpoints_a89660f637b681eaea32e7db6b9d9def2}{endpt1}}[0],\ sep\_mask);}
+\DoxyCodeLine{00051\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__compress__symbolic_8cpp_a7a73021370668773ad84b7a2f6285023_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__compress__symbolic_8cpp_a7a73021370668773ad84b7a2f6285023_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__compress__symbolic_8cpp_a6ac5bc5977155d0c8433492cd1985ce6}\index{astcenc\_compress\_symbolic.cpp@{astcenc\_compress\_symbolic.cpp}!prepare\_block\_statistics@{prepare\_block\_statistics}}
+\index{prepare\_block\_statistics@{prepare\_block\_statistics}!astcenc\_compress\_symbolic.cpp@{astcenc\_compress\_symbolic.cpp}}
+\doxysubsubsection{\texorpdfstring{prepare\_block\_statistics()}{prepare\_block\_statistics()}}
+{\footnotesize\ttfamily \label{astcenc__compress__symbolic_8cpp_a6ac5bc5977155d0c8433492cd1985ce6} 
+static float prepare\+\_\+block\+\_\+statistics (\begin{DoxyParamCaption}\item[{int}]{texels\+\_\+per\+\_\+block}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Determine the lowest cross-\/channel correlation factor. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em texels\+\_\+per\+\_\+block} & The number of texels in a block. \\
+\hline
+{\em blk} & The image block color data to compress.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+Return the lowest correlation factor. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__compress__symbolic_8cpp_source}{astcenc\+\_\+compress\+\_\+symbolic.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_source_l01048}{1048}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01051\ \ \ \{}
+\DoxyCodeLine{01052\ \ \ \ \ \textcolor{comment}{//\ Compute\ covariance\ matrix,\ as\ a\ collection\ of\ 10\ scalars\ that\ form\ the\ upper-\/triangular\ row}}
+\DoxyCodeLine{01053\ \ \ \ \ \textcolor{comment}{//\ of\ the\ matrix.\ The\ matrix\ is\ symmetric,\ so\ this\ is\ all\ we\ need\ for\ this\ use\ case.}}
+\DoxyCodeLine{01054\ \ \ \ \ \textcolor{keywordtype}{float}\ rs\ =\ 0.0f;}
+\DoxyCodeLine{01055\ \ \ \ \ \textcolor{keywordtype}{float}\ gs\ =\ 0.0f;}
+\DoxyCodeLine{01056\ \ \ \ \ \textcolor{keywordtype}{float}\ bs\ =\ 0.0f;}
+\DoxyCodeLine{01057\ \ \ \ \ \textcolor{keywordtype}{float}\ as\ =\ 0.0f;}
+\DoxyCodeLine{01058\ \ \ \ \ \textcolor{keywordtype}{float}\ rr\_var\ =\ 0.0f;}
+\DoxyCodeLine{01059\ \ \ \ \ \textcolor{keywordtype}{float}\ gg\_var\ =\ 0.0f;}
+\DoxyCodeLine{01060\ \ \ \ \ \textcolor{keywordtype}{float}\ bb\_var\ =\ 0.0f;}
+\DoxyCodeLine{01061\ \ \ \ \ \textcolor{keywordtype}{float}\ aa\_var\ =\ 0.0f;}
+\DoxyCodeLine{01062\ \ \ \ \ \textcolor{keywordtype}{float}\ rg\_cov\ =\ 0.0f;}
+\DoxyCodeLine{01063\ \ \ \ \ \textcolor{keywordtype}{float}\ rb\_cov\ =\ 0.0f;}
+\DoxyCodeLine{01064\ \ \ \ \ \textcolor{keywordtype}{float}\ ra\_cov\ =\ 0.0f;}
+\DoxyCodeLine{01065\ \ \ \ \ \textcolor{keywordtype}{float}\ gb\_cov\ =\ 0.0f;}
+\DoxyCodeLine{01066\ \ \ \ \ \textcolor{keywordtype}{float}\ ga\_cov\ =\ 0.0f;}
+\DoxyCodeLine{01067\ \ \ \ \ \textcolor{keywordtype}{float}\ ba\_cov\ =\ 0.0f;}
+\DoxyCodeLine{01068\ }
+\DoxyCodeLine{01069\ \ \ \ \ \textcolor{keywordtype}{float}\ weight\_sum\ =\ 0.0f;}
+\DoxyCodeLine{01070\ }
+\DoxyCodeLine{01071\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(texels\_per\_block\ >\ 0);}
+\DoxyCodeLine{01072\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ texels\_per\_block;\ i++)}
+\DoxyCodeLine{01073\ \ \ \ \ \{}
+\DoxyCodeLine{01074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ weight\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}})\ /\ 4.0f;}
+\DoxyCodeLine{01075\ \ \ \ \ \ \ \ \ assert(weight\ >=\ 0.0f);}
+\DoxyCodeLine{01076\ \ \ \ \ \ \ \ \ weight\_sum\ +=\ weight;}
+\DoxyCodeLine{01077\ }
+\DoxyCodeLine{01078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ blk.\mbox{\hyperlink{structimage__block_acd4ea54654959c7b325efe9d02aaeacc}{data\_r}}[i];}
+\DoxyCodeLine{01079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ g\ =\ blk.\mbox{\hyperlink{structimage__block_abc5bc97aed6bb644726f952818ec74b5}{data\_g}}[i];}
+\DoxyCodeLine{01080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ b\ =\ blk.\mbox{\hyperlink{structimage__block_a298273079b0de525a0c12ced8bf98d13}{data\_b}}[i];}
+\DoxyCodeLine{01081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ a\ =\ blk.\mbox{\hyperlink{structimage__block_a602c8c88dc1ceef33e833f6d6cbc09ea}{data\_a}}[i];}
+\DoxyCodeLine{01082\ }
+\DoxyCodeLine{01083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rw\ =\ r\ *\ weight;}
+\DoxyCodeLine{01084\ \ \ \ \ \ \ \ \ rs\ +=\ rw;}
+\DoxyCodeLine{01085\ \ \ \ \ \ \ \ \ rr\_var\ +=\ r\ *\ rw;}
+\DoxyCodeLine{01086\ \ \ \ \ \ \ \ \ rg\_cov\ +=\ g\ *\ rw;}
+\DoxyCodeLine{01087\ \ \ \ \ \ \ \ \ rb\_cov\ +=\ b\ *\ rw;}
+\DoxyCodeLine{01088\ \ \ \ \ \ \ \ \ ra\_cov\ +=\ a\ *\ rw;}
+\DoxyCodeLine{01089\ }
+\DoxyCodeLine{01090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ gw\ =\ g\ *\ weight;}
+\DoxyCodeLine{01091\ \ \ \ \ \ \ \ \ gs\ +=\ gw;}
+\DoxyCodeLine{01092\ \ \ \ \ \ \ \ \ gg\_var\ +=\ g\ *\ gw;}
+\DoxyCodeLine{01093\ \ \ \ \ \ \ \ \ gb\_cov\ +=\ b\ *\ gw;}
+\DoxyCodeLine{01094\ \ \ \ \ \ \ \ \ ga\_cov\ +=\ a\ *\ gw;}
+\DoxyCodeLine{01095\ }
+\DoxyCodeLine{01096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ bw\ =\ b\ *\ weight;}
+\DoxyCodeLine{01097\ \ \ \ \ \ \ \ \ bs\ +=\ bw;}
+\DoxyCodeLine{01098\ \ \ \ \ \ \ \ \ bb\_var\ +=\ b\ *\ bw;}
+\DoxyCodeLine{01099\ \ \ \ \ \ \ \ \ ba\_cov\ +=\ a\ *\ bw;}
+\DoxyCodeLine{01100\ }
+\DoxyCodeLine{01101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ aw\ =\ a\ *\ weight;}
+\DoxyCodeLine{01102\ \ \ \ \ \ \ \ \ as\ +=\ aw;}
+\DoxyCodeLine{01103\ \ \ \ \ \ \ \ \ aa\_var\ +=\ a\ *\ aw;}
+\DoxyCodeLine{01104\ \ \ \ \ \}}
+\DoxyCodeLine{01105\ }
+\DoxyCodeLine{01106\ \ \ \ \ \textcolor{keywordtype}{float}\ rpt\ =\ 1.0f\ /\ \mbox{\hyperlink{namespaceastc_a83a55552d03399cdff6cf2fed8312c9f}{astc::max}}(weight\_sum,\ 1e-\/7f);}
+\DoxyCodeLine{01107\ }
+\DoxyCodeLine{01108\ \ \ \ \ rr\_var\ -\/=\ rs\ *\ (rs\ *\ rpt);}
+\DoxyCodeLine{01109\ \ \ \ \ rg\_cov\ -\/=\ gs\ *\ (rs\ *\ rpt);}
+\DoxyCodeLine{01110\ \ \ \ \ rb\_cov\ -\/=\ bs\ *\ (rs\ *\ rpt);}
+\DoxyCodeLine{01111\ \ \ \ \ ra\_cov\ -\/=\ as\ *\ (rs\ *\ rpt);}
+\DoxyCodeLine{01112\ }
+\DoxyCodeLine{01113\ \ \ \ \ gg\_var\ -\/=\ gs\ *\ (gs\ *\ rpt);}
+\DoxyCodeLine{01114\ \ \ \ \ gb\_cov\ -\/=\ bs\ *\ (gs\ *\ rpt);}
+\DoxyCodeLine{01115\ \ \ \ \ ga\_cov\ -\/=\ as\ *\ (gs\ *\ rpt);}
+\DoxyCodeLine{01116\ }
+\DoxyCodeLine{01117\ \ \ \ \ bb\_var\ -\/=\ bs\ *\ (bs\ *\ rpt);}
+\DoxyCodeLine{01118\ \ \ \ \ ba\_cov\ -\/=\ as\ *\ (bs\ *\ rpt);}
+\DoxyCodeLine{01119\ }
+\DoxyCodeLine{01120\ \ \ \ \ aa\_var\ -\/=\ as\ *\ (as\ *\ rpt);}
+\DoxyCodeLine{01121\ }
+\DoxyCodeLine{01122\ \ \ \ \ \textcolor{comment}{//\ These\ will\ give\ a\ NaN\ if\ a\ channel\ is\ constant\ -\/\ these\ are\ fixed\ up\ in\ the\ next\ step}}
+\DoxyCodeLine{01123\ \ \ \ \ rg\_cov\ *=\ \mbox{\hyperlink{namespaceastc_a5e60e4c749fe4fc5c746f481af9564f4}{astc::rsqrt}}(rr\_var\ *\ gg\_var);}
+\DoxyCodeLine{01124\ \ \ \ \ rb\_cov\ *=\ \mbox{\hyperlink{namespaceastc_a5e60e4c749fe4fc5c746f481af9564f4}{astc::rsqrt}}(rr\_var\ *\ bb\_var);}
+\DoxyCodeLine{01125\ \ \ \ \ ra\_cov\ *=\ \mbox{\hyperlink{namespaceastc_a5e60e4c749fe4fc5c746f481af9564f4}{astc::rsqrt}}(rr\_var\ *\ aa\_var);}
+\DoxyCodeLine{01126\ \ \ \ \ gb\_cov\ *=\ \mbox{\hyperlink{namespaceastc_a5e60e4c749fe4fc5c746f481af9564f4}{astc::rsqrt}}(gg\_var\ *\ bb\_var);}
+\DoxyCodeLine{01127\ \ \ \ \ ga\_cov\ *=\ \mbox{\hyperlink{namespaceastc_a5e60e4c749fe4fc5c746f481af9564f4}{astc::rsqrt}}(gg\_var\ *\ aa\_var);}
+\DoxyCodeLine{01128\ \ \ \ \ ba\_cov\ *=\ \mbox{\hyperlink{namespaceastc_a5e60e4c749fe4fc5c746f481af9564f4}{astc::rsqrt}}(bb\_var\ *\ aa\_var);}
+\DoxyCodeLine{01129\ }
+\DoxyCodeLine{01130\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceastc_aa80ae2eee0ffb5b754bdf0bb08b8759b}{astc::isnan}}(rg\_cov))\ rg\_cov\ =\ 1.0f;}
+\DoxyCodeLine{01131\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceastc_aa80ae2eee0ffb5b754bdf0bb08b8759b}{astc::isnan}}(rb\_cov))\ rb\_cov\ =\ 1.0f;}
+\DoxyCodeLine{01132\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceastc_aa80ae2eee0ffb5b754bdf0bb08b8759b}{astc::isnan}}(ra\_cov))\ ra\_cov\ =\ 1.0f;}
+\DoxyCodeLine{01133\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceastc_aa80ae2eee0ffb5b754bdf0bb08b8759b}{astc::isnan}}(gb\_cov))\ gb\_cov\ =\ 1.0f;}
+\DoxyCodeLine{01134\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceastc_aa80ae2eee0ffb5b754bdf0bb08b8759b}{astc::isnan}}(ga\_cov))\ ga\_cov\ =\ 1.0f;}
+\DoxyCodeLine{01135\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceastc_aa80ae2eee0ffb5b754bdf0bb08b8759b}{astc::isnan}}(ba\_cov))\ ba\_cov\ =\ 1.0f;}
+\DoxyCodeLine{01136\ }
+\DoxyCodeLine{01137\ \ \ \ \ \textcolor{keywordtype}{float}\ lowest\_correlation\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(fabsf(rg\_cov),\ \ \ \ \ \ fabsf(rb\_cov));}
+\DoxyCodeLine{01138\ \ \ \ \ lowest\_correlation\ \ \ \ \ \ \ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(lowest\_correlation,\ fabsf(ra\_cov));}
+\DoxyCodeLine{01139\ \ \ \ \ lowest\_correlation\ \ \ \ \ \ \ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(lowest\_correlation,\ fabsf(gb\_cov));}
+\DoxyCodeLine{01140\ \ \ \ \ lowest\_correlation\ \ \ \ \ \ \ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(lowest\_correlation,\ fabsf(ga\_cov));}
+\DoxyCodeLine{01141\ \ \ \ \ lowest\_correlation\ \ \ \ \ \ \ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(lowest\_correlation,\ fabsf(ba\_cov));}
+\DoxyCodeLine{01142\ }
+\DoxyCodeLine{01143\ \ \ \ \ \textcolor{comment}{//\ Diagnostic\ trace\ points}}
+\DoxyCodeLine{01144\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}min\_r"{}},\ blk.\mbox{\hyperlink{structimage__block_a4222fc6e5a97194fd342700adff483db}{data\_min}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>());}
+\DoxyCodeLine{01145\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}max\_r"{}},\ blk.\mbox{\hyperlink{structimage__block_af1b03600b295cf8dc02a333db04871fc}{data\_max}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<0>());}
+\DoxyCodeLine{01146\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}min\_g"{}},\ blk.\mbox{\hyperlink{structimage__block_a4222fc6e5a97194fd342700adff483db}{data\_min}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{01147\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}max\_g"{}},\ blk.\mbox{\hyperlink{structimage__block_af1b03600b295cf8dc02a333db04871fc}{data\_max}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<1>());}
+\DoxyCodeLine{01148\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}min\_b"{}},\ blk.\mbox{\hyperlink{structimage__block_a4222fc6e5a97194fd342700adff483db}{data\_min}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>());}
+\DoxyCodeLine{01149\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}max\_b"{}},\ blk.\mbox{\hyperlink{structimage__block_af1b03600b295cf8dc02a333db04871fc}{data\_max}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<2>());}
+\DoxyCodeLine{01150\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}min\_a"{}},\ blk.\mbox{\hyperlink{structimage__block_a4222fc6e5a97194fd342700adff483db}{data\_min}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>());}
+\DoxyCodeLine{01151\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}max\_a"{}},\ blk.\mbox{\hyperlink{structimage__block_af1b03600b295cf8dc02a333db04871fc}{data\_max}}.\mbox{\hyperlink{structvfloat4_a04462a7815432c6bc3ce1b5e5d11e4fc}{lane}}<3>());}
+\DoxyCodeLine{01152\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}cov\_rg"{}},\ fabsf(rg\_cov));}
+\DoxyCodeLine{01153\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}cov\_rb"{}},\ fabsf(rb\_cov));}
+\DoxyCodeLine{01154\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}cov\_ra"{}},\ fabsf(ra\_cov));}
+\DoxyCodeLine{01155\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}cov\_gb"{}},\ fabsf(gb\_cov));}
+\DoxyCodeLine{01156\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}cov\_ga"{}},\ fabsf(ga\_cov));}
+\DoxyCodeLine{01157\ \ \ \ \ \mbox{\hyperlink{astcenc__diagnostic__trace_8h_a76621371d2f495306f397fcfae2bd268}{trace\_add\_data}}(\textcolor{stringliteral}{"{}cov\_ba"{}},\ fabsf(ba\_cov));}
+\DoxyCodeLine{01158\ }
+\DoxyCodeLine{01159\ \ \ \ \ \textcolor{keywordflow}{return}\ lowest\_correlation;}
+\DoxyCodeLine{01160\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{astcenc__compress__symbolic_8cpp_a6ac5bc5977155d0c8433492cd1985ce6_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__compress__symbolic_8cpp_a6ac5bc5977155d0c8433492cd1985ce6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__compress__symbolic_8cpp_af80747ee43aa6fda579161376205c294}\index{astcenc\_compress\_symbolic.cpp@{astcenc\_compress\_symbolic.cpp}!realign\_weights\_decimated@{realign\_weights\_decimated}}
+\index{realign\_weights\_decimated@{realign\_weights\_decimated}!astcenc\_compress\_symbolic.cpp@{astcenc\_compress\_symbolic.cpp}}
+\doxysubsubsection{\texorpdfstring{realign\_weights\_decimated()}{realign\_weights\_decimated()}}
+{\footnotesize\ttfamily \label{astcenc__compress__symbolic_8cpp_af80747ee43aa6fda579161376205c294} 
+static bool realign\+\_\+weights\+\_\+decimated (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}{astcenc\+\_\+profile}}}]{decode\+\_\+mode}{, }\item[{const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&}]{bsd}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{, }\item[{\mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&}]{scb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Attempt to improve weights given a chosen configuration. 
+
+Given a fixed weight grid decimation and weight value quantization, iterate over all weights (per partition and per plane) and attempt to improve image quality by moving each weight up by one or down by one quantization step.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em decode\+\_\+mode} & The decode mode (LDR, HDR). \\
+\hline
+ & {\em bsd} & The block size information. \\
+\hline
+ & {\em blk} & The image block color data to compress. \\
+\hline
+\mbox{\texttt{ out}}  & {\em scb} & The symbolic compressed block output. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__compress__symbolic_8cpp_source}{astcenc\+\_\+compress\+\_\+symbolic.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_source_l00188}{188}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00193\ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ partition\ descriptor}}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\_count}};}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pi\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_aa9dfc7b23c8b5e6c71e956e2e39fff74}{get\_partition\_info}}(partition\_count,\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a17d42e08747747b32c650a48fe1b5b6e}{partition\_index}});}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ quantization\ table}}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__mode}{block\_mode}}\&\ bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a13608eb55e48c96b6243f4830278ebf3}{get\_block\_mode}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}});}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ weight\_quant\_level\ =\ bm.\mbox{\hyperlink{structblock__mode_a57910e5bd3d21447cdea6c7789723a86}{quant\_mode}};}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structquant__and__transfer__table}{quant\_and\_transfer\_table}}\&\ qat\ =\ \mbox{\hyperlink{astcenc__internal_8h_a9d58fe49f85551cd8c9ccadb5aece318}{quant\_and\_xfer\_tables}}[weight\_quant\_level];}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ decimation\ table}}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdecimation__info}{decimation\_info}}\&\ di\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a688445f2f90b13188372d812baf8e02d}{get\_decimation\_info}}(bm.\mbox{\hyperlink{structblock__mode_aaf9846117d40406d5e84508f429cf949}{decimation\_mode}});}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ weight\_count\ =\ di.\mbox{\hyperlink{structdecimation__info_af7d0c86be805995a20a6c09f6c3ab8ca}{weight\_count}};}
+\DoxyCodeLine{00206\ \ \ \ \ assert(weight\_count\ !=\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}});}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_plane\ =\ bm.\mbox{\hyperlink{structblock__mode_a78b282103d0a8bee2b07c0da075a3dc4}{is\_dual\_plane}};}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{int}\ plane2\_component\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a49f36c368c0d976f230c76c33aed2b9d}{plane2\_component}};}
+\DoxyCodeLine{00210\ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ plane\_mask\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint4::lane\_id}}()\ ==\ \mbox{\hyperlink{structvint4}{vint4}}(plane2\_component);}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{comment}{//\ Decode\ the\ color\ endpoints}}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{bool}\ rgb\_hdr;}
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{bool}\ alpha\_hdr;}
+\DoxyCodeLine{00215\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ endpnt0[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00216\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ endpnt1[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00217\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ endpnt0f[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00218\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ offset[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partition\_count\ >\ 0);}
+\DoxyCodeLine{00221\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(weight\_count\ >\ 0);}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ pa\_idx\ =\ 0;\ pa\_idx\ <\ partition\_count;\ pa\_idx++)}
+\DoxyCodeLine{00224\ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ab9b659180fb522b05391892336dbc095}{unpack\_color\_endpoints}}(decode\_mode,}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[pa\_idx],}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ad539bb907ce654690e8a89cf62196f9c}{color\_values}}[pa\_idx],}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_hdr,\ alpha\_hdr,}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ endpnt0[pa\_idx],}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ endpnt1[pa\_idx]);}
+\DoxyCodeLine{00231\ \ \ \ \ \}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ uint8\_t*\ dec\_weights\_uquant\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}};}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordtype}{bool}\ adjustments\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{comment}{//\ For\ each\ plane\ and\ partition\ ...}}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ pl\_idx\ =\ 0;\ pl\_idx\ <=\ max\_plane;\ pl\_idx++)}
+\DoxyCodeLine{00238\ \ \ \ \ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ pa\_idx\ =\ 0;\ pa\_idx\ <\ partition\_count;\ pa\_idx++)}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ endpoint\ delta\ for\ all\ components\ in\ current\ plane}}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ epd\ =\ endpnt1[pa\_idx]\ -\/\ endpnt0[pa\_idx];}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ epd\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(epd,\ \mbox{\hyperlink{structvint4_a9dfa1c40a3c4dbc0858567dc629a80b8}{vint4::zero}}(),\ plane\_mask);}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ endpnt0f[pa\_idx]\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a3a2ce0fb403294db7fe126a6b3e87ab7}{int\_to\_float}}(endpnt0[pa\_idx]);}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ offset[pa\_idx]\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a3a2ce0fb403294db7fe126a6b3e87ab7}{int\_to\_float}}(epd)\ *\ (1.0f\ /\ 64.0f);}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ an\ unquantized\ weight\ grid\ for\ this\ decimation\ level}}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__mathlib_8h_adf60643d2894fb1d3cd00d4f907186e8}{ASTCENC\_ALIGNAS}}\ \textcolor{keywordtype}{float}\ uq\_weightsf[\mbox{\hyperlink{astcenc__internal_8h_aa069d5d400baafe528bce4778aba6c45}{BLOCK\_MAX\_WEIGHTS}}];}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ we\_idx\ =\ 0;\ we\_idx\ <\ weight\_count;\ we\_idx\ +=\ \mbox{\hyperlink{astcenc__vecmathlib_8h_aaf679f3389069313db808a4ebd6af8ad}{ASTCENC\_SIMD\_WIDTH}})}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint}}\ unquant\_value(dec\_weights\_uquant\ +\ we\_idx);}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat}}\ unquant\_valuef\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a3a2ce0fb403294db7fe126a6b3e87ab7}{int\_to\_float}}(unquant\_value);}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad4c0a7bde35d6fe9c54531e1e0652f4a}{storea}}(unquant\_valuef,\ uq\_weightsf\ +\ we\_idx);}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ each\ weight\ compute\ previous,\ current,\ and\ next\ errors}}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ we\_idx\ =\ 0;\ we\_idx\ <\ weight\_count;\ we\_idx++)}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ uqw\ =\ dec\_weights\_uquant[we\_idx];}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ prev\_and\_next\ =\ qat.\mbox{\hyperlink{structquant__and__transfer__table_a6e8a9f0e2cb20155c0d2034399802b29}{prev\_next\_values}}[uqw];}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ uqw\_base\ =\ uq\_weightsf[we\_idx];}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ uqw\_down\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(prev\_and\_next\ \&\ 0xFF);}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ uqw\_up\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}((prev\_and\_next\ >>\ 8)\ \&\ 0xFF);}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ uqw\_diff\_down\ =\ uqw\_down\ -\/\ uqw\_base;}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ uqw\_diff\_up\ =\ uqw\_up\ -\/\ uqw\_base;}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ error\_basev\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ error\_downv\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ error\_upv\ =\ \mbox{\hyperlink{structvfloat4_a04b5f338012dab6be0b2bd7910fcbcae}{vfloat4::zero}}();}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Interpolate\ the\ colors\ to\ create\ the\ diffs}}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texels\_to\_evaluate\ =\ di.\mbox{\hyperlink{structdecimation__info_af8cbdbb54638ad694f845fb0bd96d007}{weight\_texel\_count}}[we\_idx];}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(texels\_to\_evaluate\ >\ 0);}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ te\_idx\ =\ 0;\ te\_idx\ <\ texels\_to\_evaluate;\ te\_idx++)}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\ =\ di.\mbox{\hyperlink{structdecimation__info_a312c1244893e84561d7d01bb43493d2e}{weight\_texels\_tr}}[te\_idx][we\_idx];}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tw\_base\ =\ di.\mbox{\hyperlink{structdecimation__info_a512f049d754ab5546758122dc0f5efcc}{texel\_contrib\_for\_weight}}[te\_idx][we\_idx];}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ weight\_base\ =\ (uq\_weightsf[di.\mbox{\hyperlink{structdecimation__info_adcee6ed79e4c94e1bcb305d429e3cff5}{texel\_weights\_tr}}[0][texel]]\ *\ di.\mbox{\hyperlink{structdecimation__info_a4d05a42b1764a046f86d4a5220cb5365}{texel\_weight\_contribs\_float\_tr}}[0][texel]}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ uq\_weightsf[di.\mbox{\hyperlink{structdecimation__info_adcee6ed79e4c94e1bcb305d429e3cff5}{texel\_weights\_tr}}[1][texel]]\ *\ di.\mbox{\hyperlink{structdecimation__info_a4d05a42b1764a046f86d4a5220cb5365}{texel\_weight\_contribs\_float\_tr}}[1][texel])}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (uq\_weightsf[di.\mbox{\hyperlink{structdecimation__info_adcee6ed79e4c94e1bcb305d429e3cff5}{texel\_weights\_tr}}[2][texel]]\ *\ di.\mbox{\hyperlink{structdecimation__info_a4d05a42b1764a046f86d4a5220cb5365}{texel\_weight\_contribs\_float\_tr}}[2][texel]}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ uq\_weightsf[di.\mbox{\hyperlink{structdecimation__info_adcee6ed79e4c94e1bcb305d429e3cff5}{texel\_weights\_tr}}[3][texel]]\ *\ di.\mbox{\hyperlink{structdecimation__info_a4d05a42b1764a046f86d4a5220cb5365}{texel\_weight\_contribs\_float\_tr}}[3][texel]);}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ideally\ this\ is\ integer\ rounded,\ but\ IQ\ gain\ it\ isn't\ worth\ the\ overhead}}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ float\ weight\ =\ astc::flt\_rd(weight\_base\ +\ 0.5f);}}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ float\ weight\_down\ =\ astc::flt\_rd(weight\_base\ +\ 0.5f\ +\ uqw\_diff\_down\ *\ tw\_base)\ -\/\ weight;}}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ float\ weight\_up\ =\ astc::flt\_rd(weight\_base\ +\ 0.5f\ +\ uqw\_diff\_up\ *\ tw\_base)\ -\/\ weight;}}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ weight\_down\ =\ weight\_base\ +\ uqw\_diff\_down\ *\ tw\_base\ -\/\ weight\_base;}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ weight\_up\ =\ weight\_base\ +\ uqw\_diff\_up\ *\ tw\_base\ -\/\ weight\_base;}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\ =\ pi.partition\_of\_texel[texel];}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\_offset\ =\ offset[partition];}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\_base\ \ \ =\ endpnt0f[partition];}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\ =\ color\_base\ +\ color\_offset\ *\ weight\_base;}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ orig\_color\ =\ blk.\mbox{\hyperlink{structimage__block_af99de7d75e1e380b31d70d131509caa9}{texel}}(texel);}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\_diff\ \ \ \ \ \ =\ color\ -\/\ orig\_color;}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\_down\_diff\ =\ color\_diff\ +\ color\_offset\ *\ weight\_down;}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\_up\_diff\ \ \ =\ color\_diff\ +\ color\_offset\ *\ weight\_up;}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ error\_basev\ +=\ color\_diff\ *\ color\_diff;}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ error\_downv\ +=\ color\_down\_diff\ *\ color\_down\_diff;}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ error\_upv\ \ \ +=\ color\_up\_diff\ *\ color\_up\_diff;}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ error\_weight\ =\ blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}};}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_base\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(error\_basev\ *\ error\_weight);}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_down\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(error\_downv\ *\ error\_weight);}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_up\ \ \ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aacd26478e4fe1f97a5d47e8adaacc898}{hadd\_s}}(error\_upv\ \ \ *\ error\_weight);}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ prev\ or\ next\ error\ is\ better,\ and\ if\ so\ use\ it}}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((error\_up\ <\ error\_base)\ \&\&\ (error\_up\ <\ error\_down)\ \&\&\ (uqw\ <\ 64))}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uq\_weightsf[we\_idx]\ =\ uqw\_up;}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_uquant[we\_idx]\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(uqw\_up);}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjustments\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((error\_down\ <\ error\_base)\ \&\&\ (uqw\ >\ 0))}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uq\_weightsf[we\_idx]\ =\ uqw\_down;}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_uquant[we\_idx]\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(uqw\_down);}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjustments\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Prepare\ iteration\ for\ plane\ 2}}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ dec\_weights\_uquant\ +=\ \mbox{\hyperlink{astcenc__internal_8h_a2dcf39b1f3c1e5f152abdf1f24e698da}{WEIGHTS\_PLANE2\_OFFSET}};}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ plane\_mask\ =\ \string~plane\_mask;}
+\DoxyCodeLine{00335\ \ \ \ \ \}}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \ \ \ \ \textcolor{keywordflow}{return}\ adjustments;}
+\DoxyCodeLine{00338\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__compress__symbolic_8cpp_af80747ee43aa6fda579161376205c294_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__compress__symbolic_8cpp_af80747ee43aa6fda579161376205c294_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__compress__symbolic_8cpp_a91e5fa530ba0e492b85132e416a5ddf4}\index{astcenc\_compress\_symbolic.cpp@{astcenc\_compress\_symbolic.cpp}!realign\_weights\_undecimated@{realign\_weights\_undecimated}}
+\index{realign\_weights\_undecimated@{realign\_weights\_undecimated}!astcenc\_compress\_symbolic.cpp@{astcenc\_compress\_symbolic.cpp}}
+\doxysubsubsection{\texorpdfstring{realign\_weights\_undecimated()}{realign\_weights\_undecimated()}}
+{\footnotesize\ttfamily \label{astcenc__compress__symbolic_8cpp_a91e5fa530ba0e492b85132e416a5ddf4} 
+static bool realign\+\_\+weights\+\_\+undecimated (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}{astcenc\+\_\+profile}}}]{decode\+\_\+mode}{, }\item[{const \mbox{\hyperlink{structblock__size__descriptor}{block\+\_\+size\+\_\+descriptor}} \&}]{bsd}{, }\item[{const \mbox{\hyperlink{structimage__block}{image\+\_\+block}} \&}]{blk}{, }\item[{\mbox{\hyperlink{structsymbolic__compressed__block}{symbolic\+\_\+compressed\+\_\+block}} \&}]{scb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Attempt to improve weights given a chosen configuration. 
+
+Given a fixed weight grid decimation and weight value quantization, iterate over all weights (per partition and per plane) and attempt to improve image quality by moving each weight up by one or down by one quantization step.
+
+This is a specialized function which only supports operating on undecimated weight grids, therefore primarily improving the performance of 4x4 and 5x5 blocks where grid decimation is needed less often.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em decode\+\_\+mode} & The decode mode (LDR, HDR). \\
+\hline
+ & {\em bsd} & The block size information. \\
+\hline
+ & {\em blk} & The image block color data to compress. \\
+\hline
+\mbox{\texttt{ out}}  & {\em scb} & The symbolic compressed block output. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__compress__symbolic_8cpp_source}{astcenc\+\_\+compress\+\_\+symbolic.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__compress__symbolic_8cpp_source_l00069}{69}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ partition\ descriptor}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\_count\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a6ac68bba1c38975e28fb3e67e974c551}{partition\_count}};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pi\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_aa9dfc7b23c8b5e6c71e956e2e39fff74}{get\_partition\_info}}(partition\_count,\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a17d42e08747747b32c650a48fe1b5b6e}{partition\_index}});}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ quantization\ table}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structblock__mode}{block\_mode}}\&\ bm\ =\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a13608eb55e48c96b6243f4830278ebf3}{get\_block\_mode}}(scb.\mbox{\hyperlink{structsymbolic__compressed__block_a7ba54ca805498286add2148b3b86546b}{block\_mode}});}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ weight\_quant\_level\ =\ bm.\mbox{\hyperlink{structblock__mode_a57910e5bd3d21447cdea6c7789723a86}{quant\_mode}};}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structquant__and__transfer__table}{quant\_and\_transfer\_table}}\&\ qat\ =\ \mbox{\hyperlink{astcenc__internal_8h_a9d58fe49f85551cd8c9ccadb5aece318}{quant\_and\_xfer\_tables}}[weight\_quant\_level];}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ max\_plane\ =\ bm.\mbox{\hyperlink{structblock__mode_a78b282103d0a8bee2b07c0da075a3dc4}{is\_dual\_plane}};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{int}\ plane2\_component\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a49f36c368c0d976f230c76c33aed2b9d}{plane2\_component}};}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ plane\_mask\ =\ \mbox{\hyperlink{structvint4_a21e3d111e37da1aaaeb5ba21a831c863}{vint4::lane\_id}}()\ ==\ \mbox{\hyperlink{structvint4}{vint4}}(plane2\_component);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ Decode\ the\ color\ endpoints}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ rgb\_hdr;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{bool}\ alpha\_hdr;}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ endpnt0[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ endpnt1[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ endpnt0f[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ offset[\mbox{\hyperlink{astcenc__internal_8h_a31f42bb3da7abe95be4b6960feead130}{BLOCK\_MAX\_PARTITIONS}}];}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(partition\_count\ >\ 0);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ pa\_idx\ =\ 0;\ pa\_idx\ <\ partition\_count;\ pa\_idx++)}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ab9b659180fb522b05391892336dbc095}{unpack\_color\_endpoints}}(decode\_mode,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a21dc79a4f976f6aa78d564576dcdde60}{color\_formats}}[pa\_idx],}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scb.\mbox{\hyperlink{structsymbolic__compressed__block_ad539bb907ce654690e8a89cf62196f9c}{color\_values}}[pa\_idx],}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_hdr,\ alpha\_hdr,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ endpnt0[pa\_idx],}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ endpnt1[pa\_idx]);}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ uint8\_t*\ dec\_weights\_uquant\ =\ scb.\mbox{\hyperlink{structsymbolic__compressed__block_a4c7260c4aa675446ffcb37f09e92dd0b}{weights}};}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{bool}\ adjustments\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{comment}{//\ For\ each\ plane\ and\ partition\ ...}}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ pl\_idx\ =\ 0;\ pl\_idx\ <=\ max\_plane;\ pl\_idx++)}
+\DoxyCodeLine{00113\ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ pa\_idx\ =\ 0;\ pa\_idx\ <\ partition\_count;\ pa\_idx++)}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ endpoint\ delta\ for\ all\ components\ in\ current\ plane}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ epd\ =\ endpnt1[pa\_idx]\ -\/\ endpnt0[pa\_idx];}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ epd\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(epd,\ \mbox{\hyperlink{structvint4_a9dfa1c40a3c4dbc0858567dc629a80b8}{vint4::zero}}(),\ plane\_mask);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ endpnt0f[pa\_idx]\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a3a2ce0fb403294db7fe126a6b3e87ab7}{int\_to\_float}}(endpnt0[pa\_idx]);}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ offset[pa\_idx]\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a3a2ce0fb403294db7fe126a6b3e87ab7}{int\_to\_float}}(epd)\ *\ (1.0f\ /\ 64.0f);}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ each\ weight\ compute\ previous,\ current,\ and\ next\ errors}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__internal_8h_a2cce51c3362aa0b5040437ac0e7f8969}{promise}}(bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}}\ >\ 0);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texel\ =\ 0;\ texel\ <\ bsd.\mbox{\hyperlink{structblock__size__descriptor_a0df466b2eda6958f2e5f8a4f147367e4}{texel\_count}};\ texel++)}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ uqw\ =\ dec\_weights\_uquant[texel];}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ prev\_and\_next\ =\ qat.\mbox{\hyperlink{structquant__and__transfer__table_a6e8a9f0e2cb20155c0d2034399802b29}{prev\_next\_values}}[uqw];}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ uqw\_down\ =\ prev\_and\_next\ \&\ 0xFF;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ uqw\_up\ =\ (prev\_and\_next\ >>\ 8)\ \&\ 0xFF;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Interpolate\ the\ colors\ to\ create\ the\ diffs}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ weight\_base\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(uqw);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ weight\_down\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(uqw\_down\ -\/\ uqw);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ weight\_up\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(uqw\_up\ -\/\ uqw);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ partition\ =\ pi.partition\_of\_texel[texel];}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\_offset\ =\ offset[partition];}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\_base\ \ \ =\ endpnt0f[partition];}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\ =\ color\_base\ +\ color\_offset\ *\ weight\_base;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ orig\_color\ \ \ =\ blk.\mbox{\hyperlink{structimage__block_af99de7d75e1e380b31d70d131509caa9}{texel}}(texel);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ error\_weight\ =\ blk.\mbox{\hyperlink{structimage__block_a6fd749c93e25e5e96748a10387c24a77}{channel\_weight}};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\_diff\ \ \ \ \ \ =\ color\ -\/\ orig\_color;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\_diff\_down\ =\ color\_diff\ +\ color\_offset\ *\ weight\_down;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvfloat4}{vfloat4}}\ color\_diff\_up\ \ \ =\ color\_diff\ +\ color\_offset\ *\ weight\_up;}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_base\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a53a7d8285fd42b50cf3600a004db34ac}{dot\_s}}(color\_diff\ \ \ \ \ \ *\ color\_diff,\ \ \ \ \ \ error\_weight);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_down\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a53a7d8285fd42b50cf3600a004db34ac}{dot\_s}}(color\_diff\_down\ *\ color\_diff\_down,\ error\_weight);}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\_up\ \ \ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a53a7d8285fd42b50cf3600a004db34ac}{dot\_s}}(color\_diff\_up\ \ \ *\ color\_diff\_up,\ \ \ error\_weight);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ prev\ or\ next\ error\ is\ better,\ and\ if\ so\ use\ it}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((error\_up\ <\ error\_base)\ \&\&\ (error\_up\ <\ error\_down)\ \&\&\ (uqw\ <\ 64))}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_uquant[texel]\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(uqw\_up);}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjustments\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((error\_down\ <\ error\_base)\ \&\&\ (uqw\ >\ 0))}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dec\_weights\_uquant[texel]\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(uqw\_down);}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjustments\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Prepare\ iteration\ for\ plane\ 2}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ dec\_weights\_uquant\ +=\ \mbox{\hyperlink{astcenc__internal_8h_a2dcf39b1f3c1e5f152abdf1f24e698da}{WEIGHTS\_PLANE2\_OFFSET}};}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ plane\_mask\ =\ \string~plane\_mask;}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordflow}{return}\ adjustments;}
+\DoxyCodeLine{00174\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__compress__symbolic_8cpp_a91e5fa530ba0e492b85132e416a5ddf4_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__compress__symbolic_8cpp_a91e5fa530ba0e492b85132e416a5ddf4_icgraph}
+\end{center}
+\end{figure}

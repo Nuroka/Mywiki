@@ -1,0 +1,17 @@
+digraph "quantize_hdr_alpha"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="quantize_hdr_alpha",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Quantize a HDR A color using either delta or direct RGBA encoding."];
+  Node1 -> Node2 [id="edge5_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="astc::clamp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceastc.html#a8f8b2ad23b04a389f6785bc80b61349b",tooltip="Clamp a value value between mn and mx."];
+  Node1 -> Node3 [id="edge6_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="astc::flt2int_rtn",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceastc.html#a455f4a304ea7dcdd8fd0de030cbdbfb4",tooltip="SP float round-to-nearest and convert to integer."];
+  Node1 -> Node4 [id="edge7_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="mask",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__vecmathlib__avx2__8_8h.html#ad922a3ed6098767968916265154b6f82",tooltip="Return a 8-bit mask code indicating mask status."];
+  Node1 -> Node5 [id="edge8_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="quant_color",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenc__color__quantize_8cpp.html#a0af2fba0ed6cbe9e279c808e540eb74e",tooltip="Determine the quantized value given a quantization level."];
+}

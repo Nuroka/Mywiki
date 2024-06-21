@@ -1,0 +1,19 @@
+digraph "astcenc_print_header"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="astcenc_print_header",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Print the tool copyright and version header to stdout."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="astcenc_main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__toplevel_8cpp.html#a073d18880f24fd648661b01d2e20340e",tooltip="Application entry point."];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__entry_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="astcenc_print_longhelp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__toplevel__help_8cpp.html#a7377ad0be8285dd96c932d2744fc4641",tooltip="Print the tool copyright, version, and long-form help to stdout."];
+  Node4 -> Node2 [id="edge4_Node000004_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node5 [id="edge5_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="astcenc_print_shorthelp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$astcenccli__toplevel__help_8cpp.html#af5bf7c6ac05f0f401cfde7d73ed2b852",tooltip="Print the tool copyright, version, and short-form help to stdout."];
+  Node5 -> Node2 [id="edge6_Node000005_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

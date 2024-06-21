@@ -1,0 +1,1552 @@
+\doxysection{C\+:/\+Users/inhyu/\+One\+Drive/바탕 화면/랩실 내용/astc-\/encoder-\/main/\+Source/astcenc\+\_\+color\+\_\+unquantize.cpp 파일 참조}
+\hypertarget{astcenc__color__unquantize_8cpp}{}\label{astcenc__color__unquantize_8cpp}\index{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_color\_unquantize.cpp@{C:/Users/inhyu/OneDrive/바탕 화면/랩실 내용/astc-\/encoder-\/main/Source/astcenc\_color\_unquantize.cpp}}
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include "{}astcenc\+\_\+internal.\+h"{}}\newline
+astcenc\+\_\+color\+\_\+unquantize.\+cpp에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} \mbox{\hyperlink{astcenc__color__unquantize_8cpp_a604a48c74e6d1c8476146b0955331344}{uncontract\+\_\+color}} (\mbox{\hyperlink{structvint4}{vint4}} input)
+\begin{DoxyCompactList}\small\item\em Functions for color unquantization. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_abb9e5b31fe822e7e3ab0757f1989a321}{rgba\+\_\+delta\+\_\+unpack}} (\mbox{\hyperlink{structvint4}{vint4}} input0, \mbox{\hyperlink{structvint4}{vint4}} input1, \mbox{\hyperlink{structvint4}{vint4}} \&output0, \mbox{\hyperlink{structvint4}{vint4}} \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack an LDR RGBA color that uses delta encoding. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_a09b179400bc4fa4d90e9b093380e5541}{rgb\+\_\+delta\+\_\+unpack}} (\mbox{\hyperlink{structvint4}{vint4}} input0, \mbox{\hyperlink{structvint4}{vint4}} input1, \mbox{\hyperlink{structvint4}{vint4}} \&output0, \mbox{\hyperlink{structvint4}{vint4}} \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack an LDR RGB color that uses delta encoding. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_aa8f902332b94b93405c7496b1b3838ba}{rgba\+\_\+unpack}} (\mbox{\hyperlink{structvint4}{vint4}} input0, \mbox{\hyperlink{structvint4}{vint4}} input1, \mbox{\hyperlink{structvint4}{vint4}} \&output0, \mbox{\hyperlink{structvint4}{vint4}} \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack an LDR RGBA color that uses direct encoding. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ae84a3a83b3f1dbe4288ee4054ded6419}{rgb\+\_\+unpack}} (\mbox{\hyperlink{structvint4}{vint4}} input0, \mbox{\hyperlink{structvint4}{vint4}} input1, \mbox{\hyperlink{structvint4}{vint4}} \&output0, \mbox{\hyperlink{structvint4}{vint4}} \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack an LDR RGB color that uses direct encoding. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_aab96eda6a634d4d49db5d672ec7b4521}{rgb\+\_\+scale\+\_\+alpha\+\_\+unpack}} (\mbox{\hyperlink{structvint4}{vint4}} input0, uint8\+\_\+t alpha1, uint8\+\_\+t scale, \mbox{\hyperlink{structvint4}{vint4}} \&output0, \mbox{\hyperlink{structvint4}{vint4}} \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack an LDR RGBA color that uses scaled encoding. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_af892d5217804e7cd7087fb7791c86c53}{rgb\+\_\+scale\+\_\+unpack}} (\mbox{\hyperlink{structvint4}{vint4}} input0, int scale, \mbox{\hyperlink{structvint4}{vint4}} \&output0, \mbox{\hyperlink{structvint4}{vint4}} \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack an LDR RGB color that uses scaled encoding. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_a4b46bc42a37e5286f564c7bcdf1d26a7}{luminance\+\_\+unpack}} (const uint8\+\_\+t input\mbox{[}2\mbox{]}, \mbox{\hyperlink{structvint4}{vint4}} \&output0, \mbox{\hyperlink{structvint4}{vint4}} \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack an LDR L color that uses direct encoding. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_aef3d7e05db47fe6589797a1abde0ece1}{luminance\+\_\+delta\+\_\+unpack}} (const uint8\+\_\+t input\mbox{[}2\mbox{]}, \mbox{\hyperlink{structvint4}{vint4}} \&output0, \mbox{\hyperlink{structvint4}{vint4}} \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack an LDR L color that uses delta encoding. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_a7de49dc5d2c25680d4beeaf389c7ee05}{luminance\+\_\+alpha\+\_\+unpack}} (const uint8\+\_\+t input\mbox{[}4\mbox{]}, \mbox{\hyperlink{structvint4}{vint4}} \&output0, \mbox{\hyperlink{structvint4}{vint4}} \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack an LDR LA color that uses direct encoding. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_a3b8032ce212a167d91be041c0226cb3a}{luminance\+\_\+alpha\+\_\+delta\+\_\+unpack}} (const uint8\+\_\+t input\mbox{[}4\mbox{]}, \mbox{\hyperlink{structvint4}{vint4}} \&output0, \mbox{\hyperlink{structvint4}{vint4}} \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack an LDR LA color that uses delta encoding. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ab52d36b55d82a9b3a149429ed6d5332c}{hdr\+\_\+rgbo\+\_\+unpack}} (const uint8\+\_\+t input\mbox{[}4\mbox{]}, \mbox{\hyperlink{structvint4}{vint4}} \&output0, \mbox{\hyperlink{structvint4}{vint4}} \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack an HDR RGB + offset encoding. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ade2461b695d17d056a56c091736a9cc9}{hdr\+\_\+rgb\+\_\+unpack}} (const uint8\+\_\+t input\mbox{[}6\mbox{]}, \mbox{\hyperlink{structvint4}{vint4}} \&output0, \mbox{\hyperlink{structvint4}{vint4}} \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack an HDR RGB direct encoding. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_aa7a2e2f7b578cb97b5ade543c8db2614}{hdr\+\_\+rgb\+\_\+ldr\+\_\+alpha\+\_\+unpack}} (const uint8\+\_\+t input\mbox{[}8\mbox{]}, \mbox{\hyperlink{structvint4}{vint4}} \&output0, \mbox{\hyperlink{structvint4}{vint4}} \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack an HDR RGB + LDR A direct encoding. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ac9b70bb1bd214dee745ded9bcb04742e}{hdr\+\_\+luminance\+\_\+small\+\_\+range\+\_\+unpack}} (const uint8\+\_\+t input\mbox{[}2\mbox{]}, \mbox{\hyperlink{structvint4}{vint4}} \&output0, \mbox{\hyperlink{structvint4}{vint4}} \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack an HDR L (small range) direct encoding. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_aa2c0643330441f9232c720d4acd01552}{hdr\+\_\+luminance\+\_\+large\+\_\+range\+\_\+unpack}} (const uint8\+\_\+t input\mbox{[}2\mbox{]}, \mbox{\hyperlink{structvint4}{vint4}} \&output0, \mbox{\hyperlink{structvint4}{vint4}} \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack an HDR L (large range) direct encoding. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_af3675c2edfd62b1bb94f7977eb981191}{hdr\+\_\+alpha\+\_\+unpack}} (const uint8\+\_\+t input\mbox{[}2\mbox{]}, int \&output0, int \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack an HDR A direct encoding. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_aded0cdfa2613a96d69299785784bfa7e}{hdr\+\_\+rgb\+\_\+hdr\+\_\+alpha\+\_\+unpack}} (const uint8\+\_\+t input\mbox{[}8\mbox{]}, \mbox{\hyperlink{structvint4}{vint4}} \&output0, \mbox{\hyperlink{structvint4}{vint4}} \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack an HDR RGBA direct encoding. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ab9b659180fb522b05391892336dbc095}{unpack\+\_\+color\+\_\+endpoints}} (\mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}{astcenc\+\_\+profile}} decode\+\_\+mode, int format, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}input, bool \&rgb\+\_\+hdr, bool \&alpha\+\_\+hdr, \mbox{\hyperlink{structvint4}{vint4}} \&output0, \mbox{\hyperlink{structvint4}{vint4}} \&output1)
+\begin{DoxyCompactList}\small\item\em Unpack a single pair of encoded endpoints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\Hypertarget{astcenc__color__unquantize_8cpp_af3675c2edfd62b1bb94f7977eb981191}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!hdr\_alpha\_unpack@{hdr\_alpha\_unpack}}
+\index{hdr\_alpha\_unpack@{hdr\_alpha\_unpack}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{hdr\_alpha\_unpack()}{hdr\_alpha\_unpack()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_af3675c2edfd62b1bb94f7977eb981191} 
+static void hdr\+\_\+alpha\+\_\+unpack (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{input}{\mbox{[}2\mbox{]}, }\item[{int \&}]{output0}{, }\item[{int \&}]{output1}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Unpack an HDR A direct encoding. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em input} & The packed endpoints (packed and modal). \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The unpacked endpoint 0 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The unpacked endpoint 1 color. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00696}{696}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00700\ \ \ \{}
+\DoxyCodeLine{00701\ }
+\DoxyCodeLine{00702\ \ \ \ \ \textcolor{keywordtype}{int}\ v6\ =\ input[0];}
+\DoxyCodeLine{00703\ \ \ \ \ \textcolor{keywordtype}{int}\ v7\ =\ input[1];}
+\DoxyCodeLine{00704\ }
+\DoxyCodeLine{00705\ \ \ \ \ \textcolor{keywordtype}{int}\ selector\ =\ ((v6\ >>\ 7)\ \&\ 1)\ |\ ((v7\ >>\ 6)\ \&\ 2);}
+\DoxyCodeLine{00706\ \ \ \ \ v6\ \&=\ 0x7F;}
+\DoxyCodeLine{00707\ \ \ \ \ v7\ \&=\ 0x7F;}
+\DoxyCodeLine{00708\ \ \ \ \ \textcolor{keywordflow}{if}\ (selector\ ==\ 3)}
+\DoxyCodeLine{00709\ \ \ \ \ \{}
+\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ output0\ =\ v6\ <<\ 5;}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ output1\ =\ v7\ <<\ 5;}
+\DoxyCodeLine{00712\ \ \ \ \ \}}
+\DoxyCodeLine{00713\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00714\ \ \ \ \ \{}
+\DoxyCodeLine{00715\ \ \ \ \ \ \ \ \ v6\ |=\ (v7\ <<\ (selector\ +\ 1))\ \&\ 0x780;}
+\DoxyCodeLine{00716\ \ \ \ \ \ \ \ \ v7\ \&=\ (0x3f\ >>\ selector);}
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ v7\ \string^=\ 32\ >>\ selector;}
+\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ v7\ -\/=\ 32\ >>\ selector;}
+\DoxyCodeLine{00719\ \ \ \ \ \ \ \ \ v6\ <<=\ (4\ -\/\ selector);}
+\DoxyCodeLine{00720\ \ \ \ \ \ \ \ \ v7\ <<=\ (4\ -\/\ selector);}
+\DoxyCodeLine{00721\ \ \ \ \ \ \ \ \ v7\ +=\ v6;}
+\DoxyCodeLine{00722\ }
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v7\ <\ 0)}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ \ \ \ \ v7\ =\ 0;}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (v7\ >\ 0xFFF)}
+\DoxyCodeLine{00728\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ \ \ \ \ v7\ =\ 0xFFF;}
+\DoxyCodeLine{00730\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00731\ }
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ output0\ =\ v6;}
+\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ output1\ =\ v7;}
+\DoxyCodeLine{00734\ \ \ \ \ \}}
+\DoxyCodeLine{00735\ }
+\DoxyCodeLine{00736\ \ \ \ \ output0\ <<=\ 4;}
+\DoxyCodeLine{00737\ \ \ \ \ output1\ <<=\ 4;}
+\DoxyCodeLine{00738\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_af3675c2edfd62b1bb94f7977eb981191_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_aa2c0643330441f9232c720d4acd01552}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!hdr\_luminance\_large\_range\_unpack@{hdr\_luminance\_large\_range\_unpack}}
+\index{hdr\_luminance\_large\_range\_unpack@{hdr\_luminance\_large\_range\_unpack}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{hdr\_luminance\_large\_range\_unpack()}{hdr\_luminance\_large\_range\_unpack()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_aa2c0643330441f9232c720d4acd01552} 
+static void hdr\+\_\+luminance\+\_\+large\+\_\+range\+\_\+unpack (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{input}{\mbox{[}2\mbox{]}, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output1}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Unpack an HDR L (large range) direct encoding. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em input} & The packed endpoints (packed and modal). \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The unpacked endpoint 0 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The unpacked endpoint 1 color. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00665}{665}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00669\ \ \ \{}
+\DoxyCodeLine{00670\ \ \ \ \ \textcolor{keywordtype}{int}\ v0\ =\ input[0];}
+\DoxyCodeLine{00671\ \ \ \ \ \textcolor{keywordtype}{int}\ v1\ =\ input[1];}
+\DoxyCodeLine{00672\ }
+\DoxyCodeLine{00673\ \ \ \ \ \textcolor{keywordtype}{int}\ y0,\ y1;}
+\DoxyCodeLine{00674\ \ \ \ \ \textcolor{keywordflow}{if}\ (v1\ >=\ v0)}
+\DoxyCodeLine{00675\ \ \ \ \ \{}
+\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ y0\ =\ v0\ <<\ 4;}
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ y1\ =\ v1\ <<\ 4;}
+\DoxyCodeLine{00678\ \ \ \ \ \}}
+\DoxyCodeLine{00679\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00680\ \ \ \ \ \{}
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ y0\ =\ (v1\ <<\ 4)\ +\ 8;}
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ y1\ =\ (v0\ <<\ 4)\ -\/\ 8;}
+\DoxyCodeLine{00683\ \ \ \ \ \}}
+\DoxyCodeLine{00684\ }
+\DoxyCodeLine{00685\ \ \ \ \ output0\ =\ \mbox{\hyperlink{structvint4}{vint4}}(y0\ <<\ 4,\ y0\ <<\ 4,\ y0\ <<\ 4,\ 0x7800);}
+\DoxyCodeLine{00686\ \ \ \ \ output1\ =\ \mbox{\hyperlink{structvint4}{vint4}}(y1\ <<\ 4,\ y1\ <<\ 4,\ y1\ <<\ 4,\ 0x7800);}
+\DoxyCodeLine{00687\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_aa2c0643330441f9232c720d4acd01552_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_ac9b70bb1bd214dee745ded9bcb04742e}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!hdr\_luminance\_small\_range\_unpack@{hdr\_luminance\_small\_range\_unpack}}
+\index{hdr\_luminance\_small\_range\_unpack@{hdr\_luminance\_small\_range\_unpack}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{hdr\_luminance\_small\_range\_unpack()}{hdr\_luminance\_small\_range\_unpack()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_ac9b70bb1bd214dee745ded9bcb04742e} 
+static void hdr\+\_\+luminance\+\_\+small\+\_\+range\+\_\+unpack (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{input}{\mbox{[}2\mbox{]}, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output1}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Unpack an HDR L (small range) direct encoding. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em input} & The packed endpoints (packed and modal). \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The unpacked endpoint 0 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The unpacked endpoint 1 color. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00628}{628}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00632\ \ \ \{}
+\DoxyCodeLine{00633\ \ \ \ \ \textcolor{keywordtype}{int}\ v0\ =\ input[0];}
+\DoxyCodeLine{00634\ \ \ \ \ \textcolor{keywordtype}{int}\ v1\ =\ input[1];}
+\DoxyCodeLine{00635\ }
+\DoxyCodeLine{00636\ \ \ \ \ \textcolor{keywordtype}{int}\ y0,\ y1;}
+\DoxyCodeLine{00637\ \ \ \ \ \textcolor{keywordflow}{if}\ (v0\ \&\ 0x80)}
+\DoxyCodeLine{00638\ \ \ \ \ \{}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ y0\ =\ ((v1\ \&\ 0xE0)\ <<\ 4)\ |\ ((v0\ \&\ 0x7F)\ <<\ 2);}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ y1\ =\ (v1\ \&\ 0x1F)\ <<\ 2;}
+\DoxyCodeLine{00641\ \ \ \ \ \}}
+\DoxyCodeLine{00642\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00643\ \ \ \ \ \{}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ y0\ =\ ((v1\ \&\ 0xF0)\ <<\ 4)\ |\ ((v0\ \&\ 0x7F)\ <<\ 1);}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ y1\ =\ (v1\ \&\ 0xF)\ <<\ 1;}
+\DoxyCodeLine{00646\ \ \ \ \ \}}
+\DoxyCodeLine{00647\ }
+\DoxyCodeLine{00648\ \ \ \ \ y1\ +=\ y0;}
+\DoxyCodeLine{00649\ \ \ \ \ \textcolor{keywordflow}{if}\ (y1\ >\ 0xFFF)}
+\DoxyCodeLine{00650\ \ \ \ \ \{}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ y1\ =\ 0xFFF;}
+\DoxyCodeLine{00652\ \ \ \ \ \}}
+\DoxyCodeLine{00653\ }
+\DoxyCodeLine{00654\ \ \ \ \ output0\ =\ \mbox{\hyperlink{structvint4}{vint4}}(y0\ <<\ 4,\ y0\ <<\ 4,\ y0\ <<\ 4,\ 0x7800);}
+\DoxyCodeLine{00655\ \ \ \ \ output1\ =\ \mbox{\hyperlink{structvint4}{vint4}}(y1\ <<\ 4,\ y1\ <<\ 4,\ y1\ <<\ 4,\ 0x7800);}
+\DoxyCodeLine{00656\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_ac9b70bb1bd214dee745ded9bcb04742e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_aded0cdfa2613a96d69299785784bfa7e}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!hdr\_rgb\_hdr\_alpha\_unpack@{hdr\_rgb\_hdr\_alpha\_unpack}}
+\index{hdr\_rgb\_hdr\_alpha\_unpack@{hdr\_rgb\_hdr\_alpha\_unpack}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{hdr\_rgb\_hdr\_alpha\_unpack()}{hdr\_rgb\_hdr\_alpha\_unpack()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_aded0cdfa2613a96d69299785784bfa7e} 
+static void hdr\+\_\+rgb\+\_\+hdr\+\_\+alpha\+\_\+unpack (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{input}{\mbox{[}8\mbox{]}, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output1}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Unpack an HDR RGBA direct encoding. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em input} & The packed endpoints (packed and modal). \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The unpacked endpoint 0 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The unpacked endpoint 1 color. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00747}{747}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00751\ \ \ \{}
+\DoxyCodeLine{00752\ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ade2461b695d17d056a56c091736a9cc9}{hdr\_rgb\_unpack}}(input,\ output0,\ output1);}
+\DoxyCodeLine{00753\ }
+\DoxyCodeLine{00754\ \ \ \ \ \textcolor{keywordtype}{int}\ alpha0,\ alpha1;}
+\DoxyCodeLine{00755\ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_af3675c2edfd62b1bb94f7977eb981191}{hdr\_alpha\_unpack}}(input\ +\ 6,\ alpha0,\ alpha1);}
+\DoxyCodeLine{00756\ }
+\DoxyCodeLine{00757\ \ \ \ \ output0.\mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{set\_lane}}<3>(alpha0);}
+\DoxyCodeLine{00758\ \ \ \ \ output1.\mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{set\_lane}}<3>(alpha1);}
+\DoxyCodeLine{00759\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_aded0cdfa2613a96d69299785784bfa7e_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_aded0cdfa2613a96d69299785784bfa7e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_aa7a2e2f7b578cb97b5ade543c8db2614}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!hdr\_rgb\_ldr\_alpha\_unpack@{hdr\_rgb\_ldr\_alpha\_unpack}}
+\index{hdr\_rgb\_ldr\_alpha\_unpack@{hdr\_rgb\_ldr\_alpha\_unpack}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{hdr\_rgb\_ldr\_alpha\_unpack()}{hdr\_rgb\_ldr\_alpha\_unpack()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_aa7a2e2f7b578cb97b5ade543c8db2614} 
+static void hdr\+\_\+rgb\+\_\+ldr\+\_\+alpha\+\_\+unpack (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{input}{\mbox{[}8\mbox{]}, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output1}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Unpack an HDR RGB + LDR A direct encoding. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em input} & The packed endpoints (packed and modal). \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The unpacked endpoint 0 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The unpacked endpoint 1 color. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00608}{608}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00612\ \ \ \{}
+\DoxyCodeLine{00613\ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ade2461b695d17d056a56c091736a9cc9}{hdr\_rgb\_unpack}}(input,\ output0,\ output1);}
+\DoxyCodeLine{00614\ }
+\DoxyCodeLine{00615\ \ \ \ \ \textcolor{keywordtype}{int}\ v6\ =\ input[6];}
+\DoxyCodeLine{00616\ \ \ \ \ \textcolor{keywordtype}{int}\ v7\ =\ input[7];}
+\DoxyCodeLine{00617\ \ \ \ \ output0.\mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{set\_lane}}<3>(v6);}
+\DoxyCodeLine{00618\ \ \ \ \ output1.\mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{set\_lane}}<3>(v7);}
+\DoxyCodeLine{00619\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_aa7a2e2f7b578cb97b5ade543c8db2614_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_aa7a2e2f7b578cb97b5ade543c8db2614_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_ade2461b695d17d056a56c091736a9cc9}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!hdr\_rgb\_unpack@{hdr\_rgb\_unpack}}
+\index{hdr\_rgb\_unpack@{hdr\_rgb\_unpack}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{hdr\_rgb\_unpack()}{hdr\_rgb\_unpack()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_ade2461b695d17d056a56c091736a9cc9} 
+static void hdr\+\_\+rgb\+\_\+unpack (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{input}{\mbox{[}6\mbox{]}, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output1}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Unpack an HDR RGB direct encoding. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em input} & The packed endpoints (packed and modal). \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The unpacked endpoint 0 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The unpacked endpoint 1 color. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00442}{442}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00446\ \ \ \{}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00448\ \ \ \ \ \textcolor{keywordtype}{int}\ v0\ =\ input[0];}
+\DoxyCodeLine{00449\ \ \ \ \ \textcolor{keywordtype}{int}\ v1\ =\ input[1];}
+\DoxyCodeLine{00450\ \ \ \ \ \textcolor{keywordtype}{int}\ v2\ =\ input[2];}
+\DoxyCodeLine{00451\ \ \ \ \ \textcolor{keywordtype}{int}\ v3\ =\ input[3];}
+\DoxyCodeLine{00452\ \ \ \ \ \textcolor{keywordtype}{int}\ v4\ =\ input[4];}
+\DoxyCodeLine{00453\ \ \ \ \ \textcolor{keywordtype}{int}\ v5\ =\ input[5];}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{comment}{//\ extract\ all\ the\ fixed-\/placement\ bitfields}}
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{keywordtype}{int}\ modeval\ =\ ((v1\ \&\ 0x80)\ >>\ 7)\ |\ (((v2\ \&\ 0x80)\ >>\ 7)\ <<\ 1)\ |\ (((v3\ \&\ 0x80)\ >>\ 7)\ <<\ 2);}
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00458\ \ \ \ \ \textcolor{keywordtype}{int}\ majcomp\ =\ ((v4\ \&\ 0x80)\ >>\ 7)\ |\ (((v5\ \&\ 0x80)\ >>\ 7)\ <<\ 1);}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ \ \ \ \ \textcolor{keywordflow}{if}\ (majcomp\ ==\ 3)}
+\DoxyCodeLine{00461\ \ \ \ \ \{}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ output0\ =\ \mbox{\hyperlink{structvint4}{vint4}}(v0\ <<\ 8,\ v2\ <<\ 8,\ (v4\ \&\ 0x7F)\ <<\ 9,\ 0x7800);}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ output1\ =\ \mbox{\hyperlink{structvint4}{vint4}}(v1\ <<\ 8,\ v3\ <<\ 8,\ (v5\ \&\ 0x7F)\ <<\ 9,\ 0x7800);}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00465\ \ \ \ \ \}}
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00467\ \ \ \ \ \textcolor{keywordtype}{int}\ a\ =\ v0\ |\ ((v1\ \&\ 0x40)\ <<\ 2);}
+\DoxyCodeLine{00468\ \ \ \ \ \textcolor{keywordtype}{int}\ b0\ =\ v2\ \&\ 0x3f;}
+\DoxyCodeLine{00469\ \ \ \ \ \textcolor{keywordtype}{int}\ b1\ =\ v3\ \&\ 0x3f;}
+\DoxyCodeLine{00470\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ v1\ \&\ 0x3f;}
+\DoxyCodeLine{00471\ \ \ \ \ \textcolor{keywordtype}{int}\ d0\ =\ v4\ \&\ 0x7f;}
+\DoxyCodeLine{00472\ \ \ \ \ \textcolor{keywordtype}{int}\ d1\ =\ v5\ \&\ 0x7f;}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \ \ \ \ \textcolor{comment}{//\ get\ hold\ of\ the\ number\ of\ bits\ in\ 'd0'\ and\ 'd1'}}
+\DoxyCodeLine{00475\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dbits\_tab[8]\ \{\ 7,\ 6,\ 7,\ 6,\ 5,\ 6,\ 5,\ 6\ \};}
+\DoxyCodeLine{00476\ \ \ \ \ \textcolor{keywordtype}{int}\ dbits\ =\ dbits\_tab[modeval];}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00478\ \ \ \ \ \textcolor{comment}{//\ extract\ six\ variable-\/placement\ bits}}
+\DoxyCodeLine{00479\ \ \ \ \ \textcolor{keywordtype}{int}\ bit0\ =\ (v2\ >>\ 6)\ \&\ 1;}
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keywordtype}{int}\ bit1\ =\ (v3\ >>\ 6)\ \&\ 1;}
+\DoxyCodeLine{00481\ \ \ \ \ \textcolor{keywordtype}{int}\ bit2\ =\ (v4\ >>\ 6)\ \&\ 1;}
+\DoxyCodeLine{00482\ \ \ \ \ \textcolor{keywordtype}{int}\ bit3\ =\ (v5\ >>\ 6)\ \&\ 1;}
+\DoxyCodeLine{00483\ \ \ \ \ \textcolor{keywordtype}{int}\ bit4\ =\ (v4\ >>\ 5)\ \&\ 1;}
+\DoxyCodeLine{00484\ \ \ \ \ \textcolor{keywordtype}{int}\ bit5\ =\ (v5\ >>\ 5)\ \&\ 1;}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00486\ \ \ \ \ \textcolor{comment}{//\ and\ prepend\ the\ variable-\/placement\ bits\ depending\ on\ mode.}}
+\DoxyCodeLine{00487\ \ \ \ \ \textcolor{keywordtype}{int}\ ohmod\ =\ 1\ <<\ modeval;\ \ \ \textcolor{comment}{//\ one-\/hot-\/mode}}
+\DoxyCodeLine{00488\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohmod\ \&\ 0xA4)}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ a\ |=\ bit0\ <<\ 9;}
+\DoxyCodeLine{00490\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohmod\ \&\ 0x8)}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ a\ |=\ bit2\ <<\ 9;}
+\DoxyCodeLine{00492\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohmod\ \&\ 0x50)}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ a\ |=\ bit4\ <<\ 9;}
+\DoxyCodeLine{00494\ }
+\DoxyCodeLine{00495\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohmod\ \&\ 0x50)}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ a\ |=\ bit5\ <<\ 10;}
+\DoxyCodeLine{00497\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohmod\ \&\ 0xA0)}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ a\ |=\ bit1\ <<\ 10;}
+\DoxyCodeLine{00499\ }
+\DoxyCodeLine{00500\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohmod\ \&\ 0xC0)}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ a\ |=\ bit2\ <<\ 11;}
+\DoxyCodeLine{00502\ }
+\DoxyCodeLine{00503\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohmod\ \&\ 0x4)}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ c\ |=\ bit1\ <<\ 6;}
+\DoxyCodeLine{00505\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohmod\ \&\ 0xE8)}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ c\ |=\ bit3\ <<\ 6;}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00508\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohmod\ \&\ 0x20)}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ c\ |=\ bit2\ <<\ 7;}
+\DoxyCodeLine{00510\ }
+\DoxyCodeLine{00511\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohmod\ \&\ 0x5B)}
+\DoxyCodeLine{00512\ \ \ \ \ \{}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ b0\ |=\ bit0\ <<\ 6;}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ b1\ |=\ bit1\ <<\ 6;}
+\DoxyCodeLine{00515\ \ \ \ \ \}}
+\DoxyCodeLine{00516\ }
+\DoxyCodeLine{00517\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohmod\ \&\ 0x12)}
+\DoxyCodeLine{00518\ \ \ \ \ \{}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ b0\ |=\ bit2\ <<\ 7;}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ b1\ |=\ bit3\ <<\ 7;}
+\DoxyCodeLine{00521\ \ \ \ \ \}}
+\DoxyCodeLine{00522\ }
+\DoxyCodeLine{00523\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohmod\ \&\ 0xAF)}
+\DoxyCodeLine{00524\ \ \ \ \ \{}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ d0\ |=\ bit4\ <<\ 5;}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ d1\ |=\ bit5\ <<\ 5;}
+\DoxyCodeLine{00527\ \ \ \ \ \}}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00529\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohmod\ \&\ 0x5)}
+\DoxyCodeLine{00530\ \ \ \ \ \{}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ d0\ |=\ bit2\ <<\ 6;}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ d1\ |=\ bit3\ <<\ 6;}
+\DoxyCodeLine{00533\ \ \ \ \ \}}
+\DoxyCodeLine{00534\ }
+\DoxyCodeLine{00535\ \ \ \ \ \textcolor{comment}{//\ sign-\/extend\ 'd0'\ and\ 'd1'}}
+\DoxyCodeLine{00536\ \ \ \ \ \textcolor{comment}{//\ note:\ this\ code\ assumes\ that\ signed\ right-\/shift\ actually\ sign-\/fills,\ not\ zero-\/fills.}}
+\DoxyCodeLine{00537\ \ \ \ \ int32\_t\ d0x\ =\ d0;}
+\DoxyCodeLine{00538\ \ \ \ \ int32\_t\ d1x\ =\ d1;}
+\DoxyCodeLine{00539\ \ \ \ \ \textcolor{keywordtype}{int}\ sx\_shamt\ =\ 32\ -\/\ dbits;}
+\DoxyCodeLine{00540\ \ \ \ \ d0x\ <<=\ sx\_shamt;}
+\DoxyCodeLine{00541\ \ \ \ \ d0x\ >>=\ sx\_shamt;}
+\DoxyCodeLine{00542\ \ \ \ \ d1x\ <<=\ sx\_shamt;}
+\DoxyCodeLine{00543\ \ \ \ \ d1x\ >>=\ sx\_shamt;}
+\DoxyCodeLine{00544\ \ \ \ \ d0\ =\ d0x;}
+\DoxyCodeLine{00545\ \ \ \ \ d1\ =\ d1x;}
+\DoxyCodeLine{00546\ }
+\DoxyCodeLine{00547\ \ \ \ \ \textcolor{comment}{//\ expand\ all\ values\ to\ 12\ bits,\ with\ left-\/shift\ as\ needed.}}
+\DoxyCodeLine{00548\ \ \ \ \ \textcolor{keywordtype}{int}\ val\_shamt\ =\ (modeval\ >>\ 1)\ \string^\ 3;}
+\DoxyCodeLine{00549\ \ \ \ \ a\ <<=\ val\_shamt;}
+\DoxyCodeLine{00550\ \ \ \ \ b0\ <<=\ val\_shamt;}
+\DoxyCodeLine{00551\ \ \ \ \ b1\ <<=\ val\_shamt;}
+\DoxyCodeLine{00552\ \ \ \ \ c\ <<=\ val\_shamt;}
+\DoxyCodeLine{00553\ \ \ \ \ d0\ <<=\ val\_shamt;}
+\DoxyCodeLine{00554\ \ \ \ \ d1\ <<=\ val\_shamt;}
+\DoxyCodeLine{00555\ }
+\DoxyCodeLine{00556\ \ \ \ \ \textcolor{comment}{//\ then\ compute\ the\ actual\ color\ values.}}
+\DoxyCodeLine{00557\ \ \ \ \ \textcolor{keywordtype}{int}\ red1\ =\ a;}
+\DoxyCodeLine{00558\ \ \ \ \ \textcolor{keywordtype}{int}\ green1\ =\ a\ -\/\ b0;}
+\DoxyCodeLine{00559\ \ \ \ \ \textcolor{keywordtype}{int}\ blue1\ =\ a\ -\/\ b1;}
+\DoxyCodeLine{00560\ \ \ \ \ \textcolor{keywordtype}{int}\ red0\ =\ a\ -\/\ c;}
+\DoxyCodeLine{00561\ \ \ \ \ \textcolor{keywordtype}{int}\ green0\ =\ a\ -\/\ b0\ -\/\ c\ -\/\ d0;}
+\DoxyCodeLine{00562\ \ \ \ \ \textcolor{keywordtype}{int}\ blue0\ =\ a\ -\/\ b1\ -\/\ c\ -\/\ d1;}
+\DoxyCodeLine{00563\ }
+\DoxyCodeLine{00564\ \ \ \ \ \textcolor{comment}{//\ clamp\ the\ color\ components\ to\ [0,2\string^12\ -\/\ 1]}}
+\DoxyCodeLine{00565\ \ \ \ \ red0\ =\ \mbox{\hyperlink{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b}{astc::clamp}}(red0,\ 0,\ 4095);}
+\DoxyCodeLine{00566\ \ \ \ \ green0\ =\ \mbox{\hyperlink{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b}{astc::clamp}}(green0,\ 0,\ 4095);}
+\DoxyCodeLine{00567\ \ \ \ \ blue0\ =\ \mbox{\hyperlink{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b}{astc::clamp}}(blue0,\ 0,\ 4095);}
+\DoxyCodeLine{00568\ }
+\DoxyCodeLine{00569\ \ \ \ \ red1\ =\ \mbox{\hyperlink{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b}{astc::clamp}}(red1,\ 0,\ 4095);}
+\DoxyCodeLine{00570\ \ \ \ \ green1\ =\ \mbox{\hyperlink{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b}{astc::clamp}}(green1,\ 0,\ 4095);}
+\DoxyCodeLine{00571\ \ \ \ \ blue1\ =\ \mbox{\hyperlink{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b}{astc::clamp}}(blue1,\ 0,\ 4095);}
+\DoxyCodeLine{00572\ }
+\DoxyCodeLine{00573\ \ \ \ \ \textcolor{comment}{//\ switch\ around\ the\ color\ components}}
+\DoxyCodeLine{00574\ \ \ \ \ \textcolor{keywordtype}{int}\ temp0,\ temp1;}
+\DoxyCodeLine{00575\ \ \ \ \ \textcolor{keywordflow}{switch}\ (majcomp)}
+\DoxyCodeLine{00576\ \ \ \ \ \{}
+\DoxyCodeLine{00577\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ switch\ around\ red\ and\ green}}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ temp0\ =\ red0;}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ temp1\ =\ red1;}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ red0\ =\ green0;}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ red1\ =\ green1;}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ green0\ =\ temp0;}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ green1\ =\ temp1;}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00585\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ switch\ around\ red\ and\ blue}}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ temp0\ =\ red0;}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ temp1\ =\ red1;}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ red0\ =\ blue0;}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ red1\ =\ blue1;}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ blue0\ =\ temp0;}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ blue1\ =\ temp1;}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00593\ \ \ \ \ \textcolor{keywordflow}{case}\ 0:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ no\ switch}}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00595\ \ \ \ \ \}}
+\DoxyCodeLine{00596\ }
+\DoxyCodeLine{00597\ \ \ \ \ output0\ =\ \mbox{\hyperlink{structvint4}{vint4}}(red0\ <<\ 4,\ green0\ <<\ 4,\ blue0\ <<\ 4,\ 0x7800);}
+\DoxyCodeLine{00598\ \ \ \ \ output1\ =\ \mbox{\hyperlink{structvint4}{vint4}}(red1\ <<\ 4,\ green1\ <<\ 4,\ blue1\ <<\ 4,\ 0x7800);}
+\DoxyCodeLine{00599\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{astcenc__color__unquantize_8cpp_ade2461b695d17d056a56c091736a9cc9_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_ade2461b695d17d056a56c091736a9cc9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_ab52d36b55d82a9b3a149429ed6d5332c}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!hdr\_rgbo\_unpack@{hdr\_rgbo\_unpack}}
+\index{hdr\_rgbo\_unpack@{hdr\_rgbo\_unpack}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{hdr\_rgbo\_unpack()}{hdr\_rgbo\_unpack()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_ab52d36b55d82a9b3a149429ed6d5332c} 
+static void hdr\+\_\+rgbo\+\_\+unpack (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{input}{\mbox{[}4\mbox{]}, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output1}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Unpack an HDR RGB + offset encoding. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em input} & The packed endpoints (packed and modal). \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The unpacked endpoint 0 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The unpacked endpoint 1 color. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00292}{292}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00296\ \ \ \{}
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keywordtype}{int}\ v0\ =\ input[0];}
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordtype}{int}\ v1\ =\ input[1];}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordtype}{int}\ v2\ =\ input[2];}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordtype}{int}\ v3\ =\ input[3];}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordtype}{int}\ modeval\ =\ ((v0\ \&\ 0xC0)\ >>\ 6)\ |\ (((v1\ \&\ 0x80)\ >>\ 7)\ <<\ 2)\ |\ (((v2\ \&\ 0x80)\ >>\ 7)\ <<\ 3);}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordtype}{int}\ majcomp;}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordtype}{int}\ mode;}
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keywordflow}{if}\ ((modeval\ \&\ 0xC)\ !=\ 0xC)}
+\DoxyCodeLine{00307\ \ \ \ \ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ majcomp\ =\ modeval\ >>\ 2;}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ mode\ =\ modeval\ \&\ 3;}
+\DoxyCodeLine{00310\ \ \ \ \ \}}
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (modeval\ !=\ 0xF)}
+\DoxyCodeLine{00312\ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ majcomp\ =\ modeval\ \&\ 3;}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ mode\ =\ 4;}
+\DoxyCodeLine{00315\ \ \ \ \ \}}
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00317\ \ \ \ \ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ majcomp\ =\ 0;}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ mode\ =\ 5;}
+\DoxyCodeLine{00320\ \ \ \ \ \}}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordtype}{int}\ red\ =\ v0\ \&\ 0x3F;}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keywordtype}{int}\ green\ =\ v1\ \&\ 0x1F;}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordtype}{int}\ blue\ =\ v2\ \&\ 0x1F;}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordtype}{int}\ scale\ =\ v3\ \&\ 0x1F;}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keywordtype}{int}\ bit0\ =\ (v1\ >>\ 6)\ \&\ 1;}
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keywordtype}{int}\ bit1\ =\ (v1\ >>\ 5)\ \&\ 1;}
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keywordtype}{int}\ bit2\ =\ (v2\ >>\ 6)\ \&\ 1;}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keywordtype}{int}\ bit3\ =\ (v2\ >>\ 5)\ \&\ 1;}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordtype}{int}\ bit4\ =\ (v3\ >>\ 7)\ \&\ 1;}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keywordtype}{int}\ bit5\ =\ (v3\ >>\ 6)\ \&\ 1;}
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordtype}{int}\ bit6\ =\ (v3\ >>\ 5)\ \&\ 1;}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{keywordtype}{int}\ ohcomp\ =\ 1\ <<\ mode;}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohcomp\ \&\ 0x30)}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ green\ |=\ bit0\ <<\ 6;}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohcomp\ \&\ 0x3A)}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ green\ |=\ bit1\ <<\ 5;}
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohcomp\ \&\ 0x30)}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ blue\ |=\ bit2\ <<\ 6;}
+\DoxyCodeLine{00343\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohcomp\ \&\ 0x3A)}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ blue\ |=\ bit3\ <<\ 5;}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohcomp\ \&\ 0x3D)}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ scale\ |=\ bit6\ <<\ 5;}
+\DoxyCodeLine{00348\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohcomp\ \&\ 0x2D)}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ scale\ |=\ bit5\ <<\ 6;}
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohcomp\ \&\ 0x04)}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ scale\ |=\ bit4\ <<\ 7;}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohcomp\ \&\ 0x3B)}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ red\ |=\ bit4\ <<\ 6;}
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohcomp\ \&\ 0x04)}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ red\ |=\ bit3\ <<\ 6;}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00358\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohcomp\ \&\ 0x10)}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ red\ |=\ bit5\ <<\ 7;}
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohcomp\ \&\ 0x0F)}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ red\ |=\ bit2\ <<\ 7;}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohcomp\ \&\ 0x05)}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ red\ |=\ bit1\ <<\ 8;}
+\DoxyCodeLine{00365\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohcomp\ \&\ 0x0A)}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ red\ |=\ bit0\ <<\ 8;}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohcomp\ \&\ 0x05)}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ red\ |=\ bit0\ <<\ 9;}
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohcomp\ \&\ 0x02)}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ red\ |=\ bit6\ <<\ 9;}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohcomp\ \&\ 0x01)}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ red\ |=\ bit3\ <<\ 10;}
+\DoxyCodeLine{00375\ \ \ \ \ \textcolor{keywordflow}{if}\ (ohcomp\ \&\ 0x02)}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ red\ |=\ bit5\ <<\ 10;}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \ \ \ \ \textcolor{comment}{//\ expand\ to\ 12\ bits.}}
+\DoxyCodeLine{00379\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ shamts[6]\ \{\ 1,\ 1,\ 2,\ 3,\ 4,\ 5\ \};}
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keywordtype}{int}\ shamt\ =\ shamts[mode];}
+\DoxyCodeLine{00381\ \ \ \ \ red\ <<=\ shamt;}
+\DoxyCodeLine{00382\ \ \ \ \ green\ <<=\ shamt;}
+\DoxyCodeLine{00383\ \ \ \ \ blue\ <<=\ shamt;}
+\DoxyCodeLine{00384\ \ \ \ \ scale\ <<=\ shamt;}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{comment}{//\ on\ modes\ 0\ to\ 4,\ the\ values\ stored\ for\ "{}green"{}\ and\ "{}blue"{}\ are\ differentials,}}
+\DoxyCodeLine{00387\ \ \ \ \ \textcolor{comment}{//\ not\ absolute\ values.}}
+\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keywordflow}{if}\ (mode\ !=\ 5)}
+\DoxyCodeLine{00389\ \ \ \ \ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ green\ =\ red\ -\/\ green;}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ blue\ =\ red\ -\/\ blue;}
+\DoxyCodeLine{00392\ \ \ \ \ \}}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{comment}{//\ switch\ around\ components.}}
+\DoxyCodeLine{00395\ \ \ \ \ \textcolor{keywordtype}{int}\ temp;}
+\DoxyCodeLine{00396\ \ \ \ \ \textcolor{keywordflow}{switch}\ (majcomp)}
+\DoxyCodeLine{00397\ \ \ \ \ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ temp\ =\ red;}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ red\ =\ green;}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ green\ =\ temp;}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00403\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ temp\ =\ red;}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ red\ =\ blue;}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ blue\ =\ temp;}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00408\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00410\ \ \ \ \ \}}
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00412\ \ \ \ \ \textcolor{keywordtype}{int}\ red0\ =\ red\ -\/\ scale;}
+\DoxyCodeLine{00413\ \ \ \ \ \textcolor{keywordtype}{int}\ green0\ =\ green\ -\/\ scale;}
+\DoxyCodeLine{00414\ \ \ \ \ \textcolor{keywordtype}{int}\ blue0\ =\ blue\ -\/\ scale;}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00416\ \ \ \ \ \textcolor{comment}{//\ clamp\ to\ [0,0xFFF].}}
+\DoxyCodeLine{00417\ \ \ \ \ \textcolor{keywordflow}{if}\ (red\ <\ 0)}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ red\ =\ 0;}
+\DoxyCodeLine{00419\ \ \ \ \ \textcolor{keywordflow}{if}\ (green\ <\ 0)}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ green\ =\ 0;}
+\DoxyCodeLine{00421\ \ \ \ \ \textcolor{keywordflow}{if}\ (blue\ <\ 0)}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ blue\ =\ 0;}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00424\ \ \ \ \ \textcolor{keywordflow}{if}\ (red0\ <\ 0)}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ red0\ =\ 0;}
+\DoxyCodeLine{00426\ \ \ \ \ \textcolor{keywordflow}{if}\ (green0\ <\ 0)}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ green0\ =\ 0;}
+\DoxyCodeLine{00428\ \ \ \ \ \textcolor{keywordflow}{if}\ (blue0\ <\ 0)}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ blue0\ =\ 0;}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00431\ \ \ \ \ output0\ =\ \mbox{\hyperlink{structvint4}{vint4}}(red0\ <<\ 4,\ green0\ <<\ 4,\ blue0\ <<\ 4,\ 0x7800);}
+\DoxyCodeLine{00432\ \ \ \ \ output1\ =\ \mbox{\hyperlink{structvint4}{vint4}}(red\ <<\ 4,\ green\ <<\ 4,\ blue\ <<\ 4,\ 0x7800);}
+\DoxyCodeLine{00433\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_ab52d36b55d82a9b3a149429ed6d5332c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_a3b8032ce212a167d91be041c0226cb3a}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!luminance\_alpha\_delta\_unpack@{luminance\_alpha\_delta\_unpack}}
+\index{luminance\_alpha\_delta\_unpack@{luminance\_alpha\_delta\_unpack}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{luminance\_alpha\_delta\_unpack()}{luminance\_alpha\_delta\_unpack()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_a3b8032ce212a167d91be041c0226cb3a} 
+static void luminance\+\_\+alpha\+\_\+delta\+\_\+unpack (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{input}{\mbox{[}4\mbox{]}, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output1}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Unpack an LDR LA color that uses delta encoding. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em input} & The packed endpoints (L0, L1, A0, A1). \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The unpacked endpoint 0 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The unpacked endpoint 1 color. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00246}{246}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00250\ \ \ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{int}\ lum0\ =\ input[0];}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordtype}{int}\ lum1\ =\ input[1];}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{int}\ alpha0\ =\ input[2];}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{int}\ alpha1\ =\ input[3];}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ lum0\ |=\ (lum1\ \&\ 0x80)\ <<\ 1;}
+\DoxyCodeLine{00257\ \ \ \ \ alpha0\ |=\ (alpha1\ \&\ 0x80)\ <<\ 1;}
+\DoxyCodeLine{00258\ \ \ \ \ lum1\ \&=\ 0x7F;}
+\DoxyCodeLine{00259\ \ \ \ \ alpha1\ \&=\ 0x7F;}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordflow}{if}\ (lum1\ \&\ 0x40)}
+\DoxyCodeLine{00262\ \ \ \ \ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ lum1\ -\/=\ 0x80;}
+\DoxyCodeLine{00264\ \ \ \ \ \}}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keywordflow}{if}\ (alpha1\ \&\ 0x40)}
+\DoxyCodeLine{00267\ \ \ \ \ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ alpha1\ -\/=\ 0x80;}
+\DoxyCodeLine{00269\ \ \ \ \ \}}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ lum0\ >>=\ 1;}
+\DoxyCodeLine{00272\ \ \ \ \ lum1\ >>=\ 1;}
+\DoxyCodeLine{00273\ \ \ \ \ alpha0\ >>=\ 1;}
+\DoxyCodeLine{00274\ \ \ \ \ alpha1\ >>=\ 1;}
+\DoxyCodeLine{00275\ \ \ \ \ lum1\ +=\ lum0;}
+\DoxyCodeLine{00276\ \ \ \ \ alpha1\ +=\ alpha0;}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ lum1\ =\ \mbox{\hyperlink{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b}{astc::clamp}}(lum1,\ 0,\ 255);}
+\DoxyCodeLine{00279\ \ \ \ \ alpha1\ =\ \mbox{\hyperlink{namespaceastc_a8f8b2ad23b04a389f6785bc80b61349b}{astc::clamp}}(alpha1,\ 0,\ 255);}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ output0\ =\ \mbox{\hyperlink{structvint4}{vint4}}(lum0,\ lum0,\ lum0,\ alpha0);}
+\DoxyCodeLine{00282\ \ \ \ \ output1\ =\ \mbox{\hyperlink{structvint4}{vint4}}(lum1,\ lum1,\ lum1,\ alpha1);}
+\DoxyCodeLine{00283\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{astcenc__color__unquantize_8cpp_a3b8032ce212a167d91be041c0226cb3a_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_a3b8032ce212a167d91be041c0226cb3a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_a7de49dc5d2c25680d4beeaf389c7ee05}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!luminance\_alpha\_unpack@{luminance\_alpha\_unpack}}
+\index{luminance\_alpha\_unpack@{luminance\_alpha\_unpack}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{luminance\_alpha\_unpack()}{luminance\_alpha\_unpack()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_a7de49dc5d2c25680d4beeaf389c7ee05} 
+static void luminance\+\_\+alpha\+\_\+unpack (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{input}{\mbox{[}4\mbox{]}, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output1}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Unpack an LDR LA color that uses direct encoding. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em input} & The packed endpoints (L0, L1, A0, A1). \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The unpacked endpoint 0 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The unpacked endpoint 1 color. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00226}{226}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00230\ \ \ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordtype}{int}\ lum0\ =\ input[0];}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordtype}{int}\ lum1\ =\ input[1];}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordtype}{int}\ alpha0\ =\ input[2];}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordtype}{int}\ alpha1\ =\ input[3];}
+\DoxyCodeLine{00235\ \ \ \ \ output0\ =\ \mbox{\hyperlink{structvint4}{vint4}}(lum0,\ lum0,\ lum0,\ alpha0);}
+\DoxyCodeLine{00236\ \ \ \ \ output1\ =\ \mbox{\hyperlink{structvint4}{vint4}}(lum1,\ lum1,\ lum1,\ alpha1);}
+\DoxyCodeLine{00237\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_a7de49dc5d2c25680d4beeaf389c7ee05_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_aef3d7e05db47fe6589797a1abde0ece1}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!luminance\_delta\_unpack@{luminance\_delta\_unpack}}
+\index{luminance\_delta\_unpack@{luminance\_delta\_unpack}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{luminance\_delta\_unpack()}{luminance\_delta\_unpack()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_aef3d7e05db47fe6589797a1abde0ece1} 
+static void luminance\+\_\+delta\+\_\+unpack (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{input}{\mbox{[}2\mbox{]}, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output1}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Unpack an LDR L color that uses delta encoding. 
+
+Output alpha is 255.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em input} & The packed endpoints (L0, L1). \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The unpacked endpoint 0 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The unpacked endpoint 1 color. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00203}{203}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00207\ \ \ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{int}\ v0\ =\ input[0];}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{int}\ v1\ =\ input[1];}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordtype}{int}\ l0\ =\ (v0\ >>\ 2)\ |\ (v1\ \&\ 0xC0);}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordtype}{int}\ l1\ =\ l0\ +\ (v1\ \&\ 0x3F);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ l1\ =\ \mbox{\hyperlink{namespaceastc_af78c0d31374aa9923633a3a2abf8d738}{astc::min}}(l1,\ 255);}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ output0\ =\ \mbox{\hyperlink{structvint4}{vint4}}(l0,\ l0,\ l0,\ 255);}
+\DoxyCodeLine{00216\ \ \ \ \ output1\ =\ \mbox{\hyperlink{structvint4}{vint4}}(l1,\ l1,\ l1,\ 255);}
+\DoxyCodeLine{00217\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{astcenc__color__unquantize_8cpp_aef3d7e05db47fe6589797a1abde0ece1_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_aef3d7e05db47fe6589797a1abde0ece1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_a4b46bc42a37e5286f564c7bcdf1d26a7}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!luminance\_unpack@{luminance\_unpack}}
+\index{luminance\_unpack@{luminance\_unpack}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{luminance\_unpack()}{luminance\_unpack()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_a4b46bc42a37e5286f564c7bcdf1d26a7} 
+static void luminance\+\_\+unpack (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{input}{\mbox{[}2\mbox{]}, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output1}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Unpack an LDR L color that uses direct encoding. 
+
+Output alpha is 255.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em input} & The packed endpoints. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The unpacked endpoint 0 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The unpacked endpoint 1 color. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00183}{183}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00187\ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{int}\ lum0\ =\ input[0];}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{int}\ lum1\ =\ input[1];}
+\DoxyCodeLine{00190\ \ \ \ \ output0\ =\ \mbox{\hyperlink{structvint4}{vint4}}(lum0,\ lum0,\ lum0,\ 255);}
+\DoxyCodeLine{00191\ \ \ \ \ output1\ =\ \mbox{\hyperlink{structvint4}{vint4}}(lum1,\ lum1,\ lum1,\ 255);}
+\DoxyCodeLine{00192\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_a4b46bc42a37e5286f564c7bcdf1d26a7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_a09b179400bc4fa4d90e9b093380e5541}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!rgb\_delta\_unpack@{rgb\_delta\_unpack}}
+\index{rgb\_delta\_unpack@{rgb\_delta\_unpack}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{rgb\_delta\_unpack()}{rgb\_delta\_unpack()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_a09b179400bc4fa4d90e9b093380e5541} 
+static void rgb\+\_\+delta\+\_\+unpack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{input0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{input1}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output1}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Unpack an LDR RGB color that uses delta encoding. 
+
+Output alpha set to 255.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em input0} & The packed endpoint 0 color. \\
+\hline
+ & {\em input1} & The packed endpoint 1 color deltas. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The unpacked endpoint 0 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The unpacked endpoint 1 color. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00076}{76}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_abb9e5b31fe822e7e3ab0757f1989a321}{rgba\_delta\_unpack}}(input0,\ input1,\ output0,\ output1);}
+\DoxyCodeLine{00083\ \ \ \ \ output0.\mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{set\_lane}}<3>(255);}
+\DoxyCodeLine{00084\ \ \ \ \ output1.\mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{set\_lane}}<3>(255);}
+\DoxyCodeLine{00085\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_a09b179400bc4fa4d90e9b093380e5541_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_a09b179400bc4fa4d90e9b093380e5541_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_aab96eda6a634d4d49db5d672ec7b4521}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!rgb\_scale\_alpha\_unpack@{rgb\_scale\_alpha\_unpack}}
+\index{rgb\_scale\_alpha\_unpack@{rgb\_scale\_alpha\_unpack}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{rgb\_scale\_alpha\_unpack()}{rgb\_scale\_alpha\_unpack()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_aab96eda6a634d4d49db5d672ec7b4521} 
+static void rgb\+\_\+scale\+\_\+alpha\+\_\+unpack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{input0}{, }\item[{uint8\+\_\+t}]{alpha1}{, }\item[{uint8\+\_\+t}]{scale}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output1}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Unpack an LDR RGBA color that uses scaled encoding. 
+
+Note only the RGB channels use the scaled encoding, alpha uses direct.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em input0} & The packed endpoint 0 color. \\
+\hline
+ & {\em alpha1} & The packed endpoint 1 alpha value. \\
+\hline
+ & {\em scale} & The packed quantized scale. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The unpacked endpoint 0 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The unpacked endpoint 1 color. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00137}{137}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00143\ \ \ \{}
+\DoxyCodeLine{00144\ \ \ \ \ output1\ =\ input0;}
+\DoxyCodeLine{00145\ \ \ \ \ output1.\mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{set\_lane}}<3>(alpha1);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ output0\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819}{asr<8>}}(input0\ *\ scale);}
+\DoxyCodeLine{00148\ \ \ \ \ output0.\mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{set\_lane}}<3>(input0.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<3>());}
+\DoxyCodeLine{00149\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{astcenc__color__unquantize_8cpp_aab96eda6a634d4d49db5d672ec7b4521_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_aab96eda6a634d4d49db5d672ec7b4521_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_af892d5217804e7cd7087fb7791c86c53}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!rgb\_scale\_unpack@{rgb\_scale\_unpack}}
+\index{rgb\_scale\_unpack@{rgb\_scale\_unpack}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{rgb\_scale\_unpack()}{rgb\_scale\_unpack()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_af892d5217804e7cd7087fb7791c86c53} 
+static void rgb\+\_\+scale\+\_\+unpack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{input0}{, }\item[{int}]{scale}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output1}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Unpack an LDR RGB color that uses scaled encoding. 
+
+Output alpha is 255.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em input0} & The packed endpoint 0 color. \\
+\hline
+ & {\em scale} & The packed scale. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The unpacked endpoint 0 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The unpacked endpoint 1 color. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00161}{161}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00166\ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ output1\ =\ input0;}
+\DoxyCodeLine{00168\ \ \ \ \ output1.\mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{set\_lane}}<3>(255);}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ output0\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819}{asr<8>}}(input0\ *\ scale);}
+\DoxyCodeLine{00171\ \ \ \ \ output0.\mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{set\_lane}}<3>(255);}
+\DoxyCodeLine{00172\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{astcenc__color__unquantize_8cpp_af892d5217804e7cd7087fb7791c86c53_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_af892d5217804e7cd7087fb7791c86c53_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_ae84a3a83b3f1dbe4288ee4054ded6419}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!rgb\_unpack@{rgb\_unpack}}
+\index{rgb\_unpack@{rgb\_unpack}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{rgb\_unpack()}{rgb\_unpack()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_ae84a3a83b3f1dbe4288ee4054ded6419} 
+static void rgb\+\_\+unpack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{input0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{input1}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output1}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Unpack an LDR RGB color that uses direct encoding. 
+
+Output alpha set to 255.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em input0} & The packed endpoint 0 color. \\
+\hline
+ & {\em input1} & The packed endpoint 1 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The unpacked endpoint 0 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The unpacked endpoint 1 color. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00115}{115}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_aa8f902332b94b93405c7496b1b3838ba}{rgba\_unpack}}(input0,\ input1,\ output0,\ output1);}
+\DoxyCodeLine{00122\ \ \ \ \ output0.\mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{set\_lane}}<3>(255);}
+\DoxyCodeLine{00123\ \ \ \ \ output1.\mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{set\_lane}}<3>(255);}
+\DoxyCodeLine{00124\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_ae84a3a83b3f1dbe4288ee4054ded6419_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_ae84a3a83b3f1dbe4288ee4054ded6419_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_abb9e5b31fe822e7e3ab0757f1989a321}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!rgba\_delta\_unpack@{rgba\_delta\_unpack}}
+\index{rgba\_delta\_unpack@{rgba\_delta\_unpack}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{rgba\_delta\_unpack()}{rgba\_delta\_unpack()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_abb9e5b31fe822e7e3ab0757f1989a321} 
+void rgba\+\_\+delta\+\_\+unpack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{input0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{input1}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output1}{}\end{DoxyParamCaption})}
+
+
+
+Unpack an LDR RGBA color that uses delta encoding. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em input0} & The packed endpoint 0 color. \\
+\hline
+ & {\em input1} & The packed endpoint 1 color deltas. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The unpacked endpoint 0 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The unpacked endpoint 1 color. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00043}{43}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ Apply\ bit\ transfer}}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_acaab0374259bd298c1282e6a0b84bc8f}{bit\_transfer\_signed}}(input1,\ input0);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ Apply\ blue-\/uncontraction\ if\ needed}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ rgb\_sum\ =\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a48e833d0cfdf950b6bc3431fce00507e}{hadd\_rgb\_s}}(input1);}
+\DoxyCodeLine{00054\ \ \ \ \ input1\ =\ input1\ +\ input0;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{if}\ (rgb\_sum\ <\ 0)}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ input0\ =\ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_a604a48c74e6d1c8476146b0955331344}{uncontract\_color}}(input0);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ input1\ =\ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_a604a48c74e6d1c8476146b0955331344}{uncontract\_color}}(input1);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ std::swap(input0,\ input1);}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ output0\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ae91c0bb0ebd82ed2a7fa7aa915f6e76e}{clamp}}(0,\ 255,\ input0);}
+\DoxyCodeLine{00063\ \ \ \ \ output1\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ae91c0bb0ebd82ed2a7fa7aa915f6e76e}{clamp}}(0,\ 255,\ input1);}
+\DoxyCodeLine{00064\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_abb9e5b31fe822e7e3ab0757f1989a321_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_abb9e5b31fe822e7e3ab0757f1989a321_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_aa8f902332b94b93405c7496b1b3838ba}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!rgba\_unpack@{rgba\_unpack}}
+\index{rgba\_unpack@{rgba\_unpack}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{rgba\_unpack()}{rgba\_unpack()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_aa8f902332b94b93405c7496b1b3838ba} 
+void rgba\+\_\+unpack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{input0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{input1}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output1}{}\end{DoxyParamCaption})}
+
+
+
+Unpack an LDR RGBA color that uses direct encoding. 
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em input0} & The packed endpoint 0 color. \\
+\hline
+ & {\em input1} & The packed endpoint 1 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The unpacked endpoint 0 color. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The unpacked endpoint 1 color. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00087}{87}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092\ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{comment}{//\ Apply\ blue-\/uncontraction\ if\ needed}}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a48e833d0cfdf950b6bc3431fce00507e}{hadd\_rgb\_s}}(input0)\ >\ \mbox{\hyperlink{astcenc__vecmathlib__common__4_8h_a48e833d0cfdf950b6bc3431fce00507e}{hadd\_rgb\_s}}(input1))}
+\DoxyCodeLine{00095\ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ input0\ =\ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_a604a48c74e6d1c8476146b0955331344}{uncontract\_color}}(input0);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ input1\ =\ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_a604a48c74e6d1c8476146b0955331344}{uncontract\_color}}(input1);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ std::swap(input0,\ input1);}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ output0\ =\ input0;}
+\DoxyCodeLine{00102\ \ \ \ \ output1\ =\ input1;}
+\DoxyCodeLine{00103\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_aa8f902332b94b93405c7496b1b3838ba_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_aa8f902332b94b93405c7496b1b3838ba_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_a604a48c74e6d1c8476146b0955331344}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!uncontract\_color@{uncontract\_color}}
+\index{uncontract\_color@{uncontract\_color}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{uncontract\_color()}{uncontract\_color()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_a604a48c74e6d1c8476146b0955331344} 
+static \mbox{\hyperlink{astcenc__vecmathlib_8h_ae15321703aaeb986f01672188293a65e}{ASTCENC\+\_\+\+SIMD\+\_\+\+INLINE}} \mbox{\hyperlink{structvint4}{vint4}} uncontract\+\_\+color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvint4}{vint4}}}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Functions for color unquantization. 
+
+Un-\/blue-\/contract a color.
+
+This function reverses any applied blue contraction.
+
+
+\begin{DoxyParams}{매개변수}
+{\em input} & The input color that has been blue-\/contracted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+The uncontracted color. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00035}{35}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}(\textcolor{keyword}{true},\ \textcolor{keyword}{true},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ bc0\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_aff39374b256d568d084ba4fd2fed7819}{asr<1>}}(input\ +\ input.\mbox{\hyperlink{structvint4_a01e3f7debf73dc6c757fa36d585c9d17}{lane}}<2>());}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(input,\ bc0,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00041\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{astcenc__color__unquantize_8cpp_a604a48c74e6d1c8476146b0955331344_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_a604a48c74e6d1c8476146b0955331344_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{astcenc__color__unquantize_8cpp_ab9b659180fb522b05391892336dbc095}\index{astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}!unpack\_color\_endpoints@{unpack\_color\_endpoints}}
+\index{unpack\_color\_endpoints@{unpack\_color\_endpoints}!astcenc\_color\_unquantize.cpp@{astcenc\_color\_unquantize.cpp}}
+\doxysubsubsection{\texorpdfstring{unpack\_color\_endpoints()}{unpack\_color\_endpoints()}}
+{\footnotesize\ttfamily \label{astcenc__color__unquantize_8cpp_ab9b659180fb522b05391892336dbc095} 
+void unpack\+\_\+color\+\_\+endpoints (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29}{astcenc\+\_\+profile}}}]{decode\+\_\+mode}{, }\item[{int}]{format}{, }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{input}{, }\item[{bool \&}]{rgb\+\_\+hdr}{, }\item[{bool \&}]{alpha\+\_\+hdr}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output0}{, }\item[{\mbox{\hyperlink{structvint4}{vint4}} \&}]{output1}{}\end{DoxyParamCaption})}
+
+
+
+Unpack a single pair of encoded endpoints. 
+
+Endpoints must be unscrambled and converted into the 0-\/255 range before calling this functions.
+
+
+\begin{DoxyParams}[1]{매개변수}
+ & {\em decode\+\_\+mode} & The decode mode (LDR, HDR, etc). \\
+\hline
+ & {\em format} & The color endpoint mode used. \\
+\hline
+ & {\em input} & The raw array of encoded input integers. The length of this array depends on {\ttfamily format}; it can be safely assumed to be large enough. \\
+\hline
+\mbox{\texttt{ out}}  & {\em rgb\+\_\+hdr} & Is the endpoint using HDR for the RGB channels? \\
+\hline
+\mbox{\texttt{ out}}  & {\em alpha\+\_\+hdr} & Is the endpoint using HDR for the A channel? \\
+\hline
+\mbox{\texttt{ out}}  & {\em output0} & The output color for endpoint 0. \\
+\hline
+\mbox{\texttt{ out}}  & {\em output1} & The output color for endpoint 1. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{astcenc__color__unquantize_8cpp_source}{astcenc\+\_\+color\+\_\+unquantize.\+cpp}} 파일의 \mbox{\hyperlink{astcenc__color__unquantize_8cpp_source_l00762}{762}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00770\ \ \ \{}
+\DoxyCodeLine{00771\ \ \ \ \ \textcolor{comment}{//\ Assume\ no\ NaNs\ and\ LDR\ endpoints\ unless\ set\ later}}
+\DoxyCodeLine{00772\ \ \ \ \ rgb\_hdr\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00773\ \ \ \ \ alpha\_hdr\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00774\ }
+\DoxyCodeLine{00775\ \ \ \ \ \textcolor{keywordtype}{bool}\ alpha\_hdr\_default\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00776\ }
+\DoxyCodeLine{00777\ \ \ \ \ \textcolor{keywordflow}{switch}\ (format)}
+\DoxyCodeLine{00778\ \ \ \ \ \{}
+\DoxyCodeLine{00779\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4baf29afed4fcc815780d85789b8a095a22}{FMT\_LUMINANCE}}:}
+\DoxyCodeLine{00780\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_a4b46bc42a37e5286f564c7bcdf1d26a7}{luminance\_unpack}}(input,\ output0,\ output1);}
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00782\ }
+\DoxyCodeLine{00783\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4baf7a6bbcf850184892b3bdae225365ad4}{FMT\_LUMINANCE\_DELTA}}:}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_aef3d7e05db47fe6589797a1abde0ece1}{luminance\_delta\_unpack}}(input,\ output0,\ output1);}
+\DoxyCodeLine{00785\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00786\ }
+\DoxyCodeLine{00787\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba8ea21ac0ef8d1804ef851a8d990480e5}{FMT\_HDR\_LUMINANCE\_SMALL\_RANGE}}:}
+\DoxyCodeLine{00788\ \ \ \ \ \ \ \ \ rgb\_hdr\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00789\ \ \ \ \ \ \ \ \ alpha\_hdr\_default\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ac9b70bb1bd214dee745ded9bcb04742e}{hdr\_luminance\_small\_range\_unpack}}(input,\ output0,\ output1);}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00792\ }
+\DoxyCodeLine{00793\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba47ede19ba8704c3c0494b1c8143d8db0}{FMT\_HDR\_LUMINANCE\_LARGE\_RANGE}}:}
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ rgb\_hdr\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00795\ \ \ \ \ \ \ \ \ alpha\_hdr\_default\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_aa2c0643330441f9232c720d4acd01552}{hdr\_luminance\_large\_range\_unpack}}(input,\ output0,\ output1);}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00798\ }
+\DoxyCodeLine{00799\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba6aa2cddee1e7329a888c3fa729cb66f1}{FMT\_LUMINANCE\_ALPHA}}:}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_a7de49dc5d2c25680d4beeaf389c7ee05}{luminance\_alpha\_unpack}}(input,\ output0,\ output1);}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00802\ }
+\DoxyCodeLine{00803\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba395fe8fada5b5ade35ef4b6e36b7f7f6}{FMT\_LUMINANCE\_ALPHA\_DELTA}}:}
+\DoxyCodeLine{00804\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_a3b8032ce212a167d91be041c0226cb3a}{luminance\_alpha\_delta\_unpack}}(input,\ output0,\ output1);}
+\DoxyCodeLine{00805\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00806\ }
+\DoxyCodeLine{00807\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba878884827236165e75e7989a8e6f7757}{FMT\_RGB\_SCALE}}:}
+\DoxyCodeLine{00808\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00809\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ input0q(input[0],\ input[1],\ input[2],\ 0);}
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ scale\ =\ input[3];}
+\DoxyCodeLine{00811\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_af892d5217804e7cd7087fb7791c86c53}{rgb\_scale\_unpack}}(input0q,\ scale,\ output0,\ output1);}
+\DoxyCodeLine{00812\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00813\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00814\ }
+\DoxyCodeLine{00815\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba0fad0c63bb0dafc3f4146915dcff64ba}{FMT\_RGB\_SCALE\_ALPHA}}:}
+\DoxyCodeLine{00816\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00817\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ input0q(input[0],\ input[1],\ input[2],\ input[4]);}
+\DoxyCodeLine{00818\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ alpha1q\ =\ input[5];}
+\DoxyCodeLine{00819\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ scaleq\ =\ input[3];}
+\DoxyCodeLine{00820\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_aab96eda6a634d4d49db5d672ec7b4521}{rgb\_scale\_alpha\_unpack}}(input0q,\ alpha1q,\ scaleq,\ output0,\ output1);}
+\DoxyCodeLine{00821\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00822\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00823\ }
+\DoxyCodeLine{00824\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba39d39129318d58a44698af7789887045}{FMT\_HDR\_RGB\_SCALE}}:}
+\DoxyCodeLine{00825\ \ \ \ \ \ \ \ \ rgb\_hdr\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00826\ \ \ \ \ \ \ \ \ alpha\_hdr\_default\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00827\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ab52d36b55d82a9b3a149429ed6d5332c}{hdr\_rgbo\_unpack}}(input,\ output0,\ output1);}
+\DoxyCodeLine{00828\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00829\ }
+\DoxyCodeLine{00830\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba13dd2b80554659b29a91a1749a1d90a9}{FMT\_RGB}}:}
+\DoxyCodeLine{00831\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00832\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ input0q(input[0],\ input[2],\ input[4],\ 0);}
+\DoxyCodeLine{00833\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ input1q(input[1],\ input[3],\ input[5],\ 0);}
+\DoxyCodeLine{00834\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ae84a3a83b3f1dbe4288ee4054ded6419}{rgb\_unpack}}(input0q,\ input1q,\ output0,\ output1);}
+\DoxyCodeLine{00835\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00836\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00837\ }
+\DoxyCodeLine{00838\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba6e77da482802834c87ae3065effbcef5}{FMT\_RGB\_DELTA}}:}
+\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00840\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ input0q(input[0],\ input[2],\ input[4],\ 0);}
+\DoxyCodeLine{00841\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ input1q(input[1],\ input[3],\ input[5],\ 0);}
+\DoxyCodeLine{00842\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_a09b179400bc4fa4d90e9b093380e5541}{rgb\_delta\_unpack}}(input0q,\ input1q,\ output0,\ output1);}
+\DoxyCodeLine{00843\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00845\ }
+\DoxyCodeLine{00846\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4baf476d1d6ba5e210a3565182063c3d5a7}{FMT\_HDR\_RGB}}:}
+\DoxyCodeLine{00847\ \ \ \ \ \ \ \ \ rgb\_hdr\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00848\ \ \ \ \ \ \ \ \ alpha\_hdr\_default\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00849\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_ade2461b695d17d056a56c091736a9cc9}{hdr\_rgb\_unpack}}(input,\ output0,\ output1);}
+\DoxyCodeLine{00850\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00851\ }
+\DoxyCodeLine{00852\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4baeba2a33f74db0bf71dccc86a6f50b509}{FMT\_RGBA}}:}
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ input0q(input[0],\ input[2],\ input[4],\ input[6]);}
+\DoxyCodeLine{00855\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ input1q(input[1],\ input[3],\ input[5],\ input[7]);}
+\DoxyCodeLine{00856\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_aa8f902332b94b93405c7496b1b3838ba}{rgba\_unpack}}(input0q,\ input1q,\ output0,\ output1);}
+\DoxyCodeLine{00857\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00859\ }
+\DoxyCodeLine{00860\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba8ecdccead56ce7613bf5b7993c7fa23f}{FMT\_RGBA\_DELTA}}:}
+\DoxyCodeLine{00861\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00862\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ input0q(input[0],\ input[2],\ input[4],\ input[6]);}
+\DoxyCodeLine{00863\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ input1q(input[1],\ input[3],\ input[5],\ input[7]);}
+\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_abb9e5b31fe822e7e3ab0757f1989a321}{rgba\_delta\_unpack}}(input0q,\ input1q,\ output0,\ output1);}
+\DoxyCodeLine{00865\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00866\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00867\ }
+\DoxyCodeLine{00868\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4bab4f3b7d71ebdba2ff3cf00ddde4f40b2}{FMT\_HDR\_RGB\_LDR\_ALPHA}}:}
+\DoxyCodeLine{00869\ \ \ \ \ \ \ \ \ rgb\_hdr\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_aa7a2e2f7b578cb97b5ade543c8db2614}{hdr\_rgb\_ldr\_alpha\_unpack}}(input,\ output0,\ output1);}
+\DoxyCodeLine{00871\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00872\ }
+\DoxyCodeLine{00873\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{astcenc__internal_8h_a961094c83b018837fe95bef26926cb4ba2eedd102b26e73b95994d07cb26d9602}{FMT\_HDR\_RGBA}}:}
+\DoxyCodeLine{00874\ \ \ \ \ \ \ \ \ rgb\_hdr\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00875\ \ \ \ \ \ \ \ \ alpha\_hdr\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00876\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{astcenc__color__unquantize_8cpp_aded0cdfa2613a96d69299785784bfa7e}{hdr\_rgb\_hdr\_alpha\_unpack}}(input,\ output0,\ output1);}
+\DoxyCodeLine{00877\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00878\ \ \ \ \ \}}
+\DoxyCodeLine{00879\ }
+\DoxyCodeLine{00880\ \ \ \ \ \textcolor{comment}{//\ Assign\ a\ correct\ default\ alpha}}
+\DoxyCodeLine{00881\ \ \ \ \ \textcolor{keywordflow}{if}\ (alpha\_hdr\_default)}
+\DoxyCodeLine{00882\ \ \ \ \ \{}
+\DoxyCodeLine{00883\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (decode\_mode\ ==\ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a4493639842d745d4bccd6a94836d2ca9}{ASTCENC\_PRF\_HDR}})}
+\DoxyCodeLine{00884\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00885\ \ \ \ \ \ \ \ \ \ \ \ \ output0.\mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{set\_lane}}<3>(0x7800);}
+\DoxyCodeLine{00886\ \ \ \ \ \ \ \ \ \ \ \ \ output1.\mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{set\_lane}}<3>(0x7800);}
+\DoxyCodeLine{00887\ \ \ \ \ \ \ \ \ \ \ \ \ alpha\_hdr\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00888\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00889\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00890\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00891\ \ \ \ \ \ \ \ \ \ \ \ \ output0.\mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{set\_lane}}<3>(0x00FF);}
+\DoxyCodeLine{00892\ \ \ \ \ \ \ \ \ \ \ \ \ output1.\mbox{\hyperlink{structvint4_a1e438bb142ad09e372b0834acd0c0b68}{set\_lane}}<3>(0x00FF);}
+\DoxyCodeLine{00893\ \ \ \ \ \ \ \ \ \ \ \ \ alpha\_hdr\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00895\ \ \ \ \ \}}
+\DoxyCodeLine{00896\ }
+\DoxyCodeLine{00897\ \ \ \ \ \textcolor{comment}{//\ Handle\ endpoint\ errors\ and\ expansion}}
+\DoxyCodeLine{00898\ }
+\DoxyCodeLine{00899\ \ \ \ \ \textcolor{comment}{//\ Linear\ LDR\ 8-\/bit\ endpoints\ are\ expanded\ to\ 16-\/bit\ by\ replication}}
+\DoxyCodeLine{00900\ \ \ \ \ \textcolor{keywordflow}{if}\ (decode\_mode\ ==\ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a92cc31c9011e699ed4c41f9a4959c295}{ASTCENC\_PRF\_LDR}})}
+\DoxyCodeLine{00901\ \ \ \ \ \{}
+\DoxyCodeLine{00902\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Error\ color\ -\/\ HDR\ endpoint\ in\ an\ LDR\ encoding}}
+\DoxyCodeLine{00903\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rgb\_hdr\ ||\ alpha\_hdr)}
+\DoxyCodeLine{00904\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00905\ \ \ \ \ \ \ \ \ \ \ \ \ output0\ =\ \mbox{\hyperlink{structvint4}{vint4}}(0xFF,\ 0x00,\ 0xFF,\ 0xFF);}
+\DoxyCodeLine{00906\ \ \ \ \ \ \ \ \ \ \ \ \ output1\ =\ \mbox{\hyperlink{structvint4}{vint4}}(0xFF,\ 0x00,\ 0xFF,\ 0xFF);}
+\DoxyCodeLine{00907\ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_hdr\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00908\ \ \ \ \ \ \ \ \ \ \ \ \ alpha\_hdr\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00909\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00910\ }
+\DoxyCodeLine{00911\ \ \ \ \ \ \ \ \ output0\ =\ output0\ *\ 257;}
+\DoxyCodeLine{00912\ \ \ \ \ \ \ \ \ output1\ =\ output1\ *\ 257;}
+\DoxyCodeLine{00913\ \ \ \ \ \}}
+\DoxyCodeLine{00914\ \ \ \ \ \textcolor{comment}{//\ sRGB\ LDR\ 8-\/bit\ endpoints\ are\ expanded\ to\ 16\ bit\ by:}}
+\DoxyCodeLine{00915\ \ \ \ \ \textcolor{comment}{//\ \ -\/\ RGB\ =\ shift\ left\ by\ 8\ bits\ and\ OR\ with\ 0x80}}
+\DoxyCodeLine{00916\ \ \ \ \ \textcolor{comment}{//\ \ -\/\ A\ =\ replication}}
+\DoxyCodeLine{00917\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (decode\_mode\ ==\ \mbox{\hyperlink{astcenc_8h_adf71df2e9f79916ccc02886ba1bdeb29a331abc1d96b4fa991757e6ef8199f298}{ASTCENC\_PRF\_LDR\_SRGB}})}
+\DoxyCodeLine{00918\ \ \ \ \ \{}
+\DoxyCodeLine{00919\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Error\ color\ -\/\ HDR\ endpoint\ in\ an\ LDR\ encoding}}
+\DoxyCodeLine{00920\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rgb\_hdr\ ||\ alpha\_hdr)}
+\DoxyCodeLine{00921\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00922\ \ \ \ \ \ \ \ \ \ \ \ \ output0\ =\ \mbox{\hyperlink{structvint4}{vint4}}(0xFF,\ 0x00,\ 0xFF,\ 0xFF);}
+\DoxyCodeLine{00923\ \ \ \ \ \ \ \ \ \ \ \ \ output1\ =\ \mbox{\hyperlink{structvint4}{vint4}}(0xFF,\ 0x00,\ 0xFF,\ 0xFF);}
+\DoxyCodeLine{00924\ \ \ \ \ \ \ \ \ \ \ \ \ rgb\_hdr\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00925\ \ \ \ \ \ \ \ \ \ \ \ \ alpha\_hdr\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00926\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00927\ }
+\DoxyCodeLine{00928\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}}(\textcolor{keyword}{true},\ \textcolor{keyword}{true},\ \textcolor{keyword}{true},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00929\ }
+\DoxyCodeLine{00930\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ output0rgb\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a86240f0fb5745ded88afe10d524c960f}{lsl<8>}}(output0)\ |\ \mbox{\hyperlink{structvint4}{vint4}}(0x80);}
+\DoxyCodeLine{00931\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ output0a\ =\ output0\ *\ 257;}
+\DoxyCodeLine{00932\ \ \ \ \ \ \ \ \ output0\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(output0a,\ output0rgb,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00933\ }
+\DoxyCodeLine{00934\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ output1rgb\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a86240f0fb5745ded88afe10d524c960f}{lsl<8>}}(output1)\ |\ \mbox{\hyperlink{structvint4}{vint4}}(0x80);}
+\DoxyCodeLine{00935\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ output1a\ =\ output1\ *\ 257;}
+\DoxyCodeLine{00936\ \ \ \ \ \ \ \ \ output1\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(output1a,\ output1rgb,\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_ad922a3ed6098767968916265154b6f82}{mask}});}
+\DoxyCodeLine{00937\ \ \ \ \ \}}
+\DoxyCodeLine{00938\ \ \ \ \ \textcolor{comment}{//\ An\ HDR\ profile\ decode,\ but\ may\ be\ using\ linear\ LDR\ endpoints}}
+\DoxyCodeLine{00939\ \ \ \ \ \textcolor{comment}{//\ Linear\ LDR\ 8-\/bit\ endpoints\ are\ expanded\ to\ 16-\/bit\ by\ replication}}
+\DoxyCodeLine{00940\ \ \ \ \ \textcolor{comment}{//\ HDR\ endpoints\ are\ already\ 16-\/bit}}
+\DoxyCodeLine{00941\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00942\ \ \ \ \ \{}
+\DoxyCodeLine{00943\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvmask4}{vmask4}}\ hdr\_lanes(rgb\_hdr,\ rgb\_hdr,\ rgb\_hdr,\ alpha\_hdr);}
+\DoxyCodeLine{00944\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvint4}{vint4}}\ output\_scale\ =\ \mbox{\hyperlink{astcenc__vecmathlib__avx2__8_8h_a844ab5b69b84569f033be33bf5fb9fbc}{select}}(\mbox{\hyperlink{structvint4}{vint4}}(257),\ \mbox{\hyperlink{structvint4}{vint4}}(1),\ hdr\_lanes);}
+\DoxyCodeLine{00945\ \ \ \ \ \ \ \ \ output0\ =\ output0\ *\ output\_scale;}
+\DoxyCodeLine{00946\ \ \ \ \ \ \ \ \ output1\ =\ output1\ *\ output\_scale;}
+\DoxyCodeLine{00947\ \ \ \ \ \}}
+\DoxyCodeLine{00948\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_ab9b659180fb522b05391892336dbc095_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{astcenc__color__unquantize_8cpp_ab9b659180fb522b05391892336dbc095_icgraph}
+\end{center}
+\end{figure}

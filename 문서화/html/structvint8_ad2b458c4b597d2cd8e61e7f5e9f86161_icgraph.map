@@ -1,0 +1,13 @@
+<map id="vint8::vint8" name="vint8::vint8">
+<area shape="rect" id="Node000001" title="Construct from zero&#45;initialized value." alt="" coords="151,104,233,129"/>
+<area shape="rect" id="Node000002" href="$structvint8.html#ac039bb01378b472df484ac30e7f061ce" title="Factory that returns a vector containing the lane IDs." alt="" coords="5,5,103,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,97,101,44,82,33,85,29,104,40,169,92"/>
+<area shape="rect" id="Node000003" href="$structvint8.html#aded32c56d70f945f052838be670ef072" title="Factory that returns a vector loaded from unaligned memory." alt="" coords="14,55,94,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="142,102,90,83,91,78,144,97"/>
+<area shape="rect" id="Node000004" href="$structvint8.html#a6bb8e1dbdc1cafa65aaea8cf5b0c9607" title="Factory that returns a replicated scalar loaded from memory." alt="" coords="11,104,97,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="137,119,98,119,98,114,137,114"/>
+<area shape="rect" id="Node000005" href="$structvint8.html#a45ae46d70496e150a7564acf24b6e8ee" title="Factory that returns a vector loaded from 32B aligned memory." alt="" coords="11,153,97,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="144,137,91,156,90,151,142,132"/>
+<area shape="rect" id="Node000006" href="$structvint8.html#af5b4dfb23d46500b4c9605969db5a9a1" title="Factory that returns a vector of zeros." alt="" coords="13,203,95,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="169,141,104,192,83,205,80,200,101,188,165,137"/>
+</map>
